@@ -11,6 +11,7 @@ namespace Rocket
     {
         private UserInput userInput = UserInput.Create(0);
         private Rigidbody rb;
+        private AudioSource audioSource;
 
         public float rotateSpeed = 200f;
         public float boostSpeed = 1000f;
@@ -18,6 +19,7 @@ namespace Rocket
         private void Start()
         {
             rb = GetComponent<Rigidbody>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         void Update()
@@ -31,6 +33,11 @@ namespace Rocket
             if (userInput.fire1)
             {
                 rb.AddRelativeForce(Vector3.up * boostSpeed * deltaTime);
+                if (!audioSource.isPlaying) audioSource.Play();
+            }
+            else
+            {
+                if (audioSource.isPlaying) audioSource.Stop();
             }
 
             UserInput.ResetTriggers(userInput);
