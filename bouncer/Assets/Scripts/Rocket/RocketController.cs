@@ -26,9 +26,7 @@ namespace Rocket
             if (userInput.horizontal != 0)
             {
                 float speed = 0 - (rotateSpeed * userInput.horizontal * deltaTime);
-                rb.freezeRotation = true;
-                transform.Rotate(Vector3.forward * speed);
-                rb.freezeRotation = false;
+                PlayerActionHandler3D.Rotate(rb, transform, Vector3.forward * speed);
             }
             if (userInput.fire1)
             {
