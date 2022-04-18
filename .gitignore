@@ -1,0 +1,8 @@
+Library/
+Temp/
+Logs/
+
+
+bin/
+obj/
+.vs/
