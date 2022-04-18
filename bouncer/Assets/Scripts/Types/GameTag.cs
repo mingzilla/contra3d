@@ -9,6 +9,8 @@ namespace Types
     {
         public static GameTag PLAYER = Create("PLAYER");
         public static GameTag OBSTACLE = Create("OBSTACLE");
+        public static GameTag STARTING_POINT = Create("STARTING_POINT");
+        public static GameTag DESTINATION = Create("DESTINATION");
 
         public string name;
 
@@ -20,6 +22,8 @@ namespace Types
             {
                 PLAYER,
                 OBSTACLE,
+                STARTING_POINT,
+                DESTINATION,
             };
         }
 

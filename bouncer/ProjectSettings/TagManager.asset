@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PLAYER
   - OBSTACLE
+  - DESTINATION
+  - STARTING_POINT
   layers:
   - Default
   - TransparentFX

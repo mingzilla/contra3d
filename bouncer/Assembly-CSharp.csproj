@@ -59,11 +59,13 @@
      <Compile Include="Assets\Scripts\BaseUtil\Base\SelectedIds.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerActionHandler3D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\UserInput.cs" />
-     <Compile Include="Assets\Scripts\DropBoxController.cs" />
-     <Compile Include="Assets\Scripts\GamePlayerController.cs" />
-     <Compile Include="Assets\Scripts\ObstacleController.cs" />
-     <Compile Include="Assets\Scripts\ScoreController.cs" />
-     <Compile Include="Assets\Scripts\SpinnerController.cs" />
+     <Compile Include="Assets\Scripts\Bouncer\DropBoxController.cs" />
+     <Compile Include="Assets\Scripts\Bouncer\GamePlayerController.cs" />
+     <Compile Include="Assets\Scripts\Bouncer\ObstacleController.cs" />
+     <Compile Include="Assets\Scripts\Bouncer\ScoreController.cs" />
+     <Compile Include="Assets\Scripts\Bouncer\SpinnerController.cs" />
+     <Compile Include="Assets\Scripts\Rocket\RocketController.cs" />
+     <Compile Include="Assets\Scripts\Rocket\RocketDestinationController.cs" />
      <Compile Include="Assets\Scripts\Types\GameTag.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
