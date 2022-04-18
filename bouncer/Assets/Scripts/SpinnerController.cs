@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class SpinnerController : MonoBehaviour
 {
-    public int rotationSpeed = 5;
-    float currentY = 0;
+    public float rotationSpeed = 1f;
 
     void Update()
     {
-        Transform currentTransform = transform;
-        currentY = (rotationSpeed * Time.time);
-        currentTransform.rotation = new Quaternion(0f, currentY, 0f, 0f);
+        float speed = rotationSpeed * Time.deltaTime;
+        transform.Rotate(0, speed, 0);
     }
 }
