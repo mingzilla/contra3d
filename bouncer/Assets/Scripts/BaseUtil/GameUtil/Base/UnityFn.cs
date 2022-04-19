@@ -1,0 +1,255 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using BaseUtil.Base;
+using BaseUtil.GameUtil.Types;
+using System;
+using Object = UnityEngine.Object;
+
+namespace BaseUtil.GameUtil.Base
+{
+    /**
+     * General function handling objects from Unity Engine.
+     */
+    public static class UnityFn
+    {
+        public static GameObject GetParent(GameObject obj)
+        {
+            if (obj == null) return null;
+            if (obj.transform == null) return null;
+            if (obj.transform.parent == null) return null;
+            return obj.transform.parent.gameObject;
+        }
+
+        /**
+         * If parent matches tag, return parent, otherwise return self.
+         */
+        public static GameObject GetTaggedParentOrSelf(GameObject obj, string tag)
+        {
+            if (obj == null) return null;
+            if (obj.CompareTag(tag)) return obj;
+            GameObject parentObj = UnityFn.GetParent(obj);
+
+            // max of 5 searches - unity crashes if using a while loop here to 
+            for (int i = 0; i < 5; i++)
+            {
+                if (parentObj == null) return null;
+                if (parentObj.CompareTag(tag)) return parentObj;
+                parentObj = UnityFn.GetParent(obj);
+            }
+
+            return obj;
+        }
+
+        public static GameObject GetUnitRootOrSelf(GameObject obj)
+        {
+            return GetTaggedParentOrSelf(obj, GameTag.UNIT_ROOT.name);
+        }
+
+        public static T GetComponentFromUnitRootOrSelf<T>(GameObject obj)
+        {
+            return GetUnitRootOrSelf(obj).GetComponent<T>();
+        }
+
+        public static void SetActiveOnTaggedRootOrSelf(GameObject obj, bool isActive)
+        {
+            HandleTaggedParentOrSelf(obj, GameTag.UNIT_ROOT.name, (o) => o.SetActive(isActive));
+        }
+
+        /**
+         * Unit Root is used to destroy a unit, because generally for grouping purposes, a unit is put inside an empty object.
+         * So we tag the root object as Unit Root, and we destroy that object rather than the child only.
+         */
+        public static void DestroyTaggedRootOrSelf(GameObject obj)
+        {
+            HandleTaggedParentOrSelf(obj, GameTag.UNIT_ROOT.name, SafeDestroy);
+        }
+
+        public static void DestroyRootObjectOverTime(GameObject obj, float lifeTime)
+        {
+            HandleTaggedParentOrSelf(obj, GameTag.UNIT_ROOT.name, (o) => SafeDestroy(o, lifeTime));
+        }
+
+        public static void HandleTaggedParentOrSelf(GameObject obj, string rootTag, Action<GameObject> destroyFn)
+        {
+            if (obj == null) return;
+            GameObject taggedObj = UnityFn.GetTaggedParentOrSelf(obj, rootTag);
+            if (taggedObj != null) destroyFn(taggedObj);
+            if (taggedObj == null) destroyFn(obj);
+        }
+
+        public static void SafeDestroy(GameObject obj)
+        {
+            if (obj == null) return;
+            UnityEngine.Object.Destroy(obj);
+        }
+
+        public static void SafeDestroy(GameObject obj, float lifeTime)
+        {
+            if (obj == null) return;
+            UnityEngine.Object.Destroy(obj, lifeTime);
+        }
+
+        public static void CreateEffect(GameObject effectPreFab, Vector3 position)
+        {
+            if (effectPreFab != null)
+            {
+                GameObject copy = UnityEngine.Object.Instantiate(effectPreFab, position, Quaternion.identity); // Quaternion.identity means no rotation
+                SafeDestroy(copy, 1f);
+            }
+        }
+
+        public static bool IsInRange(Transform unit, Transform target, float range)
+        {
+            return Vector3.Distance(unit.position, target.position) <= range;
+        }
+
+        /**
+         * Desire rotation means this is the expected rotation. 
+         * If currently it's not this value, it takes time * turnSpeed to get to this desire rotation.
+         */
+        public static Quaternion GetDesireRotation2D(Transform unit, Transform target)
+        {
+            Vector3 direction = unit.position - target.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            return rotation;
+        }
+
+        /**
+         * Rotation of this frame when turning unit towards target
+         */
+        public static Quaternion GetRotation2D(Transform unit, Transform target, float turnSpeed, float deltaTime)
+        {
+            // for more info, refer to unity course flyer section e.g. L35
+            Quaternion desireRotation = GetDesireRotation2D(unit, target);
+            return Quaternion.Slerp(unit.rotation, desireRotation, turnSpeed * deltaTime);
+        }
+
+        public static void GetRotation3D(Transform unit, Transform target)
+        {
+            // makes sure unit faces target, in 3D
+            unit.LookAt(target);
+        }
+
+        /**
+         * Used for e.g. health bar in 3D inside LateUpdate() loop, so that it always faces the player.
+         */
+        public static void LookAtPlayer(Transform unit, Transform camera)
+        {
+            unit.LookAt(unit.position + camera.forward);
+        }
+
+        /**
+         * Position of this frame when moving unit towards target
+         */
+        public static Vector3 GetPosition(Transform unit, Transform target, float moveSpeed, float deltaTime)
+        {
+            return Vector3.MoveTowards(unit.position, target.position, moveSpeed * deltaTime);
+        }
+
+        public static List<Transform> FindChildrenWithTag(Transform transform, string tagName)
+        {
+            var children = new List<Transform>();
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                var child = transform.GetChild(i);
+                if (child.gameObject.CompareTag(tagName))
+                {
+                    children.Add(child);
+                }
+            }
+            return children;
+        }
+
+        public static List<GameObject> FindChildObjectsWithTag(Transform transform, string tagName)
+        {
+            List<Transform> children = FindChildrenWithTag(transform, tagName);
+            return Fn.Map((x) => x.gameObject, children);
+        }
+
+        public static List<T> FindComponentsFromChildrenWithTag<T>(Transform transform, string tagName)
+        {
+            List<Transform> children = FindChildrenWithTag(transform, tagName);
+            return Fn.Map((x) => x.GetComponent<T>(), children);
+        }
+
+        public static float SpeedX(Rigidbody2D theRb)
+        {
+            return Mathf.Abs(theRb.velocity.x);
+        }
+
+        public static List<SpriteRenderer> EnableSpriteRenderer(List<SpriteRenderer> spriteRenderers)
+        {
+            foreach (SpriteRenderer sr in spriteRenderers)
+            {
+                sr.enabled = true;
+            }
+            return spriteRenderers;
+        }
+
+        public static List<SpriteRenderer> ToggleSpriteRenderer(List<SpriteRenderer> spriteRenderers)
+        {
+            foreach (SpriteRenderer sr in spriteRenderers)
+            {
+                sr.enabled = !sr.enabled;
+            }
+            return spriteRenderers;
+        }
+
+        public static void WaitForSeconds(MonoBehaviour controller, float delay, Action fn)
+        {
+            controller.StartCoroutine(TimeOutDelayFn(delay, fn));
+        }
+
+        private static IEnumerator TimeOutDelayFn(float delay, Action fn)
+        {
+            yield return new WaitForSeconds(delay);
+            fn();
+        }
+
+        public static void WaitUntil(MonoBehaviour controller, Func<bool> conditionFn, Action fn)
+        {
+            controller.StartCoroutine(WaitUntilDelayFn(conditionFn, fn)); // run if condition returns true
+        }
+
+        private static IEnumerator WaitUntilDelayFn(Func<bool> conditionFn, Action fn)
+        {
+            yield return new WaitUntil(conditionFn);
+            fn();
+        }
+
+        public static Vector3 GetMeanVector3(List<Vector3> positions)
+        {
+            int count = positions.Count;
+            if (count == 0) return Vector3.zero;
+            if (count == 1) return positions[0];
+            float x = 0f;
+            float y = 0f;
+            float z = 0f;
+            foreach (Vector3 pos in positions)
+            {
+                x += pos.x;
+                y += pos.y;
+                z += pos.z;
+            }
+            return new Vector3(x / count, y / count, z / count);
+        }
+
+        /**
+         * Keeps a controller as singleton and make sure the gameObject is not destroyed when going to another scene.
+         */
+        public static void MarkSingletonAndKeepAlive<T>(T instance, GameObject gameObj, Action setInstanceToThisFn)
+        {
+            if (instance == null)
+            {
+                setInstanceToThisFn();
+                Object.DontDestroyOnLoad(gameObj);
+            }
+            else
+            {
+                Object.Destroy(gameObj);
+            }
+        }
+    }
+}
