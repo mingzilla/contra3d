@@ -87,7 +87,7 @@ namespace BaseUtil.GameUtil
         /// <param name="furthestRelativePosition">the furthest position to move towards, relative to the starting position</param>
         /// <param name="period">how much time we want a cycle to be. e.g. 2f</param>
         /// <returns>New position to be set to transform.position of an object</returns>
-        public static Vector3 MovePlatform(Vector3 startingPosition, Vector3 furthestRelativePosition, float period)
+        public static Vector3 MoveLikePlatform(Vector3 startingPosition, Vector3 furthestRelativePosition, float period)
         {
             if (period <= Mathf.Epsilon) return startingPosition;
             float cycles = Time.time / period;

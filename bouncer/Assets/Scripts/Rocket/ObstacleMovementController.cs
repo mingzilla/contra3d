@@ -20,7 +20,7 @@ namespace Rocket
 
         private void Update()
         {
-            transform.position = MovementUtil.MovePlatform(startingPosition, furthestRelativePosition, period);
+            transform.position = MovementUtil.MoveLikePlatform(startingPosition, furthestRelativePosition, period);
         }
     }
 }
