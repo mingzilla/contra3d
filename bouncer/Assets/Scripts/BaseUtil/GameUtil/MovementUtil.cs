@@ -89,8 +89,9 @@ namespace BaseUtil.GameUtil
         /// <returns>New position to be set to transform.position of an object</returns>
         public static Vector3 MovePlatform(Vector3 startingPosition, Vector3 furthestRelativePosition, float period)
         {
+            if (period <= Mathf.Epsilon) return startingPosition;
             float cycles = Time.time / period;
-            const float tau = Mathf.PI * 2;
+            const float tau = Mathf.PI * 2f;
             float rawSinWave = Mathf.Sin(cycles * tau); // between -1 to 1
             float movementFactor = (rawSinWave + 1f) / 2f; // between 0 to 1
             Vector3 offset = furthestRelativePosition * movementFactor;
