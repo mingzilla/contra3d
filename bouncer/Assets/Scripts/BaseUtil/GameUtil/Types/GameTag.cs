@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BaseUtil.Base;
+using BaseUtil.GameUtil.Base;
 
 namespace BaseUtil.GameUtil.Types
 {
@@ -33,6 +34,11 @@ namespace BaseUtil.GameUtil.Types
         public static GameTag GetByName(string name)
         {
             return typeMap[(name)];
+        }
+
+        public static void InitOnAwake()
+        {
+            TagUtil.AddTagsIfNotPresent(Fn.Map(it => it.name, All()));
         }
     }
 }
