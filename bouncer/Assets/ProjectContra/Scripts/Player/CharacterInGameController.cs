@@ -13,9 +13,9 @@ namespace ProjectContra.Scripts.Player
         public void Init(int playerId)
         {
             gameObject.tag = GameTag.CHARACTER_IN_GAME.name;
+            gameObject.layer = GameLayer.PLAYER.GetLayer();
             rb = gameObject.AddComponent<Rigidbody>();
-            rb.freezeRotation = true;
-            rb.constraints = RigidbodyConstraints.FreezeRotationZ;
+            rb.constraints = (RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation);
             playerAttribute = PlayerAttribute.CreateEmpty(playerId);
         }
 

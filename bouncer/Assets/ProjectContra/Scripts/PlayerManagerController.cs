@@ -8,6 +8,7 @@ namespace ProjectContra.Scripts
         private void Awake()
         {
             GameTag.InitOnAwake();
+            GameLayer.InitOnAwake();
         }
     }
 }

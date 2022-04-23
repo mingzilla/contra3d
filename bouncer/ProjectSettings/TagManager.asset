@@ -19,14 +19,14 @@ TagManager:
   - 
   - Player
   - Obstacle
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PLAYER
+  - GROUND
+  - PLAYER_SHOT
+  - NO_COLLISION
+  - DESTRUCTIBLE
+  - ENEMY
+  - ENEMY_DETECTION_RANGE
+  - POWER_UP
   - 
   - 
   - 
