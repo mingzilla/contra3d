@@ -129,13 +129,13 @@ namespace BaseUtil.GameUtil
             return UpdateAxes(userInput, axes1);
         }
 
-        public static readonly Action<UserInput> ResetTriggers = (userInput) =>
+        public static void ResetTriggers(UserInput userInput)
         {
             userInput.jump = false;
             userInput.jumpCancelled = false;
             userInput.fire1 = false;
             userInput.fire2 = false;
             userInput.fire3 = false;
-        };
+        }
     }
 }

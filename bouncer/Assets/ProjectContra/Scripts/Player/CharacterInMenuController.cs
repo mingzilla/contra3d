@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using BaseUtil.GameUtil;
+using ProjectContra.Scripts.Types;
 using UnityEngine;
 
-public class CharacterInMenuController : MonoBehaviour
+namespace ProjectContra.Scripts.Player
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CharacterInMenuController : MonoBehaviour
     {
-        
-    }
+        private void Start()
+        {
+            gameObject.tag = GameTag.CHARACTER_IN_MENU.name;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void HandleUpdate(UserInput userInput)
+        {
+            
+        }
     }
 }

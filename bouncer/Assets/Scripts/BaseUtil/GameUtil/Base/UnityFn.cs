@@ -251,5 +251,46 @@ namespace BaseUtil.GameUtil.Base
                 Object.Destroy(gameObj);
             }
         }
+
+        public static T InstantiateDisabledCharacterObject<T>(GameObject prefab)
+        {
+            GameObject obj = Object.Instantiate(prefab, Vector3.zero, Quaternion.identity);
+            obj.SetActive(false);
+            return obj.GetComponent<T>();
+        }
+
+        public static void SetActive(GameObject gameObject, Action beforeSetActiveFn)
+        {
+            if (!gameObject.activeSelf)
+            {
+                beforeSetActiveFn();
+                gameObject.SetActive(true);
+            }
+        }
+
+        public static void SetInactive(GameObject gameObject, Action beforeSetInactiveFn)
+        {
+            if (gameObject.activeSelf)
+            {
+                beforeSetInactiveFn();
+                gameObject.SetActive(false);
+            }
+        }
+
+        /// <summary>
+        /// Only deactivate others when setting the desire object from inactive to active.
+        /// </summary>
+        /// <param name="gameObjectToSetActive"></param>
+        /// <param name="gameObjectsToSetInactive"></param>
+        public static void SetActiveAndDeActivateOthers(GameObject gameObjectToSetActive, List<GameObject> gameObjectsToSetInactive)
+        {
+            UnityFn.SetActive(gameObjectToSetActive, () =>
+            {
+                foreach (GameObject item in gameObjectsToSetInactive)
+                {
+                    SetInactive(item, Fn.DoNothing);
+                }
+            });
+        }
     }
 }

@@ -92,5 +92,10 @@ namespace BaseUtil.Base
         {
             return dictionary.Any((x) => (x.Value.Any((v) => (v.Value == null))));
         }
+
+        public static void DoNothing()
+        {
+            // do nothing
+        }
     }
 }

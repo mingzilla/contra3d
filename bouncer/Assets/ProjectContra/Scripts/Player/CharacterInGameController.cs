@@ -1,18 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using BaseUtil.GameUtil;
+using ProjectContra.Scripts.Player.domain;
+using ProjectContra.Scripts.Types;
 using UnityEngine;
 
-public class CharacterInGameController : MonoBehaviour
+namespace ProjectContra.Scripts.Player
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CharacterInGameController : MonoBehaviour
     {
-        
-    }
+        private Rigidbody rb;
+        private PlayerAttribute playerAttribute;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            gameObject.tag = GameTag.CHARACTER_IN_GAME.name;
+            rb = gameObject.AddComponent<Rigidbody>();
+            rb.freezeRotation = true;
+        }
+
+        public void Init(int playerId)
+        {
+            playerAttribute = PlayerAttribute.CreateEmpty(playerId);
+        }
+
+        public void HandleUpdate(UserInput userInput)
+        {
+            PlayerActionHandler3D.MoveX(userInput.fixedHorizontal, rb, playerAttribute.moveSpeed);
+        }
     }
 }
