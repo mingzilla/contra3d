@@ -33,6 +33,7 @@ namespace ProjectContra.Scripts.Player
             inMenuController = UnityFn.InstantiateDisabledCharacterObject<CharacterInMenuController>(characterInMenuPrefab);
             
             inGameController.Init(playerId);
+            inMenuController.Init();
 
             AllocateControlObject(currentControlState);
         }

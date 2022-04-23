@@ -10,15 +10,12 @@ namespace ProjectContra.Scripts.Player
         private Rigidbody rb;
         private PlayerAttribute playerAttribute;
 
-        private void Start()
+        public void Init(int playerId)
         {
             gameObject.tag = GameTag.CHARACTER_IN_GAME.name;
             rb = gameObject.AddComponent<Rigidbody>();
             rb.freezeRotation = true;
-        }
-
-        public void Init(int playerId)
-        {
+            rb.constraints = RigidbodyConstraints.FreezeRotationZ;
             playerAttribute = PlayerAttribute.CreateEmpty(playerId);
         }
 

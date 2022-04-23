@@ -8,7 +8,7 @@ namespace ProjectContra.Scripts.Player
 {
     public class CharacterInMenuController : MonoBehaviour
     {
-        private void Start()
+        public void Init()
         {
             gameObject.tag = GameTag.CHARACTER_IN_MENU.name;
         }
