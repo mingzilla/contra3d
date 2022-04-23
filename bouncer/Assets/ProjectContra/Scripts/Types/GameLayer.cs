@@ -70,5 +70,14 @@ namespace ProjectContra.Scripts.Types
         {
             return LayerMask.NameToLayer(name);
         }
+
+        public static LayerMask GetGroundLayerMask()
+        {
+            return GetLayerMask(new List<GameLayer>()
+            {
+                GROUND,
+                DESTRUCTIBLE,
+            });
+        }
     }
 }

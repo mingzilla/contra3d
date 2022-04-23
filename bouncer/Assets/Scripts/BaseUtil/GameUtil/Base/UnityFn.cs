@@ -299,5 +299,18 @@ namespace BaseUtil.GameUtil.Base
             rb.constraints = (RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation);
             return rb;
         }
+
+        public static MeshCollider AddNoFrictionMeshCollider(GameObject gameObject)
+        {
+            MeshCollider mc = gameObject.AddComponent<MeshCollider>();
+
+            PhysicMaterial material = new PhysicMaterial();
+            material.dynamicFriction = 0f;
+            material.staticFriction = 0f;
+            material.bounciness = 0f;
+
+            mc.material = material;
+            return mc;
+        }
     }
 }

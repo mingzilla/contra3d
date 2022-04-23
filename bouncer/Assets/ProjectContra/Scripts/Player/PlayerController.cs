@@ -25,13 +25,13 @@ namespace ProjectContra.Scripts.Player
         private void Start()
         {
             const int playerId = 0; // todo - use correct userIndex
-            
+
             userInput = UserInput.Create(playerId);
             currentControlState = GameControlState.IN_GAME; // todo - change this depending on situation
 
             inGameController = UnityFn.InstantiateDisabledCharacterObject<CharacterInGameController>(characterInGamePrefab);
             inMenuController = UnityFn.InstantiateDisabledCharacterObject<CharacterInMenuController>(characterInMenuPrefab);
-            
+
             inGameController.Init(playerId);
             inMenuController.Init();
 
@@ -54,6 +54,12 @@ namespace ProjectContra.Scripts.Player
         public void Move(InputAction.CallbackContext context)
         {
             userInput = UserInput.Move(userInput, context);
+        }
+
+        public void Jump(InputAction.CallbackContext context)
+        {
+            if (context.started) userInput.jump = true;
+            if (context.canceled) userInput.jumpCancelled = true;
         }
     }
 }

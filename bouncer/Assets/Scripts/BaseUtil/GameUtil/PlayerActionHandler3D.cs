@@ -1,4 +1,5 @@
 ﻿using System;
+using BaseUtil.Base;
 using UnityEngine;
 
 namespace BaseUtil.GameUtil
@@ -24,6 +25,54 @@ namespace BaseUtil.GameUtil
             rb.freezeRotation = true; // without freezing rotation, collision conflicts with our rotation control
             transform.Rotate(rotation);
             rb.freezeRotation = false;
+        }
+
+        /**
+         * @return new isInDoubleJumpStatus
+         */
+        public static bool HandleJump(bool isOnGround, bool isInDoubleJumpStatus, Rigidbody rb, float jumpForce, bool hasDoubleJumpAbility)
+        {
+            if (hasDoubleJumpAbility)
+            {
+                return HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, rb, jumpForce);
+            }
+            else
+            {
+                HandleJumpFromGround(isOnGround, rb, jumpForce);
+                return isInDoubleJumpStatus;
+            }
+        }
+
+        public static void HandleJumpFromGround(bool isOnGround, Rigidbody rb, float jumpForce)
+        {
+            if (isOnGround) HandleJump(rb, jumpForce);
+        }
+
+        /// <summary>
+        /// Assists implementation of low jump, so that jumping high needs to press and hold the jump button
+        /// </summary>
+        /// <param name="rb"></param>
+        /// <param name="isOnGround"></param>
+        public static void HandleJumpCancelling(Rigidbody rb, bool isOnGround)
+        {
+            if (isOnGround) return; // if on ground, don't handle
+            Vector3 velocity = rb.velocity;
+            if (velocity.y <= 0f) return; // if falling down, don't handle jump cancelling 
+            rb.velocity = new Vector3(velocity.x, velocity.y * 0.1f, velocity.z);
+        }
+
+        /**
+         * @return new isInDoubleJumpStatus
+         */
+        private static bool HandleJumpFromGroundOrDoubleJump(bool isOnGround, bool isInDoubleJumpStatus, Rigidbody rb, float jumpForce)
+        {
+            return GameLogic.HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, () => HandleJump(rb, jumpForce));
+        }
+
+        public static void HandleJump(Rigidbody rb, float jumpForce)
+        {
+            Vector3 velocity = rb.velocity;
+            rb.velocity = new Vector3(velocity.x, jumpForce, velocity.z);
         }
     }
 }

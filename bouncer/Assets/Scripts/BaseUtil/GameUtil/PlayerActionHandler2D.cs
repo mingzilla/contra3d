@@ -8,62 +8,62 @@ namespace BaseUtil.GameUtil
 {
     public class PlayerActionHandler2D
     {
-        public static void HandleHorizontalMovement(float inputHorizontal, Rigidbody2D theRB, float moveSpeed)
+        public static void HandleHorizontalMovement(float inputHorizontal, Rigidbody2D rb, float moveSpeed)
         {
-            theRB.velocity = new Vector2(inputHorizontal * moveSpeed, theRB.velocity.y);
-        }
-
-        public static void HandleJumpFromGround(bool isOnGround, Rigidbody2D theRB, float jumpForce)
-        {
-            if (isOnGround) PlayerActionHandler2D.HandleJump(theRB, jumpForce);
+            rb.velocity = new Vector2(inputHorizontal * moveSpeed, rb.velocity.y);
         }
 
         /**
          * @return new isInDoubleJumpStatus
          */
-        public static bool HandleJump(bool isOnGround, bool isInDoubleJumpStatus, Rigidbody2D theRB, float jumpForce, bool hasDoubleJumpAbility)
+        public static bool HandleJump(bool isOnGround, bool isInDoubleJumpStatus, Rigidbody2D rb, float jumpForce, bool hasDoubleJumpAbility)
         {
             if (hasDoubleJumpAbility)
             {
-                return PlayerActionHandler2D.HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, theRB, jumpForce);
+                return HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, rb, jumpForce);
             }
             else
             {
-                PlayerActionHandler2D.HandleJumpFromGround(isOnGround, theRB, jumpForce);
+                HandleJumpFromGround(isOnGround, rb, jumpForce);
                 return isInDoubleJumpStatus;
             }
+        }
+
+        public static void HandleJumpFromGround(bool isOnGround, Rigidbody2D rb, float jumpForce)
+        {
+            if (isOnGround) HandleJump(rb, jumpForce);
         }
 
         /// <summary>
         /// Assists implementation of low jump, so that jumping high needs to press and hold the jump button
         /// </summary>
-        /// <param name="theRb"></param>
+        /// <param name="rb"></param>
         /// <param name="isOnGround"></param>
-        public static void HandleJumpCancelling(Rigidbody2D theRb, bool isOnGround)
+        public static void HandleJumpCancelling(Rigidbody2D rb, bool isOnGround)
         {
             if (isOnGround) return; // if on ground, don't handle
-            Vector2 velocity = theRb.velocity;
+            Vector2 velocity = rb.velocity;
             if (velocity.y <= 0f) return; // if falling down, don't handle jump cancelling 
-            theRb.velocity = new Vector2(velocity.x, velocity.y * 0.1f);
+            rb.velocity = new Vector2(velocity.x, velocity.y * 0.1f);
         }
 
         /**
          * @return new isInDoubleJumpStatus
          */
-        private static bool HandleJumpFromGroundOrDoubleJump(bool isOnGround, bool isInDoubleJumpStatus, Rigidbody2D theRB, float jumpForce)
+        private static bool HandleJumpFromGroundOrDoubleJump(bool isOnGround, bool isInDoubleJumpStatus, Rigidbody2D rb, float jumpForce)
         {
-            return GameLogic.HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, () => PlayerActionHandler2D.HandleJump(theRB, jumpForce));
+            return GameLogic.HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, () => HandleJump(rb, jumpForce));
         }
 
-        public static void HandleJump(Rigidbody2D theRB, float jumpForce)
+        public static void HandleJump(Rigidbody2D rb, float jumpForce)
         {
-            theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        public static void HandleDash(Rigidbody2D theRB, Transform playerTransform, float dashSpeed)
+        public static void HandleDash(Rigidbody2D rb, Transform playerTransform, float dashSpeed)
         {
             // Under dashing status, this needs to execute per frame, so that the speed is maintained (not just one frame), until dashing is finished
-            theRB.velocity = new Vector2(playerTransform.localScale.x * dashSpeed, theRB.velocity.y);
+            rb.velocity = new Vector2(playerTransform.localScale.x * dashSpeed, rb.velocity.y);
         }
 
         public static float HandleRollingAndStandingToggleWithDirection(bool inputDown, bool inputUp, float switchingCounter, float deltaTime,

@@ -9,6 +9,7 @@ namespace ProjectContra.Scripts.Player.domain
         public float jumpForce = 20; // good value by experience
         public float dashSpeed = 25; // good value by experience
         public float dashTime = 0.2f; // good value by experience
+        public float playerToGroundDistance = 1f; // Not visible, so need to create an empty object on the UI, and calculate the distance to adjust
 
         public bool hasDoubleJumpAbility = true;
         public bool hasDashAbility = true;
