@@ -50,6 +50,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInGameController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInMenuController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Player\PlayerController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Types\PlayerControlObject.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\Fn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnOldDict.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnRx.cs" />
@@ -75,9 +79,9 @@
      <Compile Include="Assets\Scripts\Rocket\RocketController.cs" />
      <Compile Include="Assets\Scripts\Rocket\RocketDestinationController.cs" />
      <Compile Include="Assets\Scripts\Types\GameTag.cs" />
-     <Compile Include="Assets\StarSparrow\Readme\Readme Files\Scripts\ReadmeStarSparrow.cs" />
-     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
-     <None Include="Assets\StarSparrow\UpgradeHDRP\UpgradeHDRP.txt" />
+     <Compile Include="Assets\_external\StarSparrow\Readme\Readme Files\Scripts\ReadmeStarSparrow.cs" />
+     <None Include="Assets\_external\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
+     <None Include="Assets\_external\StarSparrow\UpgradeHDRP\UpgradeHDRP.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

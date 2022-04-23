@@ -50,7 +50,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\StarSparrow\Readme\Readme Files\Scripts\Editor\ReadmeStarSparrowEditor.cs" />
+     <Compile Include="Assets\_external\StarSparrow\Readme\Readme Files\Scripts\Editor\ReadmeStarSparrowEditor.cs" />
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
