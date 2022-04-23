@@ -1,9 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Types;
-using System;
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace BaseUtil.GameUtil.Base
@@ -28,14 +28,14 @@ namespace BaseUtil.GameUtil.Base
         {
             if (obj == null) return null;
             if (obj.CompareTag(tag)) return obj;
-            GameObject parentObj = UnityFn.GetParent(obj);
+            GameObject parentObj = GetParent(obj);
 
             // max of 5 searches - unity crashes if using a while loop here to 
             for (int i = 0; i < 5; i++)
             {
                 if (parentObj == null) return null;
                 if (parentObj.CompareTag(tag)) return parentObj;
-                parentObj = UnityFn.GetParent(obj);
+                parentObj = GetParent(obj);
             }
 
             return obj;
@@ -73,7 +73,7 @@ namespace BaseUtil.GameUtil.Base
         public static void HandleTaggedParentOrSelf(GameObject obj, string rootTag, Action<GameObject> destroyFn)
         {
             if (obj == null) return;
-            GameObject taggedObj = UnityFn.GetTaggedParentOrSelf(obj, rootTag);
+            GameObject taggedObj = GetTaggedParentOrSelf(obj, rootTag);
             if (taggedObj != null) destroyFn(taggedObj);
             if (taggedObj == null) destroyFn(obj);
         }
@@ -81,20 +81,20 @@ namespace BaseUtil.GameUtil.Base
         public static void SafeDestroy(GameObject obj)
         {
             if (obj == null) return;
-            UnityEngine.Object.Destroy(obj);
+            Object.Destroy(obj);
         }
 
         public static void SafeDestroy(GameObject obj, float lifeTime)
         {
             if (obj == null) return;
-            UnityEngine.Object.Destroy(obj, lifeTime);
+            Object.Destroy(obj, lifeTime);
         }
 
         public static void CreateEffect(GameObject effectPreFab, Vector3 position)
         {
             if (effectPreFab != null)
             {
-                GameObject copy = UnityEngine.Object.Instantiate(effectPreFab, position, Quaternion.identity); // Quaternion.identity means no rotation
+                GameObject copy = Object.Instantiate(effectPreFab, position, Quaternion.identity); // Quaternion.identity means no rotation
                 SafeDestroy(copy, 1f);
             }
         }
@@ -284,13 +284,20 @@ namespace BaseUtil.GameUtil.Base
         /// <param name="gameObjectsToSetInactive"></param>
         public static void SetActiveAndDeActivateOthers(GameObject gameObjectToSetActive, List<GameObject> gameObjectsToSetInactive)
         {
-            UnityFn.SetActive(gameObjectToSetActive, () =>
+            SetActive(gameObjectToSetActive, () =>
             {
                 foreach (GameObject item in gameObjectsToSetInactive)
                 {
                     SetInactive(item, Fn.DoNothing);
                 }
             });
+        }
+
+        public static Rigidbody AddRigidBodyAndFreezeZ(GameObject gameObject)
+        {
+            Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+            rb.constraints = (RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation);
+            return rb;
         }
     }
 }

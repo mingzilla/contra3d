@@ -1,4 +1,5 @@
 ﻿using BaseUtil.GameUtil;
+using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.Player.domain;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
@@ -14,8 +15,7 @@ namespace ProjectContra.Scripts.Player
         {
             gameObject.tag = GameTag.CHARACTER_IN_GAME.name;
             gameObject.layer = GameLayer.PLAYER.GetLayer();
-            rb = gameObject.AddComponent<Rigidbody>();
-            rb.constraints = (RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation);
+            rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
             playerAttribute = PlayerAttribute.CreateEmpty(playerId);
         }
 
