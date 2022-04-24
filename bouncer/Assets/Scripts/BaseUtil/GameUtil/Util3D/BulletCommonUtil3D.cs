@@ -9,8 +9,11 @@ namespace BaseUtil.GameUtil.Util3D
 {
     public class BulletCommonUtil3D
     {
-        public static Rigidbody AddRigidbodyToBullet(GameObject gameObject)
+        public static Rigidbody AddRigidbodyAndColliderToBullet(GameObject gameObject)
         {
+            SphereCollider collider = gameObject.AddComponent<SphereCollider>();
+            collider.radius = 1f;
+            collider.isTrigger = true;
             Rigidbody rb = gameObject.AddComponent<Rigidbody>();
             rb.useGravity = false;
             return rb;

@@ -21,13 +21,13 @@ namespace ProjectContra.Scripts.Bullet
             GameObject prefab = AppResource.instance.GetBulletPrefab(weaponType);
             BulletController copy = Instantiate(prefab, shotPoint.position, shotPoint.rotation).GetComponent<BulletController>();
             copy.moveDirection = BulletCommonUtil3D.CreateBulletDirection(isFacingForward, userInput, isOnGround);
+            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject);
             copy.weaponType = weaponType;
             return copy;
         }
 
         private void Awake()
         {
-            rb = BulletCommonUtil3D.AddRigidbodyToBullet(gameObject);
             gameObject.layer = GameLayer.PLAYER_SHOT.GetLayer();
         }
 
