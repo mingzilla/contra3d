@@ -17,11 +17,10 @@ namespace BaseUtil.GameUtil
         /// <returns></returns>
         public static bool IsOnGround(Vector3 playerPosition, float playerToGroundDistance, LayerMask groundLayers)
         {
-            
             Vector3 position = new Vector3(playerPosition.x, playerPosition.y - playerToGroundDistance, playerPosition.z);
             // check: within circle close to groundPoint, is there any ground
             // .2f is a good value 
-            return Physics2D.OverlapCircle(position, .2f, groundLayers);
+            return Physics.CheckSphere(position, .2f, groundLayers);
         }
     }
 }
