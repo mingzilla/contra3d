@@ -95,7 +95,7 @@ namespace BaseUtil.GameUtil.Base
             if (effectPreFab != null)
             {
                 GameObject copy = Object.Instantiate(effectPreFab, position, Quaternion.identity); // Quaternion.identity means no rotation
-                SafeDestroy(copy, 1f);
+                SafeDestroy(copy, 5f);
             }
         }
 

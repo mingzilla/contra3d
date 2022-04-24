@@ -17,7 +17,7 @@ namespace ProjectContra.Scripts.Player
         public void Init(int playerId)
         {
             gameObject.tag = GameTag.CHARACTER_IN_GAME.name;
-            gameObject.layer = GameLayer.PLAYER.GetLayer();
+            gameObject.layer = GameLayer.PLAYER_SHOT.GetLayer();
             rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
             playerAttribute = PlayerAttribute.CreateEmpty(playerId);
             groundLayers = GameLayer.GetGroundLayerMask();
@@ -34,7 +34,7 @@ namespace ProjectContra.Scripts.Player
             
             if (userInput.fire1)
             {
-                BulletController.Spawn(transform, isFacingForward, userInput, WeaponType.BASIC, isOnGround);
+                BulletController.Spawn(transform, isFacingForward, userInput, WeaponType.BLAST, isOnGround);
             }
 
         }

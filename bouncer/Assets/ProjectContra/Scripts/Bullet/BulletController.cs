@@ -10,24 +10,11 @@ namespace ProjectContra.Scripts.Bullet
 {
     public class BulletController : MonoBehaviour
     {
-        public float bulletSpeed = 20f;
         public GameObject impactEffect;
-        public float autoDestroyTime = 2f;
 
         private Rigidbody rb;
-        private Vector2 moveDirection;
+        private Vector3 moveDirection;
         private WeaponType weaponType;
-
-        private void Awake()
-        {
-            rb = BulletCommonUtil3D.AddRigidbodyToBullet(gameObject);
-            UnityFn.WaitForSeconds(this, autoDestroyTime, () => Destroy(gameObject));
-        }
-
-        void Update()
-        {
-            BulletCommonUtil3D.HandleBulletMovement(rb, moveDirection, bulletSpeed);
-        }
 
         public static BulletController Spawn(Transform shotPoint, bool isFacingForward, UserInput userInput, WeaponType weaponType, bool isOnGround)
         {
@@ -38,9 +25,25 @@ namespace ProjectContra.Scripts.Bullet
             return copy;
         }
 
+        private void Awake()
+        {
+            rb = BulletCommonUtil3D.AddRigidbodyToBullet(gameObject);
+            gameObject.layer = GameLayer.PLAYER_SHOT.GetLayer();
+        }
+
+        private void Start()
+        {
+            UnityFn.WaitForSeconds(this, weaponType.autoDestroyTime, () => Destroy(gameObject));
+        }
+
+        void Update()
+        {
+            BulletCommonUtil3D.HandleBulletMovement(rb, moveDirection, weaponType.bulletSpeed);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            var position = transform.position;
+            Vector3 position = transform.position;
             UnityFn.CreateEffect(impactEffect, position);
             Destroy(gameObject);
             GameFn.DealDamageToUnit(position, weaponType.blastRange, weaponType.destructibleLayers, weaponType.damage, (stat) => { });

@@ -25,9 +25,9 @@ TagManager:
   - NO_COLLISION
   - DESTRUCTIBLE
   - ENEMY
+  - ENEMY_SHOT
   - ENEMY_DETECTION_RANGE
   - POWER_UP
-  - 
   - 
   - 
   - 

@@ -6,15 +6,17 @@ namespace ProjectContra.Scripts.Types
 {
     public class WeaponType
     {
-        public static readonly WeaponType BASIC = Create("BASIC", 1, 1f);
-        public static readonly WeaponType BLAST = Create("BLAST", 5, 3f);
-        public static readonly WeaponType WIDE = Create("WIDE", 2, 1f);
-        public static readonly WeaponType LASER = Create("LASER", 5, 1f);
-        public static readonly WeaponType ACCELERATE = Create("ACCELERATE", 1, 1f);
+        public static readonly WeaponType BASIC = Create("BASIC", 1, 1f, 20f, 3f);
+        public static readonly WeaponType BLAST = Create("BLAST", 5, 3f, 40f, 2f);
+        public static readonly WeaponType WIDE = Create("WIDE", 2, 1f, 20f, 3f);
+        public static readonly WeaponType LASER = Create("LASER", 5, 1f, 20f, 3f);
+        public static readonly WeaponType ACCELERATE = Create("ACCELERATE", 1, 1f, 20f, 3f);
 
         public string name;
         public int damage;
         public float blastRange;
+        public float bulletSpeed;
+        public float autoDestroyTime;
 
         public LayerMask destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.DESTRUCTIBLE, GameLayer.ENEMY});
 
@@ -32,13 +34,15 @@ namespace ProjectContra.Scripts.Types
             };
         }
 
-        public static WeaponType Create(string name, int damage, float blastRange)
+        public static WeaponType Create(string name, int damage, float blastRange, float bulletSpeed, float autoDestroyTime)
         {
             WeaponType type = new WeaponType
             {
                 name = name,
                 damage = damage,
-                blastRange = blastRange
+                blastRange = blastRange,
+                bulletSpeed = bulletSpeed,
+                autoDestroyTime = autoDestroyTime,
             };
             return type;
         }

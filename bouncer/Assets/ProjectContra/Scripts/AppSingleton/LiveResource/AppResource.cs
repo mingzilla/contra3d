@@ -12,6 +12,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         [SerializeField] private GameObject basicBulletPrefab, blastBulletPrefab;
         public readonly Dictionary<WeaponType, GameObject> weaponTypeAndBulletPrefab = new Dictionary<WeaponType, GameObject>();
 
+        [SerializeField] public GameObject smallExplosionPrefab, bigExplosionPrefab, explosiveShotEffectPrefab;
+
         private void Awake()
         {
             UnityFn.MarkSingletonAndKeepAlive(instance, gameObject, () => instance = this);
