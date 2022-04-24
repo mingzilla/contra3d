@@ -61,5 +61,10 @@ namespace ProjectContra.Scripts.Player
             if (context.started) userInput.jump = true;
             if (context.canceled) userInput.jumpCancelled = true;
         }
+
+        public void Fire1(InputAction.CallbackContext context)
+        {
+            if (context.started) userInput.fire1 = true;
+        }
     }
 }

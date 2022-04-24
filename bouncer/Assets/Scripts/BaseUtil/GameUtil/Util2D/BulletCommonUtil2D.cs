@@ -5,7 +5,7 @@ using BaseUtil.GameUtil.Domain;
 using BaseUtil.GameUtil.Base;
 using System;
 
-namespace BaseUtil.GameUtil
+namespace BaseUtil.GameUtil.Util2D
 {
     public class BulletCommonUtil2D
     {

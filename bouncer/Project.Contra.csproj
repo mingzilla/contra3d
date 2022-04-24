@@ -50,15 +50,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\LiveResource\AppResource.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\PlayerManagerController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Bullet\BulletController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Map\HorizontalMapController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInGameController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInMenuController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\domain\PlayerAttribute.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\PlayerManagerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameControlState.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameLayer.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameTag.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Types\WeaponType.cs" />
      <None Include="Assets\ProjectContra\Project.Contra.asmdef" />
  <Reference Include="Unity.InputSystem">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>

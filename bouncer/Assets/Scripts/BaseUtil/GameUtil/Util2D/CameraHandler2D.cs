@@ -3,7 +3,7 @@ using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using UnityEngine;
 
-namespace BaseUtil.GameUtil
+namespace BaseUtil.GameUtil.Util2D
 {
     public static class CameraHandler2D
     {

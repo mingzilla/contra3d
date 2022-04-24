@@ -244,6 +244,7 @@ namespace BaseUtil.GameUtil.Base
             if (instance == null)
             {
                 setInstanceToThisFn();
+                gameObj.transform.parent = null; // only root level object can be set to not destroyable
                 Object.DontDestroyOnLoad(gameObj);
             }
             else

@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using BaseUtil.Base;
 
-namespace BaseUtil.GameUtil
+namespace BaseUtil.GameUtil.Util2D
 {
     public class PlayerActionHandler2D
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BaseUtil.GameUtil
+namespace BaseUtil.GameUtil.Util2D
 {
     public class ShotPointHandler2D
     {

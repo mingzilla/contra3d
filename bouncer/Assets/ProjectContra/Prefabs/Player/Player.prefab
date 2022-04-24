@@ -90,7 +90,18 @@ MonoBehaviour:
     m_ActionId: 5a9cf74b-c8c3-49f8-95f0-45858d366c2d
     m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1704468264798570658}
+        m_MethodName: Fire1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: abfeb987-81c0-4198-8736-9704fb2e495a
     m_ActionName: Player/Fire[/XInputControllerWindows/buttonSouth,/Mouse/leftButton]
   - m_PersistentCalls:

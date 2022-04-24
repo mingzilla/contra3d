@@ -6,7 +6,7 @@ using BaseUtil.GameUtil.Domain;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Types;
 
-namespace BaseUtil.GameUtil
+namespace BaseUtil.GameUtil.Util2D
 {
     public class UnitDisplayHandler2D
     {
