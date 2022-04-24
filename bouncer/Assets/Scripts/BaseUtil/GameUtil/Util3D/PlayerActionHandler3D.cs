@@ -2,7 +2,7 @@
 using BaseUtil.Base;
 using UnityEngine;
 
-namespace BaseUtil.GameUtil
+namespace BaseUtil.GameUtil.Util3D
 {
     public static class PlayerActionHandler3D
     {

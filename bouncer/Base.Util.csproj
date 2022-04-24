@@ -71,7 +71,6 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitStat.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\EnemyCommonUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\MovementUtil.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerActionHandler3D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\StatusCheck.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameLayer.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameTag.cs" />
@@ -84,6 +83,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\ShotPointHandler2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\UnitDisplayHandler2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\BulletCommonUtil3D.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\PlayerActionHandler3D.cs" />
      <None Include="Assets\Scripts\BaseUtil\Base.Util.asmdef" />
  <Reference Include="Unity.InputSystem">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
