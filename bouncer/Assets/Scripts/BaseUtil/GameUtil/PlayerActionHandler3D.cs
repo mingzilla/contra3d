@@ -48,6 +48,20 @@ namespace BaseUtil.GameUtil
             if (isOnGround) HandleJump(rb, jumpForce);
         }
 
+        /**
+         * @return new isInDoubleJumpStatus
+         */
+        private static bool HandleJumpFromGroundOrDoubleJump(bool isOnGround, bool isInDoubleJumpStatus, Rigidbody rb, float jumpForce)
+        {
+            return GameLogic.HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, () => HandleJump(rb, jumpForce));
+        }
+
+        public static void HandleJump(Rigidbody rb, float jumpForce)
+        {
+            Vector3 velocity = rb.velocity;
+            rb.velocity = new Vector3(velocity.x, jumpForce, velocity.z);
+        }
+
         /// <summary>
         /// Assists implementation of low jump, so that jumping high needs to press and hold the jump button
         /// </summary>
@@ -61,18 +75,14 @@ namespace BaseUtil.GameUtil
             rb.velocity = new Vector3(velocity.x, velocity.y * 0.1f, velocity.z);
         }
 
-        /**
-         * @return new isInDoubleJumpStatus
-         */
-        private static bool HandleJumpFromGroundOrDoubleJump(bool isOnGround, bool isInDoubleJumpStatus, Rigidbody rb, float jumpForce)
+        /// <summary>
+        /// Combined with jumpForce applied to jumping, to avoid characters being floaty
+        /// </summary>
+        /// <param name="rb"></param>
+        /// <param name="gravityMultiplier"></param>
+        public static void HandleGravityModification(Rigidbody rb, float gravityMultiplier)
         {
-            return GameLogic.HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, () => HandleJump(rb, jumpForce));
-        }
-
-        public static void HandleJump(Rigidbody rb, float jumpForce)
-        {
-            Vector3 velocity = rb.velocity;
-            rb.velocity = new Vector3(velocity.x, jumpForce, velocity.z);
+            rb.velocity += Vector3.up * Physics.gravity.y * gravityMultiplier * Time.deltaTime;
         }
     }
 }

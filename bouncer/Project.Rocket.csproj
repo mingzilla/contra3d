@@ -12,10 +12,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{bc32206c-df57-643f-72f5-c4302e85ef04}</ProjectGuid>
+    <ProjectGuid>{06bbc1ad-f0c5-ac56-9552-212aaa2146c6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Project.Rocket</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -50,51 +50,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Types\GameTag.cs" />
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TerrainTools">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
- </Reference>
- <Reference Include="Cinemachine">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VSCode.Editor">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
- </Reference>
+     <Compile Include="Assets\ProjectRocket\Scripts\ObstacleMovementController.cs" />
+     <Compile Include="Assets\ProjectRocket\Scripts\RocketController.cs" />
+     <Compile Include="Assets\ProjectRocket\Scripts\RocketDestinationController.cs" />
+     <Compile Include="Assets\ProjectRocket\Scripts\Types\GameTag.cs" />
+     <None Include="Assets\ProjectRocket\Project.Rocket.asmdef" />
  <Reference Include="Unity.InputSystem">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
  </Reference>
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Rider.Editor">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.cinemachine.editor">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TerrainTools.Editor">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.PlasticSCM.Editor">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>E:/dev/unity_hub_editor/2019.4.38f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -278,6 +246,30 @@
  </Reference>
  <Reference Include="UnityEditor">
  <HintPath>E:/dev/unity_hub_editor/2019.4.38f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.VR">
+ <HintPath>E:/dev/unity_hub_editor/2019.4.38f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>E:/dev/unity_hub_editor/2019.4.38f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>E:/dev/unity_hub_editor/2019.4.38f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WebGL.Extensions">
+ <HintPath>E:/dev/unity_hub_editor/2019.4.38f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="log4netPlastic">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/PackageCache/com.unity.collab-proxy@1.14.15/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Plastic.Antlr3.Runtime">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/PackageCache/com.unity.collab-proxy@1.14.15/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Plastic.Newtonsoft.Json">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/PackageCache/com.unity.collab-proxy@1.14.15/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="unityplastic">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/PackageCache/com.unity.collab-proxy@1.14.15/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>E:/dev/unity_hub_editor/2019.4.38f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -626,22 +618,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Project.External.csproj">
-      <Project>{31eafdae-2552-b3c9-c66b-8b72f109255c}</Project>
-      <Name>Project.External</Name>
-    </ProjectReference>
-    <ProjectReference Include="Project.Bouncer.csproj">
-      <Project>{a6ec32f1-18a2-8c13-a66b-dba7bd9085ea}</Project>
-      <Name>Project.Bouncer</Name>
-    </ProjectReference>
-    <ProjectReference Include="Project.Rocket.csproj">
-      <Project>{06bbc1ad-f0c5-ac56-9552-212aaa2146c6}</Project>
-      <Name>Project.Rocket</Name>
-    </ProjectReference>
-    <ProjectReference Include="Project.Contra.csproj">
-      <Project>{36f30a28-2b47-0f0c-14c2-19351775c49a}</Project>
-      <Name>Project.Contra</Name>
-    </ProjectReference>
     <ProjectReference Include="Base.Util.csproj">
       <Project>{9e50233b-2e95-30a1-aa4a-f2485055deaa}</Project>
       <Name>Base.Util</Name>

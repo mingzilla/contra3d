@@ -27,6 +27,7 @@ namespace ProjectContra.Scripts.Player
 
             bool isOnGround = StatusCheck.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
+            PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
         }
     }
 }

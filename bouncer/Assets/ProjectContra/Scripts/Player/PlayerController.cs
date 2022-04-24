@@ -38,7 +38,7 @@ namespace ProjectContra.Scripts.Player
             AllocateControlObject(currentControlState);
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (currentControlState == GameControlState.IN_GAME) inGameController.HandleUpdate(userInput);
             if (currentControlState == GameControlState.TITLE_SCREEN_MENU) inMenuController.HandleUpdate(userInput);

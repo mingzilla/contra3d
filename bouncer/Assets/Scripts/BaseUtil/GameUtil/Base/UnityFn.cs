@@ -308,6 +308,7 @@ namespace BaseUtil.GameUtil.Base
             material.dynamicFriction = 0f;
             material.staticFriction = 0f;
             material.bounciness = 0f;
+            material.frictionCombine = PhysicMaterialCombine.Minimum;
 
             mc.material = material;
             return mc;
