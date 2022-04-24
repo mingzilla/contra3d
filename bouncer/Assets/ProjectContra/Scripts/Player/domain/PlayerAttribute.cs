@@ -5,9 +5,9 @@ namespace ProjectContra.Scripts.Player.domain
     public class PlayerAttribute
     {
         public int playerId;
-        public float moveSpeed = 8; // good value by experience
-        public float jumpForce = 20; // good value by experience
-        public float dashSpeed = 25; // good value by experience
+        public float moveSpeed = 8f; // good value by experience
+        public float jumpForce = 20f; // good value by experience
+        public float dashSpeed = 25f; // good value by experience
         public float dashTime = 0.2f; // good value by experience
         public float playerToGroundDistance = 1f; // Not visible, so need to create an empty object on the UI, and calculate the distance to adjust
 
