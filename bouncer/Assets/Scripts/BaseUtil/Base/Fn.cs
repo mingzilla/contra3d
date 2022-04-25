@@ -49,6 +49,16 @@ namespace BaseUtil.Base
             collection.ForEach(fn);
         }
 
+        public static Dictionary<TKey, TValue> ModifyDictionary<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
+        {
+            if (dictionary.ContainsKey(key))
+            {
+                dictionary.Remove(key);
+            }
+            dictionary[(key)] = value;
+            return dictionary;
+        }
+
         public static Dictionary<TKey, TValue> SetDictionary<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
         {
             Dictionary<TKey, TValue> dict = new Dictionary<TKey, TValue>(dictionary);

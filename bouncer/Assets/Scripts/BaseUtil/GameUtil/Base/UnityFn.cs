@@ -90,12 +90,12 @@ namespace BaseUtil.GameUtil.Base
             Object.Destroy(obj, lifeTime);
         }
 
-        public static void CreateEffect(GameObject effectPreFab, Vector3 position)
+        public static void CreateEffect(GameObject effectPreFab, Vector3 position, float lifeTime)
         {
             if (effectPreFab != null)
             {
                 GameObject copy = Object.Instantiate(effectPreFab, position, Quaternion.identity); // Quaternion.identity means no rotation
-                SafeDestroy(copy, 5f);
+                SafeDestroy(copy, lifeTime);
             }
         }
 
@@ -299,6 +299,13 @@ namespace BaseUtil.GameUtil.Base
             Rigidbody rb = gameObject.AddComponent<Rigidbody>();
             rb.constraints = (RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation);
             return rb;
+        }
+
+        public static CapsuleCollider AddCapsuleCollider(GameObject gameObject, bool isTrigger)
+        {
+            CapsuleCollider collider = gameObject.AddComponent<CapsuleCollider>();
+            collider.isTrigger = isTrigger;
+            return collider;
         }
 
         public static MeshCollider AddNoFrictionMeshCollider(GameObject gameObject)

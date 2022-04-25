@@ -43,7 +43,7 @@ namespace BaseUtil.GameUtil.Domain
 
             if (currentHp == 0)
             {
-                UnityFn.CreateEffect(destroyEffect, destroyEffectPosition);
+                UnityFn.CreateEffect(destroyEffect, destroyEffectPosition, 1f);
                 if (GameLayer.Matches(gameObject.layer, GameLayer.PLAYER))
                 {
                     UnityFn.SetActiveOnTaggedRootOrSelf(gameObject, false);

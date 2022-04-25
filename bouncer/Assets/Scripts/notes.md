@@ -1,13 +1,4 @@
 ﻿## Referencing objects
 
-### Add rigidbody using code
-```cs
-void Start() {
-  Rigidbody rb = gameObject.AddComponent<Rigidbody>();
-  rb.useGravity = false;
-}
-```
-
-### FindObjectOfType<ComponentNameItHas> - slow
-
-### FindWithTag - faster
+### Use object pool for bullets
+* https://www.youtube.com/watch?v=2bPd_dmqGuM&ab_channel=LlamAcademy

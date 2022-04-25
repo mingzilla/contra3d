@@ -16,7 +16,8 @@ namespace ProjectContra.Scripts.Player.domain
         public bool hasDashAbility = true;
         public bool hasSmallShapeAbility = true;
 
-        public Vector3 playerPosition = Vector3.zero;
+        public int maxHp;
+        public int currentHp;
 
         public static PlayerAttribute CreateEmpty(int playerId)
         {

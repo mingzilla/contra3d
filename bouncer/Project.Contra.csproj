@@ -53,6 +53,9 @@
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\LiveResource\AppResource.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\PlayerManagerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Bullet\BulletController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyWalkerController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\GameData\GameStoreData.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Map\HorizontalMapController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInGameController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInMenuController.cs" />

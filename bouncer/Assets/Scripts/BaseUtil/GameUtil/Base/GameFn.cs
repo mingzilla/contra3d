@@ -13,39 +13,28 @@ namespace BaseUtil.GameUtil.Base
      */
     public static class GameFn
     {
+        /**
+         * @param blastRange generally needs to be 2. Too small may not overlap with other layer so may not trigger damage.
+         */
         public static void DealDamage(Vector3 position, float blastRange, LayerMask affectedLayers, Action<GameObject> damagingFn)
         {
-            Collider2D[] affectedObjects = Physics2D.OverlapCircleAll(position, blastRange, affectedLayers);
+            Collider[] affectedObjects = Physics.OverlapSphere(position, blastRange, affectedLayers, QueryTriggerInteraction.Ignore);
             foreach (var item in affectedObjects)
             {
                 damagingFn(item.gameObject);
             }
         }
 
-        /**
-         * @param blastRange generally needs to be 2. Too small may not overlap with other layer so may not trigger damage.
-         */
-        public static void DealDamageToUnit(Vector3 position, float blastRange, LayerMask affectedLayers, int damage, Action<UnitStat> updateUnitStatFn)
+        /// <param name="playerPosition"></param>
+        /// <param name="playerToGroundDistance">Not visible, so need to create an empty object on the UI, and calculate the distance to adjust</param>
+        /// <param name="groundLayers"></param>
+        /// <returns></returns>
+        public static bool IsOnGround(Vector3 playerPosition, float playerToGroundDistance, LayerMask groundLayers)
         {
-            GameFn.DealDamage(position, blastRange, affectedLayers, (GameObject gameObject) =>
-            {
-                GameObject rootObject = UnityFn.GetUnitRootOrSelf(gameObject);
-                if (rootObject == null)
-                {
-                    Debug.LogError("Can only deal damage to object that is a Unit Root or inside a Unit Root.");
-                    return;
-                }
-                UnitStat stat = rootObject.GetComponent<UnitStat>();
-                if (stat == null)
-                {
-                    // UnitStat needs to attatch to root because there can be siblings sprites share the same stats
-                    // However, the active sprit is the location for explosion effect to occur
-                    Debug.LogError("UnitStat script is not attached to an object tagged as 'Unit Root'");
-                    return;
-                }
-                stat.TakeDamage(damage, gameObject.transform.position);
-                updateUnitStatFn(stat);
-            });
+            Vector3 position = new Vector3(playerPosition.x, playerPosition.y - playerToGroundDistance, playerPosition.z);
+            // check: within circle close to groundPoint, is there any ground
+            // .2f is a good value 
+            return Physics.CheckSphere(position, .2f, groundLayers);
         }
     }
 }

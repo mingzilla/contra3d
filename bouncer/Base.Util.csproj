@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\Base\SelectedIds.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\AbstractOberverController.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\GameFn.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\GameFn2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\TagUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\UnityFn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\CameraUtil.cs" />
@@ -71,7 +72,6 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitStat.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\EnemyCommonUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\MovementUtil.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\StatusCheck.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameLayer.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameTag.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\PlayerInputScheme.cs" />
