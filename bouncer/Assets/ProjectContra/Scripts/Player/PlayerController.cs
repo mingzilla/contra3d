@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using BaseUtil.Base;
+﻿using System.Collections.Generic;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
+using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 
 namespace ProjectContra.Scripts.Player
 {
@@ -24,7 +21,7 @@ namespace ProjectContra.Scripts.Player
 
         private void Start()
         {
-            const int playerId = 0; // todo - use correct userIndex
+            int playerId = AppResource.instance.storeData.GetNextPlayerId();
 
             userInput = UserInput.Create(playerId);
             currentControlState = GameControlState.IN_GAME; // todo - change this depending on situation

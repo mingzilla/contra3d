@@ -56,8 +56,8 @@ namespace ProjectContra.Scripts.Enemy
 
         public override void TakeDamage(Vector3 position, int damage)
         {
-            Debug.Log("Enemy took " + damage);
             UnityFn.CreateEffect(destroyEffect, position, 1f);
+            Destroy(gameObject);
         }
     }
 }

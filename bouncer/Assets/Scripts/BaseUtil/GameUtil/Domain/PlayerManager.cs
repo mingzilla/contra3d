@@ -37,5 +37,15 @@ namespace BaseUtil.GameUtil.Domain
                 Object.Destroy(playerController.gameObject);
             }
         }
+
+        public void SetPlayer(int id, T playerAttribute)
+        {
+            activePlayers = Fn.ModifyDictionary(activePlayers, id, playerAttribute);
+        }
+
+        public T GetPlayer(int id)
+        {
+            return activePlayers[id];
+        }
     }
 }

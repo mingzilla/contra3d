@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.Base;
+using BaseUtil.GameUtil.Domain;
 using ProjectContra.Scripts.Player.domain;
 
 namespace ProjectContra.Scripts.GameData
@@ -7,6 +8,11 @@ namespace ProjectContra.Scripts.GameData
     public class GameStoreData
     {
         private Dictionary<int, PlayerAttribute> idAndPlayerState = new Dictionary<int, PlayerAttribute>();
+
+        public int GetNextPlayerId()
+        {
+            return idAndPlayerState.Count;
+        }
 
         public void SetPlayer(PlayerAttribute playerAttribute)
         {
