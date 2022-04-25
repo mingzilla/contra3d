@@ -61,7 +61,7 @@ namespace ProjectContra.Scripts.Player
 
         public void Fire1(InputAction.CallbackContext context)
         {
-            if (context.started) userInput.fire1 = true;
+            if (context.started && userInput != null) userInput.fire1 = true;
         }
     }
 }
