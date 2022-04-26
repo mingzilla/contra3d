@@ -10,10 +10,12 @@ namespace BaseUtil.GameUtil.Util2D
         public static void FollowPlayers(Transform cameraTransform, BoxCollider2D cameraBound, List<Vector3> playerPositions)
         {
             if (playerPositions.Count == 0) return;
-            FollowPlayer(cameraTransform, cameraBound, UnityFn.GetMeanVector3(playerPositions));
+            Vector3 position = UnityFn.GetMeanVector3(playerPositions);
+            if (cameraBound == null) FollowPlayer(cameraTransform, position.x, position.y);
+            if (cameraBound != null) FollowPlayerWithBoundary(cameraTransform, cameraBound, position);
         }
 
-        public static void FollowPlayer(Transform cameraTransform, BoxCollider2D cameraBound, Vector3 playerPosition)
+        public static void FollowPlayerWithBoundary(Transform cameraTransform, BoxCollider2D cameraBound, Vector3 playerPosition)
         {
             float halfHeight = CameraUtil.GetMainCameraHalfHeight();
             float halfWidth = CameraUtil.GetMainCameraHalfWidth();
@@ -23,6 +25,11 @@ namespace BaseUtil.GameUtil.Util2D
             float x = Mathf.Clamp(playerPosition.x, bounds.min.x + halfWidth, bounds.max.x - halfWidth);
             float y = Mathf.Clamp(playerPosition.y, bounds.min.y + halfHeight, bounds.max.y - halfHeight);
 
+            FollowPlayer(cameraTransform, x, y);
+        }
+
+        public static void FollowPlayer(Transform cameraTransform, float x, float y)
+        {
             // x, y follow player, z stays the same, see nothing if player and camera have the same z position
             Vector3 originalPosition = cameraTransform.position;
             Vector3 targetPosition = new Vector3(x, y, originalPosition.z);
@@ -42,8 +49,6 @@ namespace BaseUtil.GameUtil.Util2D
         {
             Camera camera = Camera.main;
             if (camera == null) return;
-
-            CalculateCameraSize(minY, maxY, camera.aspect, cameraPosition, playerPositions);
             camera.orthographicSize = CalculateCameraSize(minY, maxY, camera.aspect, cameraPosition, playerPositions);
         }
 

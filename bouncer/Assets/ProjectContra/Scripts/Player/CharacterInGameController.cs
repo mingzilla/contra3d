@@ -47,6 +47,7 @@ namespace ProjectContra.Scripts.Player
                 BulletController.Spawn(transform, isFacingForward, userInput, WeaponType.BLAST, isOnGround);
             }
 
+            playerAttribute.inGamePosition = transform.position;
             storeData.SetPlayer(playerAttribute);
         }
 

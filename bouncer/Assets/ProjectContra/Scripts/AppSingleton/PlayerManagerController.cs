@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using ProjectContra.Scripts.Types;
 
-namespace ProjectContra.Scripts
+namespace ProjectContra.Scripts.AppSingleton
 {
     public class PlayerManagerController : MonoBehaviour
     {

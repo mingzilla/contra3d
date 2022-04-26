@@ -83,6 +83,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\ShotPointHandler2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\UnitDisplayHandler2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\BulletCommonUtil3D.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\CameraHandler3D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\PlayerActionHandler3D.cs" />
      <None Include="Assets\Scripts\BaseUtil\Base.Util.asmdef" />
  <Reference Include="Unity.InputSystem">

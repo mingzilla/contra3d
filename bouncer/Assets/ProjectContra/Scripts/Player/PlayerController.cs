@@ -50,18 +50,21 @@ namespace ProjectContra.Scripts.Player
 
         public void Move(InputAction.CallbackContext context)
         {
+            if (userInput == null) return;
             userInput = UserInput.Move(userInput, context);
         }
 
         public void Jump(InputAction.CallbackContext context)
         {
+            if (userInput == null) return;
             if (context.started) userInput.jump = true;
             if (context.canceled) userInput.jumpCancelled = true;
         }
 
         public void Fire1(InputAction.CallbackContext context)
         {
-            if (context.started && userInput != null) userInput.fire1 = true;
+            if (userInput == null) return;
+            if (context.started) userInput.fire1 = true;
         }
     }
 }
