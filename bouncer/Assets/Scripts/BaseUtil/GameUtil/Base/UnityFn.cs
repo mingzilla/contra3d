@@ -197,7 +197,7 @@ namespace BaseUtil.GameUtil.Base
             return spriteRenderers;
         }
 
-        public static void WaitForSeconds(MonoBehaviour controller, float delay, Action fn)
+        public static void SetTimeout(MonoBehaviour controller, float delay, Action fn)
         {
             controller.StartCoroutine(TimeOutDelayFn(delay, fn));
         }
@@ -217,6 +217,25 @@ namespace BaseUtil.GameUtil.Base
         {
             yield return new WaitUntil(conditionFn);
             fn();
+        }
+
+        public static T GetClosestTarget<T>(Vector3 source, List<T> targets, Func<T, Vector3> getPositionFn)
+        {
+            int count = targets.Count;
+            if (count == 0) throw new ArgumentException("Need to have at least one target");
+
+            T closestTarget = targets[0];
+            float shortestDistance = Vector3.Distance(source, getPositionFn(targets[0]));
+            foreach (T target in targets)
+            {
+                float distance = Vector3.Distance(source, getPositionFn(target));
+                if (distance < shortestDistance)
+                {
+                    closestTarget = target;
+                    shortestDistance = distance;
+                }
+            }
+            return closestTarget;
         }
 
         public static Vector3 GetMeanVector3(List<Vector3> positions)

@@ -34,7 +34,7 @@ namespace ProjectContra.Scripts.Bullet
 
         private void Start()
         {
-            UnityFn.WaitForSeconds(this, weaponType.autoDestroyTime, () => Destroy(gameObject));
+            UnityFn.SetTimeout(this, weaponType.autoDestroyTime, () => Destroy(gameObject));
         }
 
         void Update()

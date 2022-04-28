@@ -23,12 +23,12 @@ namespace ProjectContra.Scripts.Player
         public void Init(int id)
         {
             storeData = AppResource.instance.storeData;
-            storeData.SetPlayer(PlayerAttribute.CreateEmpty(id));
             playerId = id;
             gameObject.tag = GameTag.CHARACTER_IN_GAME.name;
             gameObject.layer = GameLayer.PLAYER.GetLayer();
             rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
             groundLayers = GameLayer.GetGroundLayerMask();
+            storeData.SetPlayer(PlayerAttribute.CreateEmpty(id));
         }
 
         public void HandleUpdate(UserInput userInput)
@@ -47,7 +47,7 @@ namespace ProjectContra.Scripts.Player
                 BulletController.Spawn(transform, isFacingForward, userInput, WeaponType.BLAST, isOnGround);
             }
 
-            playerAttribute.inGamePosition = transform.position;
+            playerAttribute.inGameTransform = transform;
             storeData.SetPlayer(playerAttribute);
         }
 

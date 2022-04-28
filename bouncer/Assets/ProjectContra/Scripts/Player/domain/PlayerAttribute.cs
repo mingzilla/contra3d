@@ -19,7 +19,7 @@ namespace ProjectContra.Scripts.Player.domain
         public int maxHp;
         public int currentHp;
 
-        public Vector3 inGamePosition;
+        public Transform inGameTransform;
 
         public static PlayerAttribute CreateEmpty(int playerId)
         {

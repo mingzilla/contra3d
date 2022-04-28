@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using BaseUtil.Base;
+using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Domain;
 using ProjectContra.Scripts.Player.domain;
 using UnityEngine;
@@ -28,7 +29,23 @@ namespace ProjectContra.Scripts.GameData
 
         public List<Vector3> AllPlayerPositions()
         {
-            return Fn.Map(x => x.inGamePosition, idAndPlayerState.Values.ToList());
+            return Fn.Map(x => x.inGameTransform.position, GetVisiblePlayers());
+        }
+
+        public bool HasPlayer()
+        {
+            return idAndPlayerState.Count > 0;
+        }
+
+        public PlayerAttribute GetClosestPlayer(Vector3 position)
+        {
+            return UnityFn.GetClosestTarget(position, GetVisiblePlayers(), p => p.inGameTransform.position);
+        }
+
+        private List<PlayerAttribute> GetVisiblePlayers()
+        {
+            // a player may not have a position, especially when they disappear
+            return Fn.Filter(x => x.inGameTransform != null, idAndPlayerState.Values.ToList());
         }
     }
 }

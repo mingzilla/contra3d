@@ -14,12 +14,16 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         [SerializeField] private GameObject basicBulletPrefab, blastBulletPrefab;
         public readonly Dictionary<WeaponType, GameObject> weaponTypeAndBulletPrefab = new Dictionary<WeaponType, GameObject>();
 
+        [SerializeField] private GameObject enemyBasicBulletPrefab, enemyBlastBulletPrefab;
+        public readonly Dictionary<EnemyBulletType, GameObject> enemyBulletTypeAndBulletPrefab = new Dictionary<EnemyBulletType, GameObject>();
+
         [SerializeField] public GameObject smallExplosionPrefab, bigExplosionPrefab, explosiveShotEffectPrefab;
 
         private void Awake()
         {
             UnityFn.MarkSingletonAndKeepAlive(instance, gameObject, () => instance = this);
             ConfigureBullets();
+            ConfigureEnemyBullets();
         }
 
         void ConfigureBullets()
@@ -32,6 +36,18 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         {
             if (!weaponTypeAndBulletPrefab.ContainsKey(weaponType)) return weaponTypeAndBulletPrefab[WeaponType.BASIC];
             return weaponTypeAndBulletPrefab[weaponType];
+        }
+
+        void ConfigureEnemyBullets()
+        {
+            enemyBulletTypeAndBulletPrefab[EnemyBulletType.BASIC] = enemyBasicBulletPrefab;
+            enemyBulletTypeAndBulletPrefab[EnemyBulletType.BLAST] = enemyBlastBulletPrefab;
+        }
+
+        public GameObject GetEnemyBulletPrefab(EnemyBulletType enemyBulletType)
+        {
+            if (!enemyBulletTypeAndBulletPrefab.ContainsKey(enemyBulletType)) return enemyBulletTypeAndBulletPrefab[EnemyBulletType.BASIC];
+            return enemyBulletTypeAndBulletPrefab[enemyBulletType];
         }
     }
 }
