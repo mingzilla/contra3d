@@ -11,12 +11,15 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public static AppResource instance;
         public readonly GameStoreData storeData = new GameStoreData();
 
+        // Player bullets
         [SerializeField] private GameObject basicBulletPrefab, blastBulletPrefab;
         public readonly Dictionary<WeaponType, GameObject> weaponTypeAndBulletPrefab = new Dictionary<WeaponType, GameObject>();
 
-        [SerializeField] private GameObject enemyBasicBulletPrefab, enemyBlastBulletPrefab;
+        // Enemy bullets
+        [SerializeField] private GameObject enemyBasicBulletPrefab, enemyFollowerBulletPrefab, enemyBlastBulletPrefab;
         public readonly Dictionary<EnemyBulletType, GameObject> enemyBulletTypeAndBulletPrefab = new Dictionary<EnemyBulletType, GameObject>();
 
+        // Explosion effects
         [SerializeField] public GameObject smallExplosionPrefab, bigExplosionPrefab, explosiveShotEffectPrefab;
 
         private void Awake()
@@ -41,6 +44,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         void ConfigureEnemyBullets()
         {
             enemyBulletTypeAndBulletPrefab[EnemyBulletType.BASIC] = enemyBasicBulletPrefab;
+            enemyBulletTypeAndBulletPrefab[EnemyBulletType.FOLLOW] = enemyFollowerBulletPrefab;
             enemyBulletTypeAndBulletPrefab[EnemyBulletType.BLAST] = enemyBlastBulletPrefab;
         }
 

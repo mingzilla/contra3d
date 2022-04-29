@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6746626226049694469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6746626226049694468}
+  - component: {fileID: 6746626226049694475}
+  m_Layer: 0
+  m_Name: AppResource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6746626226049694468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6746626226049694469}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6746626226049694475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6746626226049694469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df3d0f4b8014571a44f399a9d3cda03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicBulletPrefab: {fileID: 3164751046395291120, guid: c5593155681200c4abde22768f361f39,
+    type: 3}
+  blastBulletPrefab: {fileID: 4090495976328841163, guid: cda973ab8d6ecd94591acab593d2fbe1,
+    type: 3}
+  enemyBasicBulletPrefab: {fileID: 4362966052311366046, guid: 167c11b1efbb1b046a2b6c15eb207b36,
+    type: 3}
+  enemyFollowerBulletPrefab: {fileID: 4362966052311366046, guid: 06f446d0c7de80f428104a8a6315c252,
+    type: 3}
+  enemyBlastBulletPrefab: {fileID: 0}
+  smallExplosionPrefab: {fileID: 5035670118569957943, guid: 7bb91091cfb7a524aa710022b6cef03a,
+    type: 3}
+  bigExplosionPrefab: {fileID: 2429561131109888901, guid: f4e5cafa586fbc343a8e949b44e6a2da,
+    type: 3}
+  explosiveShotEffectPrefab: {fileID: 553932777566549550, guid: 415baf75cdd6d9f48a207afae17f554d,
+    type: 3}
