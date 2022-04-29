@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  moveSpeed: 5
+  moveSpeed: 4
   jumpForce: 8
 --- !u!136 &5849297839655832023
 CapsuleCollider:
