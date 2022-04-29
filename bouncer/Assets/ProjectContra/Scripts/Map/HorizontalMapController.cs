@@ -14,7 +14,7 @@ namespace ProjectContra.Scripts.Map
         void Start()
         {
             gameObject.layer = GameLayer.GROUND.GetLayer();
-            meshCollider = UnityFn.AddNoFrictionMeshCollider(gameObject);
+            meshCollider = UnityFn.AddNoFrictionCollider<MeshCollider>(gameObject);
         }
     }
 }
