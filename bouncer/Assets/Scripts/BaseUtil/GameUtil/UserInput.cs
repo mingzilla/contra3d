@@ -138,7 +138,7 @@ namespace BaseUtil.GameUtil
             userInput.fire3 = false;
         }
 
-        public static bool GetFacingDirection(bool isFacingForward, UserInput userInput)
+        public static bool IsFacingRight(bool isFacingForward, UserInput userInput)
         {
             if (userInput.left) return false;
             if (userInput.right) return true;

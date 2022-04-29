@@ -33,20 +33,23 @@ namespace ProjectContra.Scripts.Enemy
         // Update is called once per frame
         void Update()
         {
-            FireShots();
+            if (!storeData.HasPlayer()) return;
+            Vector3 position = transform.position;
+            Transform closestPlayer = storeData.GetClosestPlayer(position).inGameTransform;
+
+            transform.LookAt(closestPlayer);
+            FireShots(position, closestPlayer);
         }
 
-        void FireShots()
+        void FireShots(Vector3 position, Transform closestPlayer)
         {
-            if (!storeData.HasPlayer()) return;
             if (canFireShot)
             {
                 canFireShot = false;
                 UnityFn.SetTimeout(this, 3, () =>
                 {
                     canFireShot = true;
-                    Vector3 position = transform.position;
-                    EnemyBasicBulletController.Spawn(position, storeData.GetClosestPlayer(position).inGameTransform, EnemyBulletType.BASIC);
+                    EnemyBasicBulletController.Spawn(position, closestPlayer, EnemyBulletType.BASIC);
                 });
             }
         }

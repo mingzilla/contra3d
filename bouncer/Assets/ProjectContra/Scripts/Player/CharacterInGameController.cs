@@ -17,7 +17,7 @@ namespace ProjectContra.Scripts.Player
         private GameStoreData storeData;
         private Rigidbody rb;
         private LayerMask groundLayers;
-        private bool isFacingForward = true;
+        private bool isFacingRight = true;
         private int playerId;
 
         public void Init(int id)
@@ -36,7 +36,8 @@ namespace ProjectContra.Scripts.Player
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
 
             PlayerActionHandler3D.MoveX(userInput.fixedHorizontal, rb, playerAttribute.moveSpeed);
-            isFacingForward = UserInput.GetFacingDirection(isFacingForward, userInput);
+            isFacingRight = UserInput.IsFacingRight(isFacingRight, userInput);
+            PlayerActionHandler3D.HandleLeftRightFacing(transform, isFacingRight);
 
             bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
@@ -44,7 +45,7 @@ namespace ProjectContra.Scripts.Player
 
             if (userInput.fire1)
             {
-                BulletController.Spawn(transform, isFacingForward, userInput, WeaponType.BLAST, isOnGround);
+                BulletController.Spawn(transform, isFacingRight, userInput, WeaponType.BLAST, isOnGround);
             }
 
             playerAttribute.inGameTransform = transform;
