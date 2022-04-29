@@ -9,29 +9,30 @@ using UnityEngine;
 
 namespace ProjectContra.Scripts.EnemyBullet
 {
-    public class EnemyBasicBulletController : MonoBehaviour
+    /// <summary>
+    /// This type of bullet constantly follows the player, with instant direction changes, so it's slow and destroyable.
+    /// </summary>
+    public class EnemyFollowerBulletController : MonoBehaviour
     {
         public GameObject impactEffect;
 
         private Rigidbody rb;
         private EnemyBulletType enemyBulletType;
-        private GameObject shotDestination;
-        private Vector3 targetPosition;
+        private Transform closestPlayerTransform; // reference to the player, which changes if player moves 
 
-        public static EnemyBasicBulletController Spawn(Vector3 shotPosition, Transform closestPlayerTransform, EnemyBulletType enemyBulletType)
+        public static EnemyFollowerBulletController Spawn(Vector3 shotPosition, Transform closestPlayerTransform, EnemyBulletType enemyBulletType)
         {
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
-            EnemyBasicBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyBasicBulletController>();
+            EnemyFollowerBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyFollowerBulletController>();
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject);
             copy.enemyBulletType = enemyBulletType;
-            copy.targetPosition = closestPlayerTransform.position;
-            copy.transform.rotation = UnityFn.GetImmediateRotation3D(shotPosition, copy.targetPosition); // set rotation once since bullet goes one direction
+            copy.closestPlayerTransform = closestPlayerTransform;
             return copy;
         }
 
         private void Awake()
         {
-            gameObject.layer = GameLayer.ENEMY_SHOT.GetLayer();
+            gameObject.layer = GameLayer.ENEMY_DESTROYABLE_SHOT.GetLayer();
         }
 
         private void Start()
@@ -41,15 +42,7 @@ namespace ProjectContra.Scripts.EnemyBullet
 
         void Update()
         {
-            UpdateBulletPosition();
-        }
-
-        void UpdateBulletPosition()
-        {
-            Vector3 originalPosition = transform.position;
-            Vector3 delta = BulletCommonUtil3D.GetBulletPositionDelta(originalPosition, targetPosition, enemyBulletType.bulletSpeed, Time.deltaTime);
-            transform.position = originalPosition + delta;
-            targetPosition += delta; // move target further so that bullet never catches the target
+            MovementUtil.MoveTowardsPosition3D(transform, closestPlayerTransform, 0f, enemyBulletType.bulletSpeed, Time.deltaTime);
         }
 
         private void OnTriggerEnter(Collider other)

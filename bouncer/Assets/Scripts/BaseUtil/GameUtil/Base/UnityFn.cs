@@ -126,7 +126,12 @@ namespace BaseUtil.GameUtil.Base
             return Quaternion.Slerp(unit.rotation, desireRotation, turnSpeed * deltaTime);
         }
 
-        public static void GetRotation3D(Transform unit, Transform target)
+        public static Quaternion GetImmediateRotation3D(Vector3 unitPosition, Vector3 targetPosition)
+        {
+            return Quaternion.LookRotation(targetPosition - unitPosition);
+        }
+
+        public static void SetRotation3D(Transform unit, Transform target)
         {
             // makes sure unit faces target, in 3D
             unit.LookAt(target);

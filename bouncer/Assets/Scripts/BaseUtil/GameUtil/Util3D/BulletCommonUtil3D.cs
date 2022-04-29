@@ -19,7 +19,17 @@ namespace BaseUtil.GameUtil.Util3D
             return rb;
         }
 
-        public static void HandleBulletMovement(Rigidbody theRB, Vector3 moveDirection, float bulletSpeed)
+        /// <summary>
+        /// Provides the delta for bullet movement when only knowing the shooting point and destination, considering bullet won't stop at destination.  
+        /// </summary>
+        /// <returns>Position delta, which can be added to currentPosition and targetPosition. Adding to target is generally needed so that the bullet never stop at the original target</returns>
+        public static Vector3 GetBulletPositionDelta(Vector3 currentPosition, Vector3 targetPosition, float moveSpeed, float deltaTime)
+        {
+            Vector3 nextPosition = Vector3.MoveTowards(currentPosition, targetPosition, moveSpeed * deltaTime);
+            return nextPosition - currentPosition;
+        }
+
+        public static void HandleBulletFixedMovement(Rigidbody theRB, Vector3 moveDirection, float bulletSpeed)
         {
             theRB.velocity = moveDirection * bulletSpeed;
         }
@@ -28,7 +38,7 @@ namespace BaseUtil.GameUtil.Util3D
         {
             float x = isFacingForward ? 1f : -1f;
             float nonStraightY = 0.8f;
-            
+
             // Y: 0f - 0D, 1f - 45D, 2f - 90D
             Vector3 direction = new Vector3(x, 0f, 0f);
 

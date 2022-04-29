@@ -14,6 +14,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameLayer DESTRUCTIBLE = Create("DESTRUCTIBLE");
         public static readonly GameLayer ENEMY = Create("ENEMY"); // normal bullet can't shoot through
         public static readonly GameLayer ENEMY_SHOT = Create("ENEMY_SHOT");
+        public static readonly GameLayer ENEMY_DESTROYABLE_SHOT = Create("ENEMY_DESTROYABLE_SHOT");
         public static readonly GameLayer ENEMY_DETECTION_RANGE = Create("ENEMY_DETECTION_RANGE"); // bullet can shoot through
         public static readonly GameLayer POWER_UP = Create("POWER_UP");
         public static readonly GameLayer NO_COLLISION = Create("NO_COLLISION");
@@ -32,6 +33,7 @@ namespace ProjectContra.Scripts.Types
                 DESTRUCTIBLE,
                 ENEMY,
                 ENEMY_SHOT,
+                ENEMY_DESTROYABLE_SHOT,
                 ENEMY_DETECTION_RANGE,
                 POWER_UP,
                 NO_COLLISION,

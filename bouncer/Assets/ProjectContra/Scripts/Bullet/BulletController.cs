@@ -37,9 +37,9 @@ namespace ProjectContra.Scripts.Bullet
             UnityFn.SetTimeout(this, weaponType.autoDestroyTime, () => Destroy(gameObject));
         }
 
-        void Update()
+        void FixedUpdate()
         {
-            BulletCommonUtil3D.HandleBulletMovement(rb, moveDirection, weaponType.bulletSpeed);
+            BulletCommonUtil3D.HandleBulletFixedMovement(rb, moveDirection, weaponType.bulletSpeed);
         }
 
         private void OnTriggerEnter(Collider other)
