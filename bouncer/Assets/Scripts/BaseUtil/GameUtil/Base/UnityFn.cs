@@ -325,9 +325,9 @@ namespace BaseUtil.GameUtil.Base
             return rb;
         }
 
-        public static CapsuleCollider AddCapsuleCollider(GameObject gameObject, bool isTrigger)
+        public static T AddCollider<T>(GameObject gameObject, bool isTrigger) where T : Collider
         {
-            CapsuleCollider collider = gameObject.AddComponent<CapsuleCollider>();
+            T collider = gameObject.AddComponent<T>();
             collider.isTrigger = isTrigger;
             return collider;
         }
