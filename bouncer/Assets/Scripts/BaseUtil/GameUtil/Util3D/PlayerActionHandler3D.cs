@@ -1,5 +1,6 @@
 ﻿using System;
 using BaseUtil.Base;
+using BaseUtil.GameUtil.Base;
 using UnityEngine;
 
 namespace BaseUtil.GameUtil.Util3D
@@ -45,7 +46,7 @@ namespace BaseUtil.GameUtil.Util3D
 
         public static void HandleJumpFromGround(bool isOnGround, Rigidbody rb, float jumpForce)
         {
-            if (isOnGround) HandleJump(rb, jumpForce);
+            if (isOnGround) GameFn.HandleJump(rb, jumpForce);
         }
 
         /**
@@ -53,13 +54,7 @@ namespace BaseUtil.GameUtil.Util3D
          */
         private static bool HandleJumpFromGroundOrDoubleJump(bool isOnGround, bool isInDoubleJumpStatus, Rigidbody rb, float jumpForce)
         {
-            return GameLogic.HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, () => HandleJump(rb, jumpForce));
-        }
-
-        public static void HandleJump(Rigidbody rb, float jumpForce)
-        {
-            Vector3 velocity = rb.velocity;
-            rb.velocity = new Vector3(velocity.x, jumpForce, velocity.z);
+            return GameLogic.HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, () => GameFn.HandleJump(rb, jumpForce));
         }
 
         /// <summary>

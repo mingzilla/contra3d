@@ -13,6 +13,7 @@ namespace ProjectContra.Scripts.Enemy
     {
         public int damage = 1;
         public int moveSpeed = 10;
+        public float jumpForce = 20f;
 
         private GameStoreData storeData;
         private Rigidbody rb;
@@ -50,6 +51,11 @@ namespace ProjectContra.Scripts.Enemy
             DealDamage(other);
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            JumpAtTriggerPoint(other);
+        }
+
         void DealDamage(Collision other)
         {
             if (GameLayer.Matches(other.gameObject.layer, GameLayer.PLAYER))
@@ -60,6 +66,16 @@ namespace ProjectContra.Scripts.Enemy
                     CharacterInGameController character = obj.GetComponent<CharacterInGameController>();
                     character.TakeDamage(location, damage);
                 });
+            }
+        }
+
+        private void JumpAtTriggerPoint(Collider other)
+        {
+            Debug.Log(1);
+            if (GameLayer.Matches(other.gameObject.layer, GameLayer.ENEMY_JUMP_POINT))
+            {
+                Debug.Log(2);
+                GameFn.HandleJump(rb, jumpForce);
             }
         }
 

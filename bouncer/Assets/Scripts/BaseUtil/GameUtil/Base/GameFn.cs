@@ -36,5 +36,11 @@ namespace BaseUtil.GameUtil.Base
             // .2f is a good value 
             return Physics.CheckSphere(position, .2f, groundLayers);
         }
+        
+        public static void HandleJump(Rigidbody rb, float jumpForce)
+        {
+            Vector3 velocity = rb.velocity;
+            rb.velocity = new Vector3(velocity.x, jumpForce, velocity.z);
+        }
     }
 }

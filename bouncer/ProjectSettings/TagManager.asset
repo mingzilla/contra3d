@@ -26,9 +26,9 @@ TagManager:
   - DESTRUCTIBLE
   - ENEMY
   - ENEMY_SHOT
+  - ENEMY_JUMP_POINT
   - ENEMY_DETECTION_RANGE
   - POWER_UP
-  - 
   - 
   - 
   - 

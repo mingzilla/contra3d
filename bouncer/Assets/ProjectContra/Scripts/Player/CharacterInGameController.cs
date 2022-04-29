@@ -16,7 +16,6 @@ namespace ProjectContra.Scripts.Player
 
         private GameStoreData storeData;
         private Rigidbody rb;
-        private CapsuleCollider collider;
         private LayerMask groundLayers;
         private bool isFacingRight = true;
         private int playerId;
@@ -27,7 +26,7 @@ namespace ProjectContra.Scripts.Player
             playerId = id;
             gameObject.tag = GameTag.CHARACTER_IN_GAME.name;
             gameObject.layer = GameLayer.PLAYER.GetLayer();
-            collider = UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject);
+            UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject);
             rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
             groundLayers = GameLayer.GetGroundLayerMask();
             storeData.SetPlayer(PlayerAttribute.CreateEmpty(id));
