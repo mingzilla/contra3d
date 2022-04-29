@@ -42,7 +42,7 @@ namespace ProjectContra.Scripts.EnemyBullet
 
         void Update()
         {
-            MovementUtil.MoveTowardsPosition3D(transform, closestPlayerTransform, 0f, enemyBulletType.bulletSpeed, Time.deltaTime);
+            MovementUtil.FollowTowardsPosition3D(transform, closestPlayerTransform, 0f, enemyBulletType.bulletSpeed, Time.deltaTime);
         }
 
         private void OnTriggerEnter(Collider other)

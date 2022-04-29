@@ -153,6 +153,16 @@ namespace BaseUtil.GameUtil.Base
             return Vector3.MoveTowards(unit.position, target.position, moveSpeed * deltaTime);
         }
 
+        /// <summary>
+        /// Provides the delta for e.g. bullet movement when only knowing the shooting point and destination, considering bullet won't stop at destination.  
+        /// </summary>
+        /// <returns>Position delta, which can be added to currentPosition and targetPosition. Adding to target is generally needed so that the bullet never stop at the original target</returns>
+        public static Vector3 GetFramePositionDelta(Vector3 currentPosition, Vector3 targetPosition, float moveSpeed, float deltaTime)
+        {
+            Vector3 nextPosition = Vector3.MoveTowards(currentPosition, targetPosition, moveSpeed * deltaTime);
+            return nextPosition - currentPosition;
+        }
+
         public static List<Transform> FindChildrenWithTag(Transform transform, string tagName)
         {
             var children = new List<Transform>();

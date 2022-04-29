@@ -74,8 +74,8 @@ namespace BaseUtil.GameUtil
         /// Used in Update Loop to allow unit constantly following target. The unit immediately rotates to the target.
         /// </summary>
         /// <returns>If unit is already overlapping the target within the given range</returns>
-        public static bool MoveTowardsPosition3D(Transform unitTransform, Transform targetTransform,
-                                                 float overlapRange, float moveSpeed, float deltaTime)
+        public static bool FollowTowardsPosition3D(Transform unitTransform, Transform targetTransform,
+                                                   float overlapRange, float moveSpeed, float deltaTime)
         {
             bool isOverlapping = UnityFn.IsInRange(unitTransform, targetTransform, overlapRange);
             if (isOverlapping) return true;
@@ -83,6 +83,14 @@ namespace BaseUtil.GameUtil
             unitTransform.rotation = UnityFn.GetImmediateRotation3D(unitTransform.position, targetTransform.position);
             unitTransform.position = UnityFn.GetPosition(unitTransform, targetTransform, moveSpeed, deltaTime);
             return false;
+        }
+
+        public static void MoveTowardsPosition3D(Transform transform, Vector3 targetPosition, float moveSpeed, Action<Vector3> addDeltaToTargetFn)
+        {
+            Vector3 originalPosition = transform.position;
+            Vector3 delta = UnityFn.GetFramePositionDelta(originalPosition, targetPosition, moveSpeed, Time.deltaTime);
+            transform.position = originalPosition + delta;
+            addDeltaToTargetFn(delta); // targetPosition += delta; - move target further so that bullet never catches the target
         }
 
         public static bool JumpWhenOverlapsWithPositions(Rigidbody2D unitRB, Transform unitTransform, List<Transform> jumpPoints,

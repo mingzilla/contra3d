@@ -46,10 +46,7 @@ namespace ProjectContra.Scripts.EnemyBullet
 
         void UpdateBulletPosition()
         {
-            Vector3 originalPosition = transform.position;
-            Vector3 delta = BulletCommonUtil3D.GetBulletPositionDelta(originalPosition, targetPosition, enemyBulletType.bulletSpeed, Time.deltaTime);
-            transform.position = originalPosition + delta;
-            targetPosition += delta; // move target further so that bullet never catches the target
+            MovementUtil.MoveTowardsPosition3D(transform, targetPosition, enemyBulletType.bulletSpeed, delta => targetPosition += delta);
         }
 
         private void OnTriggerEnter(Collider other)

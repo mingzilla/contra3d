@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
+using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
@@ -10,15 +12,19 @@ namespace ProjectContra.Scripts.Enemy
     public class EnemyWalkerController : EnemyController
     {
         public int damage = 1;
+        public int moveSpeed = 10;
 
+        private GameStoreData storeData;
         private Rigidbody rb;
         private CapsuleCollider theCollider;
         private LayerMask destructibleLayers;
         private GameObject destroyEffect;
-
+        private Transform closestPlayer;
+        private Vector3 targetPosition = Vector3.zero;
 
         void Start()
         {
+            storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
             destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
@@ -28,6 +34,10 @@ namespace ProjectContra.Scripts.Enemy
         // Update is called once per frame
         void Update()
         {
+            if (!storeData.HasPlayer()) return;
+            closestPlayer = closestPlayer != null ? closestPlayer : storeData.GetClosestPlayer(transform.position).inGameTransform;
+            targetPosition = targetPosition != Vector3.zero ? targetPosition : closestPlayer.position;
+            MovementUtil.MoveTowardsPosition3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
         }
 
         void OnCollisionEnter(Collision other)
