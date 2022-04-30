@@ -22,7 +22,7 @@ namespace ProjectContra.Scripts.EnemyBullet
         {
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyBasicBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyBasicBulletController>();
-            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject);
+            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false);
             copy.enemyBulletType = enemyBulletType;
             copy.targetPosition = closestPlayerTransform.position;
             copy.transform.rotation = UnityFn.GetImmediateRotation3D(shotPosition, copy.targetPosition); // set rotation once since bullet goes one direction

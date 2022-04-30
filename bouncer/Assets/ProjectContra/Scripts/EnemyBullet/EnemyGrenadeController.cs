@@ -9,30 +9,28 @@ using UnityEngine;
 
 namespace ProjectContra.Scripts.EnemyBullet
 {
-    /// <summary>
-    /// This type of bullet constantly follows the player, with instant direction changes, so it's slow and destroyable.
-    /// </summary>
-    public class EnemyFollowerBulletController : MonoBehaviour
+    public class EnemyGrenadeController : MonoBehaviour
     {
         public GameObject impactEffect;
 
         private Rigidbody rb;
         private EnemyBulletType enemyBulletType;
-        private Transform closestPlayerTransform; // reference to the player, which changes if player moves 
+        private GameObject shotDestination;
+        private Vector3 targetPosition;
 
-        public static EnemyFollowerBulletController Spawn(Vector3 shotPosition, Transform closestPlayerTransform, EnemyBulletType enemyBulletType)
+        public static EnemyGrenadeController Spawn(Vector3 shotPosition, Transform closestPlayerTransform, EnemyBulletType enemyBulletType)
         {
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
-            EnemyFollowerBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyFollowerBulletController>();
-            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false);
+            EnemyGrenadeController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyGrenadeController>();
+            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, true);
             copy.enemyBulletType = enemyBulletType;
-            copy.closestPlayerTransform = closestPlayerTransform;
+            copy.targetPosition = closestPlayerTransform.position;
             return copy;
         }
 
         private void Awake()
         {
-            gameObject.layer = GameLayer.ENEMY_DESTROYABLE_SHOT.GetLayer();
+            gameObject.layer = GameLayer.ENEMY_SHOT.GetLayer();
         }
 
         private void Start()
@@ -42,7 +40,12 @@ namespace ProjectContra.Scripts.EnemyBullet
 
         void Update()
         {
-            MovementUtil.FollowTowardsPosition3D(transform, closestPlayerTransform, 0f, enemyBulletType.bulletSpeed, Time.deltaTime);
+            UpdateBulletPosition();
+        }
+
+        void UpdateBulletPosition()
+        {
+            MovementUtil.MoveTowardsPosition3D(transform, targetPosition, enemyBulletType.bulletSpeed, delta => targetPosition += delta);
         }
 
         private void OnTriggerEnter(Collider other)

@@ -9,13 +9,13 @@ namespace BaseUtil.GameUtil.Util3D
 {
     public class BulletCommonUtil3D
     {
-        public static Rigidbody AddRigidbodyAndColliderToBullet(GameObject gameObject)
+        public static Rigidbody AddRigidbodyAndColliderToBullet(GameObject gameObject, bool useGravity)
         {
             SphereCollider collider = gameObject.AddComponent<SphereCollider>();
             collider.radius = 1f;
             collider.isTrigger = true;
             Rigidbody rb = gameObject.AddComponent<Rigidbody>();
-            rb.useGravity = false;
+            rb.useGravity = useGravity;
             return rb;
         }
 

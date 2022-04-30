@@ -8,6 +8,7 @@ namespace ProjectContra.Scripts.Types
     {
         public static readonly EnemyBulletType BASIC = Create("BASIC", 1, 1f, 10f, 3f);
         public static readonly EnemyBulletType FOLLOW = Create("FOLLOW", 1, 3f, 8f, 3f);
+        public static readonly EnemyBulletType GRENADE = Create("GRENADE", 1, 3f, 10f, 2f);
         public static readonly EnemyBulletType BLAST = Create("BLAST", 1, 3f, 10f, 3f);
         public static readonly EnemyBulletType WIDE = Create("WIDE", 1, 1f, 10f, 3f);
         public static readonly EnemyBulletType LASER = Create("LASER", 1, 1f, 10f, 3f);
@@ -30,7 +31,7 @@ namespace ProjectContra.Scripts.Types
         {
             return new List<EnemyBulletType>()
             {
-                BASIC, FOLLOW, BLAST, WIDE, LASER
+                BASIC, FOLLOW, GRENADE, BLAST, WIDE, LASER
             };
         }
 

@@ -5,7 +5,7 @@
 
 ### TODO
 * enemy detection range - DONE
-* walker jump from building
+* walker jump from building - DONE
 * throwing bomb enemy
 * bomb from building
 * power up flying
