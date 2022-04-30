@@ -36,9 +36,11 @@ namespace ProjectContra.Scripts.Enemy
             if (!storeData.HasPlayer()) return;
             Vector3 position = transform.position;
             Transform closestPlayer = storeData.GetClosestPlayer(position).inGameTransform;
-
-            transform.LookAt(closestPlayer);
-            FireShots(position, closestPlayer);
+            if (UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
+            {
+                transform.LookAt(closestPlayer);
+                FireShots(position, closestPlayer);
+            }
         }
 
         void FireShots(Vector3 position, Transform closestPlayer)
@@ -81,6 +83,11 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.CreateEffect(destroyEffect, position, 1f);
             Destroy(gameObject);
+        }
+
+        public override float GetDetectionRange()
+        {
+            return 50f;
         }
     }
 }

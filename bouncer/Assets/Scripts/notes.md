@@ -3,4 +3,18 @@
 ### Use object pool for bullets
 * https://www.youtube.com/watch?v=2bPd_dmqGuM&ab_channel=LlamAcademy
 
-* Quatanion.LookRotation(targetObject)
+### TODO
+* enemy detection range - DONE
+* walker jump from building
+* throwing bomb enemy
+* bomb from building
+* power up flying
+* power up drop
+* power up pickup
+* floor cannon
+* floor cannon - blocking
+* floor cannon - 10 hp
+* floor cannon - shoot faster
+* liedown enemy
+* lie down
+* 

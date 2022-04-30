@@ -101,6 +101,8 @@ namespace BaseUtil.GameUtil.Base
 
         public static bool IsInRange(Transform unit, Transform target, float range)
         {
+            if (unit == null) return false;
+            if (target == null) return false;
             return Vector3.Distance(unit.position, target.position) <= range;
         }
 

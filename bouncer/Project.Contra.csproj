@@ -54,6 +54,7 @@
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\LiveResource\AppResource.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\PlayerManagerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Bullet\BulletController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Enemy\ActiveWhenVisibleEnemyController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyShooterController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyWalkerController.cs" />

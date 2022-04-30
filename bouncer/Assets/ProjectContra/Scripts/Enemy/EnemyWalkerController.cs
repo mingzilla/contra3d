@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BaseUtil.Base;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -36,9 +37,12 @@ namespace ProjectContra.Scripts.Enemy
         void Update()
         {
             if (!storeData.HasPlayer()) return;
-            closestPlayer = closestPlayer != null ? closestPlayer : storeData.GetClosestPlayer(transform.position).inGameTransform;
-            targetPosition = targetPosition != Vector3.zero ? targetPosition : closestPlayer.position;
-            MovementUtil.MoveTowardsPosition3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
+            if (closestPlayer == null) closestPlayer = storeData.GetClosestPlayer(transform.position).inGameTransform;
+            if (targetPosition == Vector3.zero) targetPosition = closestPlayer.position;
+            if (UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
+            {
+                MovementUtil.MoveTowardsPosition3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
+            }
         }
 
         void OnCollisionEnter(Collision other)
@@ -83,6 +87,11 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.CreateEffect(destroyEffect, position, 1f);
             Destroy(gameObject);
+        }
+
+        public override float GetDetectionRange()
+        {
+            return 60f;
         }
     }
 }
