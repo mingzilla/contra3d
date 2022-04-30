@@ -38,7 +38,6 @@ namespace ProjectContra.Scripts.Enemy
             destroyEffect = AppResource.instance.smallExplosionPrefab;
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (!storeData.HasPlayer()) return;
@@ -52,8 +51,8 @@ namespace ProjectContra.Scripts.Enemy
                         isActive = true;
                         meshRenderer.enabled = true;
                     });
-                if (isActive) MovementUtil.MoveTowardsPosition3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
             }
+            if (isActive) MovementUtil.MoveTowardsPosition3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
         }
 
         void OnCollisionEnter(Collision other)
@@ -101,6 +100,11 @@ namespace ProjectContra.Scripts.Enemy
         public override float GetDetectionRange()
         {
             return detectionRange;
+        }
+
+        protected void OnBecameInvisible()
+        {
+            Destroy(gameObject);
         }
     }
 }
