@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Player;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
@@ -12,6 +10,9 @@ namespace ProjectContra.Scripts.Enemy
     public class EnemyGrenadeThrowerController : EnemyController
     {
         public float shotInterval = 3f;
+        public float xForce = 2f;
+        public float yForce = 8f;
+        public float zForce = 0f;
         
         private GameStoreData storeData;
         private Rigidbody rb;
@@ -44,7 +45,7 @@ namespace ProjectContra.Scripts.Enemy
                 UnityFn.SetTimeout(this, shotInterval, () =>
                 {
                     canFireShot = true;
-                    EnemyGrenadeController.Spawn(position, closestPlayer, EnemyBulletType.GRENADE);
+                    EnemyGrenadeController.Spawn(position, xForce, yForce, zForce, EnemyBulletType.GRENADE);
                 });
             }
         }

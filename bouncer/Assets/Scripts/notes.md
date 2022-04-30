@@ -17,4 +17,8 @@
 * floor cannon - shoot faster
 * liedown enemy
 * lie down
-* 
+
+
+
+### Tips
+* Invoke(nameof(MyMethod), cooldownTime)

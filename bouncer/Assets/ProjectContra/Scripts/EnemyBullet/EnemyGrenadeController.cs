@@ -15,16 +15,19 @@ namespace ProjectContra.Scripts.EnemyBullet
 
         private Rigidbody rb;
         private EnemyBulletType enemyBulletType;
-        private GameObject shotDestination;
-        private Vector3 targetPosition;
+        private float xForce = 2f;
+        private float yForce = 8f;
+        private float zForce = 0f;
 
-        public static EnemyGrenadeController Spawn(Vector3 shotPosition, Transform closestPlayerTransform, EnemyBulletType enemyBulletType)
+        public static EnemyGrenadeController Spawn(Vector3 shotPosition, float xForce, float yForce, float zForce, EnemyBulletType enemyBulletType)
         {
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyGrenadeController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyGrenadeController>();
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, true);
             copy.enemyBulletType = enemyBulletType;
-            copy.targetPosition = closestPlayerTransform.position;
+            copy.xForce = xForce;
+            copy.yForce = yForce;
+            copy.zForce = zForce;
             return copy;
         }
 
@@ -36,17 +39,7 @@ namespace ProjectContra.Scripts.EnemyBullet
         private void Start()
         {
             UnityFn.SetTimeout(this, enemyBulletType.autoDestroyTime, () => Destroy(gameObject));
-            rb.AddRelativeForce(Vector3.up * enemyBulletType.bulletSpeed);
-        }
-
-        void Update()
-        {
-            UpdateBulletPosition();
-        }
-
-        void UpdateBulletPosition()
-        {
-            // MovementUtil.MoveTowardsPosition3D(transform, targetPosition, enemyBulletType.bulletSpeed, delta => targetPosition += delta);
+            UnityFn.Throw(rb, xForce, yForce, zForce);
         }
 
         private void OnTriggerEnter(Collider other)

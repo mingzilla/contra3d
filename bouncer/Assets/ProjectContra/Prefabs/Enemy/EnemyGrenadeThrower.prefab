@@ -109,6 +109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotInterval: 3
+  xForce: -7
+  yForce: 8
+  zForce: 0
 --- !u!1 &2314948372921664044
 GameObject:
   m_ObjectHideFlags: 0

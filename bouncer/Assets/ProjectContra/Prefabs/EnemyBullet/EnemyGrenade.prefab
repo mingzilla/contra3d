@@ -202,3 +202,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 5035670118569957943, guid: 7bb91091cfb7a524aa710022b6cef03a,
     type: 3}
+  xForce: -2
+  yForce: 8
+  zForce: 0

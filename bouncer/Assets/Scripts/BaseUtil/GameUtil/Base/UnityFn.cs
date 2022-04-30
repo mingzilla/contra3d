@@ -374,5 +374,18 @@ namespace BaseUtil.GameUtil.Base
             material.frictionCombine = PhysicMaterialCombine.Minimum;
             return material;
         }
+
+        /// <summary>
+        /// Apply force once only to throw an object. This is not used in Update() loop to continuously apply force. 
+        /// </summary>
+        /// <param name="rb">Of the object to throw</param>
+        /// <param name="xForce">positive goes right</param>
+        /// <param name="yForce">positive goes up</param>
+        /// <param name="zForce">positive goes into</param>
+        public static void Throw(Rigidbody rb, float xForce, float yForce, float zForce)
+        {
+            Vector3 forceToAdd = new Vector3(xForce, yForce, zForce);
+            rb.AddRelativeForce(forceToAdd, ForceMode.Impulse); // Impulse is used to apply force once only, so don't put it in Update
+        }
     }
 }
