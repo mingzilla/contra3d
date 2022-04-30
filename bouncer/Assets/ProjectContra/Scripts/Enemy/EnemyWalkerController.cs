@@ -35,7 +35,7 @@ namespace ProjectContra.Scripts.Enemy
             rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
             meshRenderer = UnityFn.MakeInvisible(gameObject);
             destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
-            destroyEffect = AppResource.instance.smallExplosionPrefab;
+            destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
         }
 
         void Update()

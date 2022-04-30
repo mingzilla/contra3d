@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7794848240906020126}
   - component: {fileID: 6475713701332977915}
   - component: {fileID: 4132754154674642145}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 5758195693324252806}
   - component: {fileID: 716070557133747314}
   - component: {fileID: 7241267570367117976}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: EnemyGrenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,6 +202,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 5035670118569957943, guid: 7bb91091cfb7a524aa710022b6cef03a,
     type: 3}
-  xForce: -2
-  yForce: 8
-  zForce: 0

@@ -23,17 +23,13 @@ namespace ProjectContra.Scripts.EnemyBullet
         {
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyGrenadeController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyGrenadeController>();
+            copy.gameObject.layer = GameLayer.ENEMY_GRENADE.GetLayer();
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, true);
             copy.enemyBulletType = enemyBulletType;
             copy.xForce = xForce;
             copy.yForce = yForce;
             copy.zForce = zForce;
             return copy;
-        }
-
-        private void Awake()
-        {
-            gameObject.layer = GameLayer.ENEMY_SHOT.GetLayer();
         }
 
         private void Start()

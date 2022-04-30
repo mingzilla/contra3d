@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3573790724236726582}
   - component: {fileID: 3573790724236726585}
   - component: {fileID: 3573790724236726584}
-  m_Layer: 17
+  m_Layer: 18
   m_Name: EnemyJumpPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

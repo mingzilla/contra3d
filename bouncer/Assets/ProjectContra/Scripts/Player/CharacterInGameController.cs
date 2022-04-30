@@ -12,13 +12,12 @@ namespace ProjectContra.Scripts.Player
 {
     public class CharacterInGameController : MonoBehaviour
     {
-        public GameObject destroyEffect;
-
         private GameStoreData storeData;
         private Rigidbody rb;
         private LayerMask groundLayers;
-        private bool isFacingRight = true;
+        private GameObject destroyEffect;
         private int playerId;
+        private bool isFacingRight = true;
 
         public void Init(int id)
         {
@@ -29,6 +28,7 @@ namespace ProjectContra.Scripts.Player
             UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject);
             rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
             groundLayers = GameLayer.GetGroundLayerMask();
+            destroyEffect = AppResource.instance.playerDestroyedEffect;
             storeData.SetPlayer(PlayerAttribute.CreateEmpty(id));
         }
 
@@ -46,7 +46,8 @@ namespace ProjectContra.Scripts.Player
 
             if (userInput.fire1)
             {
-                BulletController.Spawn(transform, isFacingRight, userInput, WeaponType.BLAST, isOnGround);
+                GameObject explosionEffect = AppResource.instance.GetExplosionEffect(WeaponType.BLAST);
+                BulletController.Spawn(transform, isFacingRight, userInput, WeaponType.BLAST, explosionEffect, isOnGround);
             }
 
             playerAttribute.inGameTransform = transform;

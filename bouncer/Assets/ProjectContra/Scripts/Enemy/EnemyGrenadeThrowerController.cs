@@ -10,10 +10,10 @@ namespace ProjectContra.Scripts.Enemy
     public class EnemyGrenadeThrowerController : EnemyController
     {
         public float shotInterval = 3f;
-        public float xForce = 2f;
+        public float xForce = -7f;
         public float yForce = 8f;
         public float zForce = 0f;
-        
+
         private GameStoreData storeData;
         private Rigidbody rb;
         private GameObject destroyEffect;
@@ -25,7 +25,7 @@ namespace ProjectContra.Scripts.Enemy
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
-            destroyEffect = AppResource.instance.smallExplosionPrefab;
+            destroyEffect = AppResource.instance.enemyGrenadeSmallExplosion;
         }
 
         void Update()
@@ -44,10 +44,18 @@ namespace ProjectContra.Scripts.Enemy
                 canFireShot = false;
                 UnityFn.SetTimeout(this, shotInterval, () =>
                 {
+                    float x = (closestPlayer.position.x < position.x) ? xForce : -(xForce);
+                    ThrowGrenade(position, x);
+                    UnityFn.SetTimeout(this, 0.5f, () => ThrowGrenade(position, x));
+                    UnityFn.SetTimeout(this, 1f, () => ThrowGrenade(position, x));
                     canFireShot = true;
-                    EnemyGrenadeController.Spawn(position, xForce, yForce, zForce, EnemyBulletType.GRENADE);
                 });
             }
+        }
+
+        private void ThrowGrenade(Vector3 position, float xToUse)
+        {
+            EnemyGrenadeController.Spawn(position, xToUse, yForce, zForce, EnemyBulletType.GRENADE);
         }
 
         public override void TakeDamage(Vector3 position, int damage)

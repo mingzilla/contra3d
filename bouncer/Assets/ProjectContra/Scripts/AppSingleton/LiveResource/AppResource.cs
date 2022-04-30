@@ -19,8 +19,12 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         [SerializeField] private GameObject enemyBasicBulletPrefab, enemyFollowerBulletPrefab, enemyGrenadePrefab, enemyBlastBulletPrefab;
         public readonly Dictionary<EnemyBulletType, GameObject> enemyBulletTypeAndBulletPrefab = new Dictionary<EnemyBulletType, GameObject>();
 
-        // Explosion effects
-        [SerializeField] public GameObject smallExplosionPrefab, bigExplosionPrefab, explosiveShotEffectPrefab;
+        // Explosion effects prefabs
+        [SerializeField] public GameObject enemyDestroyedBigExplosion,
+            enemyDestroyedSmallExplosion,
+            enemyGrenadeSmallExplosion,
+            playerDestroyedEffect,
+            playerExplosiveShotExplosion;
 
         private void Awake()
         {
@@ -39,6 +43,12 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         {
             if (!weaponTypeAndBulletPrefab.ContainsKey(weaponType)) return weaponTypeAndBulletPrefab[WeaponType.BASIC];
             return weaponTypeAndBulletPrefab[weaponType];
+        }
+
+        public GameObject GetExplosionEffect(WeaponType weaponType)
+        {
+            if (weaponType == WeaponType.BLAST) return playerExplosiveShotExplosion;
+            return null;
         }
 
         void ConfigureEnemyBullets()

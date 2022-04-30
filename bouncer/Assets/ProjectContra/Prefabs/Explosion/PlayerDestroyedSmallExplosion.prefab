@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7000848001303659738}
   - component: {fileID: 3735522584442629769}
   m_Layer: 0
-  m_Name: SmallExplosion
+  m_Name: PlayerDestroyedSmallExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,8 +221,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.66949475, b: 0.3160377, a: 1}
-      maxColor: {r: 0.6039216, g: 0, b: 0, a: 1}
+      minColor: {r: 0.8018868, g: 0.12594663, b: 0, a: 1}
+      maxColor: {r: 0, g: 0.51992035, b: 0.745283, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -285,7 +285,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 3
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:

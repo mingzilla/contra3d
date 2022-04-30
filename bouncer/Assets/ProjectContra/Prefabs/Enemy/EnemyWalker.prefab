@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5849297839655832020}
   - component: {fileID: 5849297839655832023}
   - component: {fileID: 5849297839655832022}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: EnemyWalker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,8 +98,8 @@ MonoBehaviour:
   damage: 1
   moveSpeed: 4
   jumpForce: 8
-  detectionRange: 60
-  delayToBeActive: 1
+  detectionRange: 20
+  delayToBeActive: 0
   isActive: 0
 --- !u!136 &5849297839655832023
 CapsuleCollider:
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 5763229920869953403}
   - component: {fileID: 8911566566782611652}
   - component: {fileID: 2479159858102697217}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,19 +11,20 @@ namespace ProjectContra.Scripts.Bullet
 {
     public class BulletController : MonoBehaviour
     {
-        public GameObject impactEffect;
 
         private Rigidbody rb;
+        private GameObject explosionEffect;
         private Vector3 moveDirection;
         private WeaponType weaponType;
 
-        public static BulletController Spawn(Transform shotPoint, bool isFacingForward, UserInput userInput, WeaponType weaponType, bool isOnGround)
+        public static BulletController Spawn(Transform shotPoint, bool isFacingForward, UserInput userInput, WeaponType weaponType, GameObject explosionEffect, bool isOnGround)
         {
             GameObject prefab = AppResource.instance.GetBulletPrefab(weaponType);
             BulletController copy = Instantiate(prefab, shotPoint.position, shotPoint.rotation).GetComponent<BulletController>();
             copy.moveDirection = BulletCommonUtil3D.CreateBulletDirection(isFacingForward, userInput, isOnGround);
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false);
             copy.weaponType = weaponType;
+            copy.explosionEffect = explosionEffect;
             return copy;
         }
 
@@ -45,7 +46,7 @@ namespace ProjectContra.Scripts.Bullet
         private void OnTriggerEnter(Collider other)
         {
             Vector3 position = transform.position;
-            UnityFn.CreateEffect(impactEffect, position, 1f); // only if the bullet creates explosion
+            UnityFn.CreateEffect(explosionEffect, position, 1f); // only if the bullet creates explosion
             Destroy(gameObject);
             GameFn.DealDamage(position, weaponType.blastRange, weaponType.destructibleLayers, (obj) =>
             {

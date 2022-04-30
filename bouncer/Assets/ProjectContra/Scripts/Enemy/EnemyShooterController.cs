@@ -24,7 +24,7 @@ namespace ProjectContra.Scripts.Enemy
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
-            destroyEffect = AppResource.instance.smallExplosionPrefab;
+            destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
         }
 
         void Update()

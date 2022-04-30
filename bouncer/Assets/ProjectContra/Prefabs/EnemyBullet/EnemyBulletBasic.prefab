@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1168549099883895837}
   - component: {fileID: 8605788320198177194}
   - component: {fileID: 1273398377895669071}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4362966052311366043}
   - component: {fileID: 4362966052311366042}
   - component: {fileID: 1156034318440497480}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: EnemyBulletBasic
   m_TagString: Untagged
   m_Icon: {fileID: 0}

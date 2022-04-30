@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4857527942609160987}
   - component: {fileID: 4857527942609160990}
   - component: {fileID: 3567129393988055643}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: EnemyShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949962747893b64cb701a74dce04e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  shotInterval: 3
 --- !u!1 &7407356959409643176
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 1717062230155633420}
   - component: {fileID: 5226634811696028740}
   - component: {fileID: 8065700938489617527}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}

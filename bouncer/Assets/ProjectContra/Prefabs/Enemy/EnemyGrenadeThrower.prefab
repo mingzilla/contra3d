@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8907939606705949322}
   - component: {fileID: 3900055387116671900}
   - component: {fileID: 1166724816142209439}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: EnemyGrenadeThrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 3716107426110717055}
   - component: {fileID: 7102502293918198725}
   - component: {fileID: 357984726420579091}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}

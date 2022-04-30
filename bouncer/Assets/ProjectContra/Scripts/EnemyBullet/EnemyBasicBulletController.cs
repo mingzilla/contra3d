@@ -22,16 +22,12 @@ namespace ProjectContra.Scripts.EnemyBullet
         {
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyBasicBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyBasicBulletController>();
+            copy.gameObject.layer = GameLayer.ENEMY_SHOT.GetLayer();
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false);
             copy.enemyBulletType = enemyBulletType;
             copy.targetPosition = closestPlayerTransform.position;
             copy.transform.rotation = UnityFn.GetImmediateRotation3D(shotPosition, copy.targetPosition); // set rotation once since bullet goes one direction
             return copy;
-        }
-
-        private void Awake()
-        {
-            gameObject.layer = GameLayer.ENEMY_SHOT.GetLayer();
         }
 
         private void Start()
@@ -40,11 +36,6 @@ namespace ProjectContra.Scripts.EnemyBullet
         }
 
         void Update()
-        {
-            UpdateBulletPosition();
-        }
-
-        void UpdateBulletPosition()
         {
             MovementUtil.MoveTowardsPosition3D(transform, targetPosition, enemyBulletType.bulletSpeed, delta => targetPosition += delta);
         }
