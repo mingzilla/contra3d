@@ -15,9 +15,13 @@ namespace ProjectContra.Scripts.Enemy
         public int damage = 1;
         public int moveSpeed = 10;
         public float jumpForce = 20f;
+        public float detectionRange = 60f;
+        public float delayToBeActive = 1f;
+        public bool isActive = false;
 
         private GameStoreData storeData;
         private Rigidbody rb;
+        private MeshRenderer meshRenderer;
         private CapsuleCollider theCollider;
         private LayerMask destructibleLayers;
         private GameObject destroyEffect;
@@ -29,6 +33,7 @@ namespace ProjectContra.Scripts.Enemy
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
+            meshRenderer = UnityFn.MakeInvisible(gameObject);
             destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
             destroyEffect = AppResource.instance.smallExplosionPrefab;
         }
@@ -41,7 +46,13 @@ namespace ProjectContra.Scripts.Enemy
             if (targetPosition == Vector3.zero) targetPosition = closestPlayer.position;
             if (UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
             {
-                MovementUtil.MoveTowardsPosition3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
+                if (!isActive)
+                    UnityFn.SetTimeout(this, delayToBeActive, () =>
+                    {
+                        isActive = true;
+                        meshRenderer.enabled = true;
+                    });
+                if (isActive) MovementUtil.MoveTowardsPosition3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
             }
         }
 
@@ -75,10 +86,8 @@ namespace ProjectContra.Scripts.Enemy
 
         private void JumpAtTriggerPoint(Collider other)
         {
-            Debug.Log(1);
             if (GameLayer.Matches(other.gameObject.layer, GameLayer.ENEMY_JUMP_POINT))
             {
-                Debug.Log(2);
                 GameFn.HandleJump(rb, jumpForce);
             }
         }
@@ -91,7 +100,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override float GetDetectionRange()
         {
-            return 60f;
+            return detectionRange;
         }
     }
 }

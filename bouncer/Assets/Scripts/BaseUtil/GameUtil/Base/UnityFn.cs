@@ -337,6 +337,13 @@ namespace BaseUtil.GameUtil.Base
             return rb;
         }
 
+        public static MeshRenderer MakeInvisible(GameObject gameObject)
+        {
+            MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();
+            meshRenderer.enabled = false;
+            return meshRenderer;
+        }
+
         public static T AddCollider<T>(GameObject gameObject, bool isTrigger) where T : Collider
         {
             T collider = gameObject.AddComponent<T>();
