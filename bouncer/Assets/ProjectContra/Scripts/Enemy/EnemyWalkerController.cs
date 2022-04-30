@@ -50,6 +50,7 @@ namespace ProjectContra.Scripts.Enemy
                     {
                         isActive = true;
                         meshRenderer.enabled = true;
+                        transform.LookAt(closestPlayer);
                     });
             }
             if (isActive) MovementUtil.MoveTowardsPosition3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);

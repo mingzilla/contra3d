@@ -51,6 +51,8 @@ MonoBehaviour:
     type: 3}
   enemyFollowerBulletPrefab: {fileID: 4362966052311366046, guid: 06f446d0c7de80f428104a8a6315c252,
     type: 3}
+  enemyGrenadePrefab: {fileID: 7193432624006083695, guid: 3ffd76af84d42de45b04546f1cd15379,
+    type: 3}
   enemyBlastBulletPrefab: {fileID: 0}
   smallExplosionPrefab: {fileID: 5035670118569957943, guid: 7bb91091cfb7a524aa710022b6cef03a,
     type: 3}

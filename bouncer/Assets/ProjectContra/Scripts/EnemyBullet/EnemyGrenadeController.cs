@@ -36,6 +36,7 @@ namespace ProjectContra.Scripts.EnemyBullet
         private void Start()
         {
             UnityFn.SetTimeout(this, enemyBulletType.autoDestroyTime, () => Destroy(gameObject));
+            rb.AddRelativeForce(Vector3.up * enemyBulletType.bulletSpeed);
         }
 
         void Update()
@@ -45,7 +46,7 @@ namespace ProjectContra.Scripts.EnemyBullet
 
         void UpdateBulletPosition()
         {
-            MovementUtil.MoveTowardsPosition3D(transform, targetPosition, enemyBulletType.bulletSpeed, delta => targetPosition += delta);
+            // MovementUtil.MoveTowardsPosition3D(transform, targetPosition, enemyBulletType.bulletSpeed, delta => targetPosition += delta);
         }
 
         private void OnTriggerEnter(Collider other)

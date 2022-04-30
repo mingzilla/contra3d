@@ -9,10 +9,10 @@ using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public class EnemyShooterController : EnemyController
+    public class EnemyGrenadeThrowerController : EnemyController
     {
         public float shotInterval = 3f;
-
+        
         private GameStoreData storeData;
         private Rigidbody rb;
         private GameObject destroyEffect;
@@ -44,7 +44,7 @@ namespace ProjectContra.Scripts.Enemy
                 UnityFn.SetTimeout(this, shotInterval, () =>
                 {
                     canFireShot = true;
-                    EnemyBasicBulletController.Spawn(position, closestPlayer, EnemyBulletType.BASIC);
+                    EnemyGrenadeController.Spawn(position, closestPlayer, EnemyBulletType.GRENADE);
                 });
             }
         }
