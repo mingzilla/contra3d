@@ -16,7 +16,6 @@ namespace ProjectContra.Scripts.Enemy
         public int moveSpeed = 10;
         public float jumpForce = 20f;
         public float detectionRange = 60f;
-        public float delayToBeActive = 1f;
         public bool isActive = false;
 
         private GameStoreData storeData;
@@ -43,15 +42,11 @@ namespace ProjectContra.Scripts.Enemy
             if (!storeData.HasPlayer()) return;
             if (closestPlayer == null) closestPlayer = storeData.GetClosestPlayer(transform.position).inGameTransform;
             if (targetPosition == Vector3.zero) targetPosition = closestPlayer.position;
-            if (UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
+            if (!isActive && UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
             {
-                if (!isActive)
-                    UnityFn.SetTimeout(this, delayToBeActive, () =>
-                    {
-                        isActive = true;
-                        meshRenderer.enabled = true;
-                        transform.LookAt(closestPlayer);
-                    });
+                isActive = true;
+                meshRenderer.enabled = true;
+                transform.LookAt(closestPlayer);
             }
             if (isActive) MovementUtil.MoveTowardsPosition3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
         }

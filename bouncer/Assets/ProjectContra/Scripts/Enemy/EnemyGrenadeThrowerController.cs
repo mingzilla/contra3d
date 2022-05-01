@@ -39,18 +39,13 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots(Vector3 position, Transform closestPlayer)
         {
-            if (canFireShot)
+            UnityFn.RunWithInterval(this, shotInterval, canFireShot, (s) => canFireShot = s, () =>
             {
-                canFireShot = false;
-                UnityFn.SetTimeout(this, shotInterval, () =>
-                {
-                    float x = (closestPlayer.position.x < position.x) ? xForce : -(xForce);
-                    ThrowGrenade(position, x);
-                    UnityFn.SetTimeout(this, 0.5f, () => ThrowGrenade(position, x));
-                    UnityFn.SetTimeout(this, 1f, () => ThrowGrenade(position, x));
-                    canFireShot = true;
-                });
-            }
+                float x = (closestPlayer.position.x < position.x) ? xForce : -(xForce);
+                ThrowGrenade(position, x);
+                UnityFn.SetTimeout(this, 0.5f, () => ThrowGrenade(position, x));
+                UnityFn.SetTimeout(this, 1f, () => ThrowGrenade(position, x));
+            });
         }
 
         private void ThrowGrenade(Vector3 position, float xToUse)

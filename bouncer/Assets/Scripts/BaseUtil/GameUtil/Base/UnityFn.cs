@@ -215,6 +215,16 @@ namespace BaseUtil.GameUtil.Base
             return spriteRenderers;
         }
 
+        public static void RunWithInterval(MonoBehaviour controller, float interval, bool canRun, Action<bool> setStatusFn, Action fn)
+        {
+            if (canRun)
+            {
+                fn();
+                setStatusFn(false);
+                SetTimeout(controller, interval, () => setStatusFn(true));
+            }
+        }
+
         public static void SetTimeout(MonoBehaviour controller, float delay, Action fn)
         {
             controller.StartCoroutine(TimeOutDelayFn(delay, fn));

@@ -11,11 +11,14 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public static AppResource instance;
         public readonly GameStoreData storeData = new GameStoreData();
 
-        // Player bullets
+        // Player bullet prefabs
         [SerializeField] private GameObject basicBulletPrefab, blastBulletPrefab;
         public readonly Dictionary<WeaponType, GameObject> weaponTypeAndBulletPrefab = new Dictionary<WeaponType, GameObject>();
 
-        // Enemy bullets
+        // Enemy prefabs
+        [SerializeField] public GameObject enemyWalkerPrefab;
+
+        // Enemy bullet prefabs
         [SerializeField] private GameObject enemyBasicBulletPrefab, enemyFollowerBulletPrefab, enemyGrenadePrefab, enemyBlastBulletPrefab;
         public readonly Dictionary<EnemyBulletType, GameObject> enemyBulletTypeAndBulletPrefab = new Dictionary<EnemyBulletType, GameObject>();
 
