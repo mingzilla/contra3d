@@ -24,6 +24,7 @@ namespace ProjectContra.Scripts.PowerUp
         private void OnCollisionEnter(Collision other)
         {
             GameObject obj = other.gameObject;
+            if (GameLayer.Matches(obj.layer, GameLayer.GROUND)) rb.velocity = Vector3.zero; // stop movement if touching ground
             if (GameLayer.Matches(obj.layer, GameLayer.PLAYER))
             {
                 CharacterInGameController character = obj.GetComponent<CharacterInGameController>();
