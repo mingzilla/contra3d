@@ -95,9 +95,8 @@ namespace BaseUtil.GameUtil
 
         public static void MoveX(Transform transform, int xValue, float moveSpeed)
         {
-            Vector3 originalPosition = transform.position;
             float x = (moveSpeed * Time.deltaTime) * ((xValue > 0) ? 1 : -1);
-            transform.position = originalPosition + new Vector3(x, 0f, 0f);
+            transform.position += new Vector3(x, 0f, 0f);
         }
 
         public static bool JumpWhenOverlapsWithPositions(Rigidbody2D unitRB, Transform unitTransform, List<Transform> jumpPoints,
