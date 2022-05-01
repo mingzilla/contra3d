@@ -13,7 +13,6 @@ namespace ProjectContra.Scripts.PowerUp
         public int moveSpeed = 10;
         public float detectionRange = 60f;
         public bool isActive = false;
-        public float yPositionDelta = 1f;
 
         private GameStoreData storeData;
         private Rigidbody rb;
