@@ -20,9 +20,11 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public readonly Dictionary<EnemyBulletType, GameObject> enemyBulletTypeAndBulletPrefab = new Dictionary<EnemyBulletType, GameObject>();
 
         // Explosion effects prefabs
-        [SerializeField] public GameObject enemyDestroyedBigExplosion,
+        [SerializeField] public GameObject enemyBulletHitEffect,
+            enemyDestroyedBigExplosion,
             enemyDestroyedSmallExplosion,
             enemyGrenadeSmallExplosion,
+            playerBulletHitEffect,
             playerDestroyedEffect,
             playerExplosiveShotExplosion;
 
@@ -45,8 +47,9 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             return weaponTypeAndBulletPrefab[weaponType];
         }
 
-        public GameObject GetExplosionEffect(WeaponType weaponType)
+        public GameObject GetBulletHitEffect(WeaponType weaponType)
         {
+            if (weaponType == WeaponType.BASIC) return playerBulletHitEffect;
             if (weaponType == WeaponType.BLAST) return playerExplosiveShotExplosion;
             return null;
         }

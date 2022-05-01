@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 382885940435634337}
   - component: {fileID: 382885940435634338}
   - component: {fileID: 382885940435634339}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CharacterInGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537405fab3d5c43449e43546831b6954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffect: {fileID: 0}
 --- !u!1 &6042410051523431765
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +120,7 @@ GameObject:
   - component: {fileID: 7796689707760236621}
   - component: {fileID: 5257182948521588520}
   - component: {fileID: 4802265293184198302}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}

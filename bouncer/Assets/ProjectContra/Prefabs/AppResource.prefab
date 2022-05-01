@@ -54,11 +54,15 @@ MonoBehaviour:
   enemyGrenadePrefab: {fileID: 7193432624006083695, guid: 3ffd76af84d42de45b04546f1cd15379,
     type: 3}
   enemyBlastBulletPrefab: {fileID: 0}
+  enemyBulletHitEffect: {fileID: 5035670118569957943, guid: 6c8ef40966b0d3343afa3817b5d02112,
+    type: 3}
   enemyDestroyedBigExplosion: {fileID: 2429561131109888901, guid: f4e5cafa586fbc343a8e949b44e6a2da,
     type: 3}
   enemyDestroyedSmallExplosion: {fileID: 5035670118569957943, guid: 7bb91091cfb7a524aa710022b6cef03a,
     type: 3}
   enemyGrenadeSmallExplosion: {fileID: 5035670118569957943, guid: fed8ec5b9498dbb448da1dd2b5023333,
+    type: 3}
+  playerBulletHitEffect: {fileID: 5035670118569957943, guid: 6794c432a01fcad4593ef3d159652d95,
     type: 3}
   playerDestroyedEffect: {fileID: 5035670118569957943, guid: bb2e4229c18ae0d44b6ddadaf4449faf,
     type: 3}

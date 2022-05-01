@@ -1,19 +1,16 @@
-﻿using System;
-using BaseUtil.GameUtil;
+﻿using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Util3D;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
-using ProjectContra.Scripts.Enemy;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.EnemyBullet
 {
-    public class EnemyBasicBulletController : MonoBehaviour
+    public class EnemyBasicBulletController : EnemyBulletController
     {
-        public GameObject impactEffect;
-
         private Rigidbody rb;
+        private GameObject impactEffect;
         private EnemyBulletType enemyBulletType;
         private GameObject shotDestination;
         private Vector3 targetPosition;
@@ -24,6 +21,7 @@ namespace ProjectContra.Scripts.EnemyBullet
             EnemyBasicBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyBasicBulletController>();
             copy.gameObject.layer = GameLayer.ENEMY_SHOT.GetLayer();
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false);
+            copy.impactEffect = AppResource.instance.enemyBulletHitEffect;
             copy.enemyBulletType = enemyBulletType;
             copy.targetPosition = closestPlayerTransform.position;
             copy.transform.rotation = UnityFn.GetImmediateRotation3D(shotPosition, copy.targetPosition); // set rotation once since bullet goes one direction
@@ -42,14 +40,8 @@ namespace ProjectContra.Scripts.EnemyBullet
 
         private void OnTriggerEnter(Collider other)
         {
-            Vector3 position = transform.position;
-            UnityFn.CreateEffect(impactEffect, position, 1f); // only if the bullet creates explosion
-            Destroy(gameObject);
-            GameFn.DealDamage(position, enemyBulletType.blastRange, enemyBulletType.destructibleLayers, (obj) =>
-            {
-                // EnemyController enemy = obj.GetComponent<EnemyController>();
-                // enemy.TakeDamage(position, enemyBulletType.damage);
-            });
+            DealDamageToPlayer(other, enemyBulletType);
+            DestroySelf(impactEffect, 1f);
         }
     }
 }

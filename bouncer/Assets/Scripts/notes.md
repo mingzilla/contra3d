@@ -8,7 +8,7 @@
 * walker jump from building - DONE
 * throwing bomb enemy - DONE
 * bomb from building - DONE
-* rotate bomb
+* rotate bomb - DONE
 * power up flying
 * power up drop
 * power up pickup

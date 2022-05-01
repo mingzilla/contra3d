@@ -44,11 +44,7 @@ namespace ProjectContra.Scripts.Player
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
             PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
-            if (userInput.fire1)
-            {
-                GameObject explosionEffect = AppResource.instance.GetExplosionEffect(WeaponType.BLAST);
-                BulletController.Spawn(transform, isFacingRight, userInput, WeaponType.BLAST, explosionEffect, isOnGround);
-            }
+            if (userInput.fire1) BulletController.Spawn(transform, isFacingRight, userInput, WeaponType.BLAST, isOnGround);
 
             playerAttribute.inGameTransform = transform;
             storeData.SetPlayer(playerAttribute);

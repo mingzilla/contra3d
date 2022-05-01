@@ -11,20 +11,19 @@ namespace ProjectContra.Scripts.Bullet
 {
     public class BulletController : MonoBehaviour
     {
-
         private Rigidbody rb;
         private GameObject explosionEffect;
         private Vector3 moveDirection;
         private WeaponType weaponType;
 
-        public static BulletController Spawn(Transform shotPoint, bool isFacingForward, UserInput userInput, WeaponType weaponType, GameObject explosionEffect, bool isOnGround)
+        public static BulletController Spawn(Transform shotPoint, bool isFacingForward, UserInput userInput, WeaponType weaponType, bool isOnGround)
         {
             GameObject prefab = AppResource.instance.GetBulletPrefab(weaponType);
             BulletController copy = Instantiate(prefab, shotPoint.position, shotPoint.rotation).GetComponent<BulletController>();
             copy.moveDirection = BulletCommonUtil3D.CreateBulletDirection(isFacingForward, userInput, isOnGround);
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false);
             copy.weaponType = weaponType;
-            copy.explosionEffect = explosionEffect;
+            copy.explosionEffect = AppResource.instance.GetBulletHitEffect(weaponType);
             return copy;
         }
 
@@ -51,7 +50,7 @@ namespace ProjectContra.Scripts.Bullet
             GameFn.DealDamage(position, weaponType.blastRange, weaponType.destructibleLayers, (obj) =>
             {
                 EnemyController enemy = obj.GetComponent<EnemyController>();
-                enemy.TakeDamage(position, weaponType.damage);
+                if (enemy != null) enemy.TakeDamage(position, weaponType.damage); // null check to avoid child objects
             });
         }
     }

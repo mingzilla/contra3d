@@ -6,10 +6,11 @@ using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.Enemy;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
+using Random = System.Random;
 
 namespace ProjectContra.Scripts.EnemyBullet
 {
-    public class EnemyGrenadeController : MonoBehaviour
+    public class EnemyGrenadeController : EnemyBulletController
     {
         public float rotationSpeed = 90f;
 
@@ -47,14 +48,8 @@ namespace ProjectContra.Scripts.EnemyBullet
 
         private void OnTriggerEnter(Collider other)
         {
-            Vector3 position = transform.position;
-            UnityFn.CreateEffect(impactEffect, position, 1f); // only if the bullet creates explosion
-            Destroy(gameObject);
-            GameFn.DealDamage(position, enemyBulletType.blastRange, enemyBulletType.destructibleLayers, (obj) =>
-            {
-                // EnemyController enemy = obj.GetComponent<EnemyController>();
-                // enemy.TakeDamage(position, enemyBulletType.damage);
-            });
+            DealDamageToPlayer(other, enemyBulletType);
+            DestroySelf(impactEffect, 1f);
         }
     }
 }
