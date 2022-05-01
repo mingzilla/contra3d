@@ -5,6 +5,7 @@ using BaseUtil.Base;
 using BaseUtil.GameUtil.Types;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using Random = System.Random;
 
 namespace BaseUtil.GameUtil.Base
 {
@@ -386,6 +387,24 @@ namespace BaseUtil.GameUtil.Base
         {
             Vector3 forceToAdd = new Vector3(xForce, yForce, zForce);
             rb.AddRelativeForce(forceToAdd, ForceMode.Impulse); // Impulse is used to apply force once only, so don't put it in Update
+        }
+
+        public static void RotateOverTimeWithRandomRotation(Transform transform, float rotationSpeed)
+        {
+            Random random = new Random();
+            bool x = FnVal.RandomBool(random);
+            bool y = FnVal.RandomBool(random);
+            bool z = FnVal.RandomBool(random);
+            RotateOverTime(transform, x, y, z, rotationSpeed);
+        }
+
+        public static void RotateOverTime(Transform transform, bool x, bool y, bool z, float rotationSpeed)
+        {
+            float speed = rotationSpeed * Time.deltaTime;
+            float xAngle = x ? speed : 0;
+            float yAngle = y ? speed : 0;
+            float zAngle = z ? speed : 0;
+            transform.Rotate(xAngle, yAngle, zAngle);
         }
     }
 }

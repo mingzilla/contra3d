@@ -56,5 +56,10 @@ namespace BaseUtil.Base
             if (value > maxValue) return maxValue;
             return value;
         }
+
+        public static bool RandomBool(Random newRandom)
+        {
+            return newRandom.NextDouble() >= 0.5;
+        }
     }
 }

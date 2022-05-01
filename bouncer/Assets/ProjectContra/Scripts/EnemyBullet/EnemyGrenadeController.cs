@@ -11,10 +11,11 @@ namespace ProjectContra.Scripts.EnemyBullet
 {
     public class EnemyGrenadeController : MonoBehaviour
     {
-        public GameObject impactEffect;
+        public float rotationSpeed = 90f;
 
         private Rigidbody rb;
         private EnemyBulletType enemyBulletType;
+        private GameObject impactEffect;
         private float xForce = 2f;
         private float yForce = 8f;
         private float zForce = 0f;
@@ -25,6 +26,7 @@ namespace ProjectContra.Scripts.EnemyBullet
             EnemyGrenadeController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyGrenadeController>();
             copy.gameObject.layer = GameLayer.ENEMY_GRENADE.GetLayer();
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, true);
+            copy.impactEffect = AppResource.instance.enemyGrenadeSmallExplosion;
             copy.enemyBulletType = enemyBulletType;
             copy.xForce = xForce;
             copy.yForce = yForce;
@@ -36,6 +38,11 @@ namespace ProjectContra.Scripts.EnemyBullet
         {
             UnityFn.SetTimeout(this, enemyBulletType.autoDestroyTime, () => Destroy(gameObject));
             UnityFn.Throw(rb, xForce, yForce, zForce);
+        }
+
+        void Update()
+        {
+            UnityFn.RotateOverTimeWithRandomRotation(transform, rotationSpeed);
         }
 
         private void OnTriggerEnter(Collider other)

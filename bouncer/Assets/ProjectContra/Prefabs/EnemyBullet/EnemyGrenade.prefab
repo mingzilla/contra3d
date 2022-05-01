@@ -200,5 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34412ad144894c128f143cab087c1cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactEffect: {fileID: 5035670118569957943, guid: 7bb91091cfb7a524aa710022b6cef03a,
-    type: 3}
+  rotationSpeed: 180
+  rotateX: 1
+  rotateY: 0
+  rotateZ: 0
