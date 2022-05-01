@@ -18,8 +18,6 @@ namespace ProjectContra.Scripts.Types
         public float bulletSpeed;
         public float autoDestroyTime;
 
-        public LayerMask destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.DESTRUCTIBLE, GameLayer.ENEMY, GameLayer.POWER_UP_CONTAINER});
-
         static readonly Dictionary<string, WeaponType> typeMap = Fn.ListToDictionaryWithKeyFn((x) => x.name, All());
 
         private WeaponType()
@@ -50,6 +48,12 @@ namespace ProjectContra.Scripts.Types
         public static WeaponType GetByName(string name)
         {
             return typeMap[(name)];
+        }
+
+        public LayerMask GetDestructibleLayers()
+        {
+            // LayerMask can only be in methods, it can't be a field because it can't be part of initialisation
+            return GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.DESTRUCTIBLE, GameLayer.ENEMY, GameLayer.POWER_UP_CONTAINER});
         }
     }
 }

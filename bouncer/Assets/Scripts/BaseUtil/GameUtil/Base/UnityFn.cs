@@ -307,6 +307,12 @@ namespace BaseUtil.GameUtil.Base
             return obj.GetComponent<T>();
         }
 
+        public static T InstantiateObjectWith<T>(GameObject prefab, Vector3 position)
+        {
+            GameObject obj = Object.Instantiate(prefab, position, Quaternion.identity);
+            return obj.GetComponent<T>();
+        }
+
         public static void SetActive(GameObject gameObject, Action beforeSetActiveFn)
         {
             if (!gameObject.activeSelf)

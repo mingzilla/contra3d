@@ -15,6 +15,9 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         [SerializeField] private GameObject basicBulletPrefab, blastBulletPrefab;
         public readonly Dictionary<WeaponType, GameObject> weaponTypeAndBulletPrefab = new Dictionary<WeaponType, GameObject>();
 
+        // Power Up prefabs
+        [SerializeField] public GameObject powerUpPrefab;
+
         // Enemy prefabs
         [SerializeField] public GameObject enemyWalkerPrefab;
 

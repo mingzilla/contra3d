@@ -46,7 +46,7 @@ namespace ProjectContra.Scripts.Bullet
             Vector3 position = transform.position;
             UnityFn.CreateEffect(explosionEffect, position, 1f); // only if the bullet creates explosion
             Destroy(gameObject);
-            GameFn.DealDamage(position, weaponType.blastRange, weaponType.destructibleLayers, (obj) =>
+            GameFn.DealDamage(position, weaponType.blastRange, weaponType.GetDestructibleLayers(), (obj) =>
             {
                 AbstractDestructibleController destructible = obj.GetComponent<AbstractDestructibleController>();
                 if (destructible != null) destructible.TakeDamage(position, weaponType.damage); // null check to avoid child objects

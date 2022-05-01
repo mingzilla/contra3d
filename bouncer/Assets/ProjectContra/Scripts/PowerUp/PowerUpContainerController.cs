@@ -13,6 +13,7 @@ namespace ProjectContra.Scripts.PowerUp
         public int moveSpeed = 10;
         public float detectionRange = 60f;
         public bool isActive = false;
+        public WeaponType weaponType = WeaponType.BLAST;
 
         private GameStoreData storeData;
         private Rigidbody rb;
@@ -58,6 +59,8 @@ namespace ProjectContra.Scripts.PowerUp
         public override void TakeDamage(Vector3 position, int damage)
         {
             UnityFn.CreateEffect(destroyEffect, position, 1f);
+            PowerUpController powerUp = UnityFn.InstantiateObjectWith<PowerUpController>(AppResource.instance.powerUpPrefab, transform.position);
+            powerUp.Init(weaponType);
             Destroy(gameObject);
         }
     }

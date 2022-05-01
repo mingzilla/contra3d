@@ -75,7 +75,7 @@ namespace ProjectContra.Scripts.Enemy
                 GameFn.DealDamage(location, 2, destructibleLayers, (obj) =>
                 {
                     CharacterInGameController character = obj.GetComponent<CharacterInGameController>();
-                    character.TakeDamage(location, damage);
+                    if (character != null) character.TakeDamage(location, damage);
                 });
             }
         }

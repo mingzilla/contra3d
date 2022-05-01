@@ -44,7 +44,7 @@ namespace ProjectContra.Scripts.Player
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
             PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
-            if (userInput.fire1) BulletController.Spawn(transform, isFacingRight, userInput, WeaponType.BLAST, isOnGround);
+            if (userInput.fire1) BulletController.Spawn(transform, isFacingRight, userInput, playerAttribute.weaponType, isOnGround);
 
             playerAttribute.inGameTransform = transform;
             storeData.SetPlayer(playerAttribute);
@@ -54,6 +54,13 @@ namespace ProjectContra.Scripts.Player
         {
             UnityFn.CreateEffect(destroyEffect, position, 1f);
             gameObject.SetActive(false);
+        }
+
+        public void PowerUp(WeaponType weaponType)
+        {
+            PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
+            playerAttribute.weaponType = weaponType;
+            storeData.SetPlayer(playerAttribute);
         }
     }
 }
