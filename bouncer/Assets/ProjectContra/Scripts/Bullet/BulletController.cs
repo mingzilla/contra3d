@@ -21,7 +21,7 @@ namespace ProjectContra.Scripts.Bullet
             GameObject prefab = AppResource.instance.GetBulletPrefab(weaponType);
             BulletController copy = Instantiate(prefab, shotPoint.position, shotPoint.rotation).GetComponent<BulletController>();
             copy.moveDirection = BulletCommonUtil3D.CreateBulletDirection(isFacingForward, userInput, isOnGround);
-            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false);
+            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
             copy.weaponType = weaponType;
             copy.explosionEffect = AppResource.instance.GetBulletHitEffect(weaponType);
             return copy;
