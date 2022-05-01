@@ -48,7 +48,7 @@ namespace ProjectContra.Scripts.Enemy
                 meshRenderer.enabled = true;
                 transform.LookAt(closestPlayer);
             }
-            if (isActive) MovementUtil.MoveTowardsPosition3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
+            if (isActive) MovementUtil.MoveTowardsPositionX3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
         }
 
         void OnCollisionEnter(Collision other)

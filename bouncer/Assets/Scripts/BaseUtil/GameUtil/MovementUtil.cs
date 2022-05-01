@@ -93,6 +93,17 @@ namespace BaseUtil.GameUtil
             addDeltaToTargetFn(delta); // targetPosition += delta; - move target further so that bullet never catches the target
         }
 
+        public static void MoveTowardsPositionX3D(Transform transform, Vector3 targetPosition, float moveSpeed, Action<Vector3> addDeltaToTargetFn)
+        {
+            Vector3 originalPosition = transform.position;
+            bool moveLeft = targetPosition.x < originalPosition.x;
+            float x = originalPosition.x + (moveLeft ? -1 : 1);
+            Vector3 desirePosition = new Vector3(x, originalPosition.y, originalPosition.z);
+            Vector3 delta = UnityFn.GetFramePositionDelta(originalPosition, desirePosition, moveSpeed, Time.deltaTime);
+            transform.position = originalPosition + delta;
+            addDeltaToTargetFn(delta); // targetPosition += delta; - move target further so that bullet never catches the target
+        }
+
         public static bool JumpWhenOverlapsWithPositions(Rigidbody2D unitRB, Transform unitTransform, List<Transform> jumpPoints,
                                                          float overlapRange, float jumpForce)
         {

@@ -98,8 +98,7 @@ MonoBehaviour:
   damage: 1
   moveSpeed: 4
   jumpForce: 8
-  detectionRange: 20
-  delayToBeActive: 0
+  detectionRange: 60
   isActive: 0
 --- !u!136 &5849297839655832023
 CapsuleCollider:
