@@ -26,9 +26,16 @@ namespace ProjectContra.Scripts.Enemy
             {
                 UnityFn.RunWithInterval(this, spawnInterval, canSpawn, (s) => canSpawn = s, () =>
                 {
-                    Instantiate(AppResource.instance.enemyWalkerPrefab, transform.position, Quaternion.identity);
+                    SpawnWalker();
+                    UnityFn.SetTimeout(this, 0.5f, SpawnWalker);
+                    UnityFn.SetTimeout(this, 1f, SpawnWalker);
                 });
             });
+        }
+
+        void SpawnWalker()
+        {
+            Instantiate(AppResource.instance.enemyWalkerPrefab, transform.position, Quaternion.identity);
         }
 
         public override float GetDetectionRange()
