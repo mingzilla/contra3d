@@ -8,8 +8,8 @@ namespace ProjectContra.Scripts.PowerUp
     public class PowerUpController : MonoBehaviour
     {
         private Rigidbody rb;
-        private float xForce = 1f;
-        private float yForce = 4f;
+        private float xForce = 2f;
+        private float yForce = 5f;
         private WeaponType weaponType;
 
         public void Init(WeaponType type)
@@ -17,7 +17,7 @@ namespace ProjectContra.Scripts.PowerUp
             gameObject.layer = GameLayer.POWER_UP.GetLayer();
             rb = UnityFn.AddRigidbody(gameObject, true, true);
             weaponType = type;
-            UnityFn.AddSphereCollider(gameObject, 1f, false);
+            UnityFn.AddCollider<BoxCollider>(gameObject, false);
             UnityFn.Throw(rb, xForce, yForce, 0f);
         }
 
