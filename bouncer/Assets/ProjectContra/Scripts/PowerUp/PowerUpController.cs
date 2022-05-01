@@ -7,10 +7,10 @@ namespace ProjectContra.Scripts.PowerUp
 {
     public class PowerUpController : MonoBehaviour
     {
+        public float xForce = 3f;
+        public float yForce = 9f;
+        public WeaponType weaponType;
         private Rigidbody rb;
-        private float xForce = 2f;
-        private float yForce = 5f;
-        private WeaponType weaponType;
 
         public void Init(WeaponType type)
         {
