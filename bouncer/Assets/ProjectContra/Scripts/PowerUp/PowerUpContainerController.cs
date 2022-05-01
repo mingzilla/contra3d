@@ -21,9 +21,6 @@ namespace ProjectContra.Scripts.PowerUp
         private GameObject destroyEffect;
         private Transform closestPlayer;
         private int xMovementValue = 0;
-        private float yLow;
-        private float yHigh;
-        private bool isGoingUp = true;
 
         void Start()
         {
@@ -33,9 +30,6 @@ namespace ProjectContra.Scripts.PowerUp
             UnityFn.AddSphereCollider(gameObject, 1f, false);
             meshRenderer = UnityFn.MakeInvisible(gameObject);
             destroyEffect = AppResource.instance.powerUpDestroyedSmallExplosion;
-            float originalY = transform.position.y;
-            yLow = originalY - yPositionDelta;
-            yHigh = originalY + yPositionDelta;
         }
 
         void Update()
@@ -52,9 +46,8 @@ namespace ProjectContra.Scripts.PowerUp
             if (isActive)
             {
                 MovementUtil.MoveX(transform, xMovementValue, moveSpeed);
-                if (position.y > yHigh) isGoingUp = false;
-                if (position.y < yLow) isGoingUp = true;
-                transform.position += new Vector3(0f, (moveSpeed / 2f * Time.deltaTime), 0f) * (isGoingUp ? 1 : -1);
+                float movementFactor = MovementUtil.CalculateCircularMovementFactor(1f);
+                transform.position += new Vector3(0f, (moveSpeed * Time.deltaTime * movementFactor), 0f);
             }
         }
 

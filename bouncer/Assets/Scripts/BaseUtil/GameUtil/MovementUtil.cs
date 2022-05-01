@@ -119,12 +119,23 @@ namespace BaseUtil.GameUtil
         public static Vector3 MoveLikePlatform(Vector3 startingPosition, Vector3 furthestRelativePosition, float period)
         {
             if (period <= Mathf.Epsilon) return startingPosition;
-            float cycles = Time.time / period;
-            const float tau = Mathf.PI * 2f;
-            float rawSinWave = Mathf.Sin(cycles * tau); // between -1 to 1
+            float rawSinWave = CalculateCircularMovementFactor(period);
             float movementFactor = (rawSinWave + 1f) / 2f; // between 0 to 1
             Vector3 offset = furthestRelativePosition * movementFactor;
             return startingPosition + offset;
+        }
+
+        /// <summary>
+        /// Value between -1 to 1 over time
+        /// </summary>
+        /// <param name="period"></param>
+        /// <returns></returns>
+        public static float CalculateCircularMovementFactor(float period)
+        {
+            float cycles = Time.time / period;
+            const float tau = Mathf.PI * 2f;
+            float rawSinWave = Mathf.Sin(cycles * tau); // between -1 to 1
+            return rawSinWave;
         }
     }
 }
