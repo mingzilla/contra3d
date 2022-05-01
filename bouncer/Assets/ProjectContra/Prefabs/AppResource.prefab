@@ -70,3 +70,5 @@ MonoBehaviour:
     type: 3}
   playerExplosiveShotExplosion: {fileID: 553932777566549550, guid: 415baf75cdd6d9f48a207afae17f554d,
     type: 3}
+  powerUpDestroyedSmallExplosion: {fileID: 5035670118569957943, guid: 7b27dcf024ad32940b9f221e7b6e966c,
+    type: 3}

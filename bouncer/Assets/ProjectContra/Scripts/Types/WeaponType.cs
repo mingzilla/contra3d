@@ -18,7 +18,7 @@ namespace ProjectContra.Scripts.Types
         public float bulletSpeed;
         public float autoDestroyTime;
 
-        public LayerMask destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.DESTRUCTIBLE, GameLayer.ENEMY});
+        public LayerMask destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.DESTRUCTIBLE, GameLayer.ENEMY, GameLayer.POWER_UP_CONTAINER});
 
         static readonly Dictionary<string, WeaponType> typeMap = Fn.ListToDictionaryWithKeyFn((x) => x.name, All());
 

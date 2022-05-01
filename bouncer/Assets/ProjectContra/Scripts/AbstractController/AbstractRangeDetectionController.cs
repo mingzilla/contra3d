@@ -4,11 +4,10 @@ using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.GameData;
 using UnityEngine;
 
-namespace ProjectContra.Scripts.Enemy
+namespace ProjectContra.Scripts.AbstractController
 {
-    public abstract class EnemyController : MonoBehaviour
+    public abstract class AbstractRangeDetectionController : MonoBehaviour
     {
-        public abstract void TakeDamage(Vector3 position, int damage);
         public abstract float GetDetectionRange();
 
         protected void OnDrawGizmosSelected()

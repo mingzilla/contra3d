@@ -29,7 +29,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             enemyGrenadeSmallExplosion,
             playerBulletHitEffect,
             playerDestroyedEffect,
-            playerExplosiveShotExplosion;
+            playerExplosiveShotExplosion,
+            powerUpDestroyedSmallExplosion;
 
         private void Awake()
         {

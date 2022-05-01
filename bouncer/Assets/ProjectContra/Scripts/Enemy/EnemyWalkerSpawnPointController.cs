@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using BaseUtil.GameUtil.Base;
+using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public class EnemyWalkerSpawnPointController : EnemyController
+    public class EnemyWalkerSpawnPointController : AbstractRangeDetectionController
     {
         public float spawnInterval = 5f;
         public float detectionRange = 60f;
@@ -41,10 +42,6 @@ namespace ProjectContra.Scripts.Enemy
         public override float GetDetectionRange()
         {
             return detectionRange;
-        }
-
-        public override void TakeDamage(Vector3 position, int damage)
-        {
         }
     }
 }

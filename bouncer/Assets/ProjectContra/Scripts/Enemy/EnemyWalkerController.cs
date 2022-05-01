@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using BaseUtil.Base;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
+using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player;
@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public class EnemyWalkerController : EnemyController
+    public class EnemyWalkerController : AbstractDestructibleController
     {
         public int damage = 1;
         public int moveSpeed = 10;
@@ -31,7 +31,8 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
+            rb = UnityFn.AddRigidbody(gameObject, true, true);
+            UnityFn.AddCapsuleCollider(gameObject, 0.5f, 2, false);
             meshRenderer = UnityFn.MakeInvisible(gameObject);
             destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;

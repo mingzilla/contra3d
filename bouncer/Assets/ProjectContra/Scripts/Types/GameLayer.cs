@@ -19,6 +19,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameLayer ENEMY_JUMP_POINT = Create("ENEMY_JUMP_POINT");
         public static readonly GameLayer ENEMY_DETECTION_RANGE = Create("ENEMY_DETECTION_RANGE"); // bullet can shoot through
         public static readonly GameLayer POWER_UP = Create("POWER_UP");
+        public static readonly GameLayer POWER_UP_CONTAINER = Create("POWER_UP_CONTAINER");
         public static readonly GameLayer NO_COLLISION = Create("NO_COLLISION");
 
         public string name;
@@ -40,6 +41,7 @@ namespace ProjectContra.Scripts.Types
                 ENEMY_JUMP_POINT,
                 ENEMY_DETECTION_RANGE,
                 POWER_UP,
+                POWER_UP_CONTAINER,
                 NO_COLLISION,
             };
         }

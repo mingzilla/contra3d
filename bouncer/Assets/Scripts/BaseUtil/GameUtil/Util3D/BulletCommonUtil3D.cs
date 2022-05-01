@@ -1,17 +1,14 @@
-﻿using UnityEngine;
+﻿using BaseUtil.GameUtil.Base;
+using UnityEngine;
 
 namespace BaseUtil.GameUtil.Util3D
 {
-    public class BulletCommonUtil3D
+    public static class BulletCommonUtil3D
     {
         public static Rigidbody AddRigidbodyAndColliderToBullet(GameObject gameObject, bool useGravity, float colliderRadius)
         {
-            SphereCollider collider = gameObject.AddComponent<SphereCollider>();
-            collider.radius = colliderRadius;
-            collider.isTrigger = true;
-            Rigidbody rb = gameObject.AddComponent<Rigidbody>();
-            rb.useGravity = useGravity;
-            return rb;
+            UnityFn.AddSphereCollider(gameObject, colliderRadius, true);
+            return UnityFn.AddRigidbody(gameObject, useGravity, true);
         }
 
         public static void HandleBulletFixedMovement(Rigidbody theRB, Vector3 moveDirection, float bulletSpeed)

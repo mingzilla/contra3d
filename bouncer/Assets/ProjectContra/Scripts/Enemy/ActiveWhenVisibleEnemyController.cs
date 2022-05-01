@@ -1,10 +1,10 @@
 ﻿using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
-using UnityEngine;
+using ProjectContra.Scripts.AbstractController;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public abstract class ActiveWhenVisibleEnemyController : EnemyController
+    public abstract class ActiveWhenVisibleEnemyController : AbstractDestructibleController
     {
         protected void OnBecameVisible()
         {

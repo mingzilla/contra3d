@@ -26,7 +26,7 @@ namespace ProjectContra.Scripts.Player
             gameObject.tag = GameTag.CHARACTER_IN_GAME.name;
             gameObject.layer = GameLayer.PLAYER.GetLayer();
             UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject);
-            rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
+            rb = UnityFn.AddRigidbody(gameObject, true, true);
             groundLayers = GameLayer.GetGroundLayerMask();
             destroyEffect = AppResource.instance.playerDestroyedEffect;
             storeData.SetPlayer(PlayerAttribute.CreateEmpty(id));

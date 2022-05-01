@@ -1,9 +1,8 @@
-﻿using System;
-using BaseUtil.GameUtil;
+﻿using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Util3D;
+using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
-using ProjectContra.Scripts.Enemy;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
@@ -49,8 +48,8 @@ namespace ProjectContra.Scripts.Bullet
             Destroy(gameObject);
             GameFn.DealDamage(position, weaponType.blastRange, weaponType.destructibleLayers, (obj) =>
             {
-                EnemyController enemy = obj.GetComponent<EnemyController>();
-                if (enemy != null) enemy.TakeDamage(position, weaponType.damage); // null check to avoid child objects
+                AbstractDestructibleController destructible = obj.GetComponent<AbstractDestructibleController>();
+                if (destructible != null) destructible.TakeDamage(position, weaponType.damage); // null check to avoid child objects
             });
         }
     }

@@ -1,4 +1,5 @@
 ﻿using BaseUtil.GameUtil.Base;
+using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
 using ProjectContra.Scripts.GameData;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public class EnemyShooterController : EnemyController
+    public class EnemyShooterController : AbstractDestructibleController
     {
         public float shotInterval = 3f;
 
@@ -21,7 +22,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            rb = UnityFn.AddRigidBodyAndFreezeZ(gameObject);
+            rb = UnityFn.AddRigidbody(gameObject, true, true);
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
         }
 

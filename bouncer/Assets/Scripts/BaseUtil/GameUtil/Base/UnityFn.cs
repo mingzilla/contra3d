@@ -341,18 +341,29 @@ namespace BaseUtil.GameUtil.Base
             });
         }
 
-        public static Rigidbody AddRigidBodyAndFreezeZ(GameObject gameObject)
+        public static Rigidbody AddRigidbody(GameObject gameObject, bool useGravity, bool freezeZ)
         {
             Rigidbody rb = gameObject.AddComponent<Rigidbody>();
-            rb.constraints = (RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation);
+            rb.useGravity = useGravity;
+            if (freezeZ) rb.constraints = (RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation);
             return rb;
         }
 
-        public static MeshRenderer MakeInvisible(GameObject gameObject)
+        public static SphereCollider AddSphereCollider(GameObject gameObject, float radius, bool isTrigger)
         {
-            MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();
-            meshRenderer.enabled = false;
-            return meshRenderer;
+            SphereCollider collider = gameObject.AddComponent<SphereCollider>();
+            collider.radius = radius;
+            collider.isTrigger = isTrigger;
+            return collider;
+        }
+
+        public static CapsuleCollider AddCapsuleCollider(GameObject gameObject, float radius, float height, bool isTrigger)
+        {
+            CapsuleCollider collider = gameObject.AddComponent<CapsuleCollider>();
+            collider.radius = radius;
+            collider.height = height;
+            collider.isTrigger = isTrigger;
+            return collider;
         }
 
         public static T AddCollider<T>(GameObject gameObject, bool isTrigger) where T : Collider
@@ -360,6 +371,13 @@ namespace BaseUtil.GameUtil.Base
             T collider = gameObject.AddComponent<T>();
             collider.isTrigger = isTrigger;
             return collider;
+        }
+
+        public static MeshRenderer MakeInvisible(GameObject gameObject)
+        {
+            MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();
+            meshRenderer.enabled = false;
+            return meshRenderer;
         }
 
         public static T AddNoFrictionCollider<T>(GameObject gameObject) where T : Collider
