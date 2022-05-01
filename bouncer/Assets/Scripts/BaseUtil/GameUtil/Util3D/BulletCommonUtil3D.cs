@@ -8,7 +8,7 @@ namespace BaseUtil.GameUtil.Util3D
         public static Rigidbody AddRigidbodyAndColliderToBullet(GameObject gameObject, bool useGravity, float colliderRadius)
         {
             UnityFn.AddSphereCollider(gameObject, colliderRadius, true);
-            return UnityFn.AddRigidbody(gameObject, useGravity, true);
+            return UnityFn.AddRigidbody(gameObject, useGravity, false);
         }
 
         public static void HandleBulletFixedMovement(Rigidbody theRB, Vector3 moveDirection, float bulletSpeed)

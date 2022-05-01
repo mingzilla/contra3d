@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using BaseUtil.GameUtil;
+﻿using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -20,7 +19,7 @@ namespace ProjectContra.Scripts.PowerUp
         private MeshRenderer meshRenderer;
         private GameObject destroyEffect;
         private Transform closestPlayer;
-        private Vector3 targetPosition = Vector3.zero;
+        private int xMovementValue = 0;
 
         void Start()
         {
@@ -36,13 +35,13 @@ namespace ProjectContra.Scripts.PowerUp
         {
             if (!storeData.HasPlayer()) return;
             if (closestPlayer == null) closestPlayer = storeData.GetClosestPlayer(transform.position).inGameTransform;
-            if (targetPosition == Vector3.zero) targetPosition = closestPlayer.position;
+            xMovementValue = (xMovementValue != 0) ? xMovementValue : (closestPlayer.position.x > transform.position.x ? 1: -1);
             if (!isActive && UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
             {
                 isActive = true;
                 meshRenderer.enabled = true;
             }
-            if (isActive) MovementUtil.MoveTowardsPositionX3D(transform, targetPosition, moveSpeed, delta => targetPosition += delta);
+            if (isActive) MovementUtil.MoveX(transform, xMovementValue, moveSpeed);
         }
 
         public override float GetDetectionRange()

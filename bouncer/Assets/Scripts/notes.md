@@ -9,7 +9,8 @@
 * throwing bomb enemy - DONE
 * bomb from building - DONE
 * rotate bomb - DONE
-* power up flying
+* power up flying - DONE
+* power up flying wabble
 * power up drop
 * power up pickup
 * floor cannon
