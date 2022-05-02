@@ -11,8 +11,8 @@
 * rotate bomb - DONE
 * power up flying - DONE
 * power up flying wabble - DONE
-* power up drop
-* power up pickup
+* power up drop - DONE
+* power up pickup - DONE
 * floor cannon
 * floor cannon - blocking
 * floor cannon - 10 hp

@@ -37,15 +37,10 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots(Vector3 position, Transform closestPlayer)
         {
-            if (canFireShot)
+            UnityFn.RunWithInterval(this, shotInterval, canFireShot, (s) => canFireShot = s, () =>
             {
-                canFireShot = false;
-                UnityFn.SetTimeout(this, shotInterval, () =>
-                {
-                    canFireShot = true;
-                    EnemyBasicBulletController.Spawn(position, closestPlayer, EnemyBulletType.BASIC);
-                });
-            }
+                EnemyBasicBulletController.Spawn(position, closestPlayer, EnemyBulletType.BASIC);
+            });
         }
 
         public override void TakeDamage(Vector3 position, int damage)
