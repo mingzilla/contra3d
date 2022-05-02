@@ -22,7 +22,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         [SerializeField] public GameObject enemyWalkerPrefab;
 
         // Enemy bullet prefabs
-        [SerializeField] private GameObject enemyBasicBulletPrefab, enemyFollowerBulletPrefab, enemyGrenadePrefab, enemyBlastBulletPrefab;
+        [SerializeField] private GameObject enemyBasicBulletPrefab, enemyFollowerBulletPrefab, enemyGrenadePrefab, enemyPierceBulletPrefab, enemyBlastBulletPrefab;
         public readonly Dictionary<EnemyBulletType, GameObject> enemyBulletTypeAndBulletPrefab = new Dictionary<EnemyBulletType, GameObject>();
 
         // Explosion effects prefabs
@@ -66,6 +66,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             enemyBulletTypeAndBulletPrefab[EnemyBulletType.BASIC] = enemyBasicBulletPrefab;
             enemyBulletTypeAndBulletPrefab[EnemyBulletType.FOLLOW] = enemyFollowerBulletPrefab;
             enemyBulletTypeAndBulletPrefab[EnemyBulletType.GRENADE] = enemyGrenadePrefab;
+            enemyBulletTypeAndBulletPrefab[EnemyBulletType.PIERCE] = enemyPierceBulletPrefab;
             enemyBulletTypeAndBulletPrefab[EnemyBulletType.BLAST] = enemyBlastBulletPrefab;
         }
 

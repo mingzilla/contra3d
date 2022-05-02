@@ -14,15 +14,17 @@ namespace ProjectContra.Scripts.Enemy
         private GameStoreData storeData;
         private Rigidbody rb;
         private GameObject destroyEffect;
+        private Animator animatorCtrl;
 
-        private bool isAscended = false;
-        private bool canFireShot = false;
+        private bool canFireShot = true;
+        private static readonly int isActive = Animator.StringToHash("isActive");
 
         void Start()
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             rb = UnityFn.AddRigidbody(gameObject, true, true);
+            animatorCtrl = gameObject.GetComponent<Animator>();
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
         }
 
@@ -30,16 +32,8 @@ namespace ProjectContra.Scripts.Enemy
         {
             RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                if (!isAscended)
-                {
-                    // animate to move up
-                    UnityFn.SetTimeout(this, 1.5f, () =>
-                    {
-                        isAscended = true;
-                        canFireShot = true;
-                    });
-                }
-                if (isAscended) FireShots(transform.position, closestPlayer);
+                animatorCtrl.SetBool(isActive, true); // animate to move up, spend 1.5f
+                UnityFn.SetTimeout(this, 1.5f, () => FireShots(transform.position, closestPlayer));
             });
         }
 
@@ -47,8 +41,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.RunWithInterval(this, shotInterval, canFireShot, (s) => canFireShot = s, () =>
             {
-                // only horizontal movement ------------------------------------- 
-                EnemyBasicBulletController.Spawn(position, closestPlayer, EnemyBulletType.BASIC);
+                EnemyPierceBulletController.Spawn(position, closestPlayer, EnemyBulletType.PIERCE);
             });
         }
 

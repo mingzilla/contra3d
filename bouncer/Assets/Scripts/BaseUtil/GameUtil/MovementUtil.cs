@@ -93,6 +93,7 @@ namespace BaseUtil.GameUtil
             addDeltaToTargetFn(delta); // targetPosition += delta; - move target further so that bullet never catches the target
         }
 
+        /// <param name="xValue">-1 goes left, 1 goes right</param>
         public static void MoveX(Transform transform, int xValue, float moveSpeed)
         {
             float x = (moveSpeed * Time.deltaTime) * ((xValue > 0) ? 1 : -1);

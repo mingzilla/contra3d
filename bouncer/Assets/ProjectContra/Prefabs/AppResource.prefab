@@ -57,6 +57,8 @@ MonoBehaviour:
     type: 3}
   enemyGrenadePrefab: {fileID: 7193432624006083695, guid: 3ffd76af84d42de45b04546f1cd15379,
     type: 3}
+  enemyPierceBulletPrefab: {fileID: 4362966052311366046, guid: faccbf9aaa2c5244995524e1c6943bc1,
+    type: 3}
   enemyBlastBulletPrefab: {fileID: 0}
   enemyBulletHitEffect: {fileID: 5035670118569957943, guid: 6c8ef40966b0d3343afa3817b5d02112,
     type: 3}

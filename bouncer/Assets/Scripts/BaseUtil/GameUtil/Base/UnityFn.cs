@@ -219,8 +219,8 @@ namespace BaseUtil.GameUtil.Base
         {
             if (canRun)
             {
-                fn();
                 setStatusFn(false);
+                fn();
                 SetTimeout(controller, interval, () => setStatusFn(true));
             }
         }
