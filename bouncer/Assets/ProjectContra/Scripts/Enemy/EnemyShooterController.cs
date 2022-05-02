@@ -11,6 +11,7 @@ namespace ProjectContra.Scripts.Enemy
     public class EnemyShooterController : AbstractDestructibleController
     {
         public float shotInterval = 3f;
+        public float detectionRange = 30f;
 
         private GameStoreData storeData;
         private Rigidbody rb;
@@ -51,7 +52,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override float GetDetectionRange()
         {
-            return 50f;
+            return detectionRange;
         }
     }
 }

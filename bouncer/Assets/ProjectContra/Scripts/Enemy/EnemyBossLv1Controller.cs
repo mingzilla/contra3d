@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.Base;
+using BaseUtil.GameUtil;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
@@ -11,6 +12,9 @@ namespace ProjectContra.Scripts.Enemy
     {
         private GameStoreData storeData;
         private EnemyBossLv1GunController[] guns;
+
+        [SerializeField] private GameObject gameCamera;
+        [SerializeField] private GameObject bossCamera;
 
         [SerializeField] private GameObject weakPoint;
         [SerializeField] private GameObject spawnPoint;
@@ -46,6 +50,8 @@ namespace ProjectContra.Scripts.Enemy
         {
             SetGunsActive(true);
             animatorCtrl.SetBool(isActive, true);
+            bossCamera.SetActive(true);
+            gameCamera.SetActive(false);
             phase = 1;
         }
 
@@ -62,7 +68,12 @@ namespace ProjectContra.Scripts.Enemy
 
         private void HandlePhase2()
         {
-            if (weakPointCtrl.isBroken) Destroy(gameObject);
+            if (weakPointCtrl.isBroken)
+            {
+                gameCamera.SetActive(true);
+                bossCamera.SetActive(false);
+                Destroy(gameObject);
+            }
         }
 
         private void SetGunsActive(bool isActive)

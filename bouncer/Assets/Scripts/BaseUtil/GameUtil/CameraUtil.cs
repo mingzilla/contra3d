@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
+﻿using UnityEngine;
 
 namespace BaseUtil.GameUtil
 {
-    public class CameraUtil
+    public static class CameraUtil
     {
         public static float GetMainCameraHalfHeight()
         {
