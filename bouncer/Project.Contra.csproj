@@ -57,6 +57,9 @@
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\PlayerManagerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Bullet\BulletController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\ActiveWhenVisibleEnemyController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv1Controller.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv1GunController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv1WeakPointController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyGrenadeThrowerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyGroundCannonController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyShooterController.cs" />

@@ -8,25 +8,24 @@ using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public class EnemyGroundCannonController : AbstractDestructibleController
+    public class EnemyBossLv1GunController : AbstractDestructibleController
     {
-        public float shotInterval = 3f;
-        public int hp = 10;
+        public float shotInterval = 5f;
+        public int fireDelay = 0;
+        public int hp = 5;
+        public bool isBroken = false;
 
         private GameStoreData storeData;
         private Rigidbody rb;
         private GameObject destroyEffect;
-        private Animator animatorCtrl;
 
         private bool canFireShot = true;
-        private static readonly int isActive = Animator.StringToHash("isActive");
 
         void Start()
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            rb = UnityFn.AddRigidbody(gameObject, true, true);
-            animatorCtrl = gameObject.GetComponent<Animator>();
+            rb = UnityFn.AddRigidbody(gameObject, false, true);
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
         }
 
@@ -34,8 +33,8 @@ namespace ProjectContra.Scripts.Enemy
         {
             RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                animatorCtrl.SetBool(isActive, true); // animate to move up, spend 1.5f
-                UnityFn.SetTimeout(this, 1.5f, () => FireShots(transform.position, closestPlayer));
+                transform.LookAt(closestPlayer);
+                UnityFn.SetTimeout(this, fireDelay, () => FireShots(transform.position, closestPlayer));
             });
         }
 
@@ -43,7 +42,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.RunWithInterval(this, shotInterval, canFireShot, (s) => canFireShot = s, () =>
             {
-                EnemyPierceBulletController.Spawn(position, closestPlayer, EnemyBulletType.PIERCE);
+                EnemyBasicBulletController.Spawn(position, closestPlayer, EnemyBulletType.BASIC);
             });
         }
 
@@ -51,12 +50,16 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.CreateEffect(destroyEffect, position, 1f);
             hp -= damage;
-            if (hp <= 0) Destroy(gameObject);
+            if (hp <= 0)
+            {
+                isBroken = true;
+                Destroy(gameObject);
+            }
         }
 
         public override float GetDetectionRange()
         {
-            return 40f;
+            return 30f;
         }
     }
 }

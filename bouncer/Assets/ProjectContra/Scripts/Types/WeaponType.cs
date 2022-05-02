@@ -7,9 +7,9 @@ namespace ProjectContra.Scripts.Types
     public class WeaponType
     {
         public static readonly WeaponType BASIC = Create("BASIC", 1, 1f, 20f, 3f);
-        public static readonly WeaponType BLAST = Create("BLAST", 5, 3f, 40f, 2f);
-        public static readonly WeaponType WIDE = Create("WIDE", 2, 1f, 20f, 3f);
-        public static readonly WeaponType LASER = Create("LASER", 5, 1f, 20f, 3f);
+        public static readonly WeaponType BLAST = Create("BLAST", 3, 3f, 40f, 2f);
+        public static readonly WeaponType WIDE = Create("WIDE", 1, 1f, 20f, 3f);
+        public static readonly WeaponType LASER = Create("LASER", 3, 1f, 20f, 3f);
         public static readonly WeaponType ACCELERATE = Create("ACCELERATE", 1, 1f, 20f, 3f);
 
         public string name;

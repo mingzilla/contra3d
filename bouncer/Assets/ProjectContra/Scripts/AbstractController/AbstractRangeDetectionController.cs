@@ -12,8 +12,12 @@ namespace ProjectContra.Scripts.AbstractController
 
         protected void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, GetDetectionRange());
+            float detectionRange = GetDetectionRange();
+            if (detectionRange > 0)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireSphere(transform.position, detectionRange);
+            }
         }
 
         protected void RunIfPlayerIsInRange(GameStoreData storeData, float detectionRange, Action<Transform> fn)

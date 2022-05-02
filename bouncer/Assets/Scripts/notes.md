@@ -13,13 +13,17 @@
 * power up flying wabble - DONE
 * power up drop - DONE
 * power up pickup - DONE
-* floor cannon
-* floor cannon - blocking
+* floor cannon - DONE
+* floor cannon - animate from ground - DONE
 * floor cannon - 10 hp
-* floor cannon - shoot faster
-* liedown enemy
 * lie down
+* liedown enemy
 
+
+* boss - cannon shot - bullet
+* boss - cannon deal damage
+* boss - cannon take damage
+* boss - when 4 cannons destroyed, explode
 
 
 ### Tips
