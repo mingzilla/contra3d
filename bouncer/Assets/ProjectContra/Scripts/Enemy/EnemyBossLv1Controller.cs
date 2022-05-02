@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.Base;
-using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
-using ProjectContra.Scripts.EnemyBullet;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Types;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
@@ -19,6 +16,8 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private GameObject spawnPoint;
 
         private EnemyBossLv1WeakPointController weakPointCtrl;
+        private Animator animatorCtrl;
+        private static readonly int isActive = Animator.StringToHash("isActive");
 
         private int phase = 0;
 
@@ -27,6 +26,7 @@ namespace ProjectContra.Scripts.Enemy
             storeData = AppResource.instance.storeData;
             guns = gameObject.GetComponentsInChildren<EnemyBossLv1GunController>();
             weakPointCtrl = weakPoint.GetComponent<EnemyBossLv1WeakPointController>();
+            animatorCtrl = gameObject.GetComponent<Animator>();
             SetGunsActive(false);
             weakPoint.SetActive(false);
             spawnPoint.SetActive(false);
@@ -45,6 +45,7 @@ namespace ProjectContra.Scripts.Enemy
         private void HandlePhase0()
         {
             SetGunsActive(true);
+            animatorCtrl.SetBool(isActive, true);
             phase = 1;
         }
 

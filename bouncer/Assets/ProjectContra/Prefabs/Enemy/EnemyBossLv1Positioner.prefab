@@ -944,6 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1640304076679381980}
   - component: {fileID: 1047145802}
+  - component: {fileID: 1047145803}
   m_Layer: 0
   m_Name: EnemyBossLv1
   m_TagString: Untagged
@@ -983,6 +984,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weakPoint: {fileID: 7484239730147770964}
   spawnPoint: {fileID: 4507532423534699875}
+  moveSpotsPhase0: []
+  moveSpotsPhase1: []
+  moveSpotsPhase2: []
+--- !u!95 &1047145803
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388116379472215262}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b24994af274f9f14e93a11b483c916e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8418591433577795363
 GameObject:
   m_ObjectHideFlags: 0
