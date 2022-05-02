@@ -45,7 +45,7 @@ namespace ProjectContra.Scripts.GameData
         private List<PlayerAttribute> GetVisiblePlayers()
         {
             // a player may not have a position, especially when they disappear
-            return Fn.Filter(x => x.inGameTransform != null, idAndPlayerState.Values.ToList());
+            return Fn.Filter(x => x.inGameTransform != null && x.isAlive, idAndPlayerState.Values.ToList());
         }
     }
 }

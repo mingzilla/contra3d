@@ -6,6 +6,7 @@ namespace ProjectContra.Scripts.Player.domain
     public class PlayerAttribute
     {
         public int playerId;
+        public bool isAlive; // not alive if killed
         public float moveSpeed = 8f; // good value by experience
         public float jumpForce = 20f; // good value by experience
         public float gravityMultiplier = 3.5f; // combined with 20f jump force, to avoid character being floaty
@@ -22,6 +23,7 @@ namespace ProjectContra.Scripts.Player.domain
             return new PlayerAttribute
             {
                 playerId = playerId,
+                isAlive = true,
                 weaponType = WeaponType.BASIC,
             };
         }

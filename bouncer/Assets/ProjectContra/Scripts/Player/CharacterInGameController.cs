@@ -54,6 +54,9 @@ namespace ProjectContra.Scripts.Player
         {
             UnityFn.CreateEffect(destroyEffect, position, 1f);
             gameObject.SetActive(false);
+            PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
+            playerAttribute.isAlive = false;
+            storeData.SetPlayer(playerAttribute);
         }
 
         public void PowerUp(WeaponType weaponType)
