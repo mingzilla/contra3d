@@ -1,4 +1,5 @@
-﻿using BaseUtil.GameUtil;
+﻿using System;
+using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
@@ -23,9 +24,13 @@ namespace ProjectContra.Scripts.AppSingleton
             GameLayer.InitOnAwake();
         }
 
-        public void HandleUpdate(UserInput userInput)
+        public void HandleUpdate(UserInput userInput, Action runIfStartFn)
         {
-            if (userInput.fire1) HandleTransitionToGame(userInput);
+            if (userInput.fire1)
+            {
+                HandleTransitionToGame(userInput);
+                runIfStartFn();
+            }
         }
 
         public void HandleTransitionToGame(UserInput userInput)

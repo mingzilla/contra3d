@@ -39,6 +39,12 @@ namespace ProjectContra.Scripts.Player
 
         public void HandleUpdate(UserInput userInput)
         {
+            if (userInput.pause) HandlePause(userInput);
+            if (!userInput.pause && gameObject.activeSelf) HandlePlayerControl(userInput);
+        }
+
+        private void HandlePlayerControl(UserInput userInput)
+        {
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
 
             PlayerActionHandler3D.MoveX(userInput.fixedHorizontal, rb, playerAttribute.moveSpeed);
@@ -56,6 +62,10 @@ namespace ProjectContra.Scripts.Player
 
             playerAttribute.inGameTransform = transform;
             storeData.SetPlayer(playerAttribute);
+        }
+
+        private void HandlePause(UserInput userInput)
+        {
         }
 
         public void TakeDamage(Vector3 position, int damage)
