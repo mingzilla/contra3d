@@ -18,6 +18,8 @@ namespace ProjectContra.Scripts.Player
         private GameObject destroyEffect;
         private int playerId;
         private bool isFacingRight = true;
+        private Animator animatorCtrl;
+        private static readonly int isJumping = Animator.StringToHash("isJumping");
 
         public void Init(int id)
         {
@@ -29,6 +31,7 @@ namespace ProjectContra.Scripts.Player
             rb = UnityFn.AddRigidbody(gameObject, true, true);
             groundLayers = GameLayer.GetGroundLayerMask();
             destroyEffect = AppResource.instance.playerDestroyedEffect;
+            animatorCtrl = gameObject.GetComponent<Animator>();
             storeData.SetPlayer(PlayerAttribute.CreateEmpty(id));
         }
 
@@ -41,7 +44,11 @@ namespace ProjectContra.Scripts.Player
             PlayerActionHandler3D.HandleLeftRightFacing(transform, isFacingRight);
 
             bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
-            if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
+            if (userInput.jump)
+            {
+                PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
+                animatorCtrl.SetTrigger(isJumping);
+            }
             PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
             if (userInput.fire1) BulletController.Spawn(transform, isFacingRight, userInput, playerAttribute.weaponType, isOnGround);
