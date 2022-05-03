@@ -40,14 +40,6 @@ namespace ProjectContra.Scripts.Types
             return typeMap[(name)];
         }
 
-        public static void InitializeLevel(MonoBehaviour controller, GameScene scene)
-        {
-            // disable everything apart from control -> hit A or Space to skip intro screen
-            // disable scene content -> hit any button to enable and start, hide intro screen
-            
-            // intro screen is a canvas in the scene
-        }
-
         public static void TransitionToNextLevel(MonoBehaviour controller, GameScene scene)
         {
             UnityFn.SetTimeout(controller, 5, () =>
