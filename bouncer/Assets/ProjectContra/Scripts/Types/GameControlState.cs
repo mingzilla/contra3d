@@ -7,8 +7,9 @@ namespace ProjectContra.Scripts.Types
 {
     public class GameControlState
     {
-        public static readonly GameControlState TITLE_SCREEN_MENU = Create("TITLE_SCREEN_MENU");
-        public static readonly GameControlState IN_GAME = Create("IN_GAME");
+        public static readonly GameControlState TITLE_SCREEN_MENU = Create("TITLE_SCREEN_MENU"); // control menu
+        public static readonly GameControlState INFO_SCREEN = Create("INFO_SCREEN"); // hit A to skip screen
+        public static readonly GameControlState IN_GAME = Create("IN_GAME"); // can move characters around
 
         public string name;
 
@@ -19,6 +20,7 @@ namespace ProjectContra.Scripts.Types
             return new List<GameControlState>()
             {
                 TITLE_SCREEN_MENU,
+                INFO_SCREEN,
                 IN_GAME,
             };
         }

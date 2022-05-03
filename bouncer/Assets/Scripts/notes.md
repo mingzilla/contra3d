@@ -15,15 +15,24 @@
 * power up pickup - DONE
 * floor cannon - DONE
 * floor cannon - animate from ground - DONE
-* floor cannon - 10 hp
-* lie down
+* floor cannon - 10 hp - DONE
+* lie down - DONE
 * liedown enemy
+* boss - cannon shot - bullet - DONE
+* boss - cannon deal damage - DONE
+* boss - cannon take damage - DONE
+* boss - when 4 cannons destroyed, explode - DONE
 
+* start next scene when boss is killed
+* start game screen
+* player loses life 
+* player respawn
 
-* boss - cannon shot - bullet
-* boss - cannon deal damage
-* boss - cannon take damage
-* boss - when 4 cannons destroyed, explode
+kill boss -> level manager:
+5 seconds later -> stop control -> darken screen (no need to move away characters) -> start next scene
+
+scene starts:
+intro screen -> init
 
 
 ### Tips

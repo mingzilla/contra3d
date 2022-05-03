@@ -4,6 +4,7 @@ using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Domain;
 using ProjectContra.Scripts.Player.domain;
+using ProjectContra.Scripts.Types;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.GameData
@@ -11,6 +12,7 @@ namespace ProjectContra.Scripts.GameData
     public class GameStoreData
     {
         private Dictionary<int, PlayerAttribute> idAndPlayerState = new Dictionary<int, PlayerAttribute>();
+        public GameControlState controlState = GameControlState.INFO_SCREEN;
 
         public int GetNextPlayerId()
         {

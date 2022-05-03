@@ -53,8 +53,8 @@
      <Compile Include="Assets\ProjectContra\Scripts\AbstractController\AbstractDestructibleController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AbstractController\AbstractRangeDetectionController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\CameraTargetController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\GameManagerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\LiveResource\AppResource.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\PlayerManagerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Bullet\BulletController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\ActiveWhenVisibleEnemyController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv1Controller.cs" />
@@ -78,9 +78,11 @@
      <Compile Include="Assets\ProjectContra\Scripts\Player\domain\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\PowerUp\PowerUpContainerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\PowerUp\PowerUpController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Screens\InfoScreenCanvasController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\EnemyBulletType.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameControlState.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameLayer.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Types\GameScene.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameTag.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\WeaponType.cs" />
      <None Include="Assets\ProjectContra\Project.Contra.asmdef" />

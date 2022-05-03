@@ -11,6 +11,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public static AppResource instance;
         public readonly GameStoreData storeData = new GameStoreData();
 
+        [SerializeField] public GameObject infoScreen;
+
         // Player bullet prefabs
         [SerializeField] private GameObject basicBulletPrefab, blastBulletPrefab;
         public readonly Dictionary<WeaponType, GameObject> weaponTypeAndBulletPrefab = new Dictionary<WeaponType, GameObject>();
@@ -40,6 +42,11 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             UnityFn.MarkSingletonAndKeepAlive(instance, gameObject, () => instance = this);
             ConfigureBullets();
             ConfigureEnemyBullets();
+        }
+
+        public void SetControlState(GameControlState controlState)
+        {
+            storeData.controlState = controlState;
         }
 
         void ConfigureBullets()
