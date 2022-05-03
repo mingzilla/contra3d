@@ -23,20 +23,5 @@ namespace ProjectContra.Scripts.AppSingleton
             GameTag.InitOnAwake();
             GameLayer.InitOnAwake();
         }
-
-        public void HandleUpdate(UserInput userInput, Action runIfStartFn)
-        {
-            if (userInput.fire1)
-            {
-                HandleTransitionToGame(userInput);
-                runIfStartFn();
-            }
-        }
-
-        public void HandleTransitionToGame(UserInput userInput)
-        {
-            AppResource.instance.SetControlState(GameControlState.IN_GAME);
-            AppResource.instance.infoScreen.SetActive(false);
-        }
     }
 }
