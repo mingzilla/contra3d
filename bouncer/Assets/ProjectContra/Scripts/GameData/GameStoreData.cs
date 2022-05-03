@@ -34,7 +34,7 @@ namespace ProjectContra.Scripts.GameData
 
         public bool HasPlayer()
         {
-            return idAndPlayerState.Count > 0;
+            return GetVisiblePlayers().Count > 0;
         }
 
         public PlayerAttribute GetClosestPlayer(Vector3 position)

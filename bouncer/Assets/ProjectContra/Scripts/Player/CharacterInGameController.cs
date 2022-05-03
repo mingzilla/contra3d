@@ -47,7 +47,7 @@ namespace ProjectContra.Scripts.Player
             if (userInput.jump)
             {
                 PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
-                animatorCtrl.SetTrigger(isJumping);
+                if (isOnGround) animatorCtrl.SetTrigger(isJumping);
             }
             PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
