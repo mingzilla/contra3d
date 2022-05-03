@@ -39,16 +39,16 @@ namespace ProjectContra.Scripts.Player
         {
             GameControlState currentControlState = storeData.controlState;
             AllocateControlObject(currentControlState);
+            if (currentControlState == GameControlState.TITLE_SCREEN_MENU) inMenuController.HandleUpdate(userInput);
             if (currentControlState == GameControlState.INFO_SCREEN) gameManagerController.HandleUpdate(userInput);
             if (currentControlState == GameControlState.IN_GAME) inGameController.HandleUpdate(userInput);
-            if (currentControlState == GameControlState.TITLE_SCREEN_MENU) inMenuController.HandleUpdate(userInput);
             UserInput.ResetTriggers(userInput);
         }
 
         void AllocateControlObject(GameControlState controlState)
         {
-            if (controlState == GameControlState.IN_GAME) UnityFn.SetActiveAndDeActivateOthers(inGameController.gameObject, new List<GameObject>() {inMenuController.gameObject});
             if (controlState == GameControlState.TITLE_SCREEN_MENU) UnityFn.SetActiveAndDeActivateOthers(inMenuController.gameObject, new List<GameObject>() {inGameController.gameObject});
+            if (controlState == GameControlState.IN_GAME) UnityFn.SetActiveAndDeActivateOthers(inGameController.gameObject, new List<GameObject>() {inMenuController.gameObject});
         }
 
         public void Move(InputAction.CallbackContext context)
