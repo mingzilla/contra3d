@@ -19,7 +19,9 @@ namespace ProjectContra.Scripts.Player
         private int playerId;
         private bool isFacingRight = true;
         private Animator animatorCtrl;
-        private static readonly int isJumping = Animator.StringToHash("isJumping");
+        private static readonly int isJumpingKey = Animator.StringToHash("isJumping");
+        private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
+        private static readonly int isDownKey = Animator.StringToHash("isDown");
 
         public void Init(int id)
         {
@@ -44,11 +46,10 @@ namespace ProjectContra.Scripts.Player
             PlayerActionHandler3D.HandleLeftRightFacing(transform, isFacingRight);
 
             bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
-            if (userInput.jump)
-            {
-                PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
-                if (isOnGround) animatorCtrl.SetTrigger(isJumping);
-            }
+            animatorCtrl.SetBool(isOnGroundKey, isOnGround);
+            animatorCtrl.SetBool(isDownKey, userInput.down);
+            if (userInput.jump && isOnGround) animatorCtrl.SetTrigger(isJumpingKey);
+            if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
             PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
             if (userInput.fire1) BulletController.Spawn(transform, isFacingRight, userInput, playerAttribute.weaponType, isOnGround);
