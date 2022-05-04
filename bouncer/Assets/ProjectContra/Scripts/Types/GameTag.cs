@@ -40,7 +40,7 @@ namespace ProjectContra.Scripts.Types
 
         public static void InitOnAwake()
         {
-            TagUtil.AddTagsIfNotPresent(Fn.Map(it => it.name, All()));
+            TagUtil.LogErrorIfTagsNotPresent(Fn.Map(it => it.name, All()));
         }
     }
 }

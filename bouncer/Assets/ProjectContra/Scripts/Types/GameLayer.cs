@@ -73,7 +73,7 @@ namespace ProjectContra.Scripts.Types
 
         public static void InitOnAwake()
         {
-            TagUtil.AddLayersIfNotPresent(Fn.Map(it => it.name, All()));
+            TagUtil.LogErrorIfLayersIfNotPresent(Fn.Map(it => it.name, All()));
         }
 
         public int GetLayer()

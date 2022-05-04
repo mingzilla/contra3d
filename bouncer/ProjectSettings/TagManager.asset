@@ -8,6 +8,8 @@ TagManager:
   - OBSTACLE
   - DESTINATION
   - STARTING_POINT
+  - CHARACTER_IN_GAME
+  - CHARACTER_IN_MENU
   layers:
   - Default
   - TransparentFX
@@ -31,7 +33,7 @@ TagManager:
   - ENEMY_DETECTION_RANGE
   - POWER_UP
   - POWER_UP_CONTAINER
-  - 
+  - ENEMY_DESTROYABLE_SHOT
   - 
   - 
   - 

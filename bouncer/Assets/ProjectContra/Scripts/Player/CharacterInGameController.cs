@@ -31,6 +31,7 @@ namespace ProjectContra.Scripts.Player
             gameObject.layer = GameLayer.PLAYER.GetLayer();
             UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject);
             rb = UnityFn.AddRigidbody(gameObject, true, true);
+            rb.collisionDetectionMode = CollisionDetectionMode.Continuous; // for player only
             groundLayers = GameLayer.GetGroundLayerMask();
             destroyEffect = AppResource.instance.playerDestroyedEffect;
             animatorCtrl = gameObject.GetComponent<Animator>();
