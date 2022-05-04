@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
@@ -8,10 +9,14 @@ namespace ProjectContra.Scripts.Types
 {
     public class GameScene
     {
-        public static readonly GameScene LEVEL_1 = Create("ContraLv1", "Area 1");
-        public static readonly GameScene LEVEL_2 = Create("ContraLv2", "Area 2");
+        public static readonly GameScene TITLE_SCREEN = Create("ContraTitle", false, GameControlState.TITLE_SCREEN_MENU, "");
+        public static readonly GameScene LEVEL_1 = Create("ContraLv1", true, GameControlState.INFO_SCREEN, "Area 1");
+        public static readonly GameScene LEVEL_2 = Create("ContraLv2", true, GameControlState.INFO_SCREEN, "Area 2");
 
         public string name;
+        public int index;
+        public bool hasInfoScreen;
+        public GameControlState initialControlState;
         public string introText;
 
         private static readonly Dictionary<string, GameScene> typeMap = Fn.ListToDictionaryWithKeyFn((x) => x.name, All());
@@ -20,19 +25,36 @@ namespace ProjectContra.Scripts.Types
         {
             return new List<GameScene>()
             {
+                TITLE_SCREEN,
                 LEVEL_1,
                 LEVEL_2,
             };
         }
 
-        private static GameScene Create(string name, string introText)
+        private static GameScene Create(string name, bool hasInfoScreen, GameControlState initialControlState, string introText)
         {
             GameScene layer = new GameScene
             {
                 name = name,
+                hasInfoScreen = hasInfoScreen,
+                initialControlState = initialControlState,
                 introText = introText,
             };
             return layer;
+        }
+
+        public static void AssignIndexesOnAwake()
+        {
+            Dictionary<string, int> sceneAndIndexInBuildSettings = UnityFn.GetSceneNameAndIndexDictInBuildSettings();
+            SelectedIds scenesDefined = SelectedIds.Create().SelectAll(Fn.Map(s => s.name, All()));
+            SelectedIds scenesMissing = scenesDefined.ImmutableRemoveAll(new List<string>(sceneAndIndexInBuildSettings.Keys));
+            if (!scenesMissing.IsEmpty()) Debug.LogError(string.Join(", ", scenesMissing.GetIds()));
+            foreach (GameScene scene in All()) scene.index = sceneAndIndexInBuildSettings[scene.name];
+        }
+
+        public static GameScene GetActiveScene()
+        {
+            return GetByName(SceneManager.GetActiveScene().name);
         }
 
         public static GameScene GetByName(string name)
@@ -40,19 +62,17 @@ namespace ProjectContra.Scripts.Types
             return typeMap[(name)];
         }
 
-        public static void TransitionToNextLevel(MonoBehaviour controller, GameScene scene)
+        public static void TransitionToNextLevel(MonoBehaviour controller, Action<GameControlState> stopInputFn)
         {
             UnityFn.SetTimeout(controller, 5, () =>
             {
-               // stop inputs
-               // darken screen
-               UnityFn.LoadNextScene();
+                stopInputFn(GameControlState.CANNOT_CONTROL);
+                // darken screen
+                UnityFn.SetTimeout(controller, 1, () =>
+                {
+                    UnityFn.LoadNextScene();
+                });
             });
-        }
-
-        public static void LoadLevel(GameScene scene)
-        {
-            SceneManager.LoadScene(scene.name);
         }
     }
 }

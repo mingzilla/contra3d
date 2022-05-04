@@ -74,5 +74,10 @@ namespace ProjectContra.Scripts.Player
         {
             // userInput.pause = true;
         }
+
+        public void NextLevel(InputAction.CallbackContext context)
+        {
+            GameScene.TransitionToNextLevel(this, state => storeData.controlState = state);
+        }
     }
 }

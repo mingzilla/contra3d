@@ -4,6 +4,7 @@ using BaseUtil.GameUtil;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
+using ProjectContra.Scripts.Types;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
@@ -72,6 +73,7 @@ namespace ProjectContra.Scripts.Enemy
             {
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
+                GameScene.TransitionToNextLevel(this, state => storeData.controlState = state);
                 Destroy(gameObject);
             }
         }

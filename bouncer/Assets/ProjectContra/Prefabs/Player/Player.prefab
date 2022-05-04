@@ -119,6 +119,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8bcb5d67-415b-486b-8821-eee2f3a505a6
     m_ActionName: Player/Jump[/XInputControllerWindows/buttonEast,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1704468264798570658}
+        m_MethodName: NextLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ac732d8e-00fb-4aa1-b9c6-635a89480ee6
+    m_ActionName: Player/NextLevel[/Keyboard/n]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

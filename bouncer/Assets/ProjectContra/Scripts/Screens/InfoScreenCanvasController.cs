@@ -10,16 +10,11 @@ namespace ProjectContra.Scripts.Screens
     public class InfoScreenCanvasController : MonoBehaviour
     {
         [SerializeField] private GameObject titleText;
-        private Text textComponent;
+        private string title;
 
-        private void Start()
+        public void Init(string text)
         {
-            textComponent = titleText.GetComponent<Text>();
-        }
-
-        public void UpdateTitleText(string text)
-        {
-            textComponent.text = text;
+            titleText.GetComponent<Text>().text = text;
         }
 
         public void HandleUpdate(UserInput userInput, Action runIfStartFn)

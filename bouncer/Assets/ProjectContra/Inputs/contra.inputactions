@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "NextLevel",
+                    "type": "Button",
+                    "id": "ac732d8e-00fb-4aa1-b9c6-635a89480ee6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -185,6 +194,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cd84d9cd-d7e7-417c-8e89-3af6b50ca52e",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextLevel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "49635c5e-a2ec-4973-8e2c-99fa92b9dd47",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextLevel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

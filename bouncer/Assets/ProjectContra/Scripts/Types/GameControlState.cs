@@ -11,6 +11,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameControlState LOBBY_SCREEN = Create("LOBBY_SCREEN"); // control character selection
         public static readonly GameControlState INFO_SCREEN = Create("INFO_SCREEN"); // hit A to skip screen
         public static readonly GameControlState IN_GAME = Create("IN_GAME"); // can move characters around
+        public static readonly GameControlState CANNOT_CONTROL = Create("CANNOT_CONTROL"); // useful when e.g. transitioning to the next level
 
         public string name;
 
@@ -24,6 +25,7 @@ namespace ProjectContra.Scripts.Types
                 LOBBY_SCREEN,
                 INFO_SCREEN,
                 IN_GAME,
+                CANNOT_CONTROL,
             };
         }
 

@@ -454,5 +454,32 @@ namespace BaseUtil.GameUtil.Base
             int index = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(index);
         }
+
+        public static string[] GetSceneNamesInBuildSettings()
+        {
+            int sceneCount = SceneManager.sceneCountInBuildSettings;
+            string[] scenes = new string[sceneCount];
+            for (int i = 0; i < sceneCount; i++)
+            {
+                scenes[i] = GetSceneNameByIndexInBuildSettings(i);
+            }
+            return scenes;
+        }
+
+        public static string GetSceneNameByIndexInBuildSettings(int index)
+        {
+            return System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(index));
+        }
+
+        public static Dictionary<string, int> GetSceneNameAndIndexDictInBuildSettings()
+        {
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
+            string[] scenes = GetSceneNamesInBuildSettings();
+            for (int i = 0; i < scenes.Length; i++)
+            {
+                dictionary[scenes[i]] = i;
+            }
+            return dictionary;
+        }
     }
 }

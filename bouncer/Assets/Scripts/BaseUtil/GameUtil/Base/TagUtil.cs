@@ -86,7 +86,7 @@ namespace BaseUtil.GameUtil.Base
                 }
 
                 SelectedIds incomingTags = SelectedIds.Create().SelectAll(propertyValues);
-                SelectedIds missingItems = incomingTags.RemoveAll(existingTags.GetIds());
+                SelectedIds missingItems = incomingTags.ImmutableRemoveAll(existingTags.GetIds());
 
                 handleMissingItemsFn(so, tags, missingItems);
             }

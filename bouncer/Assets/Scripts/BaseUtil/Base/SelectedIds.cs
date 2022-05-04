@@ -53,6 +53,11 @@ namespace BaseUtil.Base
             return this;
         }
 
+        public SelectedIds ImmutableRemoveAll(List<string> ids)
+        {
+            return Create().SelectAll(selectedIds.GetKeys()).RemoveAll(ids);
+        }
+
         public SelectedIds SetAll(List<string> ids, bool include)
         {
             return include ? this.SelectAll(ids) : this.RemoveAll(ids);
