@@ -6,6 +6,7 @@ using BaseUtil.GameUtil.Types;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = System.Random;
+using UnityEngine.SceneManagement;
 
 namespace BaseUtil.GameUtil.Base
 {
@@ -439,6 +440,19 @@ namespace BaseUtil.GameUtil.Base
             float yAngle = y ? speed : 0;
             float zAngle = z ? speed : 0;
             transform.Rotate(xAngle, yAngle, zAngle);
+        }
+
+        public static void LoadNextScene()
+        {
+            int index = SceneManager.GetActiveScene().buildIndex;
+            int sceneCount = SceneManager.sceneCountInBuildSettings;
+            if (index < sceneCount) SceneManager.LoadScene(index + 1);
+        }
+
+        public static void ReloadCurrentScene()
+        {
+            int index = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(index);
         }
     }
 }

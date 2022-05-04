@@ -46,7 +46,7 @@ namespace ProjectContra.Scripts.Types
             {
                // stop inputs
                // darken screen
-               LoadLevel(scene);
+               UnityFn.LoadNextScene();
             });
         }
 
