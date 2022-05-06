@@ -41,6 +41,28 @@ namespace ProjectContra.Scripts.AppSingleton
             PlayerInputManager.instance.playerPrefab = AppResource.instance.playerPrefab;
         }
 
+        public void Update()
+        {
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                JoinPlayer(Keyboard.current);
+            }
+
+            if (Gamepad.current.buttonSouth.wasPressedThisFrame)
+            {
+                JoinPlayer(Gamepad.current);
+            }
+        }
+
+        private void JoinPlayer(InputDevice device)
+        {
+            if (inputManagerData.CanJoinPlayer(storeData.controlState, device))
+            {
+                int playerId = storeData.GetNextPlayerId();
+                PlayerInputManager.instance.JoinPlayer(playerId, -1, null, device);
+            }
+        }
+
         /// <summary>
         /// Auto executed when PlayerInputManager.instance.JoinPlayer() runs without problems
         /// </summary>
@@ -65,28 +87,6 @@ namespace ProjectContra.Scripts.AppSingleton
                 storeData.canGoToTitleScreenFromLobby = true;
             });
             Debug.Log("OnPlayerLeft " + playerInput.playerIndex);
-        }
-
-        public void Update()
-        {
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            {
-                JoinPlayer(Keyboard.current);
-            }
-
-            if (Gamepad.current.buttonSouth.wasPressedThisFrame)
-            {
-                JoinPlayer(Gamepad.current);
-            }
-        }
-
-        private void JoinPlayer(InputDevice device)
-        {
-            if (inputManagerData.CanJoinPlayer(storeData.controlState, device))
-            {
-                int playerId = storeData.GetNextPlayerId();
-                PlayerInputManager.instance.JoinPlayer(playerId, -1, null, device);
-            }
         }
     }
 }
