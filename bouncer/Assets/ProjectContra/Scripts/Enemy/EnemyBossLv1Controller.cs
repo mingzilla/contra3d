@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.Base;
 using BaseUtil.GameUtil;
+using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
+using ProjectContra.Scripts.Util;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
@@ -73,7 +75,11 @@ namespace ProjectContra.Scripts.Enemy
             {
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
-                GameScene.TransitionToNextLevel(this, state => storeData.controlState = state);
+                UnityFn.SetTimeout(this, 1, () =>
+                {
+                    UnityFn.LoadNextScene();
+                    SceneUtil.InitializeScene();
+                });
                 Destroy(gameObject);
             }
         }

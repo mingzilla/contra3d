@@ -10,6 +10,7 @@ TagManager:
   - STARTING_POINT
   - CHARACTER_IN_GAME
   - CHARACTER_IN_MENU
+  - CURRENT_SCENE_MANAGER
   layers:
   - Default
   - TransparentFX

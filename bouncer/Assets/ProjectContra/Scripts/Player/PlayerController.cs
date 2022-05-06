@@ -5,6 +5,7 @@ using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
+using ProjectContra.Scripts.Util;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -91,7 +92,11 @@ namespace ProjectContra.Scripts.Player
 
         public void NextLevel(InputAction.CallbackContext context)
         {
-            GameScene.TransitionToNextLevel(this, state => storeData.controlState = state);
+            UnityFn.SetTimeout(this, 1, () =>
+            {
+                UnityFn.LoadNextScene();
+                SceneUtil.InitializeScene();
+            });
         }
     }
 }

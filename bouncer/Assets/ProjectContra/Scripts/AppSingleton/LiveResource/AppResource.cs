@@ -12,7 +12,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public readonly GameStoreData storeData = new GameStoreData();
 
         [SerializeField] public GameObject playerPrefab;
-        [SerializeField] public GameObject infoScreen, currentSceneManager;
+        [SerializeField] public GameObject infoScreen;
 
         // Player bullet prefabs
         [SerializeField] private GameObject basicBulletPrefab, blastBulletPrefab;

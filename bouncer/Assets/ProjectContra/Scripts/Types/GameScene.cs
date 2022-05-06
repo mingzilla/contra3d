@@ -61,18 +61,5 @@ namespace ProjectContra.Scripts.Types
         {
             return typeMap[(name)];
         }
-
-        public static void TransitionToNextLevel(MonoBehaviour controller, Action<GameControlState> stopInputFn)
-        {
-            UnityFn.SetTimeout(controller, 5, () =>
-            {
-                // stopInputFn(GameControlState.CANNOT_CONTROL);
-                // darken screen
-                UnityFn.SetTimeout(controller, 1, () =>
-                {
-                    UnityFn.LoadNextScene();
-                });
-            });
-        }
     }
 }

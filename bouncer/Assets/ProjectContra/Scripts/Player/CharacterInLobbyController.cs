@@ -4,6 +4,7 @@ using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
+using ProjectContra.Scripts.Util;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Player
@@ -59,7 +60,9 @@ namespace ProjectContra.Scripts.Player
 
         public void OnSelectedStartFromLobby()
         {
+            // 1 second to allow sound effect
             UnityFn.LoadNextScene();
+            SceneUtil.InitializeScene();
         }
 
         public void UpdateSkin(UserInput userInput)

@@ -53,7 +53,6 @@
      <Compile Include="Assets\ProjectContra\Scripts\AbstractController\AbstractDestructibleController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AbstractController\AbstractRangeDetectionController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\CameraTargetController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\CurrentSceneManagerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\GameManagerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\LiveResource\AppResource.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\LiveResource\ResourceTitleScene.cs" />
@@ -90,6 +89,7 @@
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameScene.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameTag.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\WeaponType.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Util\SceneUtil.cs" />
      <None Include="Assets\ProjectContra\Project.Contra.asmdef" />
  <Reference Include="Unity.InputSystem">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
