@@ -4,7 +4,7 @@ using BaseUtil.GameUtil.Util3D;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.Bullet;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Player.domain;
+using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 

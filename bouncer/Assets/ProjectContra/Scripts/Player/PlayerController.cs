@@ -4,6 +4,7 @@ using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
+using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Screens;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace ProjectContra.Scripts.Player
         private CharacterInMenuController inMenuController;
         private CharacterInGameController inGameController;
         private GameStoreData storeData;
+        private int playerId;
 
         private UserInput userInput;
 
@@ -29,37 +31,38 @@ namespace ProjectContra.Scripts.Player
             inGameController = UnityFn.InstantiateDisabledCharacterObject<CharacterInGameController>(characterInGamePrefab);
             inMenuController = UnityFn.InstantiateDisabledCharacterObject<CharacterInMenuController>(characterInMenuPrefab);
             storeData = AppResource.instance.storeData;
+            playerId = gameObject.GetComponent<PlayerInput>().playerIndex;
 
-            int playerId = storeData.GetNextPlayerId();
             userInput = UserInput.Create(playerId);
             inGameController.Init(playerId);
-            inMenuController.Init();
         }
 
         void FixedUpdate()
         {
             GameControlState currentControlState = storeData.controlState;
             if (currentControlState == GameControlState.INFO_SCREEN) infoScreenCanvasController.HandleUpdate(userInput, () => AllocateControlObject(GameControlState.IN_GAME));
-            if (currentControlState == GameControlState.LOBBY_SCREEN) inMenuController.HandleUpdate(userInput);
+            if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) inMenuController.HandleUpdate(playerId, userInput);
             if (currentControlState == GameControlState.IN_GAME) inGameController.HandleUpdate(userInput);
             UserInput.ResetTriggers(userInput);
         }
 
         void AllocateControlObject(GameControlState controlState)
         {
-            if (controlState == GameControlState.LOBBY_SCREEN) UnityFn.SetActiveAndDeActivateOthers(inMenuController.gameObject, new List<GameObject>() {inGameController.gameObject});
+            if (controlState == GameControlState.TITLE_SCREEN_LOBBY) UnityFn.SetActiveAndDeActivateOthers(inMenuController.gameObject, new List<GameObject>() {inGameController.gameObject});
             if (controlState == GameControlState.IN_GAME) UnityFn.SetActiveAndDeActivateOthers(inGameController.gameObject, new List<GameObject>() {inMenuController.gameObject});
         }
 
         public void Move(InputAction.CallbackContext context)
         {
             if (userInput == null) return;
+            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
             userInput = UserInput.Move(userInput, context);
         }
 
         public void Jump(InputAction.CallbackContext context)
         {
             if (userInput == null) return;
+            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
             if (context.started) userInput.jump = true;
             if (context.canceled) userInput.jumpCancelled = true;
         }
@@ -67,11 +70,13 @@ namespace ProjectContra.Scripts.Player
         public void Fire1(InputAction.CallbackContext context)
         {
             if (userInput == null) return;
+            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
             if (context.started) userInput.fire1 = true;
         }
 
         public void Pause(InputAction.CallbackContext context)
         {
+            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
             // userInput.pause = true;
         }
 

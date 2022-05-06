@@ -1,7 +1,8 @@
 ﻿using ProjectContra.Scripts.Types;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-namespace ProjectContra.Scripts.Player.domain
+namespace ProjectContra.Scripts.Player.Domain
 {
     public class PlayerAttribute
     {

@@ -2,7 +2,7 @@
 using System.Linq;
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
-using ProjectContra.Scripts.Player.domain;
+using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
@@ -11,8 +11,10 @@ namespace ProjectContra.Scripts.GameData
     public class GameStoreData
     {
         private Dictionary<int, PlayerAttribute> idAndPlayerState = new Dictionary<int, PlayerAttribute>();
+        public readonly PlayerInputManagerData inputManagerData = PlayerInputManagerData.Create();
         public GameScene currentScene;
         public GameControlState controlState;
+        public bool canGoToTitleScreenFromLobby = false;
 
         public GameStoreData Init(GameScene activeScene)
         {
@@ -23,7 +25,7 @@ namespace ProjectContra.Scripts.GameData
 
         public int GetNextPlayerId()
         {
-            return idAndPlayerState.Count;
+            return inputManagerData.GetNextIndexToJoin();
         }
 
         public void SetPlayer(PlayerAttribute playerAttribute)
@@ -34,6 +36,11 @@ namespace ProjectContra.Scripts.GameData
         public PlayerAttribute GetPlayer(int id)
         {
             return idAndPlayerState[id];
+        }
+
+        public void RemovePlayer(int id)
+        {
+            idAndPlayerState.Remove(id);
         }
 
         public List<Vector3> AllPlayerPositions()

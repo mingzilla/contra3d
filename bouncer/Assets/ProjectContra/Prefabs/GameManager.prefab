@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 0
-  m_MaxPlayerCount: -1
+  m_MaxPlayerCount: 4
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -68,8 +68,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 1704468264798570660, guid: e2d068605590c2443b45c92ecfbd0e45,
-    type: 3}
+  m_PlayerPrefab: {fileID: 0}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -103,7 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df3d0f4b8014571a44f399a9d3cda03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 1704468264798570660, guid: e2d068605590c2443b45c92ecfbd0e45,
+    type: 3}
   infoScreen: {fileID: 1818987760867559970}
+  currentSceneManager: {fileID: 0}
   basicBulletPrefab: {fileID: 3164751046395291120, guid: c5593155681200c4abde22768f361f39,
     type: 3}
   blastBulletPrefab: {fileID: 4090495976328841163, guid: cda973ab8d6ecd94591acab593d2fbe1,

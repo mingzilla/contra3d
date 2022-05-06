@@ -21,12 +21,12 @@ namespace ProjectContra.Scripts.Screens
         {
             if (userInput.fire1)
             {
-                TransitionInToGame(userInput);
+                TransitionInToGame();
                 runIfStartFn();
             }
         }
 
-        private void TransitionInToGame(UserInput userInput)
+        private void TransitionInToGame()
         {
             AppResource.instance.SetControlState(GameControlState.IN_GAME);
             AppResource.instance.infoScreen.SetActive(false);

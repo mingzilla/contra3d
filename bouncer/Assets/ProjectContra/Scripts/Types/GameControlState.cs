@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.Base;
-using BaseUtil.GameUtil.Base;
-using UnityEngine;
 
 namespace ProjectContra.Scripts.Types
 {
     public class GameControlState
     {
         public static readonly GameControlState TITLE_SCREEN_MENU = Create("TITLE_SCREEN_MENU"); // control menu
-        public static readonly GameControlState LOBBY_SCREEN = Create("LOBBY_SCREEN"); // control character selection
+        public static readonly GameControlState TITLE_SCREEN_LOBBY = Create("TITLE_SCREEN_LOBBY"); // character selection on title screen
         public static readonly GameControlState INFO_SCREEN = Create("INFO_SCREEN"); // hit A to skip screen
         public static readonly GameControlState IN_GAME = Create("IN_GAME"); // can move characters around
+        public static readonly GameControlState IN_GAME_LOBBY = Create("IN_GAME_LOBBY"); // character selection in game
         public static readonly GameControlState CANNOT_CONTROL = Create("CANNOT_CONTROL"); // useful when e.g. transitioning to the next level
 
         public string name;
@@ -22,7 +21,7 @@ namespace ProjectContra.Scripts.Types
             return new List<GameControlState>()
             {
                 TITLE_SCREEN_MENU,
-                LOBBY_SCREEN,
+                TITLE_SCREEN_LOBBY,
                 INFO_SCREEN,
                 IN_GAME,
                 CANNOT_CONTROL,

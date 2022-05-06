@@ -11,7 +11,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public static AppResource instance;
         public readonly GameStoreData storeData = new GameStoreData();
 
-        [SerializeField] public GameObject infoScreen;
+        [SerializeField] public GameObject playerPrefab;
+        [SerializeField] public GameObject infoScreen, currentSceneManager;
 
         // Player bullet prefabs
         [SerializeField] private GameObject basicBulletPrefab, blastBulletPrefab;
@@ -40,6 +41,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         private void Awake()
         {
             UnityFn.MarkSingletonAndKeepAlive(instance, gameObject, () => instance = this);
+            // currentSceneManager = Object.FindObjectOfType<CurrentSceneManagerController>();
             ConfigureBullets();
             ConfigureEnemyBullets();
         }

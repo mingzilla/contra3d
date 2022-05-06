@@ -286,6 +286,7 @@ namespace BaseUtil.GameUtil.Base
 
         /**
          * Keeps a controller as singleton and make sure the gameObject is not destroyed when going to another scene.
+         * When the next scene is loaded, an object with such mark won't run OnEnable() or Start()
          */
         public static void MarkSingletonAndKeepAlive<T>(T instance, GameObject gameObj, Action setInstanceToThisFn)
         {
