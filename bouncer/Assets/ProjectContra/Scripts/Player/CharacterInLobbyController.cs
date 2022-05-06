@@ -1,9 +1,9 @@
-﻿using BaseUtil.GameUtil;
+﻿using System.Collections.Generic;
+using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player.Domain;
-using ProjectContra.Scripts.Util;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Player
@@ -35,12 +35,13 @@ namespace ProjectContra.Scripts.Player
             gameObjectTransform.position = panel.transform.position;
         }
 
-        public void HandleUpdate(int id, UserInput userInput)
+        public void HandleUpdate(int id, UserInput userInput, List<GameObject> playerGameObjects)
         {
             if (!isInitialized) Init(id);
             gameObject.SetActive(true);
             if (userInput.left || userInput.right) Move(userInput);
             if (userInput.fire1) OkOrFire();
+            if (userInput.jump || userInput.escape) Cancel(playerGameObjects);
         }
 
         public void Move(UserInput userInput)
@@ -55,6 +56,14 @@ namespace ProjectContra.Scripts.Player
             SetPlayerReady();
         }
 
+
+        public void Cancel(List<GameObject> playerGameObjects)
+        {
+            // This can only call static method, because it destroys this object, so it needs to make a clean call
+            // if the call target relies on this gameObject to exist, an error can occur
+            playerGameObjects.ForEach(Destroy);
+        }
+
         public void SetPlayerReady()
         {
             PlayerInputManagerData inputManagerData = storeData.inputManagerData;
@@ -65,10 +74,7 @@ namespace ProjectContra.Scripts.Player
         public void OnSelectedStartFromLobby()
         {
             // 1 second to allow sound effect
-            UnityFn.SetTimeout(this, 1f, () =>
-            {
-                UnityFn.LoadNextScene();
-            });
+            UnityFn.SetTimeout(this, 1f, UnityFn.LoadNextScene);
         }
 
         public void UpdateSkin(UserInput userInput)

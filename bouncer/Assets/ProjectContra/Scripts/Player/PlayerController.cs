@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
-using ProjectContra.Scripts.Util;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -47,7 +45,7 @@ namespace ProjectContra.Scripts.Player
         {
             GameControlState currentControlState = storeData.controlState;
             SetControlObjectActiveState();
-            if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) inLobbyController.HandleUpdate(playerId, userInput);
+            if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) inLobbyController.HandleUpdate(playerId, userInput, new List<GameObject>() {inLobbyController.gameObject, inGameController.gameObject, gameObject});
             if (currentControlState == GameControlState.INFO_SCREEN) infoScreenCanvasController.HandleUpdate(userInput);
             if (currentControlState == GameControlState.IN_GAME) inGameController.HandleUpdate(userInput);
             UserInput.ResetTriggers(userInput);
@@ -88,6 +86,13 @@ namespace ProjectContra.Scripts.Player
             if (userInput == null) return;
             if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
             if (context.started) userInput.fire1 = true;
+        }
+
+        public void Escape(InputAction.CallbackContext context)
+        {
+            if (userInput == null) return;
+            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
+            if (context.started) userInput.escape = true;
         }
 
         public void Pause(InputAction.CallbackContext context)

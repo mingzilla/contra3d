@@ -75,10 +75,7 @@ namespace ProjectContra.Scripts.Enemy
             {
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
-                UnityFn.SetTimeout(this, 1, () =>
-                {
-                    UnityFn.LoadNextScene();
-                });
+                UnityFn.SetTimeout(this, 1, UnityFn.LoadNextScene);
                 Destroy(gameObject);
             }
         }

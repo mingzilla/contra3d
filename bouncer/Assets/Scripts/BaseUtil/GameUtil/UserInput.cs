@@ -23,6 +23,7 @@ namespace BaseUtil.GameUtil
         public bool fire2;
         public bool fire3;
         public bool pause;
+        public bool escape;
 
         public static UserInput Create(int playerId)
         {
