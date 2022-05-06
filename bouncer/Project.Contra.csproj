@@ -76,7 +76,6 @@
      <Compile Include="Assets\ProjectContra\Scripts\Map\HorizontalMapController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInGameController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInLobbyController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInMenuController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerInputAndStatus.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerInputManagerData.cs" />

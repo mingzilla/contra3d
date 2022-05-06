@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
-using ProjectContra.Scripts.AppSingleton;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player.Domain;
@@ -15,10 +14,10 @@ namespace ProjectContra.Scripts.Player
     public class PlayerController : MonoBehaviour
     {
         public GameObject characterInGamePrefab;
-        public GameObject characterInMenuPrefab;
+        public GameObject characterInLobbyPrefab;
 
         private InfoScreenCanvasController infoScreenCanvasController;
-        private CharacterInMenuController inMenuController;
+        private CharacterInLobbyController inLobbyController;
         private CharacterInGameController inGameController;
         private GameStoreData storeData;
         private int playerId;
@@ -29,7 +28,7 @@ namespace ProjectContra.Scripts.Player
         {
             infoScreenCanvasController = AppResource.instance.infoScreen.GetComponent<InfoScreenCanvasController>();
             inGameController = UnityFn.InstantiateDisabledCharacterObject<CharacterInGameController>(characterInGamePrefab);
-            inMenuController = UnityFn.InstantiateDisabledCharacterObject<CharacterInMenuController>(characterInMenuPrefab);
+            inLobbyController = UnityFn.InstantiateDisabledCharacterObject<CharacterInLobbyController>(characterInLobbyPrefab);
             storeData = AppResource.instance.storeData;
             playerId = gameObject.GetComponent<PlayerInput>().playerIndex;
 
@@ -41,15 +40,15 @@ namespace ProjectContra.Scripts.Player
         {
             GameControlState currentControlState = storeData.controlState;
             if (currentControlState == GameControlState.INFO_SCREEN) infoScreenCanvasController.HandleUpdate(userInput, () => AllocateControlObject(GameControlState.IN_GAME));
-            if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) inMenuController.HandleUpdate(playerId, userInput);
+            if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) inLobbyController.HandleUpdate(playerId, userInput);
             if (currentControlState == GameControlState.IN_GAME) inGameController.HandleUpdate(userInput);
             UserInput.ResetTriggers(userInput);
         }
 
         void AllocateControlObject(GameControlState controlState)
         {
-            if (controlState == GameControlState.TITLE_SCREEN_LOBBY) UnityFn.SetActiveAndDeActivateOthers(inMenuController.gameObject, new List<GameObject>() {inGameController.gameObject});
-            if (controlState == GameControlState.IN_GAME) UnityFn.SetActiveAndDeActivateOthers(inGameController.gameObject, new List<GameObject>() {inMenuController.gameObject});
+            if (controlState == GameControlState.TITLE_SCREEN_LOBBY) UnityFn.SetActiveAndDeActivateOthers(inLobbyController.gameObject, new List<GameObject>() {inGameController.gameObject});
+            if (controlState == GameControlState.IN_GAME) UnityFn.SetActiveAndDeActivateOthers(inGameController.gameObject, new List<GameObject>() {inLobbyController.gameObject});
         }
 
         public void Move(InputAction.CallbackContext context)

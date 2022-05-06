@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterInGamePrefab: {fileID: 382885940435634341, guid: dc38b817cb1061f4fa9b6554b4b49866,
     type: 3}
-  characterInMenuPrefab: {fileID: 833075378163421166, guid: 92be0c46c2e287047ab8c90d84468126,
+  characterInLobbyPrefab: {fileID: 833075378163421166, guid: 92be0c46c2e287047ab8c90d84468126,
     type: 3}
 --- !u!114 &1704468264798570661
 MonoBehaviour:
