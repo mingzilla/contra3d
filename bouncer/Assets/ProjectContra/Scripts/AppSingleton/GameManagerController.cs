@@ -21,19 +21,23 @@ namespace ProjectContra.Scripts.AppSingleton
         private PlayerInputManagerData inputManagerData;
 
         /// <summary>
-        /// Called when scene is loaded, so when loading another scene, it's called again
+        /// Called when scene is loaded, so when loading another scene, it's called again.
+        /// Note:
+        /// - Awake - used to set up itself without using other controllers
+        /// - OnEnable - runs before OtherController.Awake(), so can't use other singleton 
+        /// - Start - can use other singleton
         /// </summary>
         private void Awake()
         {
             UnityFn.MarkSingletonAndKeepAlive(instance, gameObject, () => instance = this);
             GameTag.InitOnAwake();
             GameLayer.InitOnAwake();
-            storeData = AppResource.instance.storeData;
-            inputManagerData = storeData.inputManagerData;
         }
 
         private void Start()
         {
+            storeData = AppResource.instance.storeData;
+            inputManagerData = storeData.inputManagerData;
             PlayerInputManager.instance.playerPrefab = AppResource.instance.playerPrefab;
         }
 
