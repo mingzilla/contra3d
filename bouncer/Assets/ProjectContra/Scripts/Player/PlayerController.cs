@@ -88,6 +88,13 @@ namespace ProjectContra.Scripts.Player
             if (context.started) userInput.fire1 = true;
         }
 
+        public void Space(InputAction.CallbackContext context)
+        {
+            if (userInput == null) return;
+            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
+            if (context.started) userInput.space = true;
+        }
+
         public void Escape(InputAction.CallbackContext context)
         {
             if (userInput == null) return;
@@ -103,6 +110,7 @@ namespace ProjectContra.Scripts.Player
 
         public void NextLevel(InputAction.CallbackContext context)
         {
+            inGameController.rb.velocity = Vector3.zero;
             UnityFn.SetTimeout(this, 1, UnityFn.LoadNextScene);
         }
     }

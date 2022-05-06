@@ -16,7 +16,7 @@ namespace ProjectContra.Scripts.Player
         public int currentSkinIndex = 0;
         private bool canUpdateSkin = true;
 
-        public GameObject playerReadyText;
+        public GameObject playerReadyState;
 
         private void Awake()
         {
@@ -31,7 +31,7 @@ namespace ProjectContra.Scripts.Player
             GameObject panel = ResourceTitleScene.instance.lobbyCharacterPanels[id];
 
             Transform gameObjectTransform = gameObject.transform;
-            gameObjectTransform.localScale = new Vector3(10f, 10f, 10f);
+            gameObjectTransform.localScale = new Vector3(15f, 15f, 15f);
             gameObjectTransform.position = panel.transform.position;
         }
 
@@ -40,19 +40,19 @@ namespace ProjectContra.Scripts.Player
             if (!isInitialized) Init(id);
             gameObject.SetActive(true);
             if (userInput.left || userInput.right) Move(userInput);
-            if (userInput.fire1) OkOrFire();
+            if (userInput.fire1 || userInput.space) Ok();
             if (userInput.jump || userInput.escape) Cancel(playerGameObjects);
         }
 
         public void Move(UserInput userInput)
         {
-            // playerReadyText.SetActive(false);
+            playerReadyState.SetActive(false);
             UpdateSkin(userInput);
         }
 
-        public void OkOrFire()
+        public void Ok()
         {
-            // playerReadyText.SetActive(true);
+            playerReadyState.SetActive(true);
             SetPlayerReady();
         }
 

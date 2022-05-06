@@ -22,7 +22,7 @@ namespace ProjectContra.Scripts.Player
 
         public void HandleUpdate(UserInput userInput)
         {
-            if (userInput.fire1)
+            if (userInput.fire1 || userInput.space)
             {
                 AppResource.instance.SetControlState(GameControlState.IN_GAME);
             }

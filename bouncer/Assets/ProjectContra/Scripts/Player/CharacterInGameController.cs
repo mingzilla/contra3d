@@ -13,7 +13,7 @@ namespace ProjectContra.Scripts.Player
     public class CharacterInGameController : MonoBehaviour
     {
         private GameStoreData storeData;
-        private Rigidbody rb;
+        public Rigidbody rb;
         private LayerMask groundLayers;
         private GameObject destroyEffect;
         private int playerId;

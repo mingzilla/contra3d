@@ -134,6 +134,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ac732d8e-00fb-4aa1-b9c6-635a89480ee6
     m_ActionName: Player/NextLevel[/Keyboard/n]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1704468264798570658}
+        m_MethodName: Space
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: efb613e3-772b-497c-9540-4fa53d20c1e1
+    m_ActionName: Player/Space[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1704468264798570658}
+        m_MethodName: Escape
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4c370ac5-f785-4b54-ac3b-dfb924e52f0d
+    m_ActionName: Player/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

@@ -24,6 +24,20 @@ namespace BaseUtil.GameUtil
         public bool fire3;
         public bool pause;
         public bool escape;
+        public bool space;
+
+        public static void ResetTriggers(UserInput userInput)
+        {
+            // don't reset up,down,left,right. let velocity stop itself
+            userInput.jump = false;
+            userInput.jumpCancelled = false;
+            userInput.fire1 = false;
+            userInput.fire2 = false;
+            userInput.fire3 = false;
+            userInput.pause = false;
+            userInput.escape = false;
+            userInput.space = false;
+        }
 
         public static UserInput Create(int playerId)
         {
@@ -129,15 +143,6 @@ namespace BaseUtil.GameUtil
         {
             Vector2 axes1 = context.ReadValue<Vector2>();
             return UpdateAxes(userInput, axes1);
-        }
-
-        public static void ResetTriggers(UserInput userInput)
-        {
-            userInput.jump = false;
-            userInput.jumpCancelled = false;
-            userInput.fire1 = false;
-            userInput.fire2 = false;
-            userInput.fire3 = false;
         }
 
         public static bool IsFacingRight(bool isFacingForward, UserInput userInput)

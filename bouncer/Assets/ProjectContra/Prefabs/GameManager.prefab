@@ -105,7 +105,6 @@ MonoBehaviour:
   playerPrefab: {fileID: 1704468264798570660, guid: e2d068605590c2443b45c92ecfbd0e45,
     type: 3}
   infoScreen: {fileID: 1818987760867559970}
-  currentSceneManager: {fileID: 0}
   basicBulletPrefab: {fileID: 3164751046395291120, guid: c5593155681200c4abde22768f361f39,
     type: 3}
   blastBulletPrefab: {fileID: 4090495976328841163, guid: cda973ab8d6ecd94591acab593d2fbe1,
@@ -146,6 +145,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7146423920837195973}
     m_Modifications:
+    - target: {fileID: 1380725836767894753, guid: 036f6ed022b46974c9d9f42136cf1d59,
+        type: 3}
+      propertyPath: m_Text
+      value: Press (A) or [J]
+      objectReference: {fileID: 0}
     - target: {fileID: 4461818347795455259, guid: 036f6ed022b46974c9d9f42136cf1d59,
         type: 3}
       propertyPath: m_Pivot.x
