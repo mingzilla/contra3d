@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -24,6 +25,11 @@ namespace ProjectContra.Scripts.Player
         private CharacterInGameController inGameController;
 
         private UserInput userInput;
+
+        private void Awake()
+        {
+            UnityFn.KeepAlive(gameObject);
+        }
 
         private void Start()
         {

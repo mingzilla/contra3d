@@ -293,13 +293,18 @@ namespace BaseUtil.GameUtil.Base
             if (instance == null)
             {
                 setInstanceToThisFn();
-                gameObj.transform.parent = null; // only root level object can be set to not destroyable
-                Object.DontDestroyOnLoad(gameObj);
+                KeepAlive(gameObj);
             }
             else
             {
                 Object.Destroy(gameObj);
             }
+        }
+
+        public static void KeepAlive(GameObject gameObj)
+        {
+            gameObj.transform.parent = null; // only root level object can be set to not destroyable
+            Object.DontDestroyOnLoad(gameObj);
         }
 
         public static T InstantiateDisabledCharacterObject<T>(GameObject prefab)

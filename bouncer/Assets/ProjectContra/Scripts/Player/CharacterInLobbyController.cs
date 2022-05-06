@@ -3,7 +3,6 @@ using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player.Domain;
-using ProjectContra.Scripts.Types;
 using ProjectContra.Scripts.Util;
 using UnityEngine;
 
@@ -19,6 +18,11 @@ namespace ProjectContra.Scripts.Player
 
         public GameObject playerReadyText;
 
+        private void Awake()
+        {
+            UnityFn.KeepAlive(gameObject);
+        }
+
         public void Init(int id)
         {
             playerId = id;
@@ -27,7 +31,7 @@ namespace ProjectContra.Scripts.Player
             GameObject panel = ResourceTitleScene.instance.lobbyCharacterPanels[id];
 
             Transform gameObjectTransform = gameObject.transform;
-            gameObjectTransform.localScale = new Vector3(0.01f, 0.01f, 0);
+            gameObjectTransform.localScale = new Vector3(10f, 10f, 10f);
             gameObjectTransform.position = panel.transform.position;
         }
 
