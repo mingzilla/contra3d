@@ -33,6 +33,7 @@ namespace ProjectContra.Scripts.Player
         public void HandleUpdate(int id, UserInput userInput)
         {
             if (!isInitialized) Init(id);
+            gameObject.SetActive(true);
             if (userInput.left || userInput.right) Move(userInput);
             if (userInput.fire1) OkOrFire();
         }
@@ -58,7 +59,7 @@ namespace ProjectContra.Scripts.Player
 
         public void OnSelectedStartFromLobby()
         {
-            GameScene.TransitionToNextLevel(this, state => storeData.controlState = state);
+            UnityFn.LoadNextScene();
         }
 
         public void UpdateSkin(UserInput userInput)

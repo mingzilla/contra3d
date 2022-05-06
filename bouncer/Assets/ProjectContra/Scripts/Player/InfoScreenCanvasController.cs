@@ -5,8 +5,11 @@ using ProjectContra.Scripts.Types;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ProjectContra.Scripts.Screens
+namespace ProjectContra.Scripts.Player
 {
+    /// <summary>
+    /// A canvas, controlled by a player.
+    /// </summary>
     public class InfoScreenCanvasController : MonoBehaviour
     {
         [SerializeField] private GameObject titleText;
@@ -17,19 +20,12 @@ namespace ProjectContra.Scripts.Screens
             titleText.GetComponent<Text>().text = text;
         }
 
-        public void HandleUpdate(UserInput userInput, Action runIfStartFn)
+        public void HandleUpdate(UserInput userInput)
         {
             if (userInput.fire1)
             {
-                TransitionInToGame();
-                runIfStartFn();
+                AppResource.instance.SetControlState(GameControlState.IN_GAME);
             }
-        }
-
-        private void TransitionInToGame()
-        {
-            AppResource.instance.SetControlState(GameControlState.IN_GAME);
-            AppResource.instance.infoScreen.SetActive(false);
         }
     }
 }

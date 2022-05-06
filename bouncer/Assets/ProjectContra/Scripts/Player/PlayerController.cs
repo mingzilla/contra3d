@@ -4,7 +4,6 @@ using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player.Domain;
-using ProjectContra.Scripts.Screens;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,21 +15,22 @@ namespace ProjectContra.Scripts.Player
         public GameObject characterInGamePrefab;
         public GameObject characterInLobbyPrefab;
 
-        private InfoScreenCanvasController infoScreenCanvasController;
-        private CharacterInLobbyController inLobbyController;
-        private CharacterInGameController inGameController;
         private GameStoreData storeData;
         private int playerId;
+
+        private CharacterInLobbyController inLobbyController;
+        private InfoScreenCanvasController infoScreenCanvasController;
+        private CharacterInGameController inGameController;
 
         private UserInput userInput;
 
         private void Start()
         {
-            infoScreenCanvasController = AppResource.instance.infoScreen.GetComponent<InfoScreenCanvasController>();
-            inGameController = UnityFn.InstantiateDisabledCharacterObject<CharacterInGameController>(characterInGamePrefab);
-            inLobbyController = UnityFn.InstantiateDisabledCharacterObject<CharacterInLobbyController>(characterInLobbyPrefab);
             storeData = AppResource.instance.storeData;
             playerId = gameObject.GetComponent<PlayerInput>().playerIndex;
+            inLobbyController = UnityFn.InstantiateDisabledCharacterObject<CharacterInLobbyController>(characterInLobbyPrefab);
+            infoScreenCanvasController = AppResource.instance.infoScreen.GetComponent<InfoScreenCanvasController>();
+            inGameController = UnityFn.InstantiateDisabledCharacterObject<CharacterInGameController>(characterInGamePrefab);
 
             userInput = UserInput.Create(playerId);
             inGameController.Init(playerId);
@@ -39,16 +39,26 @@ namespace ProjectContra.Scripts.Player
         void FixedUpdate()
         {
             GameControlState currentControlState = storeData.controlState;
-            if (currentControlState == GameControlState.INFO_SCREEN) infoScreenCanvasController.HandleUpdate(userInput, () => AllocateControlObject(GameControlState.IN_GAME));
+            SetControlObjectActiveState();
             if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) inLobbyController.HandleUpdate(playerId, userInput);
+            if (currentControlState == GameControlState.INFO_SCREEN) infoScreenCanvasController.HandleUpdate(userInput);
             if (currentControlState == GameControlState.IN_GAME) inGameController.HandleUpdate(userInput);
             UserInput.ResetTriggers(userInput);
         }
 
-        void AllocateControlObject(GameControlState controlState)
+        void SetControlObjectActiveState()
         {
-            if (controlState == GameControlState.TITLE_SCREEN_LOBBY) UnityFn.SetActiveAndDeActivateOthers(inLobbyController.gameObject, new List<GameObject>() {inGameController.gameObject});
-            if (controlState == GameControlState.IN_GAME) UnityFn.SetActiveAndDeActivateOthers(inGameController.gameObject, new List<GameObject>() {inLobbyController.gameObject});
+            GameControlState controlState = storeData.controlState;
+            if (controlState == GameControlState.TITLE_SCREEN_LOBBY) UnityFn.SetActiveAndDeActivateOthers(inLobbyController.gameObject, GetControlObjectsExcept(inLobbyController));
+            if (controlState == GameControlState.INFO_SCREEN) UnityFn.SetActiveAndDeActivateOthers(AppResource.instance.infoScreen, GetControlObjectsExcept(infoScreenCanvasController));
+            if (controlState == GameControlState.IN_GAME) UnityFn.SetActiveAndDeActivateOthers(inGameController.gameObject, GetControlObjectsExcept(inGameController));
+        }
+
+        private List<GameObject> GetControlObjectsExcept(MonoBehaviour exclude)
+        {
+            List<GameObject> list = new List<GameObject>() {inLobbyController.gameObject, inGameController.gameObject, AppResource.instance.infoScreen};
+            list.Remove(exclude.gameObject);
+            return list;
         }
 
         public void Move(InputAction.CallbackContext context)

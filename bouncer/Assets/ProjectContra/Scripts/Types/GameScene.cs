@@ -66,7 +66,7 @@ namespace ProjectContra.Scripts.Types
         {
             UnityFn.SetTimeout(controller, 5, () =>
             {
-                stopInputFn(GameControlState.CANNOT_CONTROL);
+                // stopInputFn(GameControlState.CANNOT_CONTROL);
                 // darken screen
                 UnityFn.SetTimeout(controller, 1, () =>
                 {

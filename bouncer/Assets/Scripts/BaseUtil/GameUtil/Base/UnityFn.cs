@@ -342,11 +342,16 @@ namespace BaseUtil.GameUtil.Base
         {
             SetActive(gameObjectToSetActive, () =>
             {
-                foreach (GameObject item in gameObjectsToSetInactive)
-                {
-                    SetInactive(item, Fn.DoNothing);
-                }
+                SetAllInactivate(gameObjectsToSetInactive);
             });
+        }
+
+        public static void SetAllInactivate(List<GameObject> gameObjectsToSetInactive)
+        {
+            foreach (GameObject item in gameObjectsToSetInactive)
+            {
+                SetInactive(item, Fn.DoNothing);
+            }
         }
 
         public static Rigidbody AddRigidbody(GameObject gameObject, bool useGravity, bool freezeZ)

@@ -1,6 +1,6 @@
 ﻿using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Screens;
+using ProjectContra.Scripts.Player;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 

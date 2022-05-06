@@ -79,10 +79,10 @@
      <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerInputAndStatus.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerInputManagerData.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Player\InfoScreenCanvasController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\PowerUp\PowerUpContainerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\PowerUp\PowerUpController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Screens\InfoScreenCanvasController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Screens\TitleScreenController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\EnemyBulletType.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameControlState.cs" />

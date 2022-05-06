@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,6 +8,9 @@ using UnityEngine.InputSystem;
 
 namespace ProjectContra.Scripts.Screens
 {
+    /// <summary>
+    /// Used when there is no player in the game. When there are players in the game, this is no longer used.
+    /// </summary>
     public class TitleScreenController : MonoBehaviour
     {
         private GameStoreData storeData;
