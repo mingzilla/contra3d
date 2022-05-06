@@ -65,8 +65,10 @@ namespace ProjectContra.Scripts.Player
         public void OnSelectedStartFromLobby()
         {
             // 1 second to allow sound effect
-            UnityFn.LoadNextScene();
-            SceneUtil.InitializeScene();
+            UnityFn.SetTimeout(this, 1f, () =>
+            {
+                UnityFn.LoadNextScene();
+            });
         }
 
         public void UpdateSkin(UserInput userInput)

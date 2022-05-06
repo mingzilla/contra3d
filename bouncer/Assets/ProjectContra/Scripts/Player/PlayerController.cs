@@ -98,11 +98,7 @@ namespace ProjectContra.Scripts.Player
 
         public void NextLevel(InputAction.CallbackContext context)
         {
-            UnityFn.SetTimeout(this, 1, () =>
-            {
-                UnityFn.LoadNextScene();
-                SceneUtil.InitializeScene();
-            });
+            UnityFn.SetTimeout(this, 1, UnityFn.LoadNextScene);
         }
     }
 }

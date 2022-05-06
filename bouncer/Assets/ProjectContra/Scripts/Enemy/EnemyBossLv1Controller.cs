@@ -78,7 +78,6 @@ namespace ProjectContra.Scripts.Enemy
                 UnityFn.SetTimeout(this, 1, () =>
                 {
                     UnityFn.LoadNextScene();
-                    SceneUtil.InitializeScene();
                 });
                 Destroy(gameObject);
             }
