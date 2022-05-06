@@ -46,11 +46,6 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             ConfigureEnemyBullets();
         }
 
-        public void SetControlState(GameControlState controlState)
-        {
-            storeData.controlState = controlState;
-        }
-
         void ConfigureBullets()
         {
             weaponTypeAndBulletPrefab[WeaponType.BASIC] = basicBulletPrefab;

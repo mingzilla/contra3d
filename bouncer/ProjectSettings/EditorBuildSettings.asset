@@ -11,7 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ProjectContra/Scenes/ContraLv1.unity
     guid: a07f929b2ffb98d49b42f374a83cfc31
-  - enabled: 1
-    path: Assets/ProjectContra/Scenes/ContraLv2.unity
-    guid: 2e69c7d4fb670e74c9d715a831bc3c62
   m_configObjects: {}

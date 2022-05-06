@@ -24,7 +24,7 @@ namespace ProjectContra.Scripts.Player
         {
             if (userInput.fire1 || userInput.space)
             {
-                AppResource.instance.SetControlState(GameControlState.IN_GAME);
+                AppResource.instance.storeData.controlState = GameControlState.IN_GAME;
             }
         }
     }

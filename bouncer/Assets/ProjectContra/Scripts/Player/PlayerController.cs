@@ -5,6 +5,7 @@ using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
+using ProjectContra.Scripts.Util;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -104,14 +105,15 @@ namespace ProjectContra.Scripts.Player
 
         public void Pause(InputAction.CallbackContext context)
         {
+            if (userInput == null) return;
             if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
-            // userInput.pause = true;
+            if (context.started) userInput.pause = true;
         }
 
         public void NextLevel(InputAction.CallbackContext context)
         {
             inGameController.rb.velocity = Vector3.zero;
-            UnityFn.SetTimeout(this, 1, UnityFn.LoadNextScene);
+            SceneUtil.LoadNextScene(AppResource.instance);
         }
     }
 }
