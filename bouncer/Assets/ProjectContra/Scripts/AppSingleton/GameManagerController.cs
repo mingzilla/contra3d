@@ -1,8 +1,8 @@
-﻿using System;
-using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Player.Domain;
+using ProjectContra.Scripts.Player;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -56,7 +56,8 @@ namespace ProjectContra.Scripts.AppSingleton
 
         private void JoinPlayer(InputDevice device)
         {
-            if (inputManagerData.CanJoinPlayer(storeData.controlState, device))
+            bool isInLobby = (storeData.controlState == GameControlState.TITLE_SCREEN_LOBBY);
+            if (inputManagerData.CanJoinPlayer(isInLobby, device))
             {
                 int playerId = storeData.GetNextPlayerId();
                 PlayerInputManager.instance.JoinPlayer(playerId, -1, null, device);
@@ -69,7 +70,7 @@ namespace ProjectContra.Scripts.AppSingleton
         /// <param name="playerInput"></param>
         public void OnPlayerJoined(PlayerInput playerInput)
         {
-            inputManagerData.AddPlayer(playerInput);
+            storeData.AddPlayer(playerInput);
             Debug.Log("OnPlayerJoined " + playerInput.playerIndex);
         }
 
@@ -79,7 +80,6 @@ namespace ProjectContra.Scripts.AppSingleton
         /// <param name="playerInput"></param>
         public void OnPlayerLeft(PlayerInput playerInput)
         {
-            inputManagerData.RemovePlayer(playerInput);
             storeData.RemovePlayer(playerInput.playerIndex);
             storeData.canGoToTitleScreenFromLobby = false;
             UnityFn.SetTimeout(this, 0.1f, () =>

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
 using ProjectContra.Scripts.Util;
 using UnityEngine;
@@ -112,7 +112,7 @@ namespace ProjectContra.Scripts.Player
 
         public void NextLevel(InputAction.CallbackContext context)
         {
-            SceneUtil.LoadNextScene(AppResource.instance);
+            SceneUtil.ReloadScene(AppResource.instance);
         }
     }
 }

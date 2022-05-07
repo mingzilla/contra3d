@@ -72,6 +72,8 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitStat.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\EnemyCommonUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\MovementUtil.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputAndStatus.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputManagerData.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameLayer.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameTag.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\PlayerInputScheme.cs" />

@@ -1,4 +1,5 @@
-﻿using BaseUtil.GameUtil;
+﻿using System;
+using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Util3D;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -40,7 +41,6 @@ namespace ProjectContra.Scripts.Player
             groundLayers = GameLayer.GetGroundLayerMask();
             destroyEffect = AppResource.instance.playerDestroyedEffect;
             animatorCtrl = gameObject.GetComponent<Animator>();
-            storeData.SetPlayer(PlayerAttribute.CreateEmpty(id));
         }
 
         public void HandleUpdate(UserInput userInput)

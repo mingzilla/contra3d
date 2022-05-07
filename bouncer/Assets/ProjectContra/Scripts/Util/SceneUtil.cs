@@ -9,7 +9,7 @@ namespace ProjectContra.Scripts.Util
 {
     public static class SceneUtil
     {
-        private static bool canLoadNextScene = true;
+        private static bool canLoadScene = true;
 
         public static void InitializeScene()
         {
@@ -24,11 +24,21 @@ namespace ProjectContra.Scripts.Util
 
         public static void LoadNextScene(MonoBehaviour controller)
         {
-            if (canLoadNextScene)
+            if (canLoadScene)
             {
-                canLoadNextScene = false;
-                UnityFn.SetTimeout(controller, 2, () => canLoadNextScene = true);
+                canLoadScene = false;
+                UnityFn.SetTimeout(controller, 2, () => canLoadScene = true);
                 UnityFn.LoadNextScene();
+            }
+        }
+
+        public static void ReloadScene(MonoBehaviour controller)
+        {
+            if (canLoadScene)
+            {
+                canLoadScene = false;
+                UnityFn.SetTimeout(controller, 2, () => canLoadScene = true);
+                UnityFn.ReloadCurrentScene();
             }
         }
     }

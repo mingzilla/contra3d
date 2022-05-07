@@ -1,6 +1,6 @@
 ﻿using UnityEngine.InputSystem;
 
-namespace ProjectContra.Scripts.Player.Domain
+namespace BaseUtil.GameUtil.PlayerManagement
 {
     public class PlayerInputAndStatus
     {

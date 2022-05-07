@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ProjectContra.Scripts.Types;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace ProjectContra.Scripts.Player.Domain
+namespace BaseUtil.GameUtil.PlayerManagement
 {
     public class PlayerInputManagerData
     {
-        private Dictionary<int, PlayerInputAndStatus> indexAndPlayer = new Dictionary<int, PlayerInputAndStatus>();
-        private static int maxPlayerCount = 4;
+        private readonly Dictionary<int, PlayerInputAndStatus> indexAndPlayer = new Dictionary<int, PlayerInputAndStatus>();
+        private int maxPlayerCount = 4;
 
-        public static PlayerInputManagerData Create()
+        public static PlayerInputManagerData Create(int maxPlayerCount)
         {
-            return new PlayerInputManagerData();
+            return new PlayerInputManagerData()
+            {
+                maxPlayerCount = maxPlayerCount
+            };
         }
 
         public void AddPlayer(PlayerInput playerInput)
@@ -22,9 +24,19 @@ namespace ProjectContra.Scripts.Player.Domain
             indexAndPlayer[playerInput.playerIndex] = PlayerInputAndStatus.Create(playerInput);
         }
 
+        public PlayerInput GetPlayer(int index)
+        {
+            return indexAndPlayer[index].playerInput;
+        }
+
         public void RemovePlayer(PlayerInput playerInput)
         {
             indexAndPlayer.Remove(playerInput.playerIndex);
+        }
+
+        public void RemovePlayerByIndex(int index)
+        {
+            indexAndPlayer.Remove(index);
         }
 
         public int GetPlayerIndex(GameObject playerGameObject)
@@ -38,18 +50,21 @@ namespace ProjectContra.Scripts.Player.Domain
             return indexAndPlayer.Count > 0;
         }
 
-        public bool CanJoinPlayer(GameControlState gameControlState, InputDevice device)
+        public bool CanJoinPlayer(bool isInLobby, InputDevice device)
         {
-            return (gameControlState == GameControlState.TITLE_SCREEN_LOBBY) && HasVacancy() && !DeviceIsPaired(device);
+            return isInLobby && HasVacancy() && !DeviceIsPaired(device);
         }
 
+        /// <summary>
+        /// Allow getting a low value slot, if 4 are allowed and index 0 is available, 0 is returned
+        /// </summary>
         public int GetNextIndexToJoin()
         {
             for (int i = 0; i < maxPlayerCount; i++)
             {
                 if (!indexAndPlayer.ContainsKey(i)) return i;
             }
-            return 3;
+            return (maxPlayerCount - 1);
         }
 
         public void SetPlayerReady(int playerIndex, bool isReady)
@@ -67,6 +82,11 @@ namespace ProjectContra.Scripts.Player.Domain
         public bool AllPlayersAreReady()
         {
             return indexAndPlayer.Values.All(p => p.isReady);
+        }
+
+        public List<PlayerInputAndStatus> AllPlayers()
+        {
+            return indexAndPlayer.Values.ToList();
         }
 
         private static bool DeviceIsPaired(InputDevice device)

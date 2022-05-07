@@ -3,7 +3,7 @@ using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Player.Domain;
+using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.Util;
 using UnityEngine;
 
@@ -56,7 +56,6 @@ namespace ProjectContra.Scripts.Player
             playerReadyState.SetActive(true);
             SetPlayerReady();
         }
-
 
         public void Cancel(List<GameObject> playerGameObjects)
         {

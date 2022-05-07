@@ -77,8 +77,6 @@
      <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInGameController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInLobbyController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerAttribute.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerInputAndStatus.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerInputManagerData.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\InfoScreenCanvasController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\PowerUp\PowerUpContainerController.cs" />

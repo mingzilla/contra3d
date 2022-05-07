@@ -2,16 +2,19 @@
 using System.Linq;
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.PlayerManagement;
+using ProjectContra.Scripts.Player;
 using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace ProjectContra.Scripts.GameData
 {
     public class GameStoreData
     {
         private Dictionary<int, PlayerAttribute> idAndPlayerState = new Dictionary<int, PlayerAttribute>();
-        public readonly PlayerInputManagerData inputManagerData = PlayerInputManagerData.Create();
+        public readonly PlayerInputManagerData inputManagerData = PlayerInputManagerData.Create(4);
         public GameScene currentScene;
         public GameControlState controlState;
         public bool canGoToTitleScreenFromLobby = false;
@@ -38,9 +41,27 @@ namespace ProjectContra.Scripts.GameData
             return idAndPlayerState[id];
         }
 
+        public void AddPlayer(PlayerInput playerInput)
+        {
+            inputManagerData.AddPlayer(playerInput);
+            SetPlayer(PlayerAttribute.CreateEmpty(playerInput.playerIndex));
+        }
+
         public void RemovePlayer(int id)
         {
+            inputManagerData.RemovePlayerByIndex(id);
             idAndPlayerState.Remove(id);
+        }
+
+        public PlayerController GetPlayerController(int id)
+        {
+            PlayerInput playerInput = inputManagerData.GetPlayer(id);
+            return playerInput.gameObject.GetComponent<PlayerController>();
+        }
+
+        public List<PlayerController> GetAllPlayerControllers()
+        {
+            return Fn.Map(p => GetPlayerController(p.playerInput.playerIndex), inputManagerData.AllPlayers());
         }
 
         public List<Vector3> AllPlayerPositions()
