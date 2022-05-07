@@ -84,5 +84,16 @@ namespace ProjectContra.Scripts.GameData
             // a player may not have a position, especially when they disappear
             return Fn.Filter(x => x.inGameTransform != null && x.isAlive, idAndPlayerState.Values.ToList());
         }
+
+        public void ResetPlayers()
+        {
+            idAndPlayerState.Values.ToList().ForEach(x => x.Reset());
+        }
+
+        public void ReloadScene()
+        {
+            UnityFn.ReloadCurrentScene();
+            ResetPlayers();
+        }
     }
 }

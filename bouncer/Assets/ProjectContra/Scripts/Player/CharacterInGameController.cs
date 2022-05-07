@@ -45,7 +45,7 @@ namespace ProjectContra.Scripts.Player
         public void HandleUpdate(UserInput userInput)
         {
             if (userInput.pause) HandlePause(userInput);
-            if (!userInput.pause && gameObject.activeSelf) HandlePlayerControl(userInput);
+            if (!userInput.pause && gameObject.activeSelf && storeData.GetPlayer(playerId).isAlive) HandlePlayerControl(userInput);
         }
 
         private void HandlePlayerControl(UserInput userInput)
@@ -99,8 +99,8 @@ namespace ProjectContra.Scripts.Player
                     gameObject.SetActive(false);
                     UnityFn.SetTimeout(AppResource.instance, 1f, () =>
                     {
-                        UnityFn.ReloadCurrentScene();
                         Destroy(gameObject);
+                        storeData.ReloadScene();
                     });
                 });
             }
