@@ -73,9 +73,10 @@ namespace ProjectContra.Scripts.Enemy
         {
             if (weakPointCtrl.isBroken)
             {
+                phase = 3; // there is no phase 3, this is just to prevent getting into here again
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
-                UnityFn.SetTimeout(AppResource.instance, 1, () =>
+                UnityFn.SetTimeout(AppResource.instance, 5, () =>
                 {
                     UnityFn.LoadNextScene();
                     Destroy(gameObject);

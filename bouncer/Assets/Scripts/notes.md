@@ -27,8 +27,10 @@
 * start game screen - DONE
 * player loses life
 * player respawn
-
 * pause game
+
+* bug - restart scene - nothing moves
+
 
 kill boss -> level manager:
 5 seconds later -> stop control -> darken screen (no need to move away characters) -> start next scene
