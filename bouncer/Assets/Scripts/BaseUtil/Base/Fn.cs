@@ -112,5 +112,14 @@ namespace BaseUtil.Base
         {
             // do nothing
         }
+
+        public static void RunOnce(bool hasRun, Action<bool> setHasRunFn, Action fn)
+        {
+            if (!hasRun)
+            {
+                setHasRunFn(true);
+                fn();
+            }
+        }
     }
 }

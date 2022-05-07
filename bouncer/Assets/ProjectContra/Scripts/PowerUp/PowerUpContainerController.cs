@@ -1,4 +1,5 @@
-﻿using BaseUtil.GameUtil;
+﻿using BaseUtil.Base;
+using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -21,6 +22,7 @@ namespace ProjectContra.Scripts.PowerUp
         private GameObject destroyEffect;
         private Transform closestPlayer;
         private int xMovementValue = 0;
+        private bool hasRunTakeDamage = false;
 
         void Start()
         {
@@ -58,10 +60,13 @@ namespace ProjectContra.Scripts.PowerUp
 
         public override void TakeDamage(Vector3 position, int damage)
         {
-            UnityFn.CreateEffect(destroyEffect, position, 1f);
-            PowerUpController powerUp = UnityFn.InstantiateObjectWith<PowerUpController>(AppResource.instance.powerUpPrefab, transform.position);
-            powerUp.Init(weaponType);
-            Destroy(gameObject);
+            Fn.RunOnce(hasRunTakeDamage, b => hasRunTakeDamage = b, () =>
+            {
+                UnityFn.CreateEffect(destroyEffect, position, 1f);
+                PowerUpController powerUp = UnityFn.InstantiateObjectWith<PowerUpController>(AppResource.instance.powerUpPrefab, transform.position);
+                powerUp.Init(weaponType);
+                Destroy(gameObject);
+            });
         }
     }
 }

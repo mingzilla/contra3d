@@ -2,7 +2,6 @@
 using BaseUtil.Base;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace ProjectContra.Scripts.Player.Domain
 {
@@ -33,6 +32,14 @@ namespace ProjectContra.Scripts.Player.Domain
             return item;
         }
 
+        public PlayerAttribute Reset()
+        {
+            isAlive = true;
+            weaponType = WeaponType.BASIC;
+            currentHp = maxHp;
+            return this;
+        }
+
         public void TakeDamage(int damage, Action killedFn)
         {
             currentHp = FnVal.Clamp((currentHp - damage), 0, maxHp);
@@ -41,11 +48,6 @@ namespace ProjectContra.Scripts.Player.Domain
                 isAlive = false;
                 killedFn();
             }
-        }
-
-        public PlayerAttribute Reset()
-        {
-            return CreateEmpty(playerId);
         }
     }
 }
