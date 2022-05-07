@@ -23,10 +23,12 @@
 * boss - cannon take damage - DONE
 * boss - when 4 cannons destroyed, explode - DONE
 
-* start next scene when boss is killed
-* start game screen
-* player loses life 
+* start next scene when boss is killed - DONE
+* start game screen - DONE
+* player loses life
 * player respawn
+
+* pause game
 
 kill boss -> level manager:
 5 seconds later -> stop control -> darken screen (no need to move away characters) -> start next scene

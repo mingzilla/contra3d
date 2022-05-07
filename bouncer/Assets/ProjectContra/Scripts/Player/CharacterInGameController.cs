@@ -15,6 +15,7 @@ namespace ProjectContra.Scripts.Player
     {
         private GameStoreData storeData;
         public Rigidbody rb;
+        private MeshRenderer meshRenderer;
         private LayerMask groundLayers;
         private GameObject destroyEffect;
         private int playerId;
@@ -23,6 +24,7 @@ namespace ProjectContra.Scripts.Player
         private static readonly int isJumpingKey = Animator.StringToHash("isJumping");
         private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
         private static readonly int isDownKey = Animator.StringToHash("isDown");
+        private bool isInvincible = false;
 
         public void Init(int id, bool isActive)
         {
@@ -33,6 +35,7 @@ namespace ProjectContra.Scripts.Player
             UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject);
             rb = UnityFn.AddRigidbody(gameObject, true, true);
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous; // for player only
+            meshRenderer = gameObject.GetComponent<MeshRenderer>();
             groundLayers = GameLayer.GetGroundLayerMask();
             destroyEffect = AppResource.instance.playerDestroyedEffect;
             animatorCtrl = gameObject.GetComponent<Animator>();
@@ -49,6 +52,7 @@ namespace ProjectContra.Scripts.Player
         {
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
 
+            HandleInvincibilityUi();
             PlayerActionHandler3D.MoveX(userInput.fixedHorizontal, rb, playerAttribute.moveSpeed);
             isFacingRight = UserInput.IsFacingRight(isFacingRight, userInput);
             PlayerActionHandler3D.HandleLeftRightFacing(transform, isFacingRight);
@@ -70,12 +74,36 @@ namespace ProjectContra.Scripts.Player
         {
         }
 
+        private void HandleInvincibilityUi()
+        {
+            if (isInvincible)
+            {
+                meshRenderer.enabled = !meshRenderer.enabled;
+            }
+            if (!isInvincible && !meshRenderer.enabled)
+            {
+                meshRenderer.enabled = true;
+            }
+        }
+
         public void TakeDamage(Vector3 position, int damage)
         {
-            UnityFn.CreateEffect(destroyEffect, position, 1f);
-            gameObject.SetActive(false);
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
-            playerAttribute.isAlive = false;
+            if (!isInvincible)
+            {
+                isInvincible = true;
+                UnityFn.SetTimeout(this, 1f, () => isInvincible = false);
+                playerAttribute.TakeDamage(damage, () =>
+                {
+                    UnityFn.CreateEffect(destroyEffect, position, 1f);
+                    gameObject.SetActive(false);
+                    UnityFn.SetTimeout(AppResource.instance, 1f, () =>
+                    {
+                        UnityFn.ReloadCurrentScene();
+                        Destroy(gameObject);
+                    });
+                });
+            }
             storeData.SetPlayer(playerAttribute);
         }
 

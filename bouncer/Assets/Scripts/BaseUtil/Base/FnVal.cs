@@ -57,6 +57,11 @@ namespace BaseUtil.Base
             return value;
         }
 
+        public static int Clamp(int current, int min, int max)
+        {
+            return AtMost(max, AtLeast(min, current));
+        }
+
         public static bool RandomBool(Random newRandom)
         {
             return newRandom.NextDouble() >= 0.5;
