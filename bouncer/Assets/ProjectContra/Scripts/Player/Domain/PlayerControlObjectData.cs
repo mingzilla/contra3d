@@ -20,6 +20,12 @@ namespace ProjectContra.Scripts.Player.Domain
 
         public void SetControlObjectActiveState(int playerId, GameControlState controlState, GameObject characterInGamePrefab, GameObject characterInLobbyPrefab)
         {
+            if (controlState == GameControlState.TITLE_SCREEN_MENU)
+            {
+                UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
+                UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
+                UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
+            }
             if (controlState == GameControlState.TITLE_SCREEN_LOBBY)
             {
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);

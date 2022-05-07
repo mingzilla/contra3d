@@ -38,7 +38,7 @@ namespace ProjectContra.Scripts.Player
         {
             GameControlState currentControlState = storeData.controlState;
             controlObjectData.SetControlObjectActiveState(playerId, currentControlState, characterInGamePrefab, characterInLobbyPrefab);
-            if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) controlObjectData.inLobbyController.HandleUpdate(playerId, userInput, controlObjectData.GetControlObjects());
+            if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) controlObjectData.inLobbyController.HandleUpdate(playerId, userInput, gameObject);
             if (currentControlState == GameControlState.INFO_SCREEN) controlObjectData.infoScreenCanvasController.HandleUpdate(userInput);
             if (currentControlState == GameControlState.IN_GAME) controlObjectData.inGameController.HandleUpdate(userInput);
             UserInput.ResetTriggers(userInput);

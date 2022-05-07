@@ -31,13 +31,13 @@ namespace ProjectContra.Scripts.Player
             gameObjectTransform.position = panel.transform.position;
         }
 
-        public void HandleUpdate(int id, UserInput userInput, List<GameObject> playerGameObjects)
+        public void HandleUpdate(int id, UserInput userInput, GameObject playerGameObject)
         {
             if (!isInitialized) Init(id);
             gameObject.SetActive(true);
             if (userInput.left || userInput.right) Move(userInput);
             if (userInput.fire1 || userInput.space) Ok();
-            if (userInput.jump || userInput.escape) Cancel(playerGameObjects);
+            if (userInput.jump || userInput.escape) Cancel(playerGameObject);
         }
 
         public void Move(UserInput userInput)
@@ -52,11 +52,10 @@ namespace ProjectContra.Scripts.Player
             SetPlayerReady();
         }
 
-        public void Cancel(List<GameObject> playerGameObjects)
+        public void Cancel(GameObject playerGameObject)
         {
-            // This can only call static method, because it destroys this object, so it needs to make a clean call
-            // if the call target relies on this gameObject to exist, an error can occur
-            playerGameObjects.ForEach(Destroy);
+            Destroy(playerGameObject);
+            Destroy(gameObject);
         }
 
         public void SetPlayerReady()
