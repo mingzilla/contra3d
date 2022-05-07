@@ -22,21 +22,16 @@
 * boss - cannon deal damage - DONE
 * boss - cannon take damage - DONE
 * boss - when 4 cannons destroyed, explode - DONE
+* kill boss -> start next scene - DONE
+* scene starts: intro screen -> init - DONE
 
+* bug - restart scene - nothing moves - Fixed - (player !isAlive)
 * start next scene when boss is killed - DONE
 * start game screen - DONE
-* player loses life
-* player respawn
+* player loses life - DONE
+* player respawn - DONE
 * pause game
-
-* bug - restart scene - nothing moves
-
-
-kill boss -> level manager:
-5 seconds later -> stop control -> darken screen (no need to move away characters) -> start next scene
-
-scene starts:
-intro screen -> init
+* set up unit tests
 
 
 ### Tips
