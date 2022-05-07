@@ -112,7 +112,6 @@ namespace ProjectContra.Scripts.Player
 
         public void NextLevel(InputAction.CallbackContext context)
         {
-            inGameController.rb.velocity = Vector3.zero;
             SceneUtil.LoadNextScene(AppResource.instance);
         }
     }

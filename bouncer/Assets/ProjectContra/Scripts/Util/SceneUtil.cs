@@ -15,7 +15,6 @@ namespace ProjectContra.Scripts.Util
         {
             GameStoreData storeData = AppResource.instance.storeData.Init(GameScene.GetActiveScene());
             GameScene scene = storeData.currentScene;
-            Debug.Log("SceneUtil.init - info " + AppResource.instance.infoScreen.activeSelf);
             if (scene.hasInfoScreen)
             {
                 GameObject infoScreen = AppResource.instance.infoScreen;
