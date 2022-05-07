@@ -103,6 +103,11 @@ namespace BaseUtil.Base
             return dictionary.Any((x) => (x.Value.Any((v) => (v.Value == null))));
         }
 
+        public static List<T> WithoutNull<T>(List<T> items)
+        {
+            return Filter(x => x != null, items);
+        }
+
         public static void DoNothing()
         {
             // do nothing

@@ -19,11 +19,6 @@ namespace ProjectContra.Scripts.Player
 
         public GameObject playerReadyState;
 
-        private void Awake()
-        {
-            UnityFn.KeepAlive(gameObject);
-        }
-
         public void Init(int id)
         {
             playerId = id;

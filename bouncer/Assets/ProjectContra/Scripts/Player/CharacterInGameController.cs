@@ -24,11 +24,6 @@ namespace ProjectContra.Scripts.Player
         private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
         private static readonly int isDownKey = Animator.StringToHash("isDown");
 
-        private void Awake()
-        {
-            UnityFn.KeepAlive(gameObject);
-        }
-
         public void Init(int id)
         {
             storeData = AppResource.instance.storeData;
