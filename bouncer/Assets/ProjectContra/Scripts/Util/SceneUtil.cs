@@ -15,11 +15,7 @@ namespace ProjectContra.Scripts.Util
         {
             GameStoreData storeData = AppResource.instance.storeData.Init(GameScene.GetActiveScene());
             GameScene scene = storeData.currentScene;
-            if (scene.hasInfoScreen)
-            {
-                GameObject infoScreen = AppResource.instance.infoScreen;
-                infoScreen.GetComponent<InfoScreenCanvasController>().Init(scene.introText);
-            }
+            if (scene.hasInfoScreen) InfoScreenCanvasController.GetInstance().Init(scene.introText);
         }
 
         public static void LoadNextScene(MonoBehaviour controller)

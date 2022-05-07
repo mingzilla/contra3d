@@ -12,8 +12,16 @@ namespace ProjectContra.Scripts.Player
     /// </summary>
     public class InfoScreenCanvasController : MonoBehaviour
     {
+        private static InfoScreenCanvasController instance;
         [SerializeField] private GameObject titleText;
         private string title;
+
+        public static InfoScreenCanvasController GetInstance()
+        {
+            if (instance != null) return instance;
+            instance = Instantiate(AppResource.instance.infoScreenPrefab, Vector3.zero, Quaternion.identity).GetComponent<InfoScreenCanvasController>();
+            return instance;
+        }
 
         public void Init(string text)
         {
@@ -26,6 +34,11 @@ namespace ProjectContra.Scripts.Player
             {
                 AppResource.instance.storeData.controlState = GameControlState.IN_GAME;
             }
+        }
+
+        private void OnDestroy()
+        {
+            instance = null;
         }
     }
 }

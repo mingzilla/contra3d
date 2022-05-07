@@ -8,12 +8,12 @@ namespace ProjectContra.Scripts.Enemy
     {
         protected void OnBecameVisible()
         {
-            UnityFn.SetActive(gameObject, Fn.DoNothing);
+            UnityFn.SetActive(gameObject);
         }
 
         protected void OnBecameInvisible()
         {
-            UnityFn.SetInactive(gameObject, Fn.DoNothing);
+            UnityFn.SetInactive(gameObject);
         }
     }
 }

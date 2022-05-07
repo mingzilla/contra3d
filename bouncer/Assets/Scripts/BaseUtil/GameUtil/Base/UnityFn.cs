@@ -307,10 +307,10 @@ namespace BaseUtil.GameUtil.Base
             Object.DontDestroyOnLoad(gameObj);
         }
 
-        public static T InstantiateDisabledCharacterObject<T>(GameObject prefab)
+        public static T InstantiateCharacterObject<T>(GameObject prefab, bool isActive)
         {
             GameObject obj = Object.Instantiate(prefab, Vector3.zero, Quaternion.identity);
-            obj.SetActive(false);
+            if (!isActive) obj.SetActive(false);
             return obj.GetComponent<T>();
         }
 
@@ -320,21 +320,40 @@ namespace BaseUtil.GameUtil.Base
             return obj.GetComponent<T>();
         }
 
-        public static void SetActive(GameObject gameObject, Action beforeSetActiveFn)
+        public static void SetActive(GameObject gameObject, Action beforeSetActiveFn = null)
         {
             if (!gameObject.activeSelf)
             {
-                beforeSetActiveFn();
+                beforeSetActiveFn?.Invoke();
                 gameObject.SetActive(true);
             }
         }
 
-        public static void SetInactive(GameObject gameObject, Action beforeSetInactiveFn)
+        public static void SetInactive(GameObject gameObject, Action beforeSetInactiveFn = null)
         {
             if (gameObject.activeSelf)
             {
-                beforeSetInactiveFn();
+                beforeSetInactiveFn?.Invoke();
                 gameObject.SetActive(false);
+            }
+        }
+
+
+        public static void DestroyReferenceIfPresent(MonoBehaviour controller, Action postFn)
+        {
+            if (controller != null)
+            {
+                Object.Destroy(controller.gameObject);
+                postFn();
+            }
+        }
+
+        public static void DeActivateReferenceIfPresent(MonoBehaviour controller, Action postFn)
+        {
+            if (controller != null)
+            {
+                SetInactive(controller.gameObject);
+                postFn();
             }
         }
 

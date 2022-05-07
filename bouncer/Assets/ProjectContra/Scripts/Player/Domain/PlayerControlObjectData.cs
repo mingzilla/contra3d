@@ -10,7 +10,7 @@ namespace ProjectContra.Scripts.Player.Domain
     public class PlayerControlObjectData
     {
         public CharacterInLobbyController inLobbyController;
-        public InfoScreenCanvasController infoScreenCanvasController;
+        public InfoScreenCanvasController infoScreenCanvasController; // singleton, every player shares the same object
         public CharacterInGameController inGameController;
 
         public static PlayerControlObjectData Create()
@@ -20,38 +20,28 @@ namespace ProjectContra.Scripts.Player.Domain
 
         public void SetControlObjectActiveState(int playerId, GameControlState controlState, GameObject characterInGamePrefab, GameObject characterInLobbyPrefab)
         {
-            if (controlState == GameControlState.TITLE_SCREEN_LOBBY) MaintainLobbyControlObject(characterInLobbyPrefab);
-            if (controlState == GameControlState.INFO_SCREEN) MaintainInfoScreenControlObject();
-            if (controlState == GameControlState.IN_GAME) MaintainInGameControlObject(playerId, characterInGamePrefab);
-        }
-
-        public void MaintainLobbyControlObject(GameObject prefab)
-        {
-            if (inLobbyController == null) inLobbyController = UnityFn.InstantiateDisabledCharacterObject<CharacterInLobbyController>(prefab);
-            UnityFn.SetActiveAndDeActivateOthers(inLobbyController.gameObject, GetControlObjectsExcept(inLobbyController));
-        }
-
-        public void MaintainInfoScreenControlObject()
-        {
-            if (infoScreenCanvasController == null) infoScreenCanvasController = AppResource.instance.infoScreen.GetComponent<InfoScreenCanvasController>();
-            UnityFn.SetActiveAndDeActivateOthers(AppResource.instance.infoScreen, GetControlObjectsExcept(infoScreenCanvasController));
-        }
-
-        public void MaintainInGameControlObject(int playerId, GameObject prefab)
-        {
-            if (inGameController == null)
+            if (controlState == GameControlState.TITLE_SCREEN_LOBBY)
             {
-                inGameController = UnityFn.InstantiateDisabledCharacterObject<CharacterInGameController>(prefab);
-                inGameController.Init(playerId);
+                UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
+                UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
+                if (inLobbyController == null) inLobbyController = UnityFn.InstantiateCharacterObject<CharacterInLobbyController>(characterInLobbyPrefab, true);
             }
-            UnityFn.SetActiveAndDeActivateOthers(inGameController.gameObject, GetControlObjectsExcept(inGameController));
-        }
-
-        private List<GameObject> GetControlObjectsExcept(MonoBehaviour exclude)
-        {
-            List<GameObject> list = GetControlObjects();
-            list.Remove(exclude.gameObject);
-            return list;
+            if (controlState == GameControlState.INFO_SCREEN)
+            {
+                UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
+                UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
+                if (infoScreenCanvasController == null) infoScreenCanvasController = InfoScreenCanvasController.GetInstance();
+            }
+            if (controlState == GameControlState.IN_GAME)
+            {
+                UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
+                UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
+                if (inGameController == null)
+                {
+                    inGameController = UnityFn.InstantiateCharacterObject<CharacterInGameController>(characterInGamePrefab, false);
+                    inGameController.Init(playerId, true);
+                }
+            }
         }
 
         public List<GameObject> GetControlObjects()
@@ -60,7 +50,7 @@ namespace ProjectContra.Scripts.Player.Domain
             {
                 (inLobbyController != null ? inLobbyController.gameObject : null),
                 (inGameController != null ? inGameController.gameObject : null),
-                AppResource.instance.infoScreen
+                AppResource.instance.infoScreenPrefab
             });
         }
     }

@@ -22,10 +22,6 @@ namespace ProjectContra.Scripts.Player
         private readonly PlayerControlObjectData controlObjectData = PlayerControlObjectData.Create();
         private int playerId;
 
-        private CharacterInLobbyController inLobbyController;
-        private InfoScreenCanvasController infoScreenCanvasController;
-        private CharacterInGameController inGameController;
-
         private UserInput userInput;
 
         private void Awake()

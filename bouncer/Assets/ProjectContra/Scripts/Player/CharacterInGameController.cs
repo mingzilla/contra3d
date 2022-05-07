@@ -24,7 +24,7 @@ namespace ProjectContra.Scripts.Player
         private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
         private static readonly int isDownKey = Animator.StringToHash("isDown");
 
-        public void Init(int id)
+        public void Init(int id, bool isActive)
         {
             storeData = AppResource.instance.storeData;
             playerId = id;
@@ -36,6 +36,7 @@ namespace ProjectContra.Scripts.Player
             groundLayers = GameLayer.GetGroundLayerMask();
             destroyEffect = AppResource.instance.playerDestroyedEffect;
             animatorCtrl = gameObject.GetComponent<Animator>();
+            gameObject.SetActive(isActive);
         }
 
         public void HandleUpdate(UserInput userInput)
