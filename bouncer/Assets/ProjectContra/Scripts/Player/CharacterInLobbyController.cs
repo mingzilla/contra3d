@@ -54,8 +54,8 @@ namespace ProjectContra.Scripts.Player
 
         public void Cancel(GameObject playerGameObject)
         {
-            Destroy(playerGameObject);
-            Destroy(gameObject);
+            Destroy(playerGameObject); // destroying the object with PlayerInput forces the player to quit 
+            Destroy(gameObject); // The game object controlled by Player is a separate object so needs to be removed as well
         }
 
         public void SetPlayerReady()
