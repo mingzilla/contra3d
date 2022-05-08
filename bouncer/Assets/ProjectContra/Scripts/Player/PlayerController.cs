@@ -73,6 +73,7 @@ namespace ProjectContra.Scripts.Player
 
         public void Escape(InputAction.CallbackContext context)
         {
+            if (storeData.controlState == GameControlState.IN_GAME) return; // if it's in game, this is the same as Pause(), so don't double run
             RunWhenContextStarted(context, () => userInput.escape = true);
         }
 
