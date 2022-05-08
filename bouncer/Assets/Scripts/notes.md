@@ -30,8 +30,8 @@
 * start game screen - DONE
 * player loses life - DONE
 * player respawn - DONE
+* change skins - DONE
 * pause game
-* change skins
 * set up unit tests
 
 
