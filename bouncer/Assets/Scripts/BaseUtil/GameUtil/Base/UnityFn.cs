@@ -8,6 +8,7 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = System.Random;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace BaseUtil.GameUtil.Base
 {
@@ -513,6 +514,23 @@ namespace BaseUtil.GameUtil.Base
                 dictionary[scenes[i]] = i;
             }
             return dictionary;
+        }
+
+        /// <summary>
+        /// Move to button and highlight it
+        /// </summary>
+        public static void MoveToButton(Button button)
+        {
+            button.Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject) - Select Button
+            button.OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current)) - Highlight Button
+        }
+
+        /// <summary>
+        /// Buttons need to have onClick.AddListener(), then this can trigger the click event
+        /// </summary>
+        public static void TriggerButton(Button button)
+        {
+            button.onClick.Invoke();
         }
     }
 }

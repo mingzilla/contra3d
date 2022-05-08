@@ -36,7 +36,7 @@ namespace ProjectContra.Scripts.Player
             lobbyButton.onClick.AddListener(OnSelectedLobby);
             quitButton.onClick.AddListener(OnSelectedQuit);
             buttons = new List<Button>() {lobbyButton, quitButton};
-            SelectButton(currentButtonIndex);
+            MoveToButton(currentButtonIndex);
             return this;
         }
 
@@ -52,31 +52,24 @@ namespace ProjectContra.Scripts.Player
             if (userInput.down)
             {
                 int nextIndex = FnVal.GetNextIndex(currentButtonIndex, buttons.Count);
-                SelectButton(nextIndex);
+                MoveToButton(nextIndex);
             }
             if (userInput.up)
             {
                 int nextIndex = FnVal.GetPreviousIndex(currentButtonIndex, buttons.Count);
-                SelectButton(nextIndex);
+                MoveToButton(nextIndex);
             }
         }
 
-        private void SelectButton(int index)
-        {
-            SetIndex(index);
-            Button button = buttons[index];
-            button.Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject) - Select Button
-            button.OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current)) - Highlight Button
-        }
-
-        private void SetIndex(int index)
+        private void MoveToButton(int index)
         {
             currentButtonIndex = index;
+            UnityFn.MoveToButton(buttons[index]);
         }
 
         public void Ok()
         {
-            buttons[currentButtonIndex].onClick.Invoke();
+            UnityFn.TriggerButton(buttons[currentButtonIndex]);
         }
 
         private void HandleUnPause()
