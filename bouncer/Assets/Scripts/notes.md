@@ -32,7 +32,7 @@
 * player respawn - DONE
 * change skins - DONE
 * set up unit tests - DONE
-* pause game
+* pause game - DONE
 
 
 ### Tips
