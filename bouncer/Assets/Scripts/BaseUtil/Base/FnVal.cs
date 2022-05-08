@@ -6,15 +6,20 @@ namespace BaseUtil.Base
     {
         public static Func<string, int> AsInt = (string text) =>
         {
+            return SafeGet(0, () => int.Parse(text));
+        };
+
+        public static T SafeGet<T>(T defaultValue, Func<T> getFn)
+        {
             try
             {
-                return int.Parse(text);
+                return getFn();
             }
             catch (Exception)
             {
-                return 0;
+                return defaultValue;
             }
-        };
+        }
 
         public static Func<string, Func<string, bool>> StartsWith = (string part) =>
         {

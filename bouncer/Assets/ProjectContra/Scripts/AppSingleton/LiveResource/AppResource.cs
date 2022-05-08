@@ -86,7 +86,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
 
         public Material GetSkin(int id)
         {
-            return Fn.SafeGet(skins[0], () => skins[id]);
+            return FnVal.SafeGet(skins[0], () => skins[id]);
         }
 
         public int GetSkinCount()
