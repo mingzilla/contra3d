@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
@@ -27,6 +28,9 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         // Enemy bullet prefabs
         [SerializeField] private GameObject enemyBasicBulletPrefab, enemyFollowerBulletPrefab, enemyGrenadePrefab, enemyPierceBulletPrefab, enemyBlastBulletPrefab;
         public readonly Dictionary<EnemyBulletType, GameObject> enemyBulletTypeAndBulletPrefab = new Dictionary<EnemyBulletType, GameObject>();
+
+        // Skin material
+        [SerializeField] private Material[] skins;
 
         // Explosion effects prefabs
         [SerializeField] public GameObject enemyBulletHitEffect,
@@ -78,6 +82,16 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         {
             if (!enemyBulletTypeAndBulletPrefab.ContainsKey(enemyBulletType)) return enemyBulletTypeAndBulletPrefab[EnemyBulletType.BASIC];
             return enemyBulletTypeAndBulletPrefab[enemyBulletType];
+        }
+
+        public Material GetSkin(int id)
+        {
+            return Fn.SafeGet(skins[0], () => skins[id]);
+        }
+
+        public int GetSkinCount()
+        {
+            return skins.Length;
         }
     }
 }

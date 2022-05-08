@@ -121,5 +121,17 @@ namespace BaseUtil.Base
                 fn();
             }
         }
+
+        public static T SafeGet<T>(T defaultValue, Func<T> getFn)
+        {
+            try
+            {
+                return getFn();
+            }
+            catch (Exception e)
+            {
+                return defaultValue;
+            }
+        }
     }
 }

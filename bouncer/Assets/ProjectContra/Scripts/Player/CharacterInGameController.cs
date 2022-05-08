@@ -32,10 +32,12 @@ namespace ProjectContra.Scripts.Player
             playerId = id;
             gameObject.tag = GameTag.CHARACTER_IN_GAME.name;
             gameObject.layer = GameLayer.PLAYER.GetLayer();
+            PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
             UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject);
             rb = UnityFn.AddRigidbody(gameObject, true, true);
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous; // for player only
             meshRenderer = gameObject.GetComponent<MeshRenderer>();
+            meshRenderer.material = AppResource.instance.GetSkin(playerAttribute.skinId);
             groundLayers = GameLayer.GetGroundLayerMask();
             destroyEffect = AppResource.instance.playerDestroyedEffect;
             animatorCtrl = gameObject.GetComponent<Animator>();

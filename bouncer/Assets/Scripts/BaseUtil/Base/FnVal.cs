@@ -66,5 +66,15 @@ namespace BaseUtil.Base
         {
             return newRandom.NextDouble() >= 0.5;
         }
+
+        public static int GetNextIndex(int currentIndex, int size)
+        {
+            return (currentIndex + 1) % size;
+        }
+
+        public static int GetPreviousIndex(int currentIndex, int size)
+        {
+            return (currentIndex + size - 1) % size;
+        }
     }
 }

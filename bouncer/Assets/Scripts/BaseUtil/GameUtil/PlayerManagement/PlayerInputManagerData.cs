@@ -29,6 +29,11 @@ namespace BaseUtil.GameUtil.PlayerManagement
             return indexAndPlayer[index].playerInput;
         }
 
+        public bool IsPlayerReady(int index)
+        {
+            return indexAndPlayer[index].isReady;
+        }
+
         public void RemovePlayer(PlayerInput playerInput)
         {
             indexAndPlayer.Remove(playerInput.playerIndex);

@@ -216,14 +216,16 @@ namespace BaseUtil.GameUtil.Base
             return spriteRenderers;
         }
 
+        /// <summary>
+        /// 1) Used inside Update loop. If interval is 3, fn runs every 3 seconds. 
+        /// 2) Used in events, to prevent executing fn multiple times. 
+        /// </summary>
         public static void RunWithInterval(MonoBehaviour controller, float interval, bool canRun, Action<bool> setStatusFn, Action fn)
         {
-            if (canRun)
-            {
-                setStatusFn(false);
-                fn();
-                SetTimeout(controller, interval, () => setStatusFn(true));
-            }
+            if (!canRun) return;
+            setStatusFn(false);
+            fn();
+            SetTimeout(controller, interval, () => setStatusFn(true));
         }
 
         public static void SetTimeout(MonoBehaviour controller, float delay, Action fn)

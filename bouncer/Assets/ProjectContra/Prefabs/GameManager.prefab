@@ -122,6 +122,11 @@ MonoBehaviour:
   enemyPierceBulletPrefab: {fileID: 4362966052311366046, guid: faccbf9aaa2c5244995524e1c6943bc1,
     type: 3}
   enemyBlastBulletPrefab: {fileID: 0}
+  skins:
+  - {fileID: 2100000, guid: 4cfc59d5b1caece4aa3ef0bfb7a34e02, type: 2}
+  - {fileID: 2100000, guid: b1bb0ee286641f04a957fab5967d9ffa, type: 2}
+  - {fileID: 2100000, guid: 29bfbb4d076ee0a48b034e60751cbb3e, type: 2}
+  - {fileID: 2100000, guid: e76442d6b74984146a2c6f7ce3d016af, type: 2}
   enemyBulletHitEffect: {fileID: 5035670118569957943, guid: 6c8ef40966b0d3343afa3817b5d02112,
     type: 3}
   enemyDestroyedBigExplosion: {fileID: 2429561131109888901, guid: f4e5cafa586fbc343a8e949b44e6a2da,
