@@ -128,7 +128,7 @@ namespace BaseUtil.Base
             {
                 return getFn();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return defaultValue;
             }

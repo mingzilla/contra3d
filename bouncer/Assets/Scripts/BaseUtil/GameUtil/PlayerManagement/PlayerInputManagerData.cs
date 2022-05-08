@@ -57,7 +57,10 @@ namespace BaseUtil.GameUtil.PlayerManagement
 
         public bool CanJoinPlayer(bool isInLobby, InputDevice device)
         {
-            return isInLobby && HasVacancy() && !DeviceIsPaired(device);
+            return isInLobby &&
+                   HasVacancy() &&
+                   !AllPlayersAreReady() && // if everyone is ready, stop allowing people jumping in with an !isReady state
+                   !DeviceIsPaired(device);
         }
 
         /// <summary>
@@ -86,7 +89,8 @@ namespace BaseUtil.GameUtil.PlayerManagement
 
         public bool AllPlayersAreReady()
         {
-            return indexAndPlayer.Values.All(p => p.isReady);
+            return indexAndPlayer.Count > 0 && // if no players, nobody is ready
+                   indexAndPlayer.Values.All(p => p.isReady);
         }
 
         public List<PlayerInputAndStatus> AllPlayers()
