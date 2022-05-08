@@ -95,5 +95,10 @@ namespace ProjectContra.Scripts.GameData
             UnityFn.ReloadCurrentScene();
             ResetPlayers();
         }
+
+        public bool IsPaused()
+        {
+            return controlState == GameControlState.IN_GAME_PAUSED;
+        }
     }
 }

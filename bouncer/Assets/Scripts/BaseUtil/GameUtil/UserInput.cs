@@ -22,7 +22,6 @@ namespace BaseUtil.GameUtil
         public bool fire1;
         public bool fire2;
         public bool fire3;
-        public bool pause;
         public bool escape;
         public bool space;
 
@@ -34,7 +33,6 @@ namespace BaseUtil.GameUtil
             userInput.fire1 = false;
             userInput.fire2 = false;
             userInput.fire3 = false;
-            userInput.pause = false;
             userInput.escape = false;
             userInput.space = false;
         }

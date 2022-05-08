@@ -19,7 +19,6 @@ namespace ProjectContra.Scripts.Enemy
         private GameObject destroyEffect;
         private Animator animatorCtrl;
 
-        private bool canFireShot = true;
         private static readonly int isActive = Animator.StringToHash("isActive");
 
         void Start()

@@ -22,25 +22,31 @@ namespace ProjectContra.Scripts.Player
         public List<Button> buttons;
         private readonly IntervalState moveSelectionInterval = IntervalState.Create(0.1f);
         private int currentButtonIndex = 0;
+        private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
 
         public static PausedMenuController GetInstance()
         {
             if (instance != null) return instance;
-            instance = Instantiate(AppResource.instance.pauseMenuPrefab, Vector3.zero, Quaternion.identity).GetComponent<PausedMenuController>();
+            instance = Instantiate(AppResource.instance.pauseMenuPrefab, Vector3.zero, Quaternion.identity).GetComponent<PausedMenuController>().Init();
             return instance;
         }
 
-        private void Start()
+        private PausedMenuController Init()
         {
             storeData = AppResource.instance.storeData;
             storeData.controlState = GameControlState.IN_GAME_PAUSED;
+            lobbyButton.onClick.AddListener(OnSelectedLobby);
+            quitButton.onClick.AddListener(OnSelectedQuit);
             buttons = new List<Button>() {lobbyButton, quitButton};
             SelectButton(currentButtonIndex);
+            return this;
         }
 
         public void HandleUpdate(UserInput userInput)
         {
             if (userInput.up || userInput.down) MoveSelection(userInput);
+            if (userInput.fire1 || userInput.space) Ok();
+            if (userInput.jump || userInput.escape) HandleUnPause();
         }
 
         void MoveSelection(UserInput userInput)
@@ -65,6 +71,20 @@ namespace ProjectContra.Scripts.Player
             Button button = buttons[index];
             button.Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject) - Select Button
             button.OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current)) - Highlight Button
+        }
+
+        public void Ok()
+        {
+            buttons[currentButtonIndex].onClick.Invoke();
+        }
+
+        private void HandleUnPause()
+        {
+            UnityFn.RunWithInterval(this, pauseInterval, () =>
+            {
+                storeData.controlState = GameControlState.IN_GAME;
+                Time.timeScale = 1f;
+            });
         }
 
         public void OnSelectedLobby()

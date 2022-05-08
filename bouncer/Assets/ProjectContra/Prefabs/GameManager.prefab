@@ -105,6 +105,8 @@ MonoBehaviour:
     type: 3}
   infoScreenPrefab: {fileID: 8796485591129485539, guid: 036f6ed022b46974c9d9f42136cf1d59,
     type: 3}
+  pauseMenuPrefab: {fileID: 5414122674906163216, guid: 026ad5d5856a9424dab7d323a641a924,
+    type: 3}
   basicBulletPrefab: {fileID: 3164751046395291120, guid: c5593155681200c4abde22768f361f39,
     type: 3}
   blastBulletPrefab: {fileID: 4090495976328841163, guid: cda973ab8d6ecd94591acab593d2fbe1,

@@ -1,5 +1,7 @@
-﻿using BaseUtil.GameUtil;
+﻿using System;
+using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
 using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
@@ -21,6 +23,7 @@ namespace ProjectContra.Scripts.Player
         private int playerId;
 
         private UserInput userInput;
+        private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
 
         private void Awake()
         {
@@ -41,7 +44,6 @@ namespace ProjectContra.Scripts.Player
             if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) controlObjectData.inLobbyController.HandleUpdate(playerId, userInput, gameObject);
             if (currentControlState == GameControlState.INFO_SCREEN) controlObjectData.infoScreenCanvasController.HandleUpdate(userInput);
             if (currentControlState == GameControlState.IN_GAME) controlObjectData.inGameController.HandleUpdate(userInput);
-            if (currentControlState == GameControlState.IN_GAME_PAUSED) controlObjectData.pausedMenuController.HandleUpdate(userInput);
             UserInput.ResetTriggers(userInput);
         }
 
@@ -50,42 +52,63 @@ namespace ProjectContra.Scripts.Player
             if (userInput == null) return;
             if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
             userInput = UserInput.Move(userInput, context);
+            HandleInputWhenPaused();
         }
 
         public void Jump(InputAction.CallbackContext context)
         {
-            if (userInput == null) return;
-            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
-            if (context.started) userInput.jump = true;
+            RunWhenContextStarted(context, () => userInput.jump = true);
             if (context.canceled) userInput.jumpCancelled = true;
         }
 
         public void Fire1(InputAction.CallbackContext context)
         {
-            if (userInput == null) return;
-            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
-            if (context.started) userInput.fire1 = true;
+            RunWhenContextStarted(context, () => userInput.fire1 = true);
         }
 
         public void Space(InputAction.CallbackContext context)
         {
-            if (userInput == null) return;
-            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
-            if (context.started) userInput.space = true;
+            RunWhenContextStarted(context, () => userInput.space = true);
         }
 
         public void Escape(InputAction.CallbackContext context)
         {
-            if (userInput == null) return;
-            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
-            if (context.started) userInput.escape = true;
+            RunWhenContextStarted(context, () => userInput.escape = true);
         }
 
         public void Pause(InputAction.CallbackContext context)
         {
             if (userInput == null) return;
             if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
-            if (context.started) userInput.pause = true;
+            if (context.started && storeData.controlState == GameControlState.IN_GAME)
+            {
+                UnityFn.RunWithInterval(this, pauseInterval, () =>
+                {
+                    storeData.controlState = GameControlState.IN_GAME_PAUSED;
+                    controlObjectData.SetControlObjectActiveState(playerId, storeData.controlState, characterInGamePrefab, characterInLobbyPrefab);
+                    Time.timeScale = 0f;
+                });
+            }
+        }
+
+        private void RunWhenContextStarted(InputAction.CallbackContext context, Action fn)
+        {
+            if (userInput == null) return;
+            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
+            if (context.started)
+            {
+                fn();
+                HandleInputWhenPaused();
+            }
+        }
+
+        /// <summary>
+        /// When paused, the update loop is stopped, so nothing runs inside update loop.
+        /// </summary>
+        private void HandleInputWhenPaused()
+        {
+            if (!storeData.IsPaused()) return;
+            controlObjectData.pausedMenuController.HandleUpdate(userInput);
         }
 
         public void NextLevel(InputAction.CallbackContext context)

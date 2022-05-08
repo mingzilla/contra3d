@@ -13,9 +13,7 @@ namespace ProjectContra.Scripts.Enemy
     {
         private readonly IntervalState spawnInterval = IntervalState.Create(5f);
         public float detectionRange = 60f;
-
         private GameStoreData storeData;
-        private bool canSpawn = true;
 
         void Start()
         {

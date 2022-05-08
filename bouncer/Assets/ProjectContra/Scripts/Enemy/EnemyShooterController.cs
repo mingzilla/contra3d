@@ -18,8 +18,6 @@ namespace ProjectContra.Scripts.Enemy
         private Rigidbody rb;
         private GameObject destroyEffect;
 
-        private bool canFireShot = true;
-
         void Start()
         {
             storeData = AppResource.instance.storeData;

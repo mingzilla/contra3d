@@ -49,8 +49,7 @@ namespace ProjectContra.Scripts.Player
 
         public void HandleUpdate(UserInput userInput)
         {
-            if (userInput.pause) HandlePause(userInput);
-            if (!userInput.pause && gameObject.activeSelf && storeData.GetPlayer(playerId).isAlive) HandlePlayerControl(userInput);
+            if (gameObject.activeSelf && storeData.GetPlayer(playerId).isAlive) HandlePlayerControl(userInput);
         }
 
         private void HandlePlayerControl(UserInput userInput)
@@ -73,14 +72,6 @@ namespace ProjectContra.Scripts.Player
 
             playerAttribute.inGameTransform = transform;
             storeData.SetPlayer(playerAttribute);
-        }
-
-        private void HandlePause(UserInput userInput)
-        {
-            UnityFn.RunWithInterval(this, pauseInterval, () =>
-            {
-                storeData.controlState = GameControlState.IN_GAME_PAUSED;
-            });
         }
 
         private void HandleInvincibilityUi()
