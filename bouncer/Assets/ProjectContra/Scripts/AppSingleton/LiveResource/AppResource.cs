@@ -14,6 +14,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
 
         [SerializeField] public GameObject playerPrefab;
         [SerializeField] public GameObject infoScreenPrefab;
+        [SerializeField] public GameObject pauseMenuPrefab;
 
         // Player bullet prefabs
         [SerializeField] private GameObject basicBulletPrefab, blastBulletPrefab;

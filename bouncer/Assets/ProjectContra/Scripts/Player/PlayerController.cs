@@ -41,6 +41,7 @@ namespace ProjectContra.Scripts.Player
             if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) controlObjectData.inLobbyController.HandleUpdate(playerId, userInput, gameObject);
             if (currentControlState == GameControlState.INFO_SCREEN) controlObjectData.infoScreenCanvasController.HandleUpdate(userInput);
             if (currentControlState == GameControlState.IN_GAME) controlObjectData.inGameController.HandleUpdate(userInput);
+            if (currentControlState == GameControlState.IN_GAME_PAUSED) controlObjectData.pausedMenuController.HandleUpdate(userInput);
             UserInput.ResetTriggers(userInput);
         }
 

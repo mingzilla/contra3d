@@ -2,6 +2,7 @@
 using BaseUtil.Base;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using BaseUtil.GameUtil.PlayerManagement;
@@ -17,7 +18,7 @@ namespace ProjectContra.Scripts.Player
         private bool isInitialized = false;
         private int playerId;
         public int currentSkinIndex = 0;
-        private bool canUpdateSkin = true;
+        private readonly IntervalState changeSkinInterval = IntervalState.Create(0.1f);
         private MeshRenderer meshRenderer;
 
         public GameObject playerReadyState;
@@ -114,7 +115,7 @@ namespace ProjectContra.Scripts.Player
 
         private void ChangeSkin(int desireIndex)
         {
-            UnityFn.RunWithInterval(this, 0.2f, canUpdateSkin, b => canUpdateSkin = b, () =>
+            UnityFn.RunWithInterval(this, changeSkinInterval, () =>
             {
                 PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
                 meshRenderer.material = AppResource.instance.GetSkin(desireIndex);

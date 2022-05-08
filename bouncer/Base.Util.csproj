@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\Base\GameLogic.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\SelectedIds.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\AbstractObserverController.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\Domain\IntervalState.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\GameFn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\GameFn2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\TagUtil.cs" />

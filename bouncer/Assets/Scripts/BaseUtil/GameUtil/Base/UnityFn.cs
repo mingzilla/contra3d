@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using BaseUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
 using BaseUtil.GameUtil.Types;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -220,12 +221,12 @@ namespace BaseUtil.GameUtil.Base
         /// 1) Used inside Update loop. If interval is 3, fn runs every 3 seconds. 
         /// 2) Used in events, to prevent executing fn multiple times. 
         /// </summary>
-        public static void RunWithInterval(MonoBehaviour controller, float interval, bool canRun, Action<bool> setStatusFn, Action fn)
+        public static void RunWithInterval(MonoBehaviour controller, IntervalState state, Action fn)
         {
-            if (!canRun) return;
-            setStatusFn(false);
+            if (!state.canRun) return;
+            state.canRun = false;
             fn();
-            SetTimeout(controller, interval, () => setStatusFn(true));
+            SetTimeout(controller, state.interval, () => state.canRun = true);
         }
 
         public static void SetTimeout(MonoBehaviour controller, float delay, Action fn)

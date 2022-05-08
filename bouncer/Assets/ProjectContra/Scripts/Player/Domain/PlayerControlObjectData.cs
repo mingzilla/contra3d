@@ -12,6 +12,7 @@ namespace ProjectContra.Scripts.Player.Domain
         public CharacterInLobbyController inLobbyController;
         public InfoScreenCanvasController infoScreenCanvasController; // singleton, every player shares the same object
         public CharacterInGameController inGameController;
+        public PausedMenuController pausedMenuController; // singleton, every player shares the same object
 
         public static PlayerControlObjectData Create()
         {
@@ -22,42 +23,42 @@ namespace ProjectContra.Scripts.Player.Domain
         {
             if (controlState == GameControlState.TITLE_SCREEN_MENU)
             {
+                UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
                 UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
-                UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
+                UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
             }
             if (controlState == GameControlState.TITLE_SCREEN_LOBBY)
             {
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
                 UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
+                UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
                 if (inLobbyController == null) inLobbyController = UnityFn.InstantiateCharacterObject<CharacterInLobbyController>(characterInLobbyPrefab, true);
             }
             if (controlState == GameControlState.INFO_SCREEN)
             {
                 UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
                 UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
+                UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
                 if (infoScreenCanvasController == null) infoScreenCanvasController = InfoScreenCanvasController.GetInstance();
             }
             if (controlState == GameControlState.IN_GAME)
             {
                 UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
+                UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
                 if (inGameController == null)
                 {
-                    inGameController = UnityFn.InstantiateCharacterObject<CharacterInGameController>(characterInGamePrefab, false);
-                    inGameController.Init(playerId, true);
+                    inGameController = UnityFn.InstantiateCharacterObject<CharacterInGameController>(characterInGamePrefab, false).Init(playerId, true);
                 }
             }
-        }
-
-        public List<GameObject> GetControlObjects()
-        {
-            return Fn.WithoutNull(new List<GameObject>()
+            if (controlState == GameControlState.IN_GAME_PAUSED)
             {
-                (inLobbyController != null ? inLobbyController.gameObject : null),
-                (inGameController != null ? inGameController.gameObject : null),
-                AppResource.instance.infoScreenPrefab
-            });
+                UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
+                UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
+                // don't touch inGameController
+                if (pausedMenuController == null) pausedMenuController = PausedMenuController.GetInstance();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
@@ -10,7 +11,7 @@ namespace ProjectContra.Scripts.Enemy
 {
     public class EnemyGroundCannonController : AbstractDestructibleController
     {
-        public float shotInterval = 3f;
+        private readonly IntervalState shotInterval = IntervalState.Create(3f);
         public int hp = 10;
 
         private GameStoreData storeData;
@@ -41,7 +42,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots(Vector3 position, Transform closestPlayer)
         {
-            UnityFn.RunWithInterval(this, shotInterval, canFireShot, (s) => canFireShot = s, () =>
+            UnityFn.RunWithInterval(this, shotInterval, () =>
             {
                 EnemyPierceBulletController.Spawn(position, closestPlayer, EnemyBulletType.PIERCE);
             });

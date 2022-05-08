@@ -1,4 +1,5 @@
 ﻿using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
@@ -10,7 +11,7 @@ namespace ProjectContra.Scripts.Enemy
 {
     public class EnemyBossLv1GunController : AbstractDestructibleController
     {
-        public float shotInterval = 5f;
+        private readonly IntervalState shotInterval = IntervalState.Create(5f);
         public int fireDelay = 0;
         public int hp = 5;
         public bool isBroken = false;
@@ -40,7 +41,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots(Vector3 position, Transform closestPlayer)
         {
-            UnityFn.RunWithInterval(this, shotInterval, canFireShot, (s) => canFireShot = s, () =>
+            UnityFn.RunWithInterval(this, shotInterval, () =>
             {
                 EnemyBasicBulletController.Spawn(position, closestPlayer, EnemyBulletType.BASIC);
             });

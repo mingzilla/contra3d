@@ -26,7 +26,7 @@ namespace ProjectContra.Scripts.Player
         private static readonly int isDownKey = Animator.StringToHash("isDown");
         private bool isInvincible = false;
 
-        public void Init(int id, bool isActive)
+        public CharacterInGameController Init(int id, bool isActive)
         {
             storeData = AppResource.instance.storeData;
             playerId = id;
@@ -42,6 +42,7 @@ namespace ProjectContra.Scripts.Player
             destroyEffect = AppResource.instance.playerDestroyedEffect;
             animatorCtrl = gameObject.GetComponent<Animator>();
             gameObject.SetActive(isActive);
+            return this;
         }
 
         public void HandleUpdate(UserInput userInput)

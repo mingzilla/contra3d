@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
@@ -10,7 +11,7 @@ namespace ProjectContra.Scripts.Enemy
 {
     public class EnemyWalkerSpawnPointController : AbstractRangeDetectionController
     {
-        public float spawnInterval = 5f;
+        private readonly IntervalState spawnInterval = IntervalState.Create(5f);
         public float detectionRange = 60f;
 
         private GameStoreData storeData;
@@ -25,7 +26,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                UnityFn.RunWithInterval(this, spawnInterval, canSpawn, (s) => canSpawn = s, () =>
+                UnityFn.RunWithInterval(this, spawnInterval, () =>
                 {
                     SpawnWalker();
                     UnityFn.SetTimeout(this, 0.5f, SpawnWalker);
