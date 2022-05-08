@@ -39,7 +39,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots(Vector3 position, Transform closestPlayer)
         {
-            UnityFn.RunWithInterval(this, shotInterval, () =>
+            UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
             {
                 float x = (closestPlayer.position.x < position.x) ? xForce : -(xForce);
                 ThrowGrenade(position, x);

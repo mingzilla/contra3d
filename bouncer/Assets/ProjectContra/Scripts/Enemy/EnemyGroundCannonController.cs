@@ -41,7 +41,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots(Vector3 position, Transform closestPlayer)
         {
-            UnityFn.RunWithInterval(this, shotInterval, () =>
+            UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
             {
                 EnemyPierceBulletController.Spawn(position, closestPlayer, EnemyBulletType.PIERCE);
             });

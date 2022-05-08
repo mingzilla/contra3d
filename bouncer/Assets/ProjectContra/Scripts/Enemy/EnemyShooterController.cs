@@ -37,7 +37,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots(Vector3 position, Transform closestPlayer)
         {
-            UnityFn.RunWithInterval(this, shotInterval, () =>
+            UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
             {
                 EnemyBasicBulletController.Spawn(position, closestPlayer, EnemyBulletType.BASIC);
             });

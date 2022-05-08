@@ -83,7 +83,7 @@ namespace ProjectContra.Scripts.Player
             if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
             if (context.started && storeData.controlState == GameControlState.IN_GAME)
             {
-                UnityFn.RunWithInterval(this, pauseInterval, () =>
+                UnityFn.RunWithInterval(AppResource.instance, pauseInterval, () =>
                 {
                     storeData.controlState = GameControlState.IN_GAME_PAUSED;
                     controlObjectData.SetControlObjectActiveState(playerId, storeData.controlState, characterInGamePrefab, characterInLobbyPrefab);

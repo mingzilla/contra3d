@@ -115,7 +115,7 @@ namespace ProjectContra.Scripts.Player
 
         private void ChangeSkin(int desireIndex)
         {
-            UnityFn.RunWithInterval(this, changeSkinInterval, () =>
+            UnityFn.RunWithInterval(AppResource.instance, changeSkinInterval, () =>
             {
                 PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
                 meshRenderer.material = AppResource.instance.GetSkin(desireIndex);

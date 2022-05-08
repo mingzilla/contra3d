@@ -24,7 +24,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                UnityFn.RunWithInterval(this, spawnInterval, () =>
+                UnityFn.RunWithInterval(AppResource.instance, spawnInterval, () =>
                 {
                     SpawnWalker();
                     UnityFn.SetTimeout(this, 0.5f, SpawnWalker);

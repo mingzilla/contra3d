@@ -89,7 +89,7 @@ namespace ProjectContra.Scripts.Player
 
         public void TakeDamage(Vector3 position, int damage)
         {
-            UnityFn.RunWithInterval(this, takeDamageInterval, () =>
+            UnityFn.RunWithInterval(AppResource.instance, takeDamageInterval, () =>
             {
                 PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
                 playerAttribute.TakeDamage(damage, () =>
