@@ -52,7 +52,7 @@ namespace ProjectContra.Scripts.Player
             if (userInput == null) return;
             if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
             userInput = UserInput.Move(userInput, context);
-            HandleInputWhenPaused();
+            if (context.started) HandleInputWhenPaused(); // if not in context.started, it runs 3 times
         }
 
         public void Jump(InputAction.CallbackContext context)
@@ -110,6 +110,7 @@ namespace ProjectContra.Scripts.Player
         {
             if (!storeData.IsPaused()) return;
             controlObjectData.pausedMenuController.HandleUpdate(userInput);
+            UserInput.ResetTriggers(userInput); // same as update loop, need to reset userInput after execution
         }
 
         public void NextLevel(InputAction.CallbackContext context)

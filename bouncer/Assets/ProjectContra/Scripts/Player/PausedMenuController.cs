@@ -20,9 +20,7 @@ namespace ProjectContra.Scripts.Player
         [SerializeField] private Button lobbyButton;
         [SerializeField] private Button quitButton;
         public List<Button> buttons;
-        private readonly IntervalState moveSelectionInterval = IntervalState.Create(0.1f);
         private int currentButtonIndex = 0;
-        private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
 
         public static PausedMenuController GetInstance()
         {
@@ -51,26 +49,29 @@ namespace ProjectContra.Scripts.Player
 
         void MoveSelection(UserInput userInput)
         {
-            UnityFn.RunWithInterval(this, moveSelectionInterval, () =>
+            if (userInput.down)
             {
-                if (userInput.down)
-                {
-                    int nextIndex = FnVal.GetNextIndex(currentButtonIndex, buttons.Count);
-                    SelectButton(nextIndex);
-                }
-                if (userInput.up)
-                {
-                    int nextIndex = FnVal.GetPreviousIndex(currentButtonIndex, buttons.Count);
-                    SelectButton(nextIndex);
-                }
-            });
+                int nextIndex = FnVal.GetNextIndex(currentButtonIndex, buttons.Count);
+                SelectButton(nextIndex);
+            }
+            if (userInput.up)
+            {
+                int nextIndex = FnVal.GetPreviousIndex(currentButtonIndex, buttons.Count);
+                SelectButton(nextIndex);
+            }
         }
 
         private void SelectButton(int index)
         {
+            SetIndex(index);
             Button button = buttons[index];
             button.Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject) - Select Button
             button.OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current)) - Highlight Button
+        }
+
+        private void SetIndex(int index)
+        {
+            currentButtonIndex = index;
         }
 
         public void Ok()
@@ -80,11 +81,8 @@ namespace ProjectContra.Scripts.Player
 
         private void HandleUnPause()
         {
-            UnityFn.RunWithInterval(this, pauseInterval, () =>
-            {
-                storeData.controlState = GameControlState.IN_GAME;
-                Time.timeScale = 1f;
-            });
+            storeData.controlState = GameControlState.IN_GAME;
+            Time.timeScale = 1f;
         }
 
         public void OnSelectedLobby()
