@@ -50,11 +50,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\ProjectRocket\Scripts\ObstacleMovementController.cs" />
-     <Compile Include="Assets\ProjectRocket\Scripts\RocketController.cs" />
-     <Compile Include="Assets\ProjectRocket\Scripts\RocketDestinationController.cs" />
-     <Compile Include="Assets\ProjectRocket\Scripts\Types\GameTag.cs" />
-     <None Include="Assets\ProjectRocket\Project.Rocket.asmdef" />
+     <Compile Include="Assets\_external\ProjectRocket\Scripts\ObstacleMovementController.cs" />
+     <Compile Include="Assets\_external\ProjectRocket\Scripts\RocketController.cs" />
+     <Compile Include="Assets\_external\ProjectRocket\Scripts\RocketDestinationController.cs" />
+     <Compile Include="Assets\_external\ProjectRocket\Scripts\Types\GameTag.cs" />
+     <None Include="Assets\_external\ProjectRocket\Project.Rocket.asmdef" />
  <Reference Include="Unity.InputSystem">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
  </Reference>

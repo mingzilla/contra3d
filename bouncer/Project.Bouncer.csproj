@@ -50,13 +50,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\ProjectBouncer\Scripts\DropBoxController.cs" />
-     <Compile Include="Assets\ProjectBouncer\Scripts\GamePlayerController.cs" />
-     <Compile Include="Assets\ProjectBouncer\Scripts\ObstacleController.cs" />
-     <Compile Include="Assets\ProjectBouncer\Scripts\ScoreController.cs" />
-     <Compile Include="Assets\ProjectBouncer\Scripts\SpinnerController.cs" />
-     <Compile Include="Assets\ProjectBouncer\Scripts\Types\GameTag.cs" />
-     <None Include="Assets\ProjectBouncer\Project.Bouncer.asmdef" />
+     <Compile Include="Assets\_external\ProjectBouncer\Scripts\DropBoxController.cs" />
+     <Compile Include="Assets\_external\ProjectBouncer\Scripts\GamePlayerController.cs" />
+     <Compile Include="Assets\_external\ProjectBouncer\Scripts\ObstacleController.cs" />
+     <Compile Include="Assets\_external\ProjectBouncer\Scripts\ScoreController.cs" />
+     <Compile Include="Assets\_external\ProjectBouncer\Scripts\SpinnerController.cs" />
+     <Compile Include="Assets\_external\ProjectBouncer\Scripts\Types\GameTag.cs" />
+     <None Include="Assets\_external\ProjectBouncer\Project.Bouncer.asmdef" />
  <Reference Include="Unity.InputSystem">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
  </Reference>

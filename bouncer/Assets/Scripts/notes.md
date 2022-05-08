@@ -31,8 +31,8 @@
 * player loses life - DONE
 * player respawn - DONE
 * change skins - DONE
+* set up unit tests - DONE
 * pause game
-* set up unit tests
 
 
 ### Tips
