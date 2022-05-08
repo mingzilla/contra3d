@@ -1,6 +1,7 @@
 ﻿using System;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
 using BaseUtil.GameUtil.Util3D;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.Bullet;
@@ -24,7 +25,8 @@ namespace ProjectContra.Scripts.Player
         private static readonly int isJumpingKey = Animator.StringToHash("isJumping");
         private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
         private static readonly int isDownKey = Animator.StringToHash("isDown");
-        private bool isInvincible = false;
+        private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
+        private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
 
         public CharacterInGameController Init(int id, bool isActive)
         {
@@ -75,10 +77,15 @@ namespace ProjectContra.Scripts.Player
 
         private void HandlePause(UserInput userInput)
         {
+            UnityFn.RunWithInterval(this, pauseInterval, () =>
+            {
+                storeData.controlState = GameControlState.IN_GAME_PAUSED;
+            });
         }
 
         private void HandleInvincibilityUi()
         {
+            bool isInvincible = !takeDamageInterval.canRun;
             if (isInvincible)
             {
                 meshRenderer.enabled = !meshRenderer.enabled;
@@ -91,11 +98,9 @@ namespace ProjectContra.Scripts.Player
 
         public void TakeDamage(Vector3 position, int damage)
         {
-            PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
-            if (!isInvincible)
+            UnityFn.RunWithInterval(this, takeDamageInterval, () =>
             {
-                isInvincible = true;
-                UnityFn.SetTimeout(this, 1f, () => isInvincible = false);
+                PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
                 playerAttribute.TakeDamage(damage, () =>
                 {
                     UnityFn.CreateEffect(destroyEffect, position, 1f);
@@ -106,8 +111,8 @@ namespace ProjectContra.Scripts.Player
                         storeData.ReloadScene();
                     });
                 });
-            }
-            storeData.SetPlayer(playerAttribute);
+                storeData.SetPlayer(playerAttribute);
+            });
         }
 
         public void PowerUp(WeaponType weaponType)

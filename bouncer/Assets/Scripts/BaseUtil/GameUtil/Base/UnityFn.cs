@@ -219,7 +219,7 @@ namespace BaseUtil.GameUtil.Base
 
         /// <summary>
         /// 1) Used inside Update loop. If interval is 3, fn runs every 3 seconds. 
-        /// 2) Used in events, to prevent executing fn multiple times. 
+        /// 2) Used in events, to allow executing fn only once only within an interval. 
         /// </summary>
         public static void RunWithInterval(MonoBehaviour controller, IntervalState state, Action fn)
         {
