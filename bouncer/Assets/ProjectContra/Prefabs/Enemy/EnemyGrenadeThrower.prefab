@@ -108,10 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a8131517194c0a9d8c29adbb3ac409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotInterval: 3
-  xForce: -7
-  yForce: 8
-  zForce: 0
+  xForce: -2
+  yForce: 15
+  zForce: -4
 --- !u!1 &2314948372921664044
 GameObject:
   m_ObjectHideFlags: 0
