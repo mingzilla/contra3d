@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Rocket", "Project.R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Bouncer", "Project.Bouncer.csproj", "{a6ec32f1-18a2-8c13-a66b-dba7bd9085ea}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.External", "Project.External.csproj", "{31eafdae-2552-b3c9-c66b-8b72f109255c}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +37,6 @@ Global
 		{a6ec32f1-18a2-8c13-a66b-dba7bd9085ea}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{a6ec32f1-18a2-8c13-a66b-dba7bd9085ea}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{a6ec32f1-18a2-8c13-a66b-dba7bd9085ea}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31eafdae-2552-b3c9-c66b-8b72f109255c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31eafdae-2552-b3c9-c66b-8b72f109255c}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31eafdae-2552-b3c9-c66b-8b72f109255c}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31eafdae-2552-b3c9-c66b-8b72f109255c}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
