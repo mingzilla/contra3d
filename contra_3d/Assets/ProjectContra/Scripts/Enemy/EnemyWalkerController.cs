@@ -13,8 +13,8 @@ namespace ProjectContra.Scripts.Enemy
     public class EnemyWalkerController : AbstractDestructibleController
     {
         public int damage = 1;
-        public int moveSpeed = 10;
-        public float jumpForce = 20f;
+        public int moveSpeed = 8;
+        public float jumpForce = 22f;
         public float detectionRange = 60f;
         public bool isActive = false;
 
