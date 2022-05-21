@@ -273,6 +273,9 @@
  <Reference Include="unityplastic">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/PackageCache/com.unity.collab-proxy@1.14.15/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
+ <Reference Include="ICSharpCode.NRefactory">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/PackageCache/com.unity.render-pipelines.core@7.7.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+ </Reference>
  <Reference Include="netstandard">
  <HintPath>E:/dev/unity_hub_editor/2019.4.38f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
  </Reference>

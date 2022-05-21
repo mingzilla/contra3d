@@ -50,7 +50,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Types\GameTag.cs" />
+     <Compile Include="Assets\Settings\CustomRenderPassFeature.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -95,6 +95,33 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Editor">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Runtime">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Editor">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ShaderGraph.Editor">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+ <HintPath>E:/code/unity/temp_projects/bouncer/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>E:/dev/unity_hub_editor/2019.4.38f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -626,14 +653,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Project.External.csproj">
-      <Project>{31eafdae-2552-b3c9-c66b-8b72f109255c}</Project>
-      <Name>Project.External</Name>
-    </ProjectReference>
-    <ProjectReference Include="Project.Bouncer.csproj">
-      <Project>{a6ec32f1-18a2-8c13-a66b-dba7bd9085ea}</Project>
-      <Name>Project.Bouncer</Name>
-    </ProjectReference>
     <ProjectReference Include="Project.Rocket.csproj">
       <Project>{06bbc1ad-f0c5-ac56-9552-212aaa2146c6}</Project>
       <Name>Project.Rocket</Name>
@@ -641,6 +660,10 @@
     <ProjectReference Include="Project.Contra.csproj">
       <Project>{36f30a28-2b47-0f0c-14c2-19351775c49a}</Project>
       <Name>Project.Contra</Name>
+    </ProjectReference>
+    <ProjectReference Include="Project.Bouncer.csproj">
+      <Project>{a6ec32f1-18a2-8c13-a66b-dba7bd9085ea}</Project>
+      <Name>Project.Bouncer</Name>
     </ProjectReference>
     <ProjectReference Include="Base.Util.csproj">
       <Project>{9e50233b-2e95-30a1-aa4a-f2485055deaa}</Project>

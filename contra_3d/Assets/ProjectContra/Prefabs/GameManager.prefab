@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7146423920837195975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7146423920837195973}
+  - component: {fileID: 7146423920837195974}
+  - component: {fileID: 7146423920837195972}
+  - component: {fileID: 59127339176309920}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7146423920837195973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146423920837195975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9489721, y: -3.642161, z: -1.0310576}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7146423920837195974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146423920837195975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NotificationBehavior: 0
+  m_MaxPlayerCount: 4
+  m_AllowJoining: 1
+  m_JoinBehavior: 2
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_PlayerPrefab: {fileID: 0}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &7146423920837195972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146423920837195975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fd4f4de5c9416382fc9a27a422f669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &59127339176309920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146423920837195975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df3d0f4b8014571a44f399a9d3cda03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 1704468264798570660, guid: e2d068605590c2443b45c92ecfbd0e45,
+    type: 3}
+  infoScreenPrefab: {fileID: 8796485591129485539, guid: 036f6ed022b46974c9d9f42136cf1d59,
+    type: 3}
+  pauseMenuPrefab: {fileID: 5414122674906163216, guid: 026ad5d5856a9424dab7d323a641a924,
+    type: 3}
+  basicBulletPrefab: {fileID: 3164751046395291120, guid: c5593155681200c4abde22768f361f39,
+    type: 3}
+  blastBulletPrefab: {fileID: 4090495976328841163, guid: cda973ab8d6ecd94591acab593d2fbe1,
+    type: 3}
+  powerUpPrefab: {fileID: 7067668911478314324, guid: 7bd0ae25515ef45409e0d90dc0bdc0e7,
+    type: 3}
+  enemyWalkerPrefab: {fileID: 5849297839655832041, guid: f0da803f5f93abe43920ffa75c4bbfdd,
+    type: 3}
+  enemyBasicBulletPrefab: {fileID: 4362966052311366046, guid: 167c11b1efbb1b046a2b6c15eb207b36,
+    type: 3}
+  enemyFollowerBulletPrefab: {fileID: 4362966052311366046, guid: 06f446d0c7de80f428104a8a6315c252,
+    type: 3}
+  enemyGrenadePrefab: {fileID: 7193432624006083695, guid: 3ffd76af84d42de45b04546f1cd15379,
+    type: 3}
+  enemyPierceBulletPrefab: {fileID: 4362966052311366046, guid: faccbf9aaa2c5244995524e1c6943bc1,
+    type: 3}
+  enemyBlastBulletPrefab: {fileID: 0}
+  skins:
+  - {fileID: 2100000, guid: 4cfc59d5b1caece4aa3ef0bfb7a34e02, type: 2}
+  - {fileID: 2100000, guid: b1bb0ee286641f04a957fab5967d9ffa, type: 2}
+  - {fileID: 2100000, guid: 29bfbb4d076ee0a48b034e60751cbb3e, type: 2}
+  - {fileID: 2100000, guid: e76442d6b74984146a2c6f7ce3d016af, type: 2}
+  enemyBulletHitEffect: {fileID: 5035670118569957943, guid: 6c8ef40966b0d3343afa3817b5d02112,
+    type: 3}
+  enemyDestroyedBigExplosion: {fileID: 2429561131109888901, guid: f4e5cafa586fbc343a8e949b44e6a2da,
+    type: 3}
+  enemyDestroyedSmallExplosion: {fileID: 5035670118569957943, guid: 7bb91091cfb7a524aa710022b6cef03a,
+    type: 3}
+  enemyGrenadeSmallExplosion: {fileID: 5035670118569957943, guid: fed8ec5b9498dbb448da1dd2b5023333,
+    type: 3}
+  playerBulletHitEffect: {fileID: 5035670118569957943, guid: 6794c432a01fcad4593ef3d159652d95,
+    type: 3}
+  playerDestroyedEffect: {fileID: 5035670118569957943, guid: bb2e4229c18ae0d44b6ddadaf4449faf,
+    type: 3}
+  playerExplosiveShotExplosion: {fileID: 553932777566549550, guid: 415baf75cdd6d9f48a207afae17f554d,
+    type: 3}
+  powerUpDestroyedSmallExplosion: {fileID: 5035670118569957943, guid: 7b27dcf024ad32940b9f221e7b6e966c,
+    type: 3}
