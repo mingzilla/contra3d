@@ -57,8 +57,8 @@
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Messaging\Serializer.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\ProjectGeneration\ProjectProperties.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\ProjectGeneration\FileIOProvider.cs" />
-     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Testing\TestAdaptor.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Testing\TestRunnerCallbacks.cs" />
+     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Testing\TestAdaptor.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\UnityInstallation.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Messaging\Deserializer.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Testing\TestResultAdaptor.cs" />
@@ -69,8 +69,8 @@
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\VersionPair.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Cli.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\FileUtility.cs" />
-     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\ProjectGeneration\AssemblyNameProvider.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Messaging\MessageType.cs" />
+     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\ProjectGeneration\AssemblyNameProvider.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Messaging\TcpListener.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Messaging\TcpClient.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.15\Editor\Image.cs" />

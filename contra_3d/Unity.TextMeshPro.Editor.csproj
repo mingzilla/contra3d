@@ -54,8 +54,8 @@
      <Compile Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts\Editor\TMP_SpriteCharacterPropertyDrawer.cs" />
      <Compile Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts\Editor\TMP_FontAsset_CreationMenu.cs" />
      <Compile Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts\Editor\TMP_ColorGradientEditor.cs" />
-     <Compile Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts\Editor\TMP_TextAlignmentDrawer.cs" />
      <Compile Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts\Editor\TMP_SerializedPropertyHolder.cs" />
+     <Compile Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts\Editor\TMP_TextAlignmentDrawer.cs" />
      <Compile Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts\Editor\TMP_PostBuildProcessHandler.cs" />
      <Compile Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts\Editor\TMPro_SortingLayerHelper.cs" />
      <Compile Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts\Editor\TMP_StyleSheetEditor.cs" />

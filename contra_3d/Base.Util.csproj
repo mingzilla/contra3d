@@ -66,9 +66,9 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\SortingLayer.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitStat.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitInvincibilityParams.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\UserInput.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\GameLogic.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\BulletCommonUtil2D.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\UserInput.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\ShotPointHandler2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\GameFn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\DestroyOverTime.cs" />
