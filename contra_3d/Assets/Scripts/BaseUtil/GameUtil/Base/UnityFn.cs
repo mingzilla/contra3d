@@ -414,9 +414,9 @@ namespace BaseUtil.GameUtil.Base
             return collider;
         }
 
-        public static MeshRenderer MakeInvisible(GameObject gameObject)
+        public static T MakeInvisible<T>(GameObject gameObject) where T: Renderer
         {
-            MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();
+            T meshRenderer = gameObject.GetComponent<T>();
             meshRenderer.enabled = false;
             return meshRenderer;
         }

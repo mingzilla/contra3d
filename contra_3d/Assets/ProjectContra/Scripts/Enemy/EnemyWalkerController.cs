@@ -20,7 +20,6 @@ namespace ProjectContra.Scripts.Enemy
 
         private GameStoreData storeData;
         private Rigidbody rb;
-        private MeshRenderer meshRenderer;
         private CapsuleCollider theCollider;
         private LayerMask destructibleLayers;
         private GameObject destroyEffect;
@@ -32,8 +31,7 @@ namespace ProjectContra.Scripts.Enemy
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             rb = UnityFn.AddRigidbody(gameObject, true, true);
-            UnityFn.AddCapsuleCollider(gameObject, 0.5f, 2, false);
-            meshRenderer = UnityFn.MakeInvisible(gameObject);
+            // UnityFn.AddCapsuleCollider(gameObject, 0.5f, 2, false);
             destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
         }
@@ -46,7 +44,6 @@ namespace ProjectContra.Scripts.Enemy
             if (!isActive && UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
             {
                 isActive = true;
-                meshRenderer.enabled = true;
                 transform.LookAt(closestPlayer);
             }
             if (isActive) MovementUtil.MoveX(transform, xMovementValue, moveSpeed);
