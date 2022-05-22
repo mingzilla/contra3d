@@ -10,9 +10,9 @@ namespace BaseUtil.GameUtil.Util2D
 {
     public class UnitDisplayHandler2D
     {
-        public static void HandleSpriteFacing(Rigidbody2D theRb, Transform theTransform)
+        public static void HandleSpriteFacing(Rigidbody2D theRb, Transform theTransform, string tagName)
         {
-            var childSprites = UnityFn.FindChildrenWithTag(theTransform, GameTag.SPRITE.name);
+            var childSprites = UnityFn.FindChildrenWithTag(theTransform, tagName);
             foreach (var t in childSprites)
             {
                 UnitDisplayHandler2D.HandleFacing(theRb, t);

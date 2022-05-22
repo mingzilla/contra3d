@@ -70,13 +70,11 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitInvincibility.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitInvincibilityParams.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitStat.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\EnemyCommonUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\MovementUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputAndStatus.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputManagerData.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameLayer.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameTag.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\PlayerInputScheme.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\SortingLayer.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\UserInput.cs" />

@@ -15,10 +15,10 @@ namespace BaseUtil.GameUtil.Domain
 
         private bool isStillInvincible = false;
 
-        public static UnitInvincibilityParams Create(string invincibilityType, Transform unitTransform)
+        public static UnitInvincibilityParams Create(string invincibilityType, Transform unitTransform, string tagName)
         {
             UnitInvincibility unitInvincibility = UnitInvincibility.GetByNameWithDefault(invincibilityType);
-            List<SpriteRenderer> spriteRenderers = UnityFn.FindComponentsFromChildrenWithTag<SpriteRenderer>(unitTransform, GameTag.SPRITE.name);
+            List<SpriteRenderer> spriteRenderers = UnityFn.FindComponentsFromChildrenWithTag<SpriteRenderer>(unitTransform, tagName);
 
             if (unitInvincibility.CanFlash() && spriteRenderers.Count == 0)
             {

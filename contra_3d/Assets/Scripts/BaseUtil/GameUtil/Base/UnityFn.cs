@@ -45,35 +45,6 @@ namespace BaseUtil.GameUtil.Base
             return obj;
         }
 
-        public static GameObject GetUnitRootOrSelf(GameObject obj)
-        {
-            return GetTaggedParentOrSelf(obj, GameTag.UNIT_ROOT.name);
-        }
-
-        public static T GetComponentFromUnitRootOrSelf<T>(GameObject obj)
-        {
-            return GetUnitRootOrSelf(obj).GetComponent<T>();
-        }
-
-        public static void SetActiveOnTaggedRootOrSelf(GameObject obj, bool isActive)
-        {
-            HandleTaggedParentOrSelf(obj, GameTag.UNIT_ROOT.name, (o) => o.SetActive(isActive));
-        }
-
-        /**
-         * Unit Root is used to destroy a unit, because generally for grouping purposes, a unit is put inside an empty object.
-         * So we tag the root object as Unit Root, and we destroy that object rather than the child only.
-         */
-        public static void DestroyTaggedRootOrSelf(GameObject obj)
-        {
-            HandleTaggedParentOrSelf(obj, GameTag.UNIT_ROOT.name, SafeDestroy);
-        }
-
-        public static void DestroyRootObjectOverTime(GameObject obj, float lifeTime)
-        {
-            HandleTaggedParentOrSelf(obj, GameTag.UNIT_ROOT.name, (o) => SafeDestroy(o, lifeTime));
-        }
-
         public static void HandleTaggedParentOrSelf(GameObject obj, string rootTag, Action<GameObject> destroyFn)
         {
             if (obj == null) return;
@@ -414,7 +385,7 @@ namespace BaseUtil.GameUtil.Base
             return collider;
         }
 
-        public static T MakeInvisible<T>(GameObject gameObject) where T: Renderer
+        public static T MakeInvisible<T>(GameObject gameObject) where T : Renderer
         {
             T meshRenderer = gameObject.GetComponent<T>();
             meshRenderer.enabled = false;

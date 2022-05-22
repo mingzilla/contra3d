@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ProjectContra/Scenes/ContraTitle.unity
-    guid: f372712fa5aec484cb41cbd4c950a05f
+    path: Assets/ProjectContra/Scenes/ContraLv3.unity
+    guid: 7a681659c4cc91f49afba389b5081379
   - enabled: 1
     path: Assets/ProjectContra/Scenes/ContraLv1.unity
     guid: a07f929b2ffb98d49b42f374a83cfc31
   - enabled: 1
     path: Assets/ProjectContra/Scenes/ContraLv2.unity
     guid: b12d57e682822da4a961783b37ed0cf2
+  - enabled: 1
+    path: Assets/ProjectContra/Scenes/ContraTitle.unity
+    guid: f372712fa5aec484cb41cbd4c950a05f
   m_configObjects: {}

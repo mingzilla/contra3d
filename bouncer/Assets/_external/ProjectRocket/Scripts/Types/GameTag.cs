@@ -39,10 +39,5 @@ namespace Types
         {
             return typeMap[(name)];
         }
-
-        public static void InitOnAwake()
-        {
-            TagUtil.AddTagsIfNotPresent(Fn.Map(it => it.name, All()));
-        }
     }
 }

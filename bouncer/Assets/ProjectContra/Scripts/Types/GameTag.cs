@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using BaseUtil.Base;
-using BaseUtil.GameUtil.Base;
 
 namespace ProjectContra.Scripts.Types
 {
@@ -40,7 +37,7 @@ namespace ProjectContra.Scripts.Types
 
         public static void InitOnAwake()
         {
-            TagUtil.LogErrorIfTagsNotPresent(Fn.Map(it => it.name, All()));
+            // TagUtil.LogErrorIfTagsNotPresent(Fn.Map(it => it.name, All()));
         }
     }
 }

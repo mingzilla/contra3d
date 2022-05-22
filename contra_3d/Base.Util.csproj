@@ -48,7 +48,6 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputManagerData.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\CameraHandler2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\CameraHandler3D.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\GameFn2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\TagUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\EnemyCommonUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\AbstractObserverController.cs" />
@@ -60,12 +59,9 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\DashCounter.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\PlayerActionHandler3D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputAndStatus.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameTag.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\CameraUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\MovementUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\SortingLayer.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitStat.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitInvincibilityParams.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\UserInput.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\GameLogic.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\BulletCommonUtil2D.cs" />
@@ -77,7 +73,6 @@
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnRxDataStore.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\PlayerInputScheme.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\Fn.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\UnitDisplayHandler2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\BulletCommonUtil3D.cs" />
      <None Include="Assets\Scripts\BaseUtil\Base.Util.asmdef" />
      <Reference Include="UnityEngine">
