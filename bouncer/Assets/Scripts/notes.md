@@ -1,8 +1,8 @@
 ﻿## Referencing objects
 
 ### TODO
-* make a mountain terrain
-* add a low poly skybox
+* make a mountain terrain - DONE
+* add a low poly skybox - No need
 * remake enemies e.g. lv1 boss - DONE
 * import enemies and boss
 * add water to game

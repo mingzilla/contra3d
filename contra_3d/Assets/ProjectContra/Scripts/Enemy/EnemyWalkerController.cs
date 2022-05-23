@@ -25,6 +25,8 @@ namespace ProjectContra.Scripts.Enemy
         private GameObject destroyEffect;
         private Transform closestPlayer;
         private int xMovementValue = 0;
+        private Animator animatorCtrl;
+        private static readonly int isRunning = Animator.StringToHash("isRunning");
 
         void Start()
         {
@@ -34,6 +36,7 @@ namespace ProjectContra.Scripts.Enemy
             // UnityFn.AddCapsuleCollider(gameObject, 0.5f, 2, false);
             destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
+            animatorCtrl = gameObject.GetComponent<Animator>();
         }
 
         void Update()
@@ -46,7 +49,11 @@ namespace ProjectContra.Scripts.Enemy
                 isActive = true;
                 transform.LookAt(closestPlayer);
             }
-            if (isActive) MovementUtil.MoveX(transform, xMovementValue, moveSpeed);
+            if (isActive)
+            {
+                animatorCtrl.SetBool(isRunning, true);
+                MovementUtil.MoveX(transform, xMovementValue, moveSpeed);
+            }
         }
 
         void OnCollisionEnter(Collision other)
