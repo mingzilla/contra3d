@@ -58,7 +58,7 @@ namespace ProjectContra.Scripts.Player
             HandleInvincibilityUi();
             PlayerActionHandler3D.MoveX(userInput.fixedHorizontal, rb, playerAttribute.moveSpeed);
             isFacingRight = UserInput.IsFacingRight(isFacingRight, userInput);
-            PlayerActionHandler3D.HandleLeftRightFacing(transform, isFacingRight);
+            UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
 
             bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
             animatorCtrl.SetBool(isOnGroundKey, isOnGround);

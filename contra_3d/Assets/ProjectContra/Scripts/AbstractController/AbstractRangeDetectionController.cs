@@ -20,15 +20,14 @@ namespace ProjectContra.Scripts.AbstractController
             }
         }
 
-        protected void RunIfPlayerIsInRange(GameStoreData storeData, float detectionRange, Action<Transform> fn)
+        protected bool RunIfPlayerIsInRange(GameStoreData storeData, float detectionRange, Action<Transform> fn)
         {
-            if (!storeData.HasPlayer()) return;
+            if (!storeData.HasPlayer()) return false;
             Vector3 position = transform.position;
             Transform closestPlayer = storeData.GetClosestPlayer(position).inGameTransform;
-            if (UnityFn.IsInRange(transform, closestPlayer, detectionRange))
-            {
-                fn(closestPlayer);
-            }
+            bool isInRange = UnityFn.IsInRange(transform, closestPlayer, detectionRange);
+            if (isInRange) fn(closestPlayer);
+            return isInRange;
         }
     }
 }

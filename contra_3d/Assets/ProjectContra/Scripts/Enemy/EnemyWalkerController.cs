@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Util3D;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
@@ -47,7 +48,8 @@ namespace ProjectContra.Scripts.Enemy
             if (!isActive && UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
             {
                 isActive = true;
-                transform.LookAt(closestPlayer);
+                bool isFacingRight = transform.position.x < closestPlayer.position.x;
+                UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
             }
             if (isActive)
             {

@@ -1,5 +1,6 @@
 ﻿using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
+using BaseUtil.GameUtil.Util3D;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
@@ -17,6 +18,8 @@ namespace ProjectContra.Scripts.Enemy
         private GameStoreData storeData;
         private Rigidbody rb;
         private GameObject destroyEffect;
+        private Animator animatorCtrl;
+        private static readonly int isActive = Animator.StringToHash("isActive");
 
         void Start()
         {
@@ -24,15 +27,18 @@ namespace ProjectContra.Scripts.Enemy
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             rb = UnityFn.AddRigidbody(gameObject, true, true);
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
+            animatorCtrl = gameObject.GetComponent<Animator>();
         }
 
         void Update()
         {
-            RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
+            bool isInRange = RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                transform.LookAt(closestPlayer);
+                bool isFacingRight = transform.position.x < closestPlayer.position.x;
+                UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
                 FireShots(transform.position, closestPlayer);
             });
+            animatorCtrl.SetBool(isActive, isInRange);
         }
 
         void FireShots(Vector3 position, Transform closestPlayer)
