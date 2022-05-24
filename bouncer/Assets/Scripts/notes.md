@@ -6,10 +6,13 @@
 * remake enemies e.g. lv1 boss - DONE
 * import enemies and boss
 * add water to game
-* add mountain to game
+* add mountain to game - DONE
 * make player
 * add player to game
+* save game - DONE?
 
+* add friendly heli
+* remake boss 1
 
 
 

@@ -282,9 +282,9 @@ namespace BaseUtil.GameUtil.Base
             Object.DontDestroyOnLoad(gameObj);
         }
 
-        public static T InstantiateCharacterObject<T>(GameObject prefab, bool isActive)
+        public static T InstantiateCharacterObject<T>(GameObject prefab, bool isActive, Vector3 initialPosition)
         {
-            GameObject obj = Object.Instantiate(prefab, Vector3.zero, Quaternion.identity);
+            GameObject obj = Object.Instantiate(prefab, initialPosition, Quaternion.identity);
             if (!isActive) obj.SetActive(false);
             return obj.GetComponent<T>();
         }

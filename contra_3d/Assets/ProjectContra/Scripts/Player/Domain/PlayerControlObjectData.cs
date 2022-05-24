@@ -33,7 +33,7 @@ namespace ProjectContra.Scripts.Player.Domain
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
                 UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
                 UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
-                if (inLobbyController == null) inLobbyController = UnityFn.InstantiateCharacterObject<CharacterInLobbyController>(characterInLobbyPrefab, true);
+                if (inLobbyController == null) inLobbyController = UnityFn.InstantiateCharacterObject<CharacterInLobbyController>(characterInLobbyPrefab, true, Vector3.zero);
             }
             if (controlState == GameControlState.INFO_SCREEN)
             {
@@ -49,7 +49,7 @@ namespace ProjectContra.Scripts.Player.Domain
                 UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
                 if (inGameController == null)
                 {
-                    inGameController = UnityFn.InstantiateCharacterObject<CharacterInGameController>(characterInGamePrefab, false).Init(playerId, true);
+                    inGameController = UnityFn.InstantiateCharacterObject<CharacterInGameController>(characterInGamePrefab, false, new Vector3(0f, 0f, 0f)).Init(playerId, true);
                 }
             }
             if (controlState == GameControlState.IN_GAME_PAUSED)
