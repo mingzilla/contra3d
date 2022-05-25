@@ -3184,12 +3184,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1013345858}
     m_Modifications:
-    - target: {fileID: 59127339176309920, guid: 2046e0e6c659a234da16b699cc59d79c,
-        type: 3}
-      propertyPath: enemyWalkerPrefab
-      value: 
-      objectReference: {fileID: 7204687603564491683, guid: f0da803f5f93abe43920ffa75c4bbfdd,
-        type: 3}
     - target: {fileID: 7146423920837195973, guid: 2046e0e6c659a234da16b699cc59d79c,
         type: 3}
       propertyPath: m_RootOrder
@@ -3243,11 +3237,6 @@ PrefabInstance:
     - target: {fileID: 7146423920837195973, guid: 2046e0e6c659a234da16b699cc59d79c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7146423920837195974, guid: 2046e0e6c659a234da16b699cc59d79c,
-        type: 3}
-      propertyPath: m_JoinBehavior
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7146423920837195975, guid: 2046e0e6c659a234da16b699cc59d79c,
@@ -14904,7 +14893,7 @@ PrefabInstance:
     - target: {fileID: 2525427259742060159, guid: 3d1322097b7393643b92e38d7bc8129d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2525427259742060159, guid: 3d1322097b7393643b92e38d7bc8129d,
         type: 3}

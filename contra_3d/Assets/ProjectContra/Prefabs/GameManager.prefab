@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.9489721, y: -3.642161, z: -1.0310576}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_NotificationBehavior: 0
   m_MaxPlayerCount: 4
   m_AllowJoining: 1
-  m_JoinBehavior: 2
+  m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -113,7 +114,7 @@ MonoBehaviour:
     type: 3}
   powerUpPrefab: {fileID: 7067668911478314324, guid: 7bd0ae25515ef45409e0d90dc0bdc0e7,
     type: 3}
-  enemyWalkerPrefab: {fileID: 5849297839655832041, guid: f0da803f5f93abe43920ffa75c4bbfdd,
+  enemyWalkerPrefab: {fileID: 4496732822776432890, guid: f0da803f5f93abe43920ffa75c4bbfdd,
     type: 3}
   enemyBasicBulletPrefab: {fileID: 4362966052311366046, guid: 167c11b1efbb1b046a2b6c15eb207b36,
     type: 3}
