@@ -16,15 +16,17 @@ namespace ProjectContra.Scripts.Player
     {
         private GameStoreData storeData;
         public Rigidbody rb;
-        private MeshRenderer meshRenderer;
+        private SkinnedMeshRenderer meshRenderer;
         private LayerMask groundLayers;
         private GameObject destroyEffect;
         private int playerId;
         private bool isFacingRight = true;
         private Animator animatorCtrl;
-        private static readonly int isJumpingKey = Animator.StringToHash("isJumping");
-        private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
+        private static readonly int triggerJumpKey = Animator.StringToHash("triggerJump");
+        private static readonly int triggerShootingKey = Animator.StringToHash("triggerShooting");
+        private static readonly int triggerDeadKey = Animator.StringToHash("triggerDead");
         private static readonly int isDownKey = Animator.StringToHash("isDown");
+        private static readonly int isMovingKey = Animator.StringToHash("isMoving");
         private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
         private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
 
@@ -37,8 +39,8 @@ namespace ProjectContra.Scripts.Player
             UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject);
             rb = UnityFn.AddRigidbody(gameObject, true, true);
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous; // for player only
-            meshRenderer = gameObject.GetComponent<MeshRenderer>();
-            meshRenderer.material = AppResource.instance.GetSkin(playerAttribute.skinId);
+            meshRenderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+            // meshRenderer.material = AppResource.instance.GetSkin(playerAttribute.skinId);
             groundLayers = GameLayer.GetGroundLayerMask();
             destroyEffect = AppResource.instance.playerDestroyedEffect;
             animatorCtrl = gameObject.GetComponent<Animator>();
@@ -57,17 +59,18 @@ namespace ProjectContra.Scripts.Player
 
             HandleInvincibilityUi();
             PlayerActionHandler3D.MoveX(userInput.fixedHorizontal, rb, playerAttribute.moveSpeed);
+            animatorCtrl.SetBool(isMovingKey, UserInput.IsMoving(userInput));
             isFacingRight = UserInput.IsFacingRight(isFacingRight, userInput);
             UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
 
             bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
-            animatorCtrl.SetBool(isOnGroundKey, isOnGround);
             animatorCtrl.SetBool(isDownKey, userInput.down);
-            if (userInput.jump && isOnGround) animatorCtrl.SetTrigger(isJumpingKey);
+            if (userInput.jump && isOnGround) animatorCtrl.SetTrigger(triggerJumpKey);
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
             PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
             if (userInput.fire1) BulletController.Spawn(transform, isFacingRight, userInput, playerAttribute.weaponType, isOnGround);
+            if (userInput.fire1) animatorCtrl.SetTrigger(triggerShootingKey);
 
             playerAttribute.inGameTransform = transform;
             storeData.SetPlayer(playerAttribute);
@@ -93,7 +96,7 @@ namespace ProjectContra.Scripts.Player
                 PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
                 playerAttribute.TakeDamage(damage, () =>
                 {
-                    UnityFn.CreateEffect(destroyEffect, position, 1f);
+                    animatorCtrl.SetTrigger(triggerDeadKey);
                     gameObject.SetActive(false);
                     UnityFn.SetTimeout(AppResource.instance, 1f, () =>
                     {

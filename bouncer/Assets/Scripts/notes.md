@@ -1,26 +1,28 @@
 ﻿## Referencing objects
 
 ### TODO
+* make player
+* add player to game
+
+* save game - DONE?
+* import thrower enemy
+* boss 1 cannon rotation issue
+* remake power up L
+* remake power up - unity
+
+
+
+
+
+----
+
 * make a mountain terrain - DONE
 * add a low poly skybox - No need
 * remake enemies e.g. lv1 boss - DONE
-* import enemies and boss
-* add water to game
+* import enemies and boss - DONE
+* add water to game - DONE
 * add mountain to game - DONE
-* make player
-* add player to game
-* save game - DONE?
-
-* add friendly heli
-* remake boss 1
-
-
-
-
-
-
-
-
+* add friendly heli - DONE
 
 
 ### DONE

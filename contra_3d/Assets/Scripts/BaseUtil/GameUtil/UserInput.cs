@@ -149,5 +149,10 @@ namespace BaseUtil.GameUtil
             if (userInput.right) return true;
             return isFacingForward;
         }
+
+        public static bool IsMoving(UserInput userInput)
+        {
+            return userInput.fixedHorizontal != 0f;
+        }
     }
 }

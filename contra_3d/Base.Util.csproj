@@ -42,7 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\UnityFn.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\UnitDisplayHandler3D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\SelectedIds.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Saving\SaveSystem.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnRx.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnVal.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputManagerData.cs" />
@@ -58,6 +60,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\DashCounter.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\PlayerActionHandler3D.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\UnitDisplayHandler2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputAndStatus.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\CameraUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\MovementUtil.cs" />
@@ -74,9 +77,6 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\PlayerInputScheme.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\Fn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\BulletCommonUtil3D.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Saving\SaveSystem.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\UnitDisplayHandler2D.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\UnitDisplayHandler3D.cs" />
      <None Include="Assets\Scripts\BaseUtil\Base.Util.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

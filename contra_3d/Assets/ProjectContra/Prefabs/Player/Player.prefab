@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0affd73b627b9fa4f80bbf91204a78bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterInGamePrefab: {fileID: 382885940435634341, guid: dc38b817cb1061f4fa9b6554b4b49866,
+  characterInGamePrefab: {fileID: 3231235896129854719, guid: 34c0e6ba72a526e45a740ed035420d79,
     type: 3}
   characterInLobbyPrefab: {fileID: 833075378163421166, guid: 92be0c46c2e287047ab8c90d84468126,
     type: 3}
@@ -77,6 +78,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1704468264798570658}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -92,6 +94,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1704468264798570658}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Fire1
         m_Mode: 0
         m_Arguments:
@@ -107,6 +110,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1704468264798570658}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -122,6 +126,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1704468264798570658}
+        m_TargetAssemblyTypeName: 
         m_MethodName: NextLevel
         m_Mode: 0
         m_Arguments:
@@ -137,6 +142,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1704468264798570658}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Space
         m_Mode: 0
         m_Arguments:
@@ -152,6 +158,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1704468264798570658}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Escape
         m_Mode: 0
         m_Arguments:
@@ -167,6 +174,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1704468264798570658}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Pause
         m_Mode: 0
         m_Arguments:
