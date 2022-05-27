@@ -26,6 +26,7 @@ namespace ProjectContra.Scripts.Player
         private static readonly int triggerShootingKey = Animator.StringToHash("triggerShooting");
         private static readonly int triggerDeadKey = Animator.StringToHash("triggerDead");
         private static readonly int isDownKey = Animator.StringToHash("isDown");
+        private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
         private static readonly int isMovingKey = Animator.StringToHash("isMoving");
         private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
         private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
@@ -36,7 +37,7 @@ namespace ProjectContra.Scripts.Player
             playerId = id;
             gameObject.layer = GameLayer.PLAYER.GetLayer();
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
-            UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject);
+            UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject.GetComponentInChildren<CapsuleCollider>().gameObject);
             rb = UnityFn.AddRigidbody(gameObject, true, true);
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous; // for player only
             meshRenderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
@@ -64,6 +65,7 @@ namespace ProjectContra.Scripts.Player
             UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
 
             bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
+            animatorCtrl.SetBool(isOnGroundKey, isOnGround);
             animatorCtrl.SetBool(isDownKey, userInput.down);
             if (userInput.jump && isOnGround) animatorCtrl.SetTrigger(triggerJumpKey);
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);

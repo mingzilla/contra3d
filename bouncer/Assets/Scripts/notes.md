@@ -1,8 +1,8 @@
 ﻿## Referencing objects
 
 ### TODO
-* make player
-* add player to game
+* make player skins
+* player bullet collision issue
 
 * save game - DONE?
 * import thrower enemy
@@ -15,7 +15,8 @@
 
 
 ----
-
+* make player - DONE
+* add player to game - DONE
 * make a mountain terrain - DONE
 * add a low poly skybox - No need
 * remake enemies e.g. lv1 boss - DONE
