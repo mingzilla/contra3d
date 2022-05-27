@@ -4,6 +4,7 @@ using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Util3D;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
+using ProjectContra.Scripts.Enemy.Util;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Player;
 using ProjectContra.Scripts.Types;
@@ -44,7 +45,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             if (!storeData.HasPlayer()) return;
             if (closestPlayer == null) closestPlayer = storeData.GetClosestPlayer(transform.position).inGameTransform;
-            xMovementValue = (xMovementValue != 0) ? xMovementValue : (closestPlayer.position.x > transform.position.x ? 1: -1);
+            xMovementValue = (xMovementValue != 0) ? xMovementValue : (closestPlayer.position.x > transform.position.x ? 1 : -1);
             if (!isActive && UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
             {
                 isActive = true;
@@ -75,15 +76,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void DealDamage(Collision other)
         {
-            if (GameLayer.Matches(other.gameObject.layer, GameLayer.PLAYER))
-            {
-                Vector3 location = transform.position;
-                GameFn.DealDamage(location, 2, destructibleLayers, (obj) =>
-                {
-                    CharacterInGameController character = obj.GetComponent<CharacterInGameController>();
-                    if (character != null) character.TakeDamage(location, damage);
-                });
-            }
+            EnemyUtil.DealDamageToPlayer(transform.position, 2, destructibleLayers, damage, other.collider);
         }
 
         private void JumpAtTriggerPoint(Collider other)

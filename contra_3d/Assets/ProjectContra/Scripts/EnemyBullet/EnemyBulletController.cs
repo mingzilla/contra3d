@@ -1,4 +1,5 @@
 ﻿using BaseUtil.GameUtil.Base;
+using ProjectContra.Scripts.Enemy.Util;
 using ProjectContra.Scripts.Player;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
@@ -9,15 +10,7 @@ namespace ProjectContra.Scripts.EnemyBullet
     {
         protected void DealDamageToPlayer(Collider other, EnemyBulletType enemyBulletType)
         {
-            if (GameLayer.Matches(other.gameObject.layer, GameLayer.PLAYER))
-            {
-                Vector3 location = transform.position;
-                GameFn.DealDamage(location, enemyBulletType.blastRange, enemyBulletType.destructibleLayers, (obj) =>
-                {
-                    CharacterInGameController character = obj.GetComponentInParent<CharacterInGameController>();
-                    if (character != null) character.TakeDamage(location, enemyBulletType.damage); // null check to avoid child objects
-                });
-            }
+            EnemyUtil.DealDamageToPlayer(transform.position, enemyBulletType.blastRange, enemyBulletType.destructibleLayers, enemyBulletType.damage, other);
         }
 
         protected void DestroySelf(GameObject impactEffect, float impactLifeTime)
