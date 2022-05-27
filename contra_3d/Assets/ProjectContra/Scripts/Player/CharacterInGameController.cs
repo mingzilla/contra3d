@@ -41,7 +41,8 @@ namespace ProjectContra.Scripts.Player
             rb = UnityFn.AddRigidbody(gameObject, true, true);
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous; // for player only
             meshRenderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
-            // meshRenderer.material = AppResource.instance.GetSkin(playerAttribute.skinId);
+            Material skin = AppResource.instance.GetSkin(playerAttribute.skinId);
+            meshRenderer.materials = new[] {meshRenderer.materials[0], skin}; // setting to a position doesn't work, need to replace the whole array
             groundLayers = GameLayer.GetGroundLayerMask();
             destroyEffect = AppResource.instance.playerDestroyedEffect;
             animatorCtrl = gameObject.GetComponent<Animator>();
