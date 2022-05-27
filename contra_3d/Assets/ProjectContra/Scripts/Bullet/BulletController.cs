@@ -15,10 +15,10 @@ namespace ProjectContra.Scripts.Bullet
         private Vector3 moveDirection;
         private WeaponType weaponType;
 
-        public static BulletController Spawn(Transform shotPoint, bool isFacingForward, UserInput userInput, WeaponType weaponType, bool isOnGround)
+        public static BulletController Spawn(Transform shotPoint, Vector3 positionDelta, bool isFacingForward, UserInput userInput, WeaponType weaponType, bool isOnGround)
         {
             GameObject prefab = AppResource.instance.GetBulletPrefab(weaponType);
-            BulletController copy = Instantiate(prefab, shotPoint.position, shotPoint.rotation).GetComponent<BulletController>();
+            BulletController copy = Instantiate(prefab, (shotPoint.position + positionDelta), shotPoint.rotation).GetComponent<BulletController>();
             copy.moveDirection = BulletCommonUtil3D.CreateBulletDirection(isFacingForward, userInput, isOnGround);
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
             copy.weaponType = weaponType;

@@ -14,7 +14,7 @@ namespace ProjectContra.Scripts.EnemyBullet
                 Vector3 location = transform.position;
                 GameFn.DealDamage(location, enemyBulletType.blastRange, enemyBulletType.destructibleLayers, (obj) =>
                 {
-                    CharacterInGameController character = obj.GetComponent<CharacterInGameController>();
+                    CharacterInGameController character = obj.GetComponentInParent<CharacterInGameController>();
                     if (character != null) character.TakeDamage(location, enemyBulletType.damage); // null check to avoid child objects
                 });
             }

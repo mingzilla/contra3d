@@ -12,7 +12,7 @@ namespace ProjectContra.Scripts.Player.Domain
         public float moveSpeed = 8f; // good value by experience
         public float jumpForce = 22f; // good value by experience
         public float gravityMultiplier = 3.5f; // combined with 20f jump force, to avoid character being floaty
-        public float playerToGroundDistance = 1f; // Not visible, so need to create an empty object on the UI, and calculate the distance to adjust
+        public float playerToGroundDistance = 0f; // Not visible, so need to create an empty object on the UI, and calculate the distance to adjust
         public WeaponType weaponType;
         public int skinId;
 

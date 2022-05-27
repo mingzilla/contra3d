@@ -71,7 +71,7 @@ namespace ProjectContra.Scripts.Player
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
             PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
-            if (userInput.fire1) BulletController.Spawn(transform, isFacingRight, userInput, playerAttribute.weaponType, isOnGround);
+            if (userInput.fire1) BulletController.Spawn(transform, new Vector3(0f, 1f, 0f), isFacingRight, userInput, playerAttribute.weaponType, isOnGround);
             if (userInput.fire1) animatorCtrl.SetTrigger(triggerShootingKey);
 
             playerAttribute.inGameTransform = transform;
