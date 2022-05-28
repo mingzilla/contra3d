@@ -28,6 +28,7 @@ namespace ProjectContra.Scripts.Player
         private static readonly int isProneKey = Animator.StringToHash("isProne");
         private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
         private static readonly int isMovingKey = Animator.StringToHash("isMoving");
+        private static readonly int isPointingUpKey = Animator.StringToHash("isPointingUp");
         private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
         private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
 
@@ -67,12 +68,14 @@ namespace ProjectContra.Scripts.Player
 
             bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
             animatorCtrl.SetBool(isOnGroundKey, isOnGround);
-            animatorCtrl.SetBool(isProneKey, (isOnGround && userInput.down && !userInput.IsMovingHorizontally()));
+            animatorCtrl.SetBool(isPointingUpKey, userInput.IsStraightUp());
+            bool isProne = (isOnGround && userInput.IsStraightDown());
+            animatorCtrl.SetBool(isProneKey, isProne);
             if (userInput.jump && isOnGround) animatorCtrl.SetTrigger(triggerJumpKey);
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
             PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
-            if (userInput.fire1) BulletController.Spawn(transform, new Vector3(0f, 1f, 0f), isFacingRight, userInput, playerAttribute.weaponType, isOnGround);
+            if (userInput.fire1) BulletController.Spawn(transform, new Vector3(0f, (isProne ? 0.5f : 1f), 0f), isFacingRight, userInput, playerAttribute.weaponType, isOnGround);
             if (userInput.fire1) animatorCtrl.SetTrigger(triggerShootingKey);
 
             playerAttribute.inGameTransform = transform;
