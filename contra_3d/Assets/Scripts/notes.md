@@ -6,7 +6,8 @@
 * remake power up L
 * remake power up - unity
 * shooting position when lying prone
-
+* enemy jump too high
+* partical effects
 
 
 
