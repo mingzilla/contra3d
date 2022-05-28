@@ -5,11 +5,13 @@
 * import thrower enemy
 * remake power up L
 * remake power up - unity
+* shooting position when lying prone
 
 
 
 
 ----
+* problem - lie down and jump - FIXED
 * update player skins - DONE
 * boss 1 cannon rotation issue - FIXED
 * player bullet collision issue - FIXED

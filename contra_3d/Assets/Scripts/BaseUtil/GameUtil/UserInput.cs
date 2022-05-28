@@ -106,6 +106,11 @@ namespace BaseUtil.GameUtil
             return !up && !down && !left && !right;
         }
 
+        public bool IsMovingHorizontally()
+        {
+            return fixedHorizontal != 0f;
+        }
+
         private static bool Left(float horizontal, bool multiInputs)
         {
             if (!multiInputs) return horizontal < -0.9f;
@@ -148,11 +153,6 @@ namespace BaseUtil.GameUtil
             if (userInput.left) return false;
             if (userInput.right) return true;
             return isFacingForward;
-        }
-
-        public static bool IsMoving(UserInput userInput)
-        {
-            return userInput.fixedHorizontal != 0f;
         }
     }
 }

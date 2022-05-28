@@ -25,7 +25,7 @@ namespace ProjectContra.Scripts.Player
         private static readonly int triggerJumpKey = Animator.StringToHash("triggerJump");
         private static readonly int triggerShootingKey = Animator.StringToHash("triggerShooting");
         private static readonly int triggerDeadKey = Animator.StringToHash("triggerDead");
-        private static readonly int isDownKey = Animator.StringToHash("isDown");
+        private static readonly int isProneKey = Animator.StringToHash("isProne");
         private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
         private static readonly int isMovingKey = Animator.StringToHash("isMoving");
         private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
@@ -61,13 +61,13 @@ namespace ProjectContra.Scripts.Player
 
             HandleInvincibilityUi();
             PlayerActionHandler3D.MoveX(userInput.fixedHorizontal, rb, playerAttribute.moveSpeed);
-            animatorCtrl.SetBool(isMovingKey, UserInput.IsMoving(userInput));
+            animatorCtrl.SetBool(isMovingKey, userInput.IsMovingHorizontally());
             isFacingRight = UserInput.IsFacingRight(isFacingRight, userInput);
             UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
 
             bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
             animatorCtrl.SetBool(isOnGroundKey, isOnGround);
-            animatorCtrl.SetBool(isDownKey, userInput.down);
+            animatorCtrl.SetBool(isProneKey, (isOnGround && userInput.down && !userInput.IsMovingHorizontally()));
             if (userInput.jump && isOnGround) animatorCtrl.SetTrigger(triggerJumpKey);
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
             PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
