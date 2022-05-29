@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 77823a7f25f04e44a8c93b2ef46dbba5
+guid: 64ae6134bf7a1ea46806114db7f9c6d9
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flat_metallic
+    second: {fileID: 2100000, guid: 4e6b61431cc54604d851a0cc5050d004, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

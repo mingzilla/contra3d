@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: flat_metallic
-    second: {fileID: 2100000, guid: 485bcce396fe4b342806b333d139b05f, type: 2}
+    second: {fileID: 2100000, guid: 4e6b61431cc54604d851a0cc5050d004, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
