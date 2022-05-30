@@ -19,7 +19,7 @@ namespace ProjectContra.Scripts.Enemy
         private Rigidbody rb;
         private GameObject destroyEffect;
         private Animator animatorCtrl;
-        private static readonly int isActive = Animator.StringToHash("isActive");
+        private static readonly int isActiveKey = Animator.StringToHash("isActive");
 
         void Start()
         {
@@ -38,7 +38,7 @@ namespace ProjectContra.Scripts.Enemy
                 UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
                 FireShots(transform.position, closestPlayer);
             });
-            animatorCtrl.SetBool(isActive, isInRange);
+            animatorCtrl.SetBool(isActiveKey, isInRange);
         }
 
         void FireShots(Vector3 position, Transform closestPlayer)

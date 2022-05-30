@@ -1,5 +1,6 @@
 ﻿using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
+using BaseUtil.GameUtil.Util3D;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
@@ -19,6 +20,8 @@ namespace ProjectContra.Scripts.Enemy
         private GameStoreData storeData;
         private Rigidbody rb;
         private GameObject destroyEffect;
+        private Animator animatorCtrl;
+        private static readonly int isActiveKey = Animator.StringToHash("isActive");
 
         void Start()
         {
@@ -26,13 +29,15 @@ namespace ProjectContra.Scripts.Enemy
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             rb = UnityFn.AddRigidbody(gameObject, true, true);
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
+            animatorCtrl = gameObject.GetComponent<Animator>();
         }
 
         void Update()
         {
             RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                transform.LookAt(closestPlayer);
+                bool isFacingRight = transform.position.x < closestPlayer.position.x;
+                UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
                 FireShots(transform.position, closestPlayer);
             });
         }
@@ -50,6 +55,8 @@ namespace ProjectContra.Scripts.Enemy
 
         private void ThrowGrenade(Vector3 position, float xToUse)
         {
+            animatorCtrl.SetBool(isActiveKey, true);
+            UnityFn.SetTimeout(this, 0.4f, () => animatorCtrl.SetBool(isActiveKey, false));
             EnemyGrenadeController.Spawn(position, xToUse, yForce, zForce, EnemyBulletType.GRENADE);
         }
 

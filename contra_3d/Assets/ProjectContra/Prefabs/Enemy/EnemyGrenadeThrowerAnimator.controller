@@ -59,7 +59,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyShooterAnimator
+  m_Name: EnemyGrenadeThrowerAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isActive
@@ -138,8 +138,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shoot
-  m_Speed: 1
+  m_Name: Throw
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -396559580202906055}
@@ -152,7 +152,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7317610736782001220, guid: 94d7ac5129d5aa84e950b5beda2d10ae,
+  m_Motion: {fileID: 1625379242237804825, guid: ebdeddb5f92263943a2c081b806a9a65,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
