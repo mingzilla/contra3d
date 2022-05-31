@@ -16,7 +16,7 @@ namespace ProjectContra.Scripts.Enemy
     {
         public int damage = 1;
         public int moveSpeed = 8;
-        public float jumpForce = 22f;
+        public float jumpForce = 10f;
         public float detectionRange = 60f;
         public bool isActive = false;
 

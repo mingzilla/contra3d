@@ -2,16 +2,16 @@
 
 ### TODO
 * save game - DONE?
-* import thrower enemy
-* remake power up L
-* remake power up - unity
-* shooting position when lying prone
-* enemy jump too high
-* partical effects
-
+* fix broken partical effects
+* multiple power ups
 
 
 ----
+* enemy jump too high - FIXED
+* remake power up - unity - DONE
+* shooting position when lying prone - DONE
+* import thrower enemy - DONE
+* remake power up L - DONE
 * problem - lie down and jump - FIXED
 * update player skins - DONE
 * boss 1 cannon rotation issue - FIXED
