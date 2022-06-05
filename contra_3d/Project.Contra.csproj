@@ -84,6 +84,8 @@
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv1Controller.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyGrenadeController.cs" />
+     <Compile Include="Assets\ProjectContra\_ImportedAssets\ParticalTests\Project3\RepeatFire.cs" />
+     <Compile Include="Assets\ProjectContra\_ImportedAssets\ParticalTests\Project3\DestroyInstance.cs" />
      <None Include="Assets\ProjectContra\Project.Contra.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
