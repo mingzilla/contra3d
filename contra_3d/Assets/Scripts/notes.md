@@ -65,3 +65,26 @@
 
 ### Use object pool for bullets
 * https://www.youtube.com/watch?v=2bPd_dmqGuM&ab_channel=LlamAcademy
+
+
+----
+
+blender - 3d modeling
+blender - basic shading
+blender - uv editing
+blender - rigging
+blender - animation
+
+unity - create level
+unity - control characters
+unity - animate characters
+unity - control enemies
+unity - animate enemies
+unity - dealing damage
+unity - particles
+unity - manage resource: scripts, materials, textures etc.
+unity - multi player
+unity - skin selection
+unity - camera control
+unity - music control
+unity - sound effect control

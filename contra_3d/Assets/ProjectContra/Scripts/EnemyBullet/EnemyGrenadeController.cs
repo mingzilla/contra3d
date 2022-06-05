@@ -26,7 +26,7 @@ namespace ProjectContra.Scripts.EnemyBullet
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyGrenadeController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyGrenadeController>();
             copy.gameObject.layer = GameLayer.ENEMY_GRENADE.GetLayer();
-            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, true, 2f);
+            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, true, 3f);
             copy.impactEffect = AppResource.instance.enemyGrenadeSmallExplosion;
             copy.enemyBulletType = enemyBulletType;
             copy.xForce = xForce;

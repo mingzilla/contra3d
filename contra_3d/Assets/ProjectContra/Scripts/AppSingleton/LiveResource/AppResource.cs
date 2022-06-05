@@ -2,6 +2,7 @@
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.GameData;
+using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
@@ -42,6 +43,18 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             playerDestroyedEffect,
             playerExplosiveShotExplosion,
             powerUpDestroyedSmallExplosion;
+
+        // SceneInitData
+        [SerializeField] private SceneInitData sceneInitDataLv1,
+            sceneInitDataLv2,
+            sceneInitDataLv3,
+            sceneInitDataLv4,
+            sceneInitDataLv5;
+
+        // EnemyAttribute
+        [SerializeField] public EnemyAttribute enemyAttributeGroundCannon,
+            enemyAttributeBossLv1Gun,
+            enemyAttributeBossLv1WeakPoint;
 
         private void Awake()
         {
@@ -93,6 +106,16 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public int GetSkinCount()
         {
             return skins.Length;
+        }
+
+        public SceneInitData GetSceneInitData(GameScene gameScene)
+        {
+            if (gameScene == GameScene.LEVEL_1) return sceneInitDataLv1;
+            if (gameScene == GameScene.LEVEL_2) return sceneInitDataLv2;
+            if (gameScene == GameScene.LEVEL_3) return sceneInitDataLv3;
+            if (gameScene == GameScene.LEVEL_4) return sceneInitDataLv4;
+            if (gameScene == GameScene.LEVEL_5) return sceneInitDataLv5;
+            return null;
         }
     }
 }

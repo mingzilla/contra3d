@@ -4,6 +4,7 @@ using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
 using ProjectContra.Scripts.GameData;
+using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace ProjectContra.Scripts.Enemy
     {
         private readonly IntervalState shotInterval = IntervalState.Create(5f);
         public int fireDelay = 0;
+        private EnemyAttribute attribute;
         public int hp = 5;
         public bool isBroken = false;
 
@@ -26,6 +28,8 @@ namespace ProjectContra.Scripts.Enemy
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             rb = UnityFn.AddRigidbody(gameObject, false, true);
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
+            attribute = AppResource.instance.enemyAttributeBossLv1Gun;
+            hp = attribute.hp;
         }
 
         void Update()

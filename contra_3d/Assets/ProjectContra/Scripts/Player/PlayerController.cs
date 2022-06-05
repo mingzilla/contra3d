@@ -5,6 +5,7 @@ using BaseUtil.GameUtil.Base.Domain;
 using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
+using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
 using ProjectContra.Scripts.Util;
@@ -39,8 +40,9 @@ namespace ProjectContra.Scripts.Player
 
         void FixedUpdate()
         {
+            SceneInitData sceneInitData = AppResource.instance.GetSceneInitData(storeData.currentScene);
             GameControlState currentControlState = storeData.controlState;
-            controlObjectData.SetControlObjectActiveState(playerId, currentControlState, characterInGamePrefab, characterInLobbyPrefab);
+            controlObjectData.SetControlObjectActiveState(playerId, currentControlState, characterInGamePrefab, characterInLobbyPrefab, sceneInitData);
             if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) controlObjectData.inLobbyController.HandleUpdate(playerId, userInput, gameObject);
             if (currentControlState == GameControlState.INFO_SCREEN) controlObjectData.infoScreenCanvasController.HandleUpdate(userInput);
             if (currentControlState == GameControlState.IN_GAME) controlObjectData.inGameController.HandleUpdate(userInput);
@@ -86,7 +88,8 @@ namespace ProjectContra.Scripts.Player
                 UnityFn.RunWithInterval(AppResource.instance, pauseInterval, () =>
                 {
                     storeData.controlState = GameControlState.IN_GAME_PAUSED;
-                    controlObjectData.SetControlObjectActiveState(playerId, storeData.controlState, characterInGamePrefab, characterInLobbyPrefab);
+                    SceneInitData sceneInitData = AppResource.instance.GetSceneInitData(storeData.currentScene);
+                    controlObjectData.SetControlObjectActiveState(playerId, storeData.controlState, characterInGamePrefab, characterInLobbyPrefab, sceneInitData);
                     Time.timeScale = 0f;
                 });
             }

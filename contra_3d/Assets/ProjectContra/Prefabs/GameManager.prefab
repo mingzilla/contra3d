@@ -146,3 +146,14 @@ MonoBehaviour:
     type: 3}
   powerUpDestroyedSmallExplosion: {fileID: 5035670118569957943, guid: 7b27dcf024ad32940b9f221e7b6e966c,
     type: 3}
+  sceneInitDataLv1: {fileID: 11400000, guid: 63bcd0e1144e17842b0b8afb77bd37f6, type: 2}
+  sceneInitDataLv2: {fileID: 11400000, guid: 571997b9d7dee094a80d44f4d626e34f, type: 2}
+  sceneInitDataLv3: {fileID: 0}
+  sceneInitDataLv4: {fileID: 0}
+  sceneInitDataLv5: {fileID: 0}
+  enemyAttributeGroundCannon: {fileID: 11400000, guid: 04ee7bdb7968d88448e01a79e40c37fd,
+    type: 2}
+  enemyAttributeBossLv1Gun: {fileID: 11400000, guid: 16809b2d775fc3546b3da33851ca21f4,
+    type: 2}
+  enemyAttributeBossLv1WeakPoint: {fileID: 11400000, guid: 1fa5e0791e3ce0f42877148ae0bf68b6,
+    type: 2}

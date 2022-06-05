@@ -6,7 +6,7 @@ using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using BaseUtil.GameUtil.PlayerManagement;
-using ProjectContra.Scripts.Player.Domain;
+using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Util;
 using UnityEngine;
 

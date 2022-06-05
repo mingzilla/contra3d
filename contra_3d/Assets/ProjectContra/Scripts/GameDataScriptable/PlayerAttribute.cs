@@ -3,9 +3,10 @@ using BaseUtil.Base;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
-namespace ProjectContra.Scripts.Player.Domain
+namespace ProjectContra.Scripts.GameDataScriptable
 {
-    public class PlayerAttribute
+    [CreateAssetMenu(menuName = "Game State/PlayerAttribute", fileName = "PlayerAttribute")]
+    public class PlayerAttribute : ScriptableObject
     {
         public int playerId;
         public bool isAlive; // not alive if killed
@@ -23,13 +24,11 @@ namespace ProjectContra.Scripts.Player.Domain
 
         public static PlayerAttribute CreateEmpty(int playerId)
         {
-            PlayerAttribute item = new PlayerAttribute
-            {
-                playerId = playerId,
-                skinId = 0,
-                isAlive = true,
-                weaponType = WeaponType.BASIC,
-            };
+            PlayerAttribute item = ScriptableObject.CreateInstance<PlayerAttribute>();
+            item.playerId = playerId;
+            item.skinId = 0;
+            item.isAlive = true;
+            item.weaponType = WeaponType.BASIC;
             item.currentHp = item.maxHp;
             return item;
         }

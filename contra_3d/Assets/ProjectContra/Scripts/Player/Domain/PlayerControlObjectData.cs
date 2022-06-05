@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
-using ProjectContra.Scripts.AppSingleton.LiveResource;
+using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
@@ -19,7 +19,7 @@ namespace ProjectContra.Scripts.Player.Domain
             return new PlayerControlObjectData();
         }
 
-        public void SetControlObjectActiveState(int playerId, GameControlState controlState, GameObject characterInGamePrefab, GameObject characterInLobbyPrefab)
+        public void SetControlObjectActiveState(int playerId, GameControlState controlState, GameObject characterInGamePrefab, GameObject characterInLobbyPrefab, SceneInitData sceneInitData)
         {
             if (controlState == GameControlState.TITLE_SCREEN_MENU)
             {
@@ -49,7 +49,7 @@ namespace ProjectContra.Scripts.Player.Domain
                 UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
                 if (inGameController == null)
                 {
-                    inGameController = UnityFn.InstantiateCharacterObject<CharacterInGameController>(characterInGamePrefab, false, new Vector3(0f, 0f, 0f)).Init(playerId, true);
+                    inGameController = UnityFn.InstantiateCharacterObject<CharacterInGameController>(characterInGamePrefab, false, sceneInitData.playerInitPosition).Init(playerId, true);
                 }
             }
             if (controlState == GameControlState.IN_GAME_PAUSED)
