@@ -112,7 +112,11 @@ MonoBehaviour:
     type: 3}
   blastBulletPrefab: {fileID: 4090495976328841163, guid: cda973ab8d6ecd94591acab593d2fbe1,
     type: 3}
-  powerUpPrefab: {fileID: 1690268843170014498, guid: 23125268361e3bc4e9385d586244b08d,
+  powerUpFPrefab: {fileID: 1690268843170014498, guid: 23125268361e3bc4e9385d586244b08d,
+    type: 3}
+  powerUpSPrefab: {fileID: 8273417188940242266, guid: c6596741eaf2b0547b2ec3c65ccb2c5e,
+    type: 3}
+  powerUpLPrefab: {fileID: 8750968799661055308, guid: 187884395e01eed4b95ca4e9cda44f56,
     type: 3}
   enemyWalkerPrefab: {fileID: 4496732822776432890, guid: f0da803f5f93abe43920ffa75c4bbfdd,
     type: 3}

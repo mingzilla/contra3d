@@ -22,7 +22,9 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public readonly Dictionary<WeaponType, GameObject> weaponTypeAndBulletPrefab = new Dictionary<WeaponType, GameObject>();
 
         // Power Up prefabs
-        [SerializeField] public GameObject powerUpPrefab;
+        [SerializeField] public GameObject powerUpFPrefab,
+            powerUpSPrefab,
+            powerUpLPrefab;
 
         // Enemy prefabs
         [SerializeField] public GameObject enemyWalkerPrefab;
@@ -115,6 +117,14 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             if (gameScene == GameScene.LEVEL_3) return sceneInitDataLv3;
             if (gameScene == GameScene.LEVEL_4) return sceneInitDataLv4;
             if (gameScene == GameScene.LEVEL_5) return sceneInitDataLv5;
+            return null;
+        }
+
+        public GameObject GetPowerUpPrefab(WeaponType weaponType)
+        {
+            if (weaponType == WeaponType.BLAST) return powerUpFPrefab;
+            if (weaponType == WeaponType.WIDE) return powerUpSPrefab;
+            if (weaponType == WeaponType.LASER) return powerUpLPrefab;
             return null;
         }
     }

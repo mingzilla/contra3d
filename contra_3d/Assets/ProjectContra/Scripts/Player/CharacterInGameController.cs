@@ -75,11 +75,16 @@ namespace ProjectContra.Scripts.Player
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
             PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
-            if (userInput.fire1) BulletController.Spawn(transform, new Vector3(0f, (isProne ? 0.5f : 1f), 0f), isFacingRight, userInput, playerAttribute.weaponType, isOnGround);
+            if (userInput.fire1) SpawnBullets(playerAttribute.weaponType, userInput, isProne, isOnGround);
             if (userInput.fire1) animatorCtrl.SetTrigger(triggerShootingKey);
 
             playerAttribute.inGameTransform = transform;
             storeData.SetPlayer(playerAttribute);
+        }
+
+        private void SpawnBullets(WeaponType weaponType, UserInput userInput, bool isProne, bool isOnGround)
+        {
+            if ((weaponType == WeaponType.BASIC) || (weaponType == WeaponType.BLAST)) BulletController.Spawn(transform, new Vector3(0f, (isProne ? 0.5f : 1f), 0f), isFacingRight, userInput, weaponType, isOnGround);
         }
 
         private void HandleInvincibilityUi()

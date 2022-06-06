@@ -14,7 +14,7 @@ namespace ProjectContra.Scripts.PowerUp
         public int moveSpeed = 10;
         public float detectionRange = 60f;
         public bool isActive = false;
-        public WeaponType weaponType = WeaponType.BLAST;
+        public string weaponTypeName = WeaponType.BLAST.name;
 
         private GameStoreData storeData;
         private Rigidbody rb;
@@ -63,7 +63,8 @@ namespace ProjectContra.Scripts.PowerUp
             Fn.RunOnce(hasRunTakeDamage, b => hasRunTakeDamage = b, () =>
             {
                 UnityFn.CreateEffect(destroyEffect, position, 1f);
-                PowerUpController powerUp = UnityFn.InstantiateObjectWith<PowerUpController>(AppResource.instance.powerUpPrefab, transform.position);
+                WeaponType weaponType = WeaponType.GetByName(weaponTypeName);
+                PowerUpController powerUp = UnityFn.InstantiateObjectWith<PowerUpController>(AppResource.instance.GetPowerUpPrefab(weaponType), transform.position);
                 powerUp.Init(weaponType);
                 Destroy(gameObject);
             });
