@@ -108,9 +108,11 @@ MonoBehaviour:
     type: 3}
   pauseMenuPrefab: {fileID: 5414122674906163216, guid: 026ad5d5856a9424dab7d323a641a924,
     type: 3}
-  basicBulletPrefab: {fileID: 3164751046395291120, guid: c5593155681200c4abde22768f361f39,
+  bulletBasicPrefab: {fileID: 3164751046395291120, guid: c5593155681200c4abde22768f361f39,
     type: 3}
-  blastBulletPrefab: {fileID: 4090495976328841163, guid: cda973ab8d6ecd94591acab593d2fbe1,
+  bulletFPrefab: {fileID: 4090495976328841163, guid: cda973ab8d6ecd94591acab593d2fbe1,
+    type: 3}
+  bulletSPrefab: {fileID: 6930592440201927097, guid: 3c4c1003c5f239949884dcd92b6d57b8,
     type: 3}
   powerUpFPrefab: {fileID: 1690268843170014498, guid: 23125268361e3bc4e9385d586244b08d,
     type: 3}

@@ -18,8 +18,9 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         [SerializeField] public GameObject pauseMenuPrefab;
 
         // Player bullet prefabs
-        [SerializeField] private GameObject basicBulletPrefab, blastBulletPrefab;
-        public readonly Dictionary<WeaponType, GameObject> weaponTypeAndBulletPrefab = new Dictionary<WeaponType, GameObject>();
+        [SerializeField] private GameObject bulletBasicPrefab,
+            bulletFPrefab,
+            bulletSPrefab;
 
         // Power Up prefabs
         [SerializeField] public GameObject powerUpFPrefab,
@@ -30,8 +31,11 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         [SerializeField] public GameObject enemyWalkerPrefab;
 
         // Enemy bullet prefabs
-        [SerializeField] private GameObject enemyBasicBulletPrefab, enemyFollowerBulletPrefab, enemyGrenadePrefab, enemyPierceBulletPrefab, enemyBlastBulletPrefab;
-        public readonly Dictionary<EnemyBulletType, GameObject> enemyBulletTypeAndBulletPrefab = new Dictionary<EnemyBulletType, GameObject>();
+        [SerializeField] private GameObject enemyBasicBulletPrefab,
+            enemyFollowerBulletPrefab,
+            enemyGrenadePrefab,
+            enemyPierceBulletPrefab,
+            enemyBlastBulletPrefab;
 
         // Skin material
         [SerializeField] private Material[] skins;
@@ -62,42 +66,6 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         {
             UnityFn.MarkSingletonAndKeepAlive(instance, gameObject, () => instance = this);
             // currentSceneManager = Object.FindObjectOfType<CurrentSceneManagerController>();
-            ConfigureBullets();
-            ConfigureEnemyBullets();
-        }
-
-        void ConfigureBullets()
-        {
-            weaponTypeAndBulletPrefab[WeaponType.BASIC] = basicBulletPrefab;
-            weaponTypeAndBulletPrefab[WeaponType.BLAST] = blastBulletPrefab;
-        }
-
-        public GameObject GetBulletPrefab(WeaponType weaponType)
-        {
-            if (!weaponTypeAndBulletPrefab.ContainsKey(weaponType)) return weaponTypeAndBulletPrefab[WeaponType.BASIC];
-            return weaponTypeAndBulletPrefab[weaponType];
-        }
-
-        public GameObject GetBulletHitEffect(WeaponType weaponType)
-        {
-            if (weaponType == WeaponType.BASIC) return playerBulletHitEffect;
-            if (weaponType == WeaponType.BLAST) return playerExplosiveShotExplosion;
-            return null;
-        }
-
-        void ConfigureEnemyBullets()
-        {
-            enemyBulletTypeAndBulletPrefab[EnemyBulletType.BASIC] = enemyBasicBulletPrefab;
-            enemyBulletTypeAndBulletPrefab[EnemyBulletType.FOLLOW] = enemyFollowerBulletPrefab;
-            enemyBulletTypeAndBulletPrefab[EnemyBulletType.GRENADE] = enemyGrenadePrefab;
-            enemyBulletTypeAndBulletPrefab[EnemyBulletType.PIERCE] = enemyPierceBulletPrefab;
-            enemyBulletTypeAndBulletPrefab[EnemyBulletType.BLAST] = enemyBlastBulletPrefab;
-        }
-
-        public GameObject GetEnemyBulletPrefab(EnemyBulletType enemyBulletType)
-        {
-            if (!enemyBulletTypeAndBulletPrefab.ContainsKey(enemyBulletType)) return enemyBulletTypeAndBulletPrefab[EnemyBulletType.BASIC];
-            return enemyBulletTypeAndBulletPrefab[enemyBulletType];
         }
 
         public Material GetSkin(int id)
@@ -108,6 +76,23 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public int GetSkinCount()
         {
             return skins.Length;
+        }
+
+        public GameObject GetBulletHitEffect(WeaponType weaponType)
+        {
+            if (weaponType == WeaponType.BASIC) return playerBulletHitEffect;
+            if (weaponType == WeaponType.BLAST) return playerExplosiveShotExplosion;
+            return null;
+        }
+
+        public GameObject GetEnemyBulletPrefab(EnemyBulletType enemyBulletType)
+        {
+            if (enemyBulletType == EnemyBulletType.BASIC) return enemyBasicBulletPrefab;
+            if (enemyBulletType == EnemyBulletType.FOLLOW) return enemyFollowerBulletPrefab;
+            if (enemyBulletType == EnemyBulletType.GRENADE) return enemyGrenadePrefab;
+            if (enemyBulletType == EnemyBulletType.PIERCE) return enemyPierceBulletPrefab;
+            if (enemyBulletType == EnemyBulletType.BLAST) return enemyBlastBulletPrefab;
+            return enemyBasicBulletPrefab;
         }
 
         public SceneInitData GetSceneInitData(GameScene gameScene)
@@ -126,6 +111,13 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             if (weaponType == WeaponType.WIDE) return powerUpSPrefab;
             if (weaponType == WeaponType.LASER) return powerUpLPrefab;
             return null;
+        }
+
+        public GameObject GetBulletPrefab(WeaponType weaponType)
+        {
+            if (weaponType == WeaponType.BLAST) return bulletFPrefab;
+            if (weaponType == WeaponType.WIDE) return bulletSPrefab;
+            return bulletBasicPrefab;
         }
     }
 }
