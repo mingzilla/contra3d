@@ -84,7 +84,10 @@ namespace ProjectContra.Scripts.Player
 
         private void SpawnBullets(WeaponType weaponType, UserInput userInput, bool isProne, bool isOnGround)
         {
-            if ((weaponType == WeaponType.BASIC) || (weaponType == WeaponType.BLAST)) BulletController.Spawn(transform, new Vector3(0f, (isProne ? 0.5f : 1f), 0f), isFacingRight, userInput, weaponType, isOnGround);
+            Vector3 positionDelta = Vector3.zero;
+            if ((weaponType == WeaponType.BASIC) || (weaponType == WeaponType.BLAST)) positionDelta = new Vector3(userInput.fixedHorizontal, (isProne ? 0.6f : 1f), 0f);
+            if (weaponType == WeaponType.WIDE) positionDelta = new Vector3(userInput.fixedHorizontal, 1.2f, 0f);
+            BulletController.Spawn(transform, positionDelta, isFacingRight, userInput, weaponType, isOnGround);
         }
 
         private void HandleInvincibilityUi()

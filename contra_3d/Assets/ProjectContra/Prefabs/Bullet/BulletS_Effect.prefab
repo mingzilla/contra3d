@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6930592440201927098}
   - component: {fileID: 6930592440201927099}
   - component: {fileID: 6930592440201927096}
+  - component: {fileID: -6058576580455864282}
   m_Layer: 0
   m_Name: BulletS_Effect
   m_TagString: Untagged
@@ -169,7 +170,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -661,7 +662,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 0
     angle: 10
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -744,11 +745,11 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 0.5
+    randomDirectionAmount: 1
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.01
+      value: 1
       mode: 0
       spread: 0
       speed:
@@ -4812,3 +4813,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-6058576580455864282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6930592440201927097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19840e603cef498e95ad5adc894c1262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

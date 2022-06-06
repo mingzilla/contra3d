@@ -82,6 +82,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         {
             if (weaponType == WeaponType.BASIC) return playerBulletHitEffect;
             if (weaponType == WeaponType.BLAST) return playerExplosiveShotExplosion;
+            if (weaponType == WeaponType.WIDE) return playerBulletHitEffect;
             return null;
         }
 
