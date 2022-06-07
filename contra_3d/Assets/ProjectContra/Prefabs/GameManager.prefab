@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df3d0f4b8014571a44f399a9d3cda03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicManager: {fileID: 0}
+  sfxManager: {fileID: 0}
   playerPrefab: {fileID: 1704468264798570660, guid: e2d068605590c2443b45c92ecfbd0e45,
     type: 3}
   infoScreenPrefab: {fileID: 8796485591129485539, guid: 036f6ed022b46974c9d9f42136cf1d59,

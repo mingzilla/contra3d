@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\MusicController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyBasicBulletController.cs" />
      <Compile Include="Assets\ProjectContra\_ImportedAssets\ParticalTests\Project3\DestroyInstance.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Screens\TitleScreenController.cs" />
@@ -66,6 +67,8 @@
      <Compile Include="Assets\ProjectContra\Scripts\AbstractController\AbstractDestructibleController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyBulletController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\GameManagerController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Screens\PlayerHp\PlayerHpUiController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyGrenadeExplosionController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\GameDataScriptable\SceneInitData.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\EnemyBulletType.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\InfoScreenCanvasController.cs" />
@@ -86,11 +89,9 @@
      <Compile Include="Assets\ProjectContra\Scripts\GameDataScriptable\EnemyAttribute.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyShooterController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv1Controller.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Screens\PlayerHp\PlayerHpGridController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\GameDataScriptable\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyGrenadeController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyGrenadeExplosionController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Screens\PlayerHp\PlayerHpUiController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Screens\PlayerHp\PlayerHpGridController.cs" />
      <None Include="Assets\ProjectContra\Project.Contra.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
