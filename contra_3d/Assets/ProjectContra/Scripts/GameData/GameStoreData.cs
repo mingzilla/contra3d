@@ -53,6 +53,11 @@ namespace ProjectContra.Scripts.GameData
             idAndPlayerState.Remove(id);
         }
 
+        public List<int> AllPlayerIds()
+        {
+            return idAndPlayerState.Keys.ToList();
+        }
+
         public PlayerController GetPlayerController(int id)
         {
             PlayerInput playerInput = inputManagerData.GetPlayer(id);

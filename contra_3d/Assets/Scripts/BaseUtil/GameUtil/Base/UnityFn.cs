@@ -313,6 +313,14 @@ namespace BaseUtil.GameUtil.Base
             }
         }
 
+        public static void FastSetActive(GameObject gameObject, bool value)
+        {
+            if (gameObject == null) return;
+            if (gameObject.activeSelf != value)
+            {
+                gameObject.SetActive(value);
+            }
+        }
 
         public static void DestroyReferenceIfPresent(MonoBehaviour controller, Action postFn)
         {
