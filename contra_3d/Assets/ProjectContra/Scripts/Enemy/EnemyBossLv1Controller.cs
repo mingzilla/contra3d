@@ -3,6 +3,7 @@ using BaseUtil.Base;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
+using ProjectContra.Scripts.AppSingleton;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
@@ -25,12 +26,14 @@ namespace ProjectContra.Scripts.Enemy
         private EnemyBossLv1WeakPointController weakPointCtrl;
         private Animator animatorCtrl;
         private static readonly int isActive = Animator.StringToHash("isActive");
+        private MusicController musicController;
 
         private int phase = 0;
 
         void Start()
         {
             storeData = AppResource.instance.storeData;
+            musicController = AppResource.instance.musicManager.GetComponent<MusicController>();
             guns = gameObject.GetComponentsInChildren<EnemyBossLv1GunController>();
             weakPointCtrl = weakPoint.GetComponent<EnemyBossLv1WeakPointController>();
             animatorCtrl = gameObject.GetComponent<Animator>();
@@ -51,6 +54,7 @@ namespace ProjectContra.Scripts.Enemy
 
         private void HandlePhase0()
         {
+            musicController.PlayLv1BossMusic();
             SetGunsActive(true);
             animatorCtrl.SetBool(isActive, true);
             bossCamera.SetActive(true);
