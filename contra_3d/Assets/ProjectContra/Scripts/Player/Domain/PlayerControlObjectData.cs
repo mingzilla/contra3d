@@ -49,7 +49,7 @@ namespace ProjectContra.Scripts.Player.Domain
                 UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
                 if (inGameController == null)
                 {
-                    inGameController = UnityFn.InstantiateCharacterObject<CharacterInGameController>(characterInGamePrefab, false, sceneInitData.playerInitPosition).Init(playerId, true);
+                    inGameController = UnityFn.InstantiateCharacterObject<CharacterInGameController>(characterInGamePrefab, false, sceneInitData.GetRandomPlayerInitPosition()).Init(playerId, true);
                 }
             }
             if (controlState == GameControlState.IN_GAME_PAUSED)
