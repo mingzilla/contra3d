@@ -110,12 +110,17 @@ namespace ProjectContra.Scripts.Player
                 PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
                 playerAttribute.TakeDamage(damage, () =>
                 {
+                    AppSfx.Play(AppSfx.instance.playerDeath);
                     animatorCtrl.SetTrigger(triggerDeadKey);
                     UnityFn.RemoveForce(rb); // prevent player flying when e.g. has up force
                     UnityFn.SetTimeout(AppResource.instance, 2f, () =>
                     {
                         Destroy(gameObject);
-                        if (storeData.AllPlayersDead()) storeData.ReloadScene();
+                        if (storeData.AllPlayersDead())
+                        {
+                            AppMusic.instance.StopAll();
+                            storeData.ReloadScene();
+                        }
                     });
                 });
                 storeData.SetPlayer(playerAttribute);
@@ -124,6 +129,7 @@ namespace ProjectContra.Scripts.Player
 
         public void PowerUp(WeaponType weaponType)
         {
+            AppSfx.Play(AppSfx.instance.powerUpCollected);
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
             playerAttribute.weaponType = weaponType;
             storeData.SetPlayer(playerAttribute);

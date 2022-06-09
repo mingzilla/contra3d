@@ -68,7 +68,6 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         private void Awake()
         {
             UnityFn.MarkSingletonAndKeepAlive(instance, gameObject, () => instance = this);
-            // currentSceneManager = Object.FindObjectOfType<CurrentSceneManagerController>();
         }
 
         public Material GetSkin(int id)

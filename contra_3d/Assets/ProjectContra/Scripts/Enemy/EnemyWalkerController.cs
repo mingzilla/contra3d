@@ -14,6 +14,8 @@ namespace ProjectContra.Scripts.Enemy
 {
     public class EnemyWalkerController : AbstractDestructibleController
     {
+        [SerializeField] private AudioClip deadSfx;
+        
         public int damage = 1;
         public int moveSpeed = 8;
         public float jumpForce = 10f;
@@ -90,6 +92,7 @@ namespace ProjectContra.Scripts.Enemy
         public override void TakeDamage(Vector3 position, int damage)
         {
             UnityFn.CreateEffect(destroyEffect, position, 1f);
+            AppSfx.PlayAdjusted(AppSfx.instance.enemyDeath);
             Destroy(gameObject);
         }
 

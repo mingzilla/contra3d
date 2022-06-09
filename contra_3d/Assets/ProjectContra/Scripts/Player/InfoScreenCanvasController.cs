@@ -16,7 +16,7 @@ namespace ProjectContra.Scripts.Player
         [SerializeField] private GameObject titleText;
         private string title;
 
-        private MusicController musicController;
+        private AppMusic musicController;
 
         public static InfoScreenCanvasController GetInstance()
         {
@@ -28,7 +28,7 @@ namespace ProjectContra.Scripts.Player
         public void Init(string text)
         {
             titleText.GetComponent<Text>().text = text;
-            musicController = AppResource.instance.musicManager.GetComponent<MusicController>();
+            musicController = AppResource.instance.musicManager.GetComponent<AppMusic>();
         }
 
         public void HandleUpdate(UserInput userInput)

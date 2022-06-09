@@ -44,7 +44,7 @@ namespace ProjectContra.Scripts.GameDataScriptable
         public void TakeDamage(int damage, Action killedFn)
         {
             currentHp = FnVal.Clamp((currentHp - damage), 0, maxHp);
-            if (currentHp == 0)
+            if (currentHp == 0 && isAlive)
             {
                 isAlive = false;
                 killedFn();

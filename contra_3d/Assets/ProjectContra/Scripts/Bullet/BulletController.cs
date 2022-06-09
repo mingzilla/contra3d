@@ -18,6 +18,7 @@ namespace ProjectContra.Scripts.Bullet
         public static BulletController Spawn(Transform shotPoint, Vector3 positionDelta, bool isFacingForward, UserInput userInput, WeaponType weaponType, bool isOnGround)
         {
             GameObject prefab = AppResource.instance.GetBulletPrefab(weaponType);
+            AppSfx.PlayBulletSound(weaponType);
             BulletController copy = Instantiate(prefab, (shotPoint.position + positionDelta), shotPoint.rotation).GetComponent<BulletController>();
             copy.moveDirection = BulletCommonUtil3D.CreateBulletDirection(isFacingForward, userInput, isOnGround);
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
@@ -45,6 +46,7 @@ namespace ProjectContra.Scripts.Bullet
         {
             Vector3 position = transform.position;
             UnityFn.CreateEffect(explosionEffect, position, 1f); // only if the bullet creates explosion
+            if (explosionEffect != null) AppSfx.PlayAdjusted(AppSfx.instance.bulletFExplode);
             Destroy(gameObject);
             GameFn.DealDamage(position, weaponType.blastRange, weaponType.GetDestructibleLayers(), (obj) =>
             {

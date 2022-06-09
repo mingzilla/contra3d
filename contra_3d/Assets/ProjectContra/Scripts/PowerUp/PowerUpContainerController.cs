@@ -62,6 +62,7 @@ namespace ProjectContra.Scripts.PowerUp
         {
             Fn.RunOnce(hasRunTakeDamage, b => hasRunTakeDamage = b, () =>
             {
+                AppSfx.Play(AppSfx.instance.powerUpExplode);
                 UnityFn.CreateEffect(destroyEffect, position, 1f);
                 WeaponType weaponType = WeaponType.GetByName(weaponTypeName);
                 PowerUpController powerUp = UnityFn.InstantiateObjectWith<PowerUpController>(AppResource.instance.GetPowerUpPrefab(weaponType), transform.position);

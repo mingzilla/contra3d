@@ -49,6 +49,7 @@ namespace ProjectContra.Scripts.EnemyBullet
         private void OnTriggerEnter(Collider other)
         {
             DealDamageToPlayer(other, enemyBulletType);
+            AppSfx.Play(AppSfx.instance.grenadeExploded);
             DestroySelf(impactEffect, 1f);
         }
     }

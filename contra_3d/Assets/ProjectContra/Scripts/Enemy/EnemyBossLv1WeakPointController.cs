@@ -39,9 +39,11 @@ namespace ProjectContra.Scripts.Enemy
         public override void TakeDamage(Vector3 position, int damage)
         {
             UnityFn.CreateEffect(damageEffect, position, 5f);
+            AppSfx.Play(AppSfx.instance.bigEnemyDamaged);
             hp -= damage;
             if (hp <= 0)
             {
+                AppSfx.PlayRepeatedly(AppSfx.instance.bossDeath, 5);
                 UnityFn.CreateEffect(destroyEffect, position, 5f);
                 isBroken = true;
                 Destroy(gameObject);

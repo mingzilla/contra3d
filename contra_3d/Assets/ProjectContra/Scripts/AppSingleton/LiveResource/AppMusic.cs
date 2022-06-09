@@ -3,11 +3,11 @@ using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
-namespace ProjectContra.Scripts.AppSingleton
+namespace ProjectContra.Scripts.AppSingleton.LiveResource
 {
-    public class MusicController : MonoBehaviour
+    public class AppMusic : MonoBehaviour
     {
-        public static MusicController instance;
+        public static AppMusic instance;
 
         [SerializeField] private AudioSource lv1Music,
             lv1BossMusic,
@@ -52,7 +52,7 @@ namespace ProjectContra.Scripts.AppSingleton
             lv2BossMusic.Play();
         }
 
-        private void StopAll()
+        public void StopAll()
         {
             AllMusic().ForEach(it => it.Stop());
         }

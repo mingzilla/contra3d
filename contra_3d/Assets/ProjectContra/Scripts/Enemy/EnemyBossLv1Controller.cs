@@ -26,14 +26,14 @@ namespace ProjectContra.Scripts.Enemy
         private EnemyBossLv1WeakPointController weakPointCtrl;
         private Animator animatorCtrl;
         private static readonly int isActive = Animator.StringToHash("isActive");
-        private MusicController musicController;
+        private AppMusic musicController;
 
         private int phase = 0;
 
         void Start()
         {
             storeData = AppResource.instance.storeData;
-            musicController = AppResource.instance.musicManager.GetComponent<MusicController>();
+            musicController = AppResource.instance.musicManager.GetComponent<AppMusic>();
             guns = gameObject.GetComponentsInChildren<EnemyBossLv1GunController>();
             weakPointCtrl = weakPoint.GetComponent<EnemyBossLv1WeakPointController>();
             animatorCtrl = gameObject.GetComponent<Animator>();
@@ -78,6 +78,7 @@ namespace ProjectContra.Scripts.Enemy
             if (weakPointCtrl.isBroken)
             {
                 phase = 3; // there is no phase 3, this is just to prevent getting into here again
+                spawnPoint.SetActive(false);
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
                 UnityFn.SetTimeout(AppResource.instance, 5, () =>
