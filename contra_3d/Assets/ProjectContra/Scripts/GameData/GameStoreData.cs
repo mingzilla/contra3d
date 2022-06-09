@@ -58,6 +58,11 @@ namespace ProjectContra.Scripts.GameData
             return idAndPlayerState.Keys.ToList();
         }
 
+        public bool AllPlayersDead()
+        {
+            return idAndPlayerState.Values.All(p => !p.isAlive);
+        }
+
         public PlayerController GetPlayerController(int id)
         {
             PlayerInput playerInput = inputManagerData.GetPlayer(id);

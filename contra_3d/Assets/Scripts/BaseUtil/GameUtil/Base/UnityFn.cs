@@ -393,6 +393,12 @@ namespace BaseUtil.GameUtil.Base
             return collider;
         }
 
+        public static void RemoveForce(Rigidbody rb)
+        {
+            rb.velocity = Vector3.zero; // remove collision force
+            rb.angularVelocity = Vector3.zero; 
+        }
+
         public static T MakeInvisible<T>(GameObject gameObject) where T : Renderer
         {
             T meshRenderer = gameObject.GetComponent<T>();

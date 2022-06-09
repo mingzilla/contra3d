@@ -545,8 +545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  moveSpeed: 8
-  jumpForce: 10
+  moveSpeed: 7
+  jumpForce: 11
   detectionRange: 60
   isActive: 0
 --- !u!95 &3768207629442671365

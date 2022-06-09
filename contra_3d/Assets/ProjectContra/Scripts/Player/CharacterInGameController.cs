@@ -111,11 +111,11 @@ namespace ProjectContra.Scripts.Player
                 playerAttribute.TakeDamage(damage, () =>
                 {
                     animatorCtrl.SetTrigger(triggerDeadKey);
-                    gameObject.SetActive(false);
-                    UnityFn.SetTimeout(AppResource.instance, 1f, () =>
+                    UnityFn.RemoveForce(rb); // prevent player flying when e.g. has up force
+                    UnityFn.SetTimeout(AppResource.instance, 2f, () =>
                     {
                         Destroy(gameObject);
-                        storeData.ReloadScene();
+                        if (storeData.AllPlayersDead()) storeData.ReloadScene();
                     });
                 });
                 storeData.SetPlayer(playerAttribute);
