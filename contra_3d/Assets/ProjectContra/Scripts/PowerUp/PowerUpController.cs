@@ -17,17 +17,17 @@ namespace ProjectContra.Scripts.PowerUp
             gameObject.layer = GameLayer.POWER_UP.GetLayer();
             rb = UnityFn.AddRigidbody(gameObject, true, true);
             weaponType = type;
-            UnityFn.AddCollider<BoxCollider>(gameObject, false);
+            UnityFn.AddCollider<BoxCollider>(gameObject, true);
             UnityFn.Throw(rb, xForce, yForce, 0f);
         }
 
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
             GameObject obj = other.gameObject;
             if (GameLayer.Matches(obj.layer, GameLayer.GROUND)) rb.velocity = Vector3.zero; // stop movement if touching ground
             if (GameLayer.Matches(obj.layer, GameLayer.PLAYER))
             {
-                CharacterInGameController character = obj.GetComponent<CharacterInGameController>();
+                CharacterInGameController character = obj.GetComponentInParent<CharacterInGameController>();
                 if (character != null) character.PowerUp(weaponType);
                 Destroy(gameObject);
             }

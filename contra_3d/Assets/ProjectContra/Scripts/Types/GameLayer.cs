@@ -20,6 +20,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameLayer POWER_UP = Create("POWER_UP");
         public static readonly GameLayer POWER_UP_CONTAINER = Create("POWER_UP_CONTAINER");
         public static readonly GameLayer NO_COLLISION = Create("NO_COLLISION");
+        public static readonly GameLayer GROUND_COLLIDER = Create("GROUND_COLLIDER");
 
         public string name;
 
@@ -41,6 +42,7 @@ namespace ProjectContra.Scripts.Types
                 POWER_UP,
                 POWER_UP_CONTAINER,
                 NO_COLLISION,
+                GROUND_COLLIDER,
             };
         }
 
