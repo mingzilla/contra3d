@@ -81,9 +81,11 @@ namespace ProjectContra.Scripts.Enemy
                 spawnPoint.SetActive(false);
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
+                AppMusic.instance.StopAll();
                 UnityFn.SetTimeout(AppResource.instance, 5, () =>
                 {
-                    UnityFn.LoadNextScene();
+                    AppSfx.instance.levelClear.Play();
+                    UnityFn.SetTimeout(AppResource.instance, 5, UnityFn.LoadNextScene);
                     Destroy(gameObject);
                 });
             }

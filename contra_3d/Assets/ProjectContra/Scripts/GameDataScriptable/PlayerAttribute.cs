@@ -17,7 +17,7 @@ namespace ProjectContra.Scripts.GameDataScriptable
         public WeaponType weaponType;
         public int skinId;
 
-        public int maxHp = 2;
+        public int maxHp = 8;
         public int currentHp;
 
         public Transform inGameTransform;

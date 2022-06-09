@@ -41,7 +41,7 @@ namespace ProjectContra.Scripts.Enemy
             UnityFn.CreateEffect(damageEffect, position, 5f);
             AppSfx.Play(AppSfx.instance.bigEnemyDamaged);
             hp -= damage;
-            if (hp <= 0)
+            if (hp <= 0 && !isBroken)
             {
                 AppSfx.PlayRepeatedly(AppSfx.instance.bossDeath, 5);
                 UnityFn.CreateEffect(destroyEffect, position, 5f);
