@@ -22,11 +22,13 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
 
         // Player bullet prefabs
         [SerializeField] private GameObject bulletBasicPrefab,
+            bulletMPrefab,
             bulletFPrefab,
             bulletSPrefab;
 
         // Power Up prefabs
         [SerializeField] public GameObject powerUpFPrefab,
+            powerUpMPrefab,
             powerUpSPrefab,
             powerUpLPrefab;
 
@@ -83,6 +85,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public GameObject GetBulletHitEffect(WeaponType weaponType)
         {
             if (weaponType == WeaponType.BASIC) return playerBulletHitEffect;
+            if (weaponType == WeaponType.M) return playerBulletHitEffect;
             if (weaponType == WeaponType.BLAST) return playerExplosiveShotExplosion;
             if (weaponType == WeaponType.WIDE) return playerBulletHitEffect;
             return null;
@@ -110,6 +113,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
 
         public GameObject GetPowerUpPrefab(WeaponType weaponType)
         {
+            if (weaponType == WeaponType.M) return powerUpMPrefab;
             if (weaponType == WeaponType.BLAST) return powerUpFPrefab;
             if (weaponType == WeaponType.WIDE) return powerUpSPrefab;
             if (weaponType == WeaponType.LASER) return powerUpLPrefab;
@@ -118,6 +122,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
 
         public GameObject GetBulletPrefab(WeaponType weaponType)
         {
+            if (weaponType == WeaponType.M) return bulletMPrefab;
             if (weaponType == WeaponType.BLAST) return bulletFPrefab;
             if (weaponType == WeaponType.WIDE) return bulletSPrefab;
             return bulletBasicPrefab;

@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinemachine", "Cinemachine.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Timeline", "Unity.Timeline.csproj", "{4c1d7af4-208d-2c91-23f2-a0a743551033}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportedAssets", "ImportedAssets.csproj", "{f28e5af6-e964-cfef-7c0d-c2e681651b8e}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests.csproj", "{7a5fd349-7bd9-7157-8ab3-bf9903f14e67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualStudio.Editor", "Unity.VisualStudio.Editor.csproj", "{9390d9fc-6788-2b20-722a-ba1d72d59545}"
@@ -90,6 +92,8 @@ Global
 		{086d1ce3-3535-cba7-f0cd-b80f477422c2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4c1d7af4-208d-2c91-23f2-a0a743551033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4c1d7af4-208d-2c91-23f2-a0a743551033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f28e5af6-e964-cfef-7c0d-c2e681651b8e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f28e5af6-e964-cfef-7c0d-c2e681651b8e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7a5fd349-7bd9-7157-8ab3-bf9903f14e67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7a5fd349-7bd9-7157-8ab3-bf9903f14e67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9390d9fc-6788-2b20-722a-ba1d72d59545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

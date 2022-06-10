@@ -10,6 +10,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public static AppSfx instance;
 
         [SerializeField] public AudioSource bulletB,
+            bulletM,
             bulletS,
             bulletF,
             bulletFExplode,
@@ -58,6 +59,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public static void PlayBulletSound(WeaponType weaponType)
         {
             AudioSource source = instance.bulletB;
+            if (weaponType == WeaponType.M) source = instance.bulletM;
             if (weaponType == WeaponType.WIDE) source = instance.bulletS;
             if (weaponType == WeaponType.BLAST) source = instance.bulletF;
             PlayAdjusted(source);
