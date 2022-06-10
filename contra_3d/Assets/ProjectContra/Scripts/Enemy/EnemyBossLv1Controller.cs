@@ -81,7 +81,7 @@ namespace ProjectContra.Scripts.Enemy
                 spawnPoint.SetActive(false);
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
-                AppMusic.instance.StopAll();
+                AppMusic.instance.Stop();
                 UnityFn.SetTimeout(AppResource.instance, 5, () =>
                 {
                     AppSfx.instance.levelClear.Play();

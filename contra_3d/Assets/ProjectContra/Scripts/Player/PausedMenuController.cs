@@ -74,6 +74,8 @@ namespace ProjectContra.Scripts.Player
 
         private void HandleUnPause()
         {
+            AppSfx.Play(AppSfx.instance.pause);
+            AppMusic.instance.UnPause();
             storeData.controlState = GameControlState.IN_GAME;
             Time.timeScale = 1f;
         }

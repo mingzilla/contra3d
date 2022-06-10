@@ -15,6 +15,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             lv2BossMusic,
             lv3Music;
 
+        private AudioSource currentMusic;
+
         private List<AudioSource> AllMusic()
         {
             return new List<AudioSource>()
@@ -34,27 +36,45 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
 
         public void PlayByScene(GameScene scene)
         {
-            StopAll();
-            if(scene == GameScene.LEVEL_1) lv1Music.Play();
-            if(scene == GameScene.LEVEL_2) lv2Music.Play();
-            if(scene == GameScene.LEVEL_3) lv3Music.Play();
+            if (scene == GameScene.LEVEL_1) Play(lv1Music);
+            if (scene == GameScene.LEVEL_2) Play(lv2Music);
+            if (scene == GameScene.LEVEL_3) Play(lv3Music);
         }
 
         public void PlayLv1BossMusic()
         {
-            StopAll();
-            lv1BossMusic.Play();
+            Play(lv1BossMusic);
         }
 
         public void PlayLv2BossMusic()
         {
-            StopAll();
-            lv2BossMusic.Play();
+            Play(lv2BossMusic);
         }
 
-        public void StopAll()
+        public void Play(AudioSource source)
         {
-            AllMusic().ForEach(it => it.Stop());
+            Stop();
+            currentMusic = source;
+            currentMusic.Play();
+        }
+
+        public void Stop()
+        {
+            if (currentMusic != null)
+            {
+                currentMusic.Stop();
+                currentMusic = null;
+            }
+        }
+
+        public void Pause()
+        {
+            if (currentMusic != null) currentMusic.Pause();
+        }
+
+        public void UnPause()
+        {
+            if (currentMusic != null) currentMusic.UnPause();
         }
     }
 }

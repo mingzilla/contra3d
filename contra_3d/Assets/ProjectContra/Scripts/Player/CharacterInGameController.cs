@@ -118,7 +118,7 @@ namespace ProjectContra.Scripts.Player
                         Destroy(gameObject);
                         if (storeData.AllPlayersDead())
                         {
-                            AppMusic.instance.StopAll();
+                            AppMusic.instance.Stop();
                             storeData.ReloadScene();
                         }
                     });

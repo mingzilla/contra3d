@@ -87,6 +87,8 @@ namespace ProjectContra.Scripts.Player
             {
                 UnityFn.RunWithInterval(AppResource.instance, pauseInterval, () =>
                 {
+                    AppSfx.Play(AppSfx.instance.pause);
+                    AppMusic.instance.Pause();
                     storeData.controlState = GameControlState.IN_GAME_PAUSED;
                     SceneInitData sceneInitData = AppResource.instance.GetSceneInitData(storeData.currentScene);
                     controlObjectData.SetControlObjectActiveState(playerId, storeData.controlState, characterInGamePrefab, characterInLobbyPrefab, sceneInitData);
