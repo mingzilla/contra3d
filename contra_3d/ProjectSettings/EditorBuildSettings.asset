@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/ProjectContra/Scenes/ContraLv1.unity
     guid: 4e4b6a182255bec4a81806747eedec85
   - enabled: 1
-    path: Assets/ProjectContra/Scenes/ContraLv2.unity
+    path: Assets/ProjectContra/Scenes/ContraLv2_old.unity
     guid: b12d57e682822da4a961783b37ed0cf2
   - enabled: 1
     path: Assets/ProjectContra/Scenes/ContraLv3.unity
