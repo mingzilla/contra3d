@@ -6,6 +6,7 @@ namespace ProjectContra.Scripts.GameDataScriptable
     public class SceneInitData : ScriptableObject
     {
         public Vector3 playerInitPosition = Vector3.zero;
+        public bool moveXZ = false;
 
         public Vector3 GetRandomPlayerInitPosition()
         {

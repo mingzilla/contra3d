@@ -7,12 +7,10 @@ namespace BaseUtil.GameUtil.Util3D
 {
     public static class PlayerActionHandler3D
     {
-        [Obsolete("Deprecated, use rigidbody instead")]
-        public static void MoveXZ(Transform transform, UserInput userInput, float speed, float deltaTime)
+        public static void MoveXZ(UserInput userInput, Rigidbody rb, float moveSpeed)
         {
-            float x = speed * deltaTime * userInput.horizontal;
-            float z = speed * deltaTime * userInput.vertical;
-            transform.Translate(x, 0, z);
+            Vector3 currentV = rb.velocity;
+            rb.velocity = new Vector3(userInput.fixedHorizontal * moveSpeed, currentV.y, userInput.fixedVertical * moveSpeed);
         }
 
         public static void MoveX(float inputHorizontal, Rigidbody rb, float moveSpeed)

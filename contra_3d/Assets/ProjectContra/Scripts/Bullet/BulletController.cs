@@ -17,10 +17,22 @@ namespace ProjectContra.Scripts.Bullet
 
         public static BulletController Spawn(Transform shotPoint, Vector3 positionDelta, bool isFacingForward, UserInput userInput, WeaponType weaponType, bool isOnGround)
         {
+            Vector3 direction = BulletCommonUtil3D.CreateBulletDirection(isFacingForward, userInput, isOnGround);
+            return SpawnInDirection(shotPoint, positionDelta, weaponType, direction);
+        }
+
+        public static BulletController SpawnXZ(Transform shotPoint, Vector3 positionDelta, bool isFacingRight, bool isFacingUp, WeaponType weaponType)
+        {
+            Vector3 direction = BulletCommonUtil3D.CreateBulletXZDirection(isFacingRight, isFacingUp);
+            return SpawnInDirection(shotPoint, positionDelta, weaponType, direction);
+        }
+
+        public static BulletController SpawnInDirection(Transform shotPoint, Vector3 positionDelta, WeaponType weaponType, Vector3 direction)
+        {
             GameObject prefab = AppResource.instance.GetBulletPrefab(weaponType);
             AppSfx.PlayBulletSound(weaponType);
             BulletController copy = Instantiate(prefab, (shotPoint.position + positionDelta), shotPoint.rotation).GetComponent<BulletController>();
-            copy.moveDirection = BulletCommonUtil3D.CreateBulletDirection(isFacingForward, userInput, isOnGround);
+            copy.moveDirection = direction;
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
             copy.weaponType = weaponType;
             copy.explosionEffect = AppResource.instance.GetBulletHitEffect(weaponType);

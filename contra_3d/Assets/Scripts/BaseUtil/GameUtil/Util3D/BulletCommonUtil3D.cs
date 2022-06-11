@@ -36,5 +36,12 @@ namespace BaseUtil.GameUtil.Util3D
 
             return direction;
         }
+
+        public static Vector3 CreateBulletXZDirection(bool isFacingRight, bool isFacingUp)
+        {
+            float x = isFacingRight ? 1f : -1f;
+            float z = isFacingUp ? 1f : -1f;
+            return new Vector3(x, 0f, z);
+        }
     }
 }
