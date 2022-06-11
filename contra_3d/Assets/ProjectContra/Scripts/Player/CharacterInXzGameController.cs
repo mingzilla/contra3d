@@ -69,7 +69,7 @@ namespace ProjectContra.Scripts.Player
             animatorCtrl.SetBool(isMovingKey, userInput.IsMoving());
             isFacingRight = UserInput.IsFacingRight(isFacingRight, userInput);
             isFacingUp = UserInput.IsFacingUp(isFacingUp, userInput);
-            UnitDisplayHandler3D.HandleXZFacing(transform, isFacingRight, isFacingUp);
+            UnitDisplayHandler3D.HandleXZFacing(transform, userInput);
 
             bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
             animatorCtrl.SetBool(isOnGroundKey, isOnGround);
