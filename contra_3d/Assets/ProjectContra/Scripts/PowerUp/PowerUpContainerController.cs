@@ -4,6 +4,7 @@ using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
+using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
@@ -47,9 +48,12 @@ namespace ProjectContra.Scripts.PowerUp
             }
             if (isActive)
             {
+                SceneInitData sceneInitData = AppResource.instance.GetCurrentSceneInitData();
                 MovementUtil.MoveX(transform, xMovementValue, moveSpeed);
                 float movementFactor = MovementUtil.CalculateCircularMovementFactor(1f);
-                transform.position += new Vector3(0f, (moveSpeed * Time.deltaTime * movementFactor), 0f);
+                float movementAmount = moveSpeed * Time.deltaTime * movementFactor;
+                if (!sceneInitData.moveXZ) transform.position += new Vector3(0f, movementAmount, 0f);
+                if (sceneInitData.moveXZ) transform.position += new Vector3(0f, 0f, movementAmount);
             }
         }
 

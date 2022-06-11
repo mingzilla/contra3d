@@ -41,7 +41,7 @@ namespace ProjectContra.Scripts.Player
 
         void FixedUpdate()
         {
-            SceneInitData sceneInitData = AppResource.instance.GetSceneInitData(storeData.currentScene);
+            SceneInitData sceneInitData = AppResource.instance.GetCurrentSceneInitData();
             GameControlState currentControlState = storeData.controlState;
             controlObjectData.SetControlObjectActiveState(playerId, currentControlState, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab, sceneInitData);
             if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) controlObjectData.inLobbyController.HandleUpdate(playerId, userInput, gameObject);
@@ -92,7 +92,7 @@ namespace ProjectContra.Scripts.Player
                     AppSfx.Play(AppSfx.instance.pause);
                     AppMusic.instance.Pause();
                     storeData.controlState = GameControlState.IN_GAME_PAUSED;
-                    SceneInitData sceneInitData = AppResource.instance.GetSceneInitData(storeData.currentScene);
+                    SceneInitData sceneInitData = AppResource.instance.GetCurrentSceneInitData();
                     controlObjectData.SetControlObjectActiveState(playerId, storeData.controlState, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab, sceneInitData);
                     Time.timeScale = 0f;
                 });

@@ -101,6 +101,11 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             return enemyBasicBulletPrefab;
         }
 
+        public SceneInitData GetCurrentSceneInitData()
+        {
+            return instance.GetSceneInitData(storeData.currentScene);
+        }
+
         public SceneInitData GetSceneInitData(GameScene gameScene)
         {
             if (gameScene == GameScene.LEVEL_1) return sceneInitDataLv1;

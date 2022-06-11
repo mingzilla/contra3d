@@ -27,8 +27,8 @@ namespace ProjectContra.Scripts.PowerUp
             if (GameLayer.Matches(obj.layer, GameLayer.GROUND)) rb.velocity = Vector3.zero; // stop movement if touching ground
             if (GameLayer.Matches(obj.layer, GameLayer.PLAYER))
             {
-                CharacterInGameController character = obj.GetComponentInParent<CharacterInGameController>();
-                if (character != null) character.PowerUp(weaponType);
+                obj.GetComponentInParent<CharacterInGameController>()?.PowerUp(weaponType);
+                obj.GetComponentInParent<CharacterInXzGameController>()?.PowerUp(weaponType);
                 Destroy(gameObject);
             }
         }

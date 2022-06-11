@@ -13,8 +13,9 @@ namespace ProjectContra.Scripts.Enemy.Util
             {
                 GameFn.DealDamage(position, blastRange, destructibleLayers, (obj) =>
                 {
-                    CharacterInGameController character = obj.GetComponentInParent<CharacterInGameController>();
-                    if (character != null) character.TakeDamage(position, damage); // null check to avoid child objects
+                    // null check to avoid child objects
+                    obj.GetComponentInParent<CharacterInGameController>()?.TakeDamage(position, damage);
+                    obj.GetComponentInParent<CharacterInXzGameController>()?.TakeDamage(position, damage);
                 });
             }
         }
