@@ -85,6 +85,17 @@ namespace BaseUtil.GameUtil
             return false;
         }
 
+        public static bool FollowXZTowardsPosition3D(Transform unitTransform, Transform targetTransform,
+                                                   float overlapRange, float moveSpeed, float deltaTime)
+        {
+            bool isOverlapping = UnityFn.IsInRange(unitTransform, targetTransform, overlapRange);
+            if (isOverlapping) return true;
+
+            unitTransform.rotation = UnityFn.LookXZ(unitTransform, targetTransform);
+            unitTransform.position = UnityFn.GetPositionXZ(unitTransform, targetTransform, moveSpeed, deltaTime);
+            return false;
+        }
+
         public static void MoveTowardsPosition3D(Transform transform, Vector3 targetPosition, float moveSpeed, Action<Vector3> addDeltaToTargetFn)
         {
             Vector3 originalPosition = transform.position;

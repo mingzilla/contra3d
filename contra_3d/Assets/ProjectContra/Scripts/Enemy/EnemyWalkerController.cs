@@ -15,7 +15,7 @@ namespace ProjectContra.Scripts.Enemy
     public class EnemyWalkerController : AbstractDestructibleController
     {
         [SerializeField] private AudioClip deadSfx;
-        
+
         public int damage = 1;
         public int moveSpeed = 8;
         public float jumpForce = 10f;
@@ -31,6 +31,7 @@ namespace ProjectContra.Scripts.Enemy
         private int xMovementValue = 0;
         private Animator animatorCtrl;
         private static readonly int isRunning = Animator.StringToHash("isRunning");
+        private bool moveXZ = false;
 
         void Start()
         {
@@ -41,12 +42,19 @@ namespace ProjectContra.Scripts.Enemy
             destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             animatorCtrl = gameObject.GetComponent<Animator>();
+            moveXZ = AppResource.instance.GetCurrentSceneInitData().moveXZ;
         }
 
         void Update()
         {
             if (!storeData.HasPlayer()) return;
             if (closestPlayer == null) closestPlayer = storeData.GetClosestPlayer(transform.position).inGameTransform;
+            if (!moveXZ) MoveX();
+            if (moveXZ) MoveXZ();
+        }
+
+        void MoveX()
+        {
             xMovementValue = (xMovementValue != 0) ? xMovementValue : (closestPlayer.position.x > transform.position.x ? 1 : -1);
             if (!isActive && UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
             {
@@ -58,6 +66,17 @@ namespace ProjectContra.Scripts.Enemy
             {
                 animatorCtrl.SetBool(isRunning, true);
                 MovementUtil.MoveX(transform, xMovementValue, moveSpeed);
+            }
+        }
+
+        void MoveXZ()
+        {
+            xMovementValue = (xMovementValue != 0) ? xMovementValue : (closestPlayer.position.x > transform.position.x ? 1 : -1);
+            if (!isActive && UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange())) isActive = true;
+            if (isActive)
+            {
+                animatorCtrl.SetBool(isRunning, true);
+                MovementUtil.FollowXZTowardsPosition3D(transform, closestPlayer, 0.5f, moveSpeed, Time.deltaTime);
             }
         }
 

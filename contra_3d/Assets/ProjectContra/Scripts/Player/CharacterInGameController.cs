@@ -29,7 +29,6 @@ namespace ProjectContra.Scripts.Player
         private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
         private static readonly int isMovingKey = Animator.StringToHash("isMoving");
         private static readonly int isPointingUpKey = Animator.StringToHash("isPointingUp");
-        private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
         private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
 
         public CharacterInGameController Init(int id, bool isActive)

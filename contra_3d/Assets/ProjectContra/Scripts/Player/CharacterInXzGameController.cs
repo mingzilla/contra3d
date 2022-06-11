@@ -23,17 +23,12 @@ namespace ProjectContra.Scripts.Player
         private LayerMask groundLayers;
         private GameObject destroyEffect;
         private int playerId;
-        private bool isFacingRight = true;
-        private bool isFacingUp = true;
         private Animator animatorCtrl;
         private static readonly int triggerJumpKey = Animator.StringToHash("triggerJump");
         private static readonly int triggerShootingKey = Animator.StringToHash("triggerShooting");
         private static readonly int triggerDeadKey = Animator.StringToHash("triggerDead");
-        private static readonly int isProneKey = Animator.StringToHash("isProne");
         private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
         private static readonly int isMovingKey = Animator.StringToHash("isMoving");
-        private static readonly int isPointingUpKey = Animator.StringToHash("isPointingUp");
-        private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
         private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
 
         public CharacterInXzGameController Init(int id, bool isActive)
@@ -67,8 +62,6 @@ namespace ProjectContra.Scripts.Player
             HandleInvincibilityUi();
             PlayerActionHandler3D.MoveXZ(userInput, rb, playerAttribute.moveSpeed);
             animatorCtrl.SetBool(isMovingKey, userInput.IsMoving());
-            isFacingRight = UserInput.IsFacingRight(isFacingRight, userInput);
-            isFacingUp = UserInput.IsFacingUp(isFacingUp, userInput);
             UnitDisplayHandler3D.HandleXZFacing(transform, userInput);
 
             bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
@@ -89,7 +82,7 @@ namespace ProjectContra.Scripts.Player
             Vector3 positionDelta = Vector3.zero;
             if ((weaponType == WeaponType.BASIC) || (weaponType == WeaponType.M) || (weaponType == WeaponType.BLAST)) positionDelta = new Vector3(userInput.fixedHorizontal, 1f, 0f);
             if (weaponType == WeaponType.WIDE) positionDelta = new Vector3(userInput.fixedHorizontal, 1.2f, 0f);
-            BulletController.SpawnXZ(transform, positionDelta, isFacingRight, isFacingUp, weaponType);
+            BulletController.SpawnXZ(transform, positionDelta, weaponType);
         }
 
         private void HandleInvincibilityUi()

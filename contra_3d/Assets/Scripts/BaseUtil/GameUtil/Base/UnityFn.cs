@@ -108,10 +108,14 @@ namespace BaseUtil.GameUtil.Base
             return Quaternion.LookRotation(targetPosition - unitPosition);
         }
 
-        public static void SetRotation3D(Transform unit, Transform target)
+        /// <summary>
+        /// Rotate towards target, without looking up or down (rotates Y axis only)
+        /// </summary>
+        public static Quaternion LookXZ(Transform unit, Transform target)
         {
-            // makes sure unit faces target, in 3D
-            unit.LookAt(target);
+            Quaternion rotation = Quaternion.LookRotation(target.position - unit.position);
+            unit.rotation = Quaternion.Euler(0f, rotation.eulerAngles.y, 0f);
+            return unit.rotation;
         }
 
         /**
@@ -128,6 +132,16 @@ namespace BaseUtil.GameUtil.Base
         public static Vector3 GetPosition(Transform unit, Transform target, float moveSpeed, float deltaTime)
         {
             return Vector3.MoveTowards(unit.position, target.position, moveSpeed * deltaTime);
+        }
+
+        /**
+         * Position of this frame when moving unit towards target, excluding Y, so that unit doesn't move vertically
+         */
+        public static Vector3 GetPositionXZ(Transform unit, Transform target, float moveSpeed, float deltaTime)
+        {
+            float originalY = unit.position.y;
+            Vector3 position = GetPosition(unit, target, moveSpeed, deltaTime);
+            return new Vector3(position.x, originalY, position.z);
         }
 
         /// <summary>
@@ -396,7 +410,7 @@ namespace BaseUtil.GameUtil.Base
         public static void RemoveForce(Rigidbody rb)
         {
             rb.velocity = Vector3.zero; // remove collision force
-            rb.angularVelocity = Vector3.zero; 
+            rb.angularVelocity = Vector3.zero;
         }
 
         public static T MakeInvisible<T>(GameObject gameObject) where T : Renderer
