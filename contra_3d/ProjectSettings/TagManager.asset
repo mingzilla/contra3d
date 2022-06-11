@@ -25,7 +25,7 @@ TagManager:
   - POWER_UP_CONTAINER
   - POWER_UP
   - GROUND_COLLIDER
-  - 
+  - INVISIBLE_WALL_TO_PLAYER
   - 
   - 
   - 
