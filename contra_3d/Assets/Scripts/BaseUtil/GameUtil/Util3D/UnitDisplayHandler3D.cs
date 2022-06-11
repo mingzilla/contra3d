@@ -21,7 +21,7 @@ namespace BaseUtil.GameUtil.Util3D
             if (userInput.IsUpLeft()) unitTransform.rotation = Quaternion.AngleAxis(45f, new Vector3(0f, -1f, 0f));
             if (userInput.IsUpRight()) unitTransform.rotation = Quaternion.AngleAxis(45f, new Vector3(0f, 1f, 0f));
             if (userInput.IsDownLeft()) unitTransform.rotation = Quaternion.AngleAxis(135f, new Vector3(0f, -1f, 0f));
-            if (userInput.IsDownRight()) unitTransform.rotation = Quaternion.AngleAxis(135f, new Vector3(0f, -1f, 0f));
+            if (userInput.IsDownRight()) unitTransform.rotation = Quaternion.AngleAxis(135f, new Vector3(0f, 1f, 0f));
         }
     }
 }

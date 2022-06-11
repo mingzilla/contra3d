@@ -23,7 +23,7 @@ namespace ProjectContra.Scripts.Bullet
 
         public static BulletController SpawnXZ(Transform shotPoint, Vector3 positionDelta, bool isFacingRight, bool isFacingUp, WeaponType weaponType)
         {
-            Vector3 direction = BulletCommonUtil3D.CreateBulletXZDirection(isFacingRight, isFacingUp);
+            Vector3 direction = BulletCommonUtil3D.CreateBulletXZDirection(shotPoint.rotation.eulerAngles.y);
             return SpawnInDirection(shotPoint, positionDelta, weaponType, direction);
         }
 

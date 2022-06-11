@@ -74,5 +74,11 @@ namespace BaseUtil.Base
         {
             return (currentIndex + size - 1) % size;
         }
+
+        public static bool IsBetweenF(float low, float high, bool isInclusive, float num)
+        {
+            if (isInclusive) return low <= num && num <= high;
+            return low < num && num < high;
+        }
     }
 }

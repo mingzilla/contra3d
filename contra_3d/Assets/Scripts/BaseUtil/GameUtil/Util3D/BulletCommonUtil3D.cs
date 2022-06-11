@@ -1,4 +1,5 @@
-﻿using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.Base;
+using BaseUtil.GameUtil.Base;
 using UnityEngine;
 
 namespace BaseUtil.GameUtil.Util3D
@@ -37,11 +38,23 @@ namespace BaseUtil.GameUtil.Util3D
             return direction;
         }
 
-        public static Vector3 CreateBulletXZDirection(bool isFacingRight, bool isFacingUp)
+        public static Vector3 CreateBulletXZDirection(float rotationEulerAnglesY)
         {
-            float x = isFacingRight ? 1f : -1f;
-            float z = isFacingUp ? 1f : -1f;
-            return new Vector3(x, 0f, z);
+            float rotationY = (rotationEulerAnglesY + 360f) % 360f;
+            if (IsAroundNum(0f, rotationY)) return new Vector3(0f, 0f, 1f);
+            if (IsAroundNum(45f, rotationY)) return new Vector3(0.8f, 0f, 0.8f);
+            if (IsAroundNum(90f, rotationY)) return new Vector3(1f, 0f, 0f);
+            if (IsAroundNum(135f, rotationY)) return new Vector3(0.8f, 0f, -0.8f);
+            if (IsAroundNum(180f, rotationY)) return new Vector3(0f, 0f, -1f);
+            if (IsAroundNum(225f, rotationY)) return new Vector3(-0.8f, 0f, -0.8f);
+            if (IsAroundNum(270f, rotationY)) return new Vector3(-1f, 0f, 0f);
+            if (IsAroundNum(315f, rotationY)) return new Vector3(-0.8f, 0f, 0.8f);
+            return new Vector3(0f, 0f, 1f);
+        }
+
+        private static bool IsAroundNum(float num, float y)
+        {
+            return FnVal.IsBetweenF((num - 22.5f), (num + 22.5f), true, y);
         }
     }
 }
