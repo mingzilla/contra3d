@@ -15,7 +15,7 @@ namespace ProjectContra.Scripts.EnemyBullet
         private GameObject shotDestination;
         private Vector3 targetPosition;
 
-        public static EnemyBasicBulletController Spawn(Vector3 shotPosition, Transform closestPlayerTransform, EnemyBulletType enemyBulletType)
+        public static EnemyBasicBulletController Spawn(Vector3 shotPosition, Vector3 closestPlayerPosition, EnemyBulletType enemyBulletType)
         {
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyBasicBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyBasicBulletController>();
@@ -23,7 +23,7 @@ namespace ProjectContra.Scripts.EnemyBullet
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
             copy.impactEffect = AppResource.instance.enemyBulletHitEffect;
             copy.enemyBulletType = enemyBulletType;
-            copy.targetPosition = closestPlayerTransform.position;
+            copy.targetPosition = closestPlayerPosition;
             copy.transform.rotation = UnityFn.GetImmediateRotation3D(shotPosition, copy.targetPosition); // set rotation once since bullet goes one direction
             return copy;
         }

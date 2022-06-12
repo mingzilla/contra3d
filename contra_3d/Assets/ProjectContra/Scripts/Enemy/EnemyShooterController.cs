@@ -14,6 +14,8 @@ namespace ProjectContra.Scripts.Enemy
     {
         private readonly IntervalState shotInterval = IntervalState.Create(3f);
         public float detectionRange = 30f;
+        public Vector3 shootPositionDelta = new Vector3(0f, 1f, 0f);
+        public Vector3 targetPositionDelta = new Vector3(0f, 1f, 0f);
 
         private GameStoreData storeData;
         private Rigidbody rb;
@@ -34,8 +36,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             bool isInRange = RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                bool isFacingRight = transform.position.x < closestPlayer.position.x;
-                UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
+                transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
                 FireShots(transform.position, closestPlayer);
             });
             animatorCtrl.SetBool(isActiveKey, isInRange);
@@ -45,7 +46,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
             {
-                EnemyBasicBulletController.Spawn(position, closestPlayer, EnemyBulletType.BASIC);
+                EnemyBasicBulletController.Spawn(position + shootPositionDelta, closestPlayer.position + targetPositionDelta, EnemyBulletType.BASIC);
             });
         }
 
