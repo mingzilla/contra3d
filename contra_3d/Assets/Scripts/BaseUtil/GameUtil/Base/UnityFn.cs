@@ -113,6 +113,7 @@ namespace BaseUtil.GameUtil.Base
         /// </summary>
         public static Quaternion LookXZ(Transform unit, Transform target)
         {
+            if (!target) return unit.rotation;
             Quaternion rotation = Quaternion.LookRotation(target.position - unit.position);
             unit.rotation = Quaternion.Euler(0f, rotation.eulerAngles.y, 0f);
             return unit.rotation;
@@ -139,6 +140,7 @@ namespace BaseUtil.GameUtil.Base
          */
         public static Vector3 GetPositionXZ(Transform unit, Transform target, float moveSpeed, float deltaTime)
         {
+            if (!target) return unit.position;
             float originalY = unit.position.y;
             Vector3 position = GetPosition(unit, target, moveSpeed, deltaTime);
             return new Vector3(position.x, originalY, position.z);

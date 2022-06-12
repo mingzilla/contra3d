@@ -26,7 +26,7 @@ namespace ProjectContra.Scripts.AbstractController
             Vector3 position = transform.position;
             Transform closestPlayer = storeData.GetClosestPlayer(position).inGameTransform;
             bool isInRange = UnityFn.IsInRange(transform, closestPlayer, detectionRange);
-            if (isInRange) fn(closestPlayer);
+            if (isInRange && closestPlayer != null) fn(closestPlayer);
             return isInRange;
         }
     }

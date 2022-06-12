@@ -1,6 +1,5 @@
 ﻿using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
-using BaseUtil.GameUtil.Util3D;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
@@ -21,7 +20,7 @@ namespace ProjectContra.Scripts.Enemy
         private Rigidbody rb;
         private GameObject destroyEffect;
         private Animator animatorCtrl;
-        private static readonly int isActiveKey = Animator.StringToHash("isActive");
+        private static readonly int isShootingKey = Animator.StringToHash("isShooting");
 
         void Start()
         {
@@ -39,7 +38,7 @@ namespace ProjectContra.Scripts.Enemy
                 transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
                 FireShots(transform.position, closestPlayer);
             });
-            animatorCtrl.SetBool(isActiveKey, isInRange);
+            animatorCtrl.SetBool(isShootingKey, isInRange);
         }
 
         void FireShots(Vector3 position, Transform closestPlayer)

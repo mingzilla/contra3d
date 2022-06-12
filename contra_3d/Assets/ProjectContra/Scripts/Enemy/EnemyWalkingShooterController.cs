@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.Enemy.Util;
+using ProjectContra.Scripts.EnemyBullet;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public class EnemyWalkerController : AbstractDestructibleController
+    public class EnemyWalkingShooterController : AbstractDestructibleController
     {
         public int damage = 1;
         public int moveSpeed = 8;
@@ -23,9 +25,13 @@ namespace ProjectContra.Scripts.Enemy
         private CapsuleCollider theCollider;
         private LayerMask destructibleLayers;
         private GameObject destroyEffect;
-        private bool moveXLeft = false;
         private Animator animatorCtrl;
         private static readonly int isRunning = Animator.StringToHash("isRunning");
+        private static readonly int isShootingKey = Animator.StringToHash("isShooting");
+        private readonly IntervalState shotInterval = IntervalState.Create(3f);
+        public Vector3 shootPositionDelta = new Vector3(0f, 1f, 0f);
+        public Vector3 targetPositionDelta = new Vector3(0f, 1f, 0f);
+        private bool pauseMovement = false;
 
         void Start()
         {
@@ -39,23 +45,38 @@ namespace ProjectContra.Scripts.Enemy
 
         void Update()
         {
-            if (!storeData.HasPlayer()) return;
-            Move();
+            bool isInRange = RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
+            {
+                transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
+                FireShots(transform.position, closestPlayer);
+                Move(closestPlayer);
+            });
+            if (!isInRange)
+            {
+                animatorCtrl.SetBool(isShootingKey, false);
+                animatorCtrl.SetBool(isRunning, false);
+            }
         }
 
-        void Move()
+        void FireShots(Vector3 position, Transform closestPlayer)
         {
-            Transform closestPlayer = storeData.GetClosestPlayer(transform.position).inGameTransform;
-            if (!isActive && UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
+            UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
             {
-                isActive = true;
-                moveXLeft = closestPlayer.position.x < transform.position.x;
-                animatorCtrl.SetBool(isRunning, true);
-                transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
-            }
-            bool moveXZ = AppResource.instance.GetCurrentSceneInitData().moveXZ;
-            if (isActive && !moveXZ) MovementUtil.MoveX(transform, (moveXLeft ? -1 : 1), moveSpeed);
-            if (isActive && moveXZ) MovementUtil.FollowXZTowardsPosition3D(transform, closestPlayer, 0.5f, moveSpeed, Time.deltaTime);
+                animatorCtrl.SetBool(isShootingKey, true);
+                pauseMovement = true;
+                UnityFn.SetTimeout(AppResource.instance, 0.5f, () =>
+                {
+                    animatorCtrl.SetBool(isShootingKey, false);
+                    pauseMovement = false;
+                });
+                EnemyBasicBulletController.Spawn(position + shootPositionDelta, closestPlayer.position + targetPositionDelta, EnemyBulletType.BASIC);
+            });
+        }
+
+        void Move(Transform closestPlayer)
+        {
+            animatorCtrl.SetBool(isRunning, true);
+            if (!pauseMovement) MovementUtil.FollowXZTowardsPosition3D(transform, closestPlayer, 0.5f, moveSpeed, Time.deltaTime);
         }
 
         void OnCollisionEnter(Collision other)
