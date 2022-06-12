@@ -58,8 +58,7 @@ namespace ProjectContra.Scripts.Enemy
             if (!isActive && UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
             {
                 isActive = true;
-                bool isFacingRight = transform.position.x < closestPlayer.position.x;
-                UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
+                transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
             }
             if (isActive)
             {

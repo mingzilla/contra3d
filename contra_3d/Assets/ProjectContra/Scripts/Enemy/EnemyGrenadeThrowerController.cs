@@ -36,8 +36,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                bool isFacingRight = transform.position.x < closestPlayer.position.x;
-                UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
+                transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
                 FireShots(transform.position, closestPlayer);
             });
         }
