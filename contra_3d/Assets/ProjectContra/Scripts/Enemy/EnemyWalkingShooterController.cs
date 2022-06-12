@@ -18,7 +18,6 @@ namespace ProjectContra.Scripts.Enemy
         public int moveSpeed = 8;
         public float jumpForce = 10f;
         public float detectionRange = 60f;
-        private bool isActive = false;
 
         private GameStoreData storeData;
         private Rigidbody rb;
