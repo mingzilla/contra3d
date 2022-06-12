@@ -66,7 +66,7 @@ namespace ProjectContra.Scripts.Enemy
                 pauseMovement = true;
                 UnityFn.SetTimeout(AppResource.instance, 0.5f, () =>
                 {
-                    animatorCtrl.SetBool(isShootingKey, false);
+                    if (animatorCtrl) animatorCtrl.SetBool(isShootingKey, false);
                     pauseMovement = false;
                 });
                 EnemyBasicBulletController.Spawn(position + shootPositionDelta, closestPlayer.position + targetPositionDelta, EnemyBulletType.BASIC);

@@ -55,7 +55,10 @@ namespace ProjectContra.Scripts.Enemy
         private void ThrowGrenade(Vector3 position, float xToUse)
         {
             animatorCtrl.SetBool(isActiveKey, true);
-            UnityFn.SetTimeout(this, 0.4f, () => animatorCtrl.SetBool(isActiveKey, false));
+            UnityFn.SetTimeout(this, 0.4f, () =>
+            {
+                if (animatorCtrl) animatorCtrl.SetBool(isActiveKey, false);
+            });
             EnemyGrenadeController.Spawn(position, xToUse, yForce, zForce, EnemyBulletType.GRENADE);
         }
 
