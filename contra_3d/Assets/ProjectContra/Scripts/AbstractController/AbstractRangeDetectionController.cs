@@ -22,7 +22,7 @@ namespace ProjectContra.Scripts.AbstractController
 
         protected bool RunIfPlayerIsInRange(GameStoreData storeData, float detectionRange, Action<Transform> fn)
         {
-            if (!storeData.HasPlayer()) return false;
+            if (storeData == null || !storeData.HasPlayer()) return false;
             Vector3 position = transform.position;
             Transform closestPlayer = storeData.GetClosestPlayer(position).inGameTransform;
             bool isInRange = UnityFn.IsInRange(transform, closestPlayer, detectionRange);

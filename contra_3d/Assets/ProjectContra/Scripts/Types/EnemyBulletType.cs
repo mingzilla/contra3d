@@ -6,21 +6,20 @@ namespace ProjectContra.Scripts.Types
 {
     public class EnemyBulletType
     {
-        public static readonly EnemyBulletType BASIC = Create("BASIC", 1, 1f, 10f, 3f);
-        public static readonly EnemyBulletType FOLLOW = Create("FOLLOW", 1, 3f, 8f, 3f);
-        public static readonly EnemyBulletType GRENADE = Create("GRENADE", 1, 3f, 10f, 5f);
-        public static readonly EnemyBulletType PIERCE = Create("PIERCE", 1, 1f, 25f, 2f);
-        public static readonly EnemyBulletType BLAST = Create("BLAST", 1, 3f, 10f, 3f);
-        public static readonly EnemyBulletType WIDE = Create("WIDE", 1, 1f, 10f, 3f);
-        public static readonly EnemyBulletType LASER = Create("LASER", 1, 1f, 10f, 3f);
+        public static readonly EnemyBulletType BASIC = Create("BASIC", 1, 1f, 10f, 3f, true);
+        public static readonly EnemyBulletType FOLLOW = Create("FOLLOW", 1, 3f, 8f, 3f, true);
+        public static readonly EnemyBulletType GRENADE = Create("GRENADE", 1, 3f, 10f, 5f, true);
+        public static readonly EnemyBulletType PIERCE = Create("PIERCE", 1, 1f, 25f, 2f, false);
+        public static readonly EnemyBulletType BLAST = Create("BLAST", 1, 3f, 10f, 3f, true);
+        public static readonly EnemyBulletType WIDE = Create("WIDE", 1, 1f, 10f, 3f, true);
+        public static readonly EnemyBulletType LASER = Create("LASER", 1, 1f, 10f, 3f, true);
 
         public string name;
         public int damage;
         public float blastRange;
         public float bulletSpeed;
         public float autoDestroyTime;
-
-        public LayerMask destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
+        public bool destroyWhenHit;
 
         static readonly Dictionary<string, EnemyBulletType> typeMap = Fn.ListToDictionaryWithKeyFn((x) => x.name, All());
 
@@ -36,7 +35,7 @@ namespace ProjectContra.Scripts.Types
             };
         }
 
-        public static EnemyBulletType Create(string name, int damage, float blastRange, float bulletSpeed, float autoDestroyTime)
+        public static EnemyBulletType Create(string name, int damage, float blastRange, float bulletSpeed, float autoDestroyTime, bool destroyWhenHit)
         {
             EnemyBulletType type = new EnemyBulletType
             {
@@ -45,6 +44,7 @@ namespace ProjectContra.Scripts.Types
                 blastRange = blastRange,
                 bulletSpeed = bulletSpeed,
                 autoDestroyTime = autoDestroyTime,
+                destroyWhenHit = destroyWhenHit,
             };
             return type;
         }
@@ -52,6 +52,16 @@ namespace ProjectContra.Scripts.Types
         public static EnemyBulletType GetByName(string name)
         {
             return typeMap[(name)];
+        }
+
+        public static EnemyBulletType GetByNameWithDefault(string name)
+        {
+            return typeMap.ContainsKey(name) ? GetByName(name) : BASIC;
+        }
+
+        public LayerMask GetDestructibleLayers()
+        {
+            return GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
         }
     }
 }

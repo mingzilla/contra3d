@@ -10,7 +10,7 @@ namespace ProjectContra.Scripts.EnemyBullet
     {
         protected void DealDamageToPlayer(Collider other, EnemyBulletType enemyBulletType)
         {
-            EnemyUtil.DealDamageToPlayer(transform.position, enemyBulletType.blastRange, enemyBulletType.destructibleLayers, enemyBulletType.damage, other);
+            EnemyUtil.DealDamageToPlayer(transform.position, enemyBulletType.blastRange, enemyBulletType.GetDestructibleLayers(), enemyBulletType.damage, other);
         }
 
         protected void DestroySelf(GameObject impactEffect, float impactLifeTime)
