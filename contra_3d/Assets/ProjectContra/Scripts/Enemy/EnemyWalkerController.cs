@@ -75,7 +75,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void DealDamage(Collision other)
         {
-            EnemyUtil.DealDamageToPlayer(transform.position, 2, destructibleLayers, damage, other.collider);
+            EnemyUtil.DealDamageToPlayer(transform.position, damage, other.collider);
         }
 
         private void JumpAtTriggerPoint(Collider other)

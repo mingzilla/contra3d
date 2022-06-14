@@ -74,5 +74,10 @@ namespace ProjectContra.Scripts.PowerUp
                 Destroy(gameObject);
             });
         }
+
+        protected void OnBecameInvisible()
+        {
+            Destroy(gameObject);
+        }
     }
 }

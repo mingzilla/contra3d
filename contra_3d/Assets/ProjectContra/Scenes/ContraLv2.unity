@@ -7687,11 +7687,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyLevel2Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 6256523568425732097, guid: b4683d5df83eb244ba2131b261a62e67,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 6490473045139464014, guid: b4683d5df83eb244ba2131b261a62e67,
         type: 3}
       propertyPath: bossCamera
