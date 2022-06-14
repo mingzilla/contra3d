@@ -21,8 +21,8 @@ namespace ProjectContra.Scripts.Enemy
         public Vector3 shootPositionDelta = new Vector3(0f, 1f, 0f);
         public Vector3 targetPositionDelta = new Vector3(0f, 1f, 0f);
         public int maxHp = 1;
+        public int hp = 1;
 
-        private int hp = 1;
         private IntervalState shotIntervalState;
         private EnemyBulletType bulletType;
         private GameStoreData storeData;

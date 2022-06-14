@@ -18,7 +18,7 @@ namespace ProjectContra.Scripts.Enemy
 
         [SerializeField] private GameObject gameCamera;
         [SerializeField] private GameObject bossCamera;
-        [SerializeField] private GameObject[] shooters;
+        private EnemyShooterController[] shooters;
         public float detectionRange = 40f;
 
         private EnemyBossLv1WeakPointController weakPointCtrl;
@@ -35,6 +35,7 @@ namespace ProjectContra.Scripts.Enemy
             gameObject.layer = GameLayer.INVISIBLE_WALL_TO_PLAYER.GetLayer();
             animatorCtrl = gameObject.GetComponent<Animator>();
             animatorCtrl.enabled = false;
+            shooters = gameObject.GetComponentsInChildren<EnemyShooterController>();
         }
 
         void Update()
@@ -57,8 +58,8 @@ namespace ProjectContra.Scripts.Enemy
 
         private void HandlePhase1()
         {
-            bool isBroken = Fn.WithoutNull(new List<GameObject>(shooters)).Count == 0;
-            if (isBroken)
+            int deadShooters = Fn.Filter(g => g.hp <= 0, new List<EnemyShooterController>(shooters)).Count;
+            if (deadShooters == shooters.Length)
             {
                 phase = 2; // there is no phase 3, this is just to prevent getting into here again
                 gameCamera.SetActive(true);
