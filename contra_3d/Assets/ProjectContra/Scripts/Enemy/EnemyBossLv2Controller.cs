@@ -32,7 +32,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             musicController = AppResource.instance.musicManager.GetComponent<AppMusic>();
-            gameObject.layer = GameLayer.ENEMY.GetLayer();
+            gameObject.layer = GameLayer.INVISIBLE_WALL_TO_PLAYER.GetLayer();
             animatorCtrl = gameObject.GetComponent<Animator>();
             animatorCtrl.enabled = false;
         }
