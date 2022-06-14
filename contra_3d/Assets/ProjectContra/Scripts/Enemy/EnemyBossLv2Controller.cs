@@ -18,6 +18,7 @@ namespace ProjectContra.Scripts.Enemy
 
         [SerializeField] private GameObject gameCamera;
         [SerializeField] private GameObject bossCamera;
+        [SerializeField] private GameObject[] shooters;
         public float detectionRange = 40f;
 
         private EnemyBossLv1WeakPointController weakPointCtrl;
@@ -33,6 +34,7 @@ namespace ProjectContra.Scripts.Enemy
             musicController = AppResource.instance.musicManager.GetComponent<AppMusic>();
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             animatorCtrl = gameObject.GetComponent<Animator>();
+            animatorCtrl.enabled = false;
         }
 
         void Update()
@@ -47,20 +49,24 @@ namespace ProjectContra.Scripts.Enemy
         private void HandlePhase0()
         {
             musicController.PlayLv2BossMusic();
-            animatorCtrl.SetBool(isActive, true);
             bossCamera.SetActive(true);
             gameCamera.SetActive(false);
+            animatorCtrl.enabled = true;
             phase = 1;
         }
 
         private void HandlePhase1()
         {
-            if (weakPointCtrl.isBroken)
+            bool isBroken = Fn.WithoutNull(new List<GameObject>(shooters)).Count == 0;
+            if (isBroken)
             {
                 phase = 2; // there is no phase 3, this is just to prevent getting into here again
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
+                animatorCtrl.enabled = false;
                 AppMusic.instance.Stop();
+                AppSfx.PlayRepeatedly(AppSfx.instance.bossDeath, 5);
+                UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
                 UnityFn.SetTimeout(AppResource.instance, 5, () =>
                 {
                     AppSfx.instance.levelClear.Play();
