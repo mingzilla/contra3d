@@ -31,7 +31,8 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            rb = UnityFn.AddRigidbody(gameObject, true, true);
+            bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
+            rb = UnityFn.AddRigidbody(gameObject, true, !moveXZ);
             destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             animatorCtrl = gameObject.GetComponent<Animator>();
@@ -53,7 +54,7 @@ namespace ProjectContra.Scripts.Enemy
                 animatorCtrl.SetBool(isRunning, true);
                 transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
             }
-            bool moveXZ = AppResource.instance.GetCurrentSceneInitData().moveXZ;
+            bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
             if (isActive && !moveXZ) MovementUtil.MoveX(transform, (moveXLeft ? -1 : 1), moveSpeed);
             if (isActive && moveXZ) MovementUtil.FollowXZTowardsPosition3D(transform, closestPlayer, 0.5f, moveSpeed, Time.deltaTime);
         }

@@ -17,8 +17,8 @@ namespace ProjectContra.Scripts.AppSingleton
 
         void FixedUpdate()
         {
-            SceneInitData sceneInitData = AppResource.instance.GetCurrentSceneInitData();
-            CameraHandler3D.FollowPlayers(transform, storeData.AllPlayerPositions(), sceneInitData.moveXZ);
+            bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
+            CameraHandler3D.FollowPlayers(transform, storeData.AllPlayerPositions(), moveXZ);
         }
     }
 }

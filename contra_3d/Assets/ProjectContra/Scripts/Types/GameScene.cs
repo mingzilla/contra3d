@@ -9,17 +9,18 @@ namespace ProjectContra.Scripts.Types
 {
     public class GameScene
     {
-        public static readonly GameScene TITLE_SCREEN = Create("ContraTitle", false, GameControlState.TITLE_SCREEN_MENU, "");
-        public static readonly GameScene LEVEL_1 = Create("ContraLv1", true, GameControlState.INFO_SCREEN, "Area 1");
-        public static readonly GameScene LEVEL_2 = Create("ContraLv2", true, GameControlState.INFO_SCREEN, "Area 2");
-        public static readonly GameScene LEVEL_3 = Create("ContraLv3", true, GameControlState.INFO_SCREEN, "Area 3");
-        public static readonly GameScene LEVEL_4 = Create("ContraLv4", true, GameControlState.INFO_SCREEN, "Area 4");
-        public static readonly GameScene LEVEL_5 = Create("ContraLv5", true, GameControlState.INFO_SCREEN, "Area 5");
+        public static readonly GameScene TITLE_SCREEN = Create("ContraTitle", false, GameControlState.TITLE_SCREEN_MENU, false, "");
+        public static readonly GameScene LEVEL_1 = Create("ContraLv1", true, GameControlState.INFO_SCREEN, false, "Area 1");
+        public static readonly GameScene LEVEL_2 = Create("ContraLv2", true, GameControlState.INFO_SCREEN, true, "Area 2");
+        public static readonly GameScene LEVEL_3 = Create("ContraLv3", true, GameControlState.INFO_SCREEN, false, "Area 3");
+        public static readonly GameScene LEVEL_4 = Create("ContraLv4", true, GameControlState.INFO_SCREEN, false, "Area 4");
+        public static readonly GameScene LEVEL_5 = Create("ContraLv5", true, GameControlState.INFO_SCREEN, false, "Area 5");
 
         public string name;
         public int index;
         public bool hasInfoScreen;
         public GameControlState initialControlState;
+        public bool moveXZ = false;
         public string introText;
 
         private static readonly Dictionary<string, GameScene> typeMap = Fn.ListToDictionaryWithKeyFn((x) => x.name, All());
@@ -37,13 +38,14 @@ namespace ProjectContra.Scripts.Types
             };
         }
 
-        private static GameScene Create(string name, bool hasInfoScreen, GameControlState initialControlState, string introText)
+        private static GameScene Create(string name, bool hasInfoScreen, GameControlState initialControlState, bool moveXZ, string introText)
         {
             GameScene layer = new GameScene
             {
                 name = name,
                 hasInfoScreen = hasInfoScreen,
                 initialControlState = initialControlState,
+                moveXZ = moveXZ,
                 introText = introText,
             };
             return layer;

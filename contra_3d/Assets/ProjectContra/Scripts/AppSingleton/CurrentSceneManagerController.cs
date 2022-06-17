@@ -9,8 +9,9 @@ namespace ProjectContra.Scripts.AppSingleton
     /// </summary>
     public class CurrentSceneManagerController : MonoBehaviour
     {
-        private void Start()
+        private void OnEnable()
         {
+            Debug.Log("CurrentSceneManagerController.OnEnable");
             SceneUtil.InitializeScene();
         }
     }

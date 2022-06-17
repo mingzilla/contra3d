@@ -1,4 +1,5 @@
 ﻿using BaseUtil.GameUtil;
+using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.Types;

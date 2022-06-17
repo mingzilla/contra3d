@@ -38,7 +38,8 @@ namespace ProjectContra.Scripts.Enemy
             bulletType = EnemyBulletType.GetByNameWithDefault(bulletName);
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            if (!preventMovement) rb = UnityFn.AddRigidbody(gameObject, true, true);
+            bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
+            if (!preventMovement) rb = UnityFn.AddRigidbody(gameObject, true, !moveXZ);
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             animatorCtrl = gameObject.GetComponent<Animator>();
         }

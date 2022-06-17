@@ -18,7 +18,7 @@ MonoImporter:
       type: 3}
   - explosiveShotEffectPrefab: {fileID: 553932777566549550, guid: 415baf75cdd6d9f48a207afae17f554d,
       type: 3}
-  executionOrder: 0
+  executionOrder: 300
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 

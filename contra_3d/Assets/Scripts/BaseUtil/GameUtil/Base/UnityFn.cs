@@ -550,5 +550,15 @@ namespace BaseUtil.GameUtil.Base
         {
             button.onClick.Invoke();
         }
+
+        public static void Pause()
+        {
+            Time.timeScale = 0f;
+        }
+
+        public static void UnPause()
+        {
+            Time.timeScale = 1f;
+        }
     }
 }

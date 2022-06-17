@@ -69,6 +69,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
 
         private void Awake()
         {
+            // https://docs.unity3d.com/Manual/class-MonoManager.html
+            // So that it runs before e.g. current scene manager
             UnityFn.MarkSingletonAndKeepAlive(instance, gameObject, () => instance = this);
         }
 
@@ -104,6 +106,11 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public SceneInitData GetCurrentSceneInitData()
         {
             return instance.GetSceneInitData(storeData.currentScene);
+        }
+
+        public GameScene GetCurrentScene()
+        {
+            return storeData.currentScene;
         }
 
         public SceneInitData GetSceneInitData(GameScene gameScene)

@@ -218,7 +218,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2656361558060424089}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.42, y: 5.79, z: 43.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -290,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4250522910316283671}
   - component: {fileID: 6647887164023120376}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Runner_ori.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

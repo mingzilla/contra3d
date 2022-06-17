@@ -48,12 +48,12 @@ namespace ProjectContra.Scripts.PowerUp
             }
             if (isActive)
             {
-                SceneInitData sceneInitData = AppResource.instance.GetCurrentSceneInitData();
+                bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
                 MovementUtil.MoveX(transform, xMovementValue, moveSpeed);
                 float movementFactor = MovementUtil.CalculateCircularMovementFactor(1f);
                 float movementAmount = moveSpeed * Time.deltaTime * movementFactor;
-                if (!sceneInitData.moveXZ) transform.position += new Vector3(0f, movementAmount, 0f);
-                if (sceneInitData.moveXZ) transform.position += new Vector3(0f, 0f, movementAmount);
+                if (!moveXZ) transform.position += new Vector3(0f, movementAmount, 0f);
+                if (moveXZ) transform.position += new Vector3(0f, 0f, movementAmount);
             }
         }
 

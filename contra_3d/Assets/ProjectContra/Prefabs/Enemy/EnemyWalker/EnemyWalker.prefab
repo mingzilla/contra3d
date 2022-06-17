@@ -364,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2325603978510062708}
   - component: {fileID: 5114077385928880795}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Runner_ori.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,6 @@ MonoBehaviour:
   moveSpeed: 7
   jumpForce: 11
   detectionRange: 60
-  isActive: 0
 --- !u!95 &3768207629442671365
 Animator:
   serializedVersion: 4

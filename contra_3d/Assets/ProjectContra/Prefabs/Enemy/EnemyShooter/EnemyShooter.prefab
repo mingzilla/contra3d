@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814750316296570735}
   - component: {fileID: 9192313008562856320}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Runner_ori.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

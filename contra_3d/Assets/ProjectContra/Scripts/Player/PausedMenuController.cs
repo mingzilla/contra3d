@@ -77,7 +77,7 @@ namespace ProjectContra.Scripts.Player
             AppSfx.Play(AppSfx.instance.pause);
             AppMusic.instance.UnPause();
             storeData.controlState = GameControlState.IN_GAME;
-            Time.timeScale = 1f;
+            UnityFn.UnPause();
         }
 
         public void OnSelectedLobby()
