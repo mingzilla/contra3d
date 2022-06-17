@@ -77,6 +77,8 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\PlayerInputScheme.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\Fn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\BulletCommonUtil3D.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\CameraDomain\CameraTargetParamXZ.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\CameraDomain\CameraTargetParamX.cs" />
      <None Include="Assets\Scripts\BaseUtil\Base.Util.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

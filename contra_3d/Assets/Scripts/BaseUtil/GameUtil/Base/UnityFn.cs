@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using BaseUtil.GameUtil.Types;
@@ -273,6 +274,22 @@ namespace BaseUtil.GameUtil.Base
                 z += pos.z;
             }
             return new Vector3(x / count, y / count, z / count);
+        }
+
+        public static Vector3 GetMaxVector3Distance(List<Vector3> positions)
+        {
+            int count = positions.Count;
+            if (count == 0) return Vector3.zero;
+            if (count == 1) return positions[0];
+
+            float minX = positions.Min(it => it.x);
+            float minY = positions.Min(it => it.y);
+            float minZ = positions.Min(it => it.z);
+            float maxX = positions.Max(it => it.x);
+            float maxY = positions.Max(it => it.y);
+            float maxZ = positions.Max(it => it.z);
+
+            return new Vector3((maxX - minX), (maxY - minY), (maxZ - minZ));
         }
 
         /**
