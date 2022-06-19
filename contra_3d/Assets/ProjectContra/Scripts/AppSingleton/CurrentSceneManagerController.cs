@@ -11,7 +11,6 @@ namespace ProjectContra.Scripts.AppSingleton
     {
         private void OnEnable()
         {
-            Debug.Log("CurrentSceneManagerController.OnEnable");
             SceneUtil.InitializeScene();
         }
     }

@@ -23,7 +23,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             bigEnemyDeath,
             bossDeath,
             pause,
-            levelClear;
+            levelClear,
+            floorMove;
 
         private void Awake()
         {
