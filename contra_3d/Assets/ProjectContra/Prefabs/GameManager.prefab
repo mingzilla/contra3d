@@ -102,10 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df3d0f4b8014571a44f399a9d3cda03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicManager: {fileID: 4991480043194436290, guid: e50968b1cf11aa8429fa7f58510ce3d9,
-    type: 3}
-  sfxManager: {fileID: 1203601067047819388, guid: 39edd1c76ffcf634c9ef912565b26e59,
-    type: 3}
+  musicManager: {fileID: 0}
+  sfxManager: {fileID: 0}
   playerPrefab: {fileID: 1704468264798570660, guid: e2d068605590c2443b45c92ecfbd0e45,
     type: 3}
   infoScreenPrefab: {fileID: 8796485591129485539, guid: 036f6ed022b46974c9d9f42136cf1d59,
@@ -162,9 +160,9 @@ MonoBehaviour:
     type: 3}
   sceneInitDataLv1: {fileID: 11400000, guid: 63bcd0e1144e17842b0b8afb77bd37f6, type: 2}
   sceneInitDataLv2: {fileID: 11400000, guid: 571997b9d7dee094a80d44f4d626e34f, type: 2}
-  sceneInitDataLv3: {fileID: 0}
-  sceneInitDataLv4: {fileID: 0}
-  sceneInitDataLv5: {fileID: 0}
+  sceneInitDataLv3: {fileID: 11400000, guid: 0f78d977caf94524fb22347d6bc86e2c, type: 2}
+  sceneInitDataLv4: {fileID: 11400000, guid: 3416828da1905dd43afb8cd3ce9dcd1e, type: 2}
+  sceneInitDataLv5: {fileID: 11400000, guid: e048bdfc1734195429f03942ee56ba0b, type: 2}
   enemyAttributeGroundCannon: {fileID: 11400000, guid: 04ee7bdb7968d88448e01a79e40c37fd,
     type: 2}
   enemyAttributeBossLv1Gun: {fileID: 11400000, guid: 16809b2d775fc3546b3da33851ca21f4,

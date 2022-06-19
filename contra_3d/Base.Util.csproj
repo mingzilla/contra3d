@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\TagUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\EnemyCommonUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\AbstractObserverController.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\CameraDomain\CameraTargetParamX.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameLayer.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\Domain\IntervalState.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitInvincibility.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\CameraUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\MovementUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\SortingLayer.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\CameraDomain\CameraTargetParamXZ.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\UserInput.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\GameLogic.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\BulletCommonUtil2D.cs" />
@@ -77,8 +79,6 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\PlayerInputScheme.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\Fn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\BulletCommonUtil3D.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\CameraDomain\CameraTargetParamXZ.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\CameraDomain\CameraTargetParamX.cs" />
      <None Include="Assets\Scripts\BaseUtil\Base.Util.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

@@ -42,13 +42,13 @@ namespace ProjectContra.Scripts.Player
         void FixedUpdate()
         {
             SceneInitData sceneInitData = AppResource.instance.GetCurrentSceneInitData();
-            bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
+            GameScene gameScene = AppResource.instance.GetCurrentScene();
             GameControlState currentControlState = storeData.controlState;
-            controlObjectData.SetControlObjectActiveState(playerId, currentControlState, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab, sceneInitData);
+            controlObjectData.SetControlObjectActiveState(playerId, currentControlState, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab, gameScene, sceneInitData);
             if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) controlObjectData.inLobbyController.HandleUpdate(playerId, userInput, gameObject);
             if (currentControlState == GameControlState.INFO_SCREEN) controlObjectData.infoScreenCanvasController.HandleUpdate(userInput);
-            if (currentControlState == GameControlState.IN_GAME && !moveXZ) controlObjectData.inGameController.HandleUpdate(userInput);
-            if (currentControlState == GameControlState.IN_GAME && moveXZ) controlObjectData.inXzGameController.HandleUpdate(userInput);
+            if (currentControlState == GameControlState.IN_GAME && !gameScene.moveXZ) controlObjectData.inGameController.HandleUpdate(userInput);
+            if (currentControlState == GameControlState.IN_GAME && gameScene.moveXZ) controlObjectData.inXzGameController.HandleUpdate(userInput);
             UserInput.ResetTriggers(userInput);
         }
 
@@ -94,7 +94,8 @@ namespace ProjectContra.Scripts.Player
                     AppMusic.instance.Pause();
                     storeData.controlState = GameControlState.IN_GAME_PAUSED;
                     SceneInitData sceneInitData = AppResource.instance.GetCurrentSceneInitData();
-                    controlObjectData.SetControlObjectActiveState(playerId, storeData.controlState, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab, sceneInitData);
+                    GameScene gameScene = AppResource.instance.GetCurrentScene();
+                    controlObjectData.SetControlObjectActiveState(playerId, storeData.controlState, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab, gameScene, sceneInitData);
                     UnityFn.Pause();
                 });
             }
