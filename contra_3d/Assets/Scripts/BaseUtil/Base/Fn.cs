@@ -44,9 +44,12 @@ namespace BaseUtil.Base
             return collection.Any(fn);
         }
 
-        public static void Each<T>(Action<T> fn, List<T> collection)
+        public static void EachInArray<T>(Action<T> fn, T[] collection)
         {
-            collection.ForEach(fn);
+            foreach (T item in collection)
+            {
+                fn(item);
+            }
         }
 
         public static Dictionary<TKey, TValue> ModifyDictionary<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TKey key, TValue value)

@@ -15,7 +15,7 @@ namespace ProjectContra.Scripts.Enemy
         private readonly IntervalState shotInterval = IntervalState.Create(2.5f);
         public int fireDelay = 0;
         private EnemyAttribute attribute;
-        public int hp = 10;
+        public int hp = 20;
         public bool isBroken = false;
 
         private GameStoreData storeData;
@@ -48,6 +48,13 @@ namespace ProjectContra.Scripts.Enemy
                 EnemyBasicBulletController.Spawn(position, closestPlayer.position, EnemyBulletType.BASIC);
             });
         }
+
+        public void Explode()
+        {
+            if (isBroken) return; // to avoid using unity functions on a destroyed object
+            TakeDamage(transform.position, hp);
+        }
+
 
         public override void TakeDamage(Vector3 position, int damage)
         {
