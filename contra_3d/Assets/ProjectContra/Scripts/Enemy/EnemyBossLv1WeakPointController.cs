@@ -16,7 +16,6 @@ namespace ProjectContra.Scripts.Enemy
         public bool isBroken = false;
 
         private GameStoreData storeData;
-        private Rigidbody rb;
         private GameObject damageEffect;
         private GameObject destroyEffect;
 
@@ -24,16 +23,10 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            rb = UnityFn.AddRigidbody(gameObject, false, true);
             damageEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             destroyEffect = AppResource.instance.enemyDestroyedBigExplosion;
             attribute = AppResource.instance.enemyAttributeBossLv1WeakPoint;
             hp = attribute.hp;
-        }
-
-        void Update()
-        {
-            // blink the weakpoint
         }
 
         public override void TakeDamage(Vector3 position, int damage)

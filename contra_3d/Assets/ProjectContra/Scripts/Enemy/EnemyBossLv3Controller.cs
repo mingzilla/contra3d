@@ -35,8 +35,6 @@ namespace ProjectContra.Scripts.Enemy
             guns = gameObject.GetComponentsInChildren<EnemyBossLv3GunController>();
             weakPointCtrl = gameObject.GetComponentInChildren<EnemyBossLv3WeakPointController>();
             animatorCtrl = gameObject.GetComponent<Animator>();
-            SetGunsActive(false);
-            weakPointCtrl.gameObject.SetActive(false);
         }
 
         void Update()
@@ -56,8 +54,7 @@ namespace ProjectContra.Scripts.Enemy
             gameCamera.SetActive(false);
             UnityFn.SetTimeout(AppResource.instance, 2, () =>
             {
-                SetGunsActive(true);
-                weakPointCtrl.gameObject.SetActive(true);
+                Fn.EachInArray(x => x.canShoot = true, guns);
             });
             phase = 1;
         }
@@ -78,11 +75,6 @@ namespace ProjectContra.Scripts.Enemy
                     Destroy(gameObject);
                 });
             }
-        }
-
-        private void SetGunsActive(bool isActive)
-        {
-            Fn.EachInArray(x => x.gameObject.SetActive(isActive), guns);
         }
 
         public override float GetDetectionRange()

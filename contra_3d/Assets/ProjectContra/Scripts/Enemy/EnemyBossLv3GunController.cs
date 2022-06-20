@@ -16,17 +16,16 @@ namespace ProjectContra.Scripts.Enemy
         public int fireDelay = 0;
         private EnemyAttribute attribute;
         public int hp = 20;
+        public bool canShoot = false;
         public bool isBroken = false;
 
         private GameStoreData storeData;
-        private Rigidbody rb;
         private GameObject destroyEffect;
 
         void Start()
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            rb = UnityFn.AddRigidbody(gameObject, false, true);
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             attribute = AppResource.instance.enemyAttributeBossLv1Gun;
             hp = attribute.hp;
@@ -34,6 +33,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void Update()
         {
+            if (!canShoot) return;
             RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
                 transform.LookAt(closestPlayer);
