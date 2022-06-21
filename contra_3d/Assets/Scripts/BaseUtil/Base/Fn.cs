@@ -124,5 +124,13 @@ namespace BaseUtil.Base
                 fn();
             }
         }
+
+        /// <summary>
+        /// Runs e.g. 3 times
+        /// </summary>
+        public static void Times(int times, Action fn)
+        {
+            for (int i = 0; i < times; i++) fn();
+        }
     }
 }

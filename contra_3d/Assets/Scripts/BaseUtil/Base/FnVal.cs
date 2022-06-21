@@ -65,6 +65,21 @@ namespace BaseUtil.Base
             return newRandom.NextDouble() >= 0.5;
         }
 
+        public static int RandomIntBetween(Random newRandom, int low, int high)
+        {
+            return newRandom.Next(low, high);
+        }
+
+        public static float RandomFloatBetween(Random newRandom, int low, int high)
+        {
+            return (float) RandomDoubleBetween(newRandom, low, high);
+        }
+
+        public static double RandomDoubleBetween(Random newRandom, int low, int high)
+        {
+            return newRandom.NextDouble() * (high - low) + low;
+        }
+
         public static int GetNextIndex(int currentIndex, int size)
         {
             return (currentIndex + 1) % size;

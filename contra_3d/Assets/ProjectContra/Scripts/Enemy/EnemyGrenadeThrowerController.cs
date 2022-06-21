@@ -1,6 +1,5 @@
 ﻿using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
-using BaseUtil.GameUtil.Util3D;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
@@ -16,6 +15,7 @@ namespace ProjectContra.Scripts.Enemy
         public float xForce = -7f;
         public float yForce = 8f;
         public float zForce = 0f;
+        [SerializeField] private float detectionRange = 50f;
 
         private GameStoreData storeData;
         private Rigidbody rb;
@@ -70,7 +70,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override float GetDetectionRange()
         {
-            return 50f;
+            return detectionRange;
         }
     }
 }
