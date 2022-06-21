@@ -69,7 +69,7 @@ namespace ProjectContra.Scripts.Enemy
                     if (animatorCtrl) animatorCtrl.SetBool(isShootingKey, false);
                     pauseMovement = false;
                 });
-                EnemyBasicBulletController.Spawn(position + shootPositionDelta, closestPlayer.position + targetPositionDelta, EnemyBulletType.BASIC);
+                EnemyBasicBulletController.Spawn(position + shootPositionDelta, closestPlayer.position + targetPositionDelta, EnemyBulletType.BASIC, false);
             });
         }
 

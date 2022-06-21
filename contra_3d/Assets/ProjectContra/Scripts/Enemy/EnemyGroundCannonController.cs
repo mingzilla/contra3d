@@ -15,11 +15,13 @@ namespace ProjectContra.Scripts.Enemy
         private readonly IntervalState shotInterval = IntervalState.Create(3f);
         private EnemyAttribute attribute;
         public int hp = 10;
+        [SerializeField] private float detectionRange = 40f;
+        [SerializeField] private string bulletName = EnemyBulletType.PIERCE.name;
 
         private GameStoreData storeData;
-        private Rigidbody rb;
         private GameObject destroyEffect;
         private Animator animatorCtrl;
+        private EnemyBulletType bulletType;
 
         private static readonly int isActive = Animator.StringToHash("isActive");
 
@@ -29,9 +31,9 @@ namespace ProjectContra.Scripts.Enemy
             attribute = AppResource.instance.enemyAttributeGroundCannon;
             hp = attribute.hp;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            rb = UnityFn.AddRigidbody(gameObject, true, true);
             animatorCtrl = gameObject.GetComponent<Animator>();
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
+            bulletType = EnemyBulletType.GetByNameWithDefault(bulletName);
         }
 
         void Update()
@@ -47,7 +49,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
             {
-                EnemyPierceBulletController.Spawn(position, closestPlayer.position, EnemyBulletType.PIERCE);
+                EnemyBasicBulletController.Spawn(position, closestPlayer.position, bulletType, true);
             });
         }
 
@@ -65,7 +67,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override float GetDetectionRange()
         {
-            return 40f;
+            return detectionRange;
         }
     }
 }

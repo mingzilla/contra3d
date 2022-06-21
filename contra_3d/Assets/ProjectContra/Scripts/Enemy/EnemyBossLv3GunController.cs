@@ -45,7 +45,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
             {
-                EnemyBasicBulletController.Spawn(position, closestPlayer.position, EnemyBulletType.BASIC);
+                EnemyBasicBulletController.Spawn(position, closestPlayer.position, EnemyBulletType.BASIC, false);
             });
         }
 

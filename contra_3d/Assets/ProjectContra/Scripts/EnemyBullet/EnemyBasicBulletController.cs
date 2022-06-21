@@ -9,21 +9,23 @@ namespace ProjectContra.Scripts.EnemyBullet
 {
     public class EnemyBasicBulletController : EnemyBulletController
     {
+        private bool moveLeftOnly = false;
         private Rigidbody rb;
         private GameObject impactEffect;
         private EnemyBulletType enemyBulletType;
         private GameObject shotDestination;
         private Vector3 targetPosition;
 
-        public static EnemyBasicBulletController Spawn(Vector3 shotPosition, Vector3 closestPlayerPosition, EnemyBulletType enemyBulletType)
+        public static EnemyBasicBulletController Spawn(Vector3 shotPosition, Vector3 closestPlayerPosition, EnemyBulletType enemyBulletType, bool moveLeftOnly)
         {
-            GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(EnemyBulletType.BASIC); // use BASIC prefab, which attaches this controller
+            GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyBasicBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyBasicBulletController>();
             copy.gameObject.layer = GameLayer.ENEMY_SHOT.GetLayer();
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
             copy.impactEffect = AppResource.instance.enemyBulletHitEffect;
             copy.enemyBulletType = enemyBulletType;
             copy.targetPosition = closestPlayerPosition;
+            copy.moveLeftOnly = moveLeftOnly;
             copy.transform.rotation = UnityFn.GetImmediateRotation3D(shotPosition, copy.targetPosition); // set rotation once since bullet goes one direction
             return copy;
         }
@@ -35,7 +37,14 @@ namespace ProjectContra.Scripts.EnemyBullet
 
         void Update()
         {
-            MovementUtil.MoveTowardsPosition3D(transform, targetPosition, enemyBulletType.bulletSpeed, delta => targetPosition += delta);
+            if (moveLeftOnly)
+            {
+                MovementUtil.MoveX(transform, -1, enemyBulletType.bulletSpeed);
+            }
+            else
+            {
+                MovementUtil.MoveTowardsPosition3D(transform, targetPosition, enemyBulletType.bulletSpeed, delta => targetPosition += delta);
+            }
         }
 
         private void OnTriggerEnter(Collider other)

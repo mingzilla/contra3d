@@ -70,7 +70,7 @@ namespace ProjectContra.Scripts.Enemy
 
         private void SpawnBullet(Vector3 position, Vector3 closestPlayerPosition)
         {
-            EnemyBasicBulletController.Spawn(position + shootPositionDelta, closestPlayerPosition + targetPositionDelta, bulletType);
+            EnemyBasicBulletController.Spawn(position + shootPositionDelta, closestPlayerPosition + targetPositionDelta, bulletType, false);
         }
 
         public override void TakeDamage(Vector3 position, int damage)

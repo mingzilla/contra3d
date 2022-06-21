@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4362966052311366036}
   - component: {fileID: 4362966052311366043}
   - component: {fileID: 4362966052311366042}
-  - component: {fileID: -2953449798483786057}
+  - component: {fileID: 3523199365109880897}
   m_Layer: 12
   m_Name: EnemyBulletPierce
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-2953449798483786057
+--- !u!114 &3523199365109880897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4362966052311366046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7839e0d4eb2f4d489b328b6146c6d5b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8437dd2935564112a3bda51e8af9bd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveLeftOnly: 1
