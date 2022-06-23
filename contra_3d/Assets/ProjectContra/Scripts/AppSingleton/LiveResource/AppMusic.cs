@@ -13,7 +13,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             lv1BossMusic,
             lv2Music,
             lv2BossMusic,
-            lv3Music;
+            lv3Music,
+            lv3MidLevelMusic;
 
         private AudioSource currentMusic;
 
@@ -26,6 +27,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
                 lv2Music,
                 lv2BossMusic,
                 lv3Music,
+                lv3MidLevelMusic,
             };
         }
 
@@ -49,6 +51,11 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public void PlayLv2BossMusic()
         {
             Play(lv2BossMusic);
+        }
+
+        public void PlayLv3MidLevelMusic()
+        {
+            Play(lv3MidLevelMusic);
         }
 
         public void PlayLv3BossMusic()

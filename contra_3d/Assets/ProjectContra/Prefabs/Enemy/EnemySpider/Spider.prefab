@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 2442559413093787626}
   - component: {fileID: 2769449497980338207}
   - component: {fileID: 2769449497980338205}
+  - component: {fileID: 919132148896767616}
   m_Layer: 20
   m_Name: Spider
   m_TagString: Untagged
@@ -361,6 +362,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &919132148896767616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075508247341153616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c034540af5e844cd81aebbb0ca606eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTriggered: 0
+  damage: 1
+  moveSpeed: 4
+  detectionRange: 40
+  directionChangeTime: 10
+  invisibleWall: {fileID: 0}
+  gameCamera: {fileID: 0}
+  afterwardsCamera: {fileID: 0}
 --- !u!1 &4058298773858440818
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +488,7 @@ GameObject:
   - component: {fileID: 3291337437504903181}
   - component: {fileID: 3079929887567930877}
   - component: {fileID: 7286330125788409595}
+  - component: {fileID: 559780637}
   m_Layer: 11
   m_Name: SpiderWeakPoint
   m_TagString: Untagged
@@ -552,6 +574,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &559780637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4533689952263909916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f3afec5d5f4ff08ab7139c5e711d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTriggered: 0
+  hp: 100
+  isBroken: 0
 --- !u!1 &4680329003304432882
 GameObject:
   m_ObjectHideFlags: 0

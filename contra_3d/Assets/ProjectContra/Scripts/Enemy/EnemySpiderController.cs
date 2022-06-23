@@ -17,6 +17,9 @@ namespace ProjectContra.Scripts.Enemy
         public int moveSpeed = 4;
         public float detectionRange = 40f;
         public int directionChangeTime = 5;
+        [SerializeField] private GameObject invisibleWall;
+        [SerializeField] private GameObject gameCamera;
+        [SerializeField] private GameObject afterwardsCamera;
 
         private bool isActive = false;
         private EnemySpiderWeakPointController weakPointCtrl;
@@ -43,6 +46,7 @@ namespace ProjectContra.Scripts.Enemy
             {
                 isActive = true;
                 animatorCtrl.enabled = true;
+                AppMusic.instance.PlayLv3MidLevelMusic();
             }
             if (isActive) UnityFn.RunWithInterval(AppResource.instance, intervalState, () => moveXLeft = !moveXLeft);
             if (isActive) MovementUtil.MoveX(transform, (moveXLeft ? -1 : 1), moveSpeed);
@@ -53,6 +57,9 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 3f);
             AppSfx.PlayRepeatedly(AppSfx.instance.bigEnemyDeath, 3);
+            gameCamera.SetActive(false);
+            afterwardsCamera.SetActive(true);
+            Destroy(invisibleWall);
             Destroy(gameObject);
         }
 
