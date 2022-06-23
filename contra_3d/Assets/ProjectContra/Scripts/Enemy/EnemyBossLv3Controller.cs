@@ -68,6 +68,7 @@ namespace ProjectContra.Scripts.Enemy
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
                 AppMusic.instance.Stop();
+                UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
                 UnityFn.SetTimeout(AppResource.instance, 5, () =>
                 {
                     AppSfx.instance.levelClear.Play();

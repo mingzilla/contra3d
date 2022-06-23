@@ -21,7 +21,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameLayer POWER_UP_CONTAINER = Create("POWER_UP_CONTAINER");
         public static readonly GameLayer NO_COLLISION = Create("NO_COLLISION");
         public static readonly GameLayer GROUND_COLLIDER = Create("GROUND_COLLIDER"); // Used e.g. as child object to collide with ground, so that parent can be a trigger to player 
-        public static readonly GameLayer INVISIBLE_WALL_TO_PLAYER = Create("INVISIBLE_WALL_TO_PLAYER");
+        public static readonly GameLayer INVISIBLE_WALL_TO_PLAYER = Create("INVISIBLE_WALL_TO_PLAYER"); // player is blocked, but bullet can pass through
         public static readonly GameLayer WALL = Create("WALL");
 
         public string name;
@@ -91,6 +91,7 @@ namespace ProjectContra.Scripts.Types
             {
                 GROUND,
                 DESTRUCTIBLE,
+                INVISIBLE_WALL_TO_PLAYER,
             });
         }
     }
