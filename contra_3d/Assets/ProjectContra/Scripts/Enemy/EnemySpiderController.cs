@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.Enemy.Util;
+using ProjectContra.Scripts.EnemyBullet;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
@@ -26,7 +28,8 @@ namespace ProjectContra.Scripts.Enemy
         private GameStoreData storeData;
         private bool moveXLeft = false; // this 3D model is not 180 rotated, so it runs oppositely
         private Animator animatorCtrl;
-        private IntervalState intervalState;
+        private IntervalState changeDirectionInterval;
+        private IntervalState shotIntervalState = IntervalState.Create(2f);
 
         void Start()
         {
@@ -35,7 +38,7 @@ namespace ProjectContra.Scripts.Enemy
             weakPointCtrl = gameObject.GetComponentInChildren<EnemySpiderWeakPointController>();
             animatorCtrl = gameObject.GetComponent<Animator>();
             animatorCtrl.enabled = false;
-            intervalState = IntervalState.Create(directionChangeTime);
+            changeDirectionInterval = IntervalState.Create(directionChangeTime);
         }
 
         void Update()
@@ -48,9 +51,27 @@ namespace ProjectContra.Scripts.Enemy
                 animatorCtrl.enabled = true;
                 AppMusic.instance.PlayLv3MidLevelMusic();
             }
-            if (isActive) UnityFn.RunWithInterval(AppResource.instance, intervalState, () => moveXLeft = !moveXLeft);
-            if (isActive) MovementUtil.MoveX(transform, (moveXLeft ? -1 : 1), moveSpeed);
+            if (isActive)
+            {
+                UnityFn.RunWithInterval(AppResource.instance, changeDirectionInterval, () => moveXLeft = !moveXLeft);
+                MovementUtil.MoveX(transform, (moveXLeft ? -1 : 1), moveSpeed);
+                FireShots(transform.position);
+
+            }
             if (weakPointCtrl.isBroken) Explode();
+        }
+
+        void FireShots(Vector3 position)
+        {
+            UnityFn.RunWithInterval(AppResource.instance, shotIntervalState, () =>
+            {
+                EnemyBasicBulletController.Spawn(position + new Vector3(-2f, 0.5f, 0f), position + new Vector3(-3f, 0.8f, 0f), EnemyBulletType.BASIC, false);
+                EnemyBasicBulletController.Spawn(position + new Vector3(-2f, -0.5f, 0f), position + new Vector3(-3f, -0.8f, 0f), EnemyBulletType.BASIC, false);
+                EnemyBasicBulletController.Spawn(position + new Vector3(2f, 0.5f, 0f), position + new Vector3(3f, 0.8f, 0f), EnemyBulletType.BASIC, false);
+                EnemyBasicBulletController.Spawn(position + new Vector3(2f, -0.5f, 0f), position + new Vector3(3f, -0.8f, 0f), EnemyBulletType.BASIC, false);
+                EnemyCurvedBulletController.Spawn(position + new Vector3(-2f, 0f, 0f), EnemyBulletType.CURVED, true);
+                EnemyCurvedBulletController.Spawn(position + new Vector3(2f, 0f, 0f), EnemyBulletType.CURVED, false);
+            });
         }
 
         private void Explode()

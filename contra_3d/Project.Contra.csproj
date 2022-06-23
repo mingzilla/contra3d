@@ -103,6 +103,7 @@
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyGrenadeController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemySpiderController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemySpiderWeakPointController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyCurvedBulletController.cs" />
      <None Include="Assets\ProjectContra\Project.Contra.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

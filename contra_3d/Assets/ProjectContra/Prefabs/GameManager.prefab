@@ -137,6 +137,8 @@ MonoBehaviour:
   enemyPierceBulletPrefab: {fileID: 4362966052311366046, guid: faccbf9aaa2c5244995524e1c6943bc1,
     type: 3}
   enemyBlastBulletPrefab: {fileID: 0}
+  enemyCurvedBulletPrefab: {fileID: 4362966052311366046, guid: 1acfd826845b2844eb3050f00ed64a79,
+    type: 3}
   skins:
   - {fileID: 2100000, guid: 4cfc59d5b1caece4aa3ef0bfb7a34e02, type: 2}
   - {fileID: 2100000, guid: b1bb0ee286641f04a957fab5967d9ffa, type: 2}
