@@ -303,7 +303,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTriggered: 0
   fireDelay: 0
-  hp: 10
+  hp: 30
+  canShoot: 0
   isBroken: 0
 --- !u!4 &6883386208322657290 stripped
 Transform:
@@ -453,7 +454,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTriggered: 0
   fireDelay: 0
-  hp: 10
+  hp: 30
+  canShoot: 0
   isBroken: 0
 --- !u!4 &6883386207418539922 stripped
 Transform:
@@ -603,7 +605,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTriggered: 0
   fireDelay: 0
-  hp: 10
+  hp: 30
+  canShoot: 0
   isBroken: 0
 --- !u!4 &6883386207164589880 stripped
 Transform:
@@ -843,7 +846,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTriggered: 0
   fireDelay: 0
-  hp: 10
+  hp: 30
+  canShoot: 0
   isBroken: 0
 --- !u!4 &6883386206826419513 stripped
 Transform:
@@ -967,7 +971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
-  hp: 50
+  hp: 100
   isBroken: 0
 --- !u!4 &6883386206773285287 stripped
 Transform:

@@ -15760,16 +15760,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 585495315}
     m_Modifications:
-    - target: {fileID: 6344457193807127461, guid: 286a5edbdbfcb3f478f594bc17187773,
-        type: 3}
-      propertyPath: hp
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6344457193817850968, guid: 286a5edbdbfcb3f478f594bc17187773,
-        type: 3}
-      propertyPath: hp
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 6344457193967675375, guid: 286a5edbdbfcb3f478f594bc17187773,
         type: 3}
       propertyPath: bossCamera
@@ -15839,21 +15829,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossPositioner
-      objectReference: {fileID: 0}
-    - target: {fileID: 6344457194699008973, guid: 286a5edbdbfcb3f478f594bc17187773,
-        type: 3}
-      propertyPath: hp
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6344457194999043954, guid: 286a5edbdbfcb3f478f594bc17187773,
-        type: 3}
-      propertyPath: hp
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6344457195534011137, guid: 286a5edbdbfcb3f478f594bc17187773,
-        type: 3}
-      propertyPath: hp
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286a5edbdbfcb3f478f594bc17187773, type: 3}
