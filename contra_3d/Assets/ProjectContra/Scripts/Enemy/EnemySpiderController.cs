@@ -50,6 +50,8 @@ namespace ProjectContra.Scripts.Enemy
                 isActive = true;
                 animatorCtrl.enabled = true;
                 AppMusic.instance.PlayLv3MidLevelMusic();
+                gameCamera.SetActive(false);
+                afterwardsCamera.SetActive(true);
             }
             if (isActive)
             {
@@ -78,8 +80,6 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 3f);
             AppSfx.PlayRepeatedly(AppSfx.instance.bigEnemyDeath, 3);
-            gameCamera.SetActive(false);
-            afterwardsCamera.SetActive(true);
             Destroy(invisibleWall);
             Destroy(gameObject);
         }
