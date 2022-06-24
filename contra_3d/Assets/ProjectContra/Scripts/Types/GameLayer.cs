@@ -12,7 +12,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameLayer PLAYER_SHOT = Create("PLAYER_SHOT");
         public static readonly GameLayer GROUND = Create("GROUND");
         public static readonly GameLayer DESTRUCTIBLE = Create("DESTRUCTIBLE");
-        public static readonly GameLayer ENEMY = Create("ENEMY"); // normal bullet can't shoot through
+        public static readonly GameLayer ENEMY = Create("ENEMY");
         public static readonly GameLayer ENEMY_SHOT = Create("ENEMY_SHOT");
         public static readonly GameLayer ENEMY_GRENADE = Create("ENEMY_GRENADE");
         public static readonly GameLayer ENEMY_DESTROYABLE_SHOT = Create("ENEMY_DESTROYABLE_SHOT");
@@ -22,7 +22,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameLayer NO_COLLISION = Create("NO_COLLISION");
         public static readonly GameLayer GROUND_COLLIDER = Create("GROUND_COLLIDER"); // Used e.g. as child object to collide with ground, so that parent can be a trigger to player 
         public static readonly GameLayer INVISIBLE_WALL_TO_PLAYER = Create("INVISIBLE_WALL_TO_PLAYER"); // player is blocked, but bullet can pass through
-        public static readonly GameLayer WALL = Create("WALL");
+        public static readonly GameLayer WALL = Create("WALL"); // Not allow mods or bullets to go through
 
         public string name;
 
