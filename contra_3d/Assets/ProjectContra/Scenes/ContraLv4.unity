@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 306456969}
   - component: {fileID: 306456971}
   - component: {fileID: 306456970}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: BuildingSideWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1590,8 +1590,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1147291647}
-  m_RootOrder: 3
+  m_Father: {fileID: 468769259}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &306456970
 BoxCollider:
@@ -2188,6 +2188,8 @@ Transform:
   - {fileID: 1969042314}
   - {fileID: 1426672053}
   - {fileID: 1051354480}
+  - {fileID: 543491710}
+  - {fileID: 306456969}
   m_Father: {fileID: 2122246667}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2660,7 +2662,7 @@ GameObject:
   - component: {fileID: 543491710}
   - component: {fileID: 543491712}
   - component: {fileID: 543491711}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: BuildingSideWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2679,8 +2681,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1147291647}
-  m_RootOrder: 2
+  m_Father: {fileID: 468769259}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &543491711
 BoxCollider:
@@ -4955,8 +4957,6 @@ Transform:
   m_Children:
   - {fileID: 1842420253}
   - {fileID: 2070201941}
-  - {fileID: 543491710}
-  - {fileID: 306456969}
   m_Father: {fileID: 2122246667}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
