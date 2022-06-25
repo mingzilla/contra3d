@@ -72,6 +72,16 @@ namespace ProjectContra.Scripts.Enemy
         private void OnTriggerEnter(Collider other)
         {
             JumpAtTriggerPoint(other);
+            ChangeDirectionIfNeeded(other);
+        }
+
+        void ChangeDirectionIfNeeded(Collider other)
+        {
+            bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
+            if (moveXZ) return;
+            if (!GameLayer.Matches(other.gameObject.layer, GameLayer.REDIRECTION_WALL)) return;
+            moveXLeft = !moveXLeft;
+            transform.rotation = UnityFn.LookX(transform, !moveXLeft);
         }
 
         void DealDamage(Collision other)

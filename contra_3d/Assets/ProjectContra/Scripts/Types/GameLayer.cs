@@ -24,6 +24,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameLayer INVISIBLE_WALL_TO_PLAYER = Create("INVISIBLE_WALL_TO_PLAYER"); // player is blocked, but bullet can pass through
         public static readonly GameLayer WALL = Create("WALL"); // Not allow mods or bullets to go through
         public static readonly GameLayer THIN_GROUND = Create("THIN_GROUND"); // Not allow mods, but bullets can go through
+        public static readonly GameLayer REDIRECTION_WALL = Create("REDIRECTION_WALL"); // trigger for enemies to change direction
 
         public string name;
 
@@ -49,6 +50,7 @@ namespace ProjectContra.Scripts.Types
                 INVISIBLE_WALL_TO_PLAYER,
                 WALL,
                 THIN_GROUND,
+                REDIRECTION_WALL,
             };
         }
 

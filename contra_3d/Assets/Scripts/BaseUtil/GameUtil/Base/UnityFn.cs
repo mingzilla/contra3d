@@ -120,6 +120,14 @@ namespace BaseUtil.GameUtil.Base
             return unit.rotation;
         }
 
+        public static Quaternion LookX(Transform unit, bool toRightSide)
+        {
+            Vector3 targetPosition = toRightSide ? new Vector3(1f, 0f, 0f) : new Vector3(-1f, 0f, 0f);
+            Quaternion rotation = Quaternion.LookRotation(targetPosition);
+            unit.rotation = Quaternion.Euler(0f, rotation.eulerAngles.y, 0f);
+            return unit.rotation;
+        }
+
         /**
          * Used for e.g. health bar in 3D inside LateUpdate() loop, so that it always faces the player.
          */
@@ -207,6 +215,7 @@ namespace BaseUtil.GameUtil.Base
         }
 
         /// <summary>
+        /// IMPORTANT: Use "this" if each object needs to have it's won interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
         /// 1) Used inside Update loop. If interval is 3, fn runs every 3 seconds. 
         /// 2) Used in events, to allow executing fn only once only within an interval. 
         /// </summary>
