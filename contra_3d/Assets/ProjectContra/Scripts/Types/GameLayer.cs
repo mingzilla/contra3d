@@ -23,6 +23,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameLayer GROUND_COLLIDER = Create("GROUND_COLLIDER"); // Used e.g. as child object to collide with ground, so that parent can be a trigger to player 
         public static readonly GameLayer INVISIBLE_WALL_TO_PLAYER = Create("INVISIBLE_WALL_TO_PLAYER"); // player is blocked, but bullet can pass through
         public static readonly GameLayer WALL = Create("WALL"); // Not allow mods or bullets to go through
+        public static readonly GameLayer THIN_GROUND = Create("THIN_GROUND"); // Not allow mods, but bullets can go through
 
         public string name;
 
@@ -47,6 +48,7 @@ namespace ProjectContra.Scripts.Types
                 GROUND_COLLIDER,
                 INVISIBLE_WALL_TO_PLAYER,
                 WALL,
+                THIN_GROUND,
             };
         }
 
@@ -92,6 +94,7 @@ namespace ProjectContra.Scripts.Types
                 GROUND,
                 DESTRUCTIBLE,
                 INVISIBLE_WALL_TO_PLAYER,
+                THIN_GROUND,
             });
         }
     }

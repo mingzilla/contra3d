@@ -15,6 +15,9 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameScene LEVEL_3 = Create("ContraLv3", true, GameControlState.INFO_SCREEN, false, "Area 3");
         public static readonly GameScene LEVEL_4 = Create("ContraLv4", true, GameControlState.INFO_SCREEN, false, "Area 4");
         public static readonly GameScene LEVEL_5 = Create("ContraLv5", true, GameControlState.INFO_SCREEN, false, "Area 5");
+        public static readonly GameScene LEVEL_6 = Create("ContraLv6", true, GameControlState.INFO_SCREEN, false, "Area 6");
+        public static readonly GameScene LEVEL_7 = Create("ContraLv7", true, GameControlState.INFO_SCREEN, false, "Area 7");
+        public static readonly GameScene LEVEL_8 = Create("ContraLv8", true, GameControlState.INFO_SCREEN, false, "Area 8");
 
         public string name;
         public int index;
@@ -35,6 +38,9 @@ namespace ProjectContra.Scripts.Types
                 LEVEL_3,
                 LEVEL_4,
                 LEVEL_5,
+                LEVEL_6,
+                LEVEL_7,
+                LEVEL_8,
             };
         }
 

@@ -14,7 +14,12 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             lv2Music,
             lv2BossMusic,
             lv3Music,
-            lv3MidLevelMusic;
+            lv3MidLevelMusic,
+            lv4Music,
+            lv5Music,
+            lv6Music,
+            lv7Music,
+            lv8Music;
 
         private AudioSource currentMusic;
 
@@ -41,6 +46,11 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             if (scene == GameScene.LEVEL_1) Play(lv1Music);
             if (scene == GameScene.LEVEL_2) Play(lv2Music);
             if (scene == GameScene.LEVEL_3) Play(lv3Music);
+            if (scene == GameScene.LEVEL_4) Play(lv4Music);
+            if (scene == GameScene.LEVEL_5) Play(lv5Music);
+            if (scene == GameScene.LEVEL_6) Play(lv6Music);
+            if (scene == GameScene.LEVEL_7) Play(lv7Music);
+            if (scene == GameScene.LEVEL_8) Play(lv8Music);
         }
 
         public void PlayLv1BossMusic()

@@ -836,6 +836,11 @@ MonoBehaviour:
   lv2BossMusic: {fileID: 4991480044188091115}
   lv3Music: {fileID: 4991480043309401701}
   lv3MidLevelMusic: {fileID: 4991480043769230359}
+  lv4Music: {fileID: 4991480042618985851}
+  lv5Music: {fileID: 4991480043003157002}
+  lv6Music: {fileID: 4991480044111817042}
+  lv7Music: {fileID: 4991480042618985851}
+  lv8Music: {fileID: 4991480042595441500}
 --- !u!1 &4991480043309401699
 GameObject:
   m_ObjectHideFlags: 0
