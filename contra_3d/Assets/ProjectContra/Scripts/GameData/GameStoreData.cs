@@ -89,9 +89,9 @@ namespace ProjectContra.Scripts.GameData
             return UnityFn.GetClosestTarget(position, GetVisiblePlayers(), p => p.inGameTransform.position);
         }
 
-        private List<PlayerAttribute> GetVisiblePlayers()
+        public List<PlayerAttribute> GetVisiblePlayers()
         {
-            // a player may not have a position, especially when they disappear
+            // a player may not have a position, especially when they disappear or die
             return Fn.Filter(x => x.inGameTransform != null && x.isAlive, idAndPlayerState.Values.ToList());
         }
 

@@ -86,7 +86,7 @@ namespace BaseUtil.GameUtil
         }
 
         public static bool FollowXZTowardsPosition3D(Transform unitTransform, Transform targetTransform,
-                                                   float overlapRange, float moveSpeed, float deltaTime)
+                                                     float overlapRange, float moveSpeed, float deltaTime)
         {
             bool isOverlapping = UnityFn.IsInRange(unitTransform, targetTransform, overlapRange);
             if (isOverlapping) return true;
@@ -109,6 +109,13 @@ namespace BaseUtil.GameUtil
         {
             float x = (moveSpeed * Time.deltaTime) * ((xValue > 0) ? 1 : -1);
             transform.position += new Vector3(x, 0f, 0f);
+        }
+
+        /// <param name="yValue">-1 goes down, 1 goes up</param>
+        public static void MoveY(Transform transform, int yValue, float moveSpeed)
+        {
+            float y = (moveSpeed * Time.deltaTime) * ((yValue > 0) ? 1 : -1);
+            transform.position += new Vector3(0f, y, 0f);
         }
 
         public static bool JumpWhenOverlapsWithPositions(Rigidbody2D unitRB, Transform unitTransform, List<Transform> jumpPoints,
