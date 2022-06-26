@@ -17,9 +17,7 @@ namespace BaseUtil.GameUtil.Util3D
             theRB.velocity = moveDirection * bulletSpeed;
         }
 
-        /// <param name="envDeltaV">Vertical delta caused by environment movement, e.g. when lift goes up, bullet moves down, so delta is needed to maintain horizontal movement</param>
-        /// <returns></returns>
-        public static Vector3 CreateBulletDirection(bool isFacingForward, UserInput userInput, bool isOnGround, float envDeltaV)
+        public static Vector3 CreateBulletDirection(bool isFacingForward, UserInput userInput, bool isOnGround)
         {
             float x = isFacingForward ? 1f : -1f;
             float nonStraightY = 0.8f;
@@ -29,8 +27,8 @@ namespace BaseUtil.GameUtil.Util3D
 
             if (userInput.IsStraightUp()) direction = new Vector3(0, 1f, 0f);
             if (userInput.IsStraightDown() && !isOnGround) direction = new Vector3(0, -1f, 0f); // if not jumping, the shooting direction won't change
-            if (userInput.IsStraightLeft()) direction = new Vector3(x, 0f + envDeltaV, 0f);
-            if (userInput.IsStraightRight()) direction = new Vector3(x, 0f + envDeltaV, 0f);
+            if (userInput.IsStraightLeft()) direction = new Vector3(x, 0f, 0f);
+            if (userInput.IsStraightRight()) direction = new Vector3(x, 0f, 0f);
 
             if (userInput.IsUpLeft()) direction = new Vector3(x, nonStraightY, 0f);
             if (userInput.IsUpRight()) direction = new Vector3(x, nonStraightY, 0f);

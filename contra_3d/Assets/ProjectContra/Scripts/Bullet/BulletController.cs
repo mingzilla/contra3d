@@ -15,9 +15,9 @@ namespace ProjectContra.Scripts.Bullet
         private Vector3 moveDirection;
         private WeaponType weaponType;
 
-        public static BulletController Spawn(Transform shotPoint, Vector3 positionDelta, bool isFacingForward, UserInput userInput, WeaponType weaponType, bool isOnGround, float envDeltaV)
+        public static BulletController Spawn(Transform shotPoint, Vector3 positionDelta, bool isFacingForward, UserInput userInput, WeaponType weaponType, bool isOnGround)
         {
-            Vector3 direction = BulletCommonUtil3D.CreateBulletDirection(isFacingForward, userInput, isOnGround, envDeltaV);
+            Vector3 direction = BulletCommonUtil3D.CreateBulletDirection(isFacingForward, userInput, isOnGround);
             return SpawnInDirection(shotPoint, positionDelta, weaponType, direction);
         }
 
