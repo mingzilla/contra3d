@@ -9,7 +9,7 @@ namespace ProjectContra.Scripts.Map
     public class TriggerByAllPlayersEnterController : MonoBehaviour
     {
         private GameStoreData storeData;
-        public bool isActived = false; // used to be checked to trigger action
+        public bool isActivated = false; // used to be checked to trigger action
 
         void Start()
         {
@@ -19,14 +19,14 @@ namespace ProjectContra.Scripts.Map
 
         private void OnTriggerEnter(Collider other)
         {
-            if (isActived) return;
+            if (isActivated) return;
             if (GameLayer.Matches(other.gameObject.layer, GameLayer.PLAYER))
             {
                 Transform t = transform;
                 LayerMask layer = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
                 Collider[] results = new Collider[storeData.AllPlayerIds().Count];
                 int size = Physics.OverlapBoxNonAlloc(t.position, t.localScale / 2, results, Quaternion.identity, layer);
-                if (size == storeData.GetVisiblePlayers().Count) isActived = true;
+                if (size == storeData.GetVisiblePlayers().Count) isActivated = true;
             }
         }
     }

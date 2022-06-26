@@ -24,7 +24,7 @@ namespace ProjectContra.Scripts.Map
 
         private void Update()
         {
-            if (!liftTriggerCtrl.isActived) return;
+            if (!liftTriggerCtrl.isActivated) return;
             if (!isDoorClosed)
             {
                 liftDoor.transform.position += new Vector3(liftDoorMoveAmount, 0f, 0f);
@@ -33,7 +33,6 @@ namespace ProjectContra.Scripts.Map
             if (!isArrived)
             {
                 float vDistance = Mathf.Abs(transform.position.y - liftDestination.y);
-                Debug.Log(vDistance);
                 isArrived = vDistance < 1;
             }
             if (isArrived) return;
