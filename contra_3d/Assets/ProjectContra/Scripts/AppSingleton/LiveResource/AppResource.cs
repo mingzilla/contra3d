@@ -41,7 +41,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             enemyGrenadePrefab,
             enemyPierceBulletPrefab,
             enemyBlastBulletPrefab,
-            enemyCurvedBulletPrefab;
+            enemyCurvedBulletPrefab,
+            enemyLaserBulletPrefab;
 
         // Skin material
         [SerializeField] private Material[] skins;
@@ -102,6 +103,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             if (enemyBulletType == EnemyBulletType.PIERCE) return enemyPierceBulletPrefab;
             if (enemyBulletType == EnemyBulletType.BLAST) return enemyBlastBulletPrefab;
             if (enemyBulletType == EnemyBulletType.CURVED) return enemyCurvedBulletPrefab;
+            if (enemyBulletType == EnemyBulletType.LASER) return enemyLaserBulletPrefab;
             return enemyBasicBulletPrefab;
         }
 

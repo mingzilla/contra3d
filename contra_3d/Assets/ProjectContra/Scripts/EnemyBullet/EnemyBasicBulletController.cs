@@ -21,7 +21,8 @@ namespace ProjectContra.Scripts.EnemyBullet
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyBasicBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyBasicBulletController>();
             copy.gameObject.layer = GameLayer.ENEMY_SHOT.GetLayer();
-            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
+            if (enemyBulletType.useCustomCollider) copy.rb = UnityFn.AddRigidbody(copy.gameObject, false, false);
+            if (!enemyBulletType.useCustomCollider) copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
             copy.impactEffect = AppResource.instance.enemyBulletHitEffect;
             copy.enemyBulletType = enemyBulletType;
             copy.targetPosition = closestPlayerPosition;
@@ -50,6 +51,7 @@ namespace ProjectContra.Scripts.EnemyBullet
         private void OnTriggerEnter(Collider other)
         {
             DealDamageToPlayer(other, enemyBulletType);
+            if (!enemyBulletType.destroyWhenHit) UnityFn.CreateEffect(AppResource.instance.enemyBulletHitEffect, transform.position, 1f);
             if (enemyBulletType.destroyWhenHit) DestroySelf(impactEffect, 1f);
         }
     }

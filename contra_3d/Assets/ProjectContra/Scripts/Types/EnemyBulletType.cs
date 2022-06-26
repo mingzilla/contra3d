@@ -6,13 +6,13 @@ namespace ProjectContra.Scripts.Types
 {
     public class EnemyBulletType
     {
-        public static readonly EnemyBulletType BASIC = Create("BASIC", 1, 1f, 10f, 3f, true);
-        public static readonly EnemyBulletType FOLLOW = Create("FOLLOW", 1, 3f, 8f, 3f, true);
-        public static readonly EnemyBulletType GRENADE = Create("GRENADE", 1, 3f, 10f, 5f, true);
-        public static readonly EnemyBulletType PIERCE = Create("PIERCE", 1, 1f, 25f, 2f, false);
-        public static readonly EnemyBulletType BLAST = Create("BLAST", 1, 3f, 10f, 3f, true);
-        public static readonly EnemyBulletType CURVED = Create("CURVED", 1, 1f, 12f, 3f, true);
-        public static readonly EnemyBulletType LASER = Create("LASER", 1, 1f, 10f, 3f, true);
+        public static readonly EnemyBulletType BASIC = Create("BASIC", 1, 1f, 10f, 3f, true, false);
+        public static readonly EnemyBulletType FOLLOW = Create("FOLLOW", 1, 3f, 8f, 3f, true, false);
+        public static readonly EnemyBulletType GRENADE = Create("GRENADE", 1, 3f, 10f, 5f, true, false);
+        public static readonly EnemyBulletType PIERCE = Create("PIERCE", 1, 1f, 25f, 2f, false, false);
+        public static readonly EnemyBulletType BLAST = Create("BLAST", 1, 3f, 10f, 3f, true, false);
+        public static readonly EnemyBulletType CURVED = Create("CURVED", 1, 1f, 12f, 3f, true, false);
+        public static readonly EnemyBulletType LASER = Create("LASER", 1, 1f, 25f, 3f, false, true);
 
         public string name;
         public int damage;
@@ -20,6 +20,7 @@ namespace ProjectContra.Scripts.Types
         public float bulletSpeed;
         public float autoDestroyTime;
         public bool destroyWhenHit;
+        public bool useCustomCollider;
 
         static readonly Dictionary<string, EnemyBulletType> typeMap = Fn.ListToDictionaryWithKeyFn((x) => x.name, All());
 
@@ -35,7 +36,7 @@ namespace ProjectContra.Scripts.Types
             };
         }
 
-        public static EnemyBulletType Create(string name, int damage, float blastRange, float bulletSpeed, float autoDestroyTime, bool destroyWhenHit)
+        public static EnemyBulletType Create(string name, int damage, float blastRange, float bulletSpeed, float autoDestroyTime, bool destroyWhenHit, bool useCustomCollider)
         {
             EnemyBulletType type = new EnemyBulletType
             {
@@ -45,6 +46,7 @@ namespace ProjectContra.Scripts.Types
                 bulletSpeed = bulletSpeed,
                 autoDestroyTime = autoDestroyTime,
                 destroyWhenHit = destroyWhenHit,
+                useCustomCollider = useCustomCollider,
             };
             return type;
         }

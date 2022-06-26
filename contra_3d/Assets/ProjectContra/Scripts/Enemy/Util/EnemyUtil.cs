@@ -7,28 +7,39 @@ namespace ProjectContra.Scripts.Enemy.Util
 {
     public static class EnemyUtil
     {
-        public static void DealDamageToPlayer(Vector3 position, int damage, Collider other)
+        public static bool DealDamageToPlayer(Vector3 position, int damage, Collider other)
         {
+            bool damagesSomeone = false;
             GameObject obj = other.gameObject;
             if (GameLayer.Matches(obj.layer, GameLayer.PLAYER))
             {
-                // null check to avoid child objects
-                obj.GetComponentInParent<CharacterInGameController>()?.TakeDamage(position, damage);
-                obj.GetComponentInParent<CharacterInXzGameController>()?.TakeDamage(position, damage);
+                damagesSomeone = DamagePlayer(obj, position, damage);
             }
+            return damagesSomeone;
         }
 
-        public static void DealDamageToPlayersInRange(Vector3 position, float blastRange, LayerMask destructibleLayers, int damage, Collider other)
+        public static bool DealDamageToPlayersInRange(Vector3 position, float blastRange, LayerMask destructibleLayers, int damage, Collider other)
         {
+            bool damagesSomeone = false;
             if (GameLayer.Matches(other.gameObject.layer, GameLayer.PLAYER))
             {
                 GameFn.DealDamage(position, blastRange, destructibleLayers, (obj) =>
                 {
-                    // null check to avoid child objects
-                    obj.GetComponentInParent<CharacterInGameController>()?.TakeDamage(position, damage);
-                    obj.GetComponentInParent<CharacterInXzGameController>()?.TakeDamage(position, damage);
+                    damagesSomeone = DamagePlayer(obj, position, damage);
                 });
             }
+            return damagesSomeone;
+        }
+
+        private static bool DamagePlayer(GameObject player, Vector3 position, int damage)
+        {
+            // null check to avoid child objects
+            CharacterInGameController c1 = player.GetComponentInParent<CharacterInGameController>();
+            CharacterInXzGameController c2 = player.GetComponentInParent<CharacterInXzGameController>();
+            if (c1 == null && c2 == null) return false;
+            if (c1 != null) c1.TakeDamage(position, damage);
+            if (c2 != null) c2.TakeDamage(position, damage);
+            return true;
         }
     }
 }

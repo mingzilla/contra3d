@@ -139,12 +139,14 @@ MonoBehaviour:
   enemyBlastBulletPrefab: {fileID: 0}
   enemyCurvedBulletPrefab: {fileID: 4362966052311366046, guid: 1acfd826845b2844eb3050f00ed64a79,
     type: 3}
+  enemyLaserBulletPrefab: {fileID: 4243003486777118333, guid: 239736bfde958624aad3d5c9a9162b0d,
+    type: 3}
   skins:
   - {fileID: 2100000, guid: 4cfc59d5b1caece4aa3ef0bfb7a34e02, type: 2}
   - {fileID: 2100000, guid: b1bb0ee286641f04a957fab5967d9ffa, type: 2}
   - {fileID: 2100000, guid: 29bfbb4d076ee0a48b034e60751cbb3e, type: 2}
   - {fileID: 2100000, guid: e76442d6b74984146a2c6f7ce3d016af, type: 2}
-  enemyBulletHitEffect: {fileID: 5035670118569957943, guid: 6c8ef40966b0d3343afa3817b5d02112,
+  enemyBulletHitEffect: {fileID: 5035670118569957943, guid: 300c38c78e4798447935373608e1a65b,
     type: 3}
   enemyDestroyedBigExplosion: {fileID: 2429561131109888901, guid: f4e5cafa586fbc343a8e949b44e6a2da,
     type: 3}

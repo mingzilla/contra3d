@@ -8,9 +8,11 @@ namespace ProjectContra.Scripts.EnemyBullet
 {
     public abstract class EnemyBulletController : MonoBehaviour
     {
-        protected void DealDamageToPlayer(Collider other, EnemyBulletType enemyBulletType)
+        protected bool DealDamageToPlayer(Collider other, EnemyBulletType enemyBulletType)
         {
-            EnemyUtil.DealDamageToPlayersInRange(transform.position, enemyBulletType.blastRange, enemyBulletType.GetDestructibleLayers(), enemyBulletType.damage, other);
+            if (enemyBulletType.blastRange > 1) return EnemyUtil.DealDamageToPlayersInRange(transform.position, enemyBulletType.blastRange, enemyBulletType.GetDestructibleLayers(), enemyBulletType.damage, other);
+            if (enemyBulletType.blastRange < 2) return EnemyUtil.DealDamageToPlayer(transform.position, enemyBulletType.damage, other);
+            return false;
         }
 
         protected void DestroySelf(GameObject impactEffect, float impactLifeTime)

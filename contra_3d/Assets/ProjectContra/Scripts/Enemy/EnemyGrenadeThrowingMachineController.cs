@@ -45,7 +45,7 @@ namespace ProjectContra.Scripts.Enemy
             });
         }
 
-        private void ThrowGrenade()
+        private void ThrowGrenade(int i)
         {
             float x = FnVal.RandomFloatBetween(new Random(), leftMostDistance, rightMostDistance);
             EnemyGrenadeController.Spawn(position + bulletPositionDelta, x, yForce, 0f, EnemyBulletType.GRENADE);
