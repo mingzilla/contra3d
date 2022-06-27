@@ -75,6 +75,11 @@ namespace BaseUtil.Base
             return (float) RandomDoubleBetween(newRandom, low, high);
         }
 
+        public static float RandomFloatBetween(int low, int high)
+        {
+            return RandomFloatBetween(new Random(), low, high);
+        }
+
         public static double RandomDoubleBetween(Random newRandom, int low, int high)
         {
             return newRandom.NextDouble() * (high - low) + low;

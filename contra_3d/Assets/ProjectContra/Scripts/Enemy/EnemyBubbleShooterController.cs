@@ -1,0 +1,48 @@
+﻿using System;
+using BaseUtil.Base;
+using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
+using ProjectContra.Scripts.AbstractController;
+using ProjectContra.Scripts.AppSingleton.LiveResource;
+using ProjectContra.Scripts.GameData;
+using UnityEngine;
+
+namespace ProjectContra.Scripts.Enemy
+{
+    public class EnemyBubbleShooterController : AbstractRangeDetectionController
+    {
+        public float shotInterval = 0.5f;
+        public float detectionRange = 30f;
+        [SerializeField] private Vector3 shootPositionDelta = new Vector3(0f, 1f, 0f);
+        [SerializeField] private float bubbleInitialVelocityY = -10f;
+        [SerializeField] private int bubbleLifeTime = 15;
+
+        private GameStoreData storeData;
+        private IntervalState shotIntervalState;
+
+        void Start()
+        {
+            storeData = AppResource.instance.storeData;
+            shotIntervalState = IntervalState.Create(shotInterval);
+        }
+
+        void Update()
+        {
+            RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
+            {
+                UnityFn.RunWithInterval(AppResource.instance, shotIntervalState, () =>
+                {
+                    Vector3 position = transform.position;
+                    float initialX = FnVal.RandomFloatBetween(-5, 5);
+                    Vector3 bubbleInitialVelocity = new(initialX, bubbleInitialVelocityY, 0f);
+                    EnemyBubbleController.Spawn(position + shootPositionDelta, bubbleInitialVelocity, bubbleLifeTime);
+                });
+            });
+        }
+
+        public override float GetDetectionRange()
+        {
+            return detectionRange;
+        }
+    }
+}

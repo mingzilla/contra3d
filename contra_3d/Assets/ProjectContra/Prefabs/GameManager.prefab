@@ -128,6 +128,8 @@ MonoBehaviour:
     type: 3}
   enemyWalkerPrefab: {fileID: 4496732822776432890, guid: f0da803f5f93abe43920ffa75c4bbfdd,
     type: 3}
+  enemyBubblePrefab: {fileID: 5315284807771211591, guid: 4927bd2e423a89f4d9b08b793a075f21,
+    type: 3}
   enemyBasicBulletPrefab: {fileID: 4362966052311366046, guid: 167c11b1efbb1b046a2b6c15eb207b36,
     type: 3}
   enemyFollowerBulletPrefab: {fileID: 4362966052311366046, guid: 06f446d0c7de80f428104a8a6315c252,

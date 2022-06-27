@@ -33,7 +33,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             powerUpLPrefab;
 
         // Enemy prefabs
-        [SerializeField] public GameObject enemyWalkerPrefab;
+        [SerializeField] public GameObject enemyWalkerPrefab, 
+            enemyBubblePrefab;
 
         // Enemy bullet prefabs
         [SerializeField] private GameObject enemyBasicBulletPrefab,
