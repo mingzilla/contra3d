@@ -31,7 +31,7 @@ namespace ProjectContra.Scripts.Enemy.Util
             return damagesSomeone;
         }
 
-        private static bool DamagePlayer(GameObject player, Vector3 position, int damage)
+        public static bool DamagePlayer(GameObject player, Vector3 position, int damage)
         {
             // null check to avoid child objects
             CharacterInGameController c1 = player.GetComponentInParent<CharacterInGameController>();
