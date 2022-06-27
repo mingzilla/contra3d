@@ -11,8 +11,8 @@ namespace ProjectContra.Scripts.Enemy
 {
     public class EnemyBubbleShooterController : AbstractRangeDetectionController
     {
-        public float shotInterval = 0.5f;
-        public float detectionRange = 30f;
+        public float shotInterval = 0.3f;
+        public float detectionRange = 40f;
         [SerializeField] private Vector3 shootPositionDelta = new Vector3(0f, 1f, 0f);
         [SerializeField] private float bubbleInitialVelocityY = -10f;
         [SerializeField] private int bubbleLifeTime = 15;
