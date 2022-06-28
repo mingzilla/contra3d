@@ -18,6 +18,7 @@ namespace ProjectContra.Scripts.Enemy
         public string bulletName = EnemyBulletType.BASIC.name;
         public bool preventMovement = false;
         [SerializeField] private bool preventRotation = false;
+        [SerializeField] private bool enableFreeRotation = false;
         public float detectionRange = 30f;
         public Vector3 shootPositionDelta = new Vector3(0f, 1f, 0f);
         public Vector3 targetPositionDelta = new Vector3(0f, 1f, 0f);
@@ -49,7 +50,11 @@ namespace ProjectContra.Scripts.Enemy
         {
             bool isInRange = RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                if (!preventRotation) transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
+                if (!preventRotation)
+                {
+                    if (!enableFreeRotation) transform.rotation = UnityFn.LookXZ(transform, closestPlayer); // e.g. character with movement animation
+                    if (enableFreeRotation) transform.rotation = UnityFn.LookXYZ(transform, closestPlayer); // e.g. mechanical enemies without animation
+                }
                 FireShots(transform.position, closestPlayer);
             });
             if (animatorCtrl) animatorCtrl.SetBool(isShootingKey, isInRange);

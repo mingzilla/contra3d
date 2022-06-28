@@ -120,6 +120,16 @@ namespace BaseUtil.GameUtil.Base
             return unit.rotation;
         }
 
+        /// <summary>
+        /// Rotate towards target, allow looking up or down
+        /// </summary>
+        public static Quaternion LookXYZ(Transform unit, Transform target)
+        {
+            if (!target) return unit.rotation;
+            unit.rotation = Quaternion.LookRotation(target.position - unit.position);
+            return unit.rotation;
+        }
+
         public static Quaternion LookX(Transform unit, bool toRightSide)
         {
             Vector3 targetPosition = toRightSide ? new Vector3(1f, 0f, 0f) : new Vector3(-1f, 0f, 0f);
