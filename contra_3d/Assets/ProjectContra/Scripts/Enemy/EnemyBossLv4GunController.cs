@@ -44,6 +44,7 @@ namespace ProjectContra.Scripts.Enemy
                     {
                         Vector3 position = transform.position;
                         Vector3 targetPosition = position + Vector3.down;
+                        AppSfx.Play(AppSfx.instance.enemyLaser);
                         EnemyBasicBulletController.Spawn(position, targetPosition, EnemyBulletType.LASER, false);
                     });
                 });

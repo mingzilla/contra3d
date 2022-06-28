@@ -1,4 +1,7 @@
-﻿using BaseUtil.GameUtil;
+﻿using System;
+using BaseUtil.GameUtil;
+using ProjectContra.Scripts.AppSingleton.LiveResource;
+using ProjectContra.Scripts.Types;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Map
@@ -15,6 +18,7 @@ namespace ProjectContra.Scripts.Map
         private TriggerByAllPlayersEnterController liftTriggerCtrl;
         private bool isDoorClosed = false;
         private bool isArrived = false;
+        private bool isPaused = false;
 
         void Start()
         {
@@ -25,8 +29,10 @@ namespace ProjectContra.Scripts.Map
         private void Update()
         {
             if (!liftTriggerCtrl.isActivated) return;
+            if (isPaused) return;
             if (!isDoorClosed)
             {
+                AppSfx.Play(AppSfx.instance.liftMove);
                 liftDoor.transform.position += new Vector3(liftDoorMoveAmount, 0f, 0f);
                 isDoorClosed = true;
             }
@@ -37,6 +43,22 @@ namespace ProjectContra.Scripts.Map
             }
             if (isArrived) return;
             MovementUtil.MoveY(transform, 1, moveSpeed);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (GameLayer.Matches(other.gameObject.layer, GameLayer.GROUND_COLLIDER))
+            {
+                isPaused = true;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (GameLayer.Matches(other.gameObject.layer, GameLayer.GROUND_COLLIDER))
+            {
+                isPaused = false;
+            }
         }
     }
 }
