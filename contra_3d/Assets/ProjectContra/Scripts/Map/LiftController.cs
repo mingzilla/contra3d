@@ -18,7 +18,6 @@ namespace ProjectContra.Scripts.Map
         private TriggerByAllPlayersEnterController liftTriggerCtrl;
         private bool isDoorClosed = false;
         private bool isArrived = false;
-        private bool isPaused = false;
 
         void Start()
         {
@@ -29,7 +28,6 @@ namespace ProjectContra.Scripts.Map
         private void Update()
         {
             if (!liftTriggerCtrl.isActivated) return;
-            if (isPaused) return;
             if (!isDoorClosed)
             {
                 AppSfx.Play(AppSfx.instance.liftMove);
@@ -43,22 +41,6 @@ namespace ProjectContra.Scripts.Map
             }
             if (isArrived) return;
             MovementUtil.MoveY(transform, 1, moveSpeed);
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (GameLayer.Matches(other.gameObject.layer, GameLayer.GROUND_COLLIDER))
-            {
-                isPaused = true;
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (GameLayer.Matches(other.gameObject.layer, GameLayer.GROUND_COLLIDER))
-            {
-                isPaused = false;
-            }
         }
     }
 }

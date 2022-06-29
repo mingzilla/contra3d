@@ -1,4 +1,5 @@
-﻿using BaseUtil.Base;
+﻿using System;
+using BaseUtil.Base;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
@@ -55,6 +56,19 @@ namespace ProjectContra.Scripts.PowerUp
                 if (!moveXZ) transform.position += new Vector3(0f, movementAmount, 0f);
                 if (moveXZ) transform.position += new Vector3(0f, 0f, movementAmount);
             }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            ChangeDirectionIfNeeded(other);
+        }
+
+        void ChangeDirectionIfNeeded(Collider other)
+        {
+            bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
+            if (moveXZ) return;
+            if (!GameLayer.Matches(other.gameObject.layer, GameLayer.REDIRECTION_WALL)) return;
+            xMovementValue = -(xMovementValue);
         }
 
         public override float GetDetectionRange()
