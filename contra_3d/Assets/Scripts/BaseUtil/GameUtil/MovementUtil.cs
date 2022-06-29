@@ -59,17 +59,6 @@ namespace BaseUtil.GameUtil
             return false;
         }
 
-        public static bool MoveTowardsPosition2D(Transform unitTransform, Transform targetTransform,
-                                                 float overlapRange, float moveSpeed, float turnSpeed, float deltaTime)
-        {
-            bool isOverlapping = UnityFn.IsInRange(unitTransform, targetTransform, overlapRange);
-            if (isOverlapping) return true;
-
-            unitTransform.rotation = UnityFn.GetRotation2D(unitTransform, targetTransform, turnSpeed, deltaTime);
-            unitTransform.position = UnityFn.GetPosition(unitTransform, targetTransform, moveSpeed, deltaTime);
-            return false;
-        }
-
         /// <summary>
         /// Used in Update Loop to allow unit constantly following target. The unit immediately rotates to the target.
         /// </summary>

@@ -13,24 +13,20 @@ namespace ProjectContra.Scripts.EnemyBullet
     public class EnemyFollowerBulletController : EnemyBulletController
     {
         private Rigidbody rb;
-        private GameObject impactEffect;
-        private EnemyBulletType enemyBulletType;
+        private EnemyBulletType enemyBulletType = EnemyBulletType.FOLLOW;
         private Transform closestPlayerTransform; // reference to the player, which changes if player moves 
 
-        public static EnemyFollowerBulletController Spawn(Vector3 shotPosition, Transform closestPlayerTransform, EnemyBulletType enemyBulletType)
+        public static EnemyFollowerBulletController Spawn(Vector3 shotPosition, Transform closestPlayerTransform, GameObject prefab)
         {
-            GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyFollowerBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyFollowerBulletController>();
-            copy.gameObject.layer = GameLayer.ENEMY_DESTROYABLE_SHOT.GetLayer();
-            copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
-            copy.impactEffect = AppResource.instance.enemyBulletHitEffect;
-            copy.enemyBulletType = enemyBulletType;
             copy.closestPlayerTransform = closestPlayerTransform;
             return copy;
         }
 
         private void Start()
         {
+            gameObject.layer = GameLayer.ENEMY_DESTROYABLE_SHOT.GetLayer();
+            rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(gameObject, false, 1f);
             UnityFn.SetTimeout(this, enemyBulletType.autoDestroyTime, () => Destroy(gameObject));
         }
 
@@ -42,7 +38,7 @@ namespace ProjectContra.Scripts.EnemyBullet
         private void OnTriggerEnter(Collider other)
         {
             DealDamageToPlayer(other, enemyBulletType);
-            DestroySelf(impactEffect, 1f);
+            DestroySelf(AppResource.instance.enemyBulletHitEffect, 1f);
         }
     }
 }
