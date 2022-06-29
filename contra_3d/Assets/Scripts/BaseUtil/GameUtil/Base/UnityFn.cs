@@ -472,6 +472,13 @@ namespace BaseUtil.GameUtil.Base
             return collider;
         }
 
+        public static T AddFrictionMaterialToCollider<T>(GameObject gameObject) where T : Collider
+        {
+            T collider = gameObject.GetComponent<T>();
+            collider.material = CreateFrictionMaterial();
+            return collider;
+        }
+
         public static PhysicMaterial CreateNoFrictionMaterial()
         {
             PhysicMaterial material = new PhysicMaterial();
@@ -479,6 +486,16 @@ namespace BaseUtil.GameUtil.Base
             material.staticFriction = 0f;
             material.bounciness = 0f;
             material.frictionCombine = PhysicMaterialCombine.Minimum;
+            return material;
+        }
+
+        public static PhysicMaterial CreateFrictionMaterial()
+        {
+            PhysicMaterial material = new PhysicMaterial();
+            material.dynamicFriction = 1f;
+            material.staticFriction = 1f;
+            material.bounciness = 0f;
+            material.frictionCombine = PhysicMaterialCombine.Maximum;
             return material;
         }
 

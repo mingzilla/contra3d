@@ -125,6 +125,18 @@ namespace BaseUtil.Base
             }
         }
 
+        public static void SafeRun(Action fn)
+        {
+            try
+            {
+                fn();
+            }
+            catch (Exception)
+            {
+                // do nothing
+            }
+        }
+
         /// <summary>
         /// Runs e.g. 3 times
         /// </summary>

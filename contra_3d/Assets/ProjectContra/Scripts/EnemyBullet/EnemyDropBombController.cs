@@ -1,4 +1,5 @@
-﻿using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.Base;
+using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.Map;
 using ProjectContra.Scripts.Types;
@@ -27,7 +28,7 @@ namespace ProjectContra.Scripts.EnemyBullet
             if (!bombTriggerCtrl.isActivated) return;
             if (isTriggered) return;
             isTriggered = true;
-            UnityFn.SetTimeout(AppResource.instance, dropDelay, () => rb.useGravity = true);
+            UnityFn.SetTimeout(AppResource.instance, dropDelay, () => Fn.SafeRun(() => rb.useGravity = true));
         }
 
         private void OnTriggerEnter(Collider other)
