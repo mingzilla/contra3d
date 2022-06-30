@@ -55,6 +55,7 @@
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameControlState.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\PausedMenuController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Map\TriggerByAllPlayersEnterController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Map\TriggerCameraByAnyPlayerEnterController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Map\HorizontalMapController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyGroundCannonController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyWalkerController.cs" />
@@ -72,6 +73,7 @@
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv3Controller.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv4Controller.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Map\LiftController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Enemy\Enemy3DFollowerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyBulletController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Map\TriggerByAnyPlayerEnterController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\GameManagerController.cs" />
@@ -112,8 +114,6 @@
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBubbleShooterController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\GameDataScriptable\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyGrenadeController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Enemy\Enemy3DFollowerController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Map\TriggerCameraByAnyPlayerEnterController.cs" />
      <None Include="Assets\ProjectContra\Project.Contra.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
