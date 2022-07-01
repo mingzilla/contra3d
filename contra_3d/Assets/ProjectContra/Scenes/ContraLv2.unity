@@ -8914,6 +8914,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Directional Light
       objectReference: {fileID: 0}
+    - target: {fileID: 9099858948277534989, guid: 57067b24dcbcbc049893e8b69c159c12,
+        type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9099858948277534990, guid: 57067b24dcbcbc049893e8b69c159c12,
         type: 3}
       propertyPath: m_RootOrder
