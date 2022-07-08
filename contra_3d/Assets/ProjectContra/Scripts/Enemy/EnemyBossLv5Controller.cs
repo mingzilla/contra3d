@@ -20,8 +20,10 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private GameObject bossCamera;
         [SerializeField] private GameObject bossTrigger;
         [SerializeField] private GameObject modPrefab;
+        [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private int modPositionDelta = 5;
         [SerializeField] private int modDelayToChangeVelocity = 3;
+        [SerializeField] private int shotPositionDelta = 4;
 
         private readonly IntervalState shotInterval = IntervalState.Create(4f);
         private readonly IntervalState modsInterval = IntervalState.Create(5f);
@@ -29,7 +31,7 @@ namespace ProjectContra.Scripts.Enemy
         private Animator animatorCtrl;
         private TriggerByAnyPlayerEnterController bossTriggerCtrl;
         private AppMusic musicController;
-        public int hp = 20;
+        public int hp = 100;
 
         private int phase = 0;
         private static readonly int openDoorKey = Animator.StringToHash("openDoor");
@@ -99,9 +101,8 @@ namespace ProjectContra.Scripts.Enemy
                 List<Vector3> deltas = new List<Vector3>() {Vector3.left, Vector3.zero, Vector3.right};
                 Fn.Times(deltas.Count, (i) =>
                 {
-                    Vector3 position = transform.position + deltas[i];
-                    Vector3 targetPosition = position + Vector3.down;
-                    EnemyBasicBulletController.Spawn(position, targetPosition, EnemyBulletType.LASER, false);
+                    Vector3 targetPosition = transform.position + (deltas[i] * shotPositionDelta) + (Vector3.down * shotPositionDelta);
+                    Enemy3DFollowerController.Spawn(targetPosition, bulletPrefab);
                 });
             });
         }
@@ -115,6 +116,7 @@ namespace ProjectContra.Scripts.Enemy
 
         private void HandlePhase2()
         {
+            if (phase == 3) return; // prevent calling this multiple times
             phase = 3; // this is just to prevent getting into here again
             gameCamera.SetActive(true);
             bossCamera.SetActive(false);

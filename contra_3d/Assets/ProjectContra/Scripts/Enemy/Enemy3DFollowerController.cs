@@ -18,7 +18,7 @@ namespace ProjectContra.Scripts.Enemy
 
         private Rigidbody rb;
 
-        public static Enemy3DFollowerController Spawn(Vector3 spawnPosition, GameObject prefab, Vector3 initialVelocity)
+        public static Enemy3DFollowerController Spawn(Vector3 spawnPosition, GameObject prefab)
         {
             Enemy3DFollowerController copy = Instantiate(prefab, spawnPosition, Quaternion.identity).GetComponent<Enemy3DFollowerController>();
             return copy;
