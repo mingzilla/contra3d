@@ -22,7 +22,7 @@ namespace ProjectContra.Scripts.Enemy
             GameObject prefab = AppResource.instance.enemyBubblePrefab;
             EnemyBubbleController copy = Instantiate(prefab, spawnPosition, Quaternion.identity).GetComponent<EnemyBubbleController>();
             copy.gameObject.layer = GameLayer.ENEMY.GetLayer();
-            copy.rb = UnityFn.AddRigidbody(copy.gameObject, false, false);
+            copy.rb = UnityFn.GetOrAddRigidbody(copy.gameObject, false, false);
             copy.rb.velocity = initialVelocity;
             copy.laterVelocity = initialVelocity / 4;
             copy.autoDestroyTime = bubbleLifeTime;

@@ -38,7 +38,7 @@ namespace ProjectContra.Scripts.Player
             gameObject.layer = GameLayer.PLAYER.GetLayer();
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
             UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject.GetComponentInChildren<CapsuleCollider>().gameObject);
-            rb = UnityFn.AddRigidbody(gameObject, true, false);
+            rb = UnityFn.GetOrAddRigidbody(gameObject, true, false);
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous; // for player only
             meshRenderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
             Material skin = AppResource.instance.GetSkin(playerAttribute.skinId);

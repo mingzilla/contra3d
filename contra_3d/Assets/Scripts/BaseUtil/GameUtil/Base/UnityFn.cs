@@ -413,9 +413,10 @@ namespace BaseUtil.GameUtil.Base
             }
         }
 
-        public static Rigidbody AddRigidbody(GameObject gameObject, bool useGravity, bool freezeZ)
+        public static Rigidbody GetOrAddRigidbody(GameObject gameObject, bool useGravity, bool freezeZ)
         {
-            Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+            Rigidbody existingRb = gameObject.GetComponent<Rigidbody>();
+            Rigidbody rb = existingRb ? existingRb : gameObject.AddComponent<Rigidbody>();
             rb.useGravity = useGravity;
             if (freezeZ) rb.constraints = (RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation);
             return rb;

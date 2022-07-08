@@ -18,7 +18,7 @@ namespace ProjectContra.Scripts.EnemyBullet
         private void Start()
         {
             gameObject.layer = GameLayer.ENEMY_GRENADE.GetLayer();
-            rb = UnityFn.AddRigidbody(gameObject, false, false);
+            rb = UnityFn.GetOrAddRigidbody(gameObject, false, false);
             bombTriggerCtrl = dropBombTrigger.GetComponent<TriggerByAnyPlayerEnterController>();
         }
 

@@ -28,7 +28,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            rb = UnityFn.AddRigidbody(gameObject, false, false);
+            rb = UnityFn.GetOrAddRigidbody(gameObject, false, false);
         }
 
         void Update()

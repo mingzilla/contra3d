@@ -32,7 +32,7 @@ namespace ProjectContra.Scripts.Enemy
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
-            rb = UnityFn.AddRigidbody(gameObject, true, !moveXZ);
+            rb = UnityFn.GetOrAddRigidbody(gameObject, true, !moveXZ);
             destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             animatorCtrl = gameObject.GetComponent<Animator>();

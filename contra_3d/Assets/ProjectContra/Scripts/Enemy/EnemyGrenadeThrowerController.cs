@@ -27,7 +27,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            rb = UnityFn.AddRigidbody(gameObject, true, true);
+            rb = UnityFn.GetOrAddRigidbody(gameObject, true, true);
             destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             animatorCtrl = gameObject.GetComponent<Animator>();
         }

@@ -15,7 +15,7 @@ namespace ProjectContra.Scripts.PowerUp
         public void Init(WeaponType type)
         {
             gameObject.layer = GameLayer.POWER_UP.GetLayer();
-            rb = UnityFn.AddRigidbody(gameObject, true, true);
+            rb = UnityFn.GetOrAddRigidbody(gameObject, true, true);
             weaponType = type;
             UnityFn.AddCollider<BoxCollider>(gameObject, true);
             UnityFn.Throw(rb, xForce, yForce, 0f);

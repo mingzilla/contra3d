@@ -30,7 +30,7 @@ namespace ProjectContra.Scripts.PowerUp
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.POWER_UP_CONTAINER.GetLayer();
-            rb = UnityFn.AddRigidbody(gameObject, false, true);
+            rb = UnityFn.GetOrAddRigidbody(gameObject, false, true);
             UnityFn.AddSphereCollider(gameObject, 1f, false);
             meshRenderer = UnityFn.MakeInvisible<MeshRenderer>(gameObject);
             destroyEffect = AppResource.instance.powerUpDestroyedSmallExplosion;

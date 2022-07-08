@@ -52,6 +52,7 @@
      <Compile Include="Assets\ProjectContra\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\CameraTargetController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyGrenadeThrowingMachineController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv5Controller.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameControlState.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\PausedMenuController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Map\TriggerByAllPlayersEnterController.cs" />
