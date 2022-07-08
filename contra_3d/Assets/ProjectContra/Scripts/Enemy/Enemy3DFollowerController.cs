@@ -12,7 +12,7 @@ namespace ProjectContra.Scripts.Enemy
     public class Enemy3DFollowerController : AbstractDestructibleController
     {
         [SerializeField] private float detectionRange = 40f;
-        [SerializeField] private float moveSpeed = 10f;
+        [SerializeField] public float moveSpeed = 10f;
         [SerializeField] private bool enableRotation = true;
         private GameStoreData storeData;
 

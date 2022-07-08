@@ -18,18 +18,18 @@ namespace ProjectContra.Scripts.Enemy
 
         [SerializeField] private GameObject gameCamera;
         [SerializeField] private GameObject bossCamera;
-        [SerializeField] private GameObject bossTrigger;
+        [SerializeField] private GameObject bossBody;
         [SerializeField] private GameObject modPrefab;
         [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private int modPositionDelta = 5;
         [SerializeField] private int modDelayToChangeVelocity = 3;
         [SerializeField] private int shotPositionDelta = 4;
+        [SerializeField] private int bulletMoveSpeed = 7;
 
         private readonly IntervalState shotInterval = IntervalState.Create(4f);
-        private readonly IntervalState modsInterval = IntervalState.Create(5f);
 
         private Animator animatorCtrl;
-        private TriggerByAnyPlayerEnterController bossTriggerCtrl;
+        private Animator bodyAnimatorCtrl;
         private AppMusic musicController;
         public int hp = 100;
 
@@ -40,15 +40,19 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             musicController = AppResource.instance.musicManager.GetComponent<AppMusic>();
-            bossTriggerCtrl = bossTrigger.GetComponent<TriggerByAnyPlayerEnterController>();
             animatorCtrl = gameObject.GetComponent<Animator>();
             animatorCtrl.enabled = false;
+            bodyAnimatorCtrl = bossBody.GetComponent<Animator>();
+            bodyAnimatorCtrl.enabled = false;
         }
 
         void Update()
         {
-            if (!bossTriggerCtrl.isActivated) return;
-            if (phase == 0) HandlePhase0();
+            if (phase == 0)
+                RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
+                {
+                    HandlePhase0();
+                });
             if (phase == 1) HandlePhase1();
             if (phase == 2) HandlePhase2();
         }
@@ -57,6 +61,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             musicController.PlayLv5BossMusic();
             animatorCtrl.enabled = true;
+            bodyAnimatorCtrl.enabled = true;
             bossCamera.SetActive(true);
             gameCamera.SetActive(false);
             phase = 1;
@@ -64,31 +69,33 @@ namespace ProjectContra.Scripts.Enemy
 
         private void HandlePhase1()
         {
-            DropMods();
-            FireShots();
+            UnityFn.RunWithInterval(this, shotInterval, () =>
+            {
+                animatorCtrl.enabled = false;
+                SafeSetTimeOut(1.5f, () => animatorCtrl.enabled = true);
+                DropMods();
+                FireShots();
+            });
         }
 
         void DropMods()
         {
-            UnityFn.RunWithInterval(AppResource.instance, modsInterval, () =>
+            bodyAnimatorCtrl.SetTrigger(openDoorKey);
+            List<Vector3> deltas = new List<Vector3>() {Vector3.left, Vector3.right};
+            SafeSetTimeOut(0.5f, () =>
             {
-                animatorCtrl.SetTrigger(openDoorKey);
-                List<Vector3> deltas = new List<Vector3>() {Vector3.left, Vector3.right};
-                SafeSetTimeOut(1f, () =>
+                if (phase != 1) return;
+                Fn.Times(deltas.Count, (i) =>
                 {
-                    if (phase != 1) return;
-                    Fn.Times(deltas.Count, (i) =>
+                    Vector3 delta = (deltas[i] * modPositionDelta);
+                    Vector3 position = transform.position + delta;
+                    GameObject mod = Instantiate(modPrefab, position, Quaternion.identity);
+                    EnemyWalkerController modCtrl = mod.GetComponent<EnemyWalkerController>();
+                    Rigidbody copyRb = mod.GetComponent<Rigidbody>();
+                    UnityFn.Throw(copyRb, delta.x * 2, 5f, 0f);
+                    UnityFn.SetTimeout(this, modDelayToChangeVelocity, () =>
                     {
-                        Vector3 delta = (deltas[i] * modPositionDelta);
-                        Vector3 position = transform.position + delta;
-                        GameObject mod = Instantiate(modPrefab, position, Quaternion.identity);
-                        EnemyWalkerController modCtrl = mod.GetComponent<EnemyWalkerController>();
-                        Rigidbody copyRb = mod.GetComponent<Rigidbody>();
-                        UnityFn.Throw(copyRb, delta.x * 2, 5f, 0f);
-                        UnityFn.SetTimeout(this, modDelayToChangeVelocity, () =>
-                        {
-                            if (!modCtrl.isBroken) copyRb.velocity /= 4;
-                        });
+                        if (!modCtrl.isBroken) copyRb.velocity /= 4;
                     });
                 });
             });
@@ -96,13 +103,15 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots()
         {
-            UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
+            List<Vector3> deltas = new List<Vector3>() {Vector3.left, Vector3.zero, Vector3.right};
+            Fn.Times(deltas.Count, (i) =>
             {
-                List<Vector3> deltas = new List<Vector3>() {Vector3.left, Vector3.zero, Vector3.right};
-                Fn.Times(deltas.Count, (i) =>
+                Vector3 targetPosition = transform.position + (deltas[i] * shotPositionDelta) + (Vector3.down * shotPositionDelta);
+                Enemy3DFollowerController bullet = Enemy3DFollowerController.Spawn(targetPosition, bulletPrefab);
+                bullet.moveSpeed = 0;
+                UnityFn.SetTimeout(this, 1f, () =>
                 {
-                    Vector3 targetPosition = transform.position + (deltas[i] * shotPositionDelta) + (Vector3.down * shotPositionDelta);
-                    Enemy3DFollowerController.Spawn(targetPosition, bulletPrefab);
+                    if (!bullet.isBroken) bullet.moveSpeed = bulletMoveSpeed;
                 });
             });
         }
@@ -121,6 +130,7 @@ namespace ProjectContra.Scripts.Enemy
             gameCamera.SetActive(true);
             bossCamera.SetActive(false);
             animatorCtrl.enabled = false;
+            bodyAnimatorCtrl.enabled = false;
             AppMusic.instance.Stop();
             UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
             UnityFn.SetTimeout(AppResource.instance, 5, () =>
@@ -133,7 +143,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override float GetDetectionRange()
         {
-            return -1;
+            return 60;
         }
     }
 }

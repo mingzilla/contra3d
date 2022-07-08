@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTriggered: 0
   isBroken: 0
-  detectionRange: 40
+  detectionRange: 50
   moveSpeed: 10
   enableRotation: 1
 --- !u!135 &7674011120571643769
