@@ -14,7 +14,6 @@ namespace ProjectContra.Scripts.Enemy
     public class EnemySpiderWeakPointController : AbstractDestructibleController
     {
         public int hp = 100;
-        public bool isBroken = false;
 
         void Start()
         {

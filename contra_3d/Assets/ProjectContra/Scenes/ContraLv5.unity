@@ -6644,25 +6644,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1997253101}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1997253105 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -3353115221641361457, guid: 516e47e5ebdea2b4680283df2ce185ad,
-    type: 3}
-  m_PrefabInstance: {fileID: 1997253101}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1997253106
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997253105}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.008783364, z: 0.05}
-  m_Center: {x: 0, y: -0.035610985, z: 0.0000000039835535}
 --- !u!114 &1997253107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6676,13 +6657,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  isBroken: 0
   gameCamera: {fileID: 1836487098}
   bossCamera: {fileID: 779536385}
   bossTrigger: {fileID: 1764747118}
   modPrefab: {fileID: 6358200571022747787, guid: 9c5085ccc859e6a4fa395639a1c171c8,
     type: 3}
-  modPositionDelta: 4
+  modPositionDelta: 5
+  modDelayToChangeVelocity: 3
   hp: 20
+--- !u!65 &1997253108
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997253102}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14, y: 8, z: 1}
+  m_Center: {x: 0, y: 0, z: 4}
 --- !u!1001 &2008166378
 PrefabInstance:
   m_ObjectHideFlags: 0

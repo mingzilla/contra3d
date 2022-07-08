@@ -20,7 +20,8 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private GameObject bossCamera;
         [SerializeField] private GameObject bossTrigger;
         [SerializeField] private GameObject modPrefab;
-        [SerializeField] private int modPositionDelta = 4;
+        [SerializeField] private int modPositionDelta = 5;
+        [SerializeField] private int modDelayToChangeVelocity = 3;
 
         private readonly IntervalState shotInterval = IntervalState.Create(4f);
         private readonly IntervalState modsInterval = IntervalState.Create(5f);
@@ -71,12 +72,22 @@ namespace ProjectContra.Scripts.Enemy
             {
                 animatorCtrl.SetTrigger(openDoorKey);
                 List<Vector3> deltas = new List<Vector3>() {Vector3.left, Vector3.right};
-                Fn.Times(deltas.Count, (i) =>
+                SafeSetTimeOut(1f, () =>
                 {
-                    Vector3 delta = (deltas[i] * modPositionDelta);
-                    Vector3 position = transform.position + delta;
-                    Rigidbody copyRb = Instantiate(modPrefab, position, Quaternion.identity).GetComponent<Rigidbody>();
-                    UnityFn.Throw(copyRb, delta.x, 3f, 0f);
+                    if (phase != 1) return;
+                    Fn.Times(deltas.Count, (i) =>
+                    {
+                        Vector3 delta = (deltas[i] * modPositionDelta);
+                        Vector3 position = transform.position + delta;
+                        GameObject mod = Instantiate(modPrefab, position, Quaternion.identity);
+                        EnemyWalkerController modCtrl = mod.GetComponent<EnemyWalkerController>();
+                        Rigidbody copyRb = mod.GetComponent<Rigidbody>();
+                        UnityFn.Throw(copyRb, delta.x * 2, 5f, 0f);
+                        UnityFn.SetTimeout(this, modDelayToChangeVelocity, () =>
+                        {
+                            if (!modCtrl.isBroken) copyRb.velocity /= 4;
+                        });
+                    });
                 });
             });
         }

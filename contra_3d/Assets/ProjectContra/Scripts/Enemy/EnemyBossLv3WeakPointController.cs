@@ -10,7 +10,6 @@ namespace ProjectContra.Scripts.Enemy
     public class EnemyBossLv3WeakPointController : AbstractDestructibleController
     {
         public int hp = 50;
-        public bool isBroken = false;
 
         private GameStoreData storeData;
         private GameObject damageEffect;

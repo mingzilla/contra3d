@@ -17,6 +17,7 @@ namespace ProjectContra.Scripts.Enemy
         public float jumpForce = 10f;
         public float detectionRange = 60f;
         private bool isActive = false;
+        [SerializeField] private bool forceFollowingPlayer = false;
 
         private GameStoreData storeData;
         private Rigidbody rb;
@@ -55,8 +56,9 @@ namespace ProjectContra.Scripts.Enemy
                 transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
             }
             bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
-            if (isActive && !moveXZ) MovementUtil.MoveX(transform, (moveXLeft ? -1 : 1), moveSpeed);
-            if (isActive && moveXZ) MovementUtil.FollowXZTowardsPosition3D(transform, closestPlayer, 0.5f, moveSpeed, Time.deltaTime);
+            bool followPlayer = forceFollowingPlayer || moveXZ;
+            if (isActive && !followPlayer) MovementUtil.MoveX(transform, (moveXLeft ? -1 : 1), moveSpeed);
+            if (isActive && followPlayer) MovementUtil.FollowXZTowardsPosition3D(transform, closestPlayer, 0.5f, moveSpeed, Time.deltaTime);
         }
 
         void OnCollisionEnter(Collision other)
@@ -101,6 +103,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.CreateEffect(destroyEffect, position, 1f);
             AppSfx.PlayAdjusted(AppSfx.instance.enemyDeath);
+            isBroken = true;
             Destroy(gameObject);
         }
 
@@ -111,6 +114,7 @@ namespace ProjectContra.Scripts.Enemy
 
         protected void OnBecameInvisible()
         {
+            isBroken = true;
             Destroy(gameObject);
         }
     }

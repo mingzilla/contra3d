@@ -18,7 +18,6 @@ namespace ProjectContra.Scripts.Enemy
         public float fireDelay = 0f;
         public int hp = 20;
         public bool canShoot = false;
-        public bool isBroken = false;
 
         private GameObject destroyEffect;
 

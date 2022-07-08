@@ -13,7 +13,6 @@ namespace ProjectContra.Scripts.Enemy
     {
         private EnemyAttribute attribute;
         public int hp = 20;
-        public bool isBroken = false;
 
         private GameStoreData storeData;
         private GameObject damageEffect;

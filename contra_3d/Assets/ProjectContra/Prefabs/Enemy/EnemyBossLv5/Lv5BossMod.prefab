@@ -258,9 +258,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTriggered: 0
   damage: 1
-  moveSpeed: 8
+  moveSpeed: 6
   jumpForce: 10
   detectionRange: 60
+  forceFollowingPlayer: 1
 --- !u!135 &9076667393722630491
 SphereCollider:
   m_ObjectHideFlags: 0
