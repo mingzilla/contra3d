@@ -125,7 +125,6 @@ namespace ProjectContra.Scripts.Enemy
 
         private void HandlePhase2()
         {
-            if (phase == 3) return; // prevent calling this multiple times
             phase = 3; // this is just to prevent getting into here again
             gameCamera.SetActive(true);
             bossCamera.SetActive(false);
@@ -135,6 +134,8 @@ namespace ProjectContra.Scripts.Enemy
             UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
             UnityFn.SetTimeout(AppResource.instance, 5, () =>
             {
+                if (isBroken) return;
+                isBroken = true;
                 AppSfx.instance.levelClear.Play();
                 UnityFn.SetTimeout(AppResource.instance, 5, UnityFn.LoadNextScene);
                 Destroy(gameObject);
