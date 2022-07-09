@@ -3447,7 +3447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 974579766}
   m_Layer: 0
-  m_Name: GroundShooter
+  m_Name: GroundShooters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
