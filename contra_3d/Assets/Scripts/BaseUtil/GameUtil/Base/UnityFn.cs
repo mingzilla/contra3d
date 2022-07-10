@@ -225,7 +225,7 @@ namespace BaseUtil.GameUtil.Base
         }
 
         /// <summary>
-        /// IMPORTANT: Use "this" if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
+        /// IMPORTANT: Use "this" (preferred) if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
         /// 1) Used inside Update loop. If interval is 3, fn runs every 3 seconds. 
         /// 2) Used in events, to allow executing fn only once only within an interval. 
         /// </summary>
@@ -238,8 +238,9 @@ namespace BaseUtil.GameUtil.Base
         }
 
         /// <summary>
-        /// IMPORTANT: Use "this" if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
+        /// IMPORTANT: Use "this" (preferred) if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
         /// When using "this" as controller, need to safe check first, because object may have been destroyed when timeout content is run
+        /// When using a global controller, may get error of accessing destroyed object even when checking e.g. isBroken, because the coroutine is run by something else
         /// </summary>
         public static void RepeatWithInterval(MonoBehaviour controller, IntervalState state, int repeatTimes, float delay, Action fn)
         {
