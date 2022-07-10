@@ -63,7 +63,10 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             sceneInitDataLv2,
             sceneInitDataLv3,
             sceneInitDataLv4,
-            sceneInitDataLv5;
+            sceneInitDataLv5,
+            sceneInitDataLv6,
+            sceneInitDataLv7,
+            sceneInitDataLv8;
 
         // EnemyAttribute
         [SerializeField] public EnemyAttribute enemyAttributeGroundCannon,
@@ -125,6 +128,9 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             if (gameScene == GameScene.LEVEL_3) return sceneInitDataLv3;
             if (gameScene == GameScene.LEVEL_4) return sceneInitDataLv4;
             if (gameScene == GameScene.LEVEL_5) return sceneInitDataLv5;
+            if (gameScene == GameScene.LEVEL_6) return sceneInitDataLv6;
+            if (gameScene == GameScene.LEVEL_7) return sceneInitDataLv7;
+            if (gameScene == GameScene.LEVEL_8) return sceneInitDataLv8;
             return null;
         }
 

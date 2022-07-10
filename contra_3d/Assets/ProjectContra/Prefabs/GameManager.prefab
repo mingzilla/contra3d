@@ -169,6 +169,9 @@ MonoBehaviour:
   sceneInitDataLv3: {fileID: 11400000, guid: 0f78d977caf94524fb22347d6bc86e2c, type: 2}
   sceneInitDataLv4: {fileID: 11400000, guid: 3416828da1905dd43afb8cd3ce9dcd1e, type: 2}
   sceneInitDataLv5: {fileID: 11400000, guid: e048bdfc1734195429f03942ee56ba0b, type: 2}
+  sceneInitDataLv6: {fileID: 11400000, guid: 82cf56fa657eff04ea33c02432c67b59, type: 2}
+  sceneInitDataLv7: {fileID: 11400000, guid: 8386a27f2cd56094a8270d388bf57e6e, type: 2}
+  sceneInitDataLv8: {fileID: 11400000, guid: 5880c52250e59e745b36d858ba009b86, type: 2}
   enemyAttributeGroundCannon: {fileID: 11400000, guid: 04ee7bdb7968d88448e01a79e40c37fd,
     type: 2}
   enemyAttributeBossLv1Gun: {fileID: 11400000, guid: 16809b2d775fc3546b3da33851ca21f4,
