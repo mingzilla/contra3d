@@ -35,10 +35,7 @@ namespace ProjectContra.Scripts.Map
             {
                 AppSfx.instance.floorMove.Play();
             });
-            if (isTriggered && Vector3.Distance(transform.position, targetPosition) > 0.1f)
-            {
-                MovementUtil.MoveTowardsPosition3D(transform, targetPosition, movementSpeed, delta => { });
-            }
+            if (isTriggered) MovementUtil.MoveToPositionOverTime(transform, targetPosition, 0.1f, movementSpeed);
         }
 
         public override float GetDetectionRange()
