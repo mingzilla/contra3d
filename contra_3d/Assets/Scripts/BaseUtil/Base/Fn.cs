@@ -116,6 +116,11 @@ namespace BaseUtil.Base
             // do nothing
         }
 
+        public static void DoNothing1<T>(T t)
+        {
+            // (params string[] values) is called params array, which doesn't work when using generics, so (params T[] ts) is not working
+        }
+
         public static void RunOnce(bool hasRun, Action<bool> setHasRunFn, Action fn)
         {
             if (!hasRun)

@@ -44,7 +44,7 @@ namespace ProjectContra.Scripts.AbstractController
             if (isTriggered) return true;
             RunIfPlayerIsInRange(storeData, detectionRange, (transform) =>
             {
-                isTriggered = true;
+                isTriggered = true; // this can't be set inside RunIfPlayerIsInRange(), because there are times we need to re trigger if player is out of range
                 fn(transform);
             });
             return isTriggered;

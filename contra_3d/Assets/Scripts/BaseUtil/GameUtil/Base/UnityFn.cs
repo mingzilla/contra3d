@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
-using BaseUtil.GameUtil.Types;
 using UnityEngine;
-using Object = UnityEngine.Object;
-using Random = System.Random;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Random = System.Random;
 
 namespace BaseUtil.GameUtil.Base
 {
@@ -225,7 +225,7 @@ namespace BaseUtil.GameUtil.Base
         }
 
         /// <summary>
-        /// IMPORTANT: Use "this" if each object needs to have it's won interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
+        /// IMPORTANT: Use "this" if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
         /// 1) Used inside Update loop. If interval is 3, fn runs every 3 seconds. 
         /// 2) Used in events, to allow executing fn only once only within an interval. 
         /// </summary>
@@ -237,9 +237,32 @@ namespace BaseUtil.GameUtil.Base
             SetTimeout(controller, state.interval, () => state.canRun = true);
         }
 
+        /// <summary>
+        /// IMPORTANT: Use "this" if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
+        /// When using "this" as controller, need to safe check first, because object may have been destroyed when timeout content is run
+        /// </summary>
+        public static void RepeatWithInterval(MonoBehaviour controller, IntervalState state, int repeatTimes, float delay, Action fn)
+        {
+            RunWithInterval(controller, state, () =>
+            {
+                SetTimeoutWithRepeat(controller, repeatTimes, delay, fn);
+            });
+        }
+
         public static void SetTimeout(MonoBehaviour controller, float delay, Action fn)
         {
             controller.StartCoroutine(TimeOutDelayFn(delay, fn));
+        }
+
+        /// <summary>
+        /// Run fn repeatedly, with specified repeat times and repeat delay
+        /// </summary>
+        public static void SetTimeoutWithRepeat(MonoBehaviour controller, int repeatTimes, float delay, Action fn)
+        {
+            foreach (int i in Enumerable.Range(0, repeatTimes))
+            {
+                SetTimeout(controller, i * delay, fn);
+            }
         }
 
         private static IEnumerator TimeOutDelayFn(float delay, Action fn)
@@ -557,7 +580,7 @@ namespace BaseUtil.GameUtil.Base
 
         public static string GetSceneNameByIndexInBuildSettings(int index)
         {
-            return System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(index));
+            return Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(index));
         }
 
         public static Dictionary<string, int> GetSceneNameAndIndexDictInBuildSettings()

@@ -85,12 +85,23 @@ namespace BaseUtil.GameUtil
             return false;
         }
 
+        /// <summary>
+        /// Used in Update Loop Constantly move towards one direction by applying addDeltaToTargetFn. e.g. bullets
+        /// If target position doesn't need to keep changing, use MoveToPositionOverTime()
+        /// </summary>
         public static void MoveTowardsPosition3D(Transform transform, Vector3 targetPosition, float moveSpeed, Action<Vector3> addDeltaToTargetFn)
         {
             Vector3 originalPosition = transform.position;
             Vector3 delta = UnityFn.GetFramePositionDelta(originalPosition, targetPosition, moveSpeed, Time.deltaTime);
-            transform.position = originalPosition + delta;
+            transform.position = originalPosition + delta; // same as Vector3.MoveTowards(), using delta is just to avoid calculating it again
             addDeltaToTargetFn(delta); // targetPosition += delta; - move target further so that bullet never catches the target
+        }
+
+        public static void MoveToPositionOverTime(Transform transform, Vector3 targetPosition, float overlapRange, float moveSpeed)
+        {
+            Vector3 position = transform.position;
+            if (Vector3.Distance(position, targetPosition) <= overlapRange) return;
+            transform.position = Vector3.MoveTowards(position, targetPosition, moveSpeed * Time.deltaTime);
         }
 
         /// <param name="xValue">-1 goes left, 1 goes right</param>

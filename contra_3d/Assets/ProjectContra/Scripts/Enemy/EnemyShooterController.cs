@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -62,15 +60,11 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots(Vector3 position, Transform closestPlayer)
         {
-            UnityFn.RunWithInterval(AppResource.instance, shotIntervalState, () =>
+            UnityFn.RepeatWithInterval(AppResource.instance, shotIntervalState, bulletPerShot, 0.3f, () =>
             {
-                foreach (int i in Enumerable.Range(0, bulletPerShot))
-                {
-                    UnityFn.SetTimeout(AppResource.instance, i * 0.3f, () =>
-                    {
-                        if (closestPlayer) SpawnBullet(position, closestPlayer.position);
-                    });
-                }
+                if (isBroken) return;
+                if (!closestPlayer) return;
+                SpawnBullet(position, closestPlayer.position);
             });
         }
 

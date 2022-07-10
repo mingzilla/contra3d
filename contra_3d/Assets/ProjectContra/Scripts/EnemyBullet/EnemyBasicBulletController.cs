@@ -9,14 +9,15 @@ namespace ProjectContra.Scripts.EnemyBullet
 {
     public class EnemyBasicBulletController : EnemyBulletController
     {
-        private bool moveLeftOnly = false;
+        private bool moveX = false;
+        public int moveXValue = -1; // -1 moves left, 1 moves right
         private Rigidbody rb;
         private GameObject impactEffect;
         private EnemyBulletType enemyBulletType;
         private GameObject shotDestination;
         private Vector3 targetPosition;
 
-        public static EnemyBasicBulletController Spawn(Vector3 shotPosition, Vector3 closestPlayerPosition, EnemyBulletType enemyBulletType, bool moveLeftOnly)
+        public static EnemyBasicBulletController Spawn(Vector3 shotPosition, Vector3 closestPlayerPosition, EnemyBulletType enemyBulletType, bool moveX)
         {
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyBasicBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyBasicBulletController>();
@@ -26,7 +27,7 @@ namespace ProjectContra.Scripts.EnemyBullet
             copy.impactEffect = AppResource.instance.enemyBulletHitEffect;
             copy.enemyBulletType = enemyBulletType;
             copy.targetPosition = closestPlayerPosition;
-            copy.moveLeftOnly = moveLeftOnly;
+            copy.moveX = moveX;
             copy.transform.rotation = UnityFn.GetImmediateRotation3D(shotPosition, copy.targetPosition); // set rotation once since bullet goes one direction
             return copy;
         }
@@ -38,9 +39,9 @@ namespace ProjectContra.Scripts.EnemyBullet
 
         void Update()
         {
-            if (moveLeftOnly)
+            if (moveX)
             {
-                MovementUtil.MoveX(transform, -1, enemyBulletType.bulletSpeed);
+                MovementUtil.MoveX(transform, moveXValue, enemyBulletType.bulletSpeed);
             }
             else
             {
