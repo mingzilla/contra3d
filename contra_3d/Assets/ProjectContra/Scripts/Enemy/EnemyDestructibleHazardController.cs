@@ -16,24 +16,18 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private float detectionRange = 40f;
         [SerializeField] private int damage = 1;
         private Rigidbody rb;
-        private bool isActive = false;
 
         private void Start()
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             rb = gameObject.GetComponent<Rigidbody>();
-            rb.useGravity = isActive;
+            rb.useGravity = isTriggered;
         }
 
         void Update()
         {
-            if (!isActive)
-                RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
-                {
-                    isActive = true;
-                    rb.useGravity = isActive;
-                });
+            TriggerIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) => rb.useGravity = true);
         }
 
         void OnCollisionEnter(Collision other)
