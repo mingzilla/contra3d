@@ -15,7 +15,7 @@ namespace ProjectContra.Scripts.Enemy
         private readonly IntervalState shotInterval = IntervalState.Create(5f);
         public int fireDelay = 0;
         private EnemyAttribute attribute;
-        public int hp = 5;
+        public int hp = 15;
 
         private GameStoreData storeData;
         private GameObject destroyEffect;

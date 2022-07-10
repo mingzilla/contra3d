@@ -1,11 +1,8 @@
-﻿using BaseUtil.Base;
-using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
-using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
@@ -35,18 +32,13 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots()
         {
-            UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
+            UnityFn.RepeatWithInterval(this, shotInterval, bulletPerShot, 0.1f, () =>
             {
-                Fn.Times(bulletPerShot, (i) =>
-                {
-                    UnityFn.SetTimeout(AppResource.instance, i * 0.1f, () =>
-                    {
-                        Vector3 position = transform.position;
-                        Vector3 targetPosition = position + Vector3.down;
-                        AppSfx.Play(AppSfx.instance.enemyLaser);
-                        EnemyBasicBulletController.Spawn(position, targetPosition, EnemyBulletType.LASER, false);
-                    });
-                });
+                if (isBroken) return;
+                Vector3 position = transform.position;
+                Vector3 targetPosition = position + Vector3.down;
+                AppSfx.Play(AppSfx.instance.enemyLaser);
+                EnemyBasicBulletController.Spawn(position, targetPosition, EnemyBulletType.LASER, false);
             });
         }
 
