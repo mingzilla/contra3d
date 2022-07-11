@@ -29,7 +29,7 @@ TagManager:
   - WALL
   - THIN_GROUND
   - REDIRECTION_WALL
-  - 
+  - ENEMY_INSIDE_WALL
   - 
   - 
   - 

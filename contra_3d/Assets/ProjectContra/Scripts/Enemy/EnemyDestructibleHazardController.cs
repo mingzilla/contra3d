@@ -10,24 +10,29 @@ namespace ProjectContra.Scripts.Enemy
 {
     public class EnemyDestructibleHazardController : AbstractDestructibleController
     {
-        private GameStoreData storeData; // Hazard
+        private GameStoreData storeData;
 
         public int hp = 5;
         [SerializeField] private float detectionRange = 40f;
         [SerializeField] private int damage = 1;
+        [SerializeField] private bool useGravity = true;
+        [SerializeField] private string gameLayer = GameLayer.ENEMY.name;
         private Rigidbody rb;
 
         private void Start()
         {
             storeData = AppResource.instance.storeData;
-            gameObject.layer = GameLayer.ENEMY.GetLayer();
+            gameObject.layer = GameLayer.GetByName(gameLayer).GetLayer();
             rb = gameObject.GetComponent<Rigidbody>();
-            rb.useGravity = isTriggered;
+            if (useGravity) rb.useGravity = isTriggered;
         }
 
         void Update()
         {
-            TriggerIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) => rb.useGravity = true);
+            TriggerIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
+            {
+                if (useGravity) rb.useGravity = true;
+            });
         }
 
         void OnCollisionEnter(Collision other)

@@ -24,7 +24,7 @@ namespace ProjectContra.Scripts.Enemy
         private GameStoreData storeData;
         private Vector3 targetPosition;
         private EnemyBulletType bulletType;
-        private int moveXValue = -1;
+        private int bulletMoveXValue = -1;
 
         void Start()
         {
@@ -40,7 +40,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             TriggerIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                moveXValue = (closestPlayer.position.x < transform.position.x) ? -1 : 1;
+                bulletMoveXValue = (closestPlayer.position.x < transform.position.x) ? -1 : 1;
             });
             if (isTriggered)
             {
@@ -61,7 +61,7 @@ namespace ProjectContra.Scripts.Enemy
                 if (isBroken) return;
                 if (!closestPlayer) return;
                 EnemyBasicBulletController bullet = EnemyBasicBulletController.Spawn(position, closestPlayer.position, bulletType, true);
-                bullet.moveXValue = moveXValue;
+                bullet.moveXValue = bulletMoveXValue;
             });
         }
 

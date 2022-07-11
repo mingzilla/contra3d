@@ -13,6 +13,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameLayer GROUND = Create("GROUND");
         public static readonly GameLayer DESTRUCTIBLE = Create("DESTRUCTIBLE");
         public static readonly GameLayer ENEMY = Create("ENEMY");
+        public static readonly GameLayer ENEMY_INSIDE_WALL = Create("ENEMY_INSIDE_WALL"); // enemy that doesn't collide with walls, so that animation is not prevented by wall
         public static readonly GameLayer ENEMY_SHOT = Create("ENEMY_SHOT");
         public static readonly GameLayer ENEMY_GRENADE = Create("ENEMY_GRENADE");
         public static readonly GameLayer ENEMY_DESTROYABLE_SHOT = Create("ENEMY_DESTROYABLE_SHOT");
@@ -39,6 +40,7 @@ namespace ProjectContra.Scripts.Types
                 GROUND,
                 DESTRUCTIBLE,
                 ENEMY,
+                ENEMY_INSIDE_WALL,
                 ENEMY_SHOT,
                 ENEMY_GRENADE,
                 ENEMY_DESTROYABLE_SHOT,

@@ -54,7 +54,7 @@ namespace ProjectContra.Scripts.Types
         public LayerMask GetDestructibleLayers()
         {
             // LayerMask can only be in methods, it can't be a field because it can't be part of initialisation
-            return GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.DESTRUCTIBLE, GameLayer.ENEMY, GameLayer.POWER_UP_CONTAINER});
+            return GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.DESTRUCTIBLE, GameLayer.ENEMY, GameLayer.ENEMY_INSIDE_WALL, GameLayer.POWER_UP_CONTAINER});
         }
     }
 }

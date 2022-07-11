@@ -18,5 +18,10 @@ namespace ProjectContra.Scripts.AbstractController
                 if (!isBroken) fn();
             });
         }
+
+        private void OnDestroy()
+        {
+            isBroken = true;
+        }
     }
 }
