@@ -265,7 +265,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 10
   hp: 10
+  isBroken: 0
   detectionRange: 30
   bulletName: PIERCE
 --- !u!4 &3314107536018391939 stripped

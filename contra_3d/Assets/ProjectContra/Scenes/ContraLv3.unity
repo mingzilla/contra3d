@@ -15288,13 +15288,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
-  detectionRange: 40
+  maxHp: 50
+  hp: 50
+  isBroken: 0
+  detectionRange: 50
   amountPerThrow: 12
   yForce: 20
   bulletPositionDelta: {x: -1, y: 1, z: 0}
   leftMostDistance: -12
   rightMostDistance: -1
-  hp: 50
 --- !u!64 &2138116068
 MeshCollider:
   m_ObjectHideFlags: 0

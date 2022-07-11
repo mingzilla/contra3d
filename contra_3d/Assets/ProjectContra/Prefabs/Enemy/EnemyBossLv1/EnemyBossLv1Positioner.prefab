@@ -46,9 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cdfe5a591b74442bb0108ff6b42f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 2
-  hp: 5
+  isTriggered: 0
+  maxHp: 15
+  hp: 15
   isBroken: 0
+  fireDelay: 2
 --- !u!65 &2595342440974232884
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -143,9 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cdfe5a591b74442bb0108ff6b42f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 3
-  hp: 5
+  isTriggered: 0
+  maxHp: 15
+  hp: 15
   isBroken: 0
+  fireDelay: 3
 --- !u!65 &6011235753671281333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -205,9 +209,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cdfe5a591b74442bb0108ff6b42f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 0
-  hp: 5
+  isTriggered: 0
+  maxHp: 15
+  hp: 15
   isBroken: 0
+  fireDelay: 0
 --- !u!65 &342269641190763735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -267,9 +273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cdfe5a591b74442bb0108ff6b42f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 1
-  hp: 5
+  isTriggered: 0
+  maxHp: 15
+  hp: 15
   isBroken: 0
+  fireDelay: 1
 --- !u!65 &5218935067583006941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -397,6 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2159045cae62cf84d9cac7214537c781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTriggered: 0
   gameCamera: {fileID: 0}
   bossCamera: {fileID: 0}
   weakPoint: {fileID: 2507418420140174263}
@@ -696,7 +705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27893dfac8154ee78449286aaef5861a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 20
+  isTriggered: 0
+  maxHp: 50
+  hp: 50
   isBroken: 0
 --- !u!4 &2992628106235851021 stripped
 Transform:

@@ -129,10 +129,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
-  isBroken: 0
+  maxHp: 10
   hp: 10
+  isBroken: 0
   detectionRange: 20
   damage: 1
+  useGravity: 1
+  gameLayer: ENEMY
 --- !u!1 &7797206463877240399
 GameObject:
   m_ObjectHideFlags: 0

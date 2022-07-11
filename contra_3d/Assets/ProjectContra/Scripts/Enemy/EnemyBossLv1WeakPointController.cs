@@ -1,9 +1,7 @@
 ﻿using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
-using ProjectContra.Scripts.EnemyBullet;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
@@ -11,9 +9,6 @@ namespace ProjectContra.Scripts.Enemy
 {
     public class EnemyBossLv1WeakPointController : AbstractDestructibleController
     {
-        private EnemyAttribute attribute;
-        public int hp = 20;
-
         private GameStoreData storeData;
         private GameObject damageEffect;
         private GameObject destroyEffect;
@@ -24,8 +19,6 @@ namespace ProjectContra.Scripts.Enemy
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             damageEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             destroyEffect = AppResource.instance.enemyDestroyedBigExplosion;
-            attribute = AppResource.instance.enemyAttributeBossLv1WeakPoint;
-            hp = attribute.hp;
         }
 
         public override void TakeDamage(Vector3 position, int damage)

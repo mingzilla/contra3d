@@ -33,7 +33,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             powerUpLPrefab;
 
         // Enemy prefabs
-        [SerializeField] public GameObject enemyWalkerPrefab, 
+        [SerializeField] public GameObject enemyWalkerPrefab,
             enemyBubblePrefab;
 
         // Enemy bullet prefabs
@@ -67,11 +67,6 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             sceneInitDataLv6,
             sceneInitDataLv7,
             sceneInitDataLv8;
-
-        // EnemyAttribute
-        [SerializeField] public EnemyAttribute enemyAttributeGroundCannon,
-            enemyAttributeBossLv1Gun,
-            enemyAttributeBossLv1WeakPoint;
 
         private void Awake()
         {

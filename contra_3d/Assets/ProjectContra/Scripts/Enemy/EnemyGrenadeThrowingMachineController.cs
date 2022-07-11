@@ -20,7 +20,6 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private Vector3 bulletPositionDelta = new Vector3(-1f, 1f, 0f);
         [SerializeField] private int leftMostDistance = -7;
         [SerializeField] private int rightMostDistance = -1;
-        [SerializeField] private int hp = 50;
 
         private GameStoreData storeData;
         private GameObject destroyEffect;

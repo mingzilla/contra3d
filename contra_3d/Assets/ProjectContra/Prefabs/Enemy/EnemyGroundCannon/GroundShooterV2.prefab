@@ -227,8 +227,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
-  isBroken: 0
+  maxHp: 10
   hp: 10
+  isBroken: 0
   detectionRange: 25
   bulletName: PIERCE
   targetDeltaY: 2

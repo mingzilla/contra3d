@@ -13,7 +13,6 @@ namespace ProjectContra.Scripts.Enemy
     {
         private readonly IntervalState shotInterval = IntervalState.Create(2.5f);
         public int fireDelay = 0;
-        public int hp = 20;
         public bool canShoot = false;
 
         private GameStoreData storeData;

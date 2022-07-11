@@ -31,7 +31,6 @@ namespace ProjectContra.Scripts.Enemy
         private Animator animatorCtrl;
         private Animator bodyAnimatorCtrl;
         private AppMusic musicController;
-        public int hp = 100;
 
         private int phase = 0;
         private static readonly int openDoorKey = Animator.StringToHash("openDoor");

@@ -13,7 +13,6 @@ namespace ProjectContra.Scripts.Enemy
         private readonly IntervalState shotInterval = IntervalState.Create(5f);
         public int bulletPerShot = 3;
         public float fireDelay = 0f;
-        public int hp = 20;
         public bool canShoot = false;
 
         private GameObject destroyEffect;

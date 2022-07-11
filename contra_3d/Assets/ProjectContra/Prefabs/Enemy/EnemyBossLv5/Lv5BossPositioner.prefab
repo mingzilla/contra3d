@@ -157,6 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 180
+  hp: 180
   isBroken: 0
   gameCamera: {fileID: 0}
   bossCamera: {fileID: 0}
@@ -169,7 +171,6 @@ MonoBehaviour:
   modDelayToChangeVelocity: 3
   shotPositionDelta: 4
   bulletMoveSpeed: 7
-  hp: 100
 --- !u!95 &5244207956173215423
 Animator:
   serializedVersion: 4

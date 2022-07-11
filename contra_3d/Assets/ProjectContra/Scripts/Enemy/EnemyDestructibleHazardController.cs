@@ -12,7 +12,6 @@ namespace ProjectContra.Scripts.Enemy
     {
         private GameStoreData storeData;
 
-        public int hp = 5;
         [SerializeField] private float detectionRange = 40f;
         [SerializeField] private int damage = 1;
         [SerializeField] private bool useGravity = true;

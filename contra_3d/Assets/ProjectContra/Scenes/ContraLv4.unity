@@ -406,11 +406,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 25
+  hp: 25
+  isBroken: 0
   bulletPerShot: 3
   fireDelay: 0.5
-  hp: 25
   canShoot: 0
-  isBroken: 0
 --- !u!1001 &36585906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2587,11 +2588,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 25
+  hp: 25
+  isBroken: 0
   bulletPerShot: 3
   fireDelay: 1.5
-  hp: 25
   canShoot: 0
-  isBroken: 0
 --- !u!1 &391506849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3141,11 +3143,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 25
+  hp: 25
+  isBroken: 0
   bulletPerShot: 4
   fireDelay: 0
-  hp: 25
   canShoot: 0
-  isBroken: 0
 --- !u!1 &521966643
 GameObject:
   m_ObjectHideFlags: 0
@@ -4093,11 +4096,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 25
+  hp: 25
+  isBroken: 0
   bulletPerShot: 3
   fireDelay: 2.5
-  hp: 25
   canShoot: 0
-  isBroken: 0
 --- !u!1 &624024987
 GameObject:
   m_ObjectHideFlags: 0
@@ -7330,11 +7334,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 25
+  hp: 25
+  isBroken: 0
   bulletPerShot: 4
   fireDelay: 2
-  hp: 25
   canShoot: 0
-  isBroken: 0
 --- !u!1 &1164111165
 GameObject:
   m_ObjectHideFlags: 0
@@ -8406,11 +8411,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 25
+  hp: 25
+  isBroken: 0
   bulletPerShot: 3
   fireDelay: 3.5
-  hp: 25
   canShoot: 0
-  isBroken: 0
 --- !u!1001 &1327321382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9198,11 +9204,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 25
+  hp: 25
+  isBroken: 0
   bulletPerShot: 4
   fireDelay: 4
-  hp: 25
   canShoot: 0
-  isBroken: 0
 --- !u!1 &1459126333
 GameObject:
   m_ObjectHideFlags: 0
@@ -12114,11 +12121,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 25
+  hp: 25
+  isBroken: 0
   bulletPerShot: 4
   fireDelay: 1
-  hp: 25
   canShoot: 0
-  isBroken: 0
 --- !u!1 &1928278010 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 634766459328409712, guid: a88723741d9ac444da4664412d644c51,
@@ -12608,11 +12616,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 25
+  hp: 25
+  isBroken: 0
   bulletPerShot: 4
   fireDelay: 3
-  hp: 25
   canShoot: 0
-  isBroken: 0
 --- !u!1 &1986572109
 GameObject:
   m_ObjectHideFlags: 0

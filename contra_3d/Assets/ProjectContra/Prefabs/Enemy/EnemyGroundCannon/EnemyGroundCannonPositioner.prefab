@@ -133,19 +133,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2725284267252807838}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1446758359017026439
-MonoBehaviour:
+--- !u!65 &9112551324277881970
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2959795468195677647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5694a174d41545929b584f126631c517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 10
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 1.5, z: 0.9910079}
+  m_Center: {x: 0, y: 0, z: 0.13576415}
 --- !u!95 &1526876677845658520
 Animator:
   serializedVersion: 4
@@ -166,16 +166,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &9112551324277881970
-BoxCollider:
+--- !u!114 &1446758359017026439
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2959795468195677647}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.0000005, y: 1.5, z: 0.9910079}
-  m_Center: {x: 0, y: 0, z: 0.13576415}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5694a174d41545929b584f126631c517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTriggered: 0
+  maxHp: 10
+  hp: 10
+  isBroken: 0
+  detectionRange: 40
+  bulletName: PIERCE

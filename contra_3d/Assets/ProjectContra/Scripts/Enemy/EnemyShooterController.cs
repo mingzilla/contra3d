@@ -20,8 +20,6 @@ namespace ProjectContra.Scripts.Enemy
         public float detectionRange = 30f;
         public Vector3 shootPositionDelta = new Vector3(0f, 1f, 0f);
         public Vector3 targetPositionDelta = new Vector3(0f, 1f, 0f);
-        public int maxHp = 1;
-        public int hp = 1;
 
         private IntervalState shotIntervalState;
         private EnemyBulletType bulletType;
@@ -75,14 +73,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override void TakeDamage(Vector3 position, int damage)
         {
-            UnityFn.CreateEffect(destroyEffect, position, 1f);
-            AppSfx.PlayAdjusted(AppSfx.instance.enemyDeath);
-            hp -= damage;
-            if (hp <= 0)
-            {
-                if (maxHp > 1) AppSfx.PlayRepeatedly(AppSfx.instance.bigEnemyDeath, 3);
-                Destroy(gameObject);
-            }
+            ReduceHpAndCreateEffect(position, damage);
         }
 
         public override float GetDetectionRange()

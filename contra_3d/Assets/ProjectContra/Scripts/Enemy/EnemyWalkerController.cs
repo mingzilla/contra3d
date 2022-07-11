@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using BaseUtil.GameUtil;
+﻿using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -22,8 +21,6 @@ namespace ProjectContra.Scripts.Enemy
         private GameStoreData storeData;
         private Rigidbody rb;
         private CapsuleCollider theCollider;
-        private LayerMask destructibleLayers;
-        private GameObject destroyEffect;
         private bool moveXLeft = false;
         private Animator animatorCtrl;
         private static readonly int isRunning = Animator.StringToHash("isRunning");
@@ -34,8 +31,6 @@ namespace ProjectContra.Scripts.Enemy
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
             rb = UnityFn.GetOrAddRigidbody(gameObject, true, !moveXZ);
-            destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
-            destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             animatorCtrl = gameObject.GetComponent<Animator>();
         }
 
@@ -52,7 +47,7 @@ namespace ProjectContra.Scripts.Enemy
             {
                 isActive = true;
                 moveXLeft = closestPlayer.position.x < transform.position.x;
-                animatorCtrl.SetBool(isRunning, true);
+                if (animatorCtrl) animatorCtrl.SetBool(isRunning, true);
                 transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
             }
             bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
@@ -101,10 +96,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override void TakeDamage(Vector3 position, int damage)
         {
-            UnityFn.CreateEffect(destroyEffect, position, 1f);
-            AppSfx.PlayAdjusted(AppSfx.instance.enemyDeath);
-            isBroken = true;
-            Destroy(gameObject);
+            ReduceHpAndCreateEffect(position, damage);
         }
 
         public override float GetDetectionRange()

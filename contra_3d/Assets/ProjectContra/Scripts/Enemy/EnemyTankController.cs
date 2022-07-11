@@ -13,7 +13,6 @@ namespace ProjectContra.Scripts.Enemy
     public class EnemyTankController : AbstractDestructibleController
     {
         private readonly IntervalState shotInterval = IntervalState.Create(2f);
-        public int hp = 15;
         public float detectionRange = 30f;
         public Vector3 shootPositionDelta = new Vector3(0f, 0.4f, -0.5f);
         public Vector3 targetPositionDelta = new Vector3(0f, 0f, 0f);

@@ -377,7 +377,7 @@ MonoBehaviour:
   isTriggered: 0
   damage: 1
   moveSpeed: 4
-  detectionRange: 40
+  detectionRange: 50
   directionChangeTime: 10
   invisibleWall: {fileID: 0}
   gameCamera: {fileID: 0}
@@ -587,6 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 100
   hp: 100
   isBroken: 0
 --- !u!1 &4680329003304432882

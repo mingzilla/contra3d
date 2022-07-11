@@ -5,7 +5,6 @@ using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.EnemyBullet;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 
@@ -14,8 +13,6 @@ namespace ProjectContra.Scripts.Enemy
     public class EnemyGroundShooterController : AbstractDestructibleController
     {
         private readonly IntervalState shotInterval = IntervalState.Create(3f);
-        private EnemyAttribute attribute;
-        public int hp = 10;
         [SerializeField] private float detectionRange = 40f;
         [SerializeField] private string bulletName = EnemyBulletType.PIERCE.name;
         [SerializeField] private float targetDeltaY = 2f;
@@ -29,8 +26,6 @@ namespace ProjectContra.Scripts.Enemy
         void Start()
         {
             storeData = AppResource.instance.storeData;
-            attribute = AppResource.instance.enemyAttributeGroundCannon;
-            hp = attribute.hp;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             bulletType = EnemyBulletType.GetByNameWithDefault(bulletName);
             targetPosition = transform.position + new Vector3(0f, targetDeltaY, 0f);

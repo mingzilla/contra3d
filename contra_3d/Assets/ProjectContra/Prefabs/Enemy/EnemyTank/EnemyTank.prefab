@@ -210,7 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67de08fe4baf4b72bf5078672c1f6579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTriggered: 0
+  maxHp: 15
   hp: 15
+  isBroken: 0
   detectionRange: 30
   shootPositionDelta: {x: 0, y: 0.2, z: -0.5}
   targetPositionDelta: {x: 0, y: 0, z: 0}
@@ -322,6 +325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyShooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 772405699368872094, guid: 9e54c78a2f2c3c144bdf405d1c2a1ab5,
+        type: 3}
+      propertyPath: hp
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 772405699368872094, guid: 9e54c78a2f2c3c144bdf405d1c2a1ab5,
         type: 3}

@@ -215,11 +215,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949962747893b64cb701a74dce04e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTriggered: 0
+  maxHp: 10
+  hp: 10
+  isBroken: 0
   shotInterval: 3
   bulletPerShot: 3
   bulletName: PIERCE
   preventMovement: 1
+  preventRotation: 0
+  enableFreeRotation: 0
   detectionRange: 30
   shootPositionDelta: {x: 0, y: 1, z: 0}
   targetPositionDelta: {x: 0, y: 1, z: 0}
-  maxHp: 6
