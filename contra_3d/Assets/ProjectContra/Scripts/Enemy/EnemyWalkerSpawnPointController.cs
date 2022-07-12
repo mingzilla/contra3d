@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -11,20 +9,25 @@ namespace ProjectContra.Scripts.Enemy
 {
     public class EnemyWalkerSpawnPointController : AbstractRangeDetectionController
     {
-        private readonly IntervalState spawnInterval = IntervalState.Create(5f);
-        public float detectionRange = 60f;
+        [SerializeField] private int spawnInterval = 5;
+        [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] private float detectionRange = 60f;
+
         private GameStoreData storeData;
+        private IntervalState spawnIntervalState;
 
         void Start()
         {
             storeData = AppResource.instance.storeData;
+            spawnIntervalState = IntervalState.Create(spawnInterval);
+            if (!enemyPrefab) enemyPrefab = AppResource.instance.enemyWalkerPrefab;
         }
 
         void Update()
         {
             RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                UnityFn.RunWithInterval(AppResource.instance, spawnInterval, () =>
+                UnityFn.RunWithInterval(AppResource.instance, spawnIntervalState, () =>
                 {
                     SpawnWalker();
                     UnityFn.SetTimeout(this, 0.5f, SpawnWalker);
@@ -35,7 +38,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void SpawnWalker()
         {
-            Instantiate(AppResource.instance.enemyWalkerPrefab, transform.position, Quaternion.identity);
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         }
 
         public override float GetDetectionRange()
