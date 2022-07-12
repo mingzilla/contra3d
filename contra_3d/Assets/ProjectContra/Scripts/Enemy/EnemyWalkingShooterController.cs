@@ -53,8 +53,8 @@ namespace ProjectContra.Scripts.Enemy
             });
             if (!isInRange)
             {
-                animatorCtrl.SetBool(isShootingKey, false);
-                animatorCtrl.SetBool(isRunning, false);
+                if (animatorCtrl) animatorCtrl.SetBool(isShootingKey, false);
+                if (animatorCtrl) animatorCtrl.SetBool(isRunning, false);
             }
         }
 
@@ -62,7 +62,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
             {
-                animatorCtrl.SetBool(isShootingKey, true);
+                if (animatorCtrl) animatorCtrl.SetBool(isShootingKey, true);
                 pauseMovement = true;
                 UnityFn.SetTimeout(AppResource.instance, 0.5f, () =>
                 {
@@ -75,7 +75,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void Move(Transform closestPlayer)
         {
-            animatorCtrl.SetBool(isRunning, true);
+            if (animatorCtrl) animatorCtrl.SetBool(isRunning, true);
             if (!pauseMovement) MovementUtil.FollowXZTowardsPosition3D(transform, closestPlayer, 0.5f, moveSpeed, Time.deltaTime);
         }
 

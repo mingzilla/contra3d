@@ -13,4 +13,3 @@ MonoBehaviour:
   m_Name: SceneInitDataLv6
   m_EditorClassIdentifier: 
   playerInitPosition: {x: 0, y: 6, z: 0}
-  moveXZ: 1

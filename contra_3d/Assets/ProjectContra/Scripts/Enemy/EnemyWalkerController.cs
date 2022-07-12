@@ -17,6 +17,7 @@ namespace ProjectContra.Scripts.Enemy
         public float detectionRange = 60f;
         private bool isActive = false;
         [SerializeField] private bool forceFollowingPlayer = false;
+        [SerializeField] private int selfDestroyTime = -1; // if this is higher than 0, it can self destroy
 
         private GameStoreData storeData;
         private Rigidbody rb;
@@ -32,6 +33,7 @@ namespace ProjectContra.Scripts.Enemy
             bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
             rb = UnityFn.GetOrAddRigidbody(gameObject, true, !moveXZ);
             animatorCtrl = gameObject.GetComponent<Animator>();
+            if (selfDestroyTime > 0) Destroy(gameObject, selfDestroyTime);
         }
 
         void Update()

@@ -68,6 +68,7 @@ MonoBehaviour:
   jumpForce: 10
   detectionRange: 40
   forceFollowingPlayer: 0
+  selfDestroyTime: 10
 --- !u!1001 &8860349668198410105
 PrefabInstance:
   m_ObjectHideFlags: 0
