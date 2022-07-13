@@ -62,9 +62,10 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 1
   hp: 1
+  isBig: 0
   isBroken: 0
   damage: 1
-  moveSpeed: 5
+  moveSpeed: 6
   jumpForce: 10
   detectionRange: 40
   forceFollowingPlayer: 0

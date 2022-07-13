@@ -9,6 +9,7 @@ namespace ProjectContra.Scripts.AbstractController
     {
         [SerializeField] public int maxHp = 1;
         [SerializeField] public int hp = 1;
+        [SerializeField] public bool isBig = false; // true to use big explosion when destroyed
 
         // After gameObject is destroyed, isBroken is used to check before using any unity function. Otherwise error is thrown when using any Unity functions from the object
         // This is typically needed when a function is run in a SetTimeOut(), an object can be destroyed at the time the function runs.
@@ -32,7 +33,8 @@ namespace ProjectContra.Scripts.AbstractController
                 hp -= damage;
                 if (hp <= 0)
                 {
-                    UnityFn.CreateEffect(AppResource.instance.enemyGrenadeSmallExplosion, position, 1f);
+                    GameObject effect = isBig ? AppResource.instance.enemyDestroyedBigExplosion : AppResource.instance.enemyGrenadeSmallExplosion;
+                    UnityFn.CreateEffect(effect, position, 1f);
                     AppSfx.PlayRepeatedly(AppSfx.instance.bigEnemyDeath, 3);
                     Destroy(gameObject);
                 }
