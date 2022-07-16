@@ -304,6 +304,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 30
   hp: 30
+  isBig: 0
   isBroken: 0
   fireDelay: 0
   canShoot: 0
@@ -456,6 +457,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 30
   hp: 30
+  isBig: 0
   isBroken: 0
   fireDelay: 0
   canShoot: 0
@@ -608,6 +610,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 30
   hp: 30
+  isBig: 0
   isBroken: 0
   fireDelay: 0
   canShoot: 0
@@ -850,6 +853,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 30
   hp: 30
+  isBig: 0
   isBroken: 0
   fireDelay: 0
   canShoot: 0
@@ -962,7 +966,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.02
   m_Center: {x: 0, y: -0.034374345, z: -0.000000016143183}
---- !u!114 &6344457194699008973
+--- !u!114 &1629140791605112901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -971,13 +975,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6110650107030129437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c890b1bbf0be48f9a01d88acb741d400, type: 3}
+  m_Script: {fileID: 11500000, guid: 27893dfac8154ee78449286aaef5861a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
   maxHp: 100
   hp: 100
+  isBig: 1
   isBroken: 0
+  gameLayer: ENEMY
 --- !u!4 &6883386206773285287 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e3c6544fe2ddb4f438f647a51cdfefd2,

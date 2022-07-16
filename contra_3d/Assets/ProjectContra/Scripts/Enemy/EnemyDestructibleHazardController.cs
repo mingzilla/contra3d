@@ -51,14 +51,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override void TakeDamage(Vector3 position, int damage)
         {
-            AppSfx.Play(AppSfx.instance.bigEnemyDamaged);
-            hp -= damage;
-            if (hp <= 0)
-            {
-                UnityFn.CreateEffect(AppResource.instance.enemyDestroyedSmallExplosion, position, 1f);
-                AppSfx.Play(AppSfx.instance.grenadeExploded);
-                Destroy(gameObject);
-            }
+            ReduceHpAndCreateEffect(position, damage);
         }
 
         public override float GetDetectionRange()

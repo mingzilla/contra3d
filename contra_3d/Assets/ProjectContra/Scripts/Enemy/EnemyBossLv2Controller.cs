@@ -21,7 +21,7 @@ namespace ProjectContra.Scripts.Enemy
         private EnemyShooterController[] shooters;
         public float detectionRange = 40f;
 
-        private EnemyBossLv1WeakPointController weakPointCtrl;
+        private EnemyBossWeakPointController weakPointCtrl;
         private Animator animatorCtrl;
         private static readonly int isActive = Animator.StringToHash("isActive");
         private AppMusic musicController;

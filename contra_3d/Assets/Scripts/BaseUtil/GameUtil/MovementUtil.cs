@@ -97,11 +97,13 @@ namespace BaseUtil.GameUtil
             addDeltaToTargetFn(delta); // targetPosition += delta; - move target further so that bullet never catches the target
         }
 
-        public static void MoveToPositionOverTime(Transform transform, Vector3 targetPosition, float overlapRange, float moveSpeed)
+        /// <returns>false if it stops movement</returns>
+        public static bool MoveToPositionOverTime(Transform transform, Vector3 targetPosition, float overlapRange, float moveSpeed)
         {
             Vector3 position = transform.position;
-            if (Vector3.Distance(position, targetPosition) <= overlapRange) return;
+            if (Vector3.Distance(position, targetPosition) <= overlapRange) return false;
             transform.position = Vector3.MoveTowards(position, targetPosition, moveSpeed * Time.deltaTime);
+            return true;
         }
 
         /// <param name="xValue">-1 goes left, 1 goes right</param>

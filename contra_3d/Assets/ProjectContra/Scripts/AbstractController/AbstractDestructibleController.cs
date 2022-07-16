@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using UnityEngine;
@@ -44,6 +46,19 @@ namespace ProjectContra.Scripts.AbstractController
                 AppSfx.Play(AppSfx.instance.enemyDeath);
                 UnityFn.CreateEffect(AppResource.instance.enemyDestroyedSmallExplosion, position, 1f);
                 Destroy(gameObject);
+            }
+        }
+
+        public static bool AreAllBroken<T>(IEnumerable<T> controllers) where T : AbstractDestructibleController
+        {
+            return Fn.All(g => g.isBroken, new List<T>(controllers));
+        }
+
+        public static void AllTakeDamage<T>(IEnumerable<T> controllers, int damage) where T : AbstractDestructibleController
+        {
+            foreach (T controller in controllers)
+            {
+                controller.TakeDamage(controller.gameObject.transform.position, damage);
             }
         }
 

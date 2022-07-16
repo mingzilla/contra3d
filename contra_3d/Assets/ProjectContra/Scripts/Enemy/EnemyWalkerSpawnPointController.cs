@@ -1,4 +1,5 @@
-﻿using BaseUtil.GameUtil.Base;
+﻿using System;
+using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -17,6 +18,7 @@ namespace ProjectContra.Scripts.Enemy
 
         private GameStoreData storeData;
         private IntervalState spawnIntervalState;
+        private bool isBroken;
 
         void Start()
         {
@@ -39,12 +41,17 @@ namespace ProjectContra.Scripts.Enemy
 
         void SpawnWalker()
         {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            if (!isBroken) Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         }
 
         public override float GetDetectionRange()
         {
             return detectionRange;
+        }
+
+        private void OnDestroy()
+        {
+            isBroken = true;
         }
     }
 }

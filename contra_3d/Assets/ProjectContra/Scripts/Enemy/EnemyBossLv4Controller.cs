@@ -1,14 +1,9 @@
-﻿using System.Collections.Generic;
-using BaseUtil.Base;
-using BaseUtil.GameUtil;
+﻿using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
-using ProjectContra.Scripts.AppSingleton;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Map;
-using ProjectContra.Scripts.Types;
-using ProjectContra.Scripts.Util;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
@@ -60,8 +55,8 @@ namespace ProjectContra.Scripts.Enemy
 
         private void HandlePhase1()
         {
-            int brokenGuns = Fn.Filter(g => g.isBroken, new List<EnemyBossLv4GunController>(guns)).Count;
-            if (brokenGuns == guns.Length)
+            bool areAllBroken = AbstractDestructibleController.AreAllBroken(guns);
+            if (areAllBroken)
             {
                 phase = 2; // this is just to prevent getting into here again
                 gameCamera.SetActive(true);

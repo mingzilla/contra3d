@@ -21,7 +21,7 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private GameObject bossCamera;
         [SerializeField] private float detectionRange = 50f;
 
-        private EnemyBossLv3WeakPointController weakPointCtrl;
+        private EnemyBossWeakPointController weakPointCtrl;
         private Animator animatorCtrl;
         private static readonly int isActiveKey = Animator.StringToHash("isActive");
         private AppMusic musicController;
@@ -33,7 +33,7 @@ namespace ProjectContra.Scripts.Enemy
             storeData = AppResource.instance.storeData;
             musicController = AppResource.instance.musicManager.GetComponent<AppMusic>();
             guns = gameObject.GetComponentsInChildren<EnemyBossLv3GunController>();
-            weakPointCtrl = gameObject.GetComponentInChildren<EnemyBossLv3WeakPointController>();
+            weakPointCtrl = gameObject.GetComponentInChildren<EnemyBossWeakPointController>();
             animatorCtrl = gameObject.GetComponent<Animator>();
         }
 

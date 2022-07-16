@@ -23,7 +23,7 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private GameObject weakPoint;
         [SerializeField] private GameObject spawnPoint;
 
-        private EnemyBossLv1WeakPointController weakPointCtrl;
+        private EnemyBossWeakPointController weakPointCtrl;
         private Animator animatorCtrl;
         private static readonly int isActive = Animator.StringToHash("isActive");
         private AppMusic musicController;
@@ -35,9 +35,9 @@ namespace ProjectContra.Scripts.Enemy
             storeData = AppResource.instance.storeData;
             musicController = AppResource.instance.musicManager.GetComponent<AppMusic>();
             guns = gameObject.GetComponentsInChildren<EnemyBossLv1GunController>();
-            weakPointCtrl = weakPoint.GetComponent<EnemyBossLv1WeakPointController>();
+            weakPointCtrl = weakPoint.GetComponent<EnemyBossWeakPointController>();
             animatorCtrl = gameObject.GetComponent<Animator>();
-            SetGunsActive(false);
+            UnityFn.SetControllersActive(guns, false);
             weakPoint.SetActive(false);
             spawnPoint.SetActive(false);
         }
@@ -55,7 +55,7 @@ namespace ProjectContra.Scripts.Enemy
         private void HandlePhase0()
         {
             musicController.PlayLv1BossMusic();
-            SetGunsActive(true);
+            UnityFn.SetControllersActive(guns, true);
             animatorCtrl.SetBool(isActive, true);
             bossCamera.SetActive(true);
             gameCamera.SetActive(false);
@@ -64,8 +64,8 @@ namespace ProjectContra.Scripts.Enemy
 
         private void HandlePhase1()
         {
-            int brokenGuns = Fn.Filter(g => g.isBroken, new List<EnemyBossLv1GunController>(guns)).Count;
-            if (brokenGuns == guns.Length)
+            bool areAllBroken = AbstractDestructibleController.AreAllBroken(guns);
+            if (areAllBroken)
             {
                 weakPoint.SetActive(true);
                 spawnPoint.SetActive(true);
@@ -82,20 +82,14 @@ namespace ProjectContra.Scripts.Enemy
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
                 AppMusic.instance.Stop();
+                EnemyWalkerController[] spiders = FindObjectsOfType<EnemyWalkerController>();
+                AbstractDestructibleController.AllTakeDamage(spiders, 10);
                 UnityFn.SetTimeout(AppResource.instance, 5, () =>
                 {
                     AppSfx.instance.levelClear.Play();
                     UnityFn.SetTimeout(AppResource.instance, 5, UnityFn.LoadNextScene);
                     Destroy(gameObject);
                 });
-            }
-        }
-
-        private void SetGunsActive(bool isActive)
-        {
-            foreach (EnemyBossLv1GunController gun in guns)
-            {
-                gun.gameObject.SetActive(isActive);
             }
         }
 

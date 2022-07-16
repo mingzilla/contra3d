@@ -398,6 +398,22 @@ namespace BaseUtil.GameUtil.Base
             }
         }
 
+        public static void SetAllActivate(List<GameObject> gameObjectsToSetInactive)
+        {
+            foreach (GameObject item in gameObjectsToSetInactive)
+            {
+                SetActive(item, Fn.DoNothing);
+            }
+        }
+
+        public static void SetControllersActive<T>(IEnumerable<T> controllers, bool isActive) where T : MonoBehaviour
+        {
+            foreach (T controller in controllers)
+            {
+                if (controller) FastSetActive(controller.gameObject, isActive);
+            }
+        }
+
         public static void DestroyReferenceIfPresent(MonoBehaviour controller, Action postFn)
         {
             if (controller != null)

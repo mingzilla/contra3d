@@ -7,8 +7,9 @@ using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public class EnemyBossLv1WeakPointController : AbstractDestructibleController
+    public class EnemyBossWeakPointController : AbstractDestructibleController
     {
+        [SerializeField] private string gameLayer = GameLayer.ENEMY.name;
         private GameStoreData storeData;
         private GameObject damageEffect;
         private GameObject destroyEffect;
@@ -16,7 +17,7 @@ namespace ProjectContra.Scripts.Enemy
         void Start()
         {
             storeData = AppResource.instance.storeData;
-            gameObject.layer = GameLayer.ENEMY.GetLayer();
+            gameObject.layer = GameLayer.GetByName(gameLayer).GetLayer();
             damageEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             destroyEffect = AppResource.instance.enemyDestroyedBigExplosion;
         }
