@@ -12,6 +12,8 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private int spawnInterval = 5;
         [SerializeField] private GameObject enemyPrefab;
         [SerializeField] private float detectionRange = 60f;
+        [SerializeField] private int numberPerSpawn = 3;
+        [SerializeField] private float repeatDelay = 0.5f;
 
         private GameStoreData storeData;
         private IntervalState spawnIntervalState;
@@ -27,11 +29,10 @@ namespace ProjectContra.Scripts.Enemy
         {
             RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                UnityFn.RunWithInterval(AppResource.instance, spawnIntervalState, () =>
+                UnityFn.RepeatWithInterval(AppResource.instance, spawnIntervalState, numberPerSpawn, repeatDelay, () =>
                 {
+                    if (!closestPlayer) return;
                     SpawnWalker();
-                    UnityFn.SetTimeout(this, 0.5f, SpawnWalker);
-                    UnityFn.SetTimeout(this, 1f, SpawnWalker);
                 });
             });
         }

@@ -242,11 +242,11 @@ namespace BaseUtil.GameUtil.Base
         /// When using "this" as controller, need to safe check first, because object may have been destroyed when timeout content is run
         /// When using a global controller, may get error of accessing destroyed object even when checking e.g. isBroken, because the coroutine is run by something else
         /// </summary>
-        public static void RepeatWithInterval(MonoBehaviour controller, IntervalState state, int repeatTimes, float delay, Action fn)
+        public static void RepeatWithInterval(MonoBehaviour controller, IntervalState state, int repeatTimes, float repeatDelay, Action fn)
         {
             RunWithInterval(controller, state, () =>
             {
-                SetTimeoutWithRepeat(controller, repeatTimes, delay, fn);
+                SetTimeoutWithRepeat(controller, repeatTimes, repeatDelay, fn);
             });
         }
 
@@ -258,11 +258,11 @@ namespace BaseUtil.GameUtil.Base
         /// <summary>
         /// Run fn repeatedly, with specified repeat times and repeat delay
         /// </summary>
-        public static void SetTimeoutWithRepeat(MonoBehaviour controller, int repeatTimes, float delay, Action fn)
+        public static void SetTimeoutWithRepeat(MonoBehaviour controller, int repeatTimes, float repeatDelay, Action fn)
         {
             foreach (int i in Enumerable.Range(0, repeatTimes))
             {
-                SetTimeout(controller, i * delay, fn);
+                SetTimeout(controller, i * repeatDelay, fn);
             }
         }
 
