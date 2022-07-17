@@ -33,7 +33,11 @@ namespace ProjectContra.Scripts.Enemy
             bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
             rb = UnityFn.GetOrAddRigidbody(gameObject, true, !moveXZ);
             animatorCtrl = gameObject.GetComponent<Animator>();
-            if (selfDestroyTime > 0) Destroy(gameObject, selfDestroyTime);
+            if (selfDestroyTime > 0)
+                UnityFn.SetTimeout(this, selfDestroyTime, () =>
+                {
+                    TakeDamage(transform.position, maxHp);
+                });
         }
 
         void Update()
