@@ -79,6 +79,7 @@ namespace ProjectContra.Scripts.Enemy
             bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
             if (moveXZ) return;
             if (!GameLayer.Matches(other.gameObject.layer, GameLayer.REDIRECTION_WALL)) return;
+            rb.velocity = Vector3.zero; // so that direction change is not affected by the original inertia
             moveXLeft = !moveXLeft;
             transform.rotation = UnityFn.LookX(transform, !moveXLeft);
         }

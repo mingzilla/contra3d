@@ -45,6 +45,7 @@
      <Compile Include="Assets\ProjectContra\Scripts\Screens\TitleScreenController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\GameData\GameStoreData.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameTag.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv6Controller.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\Util\EnemyUtil.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Bullet\BulletController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\LiveResource\ResourceTitleScene.cs" />
@@ -118,7 +119,6 @@
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBubbleShooterController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\GameDataScriptable\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyGrenadeController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv6Controller.cs" />
      <None Include="Assets\ProjectContra\Project.Contra.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

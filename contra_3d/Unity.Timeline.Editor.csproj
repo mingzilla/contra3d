@@ -274,8 +274,8 @@
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\DirectorNamedColor.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Signals\SignalEventDrawer.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Actions\IMenuChecked.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\Drawers\ClipDrawer.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Actions\IAction.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\Drawers\ClipDrawer.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Utilities\TrackModifier.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Items\ITimelineItem.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\Sequence\TrimClip.cs" />
