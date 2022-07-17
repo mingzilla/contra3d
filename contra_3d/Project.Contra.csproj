@@ -64,7 +64,7 @@
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyGroundCannonController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyWalkerController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\WeaponType.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyWalkerSpawnPointController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemySpawnPointController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemySpiderWeakPointController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyWalkingShooterController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyGrenadeThrowerController.cs" />

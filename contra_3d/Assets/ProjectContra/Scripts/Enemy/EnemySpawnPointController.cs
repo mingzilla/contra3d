@@ -8,13 +8,14 @@ using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public class EnemyWalkerSpawnPointController : AbstractRangeDetectionController
+    public class EnemySpawnPointController : AbstractRangeDetectionController
     {
         [SerializeField] private int spawnInterval = 5;
         [SerializeField] private GameObject enemyPrefab;
         [SerializeField] private float detectionRange = 60f;
         [SerializeField] private int numberPerSpawn = 3;
         [SerializeField] private float repeatDelay = 0.5f;
+        [SerializeField] private Vector3 spawnPositionDelta = Vector3.zero;
 
         private GameStoreData storeData;
         private IntervalState spawnIntervalState;
@@ -41,7 +42,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void SpawnWalker()
         {
-            if (!isBroken) Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            if (!isBroken) Instantiate(enemyPrefab, transform.position + spawnPositionDelta, Quaternion.identity);
         }
 
         public override float GetDetectionRange()
