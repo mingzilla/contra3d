@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2544
     height: 1333
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 129
+  controlID: 132
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1258
-    height: 598
+    height: 580
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
@@ -193,9 +193,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 598
+    y: 580
     width: 1258
-    height: 685
+    height: 703
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -274,16 +274,16 @@ MonoBehaviour:
     y: 645
     width: 656
     height: 638
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 23}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 24}
   m_Panes:
   - {fileID: 23}
   - {fileID: 24}
   - {fileID: 25}
   - {fileID: 26}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -365,7 +365,7 @@ MonoBehaviour:
     x: 1928
     y: -268
     width: 1257
-    height: 577
+    height: 559
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -567,9 +567,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 8, y: 1.4, z: 0}
+    m_Target: {x: -9.215778, y: -84.49654, z: -2.0348167}
     speed: 2
-    m_Value: {x: -19.988474, y: -319.51614, z: 0.04914999}
+    m_Value: {x: -9.215778, y: -84.49654, z: -2.0348167}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -616,13 +616,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.017997801, y: -0.011997906, z: -0.00021568025, w: 0.99976563}
+    m_Target: {x: -0.010499787, y: 0.0030000135, z: 0.00003120375, w: 0.9999447}
     speed: 2
-    m_Value: {x: -0.017997809, y: -0.01199791, z: -0.00021568034, w: 0.99976605}
+    m_Value: {x: -0.010499742, y: 0.0030000007, z: 0.000031203614, w: 0.9999404}
   m_Size:
-    m_Target: 2.7712815
+    m_Target: 109.443375
     speed: 2
-    m_Value: 2.2319224
+    m_Value: 109.443375
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -671,7 +671,7 @@ MonoBehaviour:
     x: 1928
     y: -268
     width: 1257
-    height: 577
+    height: 559
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -709,6 +709,7 @@ MonoBehaviour:
     - {fileID: 384845595311496528, guid: cf3f9491ab13f574b9b16ce418d20c39, type: 2}
     - {fileID: -8274328674835409902, guid: cf0391ea03fcd4a4fae70da64aa7acd3, type: 2}
     - {fileID: -8274328674835409902, guid: 81b377fdb76a2ff49bda9a78b79ee0ae, type: 2}
+    - {fileID: 5965216960392209964, guid: 807622c39e1ea7d41baf19c0175668ac, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.9741936
       e01: 0
@@ -1206,11 +1207,27 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 81b377fdb76a2ff49bda9a78b79ee0ae,
+  m_AnimatorController: {fileID: 9100000, guid: 807622c39e1ea7d41baf19c0175668ac,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -8274328674835409902, guid: 81b377fdb76a2ff49bda9a78b79ee0ae,
+  - m_Target: {fileID: 5965216960392209964, guid: 807622c39e1ea7d41baf19c0175668ac,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -1558,9 +1575,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 1928
-    y: 330
+    y: 312
     width: 1257
-    height: 664
+    height: 682
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1610,22 +1627,22 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 1257
-      height: 643
-    m_Scale: {x: 0.5953704, y: 0.59537035}
-    m_Translation: {x: 628.5, y: 321.5}
+      height: 661
+    m_Scale: {x: 0.61203706, y: 0.61203706}
+    m_Translation: {x: 628.5, y: 330.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1055.6454
+      x: -1026.8986
       y: -540
-      width: 2111.2908
+      width: 2053.797
       height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 0.59537035
-  m_LastWindowPixelSize: {x: 1257, y: 664}
+  m_defaultScale: 0.61203706
+  m_LastWindowPixelSize: {x: 1257, y: 682}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1662,7 +1679,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -766072
+  m_LastSelectedObjectID: -179074
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1695,23 +1712,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0812f4ff
-      m_LastClickedID: 0
-      m_ExpandedIDs: 3efcf7ff709bfcff04b7ffffe4daffff14fbffff58710000e67100002c7200004272000090730000
+      m_SelectedIDs: e85b0000
+      m_LastClickedID: 23528
+      m_ExpandedIDs: 5695fdffbabffdff34e8fdff4c3ffeffd064feff7483feff14fbfffff65c0000c05d0000c65d0000fe5d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: ScorpionFlower
-        m_OriginalName: ScorpionFlower
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -766072
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 4
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -1763,22 +1780,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ProjectContra/Prefabs/Enemy/EnemyScorpionFlower
+    - Assets/ProjectContra/Scripts/Enemy
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/ProjectContra/Prefabs/Enemy/EnemyScorpionFlower
+  - Assets/ProjectContra/Scripts/Enemy
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\code\unity\temp_projects\contra_3d
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 255}
-    m_SelectedIDs: ae700100
-    m_LastClickedID: 94382
-    m_ExpandedIDs: 00000000f4690000f6690000f8690000fa690000fc690000fe690000006a0000026a0000046a0000066a0000086a00000a6a00000c6a0000
+    scrollPos: {x: 0, y: 331}
+    m_SelectedIDs: 906a0000
+    m_LastClickedID: 27280
+    m_ExpandedIDs: 00000000846a0000866a0000886a00008a6a00008c6a00008e6a0000906a0000926a0000946a0000966a0000986a00009a6a00009c6a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1806,7 +1823,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f4690000f6690000f8690000fa690000fc690000fe690000006a0000026a0000046a0000066a0000086a00000a6a00000c6a0000
+    m_ExpandedIDs: 00000000846a0000866a0000886a00008a6a00008c6a00008e6a0000906a0000926a0000946a0000966a0000986a00009a6a00009c6a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1831,21 +1848,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 8a3afcff
+    m_LastClickedInstanceID: -247158
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: de6600004ae8000082820000ea66000012030200c86a0000e6690000ba79030000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: ScorpionFlowerCtrl
-      m_OriginalName: ScorpionFlowerCtrl
+      m_Name: ShakyPlantCtrl
+      m_OriginalName: ShakyPlantCtrl
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -781816
+      m_UserData: -184976
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -3484,7 +3501,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -766072
+  m_LastInspectedObjectInstanceID: -366124
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 1
