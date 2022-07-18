@@ -27,8 +27,6 @@ namespace ProjectContra.Scripts.Enemy
         private GameStoreData storeData;
         private Rigidbody rb;
         private CapsuleCollider theCollider;
-        private LayerMask destructibleLayers;
-        private GameObject destroyEffect;
         private Animator animatorCtrl;
         private static readonly int isRunning = Animator.StringToHash("isRunning");
         private static readonly int isShootingKey = Animator.StringToHash("isShooting");
@@ -44,8 +42,6 @@ namespace ProjectContra.Scripts.Enemy
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
             rb = UnityFn.GetOrAddRigidbody(gameObject, useGravity, !moveXZ);
-            destructibleLayers = GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
-            destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             animatorCtrl = gameObject.GetComponent<Animator>();
             bulletType = EnemyBulletType.GetByNameWithDefault(bulletName);
         }

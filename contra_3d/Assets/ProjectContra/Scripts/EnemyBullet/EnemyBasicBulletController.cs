@@ -22,8 +22,8 @@ namespace ProjectContra.Scripts.EnemyBullet
             GameObject prefab = AppResource.instance.GetEnemyBulletPrefab(enemyBulletType);
             EnemyBasicBulletController copy = Instantiate(prefab, shotPosition, Quaternion.identity).GetComponent<EnemyBasicBulletController>();
             copy.gameObject.layer = GameLayer.ENEMY_SHOT.GetLayer();
-            if (enemyBulletType.useCustomCollider) copy.rb = UnityFn.GetOrAddRigidbody(copy.gameObject, false, false);
-            if (!enemyBulletType.useCustomCollider) copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
+            if (enemyBulletType.useCustomCollider) copy.rb = UnityFn.GetOrAddRigidbody(copy.gameObject, enemyBulletType.UseGravity(), false);
+            if (!enemyBulletType.useCustomCollider) copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, enemyBulletType.UseGravity(), 1f);
             copy.impactEffect = AppResource.instance.enemyBulletHitEffect;
             copy.enemyBulletType = enemyBulletType;
             copy.targetPosition = closestPlayerPosition;

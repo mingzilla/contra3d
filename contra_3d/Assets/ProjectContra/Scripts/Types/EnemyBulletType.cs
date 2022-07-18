@@ -10,6 +10,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly EnemyBulletType FOLLOW = Create("FOLLOW", 1, 3f, 8f, 3f, true, false);
         public static readonly EnemyBulletType GRENADE = Create("GRENADE", 1, 3f, 10f, 5f, true, false);
         public static readonly EnemyBulletType PIERCE = Create("PIERCE", 1, 1f, 25f, 2f, false, false);
+        public static readonly EnemyBulletType HEAVY = Create("HEAVY", 1, 1f, 10f, 3f, true, false);
         public static readonly EnemyBulletType BLAST = Create("BLAST", 1, 3f, 10f, 3f, true, false);
         public static readonly EnemyBulletType CURVED = Create("CURVED", 1, 1f, 12f, 3f, true, false);
         public static readonly EnemyBulletType LASER = Create("LASER", 1, 1f, 25f, 3f, false, true);
@@ -32,7 +33,7 @@ namespace ProjectContra.Scripts.Types
         {
             return new List<EnemyBulletType>()
             {
-                BASIC, FOLLOW, GRENADE, PIERCE, BLAST, CURVED, LASER
+                BASIC, FOLLOW, GRENADE, PIERCE, HEAVY, BLAST, CURVED, LASER
             };
         }
 
@@ -64,6 +65,11 @@ namespace ProjectContra.Scripts.Types
         public LayerMask GetDestructibleLayers()
         {
             return GameLayer.GetLayerMask(new List<GameLayer>() {GameLayer.PLAYER});
+        }
+
+        public bool UseGravity()
+        {
+            return this == HEAVY;
         }
     }
 }
