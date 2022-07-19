@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTriggered: 0
   spawnInterval: 4
-  enemyPrefab: {fileID: 6358200571022747787, guid: b69e64015286d4142a86d75e5bcb7ff7,
+  enemyPrefab: {fileID: 6594378998171946487, guid: d64afaad1f0435942a06a4c4e059e9ba,
     type: 3}
   detectionRange: 50
   numberPerSpawn: 1
