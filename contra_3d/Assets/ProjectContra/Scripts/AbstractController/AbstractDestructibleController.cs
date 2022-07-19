@@ -4,6 +4,7 @@ using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using UnityEngine;
+using Object = System.Object;
 
 namespace ProjectContra.Scripts.AbstractController
 {
@@ -54,11 +55,17 @@ namespace ProjectContra.Scripts.AbstractController
             return Fn.All(g => g.isBroken, new List<T>(controllers));
         }
 
-        public static void AllTakeDamage<T>(IEnumerable<T> controllers, int damage) where T : AbstractDestructibleController
+        public static void KillAllByType<T>() where T : AbstractDestructibleController
+        {
+            T[] objects = FindObjectsOfType<T>();
+            KillAll(objects);
+        }
+
+        public static void KillAll<T>(IEnumerable<T> controllers) where T : AbstractDestructibleController
         {
             foreach (T controller in controllers)
             {
-                controller.TakeDamage(controller.gameObject.transform.position, damage);
+                controller.TakeDamage(controller.gameObject.transform.position, controller.maxHp);
             }
         }
 

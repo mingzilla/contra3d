@@ -1,5 +1,4 @@
-﻿using BaseUtil.GameUtil;
-using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.Enemy.Util;
@@ -14,6 +13,7 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private float detectionRange = 40f;
         [SerializeField] public float moveSpeed = 10f;
         [SerializeField] private bool enableRotation = true;
+        [SerializeField] private bool freezeZ = false;
         private GameStoreData storeData;
 
         private Rigidbody rb;
@@ -28,7 +28,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.ENEMY.GetLayer();
-            rb = UnityFn.GetOrAddRigidbody(gameObject, false, false);
+            rb = UnityFn.GetOrAddRigidbody(gameObject, false, freezeZ);
         }
 
         void Update()

@@ -110,8 +110,8 @@ namespace ProjectContra.Scripts.Enemy
             UnityFn.SetAllInactivate(new List<GameObject>(spiderSpawnPoints));
             AppMusic.instance.Stop();
             UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
-            EnemyWalkingShooterController[] spiders = FindObjectsOfType<EnemyWalkingShooterController>();
-            AbstractDestructibleController.AllTakeDamage(spiders, 10);
+            EnemyWalkingShooterController[] mods = FindObjectsOfType<EnemyWalkingShooterController>();
+            AbstractDestructibleController.KillAll(mods);
             UnityFn.SetTimeout(AppResource.instance, 5, () =>
             {
                 AppSfx.instance.levelClear.Play();

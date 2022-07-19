@@ -17,9 +17,8 @@ namespace ProjectContra.Scripts.Enemy
         private Vector3 laterVelocity;
         private int autoDestroyTime;
 
-        public static EnemyBubbleController Spawn(Vector3 spawnPosition, Vector3 initialVelocity, int bubbleLifeTime)
+        public static EnemyBubbleController Spawn(GameObject prefab, Vector3 spawnPosition, Vector3 initialVelocity, int bubbleLifeTime)
         {
-            GameObject prefab = AppResource.instance.enemyBubblePrefab;
             EnemyBubbleController copy = Instantiate(prefab, spawnPosition, Quaternion.identity).GetComponent<EnemyBubbleController>();
             copy.gameObject.layer = GameLayer.ENEMY.GetLayer();
             copy.rb = UnityFn.GetOrAddRigidbody(copy.gameObject, false, false);
@@ -43,9 +42,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override void TakeDamage(Vector3 position, int damage)
         {
-            UnityFn.CreateEffect(AppResource.instance.enemyBulletHitEffect, position, 1f);
-            AppSfx.PlayAdjusted(AppSfx.instance.enemyDeath);
-            Destroy(gameObject);
+            ReduceHpAndCreateEffect(position, damage);
         }
 
         public override float GetDetectionRange()

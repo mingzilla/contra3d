@@ -1,5 +1,4 @@
-﻿using System;
-using BaseUtil.Base;
+﻿using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
@@ -16,6 +15,8 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private Vector3 shootPositionDelta = new Vector3(0f, 1f, 0f);
         [SerializeField] private float bubbleInitialVelocityY = -10f;
         [SerializeField] private int bubbleLifeTime = 15;
+        [SerializeField] private GameObject bubblePrefab;
+        [SerializeField] private int randomRangeX = 5;
 
         private GameStoreData storeData;
         private IntervalState shotIntervalState;
@@ -24,6 +25,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             shotIntervalState = IntervalState.Create(shotInterval);
+            if (!bubblePrefab) bubblePrefab = AppResource.instance.enemyBubblePrefab;
         }
 
         void Update()
@@ -33,9 +35,9 @@ namespace ProjectContra.Scripts.Enemy
                 UnityFn.RunWithInterval(AppResource.instance, shotIntervalState, () =>
                 {
                     Vector3 position = transform.position;
-                    float initialX = FnVal.RandomFloatBetween(-5, 5);
+                    float initialX = FnVal.RandomFloatBetween(-(randomRangeX), randomRangeX);
                     Vector3 bubbleInitialVelocity = new(initialX, bubbleInitialVelocityY, 0f);
-                    EnemyBubbleController.Spawn(position + shootPositionDelta, bubbleInitialVelocity, bubbleLifeTime);
+                    EnemyBubbleController.Spawn(bubblePrefab, position + shootPositionDelta, bubbleInitialVelocity, bubbleLifeTime);
                 });
             });
         }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7362272841273433010}
   - component: {fileID: 7674011120571643769}
   m_Layer: 0
-  m_Name: Lv5BossBullet
+  m_Name: Lv7BossBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

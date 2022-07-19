@@ -82,8 +82,8 @@ namespace ProjectContra.Scripts.Enemy
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
                 AppMusic.instance.Stop();
-                EnemyWalkerController[] spiders = FindObjectsOfType<EnemyWalkerController>();
-                AbstractDestructibleController.AllTakeDamage(spiders, 10);
+                EnemyWalkerController[] mods = FindObjectsOfType<EnemyWalkerController>();
+                AbstractDestructibleController.KillAll(mods);
                 UnityFn.SetTimeout(AppResource.instance, 5, () =>
                 {
                     AppSfx.instance.levelClear.Play();
