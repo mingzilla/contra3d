@@ -13,6 +13,8 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private float detectionRange = 40f;
         [SerializeField] public float moveSpeed = 10f;
         [SerializeField] private bool enableRotation = true;
+        [SerializeField] private bool enableLookingAtPlayer = false;
+        [SerializeField] private bool selfDestroyAfterHit = true; // after hitting player, destroy itself
         [SerializeField] private bool freezeZ = false;
         private GameStoreData storeData;
 
@@ -37,6 +39,7 @@ namespace ProjectContra.Scripts.Enemy
             {
                 float deltaTime = Time.deltaTime;
                 if (enableRotation) transform.Rotate(0, 0, 360 * deltaTime);
+                if (!enableRotation && enableLookingAtPlayer) transform.rotation = UnityFn.LookXZ(transform, closestPlayer);
                 transform.position = UnityFn.GetPosition(transform, closestPlayer, moveSpeed, deltaTime);
             });
         }
@@ -44,7 +47,7 @@ namespace ProjectContra.Scripts.Enemy
         private void OnCollisionEnter(Collision other)
         {
             EnemyUtil.DealDamageToPlayer(transform.position, 1, other.collider);
-            if (GameLayer.Matches(other.gameObject.layer, GameLayer.PLAYER)) TakeDamage(transform.position, 1);
+            if (selfDestroyAfterHit && GameLayer.Matches(other.gameObject.layer, GameLayer.PLAYER)) TakeDamage(transform.position, maxHp);
         }
 
         public override void TakeDamage(Vector3 position, int damage)
