@@ -589,6 +589,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 100
   hp: 100
+  isBig: 1
   isBroken: 0
 --- !u!1 &4680329003304432882
 GameObject:

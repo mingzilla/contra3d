@@ -62,11 +62,17 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 1
   hp: 1
+  isBig: 1
   isBroken: 0
   damage: 1
   moveSpeed: 8
   jumpForce: 10
   detectionRange: 40
+  closestDistanceToPlayer: 0.5
+  useGravity: 1
+  bulletsPerShot: 1
+  bulletsDelay: 0.5
+  bulletName: BASIC
   shootPositionDelta: {x: 0, y: 1, z: 0}
   targetPositionDelta: {x: 0, y: 1, z: 0}
 --- !u!1001 &2254161770884537494

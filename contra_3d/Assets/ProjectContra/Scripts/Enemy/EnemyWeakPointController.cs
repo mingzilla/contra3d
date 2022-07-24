@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public class EnemySpiderWeakPointController : AbstractDestructibleController
+    public class EnemyWeakPointController : AbstractDestructibleController
     {
         void Start()
         {
@@ -20,13 +20,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override void TakeDamage(Vector3 position, int damage)
         {
-            UnityFn.CreateEffect(AppResource.instance.enemyDestroyedSmallExplosion, position, 1f);
-            AppSfx.Play(AppSfx.instance.bigEnemyDamaged);
-            hp -= damage;
-            if (hp <= 0)
-            {
-                isBroken = true;
-            }
+            ReduceHpAndCreateEffect(position, damage);
         }
 
         public override float GetDetectionRange()

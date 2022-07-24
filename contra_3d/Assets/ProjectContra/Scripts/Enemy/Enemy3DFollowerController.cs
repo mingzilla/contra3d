@@ -29,7 +29,7 @@ namespace ProjectContra.Scripts.Enemy
         private void Start()
         {
             storeData = AppResource.instance.storeData;
-            gameObject.layer = GameLayer.ENEMY.GetLayer();
+            gameObject.layer = GameLayer.ENEMY_INSIDE_WALL.GetLayer();
             rb = UnityFn.GetOrAddRigidbody(gameObject, false, freezeZ);
         }
 

@@ -15290,6 +15290,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 50
   hp: 50
+  isBig: 0
   isBroken: 0
   detectionRange: 50
   amountPerThrow: 12

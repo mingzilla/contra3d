@@ -24,7 +24,7 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private GameObject afterwardsCamera;
 
         private bool isActive = false;
-        private EnemySpiderWeakPointController weakPointCtrl;
+        private EnemyWeakPointController weakPointCtrl;
         private GameStoreData storeData;
         private bool moveXLeft = false; // this 3D model is not 180 rotated, so it runs oppositely
         private Animator animatorCtrl;
@@ -35,7 +35,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.INVISIBLE_WALL_TO_PLAYER.GetLayer();
-            weakPointCtrl = gameObject.GetComponentInChildren<EnemySpiderWeakPointController>();
+            weakPointCtrl = gameObject.GetComponentInChildren<EnemyWeakPointController>();
             animatorCtrl = gameObject.GetComponent<Animator>();
             animatorCtrl.enabled = false;
             changeDirectionInterval = IntervalState.Create(directionChangeTime);
