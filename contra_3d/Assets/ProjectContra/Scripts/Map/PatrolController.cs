@@ -14,6 +14,7 @@ namespace ProjectContra.Scripts.Map
         [SerializeField] private Vector3 positionDelta = new Vector3(0f, 3f, 0f);
         [SerializeField] private GameObject objectWithAnimation;
         [SerializeField] private float detectionRange = 5f;
+        [SerializeField] private bool runIfPlayerIsInRange = false; // false - once triggered, it won't stop
 
         private GameStoreData storeData;
 
@@ -37,6 +38,22 @@ namespace ProjectContra.Scripts.Map
         }
 
         void Update()
+        {
+            if (runIfPlayerIsInRange) RunIfInRange();
+            if (!runIfPlayerIsInRange) RunIfTriggered();
+        }
+
+        void RunIfInRange()
+        {
+            bool isInRange = RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
+            {
+                Patrol();
+                if (animatorCtrl != null && !animatorCtrl.enabled) animatorCtrl.enabled = true;
+            });
+            if (!isInRange && animatorCtrl != null && animatorCtrl.enabled) animatorCtrl.enabled = false;
+        }
+
+        void RunIfTriggered()
         {
             TriggerIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
