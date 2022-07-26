@@ -92,6 +92,7 @@
      <Compile Include="Assets\ProjectContra\Scripts\Player\InfoScreenCanvasController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameLayer.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyDropBombController.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\BaseCommon\ShooterAnimationController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AbstractController\AbstractRangeDetectionController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv2ElectricController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\CharacterInGameController.cs" />
@@ -122,7 +123,6 @@
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBubbleShooterController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\GameDataScriptable\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyGrenadeController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\BaseCommon\ShooterAnimationController.cs" />
      <None Include="Assets\ProjectContra\Project.Contra.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
