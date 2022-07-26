@@ -15,6 +15,7 @@ namespace ProjectContra.Scripts.Map
         [SerializeField] private GameObject objectWithAnimation;
         [SerializeField] private float detectionRange = 5f;
         [SerializeField] private bool runIfPlayerIsInRange = false; // false - once triggered, it won't stop
+        [SerializeField] private AudioSource sfxWhenEnterDestination; // if present, play when hitting destination before waiting
 
         private GameStoreData storeData;
 
@@ -72,6 +73,7 @@ namespace ProjectContra.Scripts.Map
             {
                 UnityFn.RunWithInterval(this, changeDirectionInterval, () =>
                 {
+                    if (sfxWhenEnterDestination) AppSfx.Play(sfxWhenEnterDestination);
                     UnityFn.SetTimeout(this, waitTimeAtDestination, () =>
                     {
                         destinationIndex = (destinationIndex == 0) ? 1 : 0;
