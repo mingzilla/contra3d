@@ -25,7 +25,6 @@ namespace ProjectContra.Scripts.Enemy
         private EnemyBulletType bulletType;
         private GameStoreData storeData;
         private Rigidbody rb;
-        private GameObject destroyEffect;
         private Animator animatorCtrl;
         private static readonly int isShootingKey = Animator.StringToHash("isShooting");
 
@@ -38,7 +37,6 @@ namespace ProjectContra.Scripts.Enemy
             gameObject.layer = GameLayer.ENEMY.GetLayer();
             bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
             if (!preventMovement) rb = UnityFn.GetOrAddRigidbody(gameObject, true, !moveXZ);
-            destroyEffect = AppResource.instance.enemyDestroyedSmallExplosion;
             animatorCtrl = gameObject.GetComponent<Animator>();
         }
 
