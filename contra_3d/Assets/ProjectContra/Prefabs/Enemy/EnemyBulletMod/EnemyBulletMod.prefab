@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8209386496528730129}
   - component: {fileID: 7362272841273433010}
   - component: {fileID: 7674011120571643769}
+  - component: {fileID: -8890992960894408911}
   m_Layer: 0
   m_Name: EnemyBulletMod
   m_TagString: Untagged
@@ -105,6 +106,8 @@ MonoBehaviour:
   detectionRange: 60
   moveSpeed: 10
   enableRotation: 1
+  enableLookingAtPlayer: 0
+  selfDestroyAfterHit: 1
   freezeZ: 1
 --- !u!135 &7674011120571643769
 SphereCollider:
@@ -119,3 +122,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.0070126234
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-8890992960894408911
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7704926643861875140}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

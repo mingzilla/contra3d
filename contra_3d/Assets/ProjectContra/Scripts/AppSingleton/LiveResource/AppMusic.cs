@@ -98,6 +98,11 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             PlayLv2BossMusic();
         }
 
+        public void PlayLv8BossMusic1()
+        {
+            PlayLv1BossMusic();
+        }
+
         public void Play(AudioSource source)
         {
             Stop();

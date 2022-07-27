@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2015a967d4854717955c387b940f0b77, type: 3}
   m_Name: SceneInitDataLv8
   m_EditorClassIdentifier: 
-  playerInitPosition: {x: 261, y: 60, z: 0}
+  playerInitPosition: {x: -4, y: 6, z: 0}

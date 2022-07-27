@@ -70,17 +70,17 @@ namespace BaseUtil.Base
             return newRandom.Next(low, high);
         }
 
-        public static float RandomFloatBetween(Random newRandom, int low, int high)
+        public static float RandomFloatBetween(Random newRandom, float low, float high)
         {
             return (float) RandomDoubleBetween(newRandom, low, high);
         }
 
-        public static float RandomFloatBetween(int low, int high)
+        public static float RandomFloatBetween(float low, float high)
         {
             return RandomFloatBetween(new Random(), low, high);
         }
 
-        public static double RandomDoubleBetween(Random newRandom, int low, int high)
+        public static double RandomDoubleBetween(Random newRandom, float low, float high)
         {
             return newRandom.NextDouble() * (high - low) + low;
         }

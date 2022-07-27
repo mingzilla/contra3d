@@ -1,4 +1,5 @@
 ﻿using System;
+using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
@@ -18,9 +19,13 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private Vector3 spawnPositionDelta = Vector3.zero;
         [SerializeField] private GameObject animationObject;
 
+        [SerializeField] private Vector3 throwModForce = Vector3.zero; // if this is zero, it doesn't throw mod after spawning, otherwise it does
+        [SerializeField] private Vector3 throwForceDelta = Vector3.zero; // if provided, delta creates a random range for x, y axis; fixed +z value
+        [SerializeField] private float clearThrowVelocityTimeout = 1f; // after e.g. 1 second, it clears the velocity so that the mod can move without affected by the throw effect
+
         private GameStoreData storeData;
         private IntervalState spawnIntervalState;
-        private bool isBroken;
+        public bool isBroken;
         private Animator animatorCtrl;
         private static readonly int isSpawningKey = Animator.StringToHash("isSpawning");
 
@@ -49,8 +54,25 @@ namespace ProjectContra.Scripts.Enemy
             if (!isBroken)
             {
                 if (animatorCtrl) animatorCtrl.SetTrigger(isSpawningKey);
-                Instantiate(enemyPrefab, transform.position + spawnPositionDelta, Quaternion.identity);
+                GameObject mod = Instantiate(enemyPrefab, transform.position + spawnPositionDelta, Quaternion.identity);
+                ThrowMod(mod);
             }
+        }
+
+        void ThrowMod(GameObject mod)
+        {
+            if (!mod) return;
+            if (throwModForce == Vector3.zero) return;
+            Rigidbody copyRb = mod.GetComponent<Rigidbody>();
+            AbstractDestructibleController modCtrl = mod.GetComponent<AbstractDestructibleController>();
+            float x = FnVal.RandomFloatBetween((throwModForce.x - throwForceDelta.x), (throwModForce.x + throwForceDelta.x));
+            float y = FnVal.RandomFloatBetween((throwModForce.y - throwForceDelta.y), (throwModForce.y + throwForceDelta.y));
+            float z = throwModForce.z + throwForceDelta.z;
+            UnityFn.Throw(copyRb, x, y, z);
+            UnityFn.SetTimeout(this, clearThrowVelocityTimeout, () =>
+            {
+                if (!modCtrl.isBroken) copyRb.velocity = Vector3.zero;
+            });
         }
 
         public override float GetDetectionRange()
