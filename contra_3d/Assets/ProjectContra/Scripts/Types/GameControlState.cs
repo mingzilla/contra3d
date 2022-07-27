@@ -12,6 +12,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameControlState IN_GAME_PAUSED = Create("IN_GAME_PAUSED"); // controlling the UI
         public static readonly GameControlState IN_GAME_LOBBY = Create("IN_GAME_LOBBY"); // character selection in game
         public static readonly GameControlState CANNOT_CONTROL = Create("CANNOT_CONTROL"); // useful when e.g. transitioning to the next level
+        public static readonly GameControlState ENDING_SCREEN = Create("ENDING_SCREEN"); // hit A to skip screen
 
         public string name;
 
@@ -28,6 +29,7 @@ namespace ProjectContra.Scripts.Types
                 IN_GAME_PAUSED,
                 IN_GAME_LOBBY,
                 CANNOT_CONTROL,
+                ENDING_SCREEN,
             };
         }
 

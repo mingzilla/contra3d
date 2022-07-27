@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ProjectContra/Scenes/ContraLv8.unity
     guid: fb990378fc1e5114b959e872059b2701
+  - enabled: 1
+    path: Assets/ProjectContra/Scenes/ContraEnding.unity
+    guid: 47db16eea2eb06c4b86263ec16fac7b1
   m_configObjects: {}

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
@@ -19,22 +18,10 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             lv5Music,
             lv6Music,
             lv7Music,
-            lv8Music;
+            lv8Music,
+            endingMusic;
 
         private AudioSource currentMusic;
-
-        private List<AudioSource> AllMusic()
-        {
-            return new List<AudioSource>()
-            {
-                lv1Music,
-                lv1BossMusic,
-                lv2Music,
-                lv2BossMusic,
-                lv3Music,
-                lv3MidLevelMusic,
-            };
-        }
 
         private void Awake()
         {
@@ -101,6 +88,11 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public void PlayLv8BossMusic1()
         {
             PlayLv1BossMusic();
+        }
+
+        public void PlayEndingMusic()
+        {
+            Play(endingMusic);
         }
 
         public void Play(AudioSource source)

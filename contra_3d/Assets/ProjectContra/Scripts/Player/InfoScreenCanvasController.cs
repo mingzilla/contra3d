@@ -1,6 +1,4 @@
 ﻿using BaseUtil.GameUtil;
-using BaseUtil.GameUtil.Base;
-using ProjectContra.Scripts.AppSingleton;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
@@ -17,8 +15,6 @@ namespace ProjectContra.Scripts.Player
         [SerializeField] private GameObject titleText;
         private string title;
 
-        private AppMusic musicController;
-
         public static InfoScreenCanvasController GetInstance()
         {
             if (instance != null) return instance;
@@ -29,7 +25,6 @@ namespace ProjectContra.Scripts.Player
         public void Init(string text)
         {
             titleText.GetComponent<Text>().text = text;
-            musicController = AppResource.instance.musicManager.GetComponent<AppMusic>();
         }
 
         public void HandleUpdate(UserInput userInput)
@@ -37,7 +32,7 @@ namespace ProjectContra.Scripts.Player
             if (userInput.fire1 || userInput.space)
             {
                 AppResource.instance.storeData.controlState = GameControlState.IN_GAME;
-                musicController.PlayByScene(AppResource.instance.storeData.currentScene);
+                AppMusic.instance.PlayByScene(AppResource.instance.storeData.currentScene);
             }
         }
 

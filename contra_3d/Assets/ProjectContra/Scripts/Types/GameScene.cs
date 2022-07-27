@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+﻿using System.Collections.Generic;
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ProjectContra.Scripts.Types
 {
@@ -18,6 +17,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameScene LEVEL_6 = Create("ContraLv6", true, GameControlState.INFO_SCREEN, true, "Area 6");
         public static readonly GameScene LEVEL_7 = Create("ContraLv7", true, GameControlState.INFO_SCREEN, false, "Area 7");
         public static readonly GameScene LEVEL_8 = Create("ContraLv8", true, GameControlState.INFO_SCREEN, false, "Area 8");
+        public static readonly GameScene ENDING = Create("ENDING", false, GameControlState.ENDING_SCREEN, false, "");
 
         public string name;
         public int index;
@@ -41,6 +41,7 @@ namespace ProjectContra.Scripts.Types
                 LEVEL_6,
                 LEVEL_7,
                 LEVEL_8,
+                ENDING,
             };
         }
 
@@ -74,6 +75,11 @@ namespace ProjectContra.Scripts.Types
         public static GameScene GetByName(string name)
         {
             return typeMap[(name)];
+        }
+
+        public bool IsEnding()
+        {
+            return this == ENDING;
         }
     }
 }

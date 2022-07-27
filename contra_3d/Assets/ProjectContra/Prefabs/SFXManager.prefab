@@ -81,6 +81,7 @@ MonoBehaviour:
   bossDeath: {fileID: 8485861774810940070}
   pause: {fileID: 1203601068490306985}
   levelClear: {fileID: 8784968969119634163}
+  allLevelsClear: {fileID: 1203601067530729941}
   floorMove: {fileID: 21213171114791062}
   liftMove: {fileID: 6783918563217538124}
   enemyLaser: {fileID: 8244290890257908889}

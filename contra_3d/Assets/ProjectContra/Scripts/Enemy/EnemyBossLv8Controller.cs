@@ -92,7 +92,7 @@ namespace ProjectContra.Scripts.Enemy
             AbstractDestructibleController.KillAllByType<EnemyBubbleController>();
             UnityFn.SetTimeout(AppResource.instance, 5, () =>
             {
-                AppSfx.instance.levelClear.Play();
+                AppSfx.instance.allLevelsClear.Play();
                 UnityFn.SetTimeout(AppResource.instance, 5, UnityFn.LoadNextScene);
                 Destroy(gameObject);
             });

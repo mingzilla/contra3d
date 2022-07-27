@@ -24,6 +24,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             bossDeath,
             pause,
             levelClear,
+            allLevelsClear,
             floorMove,
             liftMove,
             enemyLaser;

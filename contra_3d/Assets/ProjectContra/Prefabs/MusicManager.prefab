@@ -841,6 +841,7 @@ MonoBehaviour:
   lv6Music: {fileID: 4991480044111817042}
   lv7Music: {fileID: 4991480042618985851}
   lv8Music: {fileID: 4991480042595441500}
+  endingMusic: {fileID: 4991480043651231143}
 --- !u!1 &4991480043309401699
 GameObject:
   m_ObjectHideFlags: 0
