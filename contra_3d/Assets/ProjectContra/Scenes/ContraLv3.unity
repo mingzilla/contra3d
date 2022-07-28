@@ -15190,7 +15190,7 @@ MonoBehaviour:
   amountPerThrow: 12
   yForce: 20
   bulletPositionDelta: {x: -1, y: 1, z: 0}
-  leftMostDistance: -12
+  leftMostDistance: -18
   rightMostDistance: -1
 --- !u!64 &2138116068
 MeshCollider:
