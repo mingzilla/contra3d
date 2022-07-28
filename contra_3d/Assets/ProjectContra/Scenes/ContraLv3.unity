@@ -15186,7 +15186,7 @@ MonoBehaviour:
   hp: 50
   isBig: 0
   isBroken: 0
-  detectionRange: 50
+  detectionRange: 65
   amountPerThrow: 12
   yForce: 20
   bulletPositionDelta: {x: -1, y: 1, z: 0}

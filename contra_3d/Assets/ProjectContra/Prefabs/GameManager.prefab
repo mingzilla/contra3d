@@ -110,6 +110,8 @@ MonoBehaviour:
     type: 3}
   pauseMenuPrefab: {fileID: 5414122674906163216, guid: 026ad5d5856a9424dab7d323a641a924,
     type: 3}
+  endingScreenPrefab: {fileID: 7356344251887808361, guid: 78742e27e8f100f4da60b44936f88c72,
+    type: 3}
   bulletBasicPrefab: {fileID: 3164751046395291120, guid: c5593155681200c4abde22768f361f39,
     type: 3}
   bulletMPrefab: {fileID: 3164751046395291120, guid: 741ad87600580dc4595876db222d793d,
@@ -172,9 +174,3 @@ MonoBehaviour:
   sceneInitDataLv6: {fileID: 11400000, guid: 82cf56fa657eff04ea33c02432c67b59, type: 2}
   sceneInitDataLv7: {fileID: 11400000, guid: 8386a27f2cd56094a8270d388bf57e6e, type: 2}
   sceneInitDataLv8: {fileID: 11400000, guid: 5880c52250e59e745b36d858ba009b86, type: 2}
-  enemyAttributeGroundCannon: {fileID: 11400000, guid: 04ee7bdb7968d88448e01a79e40c37fd,
-    type: 2}
-  enemyAttributeBossLv1Gun: {fileID: 11400000, guid: 16809b2d775fc3546b3da33851ca21f4,
-    type: 2}
-  enemyAttributeBossLv1WeakPoint: {fileID: 11400000, guid: 1fa5e0791e3ce0f42877148ae0bf68b6,
-    type: 2}

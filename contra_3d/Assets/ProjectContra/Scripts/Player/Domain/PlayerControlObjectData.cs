@@ -14,6 +14,7 @@ namespace ProjectContra.Scripts.Player.Domain
         public CharacterInGameController inGameController; // only X movement
         public CharacterInXzGameController inXzGameController; // XZ movement
         public PausedMenuController pausedMenuController; // singleton, every player shares the same object
+        public EndingScreenController endingScreenController; // singleton, every player shares the same object
 
         public static PlayerControlObjectData Create()
         {
@@ -35,38 +36,43 @@ namespace ProjectContra.Scripts.Player.Domain
                 UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
                 UnityFn.DestroyReferenceIfPresent(inXzGameController, () => inXzGameController = null);
                 UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
+                UnityFn.DestroyReferenceIfPresent(endingScreenController, () => endingScreenController = null);
             }
             if (controlState == GameControlState.TITLE_SCREEN_LOBBY)
             {
+                if (inLobbyController == null) inLobbyController = UnityFn.InstantiateCharacterObject<CharacterInLobbyController>(characterInLobbyPrefab, true, Vector3.zero);
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
                 UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
                 UnityFn.DestroyReferenceIfPresent(inXzGameController, () => inXzGameController = null);
                 UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
-                if (inLobbyController == null) inLobbyController = UnityFn.InstantiateCharacterObject<CharacterInLobbyController>(characterInLobbyPrefab, true, Vector3.zero);
+                UnityFn.DestroyReferenceIfPresent(endingScreenController, () => endingScreenController = null);
             }
             if (controlState == GameControlState.INFO_SCREEN)
             {
                 UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
+                if (infoScreenCanvasController == null) infoScreenCanvasController = InfoScreenCanvasController.GetInstance();
                 UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
                 UnityFn.DestroyReferenceIfPresent(inXzGameController, () => inXzGameController = null);
                 UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
-                if (infoScreenCanvasController == null) infoScreenCanvasController = InfoScreenCanvasController.GetInstance();
+                UnityFn.DestroyReferenceIfPresent(endingScreenController, () => endingScreenController = null);
             }
             if (controlState == GameControlState.IN_GAME && !gameScene.moveXZ)
             {
                 UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
-                UnityFn.DestroyReferenceIfPresent(inXzGameController, () => inXzGameController = null);
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
-                UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
                 if (inGameController == null) inGameController = UnityFn.InstantiateCharacterObject<CharacterInGameController>(characterInGamePrefab, false, sceneInitData.GetRandomPlayerInitPosition()).Init(playerId, true);
+                UnityFn.DestroyReferenceIfPresent(inXzGameController, () => inXzGameController = null);
+                UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
+                UnityFn.DestroyReferenceIfPresent(endingScreenController, () => endingScreenController = null);
             }
             if (controlState == GameControlState.IN_GAME && gameScene.moveXZ)
             {
                 UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
-                UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
-                UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
+                UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
                 if (inXzGameController == null) inXzGameController = UnityFn.InstantiateCharacterObject<CharacterInXzGameController>(characterInXzGamePrefab, false, sceneInitData.GetRandomPlayerInitPosition()).Init(playerId, true);
+                UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
+                UnityFn.DestroyReferenceIfPresent(endingScreenController, () => endingScreenController = null);
             }
             if (controlState == GameControlState.IN_GAME_PAUSED)
             {
@@ -74,6 +80,16 @@ namespace ProjectContra.Scripts.Player.Domain
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
                 // don't touch inGameController or inXzGameController
                 if (pausedMenuController == null) pausedMenuController = PausedMenuController.GetInstance();
+                UnityFn.DestroyReferenceIfPresent(endingScreenController, () => endingScreenController = null);
+            }
+            if (controlState == GameControlState.ENDING_SCREEN)
+            {
+                UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
+                UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
+                UnityFn.DestroyReferenceIfPresent(inGameController, () => inGameController = null);
+                UnityFn.DestroyReferenceIfPresent(inXzGameController, () => inXzGameController = null);
+                UnityFn.DestroyReferenceIfPresent(pausedMenuController, () => pausedMenuController = null);
+                if (endingScreenController == null) endingScreenController = EndingScreenController.GetInstance();
             }
         }
     }

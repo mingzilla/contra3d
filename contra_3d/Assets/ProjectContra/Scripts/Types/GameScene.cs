@@ -17,7 +17,7 @@ namespace ProjectContra.Scripts.Types
         public static readonly GameScene LEVEL_6 = Create("ContraLv6", true, GameControlState.INFO_SCREEN, true, "Area 6");
         public static readonly GameScene LEVEL_7 = Create("ContraLv7", true, GameControlState.INFO_SCREEN, false, "Area 7");
         public static readonly GameScene LEVEL_8 = Create("ContraLv8", true, GameControlState.INFO_SCREEN, false, "Area 8");
-        public static readonly GameScene ENDING = Create("ENDING", false, GameControlState.ENDING_SCREEN, false, "");
+        public static readonly GameScene ENDING = Create("ContraEnding", false, GameControlState.ENDING_SCREEN, false, "");
 
         public string name;
         public int index;
