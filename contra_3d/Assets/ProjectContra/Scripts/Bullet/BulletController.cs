@@ -13,7 +13,7 @@ namespace ProjectContra.Scripts.Bullet
         private Rigidbody rb;
         private GameObject explosionEffect;
         private Vector3 moveDirection;
-        private WeaponType weaponType;
+        public WeaponType weaponType;
 
         public static BulletController Spawn(Transform shotPoint, Vector3 positionDelta, bool isFacingForward, UserInput userInput, WeaponType weaponType, bool isOnGround)
         {

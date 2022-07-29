@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
+using ProjectContra.Scripts.Bullet;
+using ProjectContra.Scripts.Types;
 using UnityEngine;
 using Object = System.Object;
 
@@ -66,6 +68,15 @@ namespace ProjectContra.Scripts.AbstractController
             foreach (T controller in controllers)
             {
                 controller.TakeDamage(controller.gameObject.transform.position, controller.maxHp);
+            }
+        }
+
+        private void OnParticleCollision(GameObject other)
+        {
+            WeaponType weaponType = other.GetComponent<BulletController>()?.weaponType;
+            if (weaponType != null && GameLayer.IsDestructibleByBullet(gameObject.layer))
+            {
+                TakeDamage(transform.position, weaponType.damage);
             }
         }
 

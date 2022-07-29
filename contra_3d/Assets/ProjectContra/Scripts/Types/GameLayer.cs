@@ -70,6 +70,12 @@ namespace ProjectContra.Scripts.Types
             return typeMap[(name)];
         }
 
+        public static GameLayer GetByLayer(int layer)
+        {
+            string name = LayerMask.LayerToName(layer);
+            return GetByName(name);
+        }
+
         public static LayerMask GetLayerMask(List<GameLayer> gameLayers)
         {
             var names = Fn.Map((it) => it.name, gameLayers);
@@ -79,6 +85,16 @@ namespace ProjectContra.Scripts.Types
         public static bool Matches(int layer, GameLayer gameLayer)
         {
             return layer == LayerMask.NameToLayer(gameLayer.name);
+        }
+
+        public static bool IsDestructibleByBullet(int layer)
+        {
+            GameLayer value = GetByLayer(layer);
+            if (value == ENEMY) return true;
+            if (value == ENEMY_INSIDE_WALL) return true;
+            if (value == DESTRUCTIBLE) return true;
+            if (value == POWER_UP_CONTAINER) return true;
+            return false;
         }
 
         public static void InitOnAwake()
