@@ -575,13 +575,19 @@ namespace BaseUtil.GameUtil.Base
         {
             int index = SceneManager.GetActiveScene().buildIndex;
             int sceneCount = SceneManager.sceneCountInBuildSettings;
-            if (index < sceneCount) SceneManager.LoadScene(index + 1);
+            if (index < sceneCount) LoadScene(index + 1);
+        }
+
+        public static void LoadScene(int index)
+        {
+            UnPause(); // game can be paused when a player decides to load a scene, this makes sure time is not stopped
+            SceneManager.LoadScene(index);
         }
 
         public static void ReloadCurrentScene()
         {
             int index = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(index);
+            LoadScene(index);
         }
 
         public static string[] GetSceneNamesInBuildSettings()

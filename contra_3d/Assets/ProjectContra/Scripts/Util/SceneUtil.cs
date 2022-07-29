@@ -50,7 +50,7 @@ namespace ProjectContra.Scripts.Util
         {
             T[] objects = Object.FindObjectsOfType<T>();
             Fn.EachInArray(x => Object.Destroy(x.gameObject), objects);
-            SceneManager.LoadScene(menuSceneIndex);
+            UnityFn.LoadScene(menuSceneIndex);
         }
     }
 }

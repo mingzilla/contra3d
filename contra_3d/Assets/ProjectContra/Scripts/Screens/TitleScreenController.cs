@@ -1,4 +1,5 @@
 ﻿using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
@@ -20,6 +21,7 @@ namespace ProjectContra.Scripts.Screens
         public GameObject lobbyCanvas;
 
         public bool canGoToTitleScreenFromLobby = true;
+        private readonly IntervalState menuIntervalState = IntervalState.Create(0.2f);
 
         private void Start()
         {
@@ -42,14 +44,14 @@ namespace ProjectContra.Scripts.Screens
         {
             menuCanvas.SetActive(false);
             lobbyCanvas.SetActive(true);
-            UnityFn.SetTimeout(this, 0.1f, () => storeData.controlState = GameControlState.TITLE_SCREEN_LOBBY);
+            UnityFn.RunWithInterval(this, menuIntervalState, () => storeData.controlState = GameControlState.TITLE_SCREEN_LOBBY);
         }
 
         public void OnSelectedContinueFromMenu()
         {
             menuCanvas.SetActive(false);
             lobbyCanvas.SetActive(true);
-            UnityFn.SetTimeout(this, 0.1f, () => storeData.controlState = GameControlState.TITLE_SCREEN_LOBBY);
+            UnityFn.RunWithInterval(this, menuIntervalState, () => storeData.controlState = GameControlState.TITLE_SCREEN_LOBBY);
         }
 
         public void OnSelectedBackFromLobby()
@@ -58,7 +60,7 @@ namespace ProjectContra.Scripts.Screens
             menuCanvas.SetActive(true);
             lobbyCanvas.SetActive(false);
             storeData.controlState = GameControlState.TITLE_SCREEN_MENU;
-            UnityFn.SetTimeout(this, 0.1f, () => EventSystem.current.SetSelectedGameObject(titleScreenDefaultButton));
+            UnityFn.RunWithInterval(this, menuIntervalState, () => EventSystem.current.SetSelectedGameObject(titleScreenDefaultButton));
         }
 
         public void OnSelectedQuit()

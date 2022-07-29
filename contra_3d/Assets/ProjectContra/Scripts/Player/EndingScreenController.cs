@@ -1,11 +1,9 @@
-﻿using System;
-using BaseUtil.GameUtil;
+﻿using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine;
 
 namespace ProjectContra.Scripts.Player
 {
@@ -53,7 +51,7 @@ namespace ProjectContra.Scripts.Player
             if (userInput.fire1 || userInput.space)
             {
                 AppMusic.instance.Stop();
-                SceneManager.LoadScene(0);
+                UnityFn.LoadScene(0);
             }
         }
 
