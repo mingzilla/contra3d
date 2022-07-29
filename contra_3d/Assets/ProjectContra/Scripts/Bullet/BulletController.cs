@@ -46,7 +46,7 @@ namespace ProjectContra.Scripts.Bullet
 
         private void Start()
         {
-            UnityFn.SetTimeout(this, weaponType.autoDestroyTime, () => Destroy(gameObject));
+            Destroy(gameObject, weaponType.autoDestroyTime);
         }
 
         void FixedUpdate()
@@ -59,7 +59,7 @@ namespace ProjectContra.Scripts.Bullet
             Vector3 position = transform.position;
             UnityFn.CreateEffect(explosionEffect, position, 1f); // only if the bullet creates explosion
             if (explosionEffect != null) AppSfx.PlayAdjusted(AppSfx.instance.bulletFExplode);
-            Destroy(gameObject);
+            if (weaponType.destroyWhenHit) Destroy(gameObject);
             GameFn.DealDamage(position, weaponType.blastRange, weaponType.GetDestructibleLayers(), (obj) =>
             {
                 AbstractDestructibleController destructible = obj.GetComponent<AbstractDestructibleController>();

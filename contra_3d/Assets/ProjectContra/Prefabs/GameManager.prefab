@@ -118,6 +118,8 @@ MonoBehaviour:
     type: 3}
   bulletFPrefab: {fileID: 4090495976328841163, guid: cda973ab8d6ecd94591acab593d2fbe1,
     type: 3}
+  bulletLPrefab: {fileID: 4243003486777118333, guid: a4da7d71bb8ce9544ad88ce9061ce987,
+    type: 3}
   bulletSPrefab: {fileID: 6930592440201927097, guid: 3c4c1003c5f239949884dcd92b6d57b8,
     type: 3}
   powerUpFPrefab: {fileID: 1690268843170014498, guid: 23125268361e3bc4e9385d586244b08d,

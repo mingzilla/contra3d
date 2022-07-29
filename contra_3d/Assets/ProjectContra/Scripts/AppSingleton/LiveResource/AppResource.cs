@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using BaseUtil.Base;
+﻿using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.GameDataScriptable;
@@ -25,6 +24,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         [SerializeField] private GameObject bulletBasicPrefab,
             bulletMPrefab,
             bulletFPrefab,
+            bulletLPrefab,
             bulletSPrefab;
 
         // Power Up prefabs
@@ -143,6 +143,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         {
             if (weaponType == WeaponType.M) return bulletMPrefab;
             if (weaponType == WeaponType.BLAST) return bulletFPrefab;
+            if (weaponType == WeaponType.LASER) return bulletLPrefab;
             if (weaponType == WeaponType.WIDE) return bulletSPrefab;
             return bulletBasicPrefab;
         }
