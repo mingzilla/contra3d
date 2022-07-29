@@ -408,6 +408,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 25
   hp: 25
+  isBig: 0
   isBroken: 0
   bulletPerShot: 3
   fireDelay: 0.5
@@ -2590,6 +2591,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 25
   hp: 25
+  isBig: 0
   isBroken: 0
   bulletPerShot: 3
   fireDelay: 1.5
@@ -3145,6 +3147,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 25
   hp: 25
+  isBig: 0
   isBroken: 0
   bulletPerShot: 4
   fireDelay: 0
@@ -4098,6 +4101,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 25
   hp: 25
+  isBig: 0
   isBroken: 0
   bulletPerShot: 3
   fireDelay: 2.5
@@ -6148,7 +6152,7 @@ PrefabInstance:
     - target: {fileID: 1717093114100168276, guid: a18bbee12b7bf8b47b623ddf2d6e1ced,
         type: 3}
       propertyPath: m_Name
-      value: PowerUpContainerF (1)
+      value: PowerUpContainerL
       objectReference: {fileID: 0}
     - target: {fileID: 2062516388945587438, guid: a18bbee12b7bf8b47b623ddf2d6e1ced,
         type: 3}
@@ -6213,7 +6217,7 @@ PrefabInstance:
     - target: {fileID: 6442271794407076362, guid: a18bbee12b7bf8b47b623ddf2d6e1ced,
         type: 3}
       propertyPath: weaponTypeName
-      value: BLAST
+      value: LASER
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a18bbee12b7bf8b47b623ddf2d6e1ced, type: 3}
@@ -7336,6 +7340,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 25
   hp: 25
+  isBig: 0
   isBroken: 0
   bulletPerShot: 4
   fireDelay: 2
@@ -8413,6 +8418,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 25
   hp: 25
+  isBig: 0
   isBroken: 0
   bulletPerShot: 3
   fireDelay: 3.5
@@ -9206,6 +9212,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 25
   hp: 25
+  isBig: 0
   isBroken: 0
   bulletPerShot: 4
   fireDelay: 4
@@ -12123,6 +12130,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 25
   hp: 25
+  isBig: 0
   isBroken: 0
   bulletPerShot: 4
   fireDelay: 1
@@ -12618,6 +12626,7 @@ MonoBehaviour:
   isTriggered: 0
   maxHp: 25
   hp: 25
+  isBig: 0
   isBroken: 0
   bulletPerShot: 4
   fireDelay: 3

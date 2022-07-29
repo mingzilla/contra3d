@@ -2509,7 +2509,7 @@ PrefabInstance:
     - target: {fileID: 1717093114100168276, guid: a18bbee12b7bf8b47b623ddf2d6e1ced,
         type: 3}
       propertyPath: m_Name
-      value: PowerUpContainerM (2)
+      value: PowerUpContainerF
       objectReference: {fileID: 0}
     - target: {fileID: 2062516388945587438, guid: a18bbee12b7bf8b47b623ddf2d6e1ced,
         type: 3}
@@ -2574,7 +2574,7 @@ PrefabInstance:
     - target: {fileID: 6442271794407076362, guid: a18bbee12b7bf8b47b623ddf2d6e1ced,
         type: 3}
       propertyPath: weaponTypeName
-      value: M
+      value: BLAST
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a18bbee12b7bf8b47b623ddf2d6e1ced, type: 3}
@@ -6231,7 +6231,7 @@ PrefabInstance:
     - target: {fileID: 1717093114100168276, guid: a18bbee12b7bf8b47b623ddf2d6e1ced,
         type: 3}
       propertyPath: m_Name
-      value: PowerUpContainerF
+      value: PowerUpContainerL
       objectReference: {fileID: 0}
     - target: {fileID: 2062516388945587438, guid: a18bbee12b7bf8b47b623ddf2d6e1ced,
         type: 3}
@@ -6296,7 +6296,7 @@ PrefabInstance:
     - target: {fileID: 6442271794407076362, guid: a18bbee12b7bf8b47b623ddf2d6e1ced,
         type: 3}
       propertyPath: weaponTypeName
-      value: BLAST
+      value: LASER
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a18bbee12b7bf8b47b623ddf2d6e1ced, type: 3}
