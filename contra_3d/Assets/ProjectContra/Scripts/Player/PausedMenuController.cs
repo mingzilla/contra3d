@@ -2,12 +2,11 @@
 using BaseUtil.Base;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
-using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
+using ProjectContra.Scripts.Util;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace ProjectContra.Scripts.Player
@@ -87,7 +86,7 @@ namespace ProjectContra.Scripts.Player
 
         public void OnSelectedQuit()
         {
-            SceneManager.LoadScene(0);
+            SceneUtil.QuitToMenu<PlayerController>();
         }
     }
 }

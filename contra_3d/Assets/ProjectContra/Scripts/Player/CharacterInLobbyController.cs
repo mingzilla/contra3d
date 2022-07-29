@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using BaseUtil.Base;
+﻿using BaseUtil.Base;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
+using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
-using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Util;
 using UnityEngine;
@@ -17,7 +16,6 @@ namespace ProjectContra.Scripts.Player
         private GameStoreData storeData;
         private bool isInitialized = false;
         private int playerId;
-        public int currentSkinIndex = 0;
         private readonly IntervalState changeSkinInterval = IntervalState.Create(0.1f);
         private MeshRenderer meshRenderer;
 

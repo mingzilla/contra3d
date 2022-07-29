@@ -26,6 +26,7 @@ namespace ProjectContra.Scripts.Player
 
         private UserInput userInput;
         private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
+        public bool isBroken = false;
 
         private void Awake()
         {
@@ -126,6 +127,11 @@ namespace ProjectContra.Scripts.Player
         public void NextLevel(InputAction.CallbackContext context)
         {
             SceneUtil.ReloadScene(AppResource.instance);
+        }
+
+        private void OnDestroy()
+        {
+            isBroken = true;
         }
     }
 }

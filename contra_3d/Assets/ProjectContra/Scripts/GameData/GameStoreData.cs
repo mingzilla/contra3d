@@ -38,6 +38,7 @@ namespace ProjectContra.Scripts.GameData
 
         public PlayerAttribute GetPlayer(int id)
         {
+            if (!idAndPlayerState.ContainsKey(id)) return null;
             return idAndPlayerState[id];
         }
 
