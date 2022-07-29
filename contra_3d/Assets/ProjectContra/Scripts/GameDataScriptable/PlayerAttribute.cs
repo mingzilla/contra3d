@@ -28,7 +28,7 @@ namespace ProjectContra.Scripts.GameDataScriptable
             item.playerId = playerId;
             item.skinId = 0;
             item.isAlive = true;
-            item.weaponType = WeaponType.LASER;
+            item.weaponType = WeaponType.BASIC;
             item.currentHp = item.maxHp;
             return item;
         }
