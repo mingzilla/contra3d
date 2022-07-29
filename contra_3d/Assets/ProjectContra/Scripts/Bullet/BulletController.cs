@@ -31,10 +31,12 @@ namespace ProjectContra.Scripts.Bullet
         {
             GameObject prefab = AppResource.instance.GetBulletPrefab(weaponType);
             AppSfx.PlayBulletSound(weaponType);
-            BulletController copy = Instantiate(prefab, (shotPoint.position + positionDelta), shotPoint.rotation).GetComponent<BulletController>();
+            Vector3 shotPointPosition = shotPoint.position + positionDelta;
+            BulletController copy = Instantiate(prefab, shotPointPosition, shotPoint.rotation).GetComponent<BulletController>();
             copy.moveDirection = direction;
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
             copy.weaponType = weaponType;
+            copy.transform.rotation = UnityFn.GetImmediateRotation3D(shotPointPosition, (shotPointPosition + direction));
             copy.explosionEffect = AppResource.instance.GetBulletHitEffect(weaponType);
             return copy;
         }
