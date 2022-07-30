@@ -63,6 +63,7 @@ namespace ProjectContra.Scripts.Player
         private void MoveToButton(int index)
         {
             currentButtonIndex = index;
+            UnityFn.DeSelectButtons(buttons);
             UnityFn.MoveToButton(buttons[index]);
         }
 

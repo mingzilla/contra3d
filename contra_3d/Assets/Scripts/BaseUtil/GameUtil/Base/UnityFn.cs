@@ -635,6 +635,11 @@ namespace BaseUtil.GameUtil.Base
             button.OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current)) - Highlight Button
         }
 
+        public static void DeSelectButtons(List<Button> buttons)
+        {
+            buttons.ForEach(b => b.OnDeselect(null));
+        }
+
         /// <summary>
         /// Buttons need to have onClick.AddListener(), then this can trigger the click event
         /// </summary>
