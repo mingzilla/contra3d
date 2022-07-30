@@ -13,9 +13,11 @@ namespace ProjectContra.Scripts.Player
         [SerializeField] private TextMeshProUGUI textPlaceholder;
         [SerializeField] private string[] textItems;
         [SerializeField] private int textInterval = 5;
+        [SerializeField] private int delayToStartText = 2;
 
         private IntervalState textIntervalState;
         private int currentTextIndex = 0;
+        private bool canStartText = false;
 
         public static EndingScreenController GetInstance()
         {
@@ -32,10 +34,12 @@ namespace ProjectContra.Scripts.Player
         private void Start()
         {
             textIntervalState = IntervalState.Create(textInterval);
+            UnityFn.SetTimeout(this, delayToStartText, () => canStartText = true);
         }
 
         private void Update()
         {
+            if (!canStartText) return;
             if (currentTextIndex < textItems.Length)
             {
                 UnityFn.RunWithInterval(this, textIntervalState, () =>
