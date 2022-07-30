@@ -39,6 +39,7 @@ namespace ProjectContra.Scripts.AppSingleton
             storeData = AppResource.instance.storeData;
             inputManagerData = storeData.inputManagerData;
             PlayerInputManager.instance.playerPrefab = AppResource.instance.playerPrefab;
+            UnityFn.PreventMouseEventAtGameManagerStart();
         }
 
         public void Update()

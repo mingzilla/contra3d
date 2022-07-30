@@ -66,6 +66,15 @@ namespace BaseUtil.GameUtil.Base
             Object.Destroy(obj, lifeTime);
         }
 
+        /// <summary>
+        /// Used inside GameManagerController.Start(), so that mouse input is disabled, and players can't use mouse click on buttons
+        /// </summary>
+        public static void PreventMouseEventAtGameManagerStart()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         public static void CreateEffect(GameObject effectPreFab, Vector3 position, float lifeTime)
         {
             if (effectPreFab != null)
