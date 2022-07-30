@@ -16,7 +16,8 @@ namespace ProjectContra.Scripts.Player
         private static PausedMenuController instance;
         private GameStoreData storeData;
 
-        [SerializeField] private Button lobbyButton;
+        [SerializeField] private Button resumeButton;
+        [SerializeField] private Button restartLevelButton;
         [SerializeField] private Button quitButton;
         public List<Button> buttons;
         private int currentButtonIndex = 0;
@@ -32,9 +33,12 @@ namespace ProjectContra.Scripts.Player
         {
             storeData = AppResource.instance.storeData;
             storeData.controlState = GameControlState.IN_GAME_PAUSED;
-            lobbyButton.onClick.AddListener(OnSelectedLobby);
+
+            resumeButton.onClick.AddListener(OnSelectedResume);
+            restartLevelButton.onClick.AddListener(OnSelectedRestartLevel);
             quitButton.onClick.AddListener(OnSelectedQuit);
-            buttons = new List<Button>() {lobbyButton, quitButton};
+            buttons = new List<Button>() {resumeButton, restartLevelButton, quitButton};
+
             MoveToButton(currentButtonIndex);
             return this;
         }
@@ -80,9 +84,14 @@ namespace ProjectContra.Scripts.Player
             UnityFn.UnPause();
         }
 
-        public void OnSelectedLobby()
+        public void OnSelectedResume()
         {
-            Debug.Log("Lobby");
+            HandleUnPause();
+        }
+
+        public void OnSelectedRestartLevel()
+        {
+            SceneUtil.ReloadScene(AppResource.instance);
         }
 
         public void OnSelectedQuit()
