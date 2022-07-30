@@ -25,7 +25,7 @@ namespace ProjectContra.Scripts.Player
         private int playerId;
 
         private UserInput userInput;
-        private readonly IntervalState pauseInterval = IntervalState.Create(0.1f);
+        private readonly IntervalState buttonIntervalState = IntervalState.Create(0.1f);
         public bool isBroken = false;
 
         private void Awake()
@@ -90,7 +90,7 @@ namespace ProjectContra.Scripts.Player
             if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
             if (context.started && storeData.controlState == GameControlState.IN_GAME)
             {
-                UnityFn.RunWithInterval(AppResource.instance, pauseInterval, () =>
+                UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
                 {
                     AppSfx.Play(AppSfx.instance.pause);
                     AppMusic.instance.Pause();
@@ -126,7 +126,7 @@ namespace ProjectContra.Scripts.Player
 
         public void NextLevel(InputAction.CallbackContext context)
         {
-            SceneUtil.ReloadScene(AppResource.instance);
+            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, UnityFn.LoadNextScene);
         }
 
         private void OnDestroy()

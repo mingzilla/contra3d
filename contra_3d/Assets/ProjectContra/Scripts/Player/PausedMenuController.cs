@@ -2,10 +2,10 @@
 using BaseUtil.Base;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
-using ProjectContra.Scripts.Util;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +21,7 @@ namespace ProjectContra.Scripts.Player
         [SerializeField] private Button quitButton;
         public List<Button> buttons;
         private int currentButtonIndex = 0;
+        private readonly IntervalState buttonIntervalState = IntervalState.Create(0.2f);
 
         public static PausedMenuController GetInstance()
         {
@@ -91,12 +92,14 @@ namespace ProjectContra.Scripts.Player
 
         public void OnSelectedRestartLevel()
         {
-            SceneUtil.ReloadScene(AppResource.instance);
+            UnityFn.UnPause(); // when paused, time is stopped so 
+            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () => storeData.ReloadScene());
         }
 
         public void OnSelectedQuit()
         {
-            SceneUtil.QuitToMenu<PlayerController>();
+            UnityFn.UnPause();
+            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () => UnityFn.QuitToMenu<PlayerController>());
         }
     }
 }

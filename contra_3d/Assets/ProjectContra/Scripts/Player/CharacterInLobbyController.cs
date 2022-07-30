@@ -16,7 +16,7 @@ namespace ProjectContra.Scripts.Player
         private GameStoreData storeData;
         private bool isInitialized = false;
         private int playerId;
-        private readonly IntervalState changeSkinInterval = IntervalState.Create(0.1f);
+        private readonly IntervalState buttonIntervalState = IntervalState.Create(0.1f);
         private MeshRenderer meshRenderer;
 
         public GameObject playerReadyState;
@@ -88,8 +88,7 @@ namespace ProjectContra.Scripts.Player
 
         public void OnSelectedStartFromLobby()
         {
-            // 1 second to allow sound effect
-            UnityFn.SetTimeout(this, 1f, () => SceneUtil.LoadNextScene(AppResource.instance));
+            UnityFn.RunWithInterval(this, buttonIntervalState, UnityFn.LoadNextScene);
         }
 
         public void UpdateSkin(UserInput userInput)
@@ -113,7 +112,7 @@ namespace ProjectContra.Scripts.Player
 
         private void ChangeSkin(int desireIndex)
         {
-            UnityFn.RunWithInterval(AppResource.instance, changeSkinInterval, () =>
+            UnityFn.RunWithInterval(this, buttonIntervalState, () =>
             {
                 PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
                 meshRenderer.material = AppResource.instance.GetSkin(desireIndex);

@@ -234,6 +234,7 @@ namespace BaseUtil.GameUtil.Base
         }
 
         /// <summary>
+        /// Won't work if time is stopped (e.g. game is paused)
         /// IMPORTANT: Use "this" (preferred) if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
         /// 1) Used inside Update loop. If interval is 3, fn runs every 3 seconds. 
         /// 2) Used in events, to allow executing fn only once only within an interval. 
@@ -597,6 +598,17 @@ namespace BaseUtil.GameUtil.Base
         {
             int index = SceneManager.GetActiveScene().buildIndex;
             LoadScene(index);
+        }
+
+        /// <summary>
+        /// Destroy all players and quit to menu
+        /// </summary>
+        /// <typeparam name="T">Player Controller, which represents user input control</typeparam>
+        public static void QuitToMenu<T>(int menuSceneIndex = 0) where T : MonoBehaviour
+        {
+            T[] objects = Object.FindObjectsOfType<T>();
+            Fn.EachInArray(x => Object.Destroy(x.gameObject), objects);
+            UnityFn.LoadScene(menuSceneIndex);
         }
 
         public static string[] GetSceneNamesInBuildSettings()
