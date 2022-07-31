@@ -51,6 +51,7 @@ MonoBehaviour:
     type: 3}
   characterInLobbyPrefab: {fileID: 833075378163421166, guid: 92be0c46c2e287047ab8c90d84468126,
     type: 3}
+  isBroken: 0
 --- !u!114 &1704468264798570661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,35 +143,11 @@ MonoBehaviour:
     m_ActionId: ac732d8e-00fb-4aa1-b9c6-635a89480ee6
     m_ActionName: Player/NextLevel[/Keyboard/n]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1704468264798570658}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Space
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: efb613e3-772b-497c-9540-4fa53d20c1e1
     m_ActionName: Player/Space[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1704468264798570658}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Escape
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 4c370ac5-f785-4b54-ac3b-dfb924e52f0d
     m_ActionName: Player/Escape[/Keyboard/escape]
   - m_PersistentCalls:
@@ -189,6 +166,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c7389438-14e2-4426-9f8e-b18a57b357d9
     m_ActionName: Player/Pause[/XInputControllerWindows/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ac9126c1-c119-4db0-89d8-72a98fa8a2a7
+    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 410e8f1f-3f40-4032-a5b4-47fa6056c4e0
+    m_ActionName: UI/Submit[/XInputControllerWindows/buttonSouth,/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ada55922-f5c7-437f-bf16-5c6afc32924c
+    m_ActionName: UI/Cancel[/XInputControllerWindows/buttonEast,/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

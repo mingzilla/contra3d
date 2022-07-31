@@ -21,8 +21,6 @@ namespace BaseUtil.GameUtil
         public bool fire1;
         public bool fire2;
         public bool fire3;
-        public bool escape;
-        public bool space;
 
         public static void ResetTriggers(UserInput userInput)
         {
@@ -32,8 +30,6 @@ namespace BaseUtil.GameUtil
             userInput.fire1 = false;
             userInput.fire2 = false;
             userInput.fire3 = false;
-            userInput.escape = false;
-            userInput.space = false;
         }
 
         public static UserInput Create(int playerId)
@@ -164,6 +160,26 @@ namespace BaseUtil.GameUtil
             if (userInput.down) return false;
             if (userInput.up) return true;
             return isFacingForward;
+        }
+
+        public static bool IsMenuKeyboardOk()
+        {
+            return Keyboard.current.jKey.wasPressedThisFrame;
+        }
+
+        public static bool IsMenuKeyboardCancel()
+        {
+            return Keyboard.current.kKey.wasPressedThisFrame;
+        }
+
+        public static bool IsMenuGamepadOk()
+        {
+            return Gamepad.current.buttonSouth.wasPressedThisFrame;
+        }
+
+        public static bool IsMenuGamepadCancel()
+        {
+            return Gamepad.current.buttonEast.wasPressedThisFrame;
         }
     }
 }

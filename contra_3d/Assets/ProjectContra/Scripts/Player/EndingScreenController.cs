@@ -52,7 +52,7 @@ namespace ProjectContra.Scripts.Player
 
         public void HandleUpdate(UserInput userInput)
         {
-            if (userInput.fire1 || userInput.space)
+            if (userInput.fire1)
             {
                 AppMusic.instance.Stop();
                 UnityFn.LoadScene(0);

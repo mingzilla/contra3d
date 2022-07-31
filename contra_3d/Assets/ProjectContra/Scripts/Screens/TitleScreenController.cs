@@ -1,4 +1,5 @@
-﻿using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil;
+using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
@@ -35,8 +36,8 @@ namespace ProjectContra.Scripts.Screens
         {
             if ((storeData.controlState == GameControlState.TITLE_SCREEN_LOBBY) && !storeData.inputManagerData.HasPlayers())
             {
-                if (Keyboard.current.escapeKey.wasPressedThisFrame) OnSelectedBackFromLobby();
-                if (Gamepad.current.buttonEast.wasPressedThisFrame) OnSelectedBackFromLobby();
+                if (UserInput.IsMenuKeyboardCancel()) OnSelectedBackFromLobby();
+                if (UserInput.IsMenuGamepadCancel()) OnSelectedBackFromLobby();
             }
         }
 

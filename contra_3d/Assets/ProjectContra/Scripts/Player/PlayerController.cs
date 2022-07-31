@@ -71,21 +71,10 @@ namespace ProjectContra.Scripts.Player
             userInput.fire1 = true;
         }
 
-        public void Space(InputAction.CallbackContext context)
-        {
-            if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
-            userInput.space = true;
-        }
-
-        public void Escape(InputAction.CallbackContext context)
-        {
-            if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
-            userInput.escape = true;
-        }
-
         public void Pause(InputAction.CallbackContext context)
         {
             if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
+            if (!storeData.IsInGame()) return; // prevent pause menu when it's not in game 
             if (!storeData.IsFirstPlayer(playerId)) return; // seems like only first player can use the event system 
             UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
             {

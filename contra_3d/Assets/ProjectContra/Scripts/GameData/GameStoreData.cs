@@ -117,5 +117,10 @@ namespace ProjectContra.Scripts.GameData
         {
             return controlState == GameControlState.IN_GAME_PAUSED;
         }
+
+        public bool IsInGame()
+        {
+            return controlState == GameControlState.IN_GAME;
+        }
     }
 }

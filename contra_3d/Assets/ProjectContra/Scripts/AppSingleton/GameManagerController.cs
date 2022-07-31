@@ -1,4 +1,5 @@
-﻿using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil;
+using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
@@ -44,15 +45,8 @@ namespace ProjectContra.Scripts.AppSingleton
 
         public void Update()
         {
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            {
-                JoinPlayer(Keyboard.current);
-            }
-
-            if (Gamepad.current.buttonSouth.wasPressedThisFrame)
-            {
-                JoinPlayer(Gamepad.current);
-            }
+            if (UserInput.IsMenuKeyboardOk()) JoinPlayer(Keyboard.current);
+            if (UserInput.IsMenuGamepadOk()) JoinPlayer(Gamepad.current);
         }
 
         private void JoinPlayer(InputDevice device)

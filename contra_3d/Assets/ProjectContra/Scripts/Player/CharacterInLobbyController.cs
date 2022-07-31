@@ -6,7 +6,6 @@ using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.GameDataScriptable;
-using ProjectContra.Scripts.Util;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Player
@@ -42,8 +41,8 @@ namespace ProjectContra.Scripts.Player
             UnityFn.SetActive(gameObject);
             if (storeData.inputManagerData.AllPlayersAreReady()) return; // to avoid causing strange behaviour, when everyone is ready, stop further changes
             if (userInput.left || userInput.right) Move(userInput);
-            if (userInput.fire1 || userInput.space) Ok();
-            if (userInput.jump || userInput.escape) Cancel(playerGameObject);
+            if (userInput.fire1) Ok();
+            if (userInput.jump) Cancel(playerGameObject);
         }
 
         public void Move(UserInput userInput)

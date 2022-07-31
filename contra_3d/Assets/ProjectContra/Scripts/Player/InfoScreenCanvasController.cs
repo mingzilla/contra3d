@@ -29,7 +29,7 @@ namespace ProjectContra.Scripts.Player
 
         public void HandleUpdate(UserInput userInput)
         {
-            if (userInput.fire1 || userInput.space)
+            if (userInput.fire1)
             {
                 AppResource.instance.storeData.controlState = GameControlState.IN_GAME;
                 AppMusic.instance.PlayByScene(AppResource.instance.storeData.currentScene);
