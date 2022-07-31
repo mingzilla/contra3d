@@ -1,13 +1,12 @@
-﻿using System;
-using BaseUtil.GameUtil;
+﻿using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
-using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
+using ProjectContra.Scripts.Util;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -55,62 +54,58 @@ namespace ProjectContra.Scripts.Player
 
         public void Move(InputAction.CallbackContext context)
         {
-            if (userInput == null) return;
-            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
+            if (!UserInput.CanControl(userInput)) return;
             userInput = UserInput.Move(userInput, context);
             if (context.started) HandleInputWhenPaused(); // if not in context.started, it runs 3 times
         }
 
         public void Jump(InputAction.CallbackContext context)
         {
-            RunWhenContextStarted(context, () => userInput.jump = true);
+            if (!UserInput.CanControl(userInput)) return;
+            if (context.started) userInput.jump = true;
             if (context.canceled) userInput.jumpCancelled = true;
         }
 
         public void Fire1(InputAction.CallbackContext context)
         {
-            RunWhenContextStarted(context, () => userInput.fire1 = true);
+            if (!UserInput.CanControlContextStarted(userInput, context)) return;
+            userInput.fire1 = true;
+            HandleInputWhenPaused();
         }
 
         public void Space(InputAction.CallbackContext context)
         {
-            RunWhenContextStarted(context, () => userInput.space = true);
+            if (!UserInput.CanControlContextStarted(userInput, context)) return;
+            userInput.space = true;
+            HandleInputWhenPaused();
         }
 
         public void Escape(InputAction.CallbackContext context)
         {
-            if (storeData.controlState == GameControlState.IN_GAME) return; // if it's in game, this is the same as Pause(), so don't double run
-            RunWhenContextStarted(context, () => userInput.escape = true);
+            if (!storeData.IsPaused()) return;
+            if (!UserInput.CanControlContextStarted(userInput, context)) return;
+            userInput.escape = true;
+            HandleInputWhenPaused();
         }
 
         public void Pause(InputAction.CallbackContext context)
         {
-            if (userInput == null) return;
-            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
-            if (context.started && storeData.controlState == GameControlState.IN_GAME)
-            {
-                UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
-                {
-                    AppSfx.Play(AppSfx.instance.pause);
-                    AppMusic.instance.Pause();
-                    storeData.controlState = GameControlState.IN_GAME_PAUSED;
-                    SceneInitData sceneInitData = AppResource.instance.GetCurrentSceneInitData();
-                    GameScene gameScene = AppResource.instance.GetCurrentScene();
-                    controlObjectData.SetControlObjectActiveState(playerId, storeData.controlState, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab, gameScene, sceneInitData);
-                    UnityFn.Pause();
-                });
-            }
-        }
+            if (!UserInput.CanControlContextStarted(userInput, context)) return;
 
-        private void RunWhenContextStarted(InputAction.CallbackContext context, Action fn)
-        {
-            if (userInput == null) return;
-            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return;
-            if (context.started)
+            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
             {
-                fn();
-                HandleInputWhenPaused();
-            }
+                if (storeData.IsPaused())
+                {
+                    storeData = GameFn.HandleUnPause(storeData);
+                }
+                else
+                {
+                    storeData = GameFn.HandlePause(storeData);
+                    controlObjectData.SetControlObjectActiveState(playerId, GameControlState.IN_GAME_PAUSED, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab,
+                        AppResource.instance.GetCurrentScene(),
+                        AppResource.instance.GetCurrentSceneInitData());
+                }
+            });
         }
 
         /// <summary>
@@ -119,7 +114,7 @@ namespace ProjectContra.Scripts.Player
         private void HandleInputWhenPaused()
         {
             if (!storeData.IsPaused()) return;
-            controlObjectData.pausedMenuController.HandleUpdate(userInput);
+            controlObjectData.pausedMenuController.HandleInput(userInput);
             UserInput.ResetTriggers(userInput); // same as update loop, need to reset userInput after execution
         }
 

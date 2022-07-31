@@ -6,6 +6,7 @@ using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
+using ProjectContra.Scripts.Util;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,9 +20,11 @@ namespace ProjectContra.Scripts.Player
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button restartLevelButton;
         [SerializeField] private Button quitButton;
-        public List<Button> buttons;
+        private List<Button> buttons;
         private int currentButtonIndex = 0;
         private readonly IntervalState buttonIntervalState = IntervalState.Create(0.2f);
+
+        private UserInput userInput = UserInput.Create(0); // all players share the same userInput object
 
         public static PausedMenuController GetInstance()
         {
@@ -44,7 +47,7 @@ namespace ProjectContra.Scripts.Player
             return this;
         }
 
-        public void HandleUpdate(UserInput userInput)
+        public void HandleInput(UserInput userInput)
         {
             if (userInput.up || userInput.down) MoveSelection(userInput);
             if (userInput.fire1 || userInput.space) Ok();
@@ -79,10 +82,7 @@ namespace ProjectContra.Scripts.Player
 
         private void HandleUnPause()
         {
-            AppSfx.Play(AppSfx.instance.pause);
-            AppMusic.instance.UnPause();
-            storeData.controlState = GameControlState.IN_GAME;
-            UnityFn.UnPause();
+            storeData = GameFn.HandleUnPause(storeData);
         }
 
         public void OnSelectedResume()
