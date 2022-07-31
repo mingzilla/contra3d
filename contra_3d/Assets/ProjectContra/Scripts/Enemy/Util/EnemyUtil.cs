@@ -23,7 +23,7 @@ namespace ProjectContra.Scripts.Enemy.Util
             bool damagesSomeone = false;
             if (GameLayer.Matches(other.gameObject.layer, GameLayer.PLAYER))
             {
-                GameFn.DealDamage(position, blastRange, destructibleLayers, (obj) =>
+                UnityFn.DealDamage(position, blastRange, destructibleLayers, (obj) =>
                 {
                     damagesSomeone = DamagePlayer(obj, position, damage);
                 });

@@ -62,7 +62,7 @@ namespace ProjectContra.Scripts.Bullet
             UnityFn.CreateEffect(explosionEffect, position, 1f); // only if the bullet creates explosion
             if (explosionEffect != null) AppSfx.PlayAdjusted(AppSfx.instance.bulletFExplode);
             if (weaponType.destroyWhenHit) Destroy(gameObject);
-            GameFn.DealDamage(position, weaponType.blastRange, weaponType.GetDestructibleLayers(), (obj) =>
+            UnityFn.DealDamage(position, weaponType.blastRange, weaponType.GetDestructibleLayers(), (obj) =>
             {
                 AbstractDestructibleController destructible = obj.GetComponent<AbstractDestructibleController>();
                 if (destructible != null) destructible.TakeDamage(position, weaponType.damage); // null check to avoid child objects

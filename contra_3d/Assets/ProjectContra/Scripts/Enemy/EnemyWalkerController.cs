@@ -97,7 +97,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             if (GameLayer.Matches(other.gameObject.layer, GameLayer.ENEMY_JUMP_POINT))
             {
-                GameFn.HandleJump(rb, jumpForce);
+                UnityFn.HandleJump(rb, jumpForce);
             }
         }
 

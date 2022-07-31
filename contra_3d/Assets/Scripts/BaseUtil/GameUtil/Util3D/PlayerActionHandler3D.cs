@@ -44,7 +44,7 @@ namespace BaseUtil.GameUtil.Util3D
 
         public static void HandleJumpFromGround(bool isOnGround, Rigidbody rb, float jumpForce)
         {
-            if (isOnGround) GameFn.HandleJump(rb, jumpForce);
+            if (isOnGround) UnityFn.HandleJump(rb, jumpForce);
         }
 
         /**
@@ -52,7 +52,7 @@ namespace BaseUtil.GameUtil.Util3D
          */
         private static bool HandleJumpFromGroundOrDoubleJump(bool isOnGround, bool isInDoubleJumpStatus, Rigidbody rb, float jumpForce)
         {
-            return GameLogic.HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, () => GameFn.HandleJump(rb, jumpForce));
+            return GameLogic.HandleJumpFromGroundOrDoubleJump(isOnGround, isInDoubleJumpStatus, () => UnityFn.HandleJump(rb, jumpForce));
         }
 
         /// <summary>

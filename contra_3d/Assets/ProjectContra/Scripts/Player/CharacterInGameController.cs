@@ -65,7 +65,7 @@ namespace ProjectContra.Scripts.Player
             isFacingRight = UserInput.IsFacingRight(isFacingRight, userInput);
             UnitDisplayHandler3D.HandleLeftRightFacing(transform, isFacingRight);
 
-            bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
+            bool isOnGround = UnityFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
             animatorCtrl.SetBool(isOnGroundKey, isOnGround);
             animatorCtrl.SetBool(isPointingUpKey, userInput.IsStraightUp());
             bool isProne = (isOnGround && userInput.IsStraightDown());

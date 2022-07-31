@@ -71,7 +71,6 @@
      <Compile Include="Assets\Scripts\BaseUtil\Base\GameLogic.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\BulletCommonUtil2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\ShotPointHandler2D.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\GameFn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\PlayerActionHandler2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\HealthBar.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnRxDataStore.cs" />

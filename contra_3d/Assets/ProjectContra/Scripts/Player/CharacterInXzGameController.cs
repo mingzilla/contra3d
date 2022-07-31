@@ -64,7 +64,7 @@ namespace ProjectContra.Scripts.Player
             animatorCtrl.SetBool(isMovingKey, userInput.IsMoving());
             UnitDisplayHandler3D.HandleXZFacing(transform, userInput);
 
-            bool isOnGround = GameFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
+            bool isOnGround = UnityFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
             animatorCtrl.SetBool(isOnGroundKey, isOnGround);
             if (userInput.jump && isOnGround) animatorCtrl.SetTrigger(triggerJumpKey);
             if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
