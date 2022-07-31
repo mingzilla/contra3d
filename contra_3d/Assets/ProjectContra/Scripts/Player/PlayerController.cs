@@ -89,9 +89,6 @@ namespace ProjectContra.Scripts.Player
             UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
             {
                 storeData = GameFn.HandlePause(storeData);
-                controlObjectData.SetControlObjectActiveState(playerId, GameControlState.IN_GAME_PAUSED, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab,
-                    AppResource.instance.GetCurrentScene(),
-                    AppResource.instance.GetCurrentSceneInitData());
             });
         }
 

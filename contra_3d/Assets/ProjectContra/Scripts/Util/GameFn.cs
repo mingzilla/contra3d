@@ -21,8 +21,8 @@ namespace ProjectContra.Scripts.Util
             AppMusic.instance.Pause();
             storeData.controlState = GameControlState.IN_GAME_PAUSED;
             UnityFn.Pause();
-            // PausedMenuController.GetInstance(); // creates the menu object
             AppResource.instance.pauseMenuEventSystem.SetActive(true);
+            PausedMenuController.GetInstance(); // creates the menu object, this has to be done after activating event system, if activating later, it won't know presence of buttons
             return storeData;
         }
 
@@ -33,7 +33,7 @@ namespace ProjectContra.Scripts.Util
             storeData.controlState = GameControlState.IN_GAME;
             UnityFn.UnPause();
             AppResource.instance.pauseMenuEventSystem.SetActive(false);
-            // UnityFn.SafeDestroy(Object.FindObjectOfType<PausedMenuController>()?.gameObject); // destroy menu
+            UnityFn.SafeDestroy(Object.FindObjectOfType<PausedMenuController>()?.gameObject); // destroy menu
             return storeData;
         }
 
