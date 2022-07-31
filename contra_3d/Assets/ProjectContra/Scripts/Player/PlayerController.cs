@@ -86,6 +86,7 @@ namespace ProjectContra.Scripts.Player
         public void Pause(InputAction.CallbackContext context)
         {
             if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
+            if (!storeData.IsFirstPlayer(playerId)) return; // seems like only first player can use the event system 
             UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
             {
                 storeData = GameFn.HandlePause(storeData);

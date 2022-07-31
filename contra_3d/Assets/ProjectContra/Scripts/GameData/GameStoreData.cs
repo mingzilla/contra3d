@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
@@ -29,6 +30,11 @@ namespace ProjectContra.Scripts.GameData
         public int GetNextPlayerId()
         {
             return inputManagerData.GetNextIndexToJoin();
+        }
+
+        public bool IsFirstPlayer(int playerId)
+        {
+            return playerId == AllPlayerIds().Min();
         }
 
         public void SetPlayer(PlayerAttribute playerAttribute)
