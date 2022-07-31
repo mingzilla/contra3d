@@ -1,5 +1,4 @@
-﻿using System;
-using BaseUtil.GameUtil;
+﻿using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using BaseUtil.GameUtil.Util3D;
@@ -18,7 +17,6 @@ namespace ProjectContra.Scripts.Player
         public Rigidbody rb;
         private SkinnedMeshRenderer meshRenderer;
         private LayerMask groundLayers;
-        private GameObject destroyEffect;
         private int playerId;
         private bool isFacingRight = true;
         private Animator animatorCtrl;
@@ -44,7 +42,6 @@ namespace ProjectContra.Scripts.Player
             Material skin = AppResource.instance.GetSkin(playerAttribute.skinId);
             meshRenderer.materials = new[] {meshRenderer.materials[0], skin}; // setting to a position doesn't work, need to replace the whole array
             groundLayers = GameLayer.GetGroundLayerMask();
-            destroyEffect = AppResource.instance.playerDestroyedEffect;
             animatorCtrl = gameObject.GetComponent<Animator>();
             gameObject.SetActive(isActive);
             return this;
@@ -59,7 +56,7 @@ namespace ProjectContra.Scripts.Player
         {
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
 
-            HandleInvincibilityUi();
+            UnitDisplayHandler3D.HandleInvincibility(meshRenderer, takeDamageInterval);
             PlayerActionHandler3D.MoveX(userInput.fixedHorizontal, rb, playerAttribute.moveSpeed);
             animatorCtrl.SetBool(isMovingKey, userInput.IsMovingHorizontally());
             isFacingRight = UserInput.IsFacingRight(isFacingRight, userInput);
@@ -85,19 +82,6 @@ namespace ProjectContra.Scripts.Player
         {
             Vector3 positionDelta = weaponType.GetBulletPositionDelta(userInput.fixedHorizontal, isProne);
             BulletController.Spawn(transform, positionDelta, isFacingRight, userInput, weaponType, isOnGround);
-        }
-
-        private void HandleInvincibilityUi()
-        {
-            bool isInvincible = !takeDamageInterval.canRun;
-            if (isInvincible)
-            {
-                meshRenderer.enabled = !meshRenderer.enabled;
-            }
-            if (!isInvincible && !meshRenderer.enabled)
-            {
-                meshRenderer.enabled = true;
-            }
         }
 
         public void TakeDamage(Vector3 position, int damage)

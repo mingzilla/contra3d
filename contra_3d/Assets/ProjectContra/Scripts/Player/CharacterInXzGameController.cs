@@ -1,5 +1,4 @@
-﻿using System;
-using BaseUtil.GameUtil;
+﻿using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using BaseUtil.GameUtil.Util3D;
@@ -21,7 +20,6 @@ namespace ProjectContra.Scripts.Player
         public Rigidbody rb;
         private SkinnedMeshRenderer meshRenderer;
         private LayerMask groundLayers;
-        private GameObject destroyEffect;
         private int playerId;
         private Animator animatorCtrl;
         private static readonly int triggerJumpKey = Animator.StringToHash("triggerJump");
@@ -44,7 +42,6 @@ namespace ProjectContra.Scripts.Player
             Material skin = AppResource.instance.GetSkin(playerAttribute.skinId);
             meshRenderer.materials = new[] {meshRenderer.materials[0], skin}; // setting to a position doesn't work, need to replace the whole array
             groundLayers = GameLayer.GetGroundLayerMask();
-            destroyEffect = AppResource.instance.playerDestroyedEffect;
             animatorCtrl = gameObject.GetComponent<Animator>();
             gameObject.SetActive(isActive);
             return this;
@@ -52,14 +49,14 @@ namespace ProjectContra.Scripts.Player
 
         public void HandleUpdate(UserInput userInput)
         {
-            if (gameObject.activeSelf && storeData.GetPlayer(playerId).isAlive) HandlePlayerControl(userInput);
+            if (storeData.GetPlayer(playerId).isAlive) HandlePlayerControl(userInput);
         }
 
         private void HandlePlayerControl(UserInput userInput)
         {
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
 
-            HandleInvincibilityUi();
+            UnitDisplayHandler3D.HandleInvincibility(meshRenderer, takeDamageInterval);
             PlayerActionHandler3D.MoveXZ(userInput, rb, playerAttribute.moveSpeed);
             animatorCtrl.SetBool(isMovingKey, userInput.IsMoving());
             UnitDisplayHandler3D.HandleXZFacing(transform, userInput);
@@ -81,19 +78,6 @@ namespace ProjectContra.Scripts.Player
         {
             Vector3 positionDelta = weaponType.GetBulletPositionXzDelta(userInput.fixedHorizontal);
             BulletController.SpawnXZ(transform, positionDelta, weaponType);
-        }
-
-        private void HandleInvincibilityUi()
-        {
-            bool isInvincible = !takeDamageInterval.canRun;
-            if (isInvincible)
-            {
-                meshRenderer.enabled = !meshRenderer.enabled;
-            }
-            if (!isInvincible && !meshRenderer.enabled)
-            {
-                meshRenderer.enabled = true;
-            }
         }
 
         public void TakeDamage(Vector3 position, int damage)
