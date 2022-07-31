@@ -86,20 +86,12 @@ namespace ProjectContra.Scripts.Player
         public void Pause(InputAction.CallbackContext context)
         {
             if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
-
             UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
             {
-                if (storeData.IsPaused())
-                {
-                    storeData = GameFn.HandleUnPause(storeData);
-                }
-                else
-                {
-                    storeData = GameFn.HandlePause(storeData);
-                    controlObjectData.SetControlObjectActiveState(playerId, GameControlState.IN_GAME_PAUSED, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab,
-                        AppResource.instance.GetCurrentScene(),
-                        AppResource.instance.GetCurrentSceneInitData());
-                }
+                storeData = GameFn.HandlePause(storeData);
+                controlObjectData.SetControlObjectActiveState(playerId, GameControlState.IN_GAME_PAUSED, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab,
+                    AppResource.instance.GetCurrentScene(),
+                    AppResource.instance.GetCurrentSceneInitData());
             });
         }
 

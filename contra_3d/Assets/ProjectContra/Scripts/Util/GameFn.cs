@@ -3,7 +3,9 @@ using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
+using ProjectContra.Scripts.Player;
 using ProjectContra.Scripts.Types;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace ProjectContra.Scripts.Util
@@ -19,6 +21,7 @@ namespace ProjectContra.Scripts.Util
             AppMusic.instance.Pause();
             storeData.controlState = GameControlState.IN_GAME_PAUSED;
             UnityFn.Pause();
+            // PausedMenuController.GetInstance(); // creates the menu object
             AppResource.instance.pauseMenuEventSystem.SetActive(true);
             return storeData;
         }
@@ -30,6 +33,7 @@ namespace ProjectContra.Scripts.Util
             storeData.controlState = GameControlState.IN_GAME;
             UnityFn.UnPause();
             AppResource.instance.pauseMenuEventSystem.SetActive(false);
+            // UnityFn.SafeDestroy(Object.FindObjectOfType<PausedMenuController>()?.gameObject); // destroy menu
             return storeData;
         }
 
@@ -40,14 +44,21 @@ namespace ProjectContra.Scripts.Util
         {
             if (storeData == null) return false;
             if (storeData.IsPaused()) return false;
-            if (!UserInput.CanControl(userInput)) return false;
+            if (userInput == null) return false;
+            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return false;
             return true;
         }
+
+        /// <summary>
+        /// For buttons that are not continuous. e.g. non movement buttons
+        /// </summary>
         public static bool CanControlPlayerOnContextStarted(GameStoreData storeData, UserInput userInput, InputAction.CallbackContext context)
         {
             if (storeData == null) return false;
             if (storeData.IsPaused()) return false;
-            if (!UserInput.CanControlOnContextStarted(userInput, context)) return false;
+            if (userInput == null) return false;
+            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return false;
+            if (!context.started) return false; // only handle context.started, otherwise it runs 3 times
             return true;
         }
     }

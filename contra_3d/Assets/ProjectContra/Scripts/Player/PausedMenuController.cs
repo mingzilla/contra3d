@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using BaseUtil.Base;
-using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -24,8 +22,6 @@ namespace ProjectContra.Scripts.Player
         private int currentButtonIndex = 0;
         private readonly IntervalState buttonIntervalState = IntervalState.Create(0.2f);
 
-        private UserInput userInput = UserInput.Create(0); // all players share the same userInput object
-
         public static PausedMenuController GetInstance()
         {
             if (instance != null) return instance;
@@ -33,6 +29,9 @@ namespace ProjectContra.Scripts.Player
             return instance;
         }
 
+        /// <summary>
+        /// Not using Start() or Update() because at this point the system is paused, so time is stopped.
+        /// </summary>
         private PausedMenuController Init()
         {
             storeData = AppResource.instance.storeData;
@@ -45,20 +44,6 @@ namespace ProjectContra.Scripts.Player
 
             MoveToButton(currentButtonIndex);
             return this;
-        }
-
-        void MoveSelection(UserInput userInput)
-        {
-            if (userInput.down)
-            {
-                int nextIndex = FnVal.GetNextIndex(currentButtonIndex, buttons.Count);
-                MoveToButton(nextIndex);
-            }
-            if (userInput.up)
-            {
-                int nextIndex = FnVal.GetPreviousIndex(currentButtonIndex, buttons.Count);
-                MoveToButton(nextIndex);
-            }
         }
 
         private void MoveToButton(int index)

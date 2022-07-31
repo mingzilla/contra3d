@@ -1,6 +1,4 @@
-﻿using System;
-using BaseUtil.GameUtil.PlayerManagement;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace BaseUtil.GameUtil
@@ -166,24 +164,6 @@ namespace BaseUtil.GameUtil
             if (userInput.down) return false;
             if (userInput.up) return true;
             return isFacingForward;
-        }
-
-        public static bool CanControl(UserInput userInput)
-        {
-            if (userInput == null) return false;
-            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return false;
-            return true;
-        }
-
-        /// <summary>
-        /// For buttons that are not continuous. e.g. non movement buttons
-        /// </summary>
-        public static bool CanControlOnContextStarted(UserInput userInput, InputAction.CallbackContext context)
-        {
-            if (userInput == null) return false;
-            if (!PlayerInputManagerData.CurrentDeviceIsPaired()) return false;
-            if (!context.started) return false; // only handle context.started, otherwise it runs 3 times
-            return true;
         }
     }
 }
