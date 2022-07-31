@@ -1958,7 +1958,7 @@ PrefabInstance:
     - target: {fileID: 5432031926360961891, guid: 78742e27e8f100f4da60b44936f88c72,
         type: 3}
       propertyPath: textItems.Array.data[3]
-      value: 'Developer: Mingzilla'
+      value: 'Developed by: Mingzilla Studio'
       objectReference: {fileID: 0}
     - target: {fileID: 5432031926360961891, guid: 78742e27e8f100f4da60b44936f88c72,
         type: 3}
