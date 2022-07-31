@@ -15,7 +15,6 @@ namespace ProjectContra.Scripts.PowerUp
     {
         public int moveSpeed = 10;
         public float detectionRange = 60f;
-        public bool isActive = false;
         public string weaponTypeName = WeaponType.BLAST.name;
 
         private GameStoreData storeData;
@@ -38,16 +37,13 @@ namespace ProjectContra.Scripts.PowerUp
 
         void Update()
         {
-            if (!storeData.HasPlayer()) return;
-            Vector3 position = transform.position;
-            if (closestPlayer == null) closestPlayer = storeData.GetClosestPlayer(position).inGameTransform;
-            xMovementValue = (xMovementValue != 0) ? xMovementValue : (closestPlayer.position.x > position.x ? 1 : -1);
-            if (!isActive && UnityFn.IsInRange(transform, closestPlayer, GetDetectionRange()))
+            TriggerIfPlayerIsInRange(storeData, GetDetectionRange(), closestPlayer =>
             {
-                isActive = true;
                 meshRenderer.enabled = true;
-            }
-            if (isActive)
+                xMovementValue = (xMovementValue != 0) ? xMovementValue : (closestPlayer.position.x > transform.position.x ? 1 : -1);
+            });
+
+            if (isTriggered)
             {
                 bool moveXZ = AppResource.instance.GetCurrentScene().moveXZ;
                 MovementUtil.MoveX(transform, xMovementValue, moveSpeed);
