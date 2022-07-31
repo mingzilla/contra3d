@@ -19,6 +19,7 @@ namespace ProjectContra.Scripts.Player.Domain
         }
 
         public void SetControlObjectActiveState(int playerId,
+                                                bool isAlive,
                                                 GameControlState controlState,
                                                 GameObject characterInGamePrefab,
                                                 GameObject characterInXzGamePrefab,
@@ -50,7 +51,7 @@ namespace ProjectContra.Scripts.Player.Domain
                 UnityFn.DestroyReferenceIfPresent(inXzGameController, () => inXzGameController = null);
                 UnityFn.DestroyReferenceIfPresent(endingScreenController, () => endingScreenController = null);
             }
-            if (controlState == GameControlState.IN_GAME && !gameScene.moveXZ)
+            if (controlState == GameControlState.IN_GAME && isAlive && !gameScene.moveXZ)
             {
                 UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);
@@ -58,7 +59,7 @@ namespace ProjectContra.Scripts.Player.Domain
                 UnityFn.DestroyReferenceIfPresent(inXzGameController, () => inXzGameController = null);
                 UnityFn.DestroyReferenceIfPresent(endingScreenController, () => endingScreenController = null);
             }
-            if (controlState == GameControlState.IN_GAME && gameScene.moveXZ)
+            if (controlState == GameControlState.IN_GAME && isAlive && gameScene.moveXZ)
             {
                 UnityFn.DestroyReferenceIfPresent(inLobbyController, () => inLobbyController = null);
                 UnityFn.DestroyReferenceIfPresent(infoScreenCanvasController, () => infoScreenCanvasController = null);

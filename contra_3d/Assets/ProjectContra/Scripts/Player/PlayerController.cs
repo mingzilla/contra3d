@@ -43,11 +43,12 @@ namespace ProjectContra.Scripts.Player
             SceneInitData sceneInitData = AppResource.instance.GetCurrentSceneInitData();
             GameScene gameScene = AppResource.instance.GetCurrentScene();
             GameControlState currentControlState = storeData.controlState;
-            controlObjectData.SetControlObjectActiveState(playerId, currentControlState, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab, gameScene, sceneInitData);
+            bool isAlive = storeData.GetPlayer(playerId).isAlive;
+            controlObjectData.SetControlObjectActiveState(playerId, isAlive, currentControlState, characterInGamePrefab, characterInXzGamePrefab, characterInLobbyPrefab, gameScene, sceneInitData);
             if (currentControlState == GameControlState.TITLE_SCREEN_LOBBY) controlObjectData.inLobbyController.HandleUpdate(playerId, userInput, gameObject);
             if (currentControlState == GameControlState.INFO_SCREEN) controlObjectData.infoScreenCanvasController.HandleUpdate(userInput);
-            if (currentControlState == GameControlState.IN_GAME && !gameScene.moveXZ) controlObjectData.inGameController.HandleUpdate(userInput);
-            if (currentControlState == GameControlState.IN_GAME && gameScene.moveXZ) controlObjectData.inXzGameController.HandleUpdate(userInput);
+            if (currentControlState == GameControlState.IN_GAME && isAlive && !gameScene.moveXZ) controlObjectData.inGameController.HandleUpdate(userInput);
+            if (currentControlState == GameControlState.IN_GAME && isAlive && gameScene.moveXZ) controlObjectData.inXzGameController.HandleUpdate(userInput);
             if (currentControlState == GameControlState.ENDING_SCREEN) controlObjectData.endingScreenController.HandleUpdate(userInput);
             UserInput.ResetTriggers(userInput);
         }

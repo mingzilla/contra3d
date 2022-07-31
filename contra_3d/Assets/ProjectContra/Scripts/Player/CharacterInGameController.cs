@@ -52,7 +52,7 @@ namespace ProjectContra.Scripts.Player
 
         public void HandleUpdate(UserInput userInput)
         {
-            if (gameObject.activeSelf && storeData.GetPlayer(playerId).isAlive) HandlePlayerControl(userInput);
+            if (storeData.GetPlayer(playerId).isAlive) HandlePlayerControl(userInput);
         }
 
         private void HandlePlayerControl(UserInput userInput)

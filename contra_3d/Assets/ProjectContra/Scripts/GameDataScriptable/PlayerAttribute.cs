@@ -9,15 +9,16 @@ namespace ProjectContra.Scripts.GameDataScriptable
     public class PlayerAttribute : ScriptableObject
     {
         public int playerId;
-        public bool isAlive; // not alive if killed
         public float moveSpeed = 8f; // good value by experience
         public float jumpForce = 22f; // good value by experience
         public float gravityMultiplier = 3.5f; // combined with 20f jump force, to avoid character being floaty
         public float playerToGroundDistance = 0f; // Not visible, so need to create an empty object on the UI, and calculate the distance to adjust
-        public WeaponType weaponType = DEFAULT_WEAPON_TYPE;
+        public int maxHp = 8;
+
         public int skinId;
 
-        public int maxHp = 8;
+        public bool isAlive; // not alive if killed
+        public WeaponType weaponType = DEFAULT_WEAPON_TYPE;
         public int currentHp;
 
         public Transform inGameTransform;
