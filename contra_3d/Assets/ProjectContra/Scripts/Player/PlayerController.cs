@@ -8,7 +8,6 @@ using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Player.Domain;
 using ProjectContra.Scripts.Types;
-using ProjectContra.Scripts.Util;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,7 +24,7 @@ namespace ProjectContra.Scripts.Player
         private int playerId;
 
         private UserInput userInput;
-        private readonly IntervalState buttonIntervalState = IntervalState.Create(0.1f);
+        private readonly IntervalState buttonIntervalState = IntervalState.Create(0.2f);
         public bool isBroken = false;
 
         private void Awake()
