@@ -13,6 +13,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         public readonly GameStoreData storeData = new GameStoreData();
 
         [SerializeField] public GameObject musicManager, sfxManager;
+        [SerializeField] public GameObject pauseMenuEventSystem;
 
         // Player
         [SerializeField] public GameObject playerPrefab;

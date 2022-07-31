@@ -54,43 +54,38 @@ namespace ProjectContra.Scripts.Player
 
         public void Move(InputAction.CallbackContext context)
         {
-            if (!UserInput.CanControl(userInput)) return;
+            if (!GameFn.CanControlPlayer(storeData, userInput)) return;
             userInput = UserInput.Move(userInput, context);
-            if (context.started) HandleInputWhenPaused(); // if not in context.started, it runs 3 times
         }
 
         public void Jump(InputAction.CallbackContext context)
         {
-            if (!UserInput.CanControl(userInput)) return;
+            if (!GameFn.CanControlPlayer(storeData, userInput)) return;
             if (context.started) userInput.jump = true;
             if (context.canceled) userInput.jumpCancelled = true;
         }
 
         public void Fire1(InputAction.CallbackContext context)
         {
-            if (!UserInput.CanControlContextStarted(userInput, context)) return;
+            if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
             userInput.fire1 = true;
-            HandleInputWhenPaused();
         }
 
         public void Space(InputAction.CallbackContext context)
         {
-            if (!UserInput.CanControlContextStarted(userInput, context)) return;
+            if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
             userInput.space = true;
-            HandleInputWhenPaused();
         }
 
         public void Escape(InputAction.CallbackContext context)
         {
-            if (!storeData.IsPaused()) return;
-            if (!UserInput.CanControlContextStarted(userInput, context)) return;
+            if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
             userInput.escape = true;
-            HandleInputWhenPaused();
         }
 
         public void Pause(InputAction.CallbackContext context)
         {
-            if (!UserInput.CanControlContextStarted(userInput, context)) return;
+            if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
 
             UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
             {
@@ -106,16 +101,6 @@ namespace ProjectContra.Scripts.Player
                         AppResource.instance.GetCurrentSceneInitData());
                 }
             });
-        }
-
-        /// <summary>
-        /// When paused, the update loop is stopped, so nothing runs inside update loop.
-        /// </summary>
-        private void HandleInputWhenPaused()
-        {
-            if (!storeData.IsPaused()) return;
-            controlObjectData.pausedMenuController.HandleInput(userInput);
-            UserInput.ResetTriggers(userInput); // same as update loop, need to reset userInput after execution
         }
 
         public void NextLevel(InputAction.CallbackContext context)

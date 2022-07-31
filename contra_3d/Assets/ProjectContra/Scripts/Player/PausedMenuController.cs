@@ -38,20 +38,13 @@ namespace ProjectContra.Scripts.Player
             storeData = AppResource.instance.storeData;
             storeData.controlState = GameControlState.IN_GAME_PAUSED;
 
-            resumeButton.onClick.AddListener(OnSelectedResume);
+            resumeButton.onClick.AddListener(HandleUnPause);
             restartLevelButton.onClick.AddListener(OnSelectedRestartLevel);
             quitButton.onClick.AddListener(OnSelectedQuit);
             buttons = new List<Button>() {resumeButton, restartLevelButton, quitButton};
 
             MoveToButton(currentButtonIndex);
             return this;
-        }
-
-        public void HandleInput(UserInput userInput)
-        {
-            if (userInput.up || userInput.down) MoveSelection(userInput);
-            if (userInput.fire1 || userInput.space) Ok();
-            if (userInput.jump || userInput.escape) HandleUnPause();
         }
 
         void MoveSelection(UserInput userInput)
@@ -75,31 +68,27 @@ namespace ProjectContra.Scripts.Player
             UnityFn.MoveToButton(buttons[index]);
         }
 
-        public void Ok()
-        {
-            UnityFn.TriggerButton(buttons[currentButtonIndex]);
-        }
-
-        private void HandleUnPause()
+        public void HandleUnPause()
         {
             storeData = GameFn.HandleUnPause(storeData);
         }
 
-        public void OnSelectedResume()
-        {
-            HandleUnPause();
-        }
-
         public void OnSelectedRestartLevel()
         {
-            UnityFn.UnPause(); // when paused, time is stopped so 
-            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () => storeData.ReloadScene());
+            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
+            {
+                storeData.ReloadScene();
+                AppResource.instance.pauseMenuEventSystem.SetActive(false);
+            });
         }
 
         public void OnSelectedQuit()
         {
-            UnityFn.UnPause();
-            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () => UnityFn.QuitToMenu<PlayerController>());
+            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
+            {
+                UnityFn.QuitToMenu<PlayerController>();
+                AppResource.instance.pauseMenuEventSystem.SetActive(false);
+            });
         }
     }
 }

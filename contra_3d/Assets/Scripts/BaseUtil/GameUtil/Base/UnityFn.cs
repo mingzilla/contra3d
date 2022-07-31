@@ -608,7 +608,7 @@ namespace BaseUtil.GameUtil.Base
         {
             T[] objects = Object.FindObjectsOfType<T>();
             Fn.EachInArray(x => Object.Destroy(x.gameObject), objects);
-            UnityFn.LoadScene(menuSceneIndex);
+            LoadScene(menuSceneIndex);
         }
 
         public static string[] GetSceneNamesInBuildSettings()
