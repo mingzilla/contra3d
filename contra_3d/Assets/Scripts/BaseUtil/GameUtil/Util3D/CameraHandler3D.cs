@@ -8,6 +8,9 @@ namespace BaseUtil.GameUtil.Util3D
 {
     public static class CameraHandler3D
     {
+        /// <summary>
+        /// Used to update position of camera target. Cinemachine would automatically follow the target smoothly 
+        /// </summary>
         public static void FollowPlayers(Transform cameraTarget, List<Vector3> playerPositions, bool moveXZ)
         {
             Camera camera = Camera.main;
