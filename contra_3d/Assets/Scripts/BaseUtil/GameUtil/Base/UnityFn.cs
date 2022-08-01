@@ -472,6 +472,16 @@ namespace BaseUtil.GameUtil.Base
             return rb;
         }
 
+        /// <summary>
+        /// Apply this on a controlled character to prevent jittery.
+        /// </summary>
+        public static Rigidbody GetOrAddInterpolateRigidbody(GameObject gameObject, bool useGravity, bool freezeZ)
+        {
+            Rigidbody rb = GetOrAddRigidbody(gameObject, useGravity, freezeZ);
+            rb.interpolation = RigidbodyInterpolation.Interpolate;
+            return rb;
+        }
+
         public static SphereCollider AddSphereCollider(GameObject gameObject, float radius, bool isTrigger)
         {
             SphereCollider collider = gameObject.AddComponent<SphereCollider>();
