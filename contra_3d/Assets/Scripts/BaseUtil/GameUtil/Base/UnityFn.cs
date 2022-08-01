@@ -669,7 +669,7 @@ namespace BaseUtil.GameUtil.Base
         {
             Time.timeScale = 1f;
         }
-        
+
         /**
          * @param blastRange generally needs to be 2. Too small may not overlap with other layer so may not trigger damage.
          */
@@ -693,11 +693,20 @@ namespace BaseUtil.GameUtil.Base
             // .2f is a good value 
             return Physics.CheckSphere(position, .2f, groundLayers);
         }
-        
+
         public static void HandleJump(Rigidbody rb, float jumpForce)
         {
             Vector3 velocity = rb.velocity;
             rb.velocity = new Vector3(velocity.x, jumpForce, velocity.z);
+        }
+
+        /// <summary>
+        /// Change current to target over smoothTime
+        /// </summary>
+        public static Vector3 SmoothDamp(Vector3 current, Vector3 target, float smoothTime)
+        {
+            Vector3 smoothVelocity = Vector3.zero;
+            return Vector3.SmoothDamp(current, target, ref smoothVelocity, smoothTime);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using BaseUtil.Base;
+﻿using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using UnityEngine;
 
@@ -18,7 +17,7 @@ namespace BaseUtil.GameUtil.Util3D
             Vector3 currentV = rb.velocity;
             rb.velocity = new Vector3(inputHorizontal * moveSpeed, currentV.y, currentV.z);
         }
-        
+
         public static void IcyMoveX(float inputHorizontal, Rigidbody rb, float moveSpeed)
         {
             Vector3 currentV = rb.velocity;
