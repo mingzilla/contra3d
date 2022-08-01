@@ -12,6 +12,12 @@ namespace BaseUtil.GameUtil.Util3D
             rb.velocity = new Vector3(userInput.fixedHorizontal * moveSpeed, currentV.y, userInput.fixedVertical * moveSpeed);
         }
 
+        /// <summary>
+        /// Ways to handle movement:
+        /// * rb.AddForce() - applies acceleration, which is bad for position based control
+        /// * rb.velocity - applies speed, offers good control, but character can be jittery
+        /// * transform.Translate() - used in Update() with Time.deltaTime, it creates smooth movement, but it has problems on collision
+        /// </summary>
         public static void MoveX(float inputHorizontal, Rigidbody rb, float moveSpeed)
         {
             Vector3 currentV = rb.velocity;
@@ -23,7 +29,7 @@ namespace BaseUtil.GameUtil.Util3D
             Vector3 currentV = rb.velocity;
             Vector3 desiredV = new(inputHorizontal * moveSpeed, currentV.y, currentV.z);
             Vector3 smoothVelocity = Vector3.zero;
-            rb.velocity = Vector3.SmoothDamp(currentV, desiredV, ref smoothVelocity, 0.1f);
+            rb.velocity = Vector3.SmoothDamp(currentV, desiredV, ref smoothVelocity, 0.01f);
         }
 
         public static void Rotate(Rigidbody rb, Transform transform, Vector3 rotation)
