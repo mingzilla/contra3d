@@ -40,7 +40,7 @@ namespace ProjectContra.Scripts.Player
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous; // for player only
             meshRenderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
             Material skin = AppResource.instance.GetSkin(playerAttribute.skinId);
-            meshRenderer.materials = UnityFn.UpdateMaterialAt(meshRenderer.materials, 0, skin);
+            meshRenderer.materials = UnityFn.UpdateMaterialAt(meshRenderer.materials, 1, skin);
             groundLayers = GameLayer.GetGroundLayerMask();
             animatorCtrl = gameObject.GetComponent<Animator>();
             gameObject.SetActive(isActive);
