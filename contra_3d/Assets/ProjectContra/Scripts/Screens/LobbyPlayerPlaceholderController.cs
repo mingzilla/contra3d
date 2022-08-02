@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Screens
@@ -7,6 +5,7 @@ namespace ProjectContra.Scripts.Screens
     public class LobbyPlayerPlaceholderController : MonoBehaviour
     {
         [SerializeField] private GameObject joinText;
+        [SerializeField] private GameObject readyState;
 
         public void SetPlayerJoinedStatus()
         {
@@ -16,6 +15,16 @@ namespace ProjectContra.Scripts.Screens
         public void SetPlayerLeftStatus()
         {
             joinText.SetActive(true);
+        }
+
+        public void SetPlayerReadyTrue()
+        {
+            readyState.SetActive(true);
+        }
+
+        public void SetPlayerReadyFalse()
+        {
+            readyState.SetActive(false);
         }
     }
 }

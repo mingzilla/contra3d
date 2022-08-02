@@ -15,7 +15,6 @@ namespace ProjectContra.Scripts.Player
     {
         [SerializeField] private GameObject meshObject;
         [SerializeField] private int[] xPositionDelta = new[] {6, 1, -1, -6};
-        [SerializeField] private GameObject playerReadyState;
 
         private GameStoreData storeData;
         private bool isInitialized = false;
@@ -38,6 +37,7 @@ namespace ProjectContra.Scripts.Player
             placeholderPanel = ResourceTitleScene.instance.lobbyCharacterPanels[id];
             placeholderPanelCtrl = placeholderPanel.GetComponent<LobbyPlayerPlaceholderController>();
             placeholderPanelCtrl.SetPlayerJoinedStatus();
+            placeholderPanelCtrl.SetPlayerReadyFalse();
 
             Transform gameObjectTransform = gameObject.transform;
             gameObjectTransform.position = placeholderPanel.transform.position + new Vector3(xPositionDelta[playerId], 0, 0);
@@ -76,27 +76,28 @@ namespace ProjectContra.Scripts.Player
                 placeholderPanelCtrl.SetPlayerLeftStatus();
                 Destroy(playerGameObject); // destroying the object with PlayerInput forces the player to quit 
                 Destroy(gameObject); // The game object controlled by Player is a separate object so needs to be removed as well
+                if (storeData.inputManagerData.AllPlayersAreReady()) StartGame(); // if p1 is ready, p2 quit, p1 should start game
             }
         }
 
         public void SetPlayerReady()
         {
-            playerReadyState.SetActive(true);
+            placeholderPanelCtrl.SetPlayerReadyTrue();
             PlayerInputManagerData inputManagerData = storeData.inputManagerData;
             inputManagerData.SetPlayerReady(playerId, true);
-            if (inputManagerData.AllPlayersAreReady()) OnSelectedStartFromLobby();
+            if (inputManagerData.AllPlayersAreReady()) StartGame();
         }
 
         public void SetPlayerNotReady()
         {
-            playerReadyState.SetActive(false);
+            placeholderPanelCtrl.SetPlayerReadyFalse();
             PlayerInputManagerData inputManagerData = storeData.inputManagerData;
             inputManagerData.SetPlayerReady(playerId, false);
         }
 
-        public void OnSelectedStartFromLobby()
+        public void StartGame()
         {
-            UnityFn.RunWithInterval(this, buttonIntervalState, UnityFn.LoadNextScene);
+            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, UnityFn.LoadNextScene);
         }
 
         public void UpdateSkin(UserInput userInput)
