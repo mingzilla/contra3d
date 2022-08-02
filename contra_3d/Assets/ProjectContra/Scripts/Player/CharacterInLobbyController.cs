@@ -16,6 +16,8 @@ namespace ProjectContra.Scripts.Player
         private bool isInitialized = false;
         private int playerId;
         private readonly IntervalState buttonIntervalState = IntervalState.Create(0.1f);
+        [SerializeField] private GameObject meshObject;
+        [SerializeField] private int[] xPositionDelta = new[] {6, 1, -1, -6};
         private MeshRenderer meshRenderer;
 
         public GameObject playerReadyState;
@@ -26,13 +28,13 @@ namespace ProjectContra.Scripts.Player
             isInitialized = true;
             storeData = AppResource.instance.storeData;
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
-            meshRenderer = gameObject.GetComponent<MeshRenderer>();
-            meshRenderer.material = AppResource.instance.GetSkin(playerAttribute.skinId);
+            meshRenderer = meshObject.GetComponent<MeshRenderer>();
+            Material skin = AppResource.instance.GetSkin(playerAttribute.skinId);
+            meshRenderer.materials = UnityFn.UpdateMaterialAt(meshRenderer.materials, 1, skin);
             GameObject panel = ResourceTitleScene.instance.lobbyCharacterPanels[id];
 
             Transform gameObjectTransform = gameObject.transform;
-            gameObjectTransform.localScale = new Vector3(15f, 15f, 15f);
-            gameObjectTransform.position = panel.transform.position;
+            gameObjectTransform.position = panel.transform.position + new Vector3(xPositionDelta[playerId], 0, 0);
         }
 
         public void HandleUpdate(int id, UserInput userInput, GameObject playerGameObject)
@@ -114,8 +116,9 @@ namespace ProjectContra.Scripts.Player
             UnityFn.RunWithInterval(this, buttonIntervalState, () =>
             {
                 PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
-                meshRenderer.material = AppResource.instance.GetSkin(desireIndex);
                 playerAttribute.skinId = desireIndex;
+                Material skin = AppResource.instance.GetSkin(playerAttribute.skinId);
+                meshRenderer.materials = UnityFn.UpdateMaterialAt(meshRenderer.materials, 1, skin);
                 storeData.SetPlayer(playerAttribute);
             });
         }

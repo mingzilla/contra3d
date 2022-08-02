@@ -25,6 +25,17 @@ namespace BaseUtil.Base
             return items;
         }
 
+        public static O[] MapArrayWithIndex<I, O>(Func<I, int, O> fn, I[] collection)
+        {
+            O[] items = new O[collection.Length];
+            for (int i = 0; i < collection.Length; i++)
+            {
+                I x = collection[i];
+                items[i] = fn(x, i);
+            }
+            return items;
+        }
+
         public static List<T> Filter<T>(Func<T, bool> fn, List<T> collection)
         {
             // same as collection.Where(FnVal.StartsWith(idPrefix)).ToList()

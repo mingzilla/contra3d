@@ -718,5 +718,13 @@ namespace BaseUtil.GameUtil.Base
             Vector3 smoothVelocity = Vector3.zero;
             return Vector3.SmoothDamp(current, target, ref smoothVelocity, smoothTime);
         }
+
+        /// <summary>
+        /// When using materials as an array, setting to a position doesn't work, need to replace an element and use a whole new array
+        /// </summary>
+        public static Material[] UpdateMaterialAt(Material[] originalItems, int index, Material materialToUse)
+        {
+            return Fn.MapArrayWithIndex((x, i) => (i == index) ? materialToUse : x, originalItems);
+        }
     }
 }
