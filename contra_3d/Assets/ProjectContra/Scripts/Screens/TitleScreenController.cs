@@ -6,7 +6,6 @@ using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
 namespace ProjectContra.Scripts.Screens
 {

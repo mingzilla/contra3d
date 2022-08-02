@@ -6,21 +6,25 @@ using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.GameDataScriptable;
+using ProjectContra.Scripts.Screens;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Player
 {
     public class CharacterInLobbyController : MonoBehaviour
     {
+        [SerializeField] private GameObject meshObject;
+        [SerializeField] private int[] xPositionDelta = new[] {6, 1, -1, -6};
+        [SerializeField] private GameObject playerReadyState;
+
         private GameStoreData storeData;
         private bool isInitialized = false;
         private int playerId;
-        private readonly IntervalState buttonIntervalState = IntervalState.Create(0.1f);
-        [SerializeField] private GameObject meshObject;
-        [SerializeField] private int[] xPositionDelta = new[] {6, 1, -1, -6};
-        private MeshRenderer meshRenderer;
 
-        public GameObject playerReadyState;
+        private readonly IntervalState buttonIntervalState = IntervalState.Create(0.1f);
+        private MeshRenderer meshRenderer;
+        private GameObject placeholderPanel;
+        private LobbyPlayerPlaceholderController placeholderPanelCtrl;
 
         public void Init(int id)
         {
@@ -31,10 +35,12 @@ namespace ProjectContra.Scripts.Player
             meshRenderer = meshObject.GetComponent<MeshRenderer>();
             Material skin = AppResource.instance.GetSkin(playerAttribute.skinId);
             meshRenderer.materials = UnityFn.UpdateMaterialAt(meshRenderer.materials, 1, skin);
-            GameObject panel = ResourceTitleScene.instance.lobbyCharacterPanels[id];
+            placeholderPanel = ResourceTitleScene.instance.lobbyCharacterPanels[id];
+            placeholderPanelCtrl = placeholderPanel.GetComponent<LobbyPlayerPlaceholderController>();
+            placeholderPanelCtrl.SetPlayerJoinedStatus();
 
             Transform gameObjectTransform = gameObject.transform;
-            gameObjectTransform.position = panel.transform.position + new Vector3(xPositionDelta[playerId], 0, 0);
+            gameObjectTransform.position = placeholderPanel.transform.position + new Vector3(xPositionDelta[playerId], 0, 0);
         }
 
         public void HandleUpdate(int id, UserInput userInput, GameObject playerGameObject)
@@ -67,6 +73,7 @@ namespace ProjectContra.Scripts.Player
             }
             else
             {
+                placeholderPanelCtrl.SetPlayerLeftStatus();
                 Destroy(playerGameObject); // destroying the object with PlayerInput forces the player to quit 
                 Destroy(gameObject); // The game object controlled by Player is a separate object so needs to be removed as well
             }
