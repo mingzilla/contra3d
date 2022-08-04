@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
 using BaseUtil.Base;
-using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
-using ProjectContra.Scripts.AppSingleton;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
-using ProjectContra.Scripts.Util;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
@@ -21,9 +18,7 @@ namespace ProjectContra.Scripts.Enemy
         private EnemyShooterController[] shooters;
         public float detectionRange = 40f;
 
-        private EnemyBossWeakPointController weakPointCtrl;
         private Animator animatorCtrl;
-        private static readonly int isActive = Animator.StringToHash("isActive");
         private AppMusic musicController;
 
         private int phase = 0;

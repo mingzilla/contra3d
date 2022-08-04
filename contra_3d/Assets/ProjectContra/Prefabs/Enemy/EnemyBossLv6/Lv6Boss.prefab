@@ -1,5 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &778303385340577165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2648301614261202958}
+  - component: {fileID: 1349078373668193685}
+  - component: {fileID: 2281809388908390593}
+  - component: {fileID: 4849991297046069916}
+  m_Layer: 24
+  m_Name: WeakPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2648301614261202958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778303385340577165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5275978472784400418}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1349078373668193685
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778303385340577165}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &2281809388908390593
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778303385340577165}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.02
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4849991297046069916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778303385340577165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27893dfac8154ee78449286aaef5861a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTriggered: 0
+  maxHp: 100
+  hp: 100
+  isBig: 1
+  isBroken: 0
+  gameLayer: ENEMY_INSIDE_WALL
 --- !u!1 &5670791738568970877
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,6 +127,7 @@ MonoBehaviour:
   bossCamera: {fileID: 0}
   detectionRange: 40
   dragonHead: {fileID: 4788411463534135960}
+  weakPoint: {fileID: 778303385340577165}
   dragonEyes:
   - {fileID: 5670791739801130156}
   - {fileID: 5670791740508281712}
@@ -488,12 +562,12 @@ PrefabInstance:
     - target: {fileID: 599497493066880402, guid: e7e75c1f3a50a3e43b699fb8158586c1,
         type: 3}
       propertyPath: hp
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 599497493066880402, guid: e7e75c1f3a50a3e43b699fb8158586c1,
         type: 3}
       propertyPath: maxHp
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1142628659828388449, guid: e7e75c1f3a50a3e43b699fb8158586c1,
         type: 3}
@@ -773,37 +847,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.01, z: 0.10529865}
   m_Center: {x: -0.0000000018626451, y: 0.004, z: -0.015459105}
---- !u!135 &5670791739671148492
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4788411463534135960}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.03
-  m_Center: {x: -0.0000000018626451, y: 0.012, z: -0.005}
---- !u!114 &5670791739671148480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4788411463534135960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27893dfac8154ee78449286aaef5861a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTriggered: 0
-  maxHp: 100
-  hp: 100
-  isBig: 1
-  isBroken: 0
-  gameLayer: ENEMY_INSIDE_WALL
 --- !u!4 &5275978472784400418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26ea424803c322d47849dce2a3333e50,

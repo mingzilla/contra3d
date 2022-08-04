@@ -19,6 +19,7 @@ namespace ProjectContra.Scripts.Enemy
 
         [SerializeField] private int detectionRange = 50;
         [SerializeField] private GameObject dragonHead;
+        [SerializeField] private GameObject weakPoint;
         [SerializeField] private GameObject[] dragonEyes;
         [SerializeField] private GameObject[] spiderSpawnPoints;
         [SerializeField] private Vector3 dragonHeadPositionDelta;
@@ -40,7 +41,8 @@ namespace ProjectContra.Scripts.Enemy
             UnityFn.SetControllersActive(movingHeadControllers, false);
 
             // phase 2
-            weakPointController = dragonHead.GetComponent<EnemyBossWeakPointController>();
+            weakPointController = weakPoint.GetComponent<EnemyBossWeakPointController>();
+            weakPoint.SetActive(false);
             dragonHead.SetActive(false);
             dragonHeadTargetPosition = dragonHead.transform.position + dragonHeadPositionDelta;
             dragonEyeControllers = Fn.MapArray(x => x.GetComponent<EnemyShooterController>(), dragonEyes);
@@ -91,7 +93,7 @@ namespace ProjectContra.Scripts.Enemy
         private void HandlePhase3ActivateBoss2()
         {
             musicController.PlayLv6BossMusic2();
-            weakPointController.gameObject.SetActive(true);
+            weakPoint.SetActive(true);
             UnityFn.SetControllersActive(dragonEyeControllers, true);
             UnityFn.SetAllActivate(new List<GameObject>(spiderSpawnPoints));
             phase = 4;
