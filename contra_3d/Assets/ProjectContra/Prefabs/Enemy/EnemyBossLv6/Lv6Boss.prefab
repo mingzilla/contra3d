@@ -125,7 +125,7 @@ MonoBehaviour:
   isTriggered: 0
   gameCamera: {fileID: 0}
   bossCamera: {fileID: 0}
-  detectionRange: 40
+  detectionRange: 50
   dragonHead: {fileID: 4788411463534135960}
   weakPoint: {fileID: 778303385340577165}
   dragonEyes:
@@ -242,7 +242,7 @@ MonoBehaviour:
   preventMovement: 1
   preventRotation: 0
   enableFreeRotation: 0
-  detectionRange: 40
+  detectionRange: 100
   shootPositionDelta: {x: 0, y: 0, z: -1}
   targetPositionDelta: {x: 0, y: 1, z: 0}
 --- !u!1 &5670791740508281712
@@ -352,7 +352,7 @@ MonoBehaviour:
   preventMovement: 1
   preventRotation: 0
   enableFreeRotation: 0
-  detectionRange: 40
+  detectionRange: 100
   shootPositionDelta: {x: 0, y: 0, z: -1}
   targetPositionDelta: {x: 0, y: 1, z: 0}
 --- !u!1001 &5108037186122923196
@@ -517,6 +517,11 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnInterval
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909264995502722541, guid: 2c86d052b9134954aa2b2d019f0f660d,
+        type: 3}
+      propertyPath: detectionRange
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1909264995502722541, guid: 2c86d052b9134954aa2b2d019f0f660d,
         type: 3}
@@ -704,6 +709,11 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnInterval
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909264995502722541, guid: 2c86d052b9134954aa2b2d019f0f660d,
+        type: 3}
+      propertyPath: detectionRange
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1909264995502722541, guid: 2c86d052b9134954aa2b2d019f0f660d,
         type: 3}
