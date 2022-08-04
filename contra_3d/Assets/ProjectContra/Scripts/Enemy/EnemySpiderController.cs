@@ -36,6 +36,7 @@ namespace ProjectContra.Scripts.Enemy
             storeData = AppResource.instance.storeData;
             gameObject.layer = GameLayer.INVISIBLE_WALL_TO_PLAYER.GetLayer();
             weakPointCtrl = gameObject.GetComponentInChildren<EnemyWeakPointController>();
+            UnityFn.SetControllerActive(weakPointCtrl, false);
             animatorCtrl = gameObject.GetComponent<Animator>();
             animatorCtrl.enabled = false;
             changeDirectionInterval = IntervalState.Create(directionChangeTime);
@@ -52,13 +53,13 @@ namespace ProjectContra.Scripts.Enemy
                 AppMusic.instance.PlayLv3MidLevelMusic();
                 gameCamera.SetActive(false);
                 afterwardsCamera.SetActive(true);
+                UnityFn.SetControllerActive(weakPointCtrl, true);
             }
             if (isActive)
             {
                 UnityFn.RunWithInterval(AppResource.instance, changeDirectionInterval, () => moveXLeft = !moveXLeft);
                 MovementUtil.MoveX(transform, (moveXLeft ? -1 : 1), moveSpeed);
                 FireShots(transform.position);
-
             }
             if (weakPointCtrl.isBroken) Explode();
         }

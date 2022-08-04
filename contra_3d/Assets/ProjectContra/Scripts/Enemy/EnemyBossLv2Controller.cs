@@ -36,6 +36,7 @@ namespace ProjectContra.Scripts.Enemy
             animatorCtrl = gameObject.GetComponent<Animator>();
             animatorCtrl.enabled = false;
             shooters = gameObject.GetComponentsInChildren<EnemyShooterController>();
+            UnityFn.SetControllersActive(shooters, false);
         }
 
         void Update()
@@ -52,6 +53,7 @@ namespace ProjectContra.Scripts.Enemy
             musicController.PlayLv2BossMusic();
             bossCamera.SetActive(true);
             gameCamera.SetActive(false);
+            UnityFn.SetControllersActive(shooters, true);
             animatorCtrl.enabled = true;
             phase = 1;
         }

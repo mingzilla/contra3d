@@ -424,6 +424,11 @@ namespace BaseUtil.GameUtil.Base
             }
         }
 
+        public static void SetControllerActive<T>(T controller, bool isActive) where T : MonoBehaviour
+        {
+            if (controller) FastSetActive(controller.gameObject, isActive);
+        }
+
         public static void DestroyReferenceIfPresent(MonoBehaviour controller, Action postFn)
         {
             if (controller != null)

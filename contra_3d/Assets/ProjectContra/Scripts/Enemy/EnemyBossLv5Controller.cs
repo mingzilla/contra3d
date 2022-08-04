@@ -114,6 +114,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override void TakeDamage(Vector3 position, int damage)
         {
+            if (phase == 0) return;
             AppSfx.PlayAdjusted(AppSfx.instance.bigEnemyDamaged);
             hp -= damage;
             if (hp <= 0) phase = 2;

@@ -24,6 +24,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override void TakeDamage(Vector3 position, int damage)
         {
+            if (!gameObject.activeSelf) return;
             UnityFn.CreateEffect(damageEffect, position, 5f);
             AppSfx.Play(AppSfx.instance.bigEnemyDamaged);
             hp -= damage;

@@ -34,6 +34,7 @@ namespace ProjectContra.Scripts.Enemy
             musicController = AppResource.instance.musicManager.GetComponent<AppMusic>();
             guns = gameObject.GetComponentsInChildren<EnemyBossLv3GunController>();
             weakPointCtrl = gameObject.GetComponentInChildren<EnemyBossWeakPointController>();
+            UnityFn.SetControllerActive(weakPointCtrl, false);
             animatorCtrl = gameObject.GetComponent<Animator>();
         }
 
@@ -52,6 +53,7 @@ namespace ProjectContra.Scripts.Enemy
             animatorCtrl.SetBool(isActiveKey, true);
             bossCamera.SetActive(true);
             gameCamera.SetActive(false);
+            UnityFn.SetControllerActive(weakPointCtrl, true);
             UnityFn.SetTimeout(AppResource.instance, 2, () =>
             {
                 Fn.EachInArray(x => x.canShoot = true, guns);

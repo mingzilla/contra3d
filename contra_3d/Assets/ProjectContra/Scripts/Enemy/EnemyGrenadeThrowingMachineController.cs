@@ -24,6 +24,7 @@ namespace ProjectContra.Scripts.Enemy
         private GameStoreData storeData;
         private GameObject destroyEffect;
         private Vector3 position;
+        private bool playerIsInRange;
 
         void Start()
         {
@@ -35,7 +36,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void Update()
         {
-            RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
+            playerIsInRange = RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
                 UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
                 {
@@ -52,6 +53,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override void TakeDamage(Vector3 position, int damage)
         {
+            if (!playerIsInRange) return; // not allowing to be hit when player is far away
             UnityFn.CreateEffect(destroyEffect, position, 1f);
             AppSfx.PlayAdjusted(AppSfx.instance.bigEnemyDamaged);
             hp -= damage;

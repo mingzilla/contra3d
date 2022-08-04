@@ -52,6 +52,7 @@ namespace ProjectContra.Scripts.Enemy
 
         public override void TakeDamage(Vector3 position, int damage)
         {
+            if (!canShoot) return;
             UnityFn.CreateEffect(destroyEffect, position, 1f);
             AppSfx.PlayAdjusted(AppSfx.instance.enemyDeath);
             hp -= damage;
