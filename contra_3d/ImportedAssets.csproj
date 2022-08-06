@@ -43,7 +43,12 @@
   <ItemGroup>
      <Compile Include="Assets\ProjectContra\_ImportedAssets\ParticalTests\Project3\DestroyInstance.cs" />
      <Compile Include="Assets\ProjectContra\_ImportedAssets\ParticalTests\Project3\RepeatFire.cs" />
+     <None Include="Assets\ProjectContra\_ImportedAssets\Fonts\library-3-am\1001fonts-library-3-am-eula.txt" />
      <None Include="Assets\ProjectContra\_ImportedAssets\ImportedAssets.asmdef" />
+     <None Include="Assets\ProjectContra\_ImportedAssets\Fonts\white-rabbit\whitrabt.txt" />
+     <None Include="Assets\ProjectContra\_ImportedAssets\Fonts\white-rabbit\license.txt" />
+     <None Include="Assets\ProjectContra\_ImportedAssets\Fonts\digital-dream\pizzadude.dk License.txt" />
+     <None Include="Assets\ProjectContra\_ImportedAssets\Fonts\square-sans-serif-7\readme.txt" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

@@ -185,8 +185,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Contra is Back!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 456a00553f479fa47a464766067502e4, type: 2}
+  m_sharedMaterial: {fileID: -8796465174157968113, guid: 456a00553f479fa47a464766067502e4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -216,7 +217,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 37
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2389,7 +2390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: v 0.9
+  m_text: VERSION
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2416,8 +2417,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2985,6 +2986,30 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 89170172}
+    - target: {fileID: 1489283032048722054, guid: 987ef83630107ba42b78fa8f7af775aa,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d3d9d09229bb8240be687e703226b0c,
+        type: 2}
+    - target: {fileID: 1489283032048722054, guid: 987ef83630107ba42b78fa8f7af775aa,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7757083110510730563, guid: 0d3d9d09229bb8240be687e703226b0c,
+        type: 2}
+    - target: {fileID: 1489283032270321290, guid: 987ef83630107ba42b78fa8f7af775aa,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d3d9d09229bb8240be687e703226b0c,
+        type: 2}
+    - target: {fileID: 1489283032270321290, guid: 987ef83630107ba42b78fa8f7af775aa,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7757083110510730563, guid: 0d3d9d09229bb8240be687e703226b0c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 987ef83630107ba42b78fa8f7af775aa, type: 3}
 --- !u!1001 &2117999267570637278

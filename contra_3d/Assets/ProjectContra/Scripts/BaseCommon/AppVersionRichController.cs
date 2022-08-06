@@ -7,7 +7,7 @@ namespace ProjectContra.Scripts.BaseCommon
     {
         private void Start()
         {
-            TMP_Text text = gameObject.GetComponent<TMP_Text>(); // The TextMeshPro component is TMP_Text
+            TextMeshProUGUI text = gameObject.GetComponent<TextMeshProUGUI>();
             if (text != null) text.text = $"v {Application.version}";
         }
     }
