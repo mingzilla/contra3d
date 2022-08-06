@@ -110,6 +110,7 @@ namespace ProjectContra.Scripts.Enemy
             gameCamera.SetActive(true);
             bossCamera.SetActive(false);
             UnityFn.SetAllInactivate(new List<GameObject>(spiderSpawnPoints));
+            UnityFn.SetControllersActive(dragonEyeControllers, false);
             AppMusic.instance.Stop();
             UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
             EnemyWalkingShooterController[] mods = FindObjectsOfType<EnemyWalkingShooterController>();
