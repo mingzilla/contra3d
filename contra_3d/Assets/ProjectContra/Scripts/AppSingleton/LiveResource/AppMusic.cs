@@ -18,15 +18,12 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             lv2Music,
             lv2BossIntro,
             lv2BossMusic,
-            lv3Intro,
             lv3Music,
             lv3MidLevelIntro,
             lv3MidLevelMusic,
-            lv4Intro,
             lv4Music,
             lv5Intro,
             lv5Music,
-            lv6Intro,
             lv6Music,
             lv8Music,
             endingMusic;
@@ -43,15 +40,12 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
                 lv2Music,
                 lv2BossIntro,
                 lv2BossMusic,
-                lv3Intro,
                 lv3Music,
                 lv3MidLevelIntro,
                 lv3MidLevelMusic,
-                lv4Intro,
                 lv4Music,
                 lv5Intro,
                 lv5Music,
-                lv6Intro,
                 lv6Music,
                 lv8Music,
                 endingMusic
@@ -69,27 +63,27 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
         {
             if (scene == GameScene.LEVEL_1) PlayIntroAndLoop(lv1Intro, lv1Music);
             if (scene == GameScene.LEVEL_2) PlayIntroAndLoop(lv2Intro, lv2Music);
-            if (scene == GameScene.LEVEL_3) PlayIntroAndLoop(lv3Intro, lv3Music);
-            if (scene == GameScene.LEVEL_4) PlayIntroAndLoop(lv4Intro, lv4Music);
+            if (scene == GameScene.LEVEL_3) Play(lv3Music);
+            if (scene == GameScene.LEVEL_4) Play(lv4Music);
             if (scene == GameScene.LEVEL_5) PlayIntroAndLoop(lv5Intro, lv5Music);
-            if (scene == GameScene.LEVEL_6) PlayIntroAndLoop(lv6Intro, lv6Music);
-            if (scene == GameScene.LEVEL_7) PlayIntroAndLoop(lv4Intro, lv4Intro);
+            if (scene == GameScene.LEVEL_6) Play(lv6Music);
+            if (scene == GameScene.LEVEL_7) Play(lv4Music);
             if (scene == GameScene.LEVEL_8) Play(lv8Music);
         }
 
         public void PlayLv1BossMusic()
         {
-            Play(lv1BossMusic);
+            PlayIntroAndLoop(lv1BossIntro, lv1BossMusic);
         }
 
         public void PlayLv2BossMusic()
         {
-            Play(lv2BossMusic);
+            PlayIntroAndLoop(lv2BossIntro, lv2BossMusic);
         }
 
         public void PlayLv3MidLevelMusic()
         {
-            Play(lv3MidLevelMusic);
+            PlayIntroAndLoop(lv3MidLevelIntro, lv3MidLevelMusic);
         }
 
         public void PlayLv3BossMusic()
@@ -144,7 +138,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             intro.loop = false;
             loop.loop = true;
             intro.Play();
-            // don't do "loop.PlayDelayed(intro.clip.length)", otherwise timescale = 1 doesn't pause the delay
+            // don't do "loop.PlayDelayed(intro.clip.length)", otherwise timescale = 0 doesn't pause the delay
             UnityFn.SetTimeout(this, intro.clip.length, loop.Play);
         }
 
