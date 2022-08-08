@@ -58,6 +58,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             };
         }
 
+        private AudioSource pausedMusic;
+
         private void Awake()
         {
             UnityFn.MarkSingletonAndKeepAlive(instance, gameObject, () => instance = this);
@@ -142,11 +144,13 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             intro.loop = false;
             loop.loop = true;
             intro.Play();
-            loop.PlayDelayed(intro.clip.length);
+            // don't do "loop.PlayDelayed(intro.clip.length)", otherwise timescale = 1 doesn't pause the delay
+            UnityFn.SetTimeout(this, intro.clip.length, loop.Play);
         }
 
         public void Stop()
         {
+            pausedMusic = null;
             All().ForEach(x =>
             {
                 if (x != null) x.Stop();
@@ -155,14 +159,13 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
 
         public void Pause()
         {
-            AudioSource currentMusic = All().Find(x => x != null && x.isPlaying);
-            if (currentMusic != null) currentMusic.Pause();
+            pausedMusic = All().Find(x => x != null && x.isPlaying);
+            if (pausedMusic != null) pausedMusic.Pause();
         }
 
         public void UnPause()
         {
-            AudioSource currentMusic = All().Find(x => x != null && x.isPlaying);
-            if (currentMusic != null) currentMusic.UnPause();
+            if (pausedMusic != null) pausedMusic.UnPause();
         }
     }
 }
