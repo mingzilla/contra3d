@@ -161,7 +161,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
 
         public void UnPause()
         {
-            AudioSource currentMusic = All().Find(x => x.isPlaying);
+            AudioSource currentMusic = All().Find(x => x != null && x.isPlaying);
             if (currentMusic != null) currentMusic.UnPause();
         }
     }
