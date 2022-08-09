@@ -7,6 +7,7 @@ using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Screens;
+using ProjectContra.Scripts.Util;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Player
@@ -97,7 +98,7 @@ namespace ProjectContra.Scripts.Player
 
         public void StartGame()
         {
-            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, UnityFn.LoadNextScene);
+            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, GameFn.LoadNextScene);
         }
 
         public void UpdateSkin(UserInput userInput)

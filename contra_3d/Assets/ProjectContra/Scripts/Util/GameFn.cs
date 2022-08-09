@@ -61,5 +61,17 @@ namespace ProjectContra.Scripts.Util
             if (!context.started) return false; // only handle context.started, otherwise it runs 3 times
             return true;
         }
+
+        public static void ReloadScene(GameStoreData storeData)
+        {
+            AppMusic.instance.Stop();
+            storeData.ReloadScene();
+        }
+
+        public static void LoadNextScene()
+        {
+            AppMusic.instance.Stop();
+            UnityFn.LoadNextScene();
+        }
     }
 }

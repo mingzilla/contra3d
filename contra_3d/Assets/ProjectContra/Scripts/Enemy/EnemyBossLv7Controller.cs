@@ -6,6 +6,7 @@ using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AbstractController;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
+using ProjectContra.Scripts.Util;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
@@ -82,7 +83,7 @@ namespace ProjectContra.Scripts.Enemy
             UnityFn.SetTimeout(AppResource.instance, 5, () =>
             {
                 AppSfx.instance.levelClear.Play();
-                UnityFn.SetTimeout(AppResource.instance, 5, UnityFn.LoadNextScene);
+                UnityFn.SetTimeout(AppResource.instance, 5, GameFn.LoadNextScene);
                 Destroy(gameObject);
             });
         }

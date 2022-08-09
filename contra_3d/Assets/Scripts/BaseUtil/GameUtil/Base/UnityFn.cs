@@ -260,9 +260,12 @@ namespace BaseUtil.GameUtil.Base
             });
         }
 
-        public static void SetTimeout(MonoBehaviour controller, float delay, Action fn)
+        /// <returns>The coroutine that can be used to stop the timeout event</returns>
+        public static IEnumerator SetTimeout(MonoBehaviour controller, float delay, Action fn)
         {
-            controller.StartCoroutine(TimeOutDelayFn(delay, fn));
+            IEnumerator coroutine = TimeOutDelayFn(delay, fn);
+            controller.StartCoroutine(coroutine);
+            return coroutine; // return a copy so that it can be stopped if needed
         }
 
         /// <summary>
@@ -282,9 +285,11 @@ namespace BaseUtil.GameUtil.Base
             fn();
         }
 
-        public static void WaitUntil(MonoBehaviour controller, Func<bool> conditionFn, Action fn)
+        public static IEnumerator WaitUntil(MonoBehaviour controller, Func<bool> conditionFn, Action fn)
         {
-            controller.StartCoroutine(WaitUntilDelayFn(conditionFn, fn)); // run if condition returns true
+            IEnumerator coroutine = WaitUntilDelayFn(conditionFn, fn);
+            controller.StartCoroutine(coroutine); // run if condition returns true
+            return coroutine; // return a copy so that it can be stopped if needed
         }
 
         private static IEnumerator WaitUntilDelayFn(Func<bool> conditionFn, Action fn)

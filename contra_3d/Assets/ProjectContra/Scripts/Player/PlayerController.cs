@@ -85,7 +85,7 @@ namespace ProjectContra.Scripts.Player
 
         public void NextLevel(InputAction.CallbackContext context)
         {
-            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, UnityFn.LoadNextScene);
+            UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, GameFn.LoadNextScene);
         }
 
         private void OnDestroy()

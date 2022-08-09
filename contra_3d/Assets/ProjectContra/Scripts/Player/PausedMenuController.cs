@@ -62,8 +62,7 @@ namespace ProjectContra.Scripts.Player
         {
             UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
             {
-                AppMusic.instance.Stop();
-                storeData.ReloadScene();
+                GameFn.ReloadScene(storeData);
                 AppResource.instance.pauseMenuEventSystem.SetActive(false);
             });
         }

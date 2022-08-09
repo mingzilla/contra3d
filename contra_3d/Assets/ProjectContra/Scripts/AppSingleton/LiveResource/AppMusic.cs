@@ -144,6 +144,7 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
 
         public void Stop()
         {
+            StopAllCoroutines(); // make sure nothing plays later
             pausedMusic = null;
             All().ForEach(x =>
             {

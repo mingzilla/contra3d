@@ -7,6 +7,7 @@ using ProjectContra.Scripts.Bullet;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.GameDataScriptable;
 using ProjectContra.Scripts.Types;
+using ProjectContra.Scripts.Util;
 using UnityEngine;
 
 namespace ProjectContra.Scripts.Player
@@ -93,11 +94,7 @@ namespace ProjectContra.Scripts.Player
                     UnityFn.SetTimeout(AppResource.instance, 2f, () =>
                     {
                         Destroy(gameObject);
-                        if (storeData.AllPlayersDead())
-                        {
-                            AppMusic.instance.Stop();
-                            storeData.ReloadScene();
-                        }
+                        if (storeData.AllPlayersDead()) GameFn.ReloadScene(storeData);
                     });
                 });
                 storeData.SetPlayer(playerAttribute);

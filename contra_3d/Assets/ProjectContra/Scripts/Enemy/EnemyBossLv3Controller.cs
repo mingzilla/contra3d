@@ -74,7 +74,7 @@ namespace ProjectContra.Scripts.Enemy
                 UnityFn.SetTimeout(AppResource.instance, 5, () =>
                 {
                     AppSfx.instance.levelClear.Play();
-                    UnityFn.SetTimeout(AppResource.instance, 5, UnityFn.LoadNextScene);
+                    UnityFn.SetTimeout(AppResource.instance, 5, GameFn.LoadNextScene);
                     Destroy(gameObject);
                 });
             }
