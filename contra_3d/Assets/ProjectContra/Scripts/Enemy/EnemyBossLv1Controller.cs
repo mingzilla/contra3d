@@ -1,12 +1,7 @@
-﻿using System.Collections.Generic;
-using BaseUtil.Base;
-using BaseUtil.GameUtil;
-using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
-using ProjectContra.Scripts.AppSingleton;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Types;
 using ProjectContra.Scripts.Util;
 using UnityEngine;
 
@@ -78,6 +73,7 @@ namespace ProjectContra.Scripts.Enemy
             if (weakPointCtrl.isBroken)
             {
                 phase = 3; // there is no phase 3, this is just to prevent getting into here again
+                animatorCtrl.enabled = false;
                 spawnPoint.SetActive(false);
                 gameCamera.SetActive(true);
                 bossCamera.SetActive(false);
