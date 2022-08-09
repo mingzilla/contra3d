@@ -98,7 +98,7 @@ namespace ProjectContra.Scripts.Player
                     UnityFn.SetTimeout(AppResource.instance, 2f, () =>
                     {
                         Destroy(gameObject);
-                        if (storeData.AllPlayersDead()) GameFn.ReloadScene(storeData);
+                        if (storeData.AllPlayersDead()) GameFn.ReloadScene();
                     });
                 });
                 storeData.SetPlayer(playerAttribute);

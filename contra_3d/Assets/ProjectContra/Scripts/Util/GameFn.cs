@@ -62,12 +62,6 @@ namespace ProjectContra.Scripts.Util
             return true;
         }
 
-        public static void ReloadScene(GameStoreData storeData)
-        {
-            AppMusic.instance.Stop();
-            storeData.ReloadScene();
-        }
-
         /// <summary>
         /// Consistently using AppResource to set up coroutine, so that it can be stopped if needed. e.g. player killed after boss killed 
         /// </summary>
@@ -77,13 +71,27 @@ namespace ProjectContra.Scripts.Util
             {
                 if (!isLast) AppSfx.instance.levelClear.Play();
                 if (isLast) AppSfx.instance.allLevelsClear.Play();
-                UnityFn.SetTimeout(AppResource.instance, 5, LoadNextScene);
+                UnityFn.SetTimeout(AppResource.instance, 5, () =>
+                {
+                    bool allPlayersDead = AppResource.instance.storeData.AllPlayersDead();
+                    if (allPlayersDead) ReloadScene();
+                    if (!allPlayersDead) LoadNextScene();
+                });
                 Object.Destroy(bossGameObject);
             });
         }
 
+        public static void ReloadScene()
+        {
+            GameStoreData storeData = AppResource.instance.storeData;
+            AppResource.instance.StopAllCoroutines(); // e.g. players killed after boss killed, this stops moving to the next level
+            AppMusic.instance.Stop();
+            storeData.ReloadScene();
+        }
+
         public static void LoadNextScene()
         {
+            AppResource.instance.StopAllCoroutines(); // so that e.g. reload scene won't get executed by any chance
             AppMusic.instance.Stop();
             UnityFn.LoadNextScene();
         }

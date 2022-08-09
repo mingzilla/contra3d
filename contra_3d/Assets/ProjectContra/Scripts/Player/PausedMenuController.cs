@@ -62,7 +62,7 @@ namespace ProjectContra.Scripts.Player
         {
             UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
             {
-                GameFn.ReloadScene(storeData);
+                GameFn.ReloadScene();
                 AppResource.instance.pauseMenuEventSystem.SetActive(false);
             });
         }
