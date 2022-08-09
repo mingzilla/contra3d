@@ -257,11 +257,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggered: 0
+  maxHp: 1
+  hp: 1
+  isBig: 0
+  isBroken: 0
   damage: 1
   moveSpeed: 6
   jumpForce: 10
-  detectionRange: 60
+  detectionRange: 80
   forceFollowingPlayer: 1
+  selfDestroyTime: -1
 --- !u!135 &9076667393722630491
 SphereCollider:
   m_ObjectHideFlags: 0

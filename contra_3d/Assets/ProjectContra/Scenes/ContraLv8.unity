@@ -1512,7 +1512,7 @@ MonoBehaviour:
   preventMovement: 1
   preventRotation: 1
   enableFreeRotation: 0
-  detectionRange: 50
+  detectionRange: 100
   shootPositionDelta: {x: 0, y: 0, z: 0}
   targetPositionDelta: {x: 0, y: 1, z: 0}
 --- !u!1 &280551058
@@ -1624,7 +1624,7 @@ MonoBehaviour:
   preventMovement: 1
   preventRotation: 1
   enableFreeRotation: 0
-  detectionRange: 50
+  detectionRange: 100
   shootPositionDelta: {x: 0, y: 0, z: 0}
   targetPositionDelta: {x: 0, y: 1, z: 0}
 --- !u!1 &292377710
@@ -5181,7 +5181,7 @@ PrefabInstance:
     - target: {fileID: 3161196958998209734, guid: bda229a21f3decb41b6001038ba78c45,
         type: 3}
       propertyPath: detectionRange
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3161196958998209734, guid: bda229a21f3decb41b6001038ba78c45,
         type: 3}
@@ -7701,7 +7701,7 @@ MonoBehaviour:
   preventMovement: 1
   preventRotation: 1
   enableFreeRotation: 0
-  detectionRange: 50
+  detectionRange: 100
   shootPositionDelta: {x: 0, y: 0, z: 0}
   targetPositionDelta: {x: 0, y: 1, z: 0}
 --- !u!1 &1508969913
@@ -7819,7 +7819,7 @@ MonoBehaviour:
   preventMovement: 1
   preventRotation: 1
   enableFreeRotation: 0
-  detectionRange: 50
+  detectionRange: 100
   shootPositionDelta: {x: 0, y: 0, z: 0}
   targetPositionDelta: {x: 0, y: 1, z: 0}
 --- !u!1001 &1547938800
@@ -8171,7 +8171,7 @@ PrefabInstance:
     - target: {fileID: 3161196958998209734, guid: bda229a21f3decb41b6001038ba78c45,
         type: 3}
       propertyPath: detectionRange
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3161196958998209734, guid: bda229a21f3decb41b6001038ba78c45,
         type: 3}
@@ -10225,7 +10225,7 @@ MonoBehaviour:
   preventMovement: 1
   preventRotation: 1
   enableFreeRotation: 0
-  detectionRange: 50
+  detectionRange: 100
   shootPositionDelta: {x: 0, y: 0, z: 0}
   targetPositionDelta: {x: 0, y: 1, z: 0}
 --- !u!1 &2017733012
@@ -10283,7 +10283,7 @@ MonoBehaviour:
   preventMovement: 1
   preventRotation: 1
   enableFreeRotation: 0
-  detectionRange: 50
+  detectionRange: 100
   shootPositionDelta: {x: 0, y: 0, z: 0}
   targetPositionDelta: {x: 0, y: 1, z: 0}
 --- !u!1 &2021846866

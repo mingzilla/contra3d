@@ -52,7 +52,7 @@ MonoBehaviour:
   hp: 1
   isBig: 0
   isBroken: 0
-  detectionRange: 40
+  detectionRange: 80
   moveSpeed: 4
   enableRotation: 0
   enableLookingAtPlayer: 1
