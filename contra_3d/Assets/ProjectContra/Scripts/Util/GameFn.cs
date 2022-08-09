@@ -68,6 +68,20 @@ namespace ProjectContra.Scripts.Util
             storeData.ReloadScene();
         }
 
+        /// <summary>
+        /// Consistently using AppResource to set up coroutine, so that it can be stopped if needed. e.g. player killed after boss killed 
+        /// </summary>
+        public static void LoadNextSceneAfterBossKilled(GameObject bossGameObject, bool isLast)
+        {
+            UnityFn.SetTimeout(AppResource.instance, 5, () =>
+            {
+                if (!isLast) AppSfx.instance.levelClear.Play();
+                if (isLast) AppSfx.instance.allLevelsClear.Play();
+                UnityFn.SetTimeout(AppResource.instance, 5, LoadNextScene);
+                Object.Destroy(bossGameObject);
+            });
+        }
+
         public static void LoadNextScene()
         {
             AppMusic.instance.Stop();

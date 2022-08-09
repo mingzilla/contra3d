@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using BaseUtil.Base;
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
@@ -91,12 +90,7 @@ namespace ProjectContra.Scripts.Enemy
             AbstractDestructibleController.KillAllByType<EnemyWalkerController>();
             AbstractDestructibleController.KillAllByType<Enemy3DFollowerController>();
             AbstractDestructibleController.KillAllByType<EnemyBubbleController>();
-            UnityFn.SetTimeout(AppResource.instance, 5, () =>
-            {
-                AppSfx.instance.allLevelsClear.Play();
-                UnityFn.SetTimeout(AppResource.instance, 7, GameFn.LoadNextScene);
-                Destroy(gameObject);
-            });
+            GameFn.LoadNextSceneAfterBossKilled(gameObject, true);
         }
 
         public override float GetDetectionRange()

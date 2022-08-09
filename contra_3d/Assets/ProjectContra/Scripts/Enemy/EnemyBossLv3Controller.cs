@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
-using BaseUtil.Base;
-using BaseUtil.GameUtil;
+﻿using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using ProjectContra.Scripts.AbstractController;
-using ProjectContra.Scripts.AppSingleton;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Types;
 using ProjectContra.Scripts.Util;
 using UnityEngine;
 
@@ -54,7 +50,7 @@ namespace ProjectContra.Scripts.Enemy
             bossCamera.SetActive(true);
             gameCamera.SetActive(false);
             UnityFn.SetControllerActive(weakPointCtrl, true);
-            UnityFn.SetTimeout(AppResource.instance, 2, () =>
+            UnityFn.SetTimeout(this, 2, () =>
             {
                 Fn.EachInArray(x => x.canShoot = true, guns);
             });
@@ -71,12 +67,7 @@ namespace ProjectContra.Scripts.Enemy
                 bossCamera.SetActive(false);
                 AppMusic.instance.Stop();
                 UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
-                UnityFn.SetTimeout(AppResource.instance, 5, () =>
-                {
-                    AppSfx.instance.levelClear.Play();
-                    UnityFn.SetTimeout(AppResource.instance, 5, GameFn.LoadNextScene);
-                    Destroy(gameObject);
-                });
+                GameFn.LoadNextSceneAfterBossKilled(gameObject, false);
             }
         }
 

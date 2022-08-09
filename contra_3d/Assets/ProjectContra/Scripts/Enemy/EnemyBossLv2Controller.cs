@@ -66,12 +66,7 @@ namespace ProjectContra.Scripts.Enemy
                 AppMusic.instance.Stop();
                 AppSfx.PlayRepeatedly(AppSfx.instance.bossDeath, 5);
                 UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
-                UnityFn.SetTimeout(AppResource.instance, 5, () =>
-                {
-                    AppSfx.instance.levelClear.Play();
-                    UnityFn.SetTimeout(AppResource.instance, 5, GameFn.LoadNextScene);
-                    Destroy(gameObject);
-                });
+                GameFn.LoadNextSceneAfterBossKilled(gameObject, false);
             }
         }
 

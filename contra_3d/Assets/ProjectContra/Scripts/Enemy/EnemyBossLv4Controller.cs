@@ -47,7 +47,7 @@ namespace ProjectContra.Scripts.Enemy
             animatorCtrl.enabled = true;
             bossCamera.SetActive(true);
             gameCamera.SetActive(false);
-            UnityFn.SetTimeout(AppResource.instance, 2, () =>
+            UnityFn.SetTimeout(this, 2, () =>
             {
                 Fn.EachInArray(x => x.canShoot = true, guns);
             });
@@ -65,12 +65,7 @@ namespace ProjectContra.Scripts.Enemy
                 animatorCtrl.enabled = false;
                 AppMusic.instance.Stop();
                 UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
-                UnityFn.SetTimeout(AppResource.instance, 5, () =>
-                {
-                    AppSfx.instance.levelClear.Play();
-                    UnityFn.SetTimeout(AppResource.instance, 5, GameFn.LoadNextScene);
-                    Destroy(gameObject);
-                });
+                GameFn.LoadNextSceneAfterBossKilled(gameObject, false);
             }
         }
     }

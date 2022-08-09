@@ -80,12 +80,7 @@ namespace ProjectContra.Scripts.Enemy
                 AppMusic.instance.Stop();
                 EnemyWalkerController[] mods = FindObjectsOfType<EnemyWalkerController>();
                 AbstractDestructibleController.KillAll(mods);
-                UnityFn.SetTimeout(AppResource.instance, 5, () =>
-                {
-                    AppSfx.instance.levelClear.Play();
-                    UnityFn.SetTimeout(AppResource.instance, 5, GameFn.LoadNextScene);
-                    Destroy(gameObject);
-                });
+                GameFn.LoadNextSceneAfterBossKilled(gameObject, false);
             }
         }
 

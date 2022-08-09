@@ -130,14 +130,7 @@ namespace ProjectContra.Scripts.Enemy
             bodyAnimatorCtrl.enabled = false;
             AppMusic.instance.Stop();
             UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
-            UnityFn.SetTimeout(AppResource.instance, 5, () =>
-            {
-                if (isBroken) return;
-                isBroken = true;
-                AppSfx.instance.levelClear.Play();
-                UnityFn.SetTimeout(AppResource.instance, 5, GameFn.LoadNextScene);
-                Destroy(gameObject);
-            });
+            GameFn.LoadNextSceneAfterBossKilled(gameObject, false);
         }
 
         public override float GetDetectionRange()

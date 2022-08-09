@@ -28,7 +28,7 @@ namespace ProjectContra.Scripts.EnemyBullet
             if (!bombTriggerCtrl.isActivated) return;
             if (isTriggered) return;
             isTriggered = true;
-            UnityFn.SetTimeout(AppResource.instance, dropDelay, () => Fn.SafeRun(() => rb.useGravity = true));
+            UnityFn.SetTimeout(this, dropDelay, () => Fn.SafeRun(() => rb.useGravity = true));
         }
 
         private void OnTriggerEnter(Collider other)
