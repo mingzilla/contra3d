@@ -67,7 +67,7 @@ MonoBehaviour:
   damage: 1
   moveSpeed: 8
   jumpForce: 10
-  detectionRange: 40
+  detectionRange: 70
   closestDistanceToPlayer: 0.5
   useGravity: 1
   bulletsPerShot: 1
