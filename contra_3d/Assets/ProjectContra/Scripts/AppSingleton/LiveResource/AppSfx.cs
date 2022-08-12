@@ -28,7 +28,8 @@ namespace ProjectContra.Scripts.AppSingleton.LiveResource
             allLevelsClear,
             floorMove,
             liftMove,
-            enemyLaser;
+            enemyLaser,
+            menuSelect;
 
         private void Awake()
         {
