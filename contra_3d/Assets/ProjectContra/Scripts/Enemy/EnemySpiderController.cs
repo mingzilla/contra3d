@@ -57,7 +57,7 @@ namespace ProjectContra.Scripts.Enemy
             }
             if (isActive)
             {
-                UnityFn.RunWithInterval(AppResource.instance, changeDirectionInterval, () => moveXLeft = !moveXLeft);
+                UnityFn.RunWithInterval(this, changeDirectionInterval, () => moveXLeft = !moveXLeft);
                 MovementUtil.MoveX(transform, (moveXLeft ? -1 : 1), moveSpeed);
                 FireShots(transform.position);
             }
@@ -66,7 +66,7 @@ namespace ProjectContra.Scripts.Enemy
 
         void FireShots(Vector3 position)
         {
-            UnityFn.RunWithInterval(AppResource.instance, shotIntervalState, () =>
+            UnityFn.RunWithInterval(this, shotIntervalState, () =>
             {
                 EnemyBasicBulletController.Spawn(position + new Vector3(-2f, 0.5f, 0f), position + new Vector3(-3f, 0.8f, 0f), EnemyBulletType.BASIC, false);
                 EnemyBasicBulletController.Spawn(position + new Vector3(-2f, -0.5f, 0f), position + new Vector3(-3f, -0.8f, 0f), EnemyBulletType.BASIC, false);

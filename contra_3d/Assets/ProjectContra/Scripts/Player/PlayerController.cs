@@ -1,4 +1,5 @@
-﻿using BaseUtil.GameUtil;
+﻿using BaseUtil.Base;
+using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -24,11 +25,14 @@ namespace ProjectContra.Scripts.Player
 
         private UserInput userInput;
         private readonly IntervalState buttonIntervalState = IntervalState.Create(0.2f);
+        private Observable<bool> intervalResetObservable;
         public bool isBroken = false;
 
         private void Awake()
         {
             UnityFn.KeepAlive(gameObject);
+            intervalResetObservable = AppResource.instance.GetIntervalResetObservable();
+            intervalResetObservable.Subscribe(x => buttonIntervalState.Reset());
         }
 
         private void Start()
@@ -85,11 +89,13 @@ namespace ProjectContra.Scripts.Player
 
         public void NextLevel(InputAction.CallbackContext context)
         {
+            if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
             UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, GameFn.LoadNextScene);
         }
 
         private void OnDestroy()
         {
+            intervalResetObservable.Unsubscribe();
             isBroken = true;
         }
     }

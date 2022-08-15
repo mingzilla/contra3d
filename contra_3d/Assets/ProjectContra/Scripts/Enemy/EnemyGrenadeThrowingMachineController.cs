@@ -38,7 +38,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             playerIsInRange = RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
+                UnityFn.RunWithInterval(this, shotInterval, () =>
                 {
                     Fn.Times(amountPerThrow, ThrowGrenade);
                 });

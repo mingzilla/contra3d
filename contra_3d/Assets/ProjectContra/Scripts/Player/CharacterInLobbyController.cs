@@ -22,6 +22,7 @@ namespace ProjectContra.Scripts.Player
         private int playerId;
 
         private readonly IntervalState buttonIntervalState = IntervalState.Create(0.1f);
+        private Observable<bool> intervalResetObservable;
         private MeshRenderer meshRenderer;
         private GameObject placeholderPanel;
         private LobbyPlayerPlaceholderController placeholderPanelCtrl;
@@ -42,6 +43,8 @@ namespace ProjectContra.Scripts.Player
 
             Transform gameObjectTransform = gameObject.transform;
             gameObjectTransform.position = placeholderPanel.transform.position + new Vector3(xPositionDelta[playerId], 0, 0);
+            intervalResetObservable = AppResource.instance.GetIntervalResetObservable();
+            intervalResetObservable.Subscribe(x => buttonIntervalState.Reset());
         }
 
         public void HandleUpdate(int id, UserInput userInput, GameObject playerGameObject)
@@ -130,6 +133,11 @@ namespace ProjectContra.Scripts.Player
                 meshRenderer.materials = UnityFn.UpdateMaterialAt(meshRenderer.materials, 1, skin);
                 storeData.SetPlayer(playerAttribute);
             });
+        }
+        
+        private void OnDestroy()
+        {
+            intervalResetObservable.Unsubscribe();
         }
     }
 }

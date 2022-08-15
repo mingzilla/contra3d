@@ -32,7 +32,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             RunIfPlayerIsInRange(storeData, GetDetectionRange(), (closestPlayer) =>
             {
-                UnityFn.RunWithInterval(AppResource.instance, shotIntervalState, () =>
+                UnityFn.RunWithInterval(this, shotIntervalState, () =>
                 {
                     Vector3 position = transform.position;
                     float initialX = FnVal.RandomFloatBetween(-(randomRangeX), randomRangeX);

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BaseUtil.Base;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
@@ -21,6 +22,7 @@ namespace ProjectContra.Scripts.Player
         private List<Button> buttons;
         private int currentButtonIndex = 0;
         private readonly IntervalState buttonIntervalState = IntervalState.Create(0.2f);
+        private Observable<bool> intervalResetObservable;
 
         public static PausedMenuController GetInstance()
         {
@@ -43,6 +45,8 @@ namespace ProjectContra.Scripts.Player
             buttons = new List<Button>() {resumeButton, restartLevelButton, quitButton};
 
             MoveToButton(currentButtonIndex);
+            intervalResetObservable = AppResource.instance.GetIntervalResetObservable();
+            intervalResetObservable.Subscribe(x => buttonIntervalState.Reset());
             return this;
         }
 
@@ -74,6 +78,11 @@ namespace ProjectContra.Scripts.Player
                 UnityFn.QuitToMenu<PlayerController>();
                 AppResource.instance.pauseMenuEventSystem.SetActive(false);
             });
+        }
+        
+        private void OnDestroy()
+        {
+            intervalResetObservable.Unsubscribe();
         }
     }
 }

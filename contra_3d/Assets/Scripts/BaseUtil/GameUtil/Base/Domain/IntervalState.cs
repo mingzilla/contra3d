@@ -13,5 +13,10 @@
                 canRun = true,
             };
         }
+
+        public void Reset()
+        {
+            canRun = true;
+        }
     }
 }

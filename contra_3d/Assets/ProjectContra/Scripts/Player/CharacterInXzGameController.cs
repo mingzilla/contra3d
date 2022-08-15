@@ -1,4 +1,5 @@
-﻿using BaseUtil.GameUtil;
+﻿using BaseUtil.Base;
+using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using BaseUtil.GameUtil.Util3D;
@@ -29,6 +30,7 @@ namespace ProjectContra.Scripts.Player
         private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
         private static readonly int isMovingKey = Animator.StringToHash("isMoving");
         private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
+        private Observable<bool> intervalResetObservable;
 
         public CharacterInXzGameController Init(int id, bool isActive)
         {
@@ -45,6 +47,8 @@ namespace ProjectContra.Scripts.Player
             groundLayers = GameLayer.GetGroundLayerMask();
             animatorCtrl = gameObject.GetComponent<Animator>();
             gameObject.SetActive(isActive);
+            intervalResetObservable = AppResource.instance.GetIntervalResetObservable();
+            intervalResetObservable.Subscribe(x => takeDamageInterval.Reset());
             return this;
         }
 
@@ -107,6 +111,11 @@ namespace ProjectContra.Scripts.Player
             PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
             playerAttribute.weaponType = weaponType;
             storeData.SetPlayer(playerAttribute);
+        }
+        
+        private void OnDestroy()
+        {
+            intervalResetObservable.Unsubscribe();
         }
     }
 }

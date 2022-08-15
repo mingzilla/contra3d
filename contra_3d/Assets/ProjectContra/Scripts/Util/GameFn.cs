@@ -84,14 +84,14 @@ namespace ProjectContra.Scripts.Util
         public static void ReloadScene()
         {
             GameStoreData storeData = AppResource.instance.storeData;
-            AppResource.instance.StopAllCoroutines(); // e.g. players killed after boss killed, this stops moving to the next level
+            AppResource.instance.StopCoroutines(); // e.g. players killed after boss killed, this stops moving to the next level
             AppMusic.instance.Stop();
             storeData.ReloadScene();
         }
 
         public static void LoadNextScene()
         {
-            AppResource.instance.StopAllCoroutines(); // so that e.g. reload scene won't get executed by any chance
+            AppResource.instance.StopCoroutines(); // so that e.g. reload scene won't get executed by any chance
             AppMusic.instance.Stop();
             UnityFn.LoadNextScene();
         }

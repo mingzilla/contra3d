@@ -38,7 +38,7 @@ namespace ProjectContra.Scripts.Enemy
         {
             Vector3 shootPosition = transform.position + shootPositionDelta;
             Vector3 targetPosition = shootPosition + targetPositionDelta;
-            UnityFn.RunWithInterval(AppResource.instance, shotInterval, () =>
+            UnityFn.RunWithInterval(this, shotInterval, () =>
             {
                 EnemyBasicBulletController.Spawn(shootPosition, (targetPosition + new Vector3(0f, 0f, -1f)), EnemyBulletType.PIERCE, false);
                 EnemyBasicBulletController.Spawn(shootPosition, (targetPosition + new Vector3(-0.2f, 0f, -1f)), EnemyBulletType.PIERCE, false);
