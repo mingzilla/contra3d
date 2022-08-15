@@ -235,26 +235,30 @@ namespace BaseUtil.GameUtil.Base
 
         /// <summary>
         /// Won't work if time is stopped (e.g. game is paused)
-        /// IMPORTANT: Use "this" (preferred) if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
+        /// IMPORTANT:
+        /// If controller is AppResource.instance, intervalState needs to be reset using intervalReset observable. Otherwise intervalState.canRun is false so it stops functional.
+        /// Use "this" (preferred) if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
         /// 1) Used inside Update loop. If interval is 3, fn runs every 3 seconds. 
         /// 2) Used in events, to allow executing fn only once only within an interval. 
         /// </summary>
-        public static void RunWithInterval(MonoBehaviour controller, IntervalState state, Action fn)
+        public static void RunWithInterval(MonoBehaviour controller, IntervalState intervalState, Action fn)
         {
-            if (!state.canRun) return;
-            state.canRun = false;
+            if (!intervalState.canRun) return;
+            intervalState.canRun = false;
             fn();
-            SetTimeout(controller, state.interval, () => state.canRun = true);
+            SetTimeout(controller, intervalState.interval, () => intervalState.canRun = true);
         }
 
         /// <summary>
-        /// IMPORTANT: Use "this" (preferred) if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
+        /// IMPORTANT:
+        /// If controller is AppResource.instance, intervalState needs to be reset using intervalReset observable. Otherwise intervalState.canRun is false so it stops functional.
+        /// Use "this" (preferred) if each object needs to have it's own interval. If using AppResource.instance, every object share the same interval (because AppResource is the one to track timer)
         /// When using "this" as controller, need to safe check first, because object may have been destroyed when timeout content is run
         /// When using a global controller, may get error of accessing destroyed object even when checking e.g. isBroken, because the coroutine is run by something else
         /// </summary>
-        public static void RepeatWithInterval(MonoBehaviour controller, IntervalState state, int repeatTimes, float repeatDelay, Action fn)
+        public static void RepeatWithInterval(MonoBehaviour controller, IntervalState intervalState, int repeatTimes, float repeatDelay, Action fn)
         {
-            RunWithInterval(controller, state, () =>
+            RunWithInterval(controller, intervalState, () =>
             {
                 SetTimeoutWithRepeat(controller, repeatTimes, repeatDelay, fn);
             });
