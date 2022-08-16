@@ -292,7 +292,7 @@ namespace BaseUtil.GameUtil.Base
         public static IEnumerator WaitUntil(MonoBehaviour controller, Func<bool> conditionFn, Action fn)
         {
             IEnumerator coroutine = WaitUntilDelayFn(conditionFn, fn);
-            controller.StartCoroutine(coroutine); // run if condition returns true
+            Fn.SafeRun(() => controller.StartCoroutine(coroutine)); // run if condition returns true
             return coroutine; // return a copy so that it can be stopped if needed
         }
 
