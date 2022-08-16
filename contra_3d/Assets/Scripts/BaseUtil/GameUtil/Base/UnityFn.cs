@@ -268,7 +268,7 @@ namespace BaseUtil.GameUtil.Base
         public static IEnumerator SetTimeout(MonoBehaviour controller, float delay, Action fn)
         {
             IEnumerator coroutine = TimeOutDelayFn(delay, fn);
-            controller.StartCoroutine(coroutine);
+            Fn.SafeRun(() => controller.StartCoroutine(coroutine));
             return coroutine; // return a copy so that it can be stopped if needed
         }
 
