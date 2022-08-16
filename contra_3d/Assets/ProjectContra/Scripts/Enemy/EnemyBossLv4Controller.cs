@@ -32,6 +32,7 @@ namespace ProjectContra.Scripts.Enemy
             guns = gameObject.GetComponentsInChildren<EnemyBossLv4GunController>();
             animatorCtrl = gameObject.GetComponent<Animator>();
             animatorCtrl.enabled = false;
+            UnityFn.SetControllersActive(guns, false);
         }
 
         void Update()
@@ -47,6 +48,7 @@ namespace ProjectContra.Scripts.Enemy
             animatorCtrl.enabled = true;
             bossCamera.SetActive(true);
             gameCamera.SetActive(false);
+            UnityFn.SetControllersActive(guns, true);
             UnityFn.SetTimeout(this, 2, () =>
             {
                 Fn.EachInArray(x => x.canShoot = true, guns);
