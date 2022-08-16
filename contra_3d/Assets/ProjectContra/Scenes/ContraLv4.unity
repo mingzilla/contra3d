@@ -10077,6 +10077,12 @@ PrefabInstance:
       objectReference: {fileID: 1322189793}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e24f121885c9904485896185fd0641c, type: 3}
+--- !u!1 &1486189301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7100048517636986657, guid: 0e24f121885c9904485896185fd0641c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1486189300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1487960678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9099858948277534990, guid: 57067b24dcbcbc049893e8b69c159c12,
@@ -12827,7 +12833,7 @@ PrefabInstance:
     - target: {fileID: 838435860574029937, guid: 5a68c05f722a9f145840edbe61fc197f,
         type: 3}
       propertyPath: bossHpItems.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 838435860574029937, guid: 5a68c05f722a9f145840edbe61fc197f,
         type: 3}
@@ -12864,6 +12870,11 @@ PrefabInstance:
       propertyPath: bossHpItems.Array.data[7]
       value: 
       objectReference: {fileID: 881411585}
+    - target: {fileID: 838435860574029937, guid: 5a68c05f722a9f145840edbe61fc197f,
+        type: 3}
+      propertyPath: bossHpItems.Array.data[8]
+      value: 
+      objectReference: {fileID: 1486189301}
     - target: {fileID: 7977635745408179986, guid: 5a68c05f722a9f145840edbe61fc197f,
         type: 3}
       propertyPath: m_AnchorMax.y
