@@ -3,7 +3,6 @@ using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
-using ProjectContra.Scripts.Player;
 using ProjectContra.Scripts.Types;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -65,6 +64,7 @@ namespace ProjectContra.Scripts.AppSingleton
         /// <param name="playerInput"></param>
         public void OnPlayerJoined(PlayerInput playerInput)
         {
+            AppSfx.Play(AppSfx.instance.menuSelect);
             storeData.AddPlayer(playerInput);
             Debug.Log("OnPlayerJoined " + playerInput.playerIndex);
         }

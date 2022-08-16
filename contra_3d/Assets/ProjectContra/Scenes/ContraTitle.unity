@@ -669,11 +669,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d87700aba2c54a747b3b9b78c26b2a94, type: 3}
 --- !u!224 &393814694 stripped
@@ -1000,18 +995,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7097376203359087799}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &756579359 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3963195456783350505, guid: d87700aba2c54a747b3b9b78c26b2a94,
-    type: 3}
-  m_PrefabInstance: {fileID: 7097376203359087799}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756579357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32c1ce55aab4d2d9d1336913fdc4634, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &917177736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3316,61 +3299,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NewGameButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[1].eventID
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[2].eventID
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 756579359}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnSelect
-      objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ProjectContra.Scripts.Screens.ButtonEventController, Project.Contra
-      objectReference: {fileID: 0}
-    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d87700aba2c54a747b3b9b78c26b2a94, type: 3}

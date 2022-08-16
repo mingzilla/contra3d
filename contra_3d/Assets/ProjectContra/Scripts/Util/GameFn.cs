@@ -95,5 +95,12 @@ namespace ProjectContra.Scripts.Util
             AppMusic.instance.Stop();
             UnityFn.LoadNextScene();
         }
+
+        public static void QuitToMenu()
+        {
+            AppResource.instance.StopCoroutines();
+            AppMusic.instance.Stop();
+            UnityFn.QuitToMenu<PlayerController>();
+        }
     }
 }

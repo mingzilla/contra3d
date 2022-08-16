@@ -7,7 +7,12 @@ namespace ProjectContra.Scripts.Screens
     {
         public void OnMove()
         {
-            AppSfx.PlayAdjusted(AppSfx.instance.menuSelect);
+            AppSfx.PlayAdjusted(AppSfx.instance.menuNav);
+        }
+
+        public void OnMenuSelect()
+        {
+            AppSfx.Play(AppSfx.instance.menuSelect);
         }
     }
 }

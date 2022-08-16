@@ -166,14 +166,14 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 9
+  - eventID: 15
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3963195456783350505}
           m_TargetAssemblyTypeName: ProjectContra.Scripts.Screens.ButtonEventController,
             Project.Contra
-          m_MethodName: OnSelect
+          m_MethodName: OnMenuSelect
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -195,7 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32c1ce55aab4d2d9d1336913fdc4634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playSoundWhenSelected: 0
 --- !u!1 &8780891932313499482
 GameObject:
   m_ObjectHideFlags: 0

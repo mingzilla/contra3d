@@ -75,11 +75,11 @@ namespace ProjectContra.Scripts.Player
         {
             UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, () =>
             {
-                UnityFn.QuitToMenu<PlayerController>();
+                GameFn.QuitToMenu();
                 AppResource.instance.pauseMenuEventSystem.SetActive(false);
             });
         }
-        
+
         private void OnDestroy()
         {
             intervalResetObservable.Unsubscribe();

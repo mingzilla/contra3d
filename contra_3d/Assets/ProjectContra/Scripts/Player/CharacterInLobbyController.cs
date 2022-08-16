@@ -77,6 +77,7 @@ namespace ProjectContra.Scripts.Player
             }
             else
             {
+                AppSfx.Play(AppSfx.instance.menuSelect);
                 placeholderPanelCtrl.SetPlayerLeftStatus();
                 Destroy(playerGameObject); // destroying the object with PlayerInput forces the player to quit 
                 Destroy(gameObject); // The game object controlled by Player is a separate object so needs to be removed as well
@@ -86,6 +87,7 @@ namespace ProjectContra.Scripts.Player
 
         public void SetPlayerReady()
         {
+            AppSfx.Play(AppSfx.instance.menuSelect);
             placeholderPanelCtrl.SetPlayerReadyTrue();
             PlayerInputManagerData inputManagerData = storeData.inputManagerData;
             inputManagerData.SetPlayerReady(playerId, true);
@@ -127,6 +129,7 @@ namespace ProjectContra.Scripts.Player
         {
             UnityFn.RunWithInterval(this, buttonIntervalState, () =>
             {
+                AppSfx.PlayAdjusted(AppSfx.instance.menuNav);
                 PlayerAttribute playerAttribute = storeData.GetPlayer(playerId);
                 playerAttribute.skinId = desireIndex;
                 Material skin = AppResource.instance.GetSkin(playerAttribute.skinId);
@@ -134,7 +137,7 @@ namespace ProjectContra.Scripts.Player
                 storeData.SetPlayer(playerAttribute);
             });
         }
-        
+
         private void OnDestroy()
         {
             intervalResetObservable.Unsubscribe();
