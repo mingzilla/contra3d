@@ -268,7 +268,10 @@ namespace BaseUtil.GameUtil.Base
         public static IEnumerator SetTimeout(MonoBehaviour controller, float delay, Action fn)
         {
             IEnumerator coroutine = TimeOutDelayFn(delay, fn);
-            Fn.SafeRun(() => controller.StartCoroutine(coroutine));
+            Fn.SafeRun(() =>
+            {
+                if (controller.gameObject.activeSelf) controller.StartCoroutine(coroutine);
+            });
             return coroutine; // return a copy so that it can be stopped if needed
         }
 
@@ -292,7 +295,10 @@ namespace BaseUtil.GameUtil.Base
         public static IEnumerator WaitUntil(MonoBehaviour controller, Func<bool> conditionFn, Action fn)
         {
             IEnumerator coroutine = WaitUntilDelayFn(conditionFn, fn);
-            Fn.SafeRun(() => controller.StartCoroutine(coroutine)); // run if condition returns true
+            Fn.SafeRun(() =>
+            {
+                if (controller.gameObject.activeSelf) controller.StartCoroutine(coroutine);
+            });
             return coroutine; // return a copy so that it can be stopped if needed
         }
 
