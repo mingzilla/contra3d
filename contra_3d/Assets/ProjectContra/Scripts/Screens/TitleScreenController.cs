@@ -4,6 +4,7 @@ using BaseUtil.GameUtil.Base.Domain;
 using ProjectContra.Scripts.AppSingleton.LiveResource;
 using ProjectContra.Scripts.GameData;
 using ProjectContra.Scripts.Types;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -17,11 +18,13 @@ namespace ProjectContra.Scripts.Screens
         private GameStoreData storeData;
 
         [SerializeField] public GameObject titleScreenDefaultButton;
+        [SerializeField] public GameObject titleScreenFullScreenButtonText;
         public GameObject menuCanvas;
         public GameObject lobbyCanvas;
 
         public bool canGoToTitleScreenFromLobby = true;
         private readonly IntervalState menuIntervalState = IntervalState.Create(0.2f);
+        private TextMeshProUGUI fullScreenButtonText;
 
         private void Start()
         {
@@ -29,6 +32,8 @@ namespace ProjectContra.Scripts.Screens
             menuCanvas.SetActive(true);
             lobbyCanvas.SetActive(false);
             storeData.controlState = GameControlState.TITLE_SCREEN_MENU;
+            fullScreenButtonText = titleScreenFullScreenButtonText.GetComponent<TextMeshProUGUI>();
+            SetFullScreenButtonText(Screen.fullScreen);
         }
 
         private void Update()
@@ -47,11 +52,19 @@ namespace ProjectContra.Scripts.Screens
             UnityFn.RunWithInterval(this, menuIntervalState, () => storeData.controlState = GameControlState.TITLE_SCREEN_LOBBY);
         }
 
-        public void OnSelectedContinueFromMenu()
+        public void OnSelectedToggleFullScreenFromMenu()
         {
-            menuCanvas.SetActive(false);
-            lobbyCanvas.SetActive(true);
-            UnityFn.RunWithInterval(this, menuIntervalState, () => storeData.controlState = GameControlState.TITLE_SCREEN_LOBBY);
+            UnityFn.RunWithInterval(this, menuIntervalState, () =>
+            {
+                bool desireValue = !Screen.fullScreen;
+                SetFullScreenButtonText(desireValue); // run this before setting Screen.fullScreen, because the result is reflected with some delay
+                Screen.fullScreen = desireValue;
+            });
+        }
+
+        private void SetFullScreenButtonText(bool currentlyIsFull)
+        {
+            fullScreenButtonText.text = currentlyIsFull ? "Window Mode" : "Full Screen";
         }
 
         public void OnSelectedBackFromLobby()

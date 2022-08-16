@@ -532,7 +532,7 @@ PrefabInstance:
     - target: {fileID: 2143551558694910377, guid: d87700aba2c54a747b3b9b78c26b2a94,
         type: 3}
       propertyPath: m_text
-      value: Continue
+      value: Full Screen
       objectReference: {fileID: 0}
     - target: {fileID: 3963195456783350505, guid: d87700aba2c54a747b3b9b78c26b2a94,
         type: 3}
@@ -547,7 +547,7 @@ PrefabInstance:
     - target: {fileID: 7097376202639216808, guid: d87700aba2c54a747b3b9b78c26b2a94,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnSelectedContinueFromMenu
+      value: OnSelectedToggleFullScreenFromMenu
       objectReference: {fileID: 0}
     - target: {fileID: 7097376202639216808, guid: d87700aba2c54a747b3b9b78c26b2a94,
         type: 3}
@@ -662,12 +662,17 @@ PrefabInstance:
     - target: {fileID: 7097376202639216810, guid: d87700aba2c54a747b3b9b78c26b2a94,
         type: 3}
       propertyPath: m_Name
-      value: ContinueButton
+      value: FullScreenButton
       objectReference: {fileID: 0}
     - target: {fileID: 7097376202639216810, guid: d87700aba2c54a747b3b9b78c26b2a94,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817681114504940406, guid: d87700aba2c54a747b3b9b78c26b2a94,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d87700aba2c54a747b3b9b78c26b2a94, type: 3}
@@ -860,6 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleScreenDefaultButton: {fileID: 756579357}
+  titleScreenFullScreenButtonText: {fileID: 2000465311}
   menuCanvas: {fileID: 2084157264}
   lobbyCanvas: {fileID: 715257310}
   canGoToTitleScreenFromLobby: 1
@@ -2353,6 +2359,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!1 &2000465311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8780891932313499482, guid: d87700aba2c54a747b3b9b78c26b2a94,
+    type: 3}
+  m_PrefabInstance: {fileID: 393814693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2053896743
 GameObject:
   m_ObjectHideFlags: 0

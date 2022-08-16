@@ -2792,7 +2792,7 @@ GameObject:
   - component: {fileID: 3193414805664711642}
   - component: {fileID: 3255343234761232053}
   m_Layer: 0
-  m_Name: contra_menu_select
+  m_Name: contra_menu_nav
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2823,7 +2823,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 602f67f03cb5d594cac5ccb7ddf73afd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7198f26e293c948458a89f6446247226, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
