@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace ProjectContra.Scripts.Enemy
 {
-    public class EnemyBossLv5Controller : AbstractDestructibleController
+    public class EnemyBossLv5Controller : AbstractRangeDetectionController
     {
         private GameStoreData storeData;
 
@@ -23,6 +23,8 @@ namespace ProjectContra.Scripts.Enemy
         [SerializeField] private int modDelayToChangeVelocity = 3;
         [SerializeField] private int shotPositionDelta = 4;
         [SerializeField] private int bulletMoveSpeed = 7;
+        [SerializeField] private GameObject weakPoint;
+        private EnemyBossWeakPointController weakPointController;
 
         private readonly IntervalState shotInterval = IntervalState.Create(4f);
 
@@ -41,6 +43,8 @@ namespace ProjectContra.Scripts.Enemy
             animatorCtrl.enabled = false;
             bodyAnimatorCtrl = bossBody.GetComponent<Animator>();
             bodyAnimatorCtrl.enabled = false;
+            weakPointController = weakPoint.GetComponent<EnemyBossWeakPointController>();
+            UnityFn.FastSetActive(weakPoint, false);
         }
 
         void Update()
@@ -61,6 +65,7 @@ namespace ProjectContra.Scripts.Enemy
             bodyAnimatorCtrl.enabled = true;
             bossCamera.SetActive(true);
             gameCamera.SetActive(false);
+            UnityFn.FastSetActive(weakPoint, true);
             phase = 1;
         }
 
@@ -69,17 +74,18 @@ namespace ProjectContra.Scripts.Enemy
             UnityFn.RunWithInterval(this, shotInterval, () =>
             {
                 animatorCtrl.enabled = false;
-                SafeSetTimeOut(1.5f, () => animatorCtrl.enabled = true);
+                UnityFn.SetTimeout(this, 1.5f, () => animatorCtrl.enabled = true);
                 DropMods();
                 FireShots();
             });
+            if (weakPointController.isBroken) phase = 2;
         }
 
         void DropMods()
         {
             bodyAnimatorCtrl.SetTrigger(openDoorKey);
             List<Vector3> deltas = new List<Vector3>() {Vector3.left, Vector3.right};
-            SafeSetTimeOut(0.5f, () =>
+            UnityFn.SetTimeout(this, 0.5f, () =>
             {
                 if (phase != 1) return;
                 Fn.Times(deltas.Count, (i) =>
@@ -113,22 +119,18 @@ namespace ProjectContra.Scripts.Enemy
             });
         }
 
-        public override void TakeDamage(Vector3 position, int damage)
-        {
-            if (phase == 0) return;
-            AppSfx.PlayAdjusted(AppSfx.instance.bigEnemyDamaged);
-            hp -= damage;
-            if (hp <= 0) phase = 2;
-        }
-
         private void HandlePhase2()
         {
             phase = 3; // this is just to prevent getting into here again
+            StopAllCoroutines();
+            shotInterval.Reset();
             gameCamera.SetActive(true);
             bossCamera.SetActive(false);
             animatorCtrl.enabled = false;
             bodyAnimatorCtrl.enabled = false;
             AppMusic.instance.Stop();
+            AbstractDestructibleController.KillAllByType<EnemyWalkerController>();
+            AbstractDestructibleController.KillAllByType<Enemy3DFollowerController>();
             UnityFn.CreateEffect(AppResource.instance.enemyDestroyedBigExplosion, transform.position, 5f);
             GameFn.LoadNextSceneAfterBossKilled(gameObject, false);
         }

@@ -43,6 +43,7 @@
   <ItemGroup>
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyBasicBulletController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv8Controller.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Screens\PlayerHp\BossHpUiController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Screens\TitleScreenController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\GameData\GameStoreData.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Types\GameTag.cs" />
@@ -106,6 +107,7 @@
      <Compile Include="Assets\ProjectContra\Scripts\Util\SceneUtil.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\AppSingleton\LiveResource\AppResource.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossLv2Controller.cs" />
+     <Compile Include="Assets\ProjectContra\Scripts\Screens\PlayerHp\BossHpGridController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBossWeakPointController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Map\DroppingPlatformController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\Player\Domain\PlayerControlObjectData.cs" />
@@ -129,8 +131,6 @@
      <Compile Include="Assets\ProjectContra\Scripts\Enemy\EnemyBubbleShooterController.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\GameDataScriptable\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContra\Scripts\EnemyBullet\EnemyGrenadeController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Screens\PlayerHp\BossHpUiController.cs" />
-     <Compile Include="Assets\ProjectContra\Scripts\Screens\PlayerHp\BossHpGridController.cs" />
      <None Include="Assets\ProjectContra\Project.Contra.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
