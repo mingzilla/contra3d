@@ -89,6 +89,7 @@ namespace ProjectContra.Scripts.Player
 
         public void NextLevel(InputAction.CallbackContext context)
         {
+            return;
             if (!GameFn.CanControlPlayerOnContextStarted(storeData, userInput, context)) return;
             UnityFn.RunWithInterval(AppResource.instance, buttonIntervalState, GameFn.LoadNextScene);
         }
