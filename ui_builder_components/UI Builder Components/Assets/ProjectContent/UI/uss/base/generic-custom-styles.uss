@@ -1,0 +1,1183 @@
+﻿/*
+To support flex layout for the content of a page
+-------------------------------*/
+.hidden {
+    display: none;
+}
+
+.fit-cell-size {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+}
+
+/*****************************************************************
+dialog
+*****************************************************************/
+.pi-dialog-status-bar {
+    height: 28px;
+    background-color: rgba(130, 130, 130, 0.6);
+}
+
+/*****************************************************************
+shadow
+*****************************************************************/
+.z-depth-1 {
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-color: rgba(0, 0, 0, 0.24);
+    border-bottom-color: rgba(0, 0, 0, 0.24);
+}
+
+.z-depth-2 {
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-right-color: rgba(0, 0, 0, 0.24);
+    border-bottom-color: rgba(0, 0, 0, 0.24);
+}
+
+.z-depth-3 {
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    border-right-color: rgba(0, 0, 0, 0.24);
+    border-bottom-color: rgba(0, 0, 0, 0.24);
+}
+
+.z-depth-4 {
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-right-color: rgba(0, 0, 0, 0.24);
+    border-bottom-color: rgba(0, 0, 0, 0.24);
+}
+
+.z-depth-5 {
+    border-right-width: 15px;
+    border-bottom-width: 15px;
+    border-right-color: rgba(0, 0, 0, 0.24);
+    border-bottom-color: rgba(0, 0, 0, 0.24);
+}
+
+/*****************************************************************
+panel back drop
+*****************************************************************/
+.confirmation-panel-back-drop {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+/*****************************************************************
+paper button (used with bootstrap btn-*)
+*****************************************************************/
+.paper-button {
+    display: initial;
+    background-image: none;
+    -unity-text-align: middle-center;
+    border-radius: 2px;
+    cursor: link;
+    border-width: 0;
+    border-color: rgba(256, 256, 256, 0);
+    padding: 6px;
+    margin: 0;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-color: rgba(0, 0, 0, 0.24);
+    border-bottom-color: rgba(0, 0, 0, 0.24);
+}
+
+.paper-button[disabled] {
+    cursor: initial;
+    background-color: rgba(152, 152, 152, 0.3);
+    border-color: #eee;
+    color: rgba(0, 0, 0, 0.56);
+}
+
+.paper-button:hover {
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-right-color: rgba(0, 0, 0, 0.24);
+    border-bottom-color: rgba(0, 0, 0, 0.24);
+}
+
+.flat-paper-button {
+    display: initial;
+    background-image: none;
+    -unity-text-align: middle-center;
+    border-radius: 2px;
+    cursor: link;
+    border-width: 0;
+    padding: 6px;
+    margin: 0;
+    height: 32px;
+}
+
+.flat-paper-button[disabled],
+.icon-button.flat-paper-button[disabled] {
+    background-color: rgba(152, 152, 152, 0.3);
+    border-color: #eee;
+    color: #adadad;
+}
+
+.flat-paper-button:hover {
+    background-color: rgba(152, 152, 152, 0.3);
+}
+
+.flat-paper-button.btn-default {
+    background-color: rgba(256, 256, 256, 0);
+}
+
+.flat-paper-button.btn-primary {
+    background-color: rgba(256, 256, 256, 0);
+    color: #0086ff;
+}
+
+.flat-paper-button.btn-warning {
+    background-color: rgba(256, 256, 256, 0);
+    color: #FFA500;
+}
+
+.flat-paper-button.btn-danger {
+    background-color: rgba(256, 256, 256, 0);
+    color: #FF0000;
+}
+
+.flat-paper-button.btn-default[disabled],
+.flat-paper-button.btn-primary[disabled],
+.flat-paper-button.btn-warning[disabled],
+.flat-paper-button.btn-danger[disabled] {
+    background-color: rgba(152, 152, 152, 0.3);
+    color: #adadad;
+}
+
+.flat-paper-button.btn-default:hover,
+.flat-paper-button.btn-primary:hover,
+.flat-paper-button.btn-warning:hover,
+.flat-paper-button.btn-danger:hover {
+    background-color: rgba(152, 152, 152, 0.3);
+}
+
+.flat-paper-button.btn-default[disabled]:hover,
+.flat-paper-button.btn-primary[disabled]:hover,
+.flat-paper-button.btn-warning[disabled]:hover,
+.flat-paper-button.btn-danger[disabled]:hover {
+    color: #adadad;
+    background-color: rgba(152, 152, 152, 0.3);
+}
+
+.paper-button.small-paper-button,
+.flat-paper-button.small-paper-button {
+    height: 28px;
+}
+
+.paper-button.btn-default:hover {
+    background-color: rgba(256, 256, 256, 0);
+}
+
+.paper-button[disabled]:hover {
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-color: rgba(0, 0, 0, 0.24);
+    border-bottom-color: rgba(0, 0, 0, 0.24);
+    background-color: #eee;
+    border-color: #eee;
+}
+
+
+.is-transparent-pop-up {
+    opacity: 0;
+}
+
+
+.paper-button.is-transparent:hover,
+.flat-paper-button.is-transparent:hover {
+    background-color: rgba(150, 150, 150, 0.2);
+}
+
+/*****************************************************************
+icon-button
+*****************************************************************/
+.icon-button {
+    display: initial;
+    height: 32px;
+    padding: 0;
+    width: 32px;
+    font-size: 18px;
+    -unity-text-align: middle-center;
+    color: #333333;
+}
+
+.icon-button.visible-sm,
+.icon-button.visible-xs {
+    display: initial !important;
+}
+
+.small-icon-button,
+.small-font-icon,
+.tiny-icon-button,
+.tiny-font-icon {
+    color: #8B8B8B;
+}
+
+.icon-button.small-icon-button,
+.small-font-icon {
+    height: 28px;
+    width: 28px;
+    min-width: 28px;
+}
+
+.icon-button.tiny-icon-button,
+.tiny-font-icon {
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+}
+
+.icon-button.large-icon-button,
+.large-font-icon {
+    font-size: 40px;
+    height: 52px;
+    width: 52px;
+}
+
+.small-icon-button:hover,
+.icon-button:hover {
+    color: rgba(15, 36, 53, 0.55);
+}
+
+.icon-button.small-icon-button:hover,
+.icon-button:hover {
+    cursor: link;
+}
+
+.small-icon-button[disabled]:hover,
+.icon-button[disabled]:hover {
+    color: #8B8B8B;
+}
+
+/*****************************************************************
+Active items
+*****************************************************************/
+.is-active {
+    background-color: rgba(155, 199, 211, 0.35);
+}
+
+.paper-tab {
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(256, 256, 256, 0);
+    translate: 0 2px;
+}
+
+.paper-tab.is-active {
+    background-color: rgba(256, 256, 256, 0);
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(30, 107, 230, 0.6);
+}
+
+/*****************************************************************
+paper-tabs
+*****************************************************************/
+/*
+<div class="pi-paper-tabs paper-seam" layout horizontal>
+  <div *ngFor="let tab of tabs"
+       class="pi-paper-tab"
+       [ngClass]="{'is-active' : isActiveTab(tab)}"
+       title="{{tab.value}}"
+       (click)="setActiveTab(tab)">
+    {{tab.value}}
+  </div>
+</div>
+*/
+.pi-paper-tabs {
+    overflow: hidden;
+    height: 32px;
+}
+
+.pi-paper-tabs.tab-size-1 {
+    height: 39px;
+}
+
+.pi-paper-tab {
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(256, 256, 256, 0);
+    translate: 0 2px;
+    margin: 0 0 2px 6px;
+    padding: 4px 8px;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 80px;
+    max-width: 320px;
+    -unity-text-align: middle-center;
+}
+
+.pi-paper-tabs.tab-size-1 .pi-paper-tab {
+    padding: 4px 16px;
+}
+
+.pi-paper-tab:hover {
+    background-color: rgba(174, 174, 174, 0.3);
+    cursor: link;
+}
+
+.pi-paper-tab.is-active {
+    background-color: rgba(256, 256, 256, 0);
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(30, 107, 230, 0.6);
+}
+
+.pi-paper-tab.is-active.warning-background {
+    background-color: rgba(255, 161, 68, 0.2);
+}
+
+.pi-paper-tab.is-disabled {
+    background-color: rgba(256, 256, 256, 0);
+    color: #c5c5c5;
+}
+
+.pi-paper-tab sub.bold-sub {
+    display: initial;
+    font-size: 11px;
+    border-radius: 2px;
+    background-color: #9c9c9c;
+    padding-left: 4px;
+    padding-right: 4px;
+    height: 12px;
+    color: #ffffff;
+    -unity-text-align: middle-center;
+}
+
+/*****************************************************************
+List items
+*****************************************************************/
+.pi-list-item {
+    padding-left: 8px;
+}
+
+.pi-list-item.is-child {
+    margin-left: 2px;
+    border-left-width: 1px;
+    border-left-color: rgba(132, 132, 132, 0.4);
+    padding-left: 6px;
+}
+
+.pi-list-item.is-disabled {
+    color: #c5c5c5;
+}
+
+.pi-list-item__text {
+    height: 28px;
+    display: initial;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.pi-list-item.is-indent-on-text {
+    padding-left: 0;
+}
+
+.pi-list-item.is-indent-on-text .pi-list-item__text {
+    padding-left: 8px;
+}
+
+.pi-list-item sub {
+    display: initial;
+    font-size: 11px;
+    border-radius: 2px;
+    height: 12px;
+    -unity-text-align: middle-center;
+}
+
+/*****************************************************************
+Inputs
+*****************************************************************/
+/* pi-input */
+.pi-input {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(132, 132, 132, 0.4);
+    padding: 4px 0;
+    height: 24px;
+    background-color: rgba(256, 256, 256, 0);
+    display: initial;
+    width: 100%;
+}
+
+select.pi-input,
+.pi-input[type='date'] {
+    padding: 2px 0 0 0;
+}
+
+textarea.pi-input {
+    height: 80px;
+}
+
+input.no-outline,
+textarea.no-outline {
+    border-width: 0;
+}
+
+input.auto-height,
+textarea.auto-height {
+    height: auto;
+}
+
+input.auto-size,
+textarea.auto-size {
+    width: auto;
+    height: auto;
+}
+
+
+input.no-outline.is-lighter:focus,
+textarea.no-outline.is-lighter:focus {
+    background-color: rgba(155, 199, 211, 0.15);
+}
+
+textarea.pi-input.with-bg {
+    background-color: #fbfbfb;
+}
+
+.pi-input[disabled] {
+    background-color: rgba(152, 152, 152, 0.3);
+    color: #808080;
+}
+
+.pi-input-label {
+    position: relative;
+    display: initial;
+    height: 0;
+    font-size: 11px;
+    padding-bottom: 2px;
+    color: rgba(51, 51, 51, 0.7);
+}
+
+.pi-input-label > * {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+}
+
+/* pi-checkbox
+Firefox can't resize a checkbox by setting the width and the height, so there is a specific implementation below
+*/
+input[type=checkbox].pi-checkbox {
+    height: 18px;
+    margin: 6px 4px -1px;
+    display: initial;
+    width: 18px;
+    cursor: link;
+}
+
+input[type="checkbox"].pi-checkbox {
+    height: 15px;
+}
+
+/* pi-input-radio
+<div layout [horizontal|vertical] >
+  <div class="pi-input-radio"
+     *ngFor="let type of items"
+     (click)="updateType(type.value)"
+     layout horizontal>
+    <input type="radio" [value]="type.value" [ngModel]="myType"/>
+    <span class="pi-input-radio-label">{{type.text}}</span>
+  </div>
+</div>
+*/
+.pi-input-radio {
+    cursor: link;
+}
+
+.pi-input-radio input[type=radio] {
+    height: 18px;
+    margin: 6px 4px -1px;
+    display: initial;
+    width: 18px;
+    min-width: 18px;
+    cursor: link;
+}
+
+.pi-input-radio input[type=radio] {
+    height: 15px;
+}
+
+.pi-input-radio .pi-input-radio-label {
+    margin: 4px 32px 0 4px;
+}
+
+.pi-input-gap-1,
+.pi-input.pi-input-gap-1,
+input[type=checkbox].pi-checkbox.pi-input-gap-1,
+.pi-input-radio input[type=radio].pi-input-gap-1 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: initial;
+}
+
+.pi-input-gap-2,
+.pi-input.pi-input-gap-2,
+input[type=checkbox].pi-checkbox.pi-input-gap-2,
+.pi-input-radio input[type=radio].pi-input-gap-2 {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    display: initial;
+}
+
+.pi-input-gap-3,
+.pi-input.pi-input-gap-3,
+input[type=checkbox].pi-checkbox.pi-input-gap-3,
+.pi-input-radio input[type=radio].pi-input-gap-3 {
+    margin-top: 12px;
+    margin-bottom: 4px;
+    display: initial;
+}
+
+.pi-input-gap-4,
+.pi-input.pi-input-gap-4,
+input[type=checkbox].pi-checkbox.pi-input-gap-4,
+.pi-input-radio input[type=radio].pi-input-gap-4 {
+    margin-top: 16px;
+    margin-bottom: 4px;
+    display: initial;
+}
+
+/* pi-flex-table
+<div class="pi-flex-table">
+  <div class="pi-flex-thead-tr" layout horizontal>
+    <div class="pi-flex-thead-td" flex>Display Name</div>
+    <div class="pi-flex-thead-td" flex>Object Type</div>
+    <div class="pi-flex-thead-td" flex>Select</div>
+  </div>
+
+  <div class="pi-flex-tbody-tr" layout horizontal>
+    <div class="pi-flex-tbody-td" flex>
+      <input type="text">
+    </div>
+    <div class="pi-flex-tbody-td" flex>
+      <select>
+        <option></option>
+      </select>
+    </div>
+    <div class="pi-flex-tbody-td" flex>
+      <div class="na-block"></div>
+    </div>
+  </div>
+</div>
+*/
+.pi-flex-table.with-top-border {
+    border-top-width: 1px;
+    border-top-color: rgba(132, 132, 132, 0.4);
+}
+
+.pi-flex-thead-tr {
+}
+
+.pi-flex-tbody-tr {
+    border-top-width: 1px;
+    border-top-color: rgba(132, 132, 132, 0.4);
+}
+
+.pi-flex-table.is-action-mode .pi-flex-tbody-tr:hover {
+}
+
+.pi-flex-thead-td {
+    background-color: rgba(199, 199, 199, 0.2);
+}
+
+.pi-flex-thead-td,
+.pi-flex-tbody-td {
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 4px;
+    border-right-width: 1px;
+    border-right-color: rgba(132, 132, 132, 0.4);
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(132, 132, 132, 0.4);
+}
+
+.pi-flex-thead-td.square-block,
+.pi-flex-tbody-td.square-block {
+    width: 29px;
+    max-width: 29px;
+    padding: 0;
+    -unity-text-align: middle-center;
+}
+
+.pi-flex-tbody-td input,
+.pi-flex-tbody-td select,
+.pi-flex-tbody-td textarea {
+    width: 100%;
+    border-width: 0;
+}
+
+.pi-flex-tbody-td input,
+.pi-flex-tbody-td select {
+    height: 20px;
+}
+
+.pi-flex-tbody-td input[type=checkbox].pi-checkbox {
+    margin: 4px 4px -1px;
+}
+
+/*
+radio needs to be inside a inline-block flex box so that it's vertically centered
+absolute-full-size is here to cover this whole radio button, so that the actual radio can't be clicked to trigger an event. putting at the end doesn't need z-index
+<div class="pi-input-radio relative-position" layout horizontal (click)="clickTheWholeDiv()">
+    <span class="inline-block" layout vertical center-center>
+        <input type="radio" [value]="" [ngModel]="" [attr.aria-label]="''"/>
+    </span>
+    <span class="pi-input-radio-label"></span>
+    <div class="absolute-full-size"></div>
+</div>
+*/
+.pi-flex-tbody-td .pi-input-radio input[type=radio] {
+    margin: 0 0 0 4px;
+}
+
+.pi-flex-tbody-td input[type=text]:hover,
+.pi-flex-tbody-td input[type=number]:hover,
+.pi-flex-tbody-td input[type=password]:hover,
+.pi-flex-tbody-td input[type=date]:hover,
+.pi-flex-tbody-td select:hover,
+.pi-flex-tbody-td textarea:hover {
+}
+
+.pi-flex-tbody-td input:focus,
+.pi-flex-tbody-td select:focus,
+.pi-flex-tbody-td textarea:focus {
+    background-color: rgba(155, 199, 211, 0.35);
+}
+
+.pi-flex-tbody-td option {
+    color: #333333;
+    background-color: #FFFFFF;
+}
+
+.pi-flex-tbody-td .na-block {
+    background-color: rgba(152, 152, 152, 0.1);
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.pi-flex-tbody-td .na-block.warning-background {
+    background-color: rgba(255, 161, 68, 0.2);
+}
+
+.pi-flex-table.single-row .pi-flex-tbody-tr,
+.pi-flex-table.single-row .pi-flex-tbody-td {
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.pi-flex-tbody-td-border.square-block {
+    border-right-width: 1px;
+    border-right-color: rgba(132, 132, 132, 0.4);
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(132, 132, 132, 0.4);
+}
+
+/*lighter version*/
+
+.pi-flex-table.is-lighter .pi-flex-thead-td {
+    background-color: rgba(199, 199, 199, 0.1);
+}
+
+.pi-flex-table.is-lighter .pi-flex-thead-td,
+.pi-flex-table.is-lighter .pi-flex-tbody-td {
+    border-right-width: 1px;
+    border-right-color: rgba(132, 132, 132, 0.15);
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(132, 132, 132, 0.15);
+}
+
+
+/* pi-pill
+<span class="pi-pill">Text</span>
+*/
+.pi-pill {
+    display: initial;
+    background-color: #9c9c9c;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.pi-pill.is-small {
+    font-size: 11px;
+    height: 12px;
+}
+
+/*****************************************************************
+text: primary: 100%, secondary: 70%, disabled: 30%, dividers: 12%
+http://www.google.co.uk/design/spec/style/color.html#color-ui-color-application
+*****************************************************************/
+/*text with less ink to reduce distraction*/
+.less-ink {
+    opacity: 0.5;
+}
+
+.text-valid-on-white {
+    color: #00b700;
+}
+
+.text-info-on-white {
+    color: #0086ff;
+}
+
+.text-warning-on-white {
+    color: #FFA500;
+}
+
+.text-danger-on-white {
+    color: #FF0000;
+}
+
+.warning-background {
+    background-color: rgba(255, 161, 68, 0.2);
+}
+
+.icon-button.text-warning-on-white,
+.small-font-icon.text-warning-on-white {
+    color: #FFA500;
+}
+
+.icon-button.text-danger-on-white,
+.small-font-icon.text-danger-on-white {
+    color: #FF0000;
+}
+
+/*****************************************************************
+misc
+*****************************************************************/
+.full-height {
+    height: 100%;
+}
+
+.no-height {
+    height: 0;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.auto-width {
+    width: auto;
+}
+
+.auto-height {
+    height: auto;
+}
+
+.auto-size {
+    width: auto;
+    height: auto;
+}
+
+.full-size {
+    width: 100%;
+    height: 100%;
+}
+
+.min-height-x1-5 {
+    min-height: 150%;
+}
+
+.min-height-x2 {
+    min-height: 200%;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+.no-text-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.no-wrap-text {
+    white-space: nowrap;
+}
+
+.paper-seam {
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(132, 132, 132, 0.4);
+}
+
+.paper-seam-on-top {
+    border-top-width: 1px;
+    border-top-color: rgba(132, 132, 132, 0.4);
+}
+
+.panel-with-right-border {
+    border-right-width: 1px;
+    border-right-color: rgba(132, 132, 132, 0.4);
+}
+
+.panel-with-left-border {
+    border-left-width: 1px;
+    border-left-color: rgba(132, 132, 132, 0.4);
+}
+
+.vertical-divider {
+    background-color: rgba(132, 132, 132, 0.4);
+    width: 1px;
+    margin-right: 8px;
+    margin-left: 8px;
+    display: initial;
+}
+
+.text-center {
+    -unity-text-align: middle-center;
+}
+
+.text-right {
+    -unity-text-align: middle-right;
+}
+
+.inline-block {
+    display: initial;
+}
+
+.display-block {
+    display: initial;
+}
+
+.relative-position {
+    position: relative;
+}
+
+.relative-no-size {
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
+.absolute-right-top,
+.absolute-right-top-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.absolute-right-bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.absolute-right-top-button {
+    background-color: #FFFFFF;
+}
+
+.absolute-right-top-button:hover {
+    background-color: rgba(152, 152, 152, 0.3);
+}
+
+.absolute-full-size,
+.absolute-full-size-semi-transparent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.absolute-full-size-semi-transparent {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.transparent-background {
+    background-color: rgba(256, 256, 256, 0);
+}
+
+.is-clickable:hover {
+    cursor: link;
+}
+
+.is-normal-mouse-cursor:hover {
+    cursor: initial;
+}
+
+.is-not-clickable-with-bg:hover {
+    background-color: rgba(174, 174, 174, 0.3);
+}
+
+.is-clickable-with-bg:hover {
+    background-color: rgba(174, 174, 174, 0.3);
+    cursor: link;
+}
+
+/***********************************
+* .field-indicator
+***********************************/
+.field-indicator input,
+.field-indicator textarea {
+    z-index: 10;
+    background-color: rgba(256, 256, 256, 0);
+}
+
+.field-indicator textarea {
+    width: 100%;
+    height: 100%;
+}
+
+/***********************************
+* Resizer
+***********************************/
+.resize-top-bottom-container {
+    position: relative;
+}
+
+.resize-top-bottom-bar {
+    border-bottom-width: 16px;
+    border-bottom-color: rgba(256, 256, 256, 0);
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 10;
+    top: -8px;
+    cursor: move-arrow;
+}
+
+.resize-top-bottom-bar:hover {
+    border-bottom-color: rgba(0, 0, 0, .14);
+}
+
+.resize-left-right-container {
+    position: relative;
+    height: 100%;
+}
+
+.resize-left-right-bar {
+    border-right-width: 16px;
+    border-right-color: rgba(256, 256, 256, 0);
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 10;
+    left: -8px;
+    cursor: move-arrow;
+}
+
+.resize-left-right-bar:hover {
+    border-right-color: rgba(0, 0, 0, .14);
+}
+
+/*****************************************************************
+gaps
+*****************************************************************/
+.gap-top-0 {
+    margin-top: 0;
+}
+
+.gap-top-half {
+    margin-top: 2px;
+}
+
+.gap-top-1 {
+    margin-top: 4px;
+}
+
+.gap-top-2 {
+    margin-top: 8px;
+}
+
+.gap-top-3 {
+    margin-top: 12px;
+}
+
+.gap-top-4 {
+    margin-top: 16px;
+}
+
+.gap-top-5 {
+    margin-top: 20px;
+}
+
+.gap-bottom-0 {
+    margin-bottom: 0;
+}
+
+.gap-bottom-1 {
+    margin-bottom: 4px;
+}
+
+.gap-bottom-2 {
+    margin-bottom: 8px;
+}
+
+.gap-bottom-3 {
+    margin-bottom: 12px;
+}
+
+.gap-bottom-4 {
+    margin-bottom: 16px;
+}
+
+.gap-bottom-5 {
+    margin-bottom: 20px;
+}
+
+.gap-left-0 {
+    margin-left: 0;
+}
+
+.gap-left-1 {
+    margin-left: 4px;
+}
+
+.gap-left-2 {
+    margin-left: 8px;
+}
+
+.gap-left-3 {
+    margin-left: 12px;
+}
+
+.gap-left-4 {
+    margin-left: 16px;
+}
+
+.gap-left-5 {
+    margin-left: 20px;
+}
+
+.gap-right-0 {
+    margin-right: 0;
+}
+
+.gap-right-1 {
+    margin-right: 4px;
+}
+
+.gap-right-2 {
+    margin-right: 8px;
+}
+
+.gap-right-3 {
+    margin-right: 12px;
+}
+
+.gap-right-4 {
+    margin-right: 16px;
+}
+
+.gap-right-5 {
+    margin-right: 20px;
+}
+
+.gap-out-0 {
+    margin: 0;
+}
+
+.gap-out-half {
+    margin: 2px;
+}
+
+.gap-out-1 {
+    margin: 4px;
+}
+
+.gap-out-2 {
+    margin: 8px;
+}
+
+.gap-out-3 {
+    margin: 12px;
+}
+
+.gap-out-4 {
+    margin: 16px;
+}
+
+.gap-out-5 {
+    margin: 20px;
+}
+
+.gap-in-0 {
+    padding: 0;
+}
+
+.gap-in-half {
+    padding: 2px;
+}
+
+.gap-in-1 {
+    padding: 4px;
+}
+
+.gap-in-2 {
+    padding: 8px;
+}
+
+.gap-in-3 {
+    padding: 12px;
+}
+
+.gap-in-4 {
+    padding: 16px;
+}
+
+.gap-in-5 {
+    padding: 20px;
+}
+
+.gap-in-top-0 {
+    padding-top: 0;
+}
+
+.gap-in-top-half {
+    padding-top: 2px;
+}
+
+.gap-in-top-1 {
+    padding-top: 4px;
+}
+
+.gap-in-top-2 {
+    padding-top: 8px;
+}
+
+.gap-in-top-3 {
+    padding-top: 12px;
+}
+
+.gap-in-top-4 {
+    padding-top: 16px;
+}
+
+.gap-in-top-5 {
+    padding-top: 20px;
+}
+
+/*****************************************************************
+z-index
+*****************************************************************/
+.z-index-100000 {
+    z-index: 100000;
+}
+
+.z-index-10000 {
+    z-index: 10000;
+}
+
+.z-index-1000 {
+    z-index: 1000;
+}
+
+.z-index-100 {
+    z-index: 100;
+}
+
+.z-index-10 {
+    z-index: 10;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
