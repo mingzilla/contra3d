@@ -774,11 +774,11 @@
      <Reference Include="Unity.RenderPipelines.Universal.Editor">
      <HintPath>E:\code\unity\temp_projects\contra_3d\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="UnityEngine.UI">
-     <HintPath>E:\code\unity\temp_projects\contra_3d\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>E:\code\unity\temp_projects\contra_3d\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UI">
+     <HintPath>E:\code\unity\temp_projects\contra_3d\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
