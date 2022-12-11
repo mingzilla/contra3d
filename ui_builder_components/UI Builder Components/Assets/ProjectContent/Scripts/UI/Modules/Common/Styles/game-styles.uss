@@ -1,0 +1,71 @@
+.primary-1-dark {
+    color: #3a6b22;
+}
+
+.primary-1-light {
+    color: #ffffff;
+}
+
+.primary-2-dark {
+    color: #062302;
+}
+
+.primary-2-light {
+    color: #b8f398;
+}
+
+.secondary-1-dark {
+    color: #56634d;
+}
+
+.secondary-1-light {
+    color: #becbb1;
+}
+
+.secondary-2-dark {
+    color: #15210f;
+}
+
+.secondary-2-light {
+    color: #d9e7cb;
+}
+
+.tertiary-1-dark {
+    color: #1b696b;
+}
+
+.tertiary-1-light {
+    color: #ffffff;
+}
+
+.tertiary-2-dark {
+    color: #022223;
+}
+
+.tertiary-2-light {
+    color: #a9eff0;
+}
+
+.neutral-1-dark {
+    color: #1b1e1a;
+}
+
+.neutral-1-light {
+    color: #fdfdf5;
+}
+
+.neutral-variant-1 {
+    color: #444940;
+}
+
+.neutral-variant-2 {
+    color: #73786d;
+}
+
+.neutral-variant-3 {
+    color: #c4c9bd;
+}
+
+.neutral-variant-4 {
+    color: #e0e5d7;
+}

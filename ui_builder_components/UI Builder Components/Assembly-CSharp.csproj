@@ -173,6 +173,7 @@
      <Folder Include="Library\PackageCache\com.unity.mathematics@1.2.6" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\FileSystemWatcherLicense.txt" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-styles.uss" />
      <None Include="Library\PackageCache\com.unity.inputsystem@1.4.4\ValidationExceptions.json" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Gizmos" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\cm-help.ko.txt" />
@@ -240,6 +241,7 @@
      <None Include="Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.Unsafe.xml" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\cm.zh-Hans.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\plastic-gui.ja.txt" />
      <None Include="Library\PackageCache\com.unity.burst@1.7.3\package.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\i3.en.txt" />
