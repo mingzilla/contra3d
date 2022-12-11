@@ -108,6 +108,11 @@ namespace BaseUtil.Base
             return dict;
         }
 
+        public static Dictionary<TKey, List<TValue>> GroupBy<TKey, TValue>(Func<TValue, TKey> keyFn, IEnumerable<TValue> list)
+        {
+            return list.GroupBy(keyFn).ToDictionary(entry => entry.Key, entry => entry.ToList());
+        }
+
         public static List<T> ConcatAll<T>(List<List<T>> lists)
         {
             List<T> allItems = new List<T>();
