@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace ProjectContent.UI.Components
+namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
 {
     public class SkillEquipPanel : MonoBehaviour
     {
@@ -14,7 +14,7 @@ namespace ProjectContent.UI.Components
         {
             root = GetComponent<UIDocument>().rootVisualElement;
 
-            VisualElement skillEquipPanel = root.Q<VisualElement>("SkillEquipPanel");
+            VisualElement skillEquipPanel = root.Q<VisualElement>("SkillEquipPanelSkills");
 
             Dictionary<ElementalType, List<Skill>> skillGroup = Skill.AllGroupByType();
 
@@ -32,7 +32,7 @@ namespace ProjectContent.UI.Components
                         Debug.Log(button.name);
                     };
                     
-                    skillEquipPanel.Add(button);                    
+                    // skillEquipPanel.Add(button);                    
                 });
             });
         }

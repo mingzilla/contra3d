@@ -1,0 +1,45 @@
+.skill_equip_panel {
+    background-color: #bba18e;
+    width: 260px;
+    min-height: 260px;
+    border-width: 2px;
+    border-color: #887568;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.skill_equip_panel__table {
+    border-width: 1px;
+    border-color: #887568;
+}
+
+.skill_equip_panel__row {
+}
+
+.skill_equip_panel__cell {
+    border-width: 1px;
+    border-color: #887568;
+    width: 48px;
+    height: 48px;
+}
+
+.skill_equip_panel__skill-block {
+    width: 40px;
+    height: 40px;
+    background-color: #F5F5DC;
+}
+
+.skill_equip_panel__info-panel {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.skill_equip_panel__info-panel--content {
+    background-color: #F5F5DC;
+    width: 244px;
+    border-width: 2px;
+    border-color: #887568;
+    padding: 8px;
+    border-radius: 8px;
+    height: 60px;
+}

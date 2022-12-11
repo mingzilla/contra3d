@@ -1,0 +1,94 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/EquipSkill/Components/skill_equip_panel.uss?fileID=7433441132597879392&amp;guid=921ef9bb59167374b866c89bde9ea11d&amp;type=3#skill_equip_panel"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss?fileID=7433441132597879392&amp;guid=a440bcd6230c42fb95db33e413f34269&amp;type=3#flex-layout-styles"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss?fileID=7433441132597879392&amp;guid=a6a8a9debd684807beda559121991104&amp;type=3#generic-custom-styles"/>
+    <ui:VisualElement name="SkillEquipPanel" class="skill_equip_panel layout-vertical">
+        <ui:VisualElement class="layout-vertical center">
+            <ui:VisualElement name="SkillEquipPanelSkills" class="flex">
+                <ui:Template name="SkillEquipPanelSkillTemplate" src="skill_equip_panel__skill.uxml"/>
+
+                <ui:VisualElement class="skill_equip_panel__table">
+                    <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="SkillEquipPanelInfo" class="skill_equip_panel__info-panel layout-vertical center">
+            <ui:VisualElement name="SkillEquipPanelInfoContent" class="skill_equip_panel__info-panel--content">
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="SkillEquipPanelButtons" class="layout-horizontal">
+            <ui:VisualElement class="flex"/>
+            <ui:Button text="A" display-tooltip-when-elided="true" class="paper-button"/>
+            <ui:Button text="B" display-tooltip-when-elided="true" class="paper-button"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
