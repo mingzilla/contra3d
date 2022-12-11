@@ -432,6 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 702437974}
   - component: {fileID: 702437975}
+  - component: {fileID: 702437976}
   m_Layer: 0
   m_Name: SkillEquipPanelDocument
   m_TagString: Untagged
@@ -471,6 +472,18 @@ MonoBehaviour:
   sourceAsset: {fileID: 9197481963319205126, guid: ed19705bf507b8941ba3ad8c22e65931,
     type: 3}
   m_SortingOrder: 0
+--- !u!114 &702437976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702437973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff6deef48b84024a8903b9ec7130b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

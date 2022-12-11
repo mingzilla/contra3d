@@ -42,6 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Types\ElementalType.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Types\Skill.cs" />
+     <Compile Include="Assets\ProjectContent\UI\Components\SkillEquipPanel.cs" />
      <Folder Include="Assets" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
@@ -70,7 +73,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\guihelp.ja.txt" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Graphics" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\ValidationExceptions.json" />
-     <None Include="Assets\ProjectContent\UI\skill_equip_panel.uss" />
+     <None Include="Assets\ProjectContent\UI\Components\skill_equip_panel.uss" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\xdiff.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\configurehelper.es.txt" />
      <Folder Include="Library\PackageCache\com.unity.burst@1.7.3\Tests" />
@@ -94,7 +97,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\package.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\xdiff.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\xdiff.ko.txt" />
-     <None Include="Assets\ProjectContent\UI\uss\base\flex-layout-styles.uss" />
+     <None Include="Assets\ProjectContent\UI\Base\uss\base\flex-layout-styles.uss" />
      <Folder Include="Library\PackageCache\com.unity.timeline@1.6.4" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\clientcommon.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\basecommands.zh-Hans.txt" />
@@ -111,13 +114,15 @@
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\ValidationExceptions.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\cm.en.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\Types" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\commontypes.en.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\commontypes.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.zh-Hant.txt" />
      <None Include="Library\PackageCache\com.unity.ide.rider@3.0.16\package.json" />
+     <Folder Include="Assets\ProjectContent\Scripts\Data" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\i3.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.searcher@4.9.1\package.json" />
-     <None Include="Assets\ProjectContent\UI\uss\base\generic-custom-styles.uss" />
+     <None Include="Assets\ProjectContent\UI\Base\uss\base\generic-custom-styles.uss" />
      <None Include="Library\PackageCache\com.unity.test-framework@1.1.31\package.json" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime" />
@@ -130,7 +135,8 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\cm-help.en.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\binmergetool.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.en.txt" />
-     <Folder Include="Assets\ProjectContent\UI\uss" />
+     <Folder Include="Assets\ProjectContent\UI\Base\uss" />
+     <Folder Include="Assets\ProjectContent\UI\Components" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\workspaceserver.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\binmergetool.zh-Hant.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\plastic-gui.en.txt" />
@@ -157,6 +163,7 @@
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime" />
      <Folder Include="Library\PackageCache\com.unity.mathematics@1.2.6" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\FileSystemWatcherLicense.txt" />
+     <Folder Include="Assets\ProjectContent\UI\Base" />
      <None Include="Library\PackageCache\com.unity.inputsystem@1.4.4\ValidationExceptions.json" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Gizmos" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\cm-help.ko.txt" />
@@ -202,7 +209,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\commontypes.ko.txt" />
      <Folder Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\commontypes.ja.txt" />
-     <None Include="Assets\ProjectContent\UI\skill_equip_panel.uxml" />
+     <None Include="Assets\ProjectContent\UI\Components\skill_equip_panel.uxml" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\configurehelper.ko.txt" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\PackageConversionData_Assets.json" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor" />
@@ -226,7 +233,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\workspaceserver.zh-Hant.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\cm.zh-Hant.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\xdiff.en.txt" />
-     <Folder Include="Assets\ProjectContent\UI\uss\base" />
+     <Folder Include="Assets\ProjectContent\UI\Base\uss\base" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\semantic.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\i3.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\guihelp.ko.txt" />
