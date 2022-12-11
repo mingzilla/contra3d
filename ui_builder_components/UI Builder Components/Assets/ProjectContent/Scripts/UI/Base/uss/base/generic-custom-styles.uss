@@ -1156,6 +1156,42 @@ gaps
 }
 
 /*****************************************************************
+controller-buttons
+*****************************************************************/
+.button-a,
+.button-b,
+.button-x,
+.button-y {
+    width: 28px;
+    height: 28px;
+    -unity-text-align: middle-center;
+    border-width: 2px;
+    border-radius: 14px;
+    border-color: rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+    -unity-font-style: bold;
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(35, 35, 35);
+    color: #FFFFFF;
+}
+
+.button-a {
+    background-color: #89c926;
+}
+
+.button-b {
+    background-color: orangered;
+}
+
+.button-x {
+    background-color: cornflowerblue;
+}
+
+.button-y {
+    background-color: orange;
+}
+
+/*****************************************************************
 z-index
 *****************************************************************/
 .z-index-100000 {

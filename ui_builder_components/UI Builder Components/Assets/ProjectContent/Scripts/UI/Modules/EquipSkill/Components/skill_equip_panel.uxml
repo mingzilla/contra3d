@@ -89,8 +89,8 @@
 
         <ui:VisualElement name="SkillEquipPanelButtons" class="layout-horizontal">
             <ui:VisualElement class="flex"/>
-            <ui:Button text="A" display-tooltip-when-elided="true" class="paper-button"/>
-            <ui:Button text="B" display-tooltip-when-elided="true" class="paper-button"/>
+            <ui:Button text="A" display-tooltip-when-elided="true" class="button-a"/>
+            <ui:Button text="B" display-tooltip-when-elided="true" class="button-b"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
