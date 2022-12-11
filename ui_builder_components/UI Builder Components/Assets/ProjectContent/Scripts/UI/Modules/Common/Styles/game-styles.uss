@@ -69,3 +69,23 @@
 .neutral-variant-4 {
     color: #e0e5d7;
 }
+
+/*-----------------------------------*/
+.game-pad-key-container {
+    height: 32px;
+    background-color: #022223;
+    border-radius: 4px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    padding-left: 0;
+    padding-right: 4px;
+}
+
+.game-pad-key-description-light {
+    color: #e0e5d7;
+    -unity-font-style: bold;
+    height: 28px;
+    margin: 0;
+    padding: 2px 0 0 0;
+    -unity-text-align: middle-center;
+}
