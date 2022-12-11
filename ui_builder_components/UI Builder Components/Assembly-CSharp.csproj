@@ -135,6 +135,7 @@
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\basecommands.en.txt" />
      <Folder Include="Assets\ProjectContent" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\skill_equip_panel__skill--equipped--selected.uxml" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\workspaceserver.es.txt" />
      <Folder Include="Assets\ProjectContent\Inputs" />
@@ -211,6 +212,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\configurehelper.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.zh-Hant.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\clientcommon.zh-Hans.txt" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\skill_equip_panel__skill--equipped.uxml" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\semantic.ja.txt" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib" />
      <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.5\ValidationExceptions.json" />

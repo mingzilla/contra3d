@@ -7,5 +7,10 @@
         <ui:VisualElement name="SkillEquipPanelSkillFireBallLevel" class="skill_equip_panel__skill__fire-ball__level" style="transform-origin: center;">
             <ui:Label text="2" class="skill_equip_panel__skill__fire-ball__level-label" />
         </ui:VisualElement>
+
+        <ui:VisualElement name="SkillEquipPanelSkillSelected" class="skill_equip_panel__skill__selected absolute-full-size" style="transform-origin: center;">
+            <ui:VisualElement class="skill_equip_panel__skill__selected__corner-1" />
+            <ui:VisualElement class="skill_equip_panel__skill__selected__corner-2" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

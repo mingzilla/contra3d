@@ -24,9 +24,12 @@
 }
 
 .skill_equip_panel__skill-block {
-    width: 40px;
-    height: 40px;
-    background-color: #F5F5DC;
+    width: 46px;
+    height: 46px;
+}
+
+.skill_equip_panel__skill-block--equipped {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .skill_equip_panel__info-panel {
@@ -42,4 +45,56 @@
     padding: 8px;
     border-radius: 8px;
     height: 60px;
+}
+
+/*temp*/
+.skill_equip_panel__skill__fire-ball {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: red;
+    border-width: 2px;
+    border-color: darkred;
+}
+
+.skill_equip_panel__skill__fire-ball__level {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    -unity-font-style: bold;
+    height: 12px;
+    color: #bba18e;
+    font-size: 16px;
+    -unity-text-align: middle-center;
+}
+
+.skill_equip_panel__skill__fire-ball__level-label {
+    margin: 0;
+    padding: 0;
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(35, 35, 35);
+}
+
+.skill_equip_panel__skill__selected__corner-1 {
+    position: absolute;
+    border-width: 3px;
+    width: 12px;
+    height: 12px;
+    border-top-right-radius: 4px;
+    border-top-color: #396053;
+    border-right-color: #396053;
+    top:2px;
+    right:2px;
+}
+
+.skill_equip_panel__skill__selected__corner-2 {
+    position: absolute;
+    border-width: 3px;
+    width: 12px;
+    height: 12px;
+    border-bottom-left-radius: 4px;
+    border-bottom-color: #396053;
+    border-left-color: #396053;
+    bottom:2px;
+    left:2px;
 }

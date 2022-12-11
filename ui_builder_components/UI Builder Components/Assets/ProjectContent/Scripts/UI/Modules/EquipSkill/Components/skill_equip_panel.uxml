@@ -6,6 +6,8 @@
         <ui:VisualElement class="layout-vertical center">
             <ui:VisualElement name="SkillEquipPanelSkills" class="flex">
                 <ui:Template name="SkillEquipPanelSkillTemplate" src="skill_equip_panel__skill.uxml"/>
+                <ui:Template name="SkillEquipPanelSkillEquippedTemplate" src="skill_equip_panel__skill--equipped.uxml"/>
+                <ui:Template name="SkillEquipPanelSkillEquippedSelectedTemplate" src="skill_equip_panel__skill--equipped--selected.uxml"/>
 
                 <ui:VisualElement class="skill_equip_panel__table">
                     <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
@@ -13,13 +15,13 @@
                             <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
                         </ui:VisualElement>
                         <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
-                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillEquippedTemplate"/>
                         </ui:VisualElement>
                         <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
                             <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
                         </ui:VisualElement>
                         <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
-                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillEquippedSelectedTemplate"/>
                         </ui:VisualElement>
                         <ui:VisualElement class="skill_equip_panel__cell layout-vertical center">
                             <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate"/>
