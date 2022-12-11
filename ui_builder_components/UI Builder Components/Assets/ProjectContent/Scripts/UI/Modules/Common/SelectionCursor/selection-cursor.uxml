@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss?fileID=7433441132597879392&amp;guid=a440bcd6230c42fb95db33e413f34269&amp;type=3#flex-layout-styles" />
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss?fileID=7433441132597879392&amp;guid=a6a8a9debd684807beda559121991104&amp;type=3#generic-custom-styles" />
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/Styles/game-styles.uss?fileID=7433441132597879392&amp;guid=d9b46653ab884e4c8afc28ec82ff5e91&amp;type=3#game-styles" />
+    <ui:VisualElement name="SelectionCursor" class="selection-cursor absolute-full-size">
+        <ui:VisualElement class="selection-cursor__corner-1" />
+        <ui:VisualElement class="selection-cursor__corner-2" />
+    </ui:VisualElement>
+</ui:UXML>

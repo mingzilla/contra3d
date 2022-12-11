@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="SelectionCursorTemplate" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/SelectionCursor/selection-cursor.uxml" />
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/EquipSkill/Components/skill_equip_panel.uss?fileID=7433441132597879392&amp;guid=921ef9bb59167374b866c89bde9ea11d&amp;type=3#skill_equip_panel" />
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss?fileID=7433441132597879392&amp;guid=a440bcd6230c42fb95db33e413f34269&amp;type=3#flex-layout-styles" />
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss?fileID=7433441132597879392&amp;guid=a6a8a9debd684807beda559121991104&amp;type=3#generic-custom-styles" />
@@ -8,9 +9,6 @@
             <ui:Label text="2" class="skill_equip_panel__skill-level-label" />
         </ui:VisualElement>
 
-        <ui:VisualElement name="SkillEquipPanelSkillSelected" class="skill_equip_panel__skill__selected absolute-full-size">
-            <ui:VisualElement class="skill_equip_panel__skill__selected__corner-1" />
-            <ui:VisualElement class="skill_equip_panel__skill__selected__corner-2" />
-        </ui:VisualElement>
+        <ui:Instance name="SkillEquipPanelSkillSelected" template="SelectionCursorTemplate" class="absolute-full-size" />
     </ui:VisualElement>
 </ui:UXML>
