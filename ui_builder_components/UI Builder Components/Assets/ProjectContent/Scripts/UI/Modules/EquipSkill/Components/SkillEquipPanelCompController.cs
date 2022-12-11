@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
 {
-    public class SkillEquipPanel : MonoBehaviour
+    public class SkillEquipPanelCompController : MonoBehaviour
     {
         private VisualElement root;
 

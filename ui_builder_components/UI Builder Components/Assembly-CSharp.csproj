@@ -44,7 +44,7 @@
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\ElementalType.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\Skill.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanel.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelCompController.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\EquipSkillStore.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillStoreData.cs" />
