@@ -4,7 +4,7 @@
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss?fileID=7433441132597879392&amp;guid=a6a8a9debd684807beda559121991104&amp;type=3#generic-custom-styles" />
     <ui:VisualElement name="SkillEquipPanelSkill" class="skill_equip_panel__skill-block skill_equip_panel__skill-block--equipped layout-vertical center relative-position">
         <ui:VisualElement name="SkillEquipPanelSkillFireBall" class="skill_equip_panel__skill__fire-ball" />
-        <ui:VisualElement name="SkillEquipPanelSkillFireBallLevel" class="skill_equip_panel__skill__fire-ball__level" style="transform-origin: center;">
+        <ui:VisualElement name="SkillEquipPanelSkillFireBallLevel" class="skill_equip_panel__skill__fire-ball__level">
             <ui:Label text="2" class="skill_equip_panel__skill__fire-ball__level-label" />
         </ui:VisualElement>
     </ui:VisualElement>
