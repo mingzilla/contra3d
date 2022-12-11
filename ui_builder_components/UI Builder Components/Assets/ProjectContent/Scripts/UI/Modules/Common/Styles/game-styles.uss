@@ -91,7 +91,12 @@
 }
 
 /*-----------------------------------*/
-.selection-cursor__corner-1 {
+.is-active-box {
+    background-color: #b8f398;
+}
+
+/*-----------------------------------*/
+.box-selection-cursor__corner-1 {
     position: absolute;
     border-width: 4px;
     width: 16px;
@@ -103,7 +108,7 @@
     right:2px;
 }
 
-.selection-cursor__corner-2 {
+.box-selection-cursor__corner-2 {
     position: absolute;
     border-width: 4px;
     width: 16px;
