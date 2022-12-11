@@ -5,7 +5,7 @@
     <ui:VisualElement name="SkillEquipPanelSkill" class="skill_equip_panel__skill-block layout-vertical center relative-position">
         <ui:VisualElement name="SkillEquipPanelSkillFireBall" class="skill_equip_panel__skill__fire-ball" />
         <ui:VisualElement name="SkillEquipPanelSkillFireBallLevel" class="skill_equip_panel__skill__fire-ball__level">
-            <ui:Label text="2" class="skill_equip_panel__skill__fire-ball__level-label" />
+            <ui:Label text="2" class="skill_equip_panel__skill-level-label" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -68,7 +68,7 @@
     -unity-text-align: middle-center;
 }
 
-.skill_equip_panel__skill__fire-ball__level-label {
+.skill_equip_panel__skill-level-label {
     margin: 0;
     padding: 0;
     -unity-text-outline-width: 1px;
