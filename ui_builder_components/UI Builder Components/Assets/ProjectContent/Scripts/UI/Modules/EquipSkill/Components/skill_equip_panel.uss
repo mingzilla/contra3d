@@ -57,7 +57,7 @@
     border-color: darkred;
 }
 
-.skill_equip_panel__skill__fire-ball__level {
+.skill_equip_panel__skill-level {
     position: absolute;
     right: 0;
     bottom: 2px;
