@@ -9,12 +9,13 @@ namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
     public class SkillEquipPanelCompController : MonoBehaviour
     {
         private VisualElement root;
+        public int relatedPlayerId = 1;
 
         private void OnEnable()
         {
             root = GetComponent<UIDocument>().rootVisualElement;
 
-            VisualElement skillEquipPanel = root.Q<VisualElement>("SkillEquipPanelSkills");
+            VisualElement skillEquipPanelEl = root.Q<VisualElement>("SkillEquipPanelSkills");
 
             Dictionary<ElementalType, List<Skill>> skillGroup = Skill.AllGroupByType();
 

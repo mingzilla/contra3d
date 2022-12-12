@@ -49,11 +49,15 @@
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillStoreData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputKey.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelSkillCompController.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Util\UiUtil.cs" />
      <Folder Include="Assets" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\skill_equip_panel__skill-type.uxml" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hant.txt" />
      <Folder Include="Library\PackageCache\com.unity.test-framework@1.1.31" />
+     <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\Settings" />
      <Folder Include="Library\PackageCache\com.unity.searcher@4.9.1" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\plastic-gui.zh-Hant.txt" />
@@ -118,6 +122,7 @@
      <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16\package.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\workspaceserver.ko.txt" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Base\Util" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\plastic-gui.zh-Hans.txt" />
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\ValidationExceptions.json" />
@@ -147,7 +152,6 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\binmergetool.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.en.txt" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base\uss" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\workspaceserver.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\binmergetool.zh-Hant.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\plastic-gui.en.txt" />
@@ -218,6 +222,7 @@
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\skill_equip_panel__skill--equipped.uxml" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\semantic.ja.txt" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib" />
+     <Folder Include="Assets\ProjectContent\Prefabs\UiSkillEquipPanel" />
      <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.5\ValidationExceptions.json" />
      <None Include="Library\PackageCache\com.unity.visualscripting@1.7.8\ValidationConfig.json" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders" />
