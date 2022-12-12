@@ -8,7 +8,7 @@
         <ui:VisualElement name="SkillEquipPanelSkill" class="skill_equip_panel__skill-block layout-vertical center relative-position">
             <ui:VisualElement name="SkillEquipPanelSkillFireBall" class="skill_equip_panel__skill__fire-ball" />
             <ui:VisualElement name="SkillEquipPanelSkillSlotCost" class="skill_equip_panel__skill-slot-cost">
-                <ui:Label text="2" class="skill_equip_panel__skill-slot-cost-label" />
+                <ui:Label name="SkillSlotCount" text="0" class="skill_equip_panel__skill-slot-cost-label" />
             </ui:VisualElement>
 
             <ui:Instance name="SkillSelectionCursor" template="SelectionCursorTemplate" class="absolute-full-size hidden" />

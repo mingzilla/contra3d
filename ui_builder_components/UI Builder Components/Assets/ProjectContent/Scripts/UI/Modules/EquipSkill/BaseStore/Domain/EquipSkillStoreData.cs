@@ -2,6 +2,6 @@
 {
     public class EquipSkillStoreData
     {
-        public EquipSkillActiveItems activeItems;
+        public EquipSkillActiveItems activeItems = new EquipSkillActiveItems();
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using ProjectContent.Scripts.Types;
-using UnityEditor;
+using ProjectContent.Scripts.UI.Modules.EquipSkill.BaseStore.Domain;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,38 +11,45 @@ namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
         private VisualElement root;
         public int relatedPlayerId = 1;
 
+        private EquipSkillStoreData storeData = new();
+
         private void OnEnable()
         {
+            Skill selectedSkill = storeData.activeItems.selectedSkill;
             root = GetComponent<UIDocument>().rootVisualElement;
-
-            VisualElement skillEquipPanelEl = root.Q<VisualElement>("SkillEquipPanelSkills");
-
-            Dictionary<ElementalType, List<Skill>> skillGroup = Skill.AllGroupByType();
-
-            ElementalType.All().ForEach(type =>
+            VisualElement[] skillContainers =
             {
-                List<Skill> skills = skillGroup[(type)];
+                root.Q<VisualElement>("NEUTRAL"),
+                root.Q<VisualElement>("FIRE"),
+                root.Q<VisualElement>("WATER"),
+                root.Q<VisualElement>("LIGHT"),
+            };
+
+            Dictionary<string, List<Skill>> skillGroup = Skill.AllGroupByStringType();
+
+            foreach (VisualElement skillContainer in skillContainers)
+            {
+                List<Skill> skills = skillGroup[(skillContainer.name)];
                 skills.ForEach(skill =>
                 {
-                    Button button = new();
-                    button.name = skill.name;
-                    button.text = skill.name;
-
-                    button.clicked += () =>
-                    {
-                        Debug.Log(button.name);
-                    };
-                    
-                    // skillEquipPanel.Add(button);                    
+                    bool isSkillActive = storeData.activeItems.isSkillActive(skill);
+                    SkillEquipPanelSkillComp skillBox = SkillEquipPanelSkillComp.Create(skill, selectedSkill, isSkillActive);
+                    skillContainer.Add(skillBox.root);
                 });
-            });
+            }
         }
 
-        private void AddFileContentToDocument()
+        private void AddEvent()
         {
-            VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-            VisualElement ui = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("./skill_equip_panel.uxml").CloneTree();
-            root.Add(ui);
+            Button button = new()
+            {
+                name = "Hi",
+                text = "Hi",
+            };
+            button.clicked += () =>
+            {
+                Debug.Log(button.name);
+            };
         }
     }
 }

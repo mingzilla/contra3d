@@ -4,10 +4,10 @@ namespace ProjectContent.Scripts.Types
 {
     public class ElementalType
     {
-        public static readonly ElementalType NEUTRAL = Create("Neutral");
-        public static readonly ElementalType FIRE = Create("Fire");
-        public static readonly ElementalType WATER = Create("Water");
-        public static readonly ElementalType LIGHT = Create("Light");
+        public static readonly ElementalType NEUTRAL = Create("NEUTRAL");
+        public static readonly ElementalType FIRE = Create("FIRE");
+        public static readonly ElementalType WATER = Create("WATER");
+        public static readonly ElementalType LIGHT = Create("LIGHT");
 
         public string name;
 
