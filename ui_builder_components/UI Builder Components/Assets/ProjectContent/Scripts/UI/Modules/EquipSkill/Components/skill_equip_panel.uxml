@@ -13,31 +13,39 @@
                 <ui:VisualElement class="skill_equip_panel__table">
                     <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
                         <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTypeTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillEquippedTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillEquippedSelectedTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                        <ui:VisualElement class="layout-horizontal">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillEquippedTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillEquippedSelectedTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
                         <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTypeTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                        <ui:VisualElement class="layout-horizontal">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
                         <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTypeTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                        <ui:VisualElement class="layout-horizontal">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
                         <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTypeTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
-                        <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                        <ui:VisualElement class="layout-horizontal">
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                            <ui:Instance name="SkillEquipPanelSkill" template="SkillEquipPanelSkillTemplate" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
