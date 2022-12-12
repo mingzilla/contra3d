@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Template name="SkillEquipPanelSkillTypeTemplate" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/EquipSkill/Components/skill_equip_panel__skill-type.uxml"/>
+    <ui:Template name="SkillEquipPanelSkillTypeTemplate" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/EquipSkill/Components/SkillEquipPanelSkillType.uxml"/>
     <ui:Template name="SkillEquipPanelSkillTemplate" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/EquipSkill/Components/SkillEquipPanelSkillComp.uxml?fileID=9197481963319205126&amp;guid=f5f06177c6c64ee18bb1ea8506866306&amp;type=3#skill_equip_panel__skill"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/EquipSkill/Components/skill_equip_panel.uss?fileID=7433441132597879392&amp;guid=921ef9bb59167374b866c89bde9ea11d&amp;type=3#skill_equip_panel"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss?fileID=7433441132597879392&amp;guid=a440bcd6230c42fb95db33e413f34269&amp;type=3#flex-layout-styles"/>

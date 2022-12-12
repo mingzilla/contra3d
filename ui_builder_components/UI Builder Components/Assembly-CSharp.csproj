@@ -58,7 +58,7 @@
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\Settings" />
      <Folder Include="Library\PackageCache\com.unity.searcher@4.9.1" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\skill_equip_panel__skill-type.uxml" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelSkillType.uxml" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\plastic-gui.zh-Hant.txt" />
      <Folder Include="Assets\ProjectContent\Scripts\UI" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.es.txt" />
@@ -66,7 +66,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\differences.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\commontypes.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.inputsystem@1.4.4\ValidationConfig.json" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor\box-selection-cursor.uxml" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor\BoxSelectionCursor.uxml" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.es.txt" />
      <None Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\package.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\basecommands.es.txt" />
@@ -226,7 +226,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\commontypes.ko.txt" />
      <Folder Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\commontypes.ja.txt" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\skill_equip_panel.uxml" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanel.uxml" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\configurehelper.ko.txt" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\PackageConversionData_Assets.json" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor" />
