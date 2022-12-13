@@ -17,4 +17,21 @@
     --neutral-variant-2: #73786d;
     --neutral-variant-3: #c4c9bd;
     --neutral-variant-4: #e0e5d7;
+
+    --color-primary: #81a36f;
+    --color-complementary : #a36f81;
+    --color-monochromatic : #5c8a43;
+    --color-analogous-1 : #6fa37f;
+    --color-analogous-2 : #9ba36f;
+    --color-complementary-1 : #a3746f;
+    --color-complementary-2 : #a36f9b;
+    --color-neutral-light : #e0e4d7;
+    --color-neutral-dark : #1a1c18;
+
+    --color-water : #2c97de;
+    --color-fire : #d67e9b;
+    --color-light : #d6c77e;
+    --color-bg-water : #7ebad6;
+    --color-bg-fire : #d6857e;
+    --color-bg-light : #d6b17e;
 }
