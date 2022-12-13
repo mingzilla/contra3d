@@ -41,15 +41,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\ElementalType.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\Skill.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelCompController.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillStoreData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputKey.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Util\UiUtil.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillStoreData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelSkillComp.cs" />
+     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Util\UiUtil.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
      <Folder Include="Assets" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
@@ -77,6 +77,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\clientcommon.es.txt" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources" />
      <Folder Include="Library\PackageCache\com.unity.inputsystem@1.4.4\Tests" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-theme.uss" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\package.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\guihelp.ja.txt" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Graphics" />
