@@ -1,149 +1,20 @@
-.primary-1-dark {
-    color: #3a6b22;
-}
-
-.bg-primary-1-dark {
-    background-color: #3a6b22;
-}
-
-.primary-1-light {
-    color: #ffffff;
-}
-
-.bg-primary-1-light {
-    background-color: #ffffff;
-}
-
-.primary-2-dark {
-    color: #062302;
-}
-
-.bg-primary-2-dark {
-    background-color: #062302;
-}
-
-.primary-2-light {
-    color: #b8f398;
-}
-
-.bg-primary-2-light {
-    background-color: #b8f398;
-}
-
-.secondary-1-dark {
-    color: #56634d;
-}
-
-.bg-secondary-1-dark {
-    background-color: #56634d;
-}
-
-.secondary-1-light {
-    color: #becbb1;
-}
-
-.bg-secondary-1-light {
-    background-color: #becbb1;
-}
-
-.secondary-2-dark {
-    color: #15210f;
-}
-
-.bg-secondary-2-dark {
-    background-color: #15210f;
-}
-
-.secondary-2-light {
-    color: #d9e7cb;
-}
-
-.bg-secondary-2-light {
-    background-color: #d9e7cb;
-}
-
-.tertiary-1-dark {
-    color: #1b696b;
-}
-
-.bg-tertiary-1-dark {
-    background-color: #1b696b;
-}
-
-.tertiary-1-light {
-    color: #ffffff;
-}
-
-.bg-tertiary-1-light {
-    background-color: #ffffff;
-}
-
-.tertiary-2-dark {
-    color: #022223;
-}
-
-.bg-tertiary-2-dark {
-    background-color: #022223;
-}
-
-.tertiary-2-light {
-    color: #a9eff0;
-}
-
-.bg-tertiary-2-light {
-    background-color: #a9eff0;
-}
-
-.neutral-1-dark {
-    color: #1b1e1a;
-}
-
-.bg-neutral-1-dark {
-    background-color: #1b1e1a;
-}
-
-.neutral-1-light {
-    color: #fdfdf5;
-}
-
-.bg-neutral-1-light {
-    background-color: #fdfdf5;
-}
-
-.neutral-variant-1 {
-    color: #444940;
-}
-
-.bg-neutral-variant-1 {
-    background-color: #444940;
-}
-
-.neutral-variant-2 {
-    color: #73786d;
-}
-
-.bg-neutral-variant-2 {
-    background-color: #73786d;
-}
-
-.neutral-variant-3 {
-    color: #c4c9bd;
-}
-
-.bg-neutral-variant-3 {
-    background-color: #c4c9bd;
-}
-
-.neutral-variant-4 {
-    color: #e0e5d7;
-}
-
-.bg-neutral-variant-4 {
-    background-color: #e0e5d7;
-}
-
-/* ---- */
-
-.border-neutral-1-dark {
-    border-color: #1b1e1a;
+* {
+    ---primary-1-dark: #3a6b22;
+    --primary-1-light: #ffffff;
+    --primary-2-dark: #062302;
+    --primary-2-light: #b8f398;
+    --secondary-1-dark: #56634d;
+    --secondary-1-light: #becbb1;
+    --secondary-2-dark: #15210f;
+    --secondary-2-light: #d9e7cb;
+    --tertiary-1-dark: #1b696b;
+    --tertiary-1-light: #ffffff;
+    --tertiary-2-dark: #022223;
+    --tertiary-2-light: #a9eff0;
+    --neutral-1-dark: #1b1e1a;
+    --neutral-1-light: #fdfdf5;
+    --neutral-variant-1: #444940;
+    --neutral-variant-2: #73786d;
+    --neutral-variant-3: #c4c9bd;
+    --neutral-variant-4: #e0e5d7;
 }

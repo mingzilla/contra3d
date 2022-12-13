@@ -1,16 +1,22 @@
+.skill_equip_panel,
+.skill_equip_panel__table,
+.skill_equip_panel__cell,
+.skill_equip_panel__header-cell,
+.skill_equip_panel__info-panel--content {
+    border-color: var(--neutral-1-dark);
+}
+
 .skill_equip_panel {
-    background-color: #73786d;
+    background-color: var(--neutral-variant-2);
     width: 260px;
     min-height: 260px;
     border-width: 2px;
-    border-color: #1b1e1a;
     padding: 8px;
     border-radius: 8px;
 }
 
 .skill_equip_panel__table {
     border-width: 1px;
-    border-color: #1b1e1a;
 }
 
 .skill_equip_panel__row {
@@ -19,17 +25,16 @@
 .skill_equip_panel__cell,
 .skill_equip_panel__header-cell {
     border-width: 1px;
-    border-color: #1b1e1a;
     width: 48px;
     height: 48px;
 }
 
 .skill_equip_panel__cell {
-    background-color: #e0e5d7;
+    background-color: var(--neutral-variant-4);
 }
 
 .skill_equip_panel__header-cell {
-    background-color: #c4c9bd;
+    background-color: var(--neutral-variant-3);
 }
 
 .skill_equip_panel__skill-block {
@@ -43,23 +48,12 @@
 }
 
 .skill_equip_panel__info-panel--content {
-    background-color: #e0e5d7;
+    background-color: var(--neutral-variant-4);
     width: 244px;
     border-width: 2px;
-    border-color: #1b1e1a;
     padding: 8px;
     border-radius: 8px;
     height: 60px;
-}
-
-/*temp*/
-.skill_equip_panel__skill__fire-ball {
-    width: 24px;
-    height: 24px;
-    border-radius: 12px;
-    background-color: red;
-    border-width: 2px;
-    border-color: darkred;
 }
 
 .skill_equip_panel__skill-slot-cost {
@@ -78,4 +72,14 @@
     padding: 0;
     -unity-text-outline-width: 1px;
     -unity-text-outline-color: rgb(35, 35, 35);
+}
+
+/*temp*/
+.skill_equip_panel__skill__fire-ball {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: red;
+    border-width: 2px;
+    border-color: darkred;
 }
