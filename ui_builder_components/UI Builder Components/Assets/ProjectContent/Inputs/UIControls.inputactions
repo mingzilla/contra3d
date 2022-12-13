@@ -1,1 +1,40 @@
-{}
+{
+    "name": "UIControls",
+    "maps": [
+        {
+            "name": "SkillEquipPanel",
+            "id": "d53fa195-c583-4827-88a3-ee5cda1d235d",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "52c0f2b4-75d6-4235-8f4a-7db17cc22416",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "dde88c08-d33c-46f3-9ad2-7399dd8c7cd7",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SkillEquipPanel",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "SkillEquipPanel",
+            "bindingGroup": "SkillEquipPanel",
+            "devices": []
+        }
+    ]
+}
