@@ -9,22 +9,22 @@
     <ui:VisualElement name="SkillEquipPanel" class="skill_equip_panel layout-vertical">
         <ui:VisualElement class="layout-vertical center">
             <ui:VisualElement name="SkillEquipPanelSkills" class="flex">
-                <ui:VisualElement class="skill_equip_panel__table">
-                    <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
+                <ui:VisualElement name="SkillEquipPanelSkillsTable" class="skill_equip_panel__table">
+                    <ui:VisualElement name="NEUTRAL" class="skill_equip_panel__row layout-horizontal">
                         <ui:Instance name="SkillEquipPanelSkillType" template="SkillEquipPanelSkillTypeTemplate"/>
-                        <ui:VisualElement name="NEUTRAL" class="layout-horizontal"/>
+                        <ui:VisualElement name="SkillEquipPanelSkillRowContent" class="layout-horizontal"/>
                     </ui:VisualElement>
-                    <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
+                    <ui:VisualElement name="FIRE" class="skill_equip_panel__row layout-horizontal">
                         <ui:Instance name="SkillEquipPanelSkillType" template="SkillEquipPanelSkillTypeTemplate"/>
-                        <ui:VisualElement name="FIRE" class="layout-horizontal"/>
+                        <ui:VisualElement name="SkillEquipPanelSkillRowContent" class="layout-horizontal"/>
                     </ui:VisualElement>
-                    <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
+                    <ui:VisualElement name="WATER" class="skill_equip_panel__row layout-horizontal">
                         <ui:Instance name="SkillEquipPanelSkillType" template="SkillEquipPanelSkillTypeTemplate"/>
-                        <ui:VisualElement name="WATER" class="layout-horizontal"/>
+                        <ui:VisualElement name="SkillEquipPanelSkillRowContent" class="layout-horizontal"/>
                     </ui:VisualElement>
-                    <ui:VisualElement class="skill_equip_panel__row layout-horizontal">
+                    <ui:VisualElement name="LIGHT" class="skill_equip_panel__row layout-horizontal">
                         <ui:Instance name="SkillEquipPanelSkillType" template="SkillEquipPanelSkillTypeTemplate"/>
-                        <ui:VisualElement name="LIGHT" class="layout-horizontal"/>
+                        <ui:VisualElement name="SkillEquipPanelSkillRowContent" class="layout-horizontal"/>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>

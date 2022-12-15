@@ -9,6 +9,7 @@ namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
     public class SkillEquipPanelCompController : MonoBehaviour
     {
         private VisualElement root;
+        private VisualElement skillsTable;
         public int relatedPlayerId = 1;
 
         private EquipSkillStoreData storeData = new();
@@ -17,24 +18,32 @@ namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
         {
             Skill selectedSkill = storeData.activeItems.selectedSkill;
             root = GetComponent<UIDocument>().rootVisualElement;
-            VisualElement[] skillContainers =
+            skillsTable = root.Q<VisualElement>("SkillEquipPanelSkillsTable");
+            VisualElement[] skillRows =
             {
-                root.Q<VisualElement>("NEUTRAL"),
-                root.Q<VisualElement>("FIRE"),
-                root.Q<VisualElement>("WATER"),
-                root.Q<VisualElement>("LIGHT"),
+                skillsTable.Q<VisualElement>("NEUTRAL"),
+                skillsTable.Q<VisualElement>("FIRE"),
+                skillsTable.Q<VisualElement>("WATER"),
+                skillsTable.Q<VisualElement>("LIGHT"),
             };
 
+            Dictionary<string, ElementalType> elementalTypeMap = ElementalType.ItemsMap();
             Dictionary<string, List<Skill>> skillGroup = Skill.AllGroupByStringType();
 
-            foreach (VisualElement skillContainer in skillContainers)
+            foreach (VisualElement skillRow in skillRows)
             {
-                List<Skill> skills = skillGroup[(skillContainer.name)];
+                VisualElement skillRowTypeImage = skillRow.Q<VisualElement>("SkillEquipPanelSkillTypeImage");
+                VisualElement skillRowContent = skillRow.Q<VisualElement>("SkillEquipPanelSkillRowContent");
+
+                ElementalType type = elementalTypeMap[(skillRow.name)];
+                skillRowTypeImage.AddToClassList(type.imageCssClass);
+                
+                List<Skill> skills = skillGroup[(skillRow.name)];
                 skills.ForEach(skill =>
                 {
                     bool isSkillActive = storeData.activeItems.isSkillActive(skill);
                     SkillEquipPanelSkillComp skillBox = SkillEquipPanelSkillComp.Create(skill, selectedSkill, isSkillActive);
-                    skillContainer.Add(skillBox.root);
+                    skillRowContent.Add(skillBox.root);
                 });
             }
         }

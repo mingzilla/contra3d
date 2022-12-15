@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:VisualElement class="skill_equip_panel__header-cell layout-vertical center">
         <ui:VisualElement name="SkillEquipPanelSkillType" class="skill_equip_panel__skill-block layout-vertical center relative-position">
-            <ui:VisualElement name="SkillEquipPanelSkillFireBall" class="skill_equip_panel__skill__fire-ball" />
+            <ui:Image name="SkillEquipPanelSkillTypeImage" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
