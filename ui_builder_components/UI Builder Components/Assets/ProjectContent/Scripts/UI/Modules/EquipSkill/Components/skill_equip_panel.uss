@@ -34,7 +34,7 @@
 }
 
 .skill_equip_panel__header-cell {
-    background-color: var(--neutral-variant-3);
+    background-color: var(--neutral-variant-1);
 }
 
 .skill_equip_panel__skill-block {
@@ -76,26 +76,26 @@
 
 /*skill types*/
 .skill_equip_panel__skill-type__physical {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     background-image: resource("Assets/ProjectContent/Materials/images/icons/fist.png");
 }
 
 .skill_equip_panel__skill-type__fire {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     background-image: resource("Assets/ProjectContent/Materials/images/icons/fire.png");
 }
 
 .skill_equip_panel__skill-type__water {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     background-image: resource("Assets/ProjectContent/Materials/images/icons/water.png");
 }
 
 .skill_equip_panel__skill-type__light {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     background-image: resource("Assets/ProjectContent/Materials/images/icons/light.png");
 }
 
