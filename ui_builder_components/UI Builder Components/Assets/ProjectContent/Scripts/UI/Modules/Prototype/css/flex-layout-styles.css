@@ -1,0 +1,131 @@
+/*******************************
+          Flex Layout
+*******************************/
+
+.layout-horizontal, .layout-vertical {
+    display: flex;
+}
+
+.layout-horizontal {
+    flex-direction: row;
+}
+
+.layout-horizontal.reverse {
+    flex-direction: row-reverse;
+}
+
+.layout-vertical {
+    flex-direction: column;
+}
+
+.layout-vertical.reverse {
+    flex-direction: column-reverse;
+}
+
+.layout-horizontal.wrap, .layout-vertical.wrap {
+    flex-wrap: wrap;
+}
+
+.layout-horizontal.wrap-reverse, .layout-vertical.wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.flex {
+    flex: 1;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.flex-4 {
+    flex: 4;
+}
+
+.flex-5 {
+    flex: 5;
+}
+
+.flex-6 {
+    flex: 6;
+}
+
+.flex-7 {
+    flex: 7;
+}
+
+.flex-8 {
+    flex: 8;
+}
+
+.flex-9 {
+    flex: 9;
+}
+
+.flex-10 {
+    flex: 10;
+}
+
+.flex-11 {
+    flex: 11;
+}
+
+.flex-12 {
+    flex: 12;
+}
+
+/* alignment in cross axis */
+.layout-horizontal.start, .layout-vertical.start {
+    align-items: flex-start;
+}
+
+.layout-horizontal.center, .layout-vertical.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.layout-horizontal.end, .layout-vertical.end {
+    align-items: flex-end;
+}
+
+/* alignment in main axis */
+.layout-horizontal.start-justified, .layout-vertical.start-justified {
+    justify-content: flex-start;
+}
+
+.layout-horizontal.end-justified, .layout-vertical.end-justified {
+    justify-content: flex-end;
+}
+
+.layout-horizontal.space-around, .layout-vertical.space-around {
+    justify-content: space-around;
+}
+
+.layout-horizontal.space-between, .layout-vertical.space-between {
+    justify-content: space-between;
+}
+
+/* self alignment */
+.self-start {
+    align-self: flex-start;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-stretch {
+    align-self: stretch;
+}
