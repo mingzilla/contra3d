@@ -35,3 +35,40 @@
     --color-bg-fire : #d6857e;
     --color-bg-light : #d6b17e;
 }
+
+/*
+panel
+- (a1) bg - (a2), (b1), (c1)
+- (a2) text
+- (a3) border
+- (a4) header-bg
+button
+- (b1) bg
+- (b2) text
+- (b3) border
+text-box
+- (c1) bg
+- (c2) text
+- (c3) border
+table
+- (d1) bg - transparent
+- (d2) text - inherit
+- (d3) border
+- (d4) header-bg - can blend
+error
+- (e1) bg
+- (e2) text
+- (e3) text-on-bg
+active
+- (f1) bg
+
+*/
+
+* {
+    --color--button--dark-bg: #73786d;
+    --color--button--dark-text: #fdfdf5;
+    
+    --color--button--light-bg: #fdfdf5;
+    --color--button--light-text: #444940;
+    
+}
