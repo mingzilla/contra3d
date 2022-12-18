@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectContent.Scripts.UI.Modules.TitleScreen.BaseStore.Domain.MenuItems
+namespace ProjectContent.Scripts.Types
 {
     public class SettingsScreenMenuItem
     {

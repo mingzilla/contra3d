@@ -50,11 +50,15 @@
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Util\UiUtil.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\GameMenuPanel.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleScreenMenuPanel.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\MenuItems\TitleMenuItem.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\MenuItems\SettingsScreenMenuItem.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleMenuItem.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuStoreData.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\GameMenuItem.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Types\SettingsScreenMenuItem.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\InGameMenuPanel.cs" />
      <Folder Include="Assets" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
@@ -151,6 +155,7 @@
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\basecommands.en.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore" />
      <Folder Include="Assets\ProjectContent" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\workspaceserver.es.txt" />
@@ -198,6 +203,8 @@
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Common" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\binmergetool.zh-Hans.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\i3.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.zh-Hans.txt" />
      <Folder Include="Assets\TutorialInfo\Scripts" />
@@ -227,6 +234,7 @@
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_SDF Internal Editor.shader" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\xdiff.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\configurehelper.zh-Hans.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.zh-Hant.txt" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\clientcommon.zh-Hans.txt" />
@@ -254,7 +262,7 @@
      <Folder Include="Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\clientcommon.ko.txt" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Editor" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\MenuItems" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\i3.ja.txt" />
      <None Include="Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.Unsafe.xml" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization" />
