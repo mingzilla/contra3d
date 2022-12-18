@@ -8,7 +8,7 @@ namespace ProjectContent.Scripts.UI.Modules.GameMenu.BaseStore.Domain.Types
         public static readonly GameMenuItem RESUME = new() {name = "RESUME", index = 0};
         public static readonly GameMenuItem SETTINGS = new() {name = "SETTINGS", index = 1};
         public static readonly GameMenuItem CONTROL = new() {name = "CONTROL", index = 2};
-        public static readonly GameMenuItem EXIT = new() {name = "EXIT", index = 3};
+        public static readonly GameMenuItem QUIT_TO_TITLE = new() {name = "QUIT_TO_TITLE", index = 3};
 
         public string name;
         public int index;
@@ -20,7 +20,7 @@ namespace ProjectContent.Scripts.UI.Modules.GameMenu.BaseStore.Domain.Types
                 RESUME,
                 SETTINGS,
                 CONTROL,
-                EXIT,
+                QUIT_TO_TITLE,
             };
         }
 

@@ -31,7 +31,7 @@ namespace ProjectContent.Scripts.UI.Modules.GameMenu.BaseStore.Domain
             return this;
         }
 
-        public GameMenuActiveItems select(Action exitGameFn)
+        public GameMenuActiveItems select(Action quitToTitleFn)
         {
             if (ReferenceEquals(activeInGameMenuPanel, InGameMenuPanel.NONE)) return this;
             if (ReferenceEquals(activeInGameMenuPanel, InGameMenuPanel.PAUSED_MENU))
@@ -39,9 +39,9 @@ namespace ProjectContent.Scripts.UI.Modules.GameMenu.BaseStore.Domain
                 if (ReferenceEquals(activeGameMenuItem, GameMenuItem.RESUME)) return new GameMenuActiveItems();
                 if (ReferenceEquals(activeGameMenuItem, GameMenuItem.SETTINGS)) return new GameMenuActiveItems {activeInGameMenuPanel = InGameMenuPanel.SETTINGS_SCREEN};
                 if (ReferenceEquals(activeGameMenuItem, GameMenuItem.CONTROL)) return new GameMenuActiveItems {activeInGameMenuPanel = InGameMenuPanel.CONTROLLER_SCREEN};
-                if (ReferenceEquals(activeGameMenuItem, GameMenuItem.EXIT))
+                if (ReferenceEquals(activeGameMenuItem, GameMenuItem.QUIT_TO_TITLE))
                 {
-                    exitGameFn();
+                    quitToTitleFn();
                     return this;
                 }
             }
