@@ -7,7 +7,7 @@ namespace ProjectContent.Scripts.UI.Modules.GameMenu.BaseStore.Domain.Types
     {
         public static readonly InGameMenuPanel NONE = Create("NONE"); // hide menu
         public static readonly InGameMenuPanel PAUSED_MENU = Create("PAUSED_MENU");
-        public static readonly InGameMenuPanel CHARACTER_SELECTION = Create("CHARACTER_SELECTION");
+        public static readonly InGameMenuPanel CUSTOMISE_PLAYERS = Create("CUSTOMISE_PLAYERS");
         public static readonly InGameMenuPanel SETTINGS_SCREEN = Create("SETTINGS_SCREEN");
         public static readonly InGameMenuPanel CONTROLLER_SCREEN = Create("CONTROLLER_SCREEN");
 
@@ -19,7 +19,7 @@ namespace ProjectContent.Scripts.UI.Modules.GameMenu.BaseStore.Domain.Types
             {
                 NONE,
                 PAUSED_MENU,
-                CHARACTER_SELECTION,
+                CUSTOMISE_PLAYERS,
                 SETTINGS_SCREEN,
                 CONTROLLER_SCREEN,
             };
