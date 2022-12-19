@@ -7,9 +7,47 @@ body {
 .menu-panel {
     width: 320px;
     border-radius: 4px;
-    border: 2px #FFFFFF solid;
     padding: 12px;
     margin: 8px;
+    position: relative;
+}
+
+.menu-panel-bg-30,
+.menu-panel-bg-45,
+.menu-panel-bg-60 {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    z-index: -1;
+    border-radius: 24px;
+}
+
+.menu-panel-bg-30 {
+    background-color: #bfb450;
+    transform: rotate(30deg);
+    left: 12px;
+    top: -12px;
+}
+
+.menu-panel-bg-45 {
+    background-color: #d4284a;
+    transform: rotate(45deg);
+    left: 12px;
+    top: -12px;
+}
+
+.menu-panel-bg-60 {
+    background-color: #286dd4;
+    transform: rotate(60deg);
+    left: 12px;
+    top: -12px;
+}
+
+.menu-panel-content {
+    width: 320px;
+    padding: 12px;
+    margin: 8px;
+    z-index: 1;
 }
 
 
@@ -17,6 +55,7 @@ body {
 
 .menu-button {
     color: #FFFFFF;
+    text-shadow: 1px 1px 2px black;
     font-size: 20px;
     min-width: 120px;
     min-height: 40px;
