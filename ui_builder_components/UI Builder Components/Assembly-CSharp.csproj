@@ -1064,6 +1064,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game\game-panel.css" />
+    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel\save_slots_panel.css" />
+    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel\save_slots_panel.html" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu\settings_menu_panel.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu\settings_menu_panel.html" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\start-menu\start_menu_panel.css" />

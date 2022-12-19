@@ -43,15 +43,27 @@
     position: relative;
 }
 
+.panel-bg-deg-5,
+.panel-bg-deg-10,
 .panel-bg-deg-15,
 .panel-bg-deg-30,
 .panel-bg-deg-45,
 .panel-bg-deg-60,
-.panel-bg-deg-80 {
+.panel-bg-deg-75,
+.panel-bg-deg-80,
+.panel-bg-deg-85 {
     position: absolute;
     border-radius: 24px;
     left: 20px;
     top: 0;
+}
+
+.panel-bg-deg-5 {
+    transform: rotate(5deg);
+}
+
+.panel-bg-deg-10 {
+    transform: rotate(10deg);
 }
 
 .panel-bg-deg-15 {
@@ -70,8 +82,16 @@
     transform: rotate(60deg);
 }
 
+.panel-bg-deg-75 {
+    transform: rotate(75deg);
+}
+
 .panel-bg-deg-80 {
     transform: rotate(80deg);
+}
+
+.panel-bg-deg-85 {
+    transform: rotate(85deg);
 }
 
 
