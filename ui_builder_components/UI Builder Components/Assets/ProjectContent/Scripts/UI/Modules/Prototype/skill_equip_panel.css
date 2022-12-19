@@ -25,22 +25,22 @@ body {
 .menu-panel-bg-30 {
     background-color: #bfb450;
     transform: rotate(30deg);
-    left: 12px;
-    top: -12px;
+    left: 20px;
+    top: 0;
 }
 
 .menu-panel-bg-45 {
     background-color: #d4284a;
     transform: rotate(45deg);
-    left: 12px;
-    top: -12px;
+    left: 20px;
+    top: 0;
 }
 
 .menu-panel-bg-60 {
     background-color: #286dd4;
     transform: rotate(60deg);
-    left: 12px;
-    top: -12px;
+    left: 20px;
+    top: 0;
 }
 
 .menu-panel-content {
