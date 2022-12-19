@@ -33,7 +33,7 @@
  <div class="panel-with-bg size-720">
     <div class="full-size layout-horizontal">
     </div>
-    <div class="panel-bg-3 panel-bg-size-80 size-720"></div>
+    <div class="panel-bg-3 panel-bg-deg-80 size-720"></div>
 </div>
  */
 .panel-with-bg {
@@ -43,43 +43,46 @@
     position: relative;
 }
 
-.panel-bg-size-30,
-.panel-bg-size-45,
-.panel-bg-size-60,
-.panel-bg-size-80 {
+.panel-bg-deg-15,
+.panel-bg-deg-30,
+.panel-bg-deg-45,
+.panel-bg-deg-60,
+.panel-bg-deg-80 {
     position: absolute;
-    z-index: -1;
     border-radius: 24px;
+    left: 20px;
+    top: 0;
 }
 
-.panel-bg-size-30 {
+.panel-bg-deg-15 {
+    transform: rotate(15deg);
+}
+
+.panel-bg-deg-30 {
     transform: rotate(30deg);
-    left: 20px;
-    top: 0;
 }
 
-.panel-bg-size-45 {
+.panel-bg-deg-45 {
     transform: rotate(45deg);
-    left: 20px;
-    top: 0;
 }
 
-.panel-bg-size-60 {
+.panel-bg-deg-60 {
     transform: rotate(60deg);
-    left: 20px;
-    top: 0;
 }
 
-.panel-bg-size-80 {
+.panel-bg-deg-80 {
     transform: rotate(80deg);
-    left: 20px;
-    top: 0;
 }
 
 
 .size-320 {
     width: 320px;
     height: 320px;
+}
+
+.size-400 {
+    width: 400px;
+    height: 400px;
 }
 
 .size-720 {
