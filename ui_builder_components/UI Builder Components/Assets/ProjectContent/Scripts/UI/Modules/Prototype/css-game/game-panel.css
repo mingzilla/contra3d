@@ -1,0 +1,115 @@
+﻿body {
+    background-color: #242e30;
+    font-family: cursive;
+}
+
+/*-----------------------------*/
+
+.panel-bg-1 {
+    background-color: #bfb450;
+}
+
+.panel-bg-2 {
+    background-color: #d4284a;
+}
+
+.panel-bg-3 {
+    background-color: #286dd4;
+}
+
+.panel-bg-4 {
+    background-color: #a65596;
+}
+
+.panel-bg-5 {
+    background-color: #a65d55;
+}
+
+.panel-bg-6 {
+    background-color: #55a676;
+}
+
+/* 
+ <div class="panel-with-bg size-720">
+    <div class="full-size layout-horizontal">
+    </div>
+    <div class="panel-bg-3 panel-bg-size-80 size-720"></div>
+</div>
+ */
+.panel-with-bg {
+    border-radius: 4px;
+    padding: 12px;
+    margin: 8px;
+    position: relative;
+}
+
+.panel-bg-size-30,
+.panel-bg-size-45,
+.panel-bg-size-60,
+.panel-bg-size-80 {
+    position: absolute;
+    z-index: -1;
+    border-radius: 24px;
+}
+
+.panel-bg-size-30 {
+    transform: rotate(30deg);
+    left: 20px;
+    top: 0;
+}
+
+.panel-bg-size-45 {
+    transform: rotate(45deg);
+    left: 20px;
+    top: 0;
+}
+
+.panel-bg-size-60 {
+    transform: rotate(60deg);
+    left: 20px;
+    top: 0;
+}
+
+.panel-bg-size-80 {
+    transform: rotate(80deg);
+    left: 20px;
+    top: 0;
+}
+
+
+.size-320 {
+    width: 320px;
+    height: 320px;
+}
+
+.size-720 {
+    width: 720px;
+    height: 720px;
+}
+
+.width-320 {
+    width: 320px;
+}
+
+.width-720 {
+    width: 720px;
+}
+
+.menu-button {
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px black;
+    font-size: 20px;
+    min-width: 120px;
+    min-height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    margin: 8px;
+}
+
+.menu-button.menu-button--is-active {
+    background-color: #FFFFFF;
+    color: #73786d;
+}
