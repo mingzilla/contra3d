@@ -70,6 +70,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hant.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu" />
      <Folder Include="Library\PackageCache\com.unity.test-framework@1.1.31" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
@@ -263,7 +264,6 @@
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor" />
      <None Include="Library\PackageCache\com.unity.mathematics@1.2.6\ValidationExceptions.json" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Package Resources" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore" />
      <Folder Include="Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\guihelp.es.txt" />
@@ -1062,6 +1062,10 @@
       <Project>{7809b26d-e57b-339c-0f1e-0062d7ba4631}</Project>
       <Name>Unity.VisualScripting.State</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\start-menu\start_menu_panel.css" />
+    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\start-menu\start_menu_panel.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
