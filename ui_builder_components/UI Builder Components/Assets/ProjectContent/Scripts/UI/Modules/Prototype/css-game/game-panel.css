@@ -5,6 +5,10 @@
 
 /*-----------------------------*/
 
+.panel-bg-0 {
+    background-color: #242e30;
+}
+
 .panel-bg-1 {
     background-color: #bfb450;
 }
@@ -27,6 +31,54 @@
 
 .panel-bg-6 {
     background-color: #55a676;
+}
+
+.panel-bg-1-o02 {
+    background-color: rgba(191, 180, 80, 0.2);
+}
+
+.panel-bg-2-o02 {
+    background-color: rgba(212, 40, 74, 0.2);
+}
+
+.panel-bg-3-o02 {
+    background-color: rgba(40, 109, 212, 0.2);
+}
+
+.panel-bg-4-o02 {
+    background-color: rgba(166, 85, 150, 0.2);
+}
+
+.panel-bg-5-o02 {
+    background-color: rgba(166, 93, 85, 0.2);
+}
+
+.panel-bg-6-o02 {
+    background-color: rgba(85, 166, 118, 0.2);
+}
+
+.panel-bg-1-o05 {
+    background-color: rgba(191, 180, 80, 0.5);
+}
+
+.panel-bg-2-o05 {
+    background-color: rgba(212, 40, 74, 0.5);
+}
+
+.panel-bg-3-o05 {
+    background-color: rgba(40, 109, 212, 0.5);
+}
+
+.panel-bg-4-o05 {
+    background-color: rgba(166, 85, 150, 0.5);
+}
+
+.panel-bg-5-o05 {
+    background-color: rgba(166, 93, 85, 0.5);
+}
+
+.panel-bg-6-o05 {
+    background-color: rgba(85, 166, 118, 0.5);
 }
 
 /* 
@@ -105,6 +157,11 @@
     height: 400px;
 }
 
+.size-600 {
+    width: 600px;
+    height: 600px;
+}
+
 .size-720 {
     width: 720px;
     height: 720px;
@@ -114,8 +171,16 @@
     width: 320px;
 }
 
+.width-600 {
+    width: 600px;
+}
+
 .width-720 {
     width: 720px;
+}
+
+.width-1000 {
+    width: 1000px;
 }
 
 .menu-button {

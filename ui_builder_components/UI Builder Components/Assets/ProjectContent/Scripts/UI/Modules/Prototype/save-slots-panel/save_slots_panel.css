@@ -1,0 +1,52 @@
+﻿.save-slot-panel__slot-list {
+    height: 600px;
+    width: 1000px;
+}
+
+.save-slot-panel__save-slot {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 12px;
+}
+
+.save-slot-panel__save-slot.is-active {
+    background-color: rgba(169, 161, 95, 0.9);
+}
+
+.save-slot-panel__save-slot__num {
+    width: 120px;
+    font-size: 80px;
+    color: #919191;
+}
+
+.save-slot-panel__save-slot.is-active .save-slot-panel__save-slot__num {
+    color: #FFFFFF;
+}
+
+.save-slot-panel__save-slot__player {
+    width: 148px;
+    margin-left: 12px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.save-slot-panel__save-slot__player-num {
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    line-height: 40px;
+    background-color: rgba(215, 215, 215, 0.8);
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+
+.save-slot-panel__save-slot__actions {
+    width: 120px;
+}
