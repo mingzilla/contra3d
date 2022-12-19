@@ -1,0 +1,19 @@
+.settings-menu__full-screen-config .menu-button {
+    font-size: 72px;
+    height: 120px;
+    line-height: 120px;
+    padding: 8px;
+}
+
+.settings-menu__music-volume-config .menu-button {
+    height: 60px;
+    line-height: 60px;
+    padding: 6px;
+    min-width: 60px;
+    margin: 4px;
+    font-size: 40px;
+}
+
+.settings-menu__music-volume-config .menu-button.menu-button--is-active {
+    font-size: 52px;
+}
