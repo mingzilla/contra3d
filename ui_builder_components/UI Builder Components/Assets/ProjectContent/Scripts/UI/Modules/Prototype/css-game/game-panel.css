@@ -105,12 +105,20 @@
     border: 4px solid rgba(0, 0, 0, 0.3);
 }
 
-.panel-border-red {
-    border: 4px solid #000000;
+.panel-border-is-off {
+    border: 4px solid rgba(0, 0, 0, 0.2);
 }
 
-.panel-border-red-07 {
-    border: 4px solid rgba(215, 23, 23, 0.7);
+.panel-border-is-on {
+    border: 4px solid #55a676;
+}
+
+.panel-border-is-active {
+    border: 4px solid #d4284a;
+}
+
+.border-width-2 {
+    border-width: 2px;
 }
 
 .border-width-4 {
@@ -119,6 +127,10 @@
 
 .border-width-6 {
     border-width: 6px;
+}
+
+.border-width-8 {
+    border-width: 8px;
 }
 
 /* 
