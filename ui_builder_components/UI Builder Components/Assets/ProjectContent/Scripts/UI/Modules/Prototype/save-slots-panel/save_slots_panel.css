@@ -45,7 +45,11 @@
     border-bottom-right-radius: 20px;
 }
 
-
+.save-slot-panel__save-slot__empty-slot {
+    font-size: 28px;
+    color: #d3d3d3;
+    width: 640px;
+}
 
 .save-slot-panel__save-slot__actions {
     width: 120px;
