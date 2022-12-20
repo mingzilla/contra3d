@@ -17,18 +17,9 @@
     border: 6px solid rgba(215, 23, 23, 0.8);
 }
 
-.save-slot-panel__save-slot__side,
-.save-slot-panel__save-slot__actions {
+.save-slot-panel__save-slot__side {
     width: 120px;
     color: #4f4f4f;
-}
-
-.save-slot-panel__save-slot__actions .menu-button {
-    color: #4f4f4f;
-}
-
-.save-slot-panel__save-slot.is-active  .menu-button {
-    color: #FFFFFF;
 }
 
 .save-slot-panel__save-slot__num {
@@ -43,6 +34,7 @@
     margin: 0 8px;
     border-radius: 20px;
     position: relative;
+    padding-right: 4px;
 }
 
 .save-slot-panel__save-slot.is-active .save-slot-panel__save-slot__player {
@@ -73,14 +65,11 @@
 
 .save-slot-panel__save-slot__status-num {
     position: absolute;
-    left: 44px;
-    right: 44px;
-    top: 44px;
-    bottom: 44px;
+    right: 8px;
+    bottom: 8px;
     font-size: 20px;
     line-height: 24px;
     text-align: center;
-    border-radius: 28px;
     color: rgba(255, 255, 255, 0.6);
 }
 
