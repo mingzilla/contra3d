@@ -1,5 +1,5 @@
 ﻿.save-slot-panel__slot-list {
-    height: 640px;
+    height: 680px;
     width: 1000px;
 }
 
@@ -61,6 +61,19 @@
 
 .save-slot-panel__save-slot__player__status.accessory {
     background-image: url("../../../../../Materials/images/icons/accessory.png");
+}
+
+.save-slot-panel__save-slot__status-num {
+    position: absolute;
+    left: 44px;
+    right: 44px;
+    top: 44px;
+    bottom: 44px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 28px;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .save-slot-panel__save-slot__player-num {
