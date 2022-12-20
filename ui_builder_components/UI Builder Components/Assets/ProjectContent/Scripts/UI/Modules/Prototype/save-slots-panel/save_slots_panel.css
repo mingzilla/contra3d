@@ -1,5 +1,5 @@
 ﻿.save-slot-panel__slot-list {
-    height: 600px;
+    height: 640px;
     width: 1000px;
 }
 
@@ -8,16 +8,22 @@
     margin-bottom: 20px;
     border-radius: 20px;
     padding: 12px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 6px solid rgba(0, 0, 0, 0.2);
 }
 
 .save-slot-panel__save-slot.is-active {
-    background-color: rgba(169, 161, 95, 0.9);
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 6px solid rgba(215, 23, 23, 0.8);
+}
+
+.save-slot-panel__save-slot__left {
+    width: 120px;
+    color: #919191;
 }
 
 .save-slot-panel__save-slot__num {
-    width: 120px;
     font-size: 80px;
-    color: #919191;
 }
 
 .save-slot-panel__save-slot.is-active .save-slot-panel__save-slot__num {

@@ -81,6 +81,46 @@
     background-color: rgba(85, 166, 118, 0.5);
 }
 
+.panel-bg-black {
+    background-color: #000000;
+}
+
+.panel-bg-black-09 {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.panel-bg-black-03 {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.panel-border-black {
+    border: 4px solid #000000;
+}
+
+.panel-border-black-09 {
+    border: 4px solid rgba(0, 0, 0, 0.9);
+}
+
+.panel-border-black-03 {
+    border: 4px solid rgba(0, 0, 0, 0.3);
+}
+
+.panel-border-red {
+    border: 4px solid #000000;
+}
+
+.panel-border-red-07 {
+    border: 4px solid rgba(215, 23, 23, 0.7);
+}
+
+.border-width-4 {
+    border-width: 4px;
+}
+
+.border-width-6 {
+    border-width: 6px;
+}
+
 /* 
  <div class="panel-with-bg size-720">
     <div class="full-size layout-horizontal">
