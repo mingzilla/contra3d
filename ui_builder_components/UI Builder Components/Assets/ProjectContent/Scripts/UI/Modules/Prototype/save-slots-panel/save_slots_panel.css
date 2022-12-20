@@ -37,7 +37,46 @@
     position: relative;
 }
 
+.save-slot-panel__save-slot.is-active .save-slot-panel__save-slot__player {
+    background-color: rgba(70, 70, 70, 0.25);
+}
+
+.save-slot-panel__save-slot__player__status {
+    width: 52px;
+    height: 52px;
+    background-size: 52px 52px;
+}
+
+.save-slot-panel__save-slot__player__status.sword {
+    background-image: url("../../../../../Materials/images/icons/sword.png");
+}
+
+.save-slot-panel__save-slot__player__status.shield {
+    background-image: url("../../../../../Materials/images/icons/shield.png");
+}
+
+.save-slot-panel__save-slot__player__status.hpmp {
+    background-image: url("../../../../../Materials/images/icons/status_hp_mp.png");
+}
+
+.save-slot-panel__save-slot__player__status.accessory {
+    background-image: url("../../../../../Materials/images/icons/accessory.png");
+}
+
 .save-slot-panel__save-slot__player-num {
+    position: absolute;
+    left: 52px;
+    right: 52px;
+    top: -6px;
+    height: 24px;
+    font-size: 20px;
+    line-height: 24px;
+    background-color: rgba(215, 215, 215, 0.8);
+    text-align: center;
+    border-radius: 4px 4px 16px 16px;
+}
+
+.save-slot-panel__save-slot__player-num__corner {
     position: absolute;
     right: -4px;
     bottom: -4px;
