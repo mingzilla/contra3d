@@ -5,15 +5,20 @@
     padding: 8px;
 }
 
+.settings-menu__panel-bg {
+    top: 15px;
+    left: 15px;
+}
+
 .settings-menu__music-volume-config .menu-button {
-    height: 60px;
-    line-height: 60px;
+    height: 72px;
+    line-height: 72px;
+    min-width: 72px;
     padding: 6px;
-    min-width: 60px;
     margin: 4px;
-    font-size: 40px;
+    font-size: 36px;
 }
 
 .settings-menu__music-volume-config .menu-button.menu-button--is-active {
-    font-size: 52px;
+    font-size: 56px;
 }

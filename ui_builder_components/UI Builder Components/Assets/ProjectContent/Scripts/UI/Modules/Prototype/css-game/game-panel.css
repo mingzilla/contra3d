@@ -256,8 +256,8 @@
 }
 
 .menu-button {
-    color: #FFFFFF;
-    text-shadow: 1px 1px 2px black;
+    color: #242e30;
+    text-shadow: 1px 1px 1px #242e30;
     font-size: 20px;
     min-width: 120px;
     min-height: 40px;
@@ -271,5 +271,5 @@
 
 .menu-button.menu-button--is-active {
     background-color: #FFFFFF;
-    color: #73786d;
+    color: #242e30;
 }
