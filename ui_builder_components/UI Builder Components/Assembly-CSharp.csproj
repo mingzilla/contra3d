@@ -1063,6 +1063,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game\game-content.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game\game-panel.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-lobby\player_lobby.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-lobby\player_lobby.html" />

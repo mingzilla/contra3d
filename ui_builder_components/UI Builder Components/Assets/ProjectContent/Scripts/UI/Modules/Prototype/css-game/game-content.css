@@ -1,0 +1,40 @@
+﻿.player-lobby__player-summary {
+    width: 160px;
+    height: 160px;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 6px solid rgba(0, 0, 0, 0.3);
+}
+
+.player-summary__item_image {
+    width: 52px;
+    height: 52px;
+    background-size: 52px 52px;
+}
+
+.player-summary__item_image.sword {
+    background-image: url("../../../../../Materials/images/icons/sword.png");
+}
+
+.player-summary__item_image.shield {
+    background-image: url("../../../../../Materials/images/icons/shield.png");
+}
+
+.player-summary__item_image.hpmp {
+    background-image: url("../../../../../Materials/images/icons/status_hp_mp.png");
+}
+
+.player-summary__item_image.accessory {
+    background-image: url("../../../../../Materials/images/icons/accessory.png");
+}
+
+.player-summary__item_num {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+

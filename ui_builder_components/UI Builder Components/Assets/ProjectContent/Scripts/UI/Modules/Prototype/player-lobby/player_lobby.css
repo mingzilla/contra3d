@@ -27,3 +27,9 @@
     font-weight: bold;
     color: #242e30;
 }
+
+/*----------*/
+.player-lobby__player-control-panel {
+    height: 160px;
+    border-top: 1px solid rgba(115, 120, 109, 0.34);
+}
