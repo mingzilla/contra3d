@@ -1,0 +1,14 @@
+﻿.player-lobby {
+    width: 1440px;
+    height: 860px;
+}
+
+.player-lobby__player-box-bg {
+    width: 700px;
+    height: 400px;
+    position: absolute;
+    border-radius: 24px;
+    left: 20px;
+    top: 0;
+    transform: rotate(2deg);
+}
