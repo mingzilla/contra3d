@@ -58,11 +58,11 @@
 }
 
 .panel-bg-3-o02 {
-    background-color: rgba(40, 109, 212, 0.2);
+    background-color: rgba(85, 134, 166, 0.2);
 }
 
 .panel-bg-4-o02 {
-    background-color: rgba(166, 85, 150, 0.2);
+    background-color: rgba(103, 85, 166, 0.2);
 }
 
 .panel-bg-1-o05 {
@@ -74,11 +74,27 @@
 }
 
 .panel-bg-3-o05 {
-    background-color: rgba(40, 109, 212, 0.5);
+    background-color: rgba(85, 134, 166, 0.5);
 }
 
 .panel-bg-4-o05 {
-    background-color: rgba(166, 85, 150, 0.5);
+    background-color: rgba(103, 85, 166, 0.5);
+}
+
+.panel-bg-1-o09 {
+    background-color: rgba(191, 180, 80, 0.9);
+}
+
+.panel-bg-2-o09 {
+    background-color: rgba(166, 93, 85, 0.9);
+}
+
+.panel-bg-3-o09 {
+    background-color: rgba(85, 134, 166, 0.9);
+}
+
+.panel-bg-4-o09 {
+    background-color: rgba(103, 85, 166, 0.9);
 }
 
 .panel-bg-black {
