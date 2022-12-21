@@ -81,23 +81,10 @@
     height: 24px;
     font-size: 20px;
     line-height: 24px;
-    background-color: rgba(215, 215, 215, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #242e30;
     text-align: center;
     border-radius: 4px 4px 16px 16px;
-}
-
-.save-slot-panel__save-slot__player-num__corner {
-    position: absolute;
-    right: -4px;
-    bottom: -4px;
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
-    line-height: 40px;
-    background-color: rgba(215, 215, 215, 0.8);
-    text-align: center;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 
 .save-slot-panel__save-slot__empty-slot {
