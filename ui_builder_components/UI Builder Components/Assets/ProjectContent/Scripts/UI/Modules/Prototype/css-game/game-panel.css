@@ -9,12 +9,36 @@
     background-color: #242e30;
 }
 
+.panel-bg-s1 {
+    background-color: #6da655;
+}
+
+.panel-bg-s2 {
+    background-color: #d4284a;
+}
+
+.panel-bg-s1-o02 {
+    background-color: rgba(85, 166, 118, 0.2);
+}
+
+.panel-bg-s1-o05 {
+    background-color: rgba(85, 166, 118, 0.5);
+}
+
+.panel-bg-s2-o02 {
+    background-color: rgba(212, 40, 74, 0.2);
+}
+
+.panel-bg-s2-o05 {
+    background-color: rgba(212, 40, 74, 0.5);
+}
+
 .panel-bg-1 {
     background-color: #bfb450;
 }
 
 .panel-bg-2 {
-    background-color: #d4284a;
+    background-color: #a65d55;
 }
 
 .panel-bg-3 {
@@ -25,20 +49,12 @@
     background-color: #6755a6;
 }
 
-.panel-bg-5 {
-    background-color: #a65d55;
-}
-
-.panel-bg-6 {
-    background-color: #6da655;
-}
-
 .panel-bg-1-o02 {
     background-color: rgba(191, 180, 80, 0.2);
 }
 
 .panel-bg-2-o02 {
-    background-color: rgba(212, 40, 74, 0.2);
+    background-color: rgba(166, 93, 85, 0.2);
 }
 
 .panel-bg-3-o02 {
@@ -49,20 +65,12 @@
     background-color: rgba(166, 85, 150, 0.2);
 }
 
-.panel-bg-5-o02 {
-    background-color: rgba(166, 93, 85, 0.2);
-}
-
-.panel-bg-6-o02 {
-    background-color: rgba(85, 166, 118, 0.2);
-}
-
 .panel-bg-1-o05 {
     background-color: rgba(191, 180, 80, 0.5);
 }
 
 .panel-bg-2-o05 {
-    background-color: rgba(212, 40, 74, 0.5);
+    background-color: rgba(166, 93, 85, 0.5);
 }
 
 .panel-bg-3-o05 {
@@ -71,14 +79,6 @@
 
 .panel-bg-4-o05 {
     background-color: rgba(166, 85, 150, 0.5);
-}
-
-.panel-bg-5-o05 {
-    background-color: rgba(166, 93, 85, 0.5);
-}
-
-.panel-bg-6-o05 {
-    background-color: rgba(85, 166, 118, 0.5);
 }
 
 .panel-bg-black {
