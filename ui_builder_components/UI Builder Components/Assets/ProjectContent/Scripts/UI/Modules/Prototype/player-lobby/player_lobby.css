@@ -29,7 +29,31 @@
 }
 
 /*----------*/
+.player-lobby__player-preview {
+}
+
+.player-lobby__player-preview__box {
+    width: 300px;
+    height: 200px;
+    border: 10px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/*----------*/
 .player-lobby__player-control-panel {
     height: 160px;
-    border-top: 1px solid rgba(115, 120, 109, 0.34);
+}
+
+.player-lobby__player-control-panel__box {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    margin: 0 8px 32px;
+}
+
+.player-lobby__player-control-panel__box.is-active {
+    border: 6px solid #d4284a;    
 }
