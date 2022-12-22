@@ -1,0 +1,9 @@
+﻿.player-status {
+    left: 0;
+    top: 0;
+    width: 600px;
+    height: 200px;
+    border-radius: 4px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+}
