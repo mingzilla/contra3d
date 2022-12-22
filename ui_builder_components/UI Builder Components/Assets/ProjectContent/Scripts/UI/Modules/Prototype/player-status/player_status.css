@@ -1,9 +1,109 @@
-﻿.player-status {
-    left: 0;
-    top: 0;
-    width: 600px;
-    height: 200px;
+﻿.players-status {
+    height: 120px;
+    margin-top: 8px;
+}
+
+.player-status {
+    width: 440px;
+    height: 120px;
     border-radius: 4px;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.player-status__status-box {
+    
+}
+
+.player-status__status-box__player-box {
+    
+}
+
+.player-status__status-box__player-box__num {
+    width: 60px;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+}
+
+.player-status__status-box__player-box__num__text {
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.player-status__status-box__player-box__header {
+    width: 32px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    line-height: 32px;
+}
+
+.player-status__status-box__control-box {
+}
+
+.player-status__status-box__control-box__d-pad {
+    width: 240px;
+}
+
+.player-status__status-box__control-box__left,
+.player-status__status-box__control-box__right {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 1);
+    line-height: 24px;
+}
+
+.player-status__status-box__control-box__left {
+    text-align: right;
+}
+
+.player-status__status-box__control-box__right {
+    text-align: left;
+}
+
+.player-status__magic-box {
+    width: 120px;
+}
+
+.player-status__hp-max,
+.player-status__mp-max {
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    max-width: 200px;
+    width: 100px;
+    height: 16px;
+}
+
+.player-status__hp-current {
+    max-width: 200px;
+    width: 80px;
+    height: 100%;
+    background-color: #d4284a;
+}
+
+.player-status__mp-current {
+    max-width: 200px;
+    width: 60px;
+    height: 100%;
+    background-color: #5586a6;
+}
+
+/*-----------*/
+.d-pad {
+    width: 52px;
+    height: 52px;
+    background-size: 52px 52px;
+    background-image: url("../../../../../Materials/images/icons/button_direction_pad.png");
+}
+
+.d-pad-with-line {
+    width: 52px;
+    height: 52px;
+    background-size: 52px 52px;
+    background-image: url("../../../../../Materials/images/icons/button_direction_pad_with_line.png");
 }
