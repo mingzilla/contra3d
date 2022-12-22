@@ -13,19 +13,19 @@
 }
 
 .player-summary__item_image.sword {
-    background-image: url("../../../../../Materials/images/icons/sword.png");
+    background-image: url("../../../../../Materials/images/icons/flat_sword.png");
 }
 
 .player-summary__item_image.shield {
-    background-image: url("../../../../../Materials/images/icons/shield.png");
+    background-image: url("../../../../../Materials/images/icons/flat_shield.png");
 }
 
 .player-summary__item_image.hpmp {
-    background-image: url("../../../../../Materials/images/icons/status_hp_mp.png");
+    background-image: url("../../../../../Materials/images/icons/flat_status_hp_mp.png");
 }
 
 .player-summary__item_image.accessory {
-    background-image: url("../../../../../Materials/images/icons/accessory.png");
+    background-image: url("../../../../../Materials/images/icons/flat_accessory.png");
 }
 
 .player-summary__item_num {

@@ -66,6 +66,14 @@
     text-align: left;
 }
 
+.player-status__status-box__control-box-text.is-disabled {
+    color: #353a3a;
+}
+
+.player-status__status-box__control-box-text.is-highlighted {
+    color: #d4284a;
+}
+
 .player-status__magic-box {
     width: 120px;
 }
@@ -93,13 +101,6 @@
     background-color: #5586a6;
 }
 
-/*-----------*/
-.d-pad {
-    width: 52px;
-    height: 52px;
-    background-size: 52px 52px;
-    background-image: url("../../../../../Materials/images/icons/button_direction_pad.png");
-}
 
 .d-pad-with-line {
     width: 52px;
