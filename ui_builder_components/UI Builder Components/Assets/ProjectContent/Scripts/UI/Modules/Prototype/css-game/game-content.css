@@ -28,6 +28,12 @@
     background-image: url("../../../../../Materials/images/icons/flat_accessory.png");
 }
 
+.player-summary__item_image.is-small {
+    width: 36px;
+    height: 36px;
+    background-size: 36px 36px;
+}
+
 .player-summary__item_num {
     position: absolute;
     right: 8px;
