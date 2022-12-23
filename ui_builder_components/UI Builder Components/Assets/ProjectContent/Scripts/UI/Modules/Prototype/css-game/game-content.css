@@ -6,6 +6,7 @@
     border: 6px solid rgba(0, 0, 0, 0.3);
 }
 
+/*---------------------------------------------*/
 .player-summary__item_image {
     width: 52px;
     height: 52px;
@@ -34,6 +35,7 @@
     background-size: 36px 36px;
 }
 
+/*---------------------------------------------*/
 .player-summary__item_num {
     position: absolute;
     right: 8px;
@@ -44,20 +46,31 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
+/*---------------------------------------------*/
+.equipment-elemental-allocation {
+    width: 36px;
+    height: 8px;
+    margin: 2px 0;
+}
+
+.equipment-elemental-allocation div {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
 /*----------------COMMON PANELS-----------------*/
 .players-status-section {
-    height: 120px;
+    min-height: 120px;
     margin-top: 12px;
 }
 
 .players-panels-section {
-    height: 240px;
+    min-height: 240px;
     margin-top: 12px;
 }
 
 .in-game-player-panel {
     width: 440px;
-    height: 120px;
+    min-height: 120px;
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.5);
 }

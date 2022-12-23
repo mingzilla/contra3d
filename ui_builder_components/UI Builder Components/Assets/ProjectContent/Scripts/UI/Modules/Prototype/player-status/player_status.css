@@ -58,14 +58,6 @@
     text-align: left;
 }
 
-.player-status__status-box__control-box-text.is-disabled {
-    color: #353a3a;
-}
-
-.player-status__status-box__control-box-text.is-highlighted {
-    color: #d4284a;
-}
-
 .player-status__magic-box {
     width: 120px;
     position: relative;
@@ -103,16 +95,6 @@
 }
 
 /*------------------------*/
-.player-status__status-box__control-box__shield-status-box {
-    width: 36px;
-    height: 8px;
-    margin: 2px 0;
-}
-
-.player-status__status-box__control-box__shield-status-box div {
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
 .player-status__status-box__control-box__shield-control {
     padding-right: 8px;
 }

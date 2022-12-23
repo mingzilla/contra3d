@@ -1,3 +1,64 @@
 ﻿.in-game-player-panel.allocation-panel {
-    height: 200px;
+    min-height: 440px;
+    padding: 8px 0;
+}
+
+.allocation-panel__row {
+    color: #FFFFFF;
+    height: 68px;
+    padding-right: 8px;
+}
+
+.allocation-panel__row__points {
+    width: 60px;
+}
+
+.allocation-panel__row__header {
+    width: 60px;
+}
+
+/*------------------------*/
+.allocation-panel__group-icon {
+    width: 44px;
+    height: 44px;
+    background-size: 44px 44px;
+}
+
+.allocation-panel__group-icon.sword {
+    background-image: url("../../../../../Materials/images/icons/flat_sword.png");
+}
+
+.allocation-panel__group-icon.shield {
+    background-image: url("../../../../../Materials/images/icons/flat_shield.png");
+}
+
+.allocation-panel__group-icon.hpmp {
+    background-image: url("../../../../../Materials/images/icons/flat_status_hp_mp.png");
+}
+
+/*------------------------*/
+.allocation-panel__header-icon {
+    width: 44px;
+    height: 44px;
+    background-size: 44px 44px;
+}
+
+.allocation-panel__header-icon.sword {
+    background-image: url("../../../../../Materials/images/icons/sword.png");
+}
+
+.allocation-panel__header-icon.staff {
+    background-image: url("../../../../../Materials/images/icons/staff.png");
+}
+
+.allocation-panel__header-icon.shield {
+    background-image: url("../../../../../Materials/images/icons/flat_shield.png");
+}
+
+/*------------------------*/
+.allocation-panel__row__cell-item {
+    background-color: rgba(255, 255, 255, 0.01);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    width: 56px;
+    height: 56px;
 }
