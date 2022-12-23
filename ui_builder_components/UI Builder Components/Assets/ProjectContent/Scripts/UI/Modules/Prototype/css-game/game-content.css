@@ -74,8 +74,12 @@
     background-image: url("../../../../../Materials/images/icons/staff.png");
 }
 
-.bg-icon.shield-equipment {
-    background-image: url("../../../../../Materials/images/icons/flat_shield.png");
+.bg-icon.shield-equipment-1 {
+    background-image: url("../../../../../Materials/images/icons/flat_shield_1.png");
+}
+
+.bg-icon.shield-equipment-2 {
+    background-image: url("../../../../../Materials/images/icons/flat_shield_2.png");
 }
 
 /*---------------------------------------------*/
