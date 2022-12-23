@@ -67,11 +67,19 @@
 /*---------------------------------------------*/
 
 .bg-icon.sword-equipment {
-    background-image: url("../../../../../Materials/images/icons/sword.png");
+    background-image: url("../../../../../Materials/images/icons/flat_sword.png");
 }
 
 .bg-icon.staff-equipment {
     background-image: url("../../../../../Materials/images/icons/staff.png");
+}
+
+.bg-icon.staff-equipment-1 {
+    background-image: url("../../../../../Materials/images/icons/flat_staff_1.png");
+}
+
+.bg-icon.staff-equipment-2 {
+    background-image: url("../../../../../Materials/images/icons/flat_staff_2.png");
 }
 
 .bg-icon.shield-equipment-1 {
