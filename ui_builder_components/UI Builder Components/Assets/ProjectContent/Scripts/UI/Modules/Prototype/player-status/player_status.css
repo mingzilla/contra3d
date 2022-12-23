@@ -1,6 +1,6 @@
 ﻿.players-status {
     height: 120px;
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
 .player-status {
@@ -76,6 +76,7 @@
 
 .player-status__magic-box {
     width: 120px;
+    position: relative;
 }
 
 .player-status__hp-max,
@@ -118,4 +119,100 @@
 
 .player-status__status-box__control-box__shield-status-box div {
     border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/*------------------------*/
+.player-status__magic-box {
+    position: relative;
+}
+
+.player-status__magic-box__skills {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: #FFFFFF;
+}
+
+/*------------------------*/
+.player-status__magic-box__button {
+    position: absolute;
+
+}
+
+.player-status__magic-box__button.is-top {
+    top: -6px;
+    left: 51px;
+}
+
+.player-status__magic-box__button.is-left {
+    top: 51px;
+    left: -6px;
+}
+
+.player-status__magic-box__button.is-bottom {
+    bottom: -6px;
+    left: 51px;
+}
+
+.player-status__magic-box__button.is-right {
+    top: 51px;
+    right: -6px;
+}
+
+.player-status__magic-box__button.is-control {
+    top: 1px;
+    right: 0;
+}
+
+.player-status__magic-box__button__control-plus {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #FFFFFF;
+}
+
+.player-status__magic-box__button.is-swap {
+    bottom: 0;
+    right: 0;
+}
+
+.player-status__magic-box__button__control-swap {
+    position: absolute;
+    right: 0;
+    bottom: 22px;
+
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+}
+
+.player-status__magic-box__button__control-swap.is-left {
+    background-image: url("../../../../../Materials/images/icons/toggle_left.png");
+}
+
+.player-status__magic-box__button__control-swap.is-right {
+    background-image: url("../../../../../Materials/images/icons/toggle_right.png");
+}
+
+/*------------------------*/
+.player-status__magic-box__content45 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    transform: rotate(45deg);
+}
+
+.player-status__magic-box__content45__box {
+    width: 80px;
+    height: 80px;
+}
+
+.player-status__magic-box__content45__box .box {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(109, 166, 85, 0.05);
 }

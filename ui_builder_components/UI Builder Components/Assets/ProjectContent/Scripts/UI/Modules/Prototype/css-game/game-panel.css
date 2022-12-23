@@ -298,3 +298,16 @@
     height: 20px;
     line-height: 20px;
 }
+
+.control-button.is-tiny {
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    font-size: 12px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+.control-button.is-rounded {
+    border-radius: 20px;
+}
