@@ -121,6 +121,14 @@
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+.player-status__status-box__control-box__shield-control {
+    padding-right: 8px;
+}
+
+.player-status__status-box__control-box__shield-count {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 /*------------------------*/
 .player-status__magic-box {
     position: relative;
