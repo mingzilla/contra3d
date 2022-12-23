@@ -163,6 +163,10 @@
     position: absolute;
 }
 
+.player-status__magic-box__button.is-disabled {
+    opacity: 0.4;
+}
+
 .player-status__magic-box__button.is-top {
     top: -6px;
     left: 51px;
