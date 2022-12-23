@@ -6,15 +6,12 @@
 .allocation-panel__row {
     color: rgba(255, 255, 255, 0.8);
     height: 68px;
-    padding-right: 8px;
 }
 
+.allocation-panel__row__header,
 .allocation-panel__row__points {
     width: 60px;
-}
-
-.allocation-panel__row__header {
-    width: 60px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /*------------------------*/
@@ -34,4 +31,8 @@
     font-size: 28px;
     line-height: 56px;
     text-align: center;
+}
+
+.allocation-panel__row__cell-item .bg-icon {
+    background-color: rgba(255, 255, 255, 0.05);
 }

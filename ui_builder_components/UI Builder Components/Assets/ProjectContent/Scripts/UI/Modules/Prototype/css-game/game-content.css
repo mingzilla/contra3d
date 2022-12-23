@@ -53,15 +53,15 @@
 /*---------------------------------------------*/
 
 .bg-icon.elemental-fire {
-    background-image: url("../../../../../Materials/images/icons/fire.png");
+    background-image: url("../../../../../Materials/images/icons/flat_fire.png");
 }
 
 .bg-icon.elemental-water {
-    background-image: url("../../../../../Materials/images/icons/water.png");
+    background-image: url("../../../../../Materials/images/icons/flat_water.png");
 }
 
 .bg-icon.elemental-light {
-    background-image: url("../../../../../Materials/images/icons/light.png");
+    background-image: url("../../../../../Materials/images/icons/flat_light.png");
 }
 
 /*---------------------------------------------*/

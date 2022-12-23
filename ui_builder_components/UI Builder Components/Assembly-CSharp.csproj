@@ -95,7 +95,6 @@
      <Folder Include="Library\PackageCache\com.unity.ide.rider@3.0.16\Rider" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\semantic.zh-Hant.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\clientcommon.es.txt" />
-     <Folder Include="Assets\ProjectContent\Materials\images\icons" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources" />
      <Folder Include="Library\PackageCache\com.unity.inputsystem@1.4.4\Tests" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-theme.uss" />
@@ -1066,6 +1065,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ProjectContent\Materials\images\icons\flat_fire.png" />
+    <Content Include="Assets\ProjectContent\Materials\images\icons\flat_light.png" />
+    <Content Include="Assets\ProjectContent\Materials\images\icons\flat_water.png" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game\game-content.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game\game-panel.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation\panel-allocation.css" />
