@@ -44,3 +44,20 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
+/*----------------COMMON PANELS-----------------*/
+.players-status-section {
+    height: 120px;
+    margin-top: 12px;
+}
+
+.players-panels-section {
+    height: 240px;
+    margin-top: 12px;
+}
+
+.in-game-player-panel {
+    width: 440px;
+    height: 120px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+}

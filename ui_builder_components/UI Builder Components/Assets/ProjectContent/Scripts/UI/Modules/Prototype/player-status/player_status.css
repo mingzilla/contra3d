@@ -1,22 +1,14 @@
-﻿.players-status {
+﻿.in-game-player-panel.player-status-panel {
     height: 120px;
-    margin-top: 12px;
-}
 
-.player-status {
-    width: 440px;
-    height: 120px;
-    border-radius: 4px;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .player-status__status-box {
-    
+
 }
 
 .player-status__status-box__player-box {
-    
+
 }
 
 .player-status__status-box__player-box__num {
