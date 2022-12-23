@@ -57,3 +57,9 @@
 .player-lobby__player-control-panel__box.is-active {
     border: 6px solid #d4284a;    
 }
+
+/*----------*/
+.player-lobby__player-join-instruction {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 32px;
+}

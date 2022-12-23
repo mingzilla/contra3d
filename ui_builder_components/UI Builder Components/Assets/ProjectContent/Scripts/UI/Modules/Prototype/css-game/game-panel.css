@@ -288,6 +288,7 @@
     line-height: 32px;
     text-align: center;
     color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
 }
 
 .control-button.is-small {
