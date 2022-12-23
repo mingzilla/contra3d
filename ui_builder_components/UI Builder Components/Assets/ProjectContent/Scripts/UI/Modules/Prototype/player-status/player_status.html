@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./../css-game/game-panel.css"/>
     <link rel="stylesheet" href="./../css-game/game-content.css"/>
     <link rel="stylesheet" href="./player_status.css"/>
+    <link rel="stylesheet" href="./player_status_skills.css"/>
 </head>
 <body>
 
@@ -78,24 +79,11 @@
             </div>
 
             <div class="player-status__magic-box">
-                <div class="player-status__magic-box__skills layout-horizontal">
-                    <div class="layout-vertical flex">
-                        <div class="flex"></div>
-                        <div class="flex layout-vertical center">A</div>
-                        <div class="flex"></div>
-                    </div>
-                    <div class="layout-vertical flex">
-                        <div class="flex layout-vertical center">B</div>
-                        <div class="flex"></div>
-                        <div class="flex layout-vertical center">C</div>
-                    </div>
-                    <div class="layout-vertical flex">
-                        <div class="flex"></div>
-                        <div class="flex layout-vertical center">D</div>
-                        <div class="flex"></div>
-                    </div>
-                </div>
-                
+                <div class="player-status__magic-box__skill is-top is-skill-fire"></div>
+                <div class="player-status__magic-box__skill is-left is-skill-water"></div>
+                <div class="player-status__magic-box__skill is-bottom is-skill-light"></div>
+                <div class="player-status__magic-box__skill is-right"></div>
+
                 <div class="control-button is-tiny is-rounded player-status__magic-box__button is-top">Y</div>
                 <div class="control-button is-tiny is-rounded player-status__magic-box__button is-left">X</div>
                 <div class="control-button is-tiny is-rounded player-status__magic-box__button is-bottom">A</div>

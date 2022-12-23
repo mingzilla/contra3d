@@ -1069,6 +1069,7 @@
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-lobby\player_lobby.html" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-status\player_status.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-status\player_status.html" />
+    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-status\player_status_skills.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel\save_slots_panel.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel\save_slots_panel.html" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu\settings_menu_panel.css" />

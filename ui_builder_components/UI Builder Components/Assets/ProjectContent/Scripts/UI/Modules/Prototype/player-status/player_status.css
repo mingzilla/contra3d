@@ -126,19 +126,33 @@
     position: relative;
 }
 
-.player-status__magic-box__skills {
+.player-status__magic-box__skill {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    color: #FFFFFF;
+}
+
+.player-status__magic-box__skill.is-top {
+    top: 15px;
+    left: 45px;
+}
+
+.player-status__magic-box__skill.is-left {
+    top: 43px;
+    left: 16px;
+}
+
+.player-status__magic-box__skill.is-bottom {
+    bottom: 15px;
+    left: 45px;
+}
+
+.player-status__magic-box__skill.is-right {
+    top: 43px;
+    right: 16px;
 }
 
 /*------------------------*/
 .player-status__magic-box__button {
     position: absolute;
-
 }
 
 .player-status__magic-box__button.is-top {

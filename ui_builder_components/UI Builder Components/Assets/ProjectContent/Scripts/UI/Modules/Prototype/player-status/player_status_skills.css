@@ -1,0 +1,17 @@
+﻿.player-status__magic-box__skill {
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+}
+
+.player-status__magic-box__skill.is-skill-fire {
+    background-image: url("../../../../../Materials/images/icons/fire.png");
+}
+
+.player-status__magic-box__skill.is-skill-water {
+    background-image: url("../../../../../Materials/images/icons/water.png");
+}
+
+.player-status__magic-box__skill.is-skill-light {
+    background-image: url("../../../../../Materials/images/icons/light.png");
+}
