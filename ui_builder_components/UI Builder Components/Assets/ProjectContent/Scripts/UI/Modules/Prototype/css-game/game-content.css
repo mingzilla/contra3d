@@ -7,32 +7,75 @@
 }
 
 /*---------------------------------------------*/
-.player-summary__item_image {
+
+.bg-icon {
     width: 52px;
     height: 52px;
     background-size: 52px 52px;
 }
 
-.player-summary__item_image.sword {
-    background-image: url("../../../../../Materials/images/icons/flat_sword.png");
+.bg-icon.size-32 {
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
 }
 
-.player-summary__item_image.shield {
-    background-image: url("../../../../../Materials/images/icons/flat_shield.png");
-}
-
-.player-summary__item_image.hpmp {
-    background-image: url("../../../../../Materials/images/icons/flat_status_hp_mp.png");
-}
-
-.player-summary__item_image.accessory {
-    background-image: url("../../../../../Materials/images/icons/flat_accessory.png");
-}
-
-.player-summary__item_image.is-small {
+.bg-icon.size-36 {
     width: 36px;
     height: 36px;
     background-size: 36px 36px;
+}
+
+.bg-icon.size-44 {
+    width: 44px;
+    height: 44px;
+    background-size: 44px 44px;
+}
+
+/*---------------------------------------------*/
+
+.bg-icon.sword-slots {
+    background-image: url("../../../../../Materials/images/icons/flat_sword.png");
+}
+
+.bg-icon.shield-slots {
+    background-image: url("../../../../../Materials/images/icons/flat_shield.png");
+}
+
+.bg-icon.hpmp-slots {
+    background-image: url("../../../../../Materials/images/icons/flat_status_hp_mp.png");
+}
+
+.bg-icon.accessory-slots {
+    background-image: url("../../../../../Materials/images/icons/flat_accessory.png");
+}
+
+/*---------------------------------------------*/
+
+.bg-icon.elemental-fire {
+    background-image: url("../../../../../Materials/images/icons/fire.png");
+}
+
+.bg-icon.elemental-water {
+    background-image: url("../../../../../Materials/images/icons/water.png");
+}
+
+.bg-icon.elemental-light {
+    background-image: url("../../../../../Materials/images/icons/light.png");
+}
+
+/*---------------------------------------------*/
+
+.bg-icon.sword-equipment {
+    background-image: url("../../../../../Materials/images/icons/sword.png");
+}
+
+.bg-icon.staff-equipment {
+    background-image: url("../../../../../Materials/images/icons/staff.png");
+}
+
+.bg-icon.shield-equipment {
+    background-image: url("../../../../../Materials/images/icons/flat_shield.png");
 }
 
 /*---------------------------------------------*/
