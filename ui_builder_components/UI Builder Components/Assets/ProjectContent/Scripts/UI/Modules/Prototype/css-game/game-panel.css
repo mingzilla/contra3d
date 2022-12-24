@@ -57,6 +57,7 @@
     background-color: rgba(85, 166, 118, 0.2);
 }
 
+.panel-bg--is-on,
 .panel-bg-s1-o05 {
     background-color: rgba(85, 166, 118, 0.5);
 }
