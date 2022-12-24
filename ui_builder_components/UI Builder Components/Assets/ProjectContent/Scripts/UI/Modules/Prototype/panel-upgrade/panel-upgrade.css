@@ -1,0 +1,14 @@
+﻿.in-game-player-panel.upgrade-panel {
+}
+
+.upgrade-panel__table {
+    height: 480px;
+}
+
+.upgrade-panel__help-panel {
+    height: 100px;
+}
+
+.upgrade-panel__controls {
+    height: 40px;
+}
