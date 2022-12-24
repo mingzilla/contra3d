@@ -165,6 +165,10 @@
 }
 
 /*------------------------*/
+.in-game-player-panel__row__cell-box {
+    width: 80px;
+}
+
 .in-game-player-panel__row__cell-item {
     background-color: rgba(255, 255, 255, 0.01);
     border: 2px solid rgba(0, 0, 0, 0.2);
