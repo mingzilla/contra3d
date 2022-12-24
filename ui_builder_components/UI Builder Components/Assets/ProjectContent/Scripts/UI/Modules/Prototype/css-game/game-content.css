@@ -96,6 +96,10 @@
     background-image: url("../../../../../Materials/images/icons/button_direction_pad.png");
 }
 
+.bg-icon.left-stick {
+    background-image: url("../../../../../Materials/images/icons/left_stick.png");
+}
+
 .bg-icon.select-key {
     background-image: url("../../../../../Materials/images/icons/button_select.png");
 }
@@ -138,4 +142,12 @@
     min-height: 120px;
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.in-game-player-panel__header {
+    height: 32px;
+    font-size: 18px;
+    line-height: 32px;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.2);
 }
