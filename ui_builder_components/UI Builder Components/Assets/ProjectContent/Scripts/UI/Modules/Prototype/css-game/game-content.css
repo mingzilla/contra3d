@@ -91,6 +91,16 @@
 }
 
 /*---------------------------------------------*/
+
+.bg-icon.d-pad {
+    background-image: url("../../../../../Materials/images/icons/button_direction_pad.png");
+}
+
+.bg-icon.select-key {
+    background-image: url("../../../../../Materials/images/icons/button_select.png");
+}
+
+/*---------------------------------------------*/
 .player-summary__item_num {
     position: absolute;
     right: 8px;

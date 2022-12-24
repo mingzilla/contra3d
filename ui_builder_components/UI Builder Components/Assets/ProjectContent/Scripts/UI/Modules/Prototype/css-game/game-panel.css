@@ -47,7 +47,7 @@
     border-color: #55a676;
 }
 
-.panel-with-border.panel-border-is-active {
+.panel-with-border.panel-border-is-selected {
     border-color: #d4284a;
 }
 
@@ -330,3 +330,36 @@
 .control-button.is-rounded {
     border-radius: 20px;
 }
+
+/*
+<div class="layout-vertical center panel-with-border panel-border-is-selected has-left-right-control can-edit">
+    <div class="bg-icon size-44 elemental-fire"></div>
+    <div class="control-button is-tiny is-left">LB</div>
+    <div class="control-button is-tiny is-right">RB</div>
+</div>
+------------------------------------------*/
+.panel-border-is-selected.has-left-right-control {
+    position: relative;
+}
+
+.has-left-right-control .control-button {
+    display: none;
+    position: absolute;
+    bottom: -10px;
+}
+
+.has-left-right-control .control-button.is-left {
+    display: none;
+    left: -10px;
+}
+
+.has-left-right-control .control-button.is-right {
+    display: none;
+    right: -10px;
+}
+
+.panel-border-is-selected.has-left-right-control.can-edit .control-button {
+    display: block;
+}
+
+/*------------------------------------------*/
