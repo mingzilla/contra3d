@@ -113,23 +113,23 @@
 }
 
 .player-status__magic-box__skill.is-top {
-    top: 15px;
-    left: 45px;
+    top: 10px;
+    left: 38px;
 }
 
 .player-status__magic-box__skill.is-left {
-    top: 43px;
-    left: 16px;
+    top: 38px;
+    left: 10px;
 }
 
 .player-status__magic-box__skill.is-bottom {
-    bottom: 15px;
-    left: 45px;
+    bottom: 10px;
+    left: 38px;
 }
 
 .player-status__magic-box__skill.is-right {
-    top: 43px;
-    right: 16px;
+    top: 38px;
+    right: 10px;
 }
 
 /*------------------------*/

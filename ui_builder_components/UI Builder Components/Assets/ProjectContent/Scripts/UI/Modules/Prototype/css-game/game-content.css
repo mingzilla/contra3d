@@ -104,6 +104,104 @@
     background-image: url("../../../../../Materials/images/icons/button_select.png");
 }
 
+/*------------------ SKILLS -------------------*/
+
+.bg-icon.skill__fire__fire-ball {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-ball.png");
+}
+
+.bg-icon.skill__fire__fire-ball__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-ball_no-effect.png");
+}
+
+.bg-icon.skill__fire__fire-bounce-ball {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-bounce-ball.png");
+}
+
+.bg-icon.skill__fire__fire-bounce-ball__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-bounce-ball_no-effect.png");
+}
+
+.bg-icon.skill__fire__fire-strike {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-strike.png");
+}
+
+.bg-icon.skill__fire__fire-strike__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-strike_no-effect.png");
+}
+
+.bg-icon.skill__fire__meteor-storm {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_meteor-storm.png");
+}
+
+.bg-icon.skill__fire__meteor-storm__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_meteor-storm_no-effect.png");
+}
+
+.bg-icon.skill__fire__spread-fire-balls {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_spread-fire-balls.png");
+}
+
+.bg-icon.skill__fire__spread-fire-balls__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_spread-fire-balls_no-effect.png");
+}
+
+.bg-icon.skill__light__basic-light {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_basic-light.png");
+}
+
+.bg-icon.skill__light__basic-light__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_basic-light_no-effect.png");
+}
+
+.bg-icon.skill__light__chain-light {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_chain-light.png");
+}
+
+.bg-icon.skill__light__chain-light__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_chain-light_no-effect.png");
+}
+
+.bg-icon.skill__light__light-strike {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_light-strike.png");
+}
+
+.bg-icon.skill__light__light-strike__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_light-strike_no-effect.png");
+}
+
+.bg-icon.skill__water__water-ball {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_water-ball.png");
+}
+
+.bg-icon.skill__water__water-ball__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_water-ball_no-effect.png");
+}
+
+.bg-icon.skill__water__ice-bolt {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-bolt.png");
+}
+
+.bg-icon.skill__water__ice-bolt__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-bolt_no-effect.png");
+}
+
+.bg-icon.skill__water__ice-ring {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-ring.png");
+}
+
+.bg-icon.skill__water__ice-ring__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-ring_no-effect.png");
+}
+
+.bg-icon.skill__water__ice-wave {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-wave.png");
+}
+
+.bg-icon.skill__water__ice-wave__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-wave_no-effect.png");
+}
+
 /*---------------------------------------------*/
 .player-summary__item_num {
     position: absolute;
