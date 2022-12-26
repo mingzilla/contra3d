@@ -14,6 +14,18 @@
     background-size: 52px 52px;
 }
 
+.bg-icon.size-20 {
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+}
+
+.bg-icon.size-24 {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+}
+
 .bg-icon.size-32 {
     width: 32px;
     height: 32px;
@@ -200,6 +212,24 @@
 
 .bg-icon.skill__light__light-strike__no-effect {
     background-image: url("../../../../../Materials/images/icons/skill-icon_light_light-strike_no-effect.png");
+}
+
+/*---------------------------------------------*/
+
+.bg-icon.toggle-left {
+    background-image: url("../../../../../Materials/images/icons/toggle_left.png");
+}
+
+.bg-icon.toggle-right {
+    background-image: url("../../../../../Materials/images/icons/toggle_right.png");
+}
+
+.bg-icon.toggle-top {
+    background-image: url("../../../../../Materials/images/icons/toggle_top.png");
+}
+
+.bg-icon.toggle-bottom {
+    background-image: url("../../../../../Materials/images/icons/toggle_bottom.png");
 }
 
 /*---------------------------------------------*/

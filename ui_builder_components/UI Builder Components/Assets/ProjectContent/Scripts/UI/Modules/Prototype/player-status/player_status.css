@@ -169,7 +169,7 @@
 .player-status__magic-box__button__control-plus {
     position: absolute;
     top: 0;
-    right: 16px;
+    right: 15px;
     font-size: 24px;
     width: 24px;
     height: 24px;
@@ -183,20 +183,8 @@
 
 .player-status__magic-box__button__control-swap {
     position: absolute;
-    right: 0;
-    bottom: 22px;
-
-    width: 24px;
-    height: 24px;
-    background-size: 24px 24px;
-}
-
-.player-status__magic-box__button__control-swap.is-left {
-    background-image: url("../../../../../Materials/images/icons/toggle_left.png");
-}
-
-.player-status__magic-box__button__control-swap.is-right {
-    background-image: url("../../../../../Materials/images/icons/toggle_right.png");
+    right: 24px;
+    bottom: 2px;
 }
 
 /*------------------------*/
