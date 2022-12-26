@@ -1,0 +1,14 @@
+﻿.in-game-player-panel.accessories-panel {
+}
+
+.accessories-panel__table {
+    height: 480px;
+}
+
+.accessories-panel__help-panel {
+    height: 100px;
+}
+
+.accessories-panel__controls {
+    height: 40px;
+}

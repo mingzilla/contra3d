@@ -32,3 +32,11 @@
 .skills-panel__controls {
     height: 40px;
 }
+
+.control-button.set-1-bg {
+    background-color: rgba(85, 166, 118, 1);
+}
+
+.control-button.set-2-bg {
+    background-color: rgba(103, 85, 166, 1);
+}
