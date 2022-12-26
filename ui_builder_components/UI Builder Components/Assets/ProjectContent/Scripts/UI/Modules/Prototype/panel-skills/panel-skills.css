@@ -1,0 +1,21 @@
+﻿.in-game-player-panel.skills-panel {
+}
+
+.skills-panel__table {
+    height: 544px;
+}
+
+.skills-panel__header-cell {
+    width: 60px;
+}
+
+.skills-panel__cell {
+}
+
+.skills-panel__help-panel {
+    height: 100px;
+}
+
+.skills-panel__controls {
+    height: 40px;
+}

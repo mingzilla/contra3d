@@ -71,7 +71,6 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hant.txt" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-accessories" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills" />
      <Folder Include="Library\PackageCache\com.unity.test-framework@1.1.31" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
@@ -1071,6 +1070,8 @@
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game\game-panel.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation\panel-allocation.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation\panel-allocation.html" />
+    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills\panel-skills.css" />
+    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills\panel-skills.html" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-upgrade\panel-upgrade.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-upgrade\panel-upgrade.html" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-lobby\player_lobby.css" />

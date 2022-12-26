@@ -146,30 +146,6 @@
     background-image: url("../../../../../Materials/images/icons/skill-icon_fire_spread-fire-balls_no-effect.png");
 }
 
-.bg-icon.skill__light__basic-light {
-    background-image: url("../../../../../Materials/images/icons/skill-icon_light_basic-light.png");
-}
-
-.bg-icon.skill__light__basic-light__no-effect {
-    background-image: url("../../../../../Materials/images/icons/skill-icon_light_basic-light_no-effect.png");
-}
-
-.bg-icon.skill__light__chain-light {
-    background-image: url("../../../../../Materials/images/icons/skill-icon_light_chain-light.png");
-}
-
-.bg-icon.skill__light__chain-light__no-effect {
-    background-image: url("../../../../../Materials/images/icons/skill-icon_light_chain-light_no-effect.png");
-}
-
-.bg-icon.skill__light__light-strike {
-    background-image: url("../../../../../Materials/images/icons/skill-icon_light_light-strike.png");
-}
-
-.bg-icon.skill__light__light-strike__no-effect {
-    background-image: url("../../../../../Materials/images/icons/skill-icon_light_light-strike_no-effect.png");
-}
-
 .bg-icon.skill__water__water-ball {
     background-image: url("../../../../../Materials/images/icons/skill-icon_water_water-ball.png");
 }
@@ -200,6 +176,30 @@
 
 .bg-icon.skill__water__ice-wave__no-effect {
     background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-wave_no-effect.png");
+}
+
+.bg-icon.skill__light__basic-light {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_basic-light.png");
+}
+
+.bg-icon.skill__light__basic-light__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_basic-light_no-effect.png");
+}
+
+.bg-icon.skill__light__chain-light {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_chain-light.png");
+}
+
+.bg-icon.skill__light__chain-light__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_chain-light_no-effect.png");
+}
+
+.bg-icon.skill__light__light-strike {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_light-strike.png");
+}
+
+.bg-icon.skill__light__light-strike__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_light-strike_no-effect.png");
 }
 
 /*---------------------------------------------*/
@@ -248,17 +248,21 @@
     font-size: 18px;
     line-height: 32px;
     color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*------------------------*/
 .in-game-player-panel__row {
     color: rgba(255, 255, 255, 0.8);
-    height: 68px;
+    min-height: 68px;
 }
 
 .in-game-player-panel__row__header {
     width: 60px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.in-game-player-panel__row__header-bg {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -302,7 +306,7 @@
 
 /*----------control panel--------------*/
 .in-game-player-panel__controls__box {
-    width: 100px;
+    min-width: 100px;
 }
 
 .in-game-player-panel__controls__text {

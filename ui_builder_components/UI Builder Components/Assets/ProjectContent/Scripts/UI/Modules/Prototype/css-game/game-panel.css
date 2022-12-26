@@ -53,20 +53,21 @@
 
 /*----------------------------------------------------*/
 
-.panel-bg-s1-o02 {
+.panel-with-bg.panel-bg--is-on__light,
+.panel-with-bg.panel-bg-s1-o02 {
     background-color: rgba(85, 166, 118, 0.2);
 }
 
-.panel-bg--is-on,
-.panel-bg-s1-o05 {
+.panel-with-bg.panel-bg--is-on,
+.panel-with-bg.panel-bg-s1-o05 {
     background-color: rgba(85, 166, 118, 0.5);
 }
 
-.panel-bg-s2-o02 {
+.panel-with-bg.panel-bg-s2-o02 {
     background-color: rgba(212, 40, 74, 0.2);
 }
 
-.panel-bg-s2-o05 {
+.panel-with-bg.panel-bg-s2-o05 {
     background-color: rgba(212, 40, 74, 0.5);
 }
 
@@ -177,13 +178,13 @@
 /*----------------------------------------------------*/
 
 /* 
- <div class="panel-with-bg size-720">
+ <div class="game-panel-with-bg size-720">
     <div class="full-size layout-horizontal">
     </div>
     <div class="panel-bg-3 panel-bg-deg-80 size-720"></div>
 </div>
  */
-.panel-with-bg {
+.game-panel-with-bg {
     border-radius: 4px;
     padding: 12px;
     margin: 8px;
