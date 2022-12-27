@@ -63,6 +63,10 @@
     background-color: rgba(85, 166, 118, 0.5);
 }
 
+.panel-with-bg.panel-bg-on-dark--is-on {
+    background-color: rgba(85, 166, 118, 0.8);
+}
+
 .panel-with-bg.panel-bg-s2-o02 {
     background-color: rgba(212, 40, 74, 0.2);
 }

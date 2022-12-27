@@ -233,12 +233,24 @@
 }
 
 /*------------------- Relics --------------------------*/
-.bg-icon.relic__sword {
-    background-image: url("../../../../../Materials/images/icons/relic_sword.png");
+.bg-icon.relic__sword_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_sword_1.png");
+}
+.bg-icon.relic__sword_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_sword_2.png");
+}
+.bg-icon.relic__sword_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_sword_3.png");
 }
 
-.bg-icon.relic__shield {
-    background-image: url("../../../../../Materials/images/icons/relic_shield.png");
+.bg-icon.relic__shield_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_shield_1.png");
+}
+.bg-icon.relic__shield_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_shield_2.png");
+}
+.bg-icon.relic__shield_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_shield_3.png");
 }
 
 /*---------------------------------------------*/
