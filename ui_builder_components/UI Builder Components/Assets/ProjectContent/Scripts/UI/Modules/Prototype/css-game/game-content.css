@@ -273,6 +273,22 @@
     background-image: url("../../../../../Materials/images/icons/relic_potion-amount_2.png");
 }
 
+.bg-icon.relic__mp-cost-lower_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_mp_cost_lower_1.png");
+}
+
+.bg-icon.relic__mp-cost-lower_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_mp_cost_lower_2.png");
+}
+
+.bg-icon.relic__mp-recovery_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_mp_recovery_1.png");
+}
+
+.bg-icon.relic__mp-recovery_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_mp_recovery_2.png");
+}
+
 /*---------------------------------------------*/
 .player-summary__item_num {
     position: absolute;
