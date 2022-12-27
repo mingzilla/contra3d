@@ -305,6 +305,30 @@
     background-image: url("../../../../../Materials/images/icons/relic_elemental-chances_def_3.png");
 }
 
+.bg-icon.relic__elemental-time-up_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time-up_1.png");
+}
+
+.bg-icon.relic__elemental-time-up_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time-up_2.png");
+}
+
+.bg-icon.relic__elemental-time-up_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time-up_3.png");
+}
+
+.bg-icon.relic__elemental-time_def_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time_def_1.png");
+}
+
+.bg-icon.relic__elemental-time_def_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time_def_2.png");
+}
+
+.bg-icon.relic__elemental-time_def_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time_def_3.png");
+}
+
 .bg-icon.relic__potion-count_1 {
     background-image: url("../../../../../Materials/images/icons/relic_potion-count_1.png");
 }
