@@ -232,6 +232,15 @@
     background-image: url("../../../../../Materials/images/icons/toggle_bottom.png");
 }
 
+/*------------------- Relics --------------------------*/
+.bg-icon.relic__sword {
+    background-image: url("../../../../../Materials/images/icons/relic_sword.png");
+}
+
+.bg-icon.relic__shield {
+    background-image: url("../../../../../Materials/images/icons/relic_shield.png");
+}
+
 /*---------------------------------------------*/
 .player-summary__item_num {
     position: absolute;

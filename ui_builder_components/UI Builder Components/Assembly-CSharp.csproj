@@ -70,7 +70,6 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hant.txt" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-accessories" />
      <Folder Include="Library\PackageCache\com.unity.test-framework@1.1.31" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
@@ -1068,6 +1067,8 @@
     <Content Include="Assets\ProjectContent\Materials\images\icons\flat_water.png" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game\game-content.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game\game-panel.css" />
+    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-accessories\panel-accessories.css" />
+    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-accessories\panel-accessories.html" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation\panel-allocation.css" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation\panel-allocation.html" />
     <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills\panel-skills.css" />
