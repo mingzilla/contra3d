@@ -41,31 +41,31 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuStoreData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\ElementalType.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\Skill.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleMenuItem.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuSkillsPanelActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAllocationPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelCompController.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleScreenMenuPanel.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputKey.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\Types\PlayerMenuPanel.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAccessoriesPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillStoreData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelSkillComp.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Util\UiUtil.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleScreenMenuPanel.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleMenuItem.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\GameMenuItem.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\SettingsScreenMenuItem.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\InGameMenuPanel.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\Types\PlayerMenuPanel.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\PlayerMenuStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\PlayerMenuActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuUpgradePanelActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAllocationPanelActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuSkillsPanelActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAccessoriesPanelActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Util\UiUtil.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\InGameMenuPanel.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Types\SettingsScreenMenuItem.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\PlayerMenuActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\PlayerMenuStoreData.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\GameMenuItem.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenStoreData.cs" />
      <Folder Include="Assets" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
@@ -81,6 +81,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.es.txt" />
      <None Include="Library\PackageCache\com.unity.inputsystem@1.4.4\package.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\differences.es.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\commontypes.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.inputsystem@1.4.4\ValidationConfig.json" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor\BoxSelectionCursor.uxml" />
@@ -92,7 +93,9 @@
      <Folder Include="Library\PackageCache\com.unity.ide.rider@3.0.16\Rider" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\semantic.zh-Hant.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\clientcommon.es.txt" />
+     <Folder Include="Assets\ProjectContent\Materials\images\icons" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu" />
      <Folder Include="Library\PackageCache\com.unity.inputsystem@1.4.4\Tests" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-theme.uss" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\package.json" />
@@ -103,6 +106,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\xdiff.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\configurehelper.es.txt" />
      <Folder Include="Library\PackageCache\com.unity.burst@1.7.3\Tests" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-upgrade" />
      <Folder Include="Assets\ProjectContent\Materials" />
      <None Include="Library\PackageCache\com.unity.timeline@1.6.4\package.json" />
      <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom" />
@@ -164,12 +168,14 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\basecommands.en.txt" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore" />
      <Folder Include="Assets\ProjectContent" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-status" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\workspaceserver.es.txt" />
      <Folder Include="Assets\ProjectContent\Inputs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Data" />
      <Folder Include="Library\PackageCache\com.unity.inputsystem@1.4.4" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\cm-help.en.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\binmergetool.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.en.txt" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base\uss" />
@@ -179,6 +185,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\plastic-gui.en.txt" />
      <Folder Include="Assets\ProjectContent\Scenes" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\differences.zh-Hans.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\binmergetool.en.txt" />
      <None Include="Library\PackageCache\com.unity.services.core@1.6.0\package.json" />
      <None Include="Library\PackageCache\com.unity.visualscripting@1.7.8\ValidationExceptions.json" />
@@ -207,6 +214,7 @@
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Gizmos" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\cm-help.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\cm-help.ja.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-lobby" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\clientcommon.en.txt" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Common" />
@@ -234,6 +242,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\cm.ja.txt" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_SDF_SSD.cginc" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\ValidationConfig.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\images.ja.txt" />
      <Folder Include="Library\PackageCache\com.unity.ide.vscode@1.2.5" />
@@ -247,6 +256,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.zh-Hant.txt" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\clientcommon.zh-Hans.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-accessories" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\semantic.ja.txt" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib" />
      <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.5\ValidationExceptions.json" />
@@ -262,11 +272,13 @@
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor" />
      <None Include="Library\PackageCache\com.unity.mathematics@1.2.6\ValidationExceptions.json" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Package Resources" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore" />
      <Folder Include="Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\guihelp.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\differences.en.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\workspaceserver.ja.txt" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\start-menu" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\mergetool.ko.txt" />
      <Folder Include="Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\clientcommon.ko.txt" />
@@ -1060,32 +1072,6 @@
       <Project>{7809b26d-e57b-339c-0f1e-0062d7ba4631}</Project>
       <Name>Unity.VisualScripting.State</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\ProjectContent\Materials\images\icons\flat_fire.png" />
-    <Content Include="Assets\ProjectContent\Materials\images\icons\flat_light.png" />
-    <Content Include="Assets\ProjectContent\Materials\images\icons\flat_water.png" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game\game-content.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game\game-panel.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-accessories\panel-accessories.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-accessories\panel-accessories.html" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation\panel-allocation.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation\panel-allocation.html" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills\panel-skills.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills\panel-skills.html" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-upgrade\panel-upgrade.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-upgrade\panel-upgrade.html" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-lobby\player_lobby.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-lobby\player_lobby.html" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-status\player_status.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-status\player_status.html" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel\save_slots_panel.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel\save_slots_panel.html" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu\settings_menu_panel.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu\settings_menu_panel.html" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\start-menu\start_and_other_menu_panel.html" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\start-menu\start_menu_panel.css" />
-    <Content Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\start-menu\start_menu_panel.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
