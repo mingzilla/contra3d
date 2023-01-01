@@ -41,20 +41,20 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Folder Include="Library\PackageCache\com.unity.burst@1.7.3\Tests\Runtime\Shared" />
-     <None Include="Library\PackageCache\com.unity.burst@1.7.3\Tests\Runtime\Unity.Burst.Tests.asmdef" />
-     <Folder Include="Library\PackageCache\com.unity.burst@1.7.3\Tests\Runtime\Unity.Burst.Tests" />
-     <Folder Include="Library\PackageCache\com.unity.burst@1.7.3\Tests\Runtime\Shared\Helpers" />
-     <Folder Include="Library\PackageCache\com.unity.burst@1.7.3\Tests\Runtime\UnityBenchShared" />
-     <Folder Include="Library\PackageCache\com.unity.burst@1.7.3\Tests\Runtime" />
+     <Folder Include="Library\PackageCache\com.unity.burst@1.8.2\Tests\Runtime\Shared" />
+     <None Include="Library\PackageCache\com.unity.burst@1.8.2\Tests\Runtime\Unity.Burst.Tests.asmdef" />
+     <Folder Include="Library\PackageCache\com.unity.burst@1.8.2\Tests\Runtime\Unity.Burst.Tests" />
+     <Folder Include="Library\PackageCache\com.unity.burst@1.8.2\Tests\Runtime\Shared\Helpers" />
+     <Folder Include="Library\PackageCache\com.unity.burst@1.8.2\Tests\Runtime\UnityBenchShared" />
+     <Folder Include="Library\PackageCache\com.unity.burst@1.8.2\Tests\Runtime" />
      <Reference Include="UnityEngine">
-     <HintPath>E:\dev\unity_hub_editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+     <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.CoreModule">
-     <HintPath>E:\dev\unity_hub_editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+     <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor">
-     <HintPath>E:\dev\unity_hub_editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+     <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

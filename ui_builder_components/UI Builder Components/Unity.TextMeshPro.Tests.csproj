@@ -44,13 +44,13 @@
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Tests\Runtime" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Tests\Runtime\Unity.TextMeshPro.Tests.asmdef" />
      <Reference Include="UnityEngine">
-     <HintPath>E:\dev\unity_hub_editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+     <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.CoreModule">
-     <HintPath>E:\dev\unity_hub_editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+     <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor">
-     <HintPath>E:\dev\unity_hub_editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+     <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

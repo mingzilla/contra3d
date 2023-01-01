@@ -44,13 +44,13 @@
      <Folder Include="Library\PackageCache\com.unity.inputsystem@1.4.4\Tests\IntegrationTests" />
      <None Include="Library\PackageCache\com.unity.inputsystem@1.4.4\Tests\IntegrationTests\Unity.InputSystem.IntegrationTests.asmdef" />
      <Reference Include="UnityEngine">
-     <HintPath>E:\dev\unity_hub_editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+     <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.CoreModule">
-     <HintPath>E:\dev\unity_hub_editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+     <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor">
-     <HintPath>E:\dev\unity_hub_editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+     <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
