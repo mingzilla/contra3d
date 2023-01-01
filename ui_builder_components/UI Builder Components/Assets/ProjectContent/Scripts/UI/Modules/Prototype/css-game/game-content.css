@@ -1,4 +1,15 @@
-﻿.player-lobby__player-summary {
+﻿html {
+    height: 100%;
+}
+
+body {
+    background-size: 1920px 1080px;
+    background-image: url("../../../../../Materials/images/grassland.png");
+}
+
+/*---------------------------------------------*/
+
+.player-lobby__player-summary {
     width: 160px;
     height: 160px;
     border-radius: 16px;
@@ -409,7 +420,7 @@ poo 1, 2
     width: 440px;
     min-height: 120px;
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 .in-game-player-panel__header {
