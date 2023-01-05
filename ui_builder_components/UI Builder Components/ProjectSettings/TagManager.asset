@@ -11,24 +11,24 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PLAYER
+  - PLAYER_SHOT
+  - GROUND
+  - DESTRUCTIBLE
+  - ENEMY
+  - ENEMY_INSIDE_WALL
+  - ENEMY_SHOT
+  - ENEMY_GRENADE
+  - ENEMY_DESTROYABLE_SHOT
+  - ENEMY_JUMP_POINT
+  - POWER_UP
+  - POWER_UP_CONTAINER
+  - NO_COLLISION
+  - GROUND_COLLIDER
+  - INVISIBLE_WALL_TO_PLAYER
+  - WALL
+  - THIN_GROUND
+  - REDIRECTION_WALL
   - 
   - 
   - 

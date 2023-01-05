@@ -1,0 +1,17 @@
+{
+    "name": "Project.Content",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7ef82808852b8054ca1c91a2043cab0b",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
