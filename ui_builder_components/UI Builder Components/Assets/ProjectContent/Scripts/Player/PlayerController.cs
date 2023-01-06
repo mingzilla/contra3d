@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour
 {
     private GameInputMapping mapping = GameInputMapping.Create();
     private PlayerAttribute playerAttribute = PlayerAttribute.CreateEmpty(1);
+
+    [SerializeField] private Vector3 initialPosition = Vector3.one;
     private int playerId;
-    [SerializeField] Vector3 initialPosition = Vector3.one;
 
     private Rigidbody rb;
     private SkinnedMeshRenderer meshRenderer;

@@ -9,7 +9,8 @@ namespace BaseUtil.GameUtil.Util3D
         public static void MoveXZ(UserInput userInput, Rigidbody rb, float moveSpeed)
         {
             Vector3 currentV = rb.velocity;
-            rb.velocity = new Vector3(userInput.fixedHorizontal * moveSpeed, currentV.y, userInput.fixedVertical * moveSpeed);
+            float multiplier = (userInput.fixedHorizontal != 0 && userInput.fixedVertical != 0) ? 1.4f : 1f;
+            rb.velocity = new Vector3(userInput.fixedHorizontal * moveSpeed / multiplier, currentV.y, userInput.fixedVertical * moveSpeed / multiplier);
         }
 
         /// <summary>
