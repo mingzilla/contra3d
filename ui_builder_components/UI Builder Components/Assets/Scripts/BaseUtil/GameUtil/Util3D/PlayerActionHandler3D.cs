@@ -13,6 +13,12 @@ namespace BaseUtil.GameUtil.Util3D
             rb.velocity = new Vector3(userInput.fixedHorizontal * moveSpeed / multiplier, currentV.y, userInput.fixedVertical * moveSpeed / multiplier);
         }
 
+        public static void FighterMoveXZ(UserInput userInput, Rigidbody rb, float moveSpeed, float speedModifier, bool isOnGround)
+        {
+            float refinedSpeed = isOnGround ? (moveSpeed * speedModifier) : moveSpeed;
+            MoveXZ(userInput, rb, refinedSpeed);
+        }
+
         /// <summary>
         /// Ways to handle movement (test after building game):
         /// * rb.velocity - applies speed, offers good control, need to use FixedUpdate() and set rb to RigidbodyInterpolation.Interpolate to avoid jittery 

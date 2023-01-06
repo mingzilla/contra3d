@@ -275,6 +275,14 @@ namespace BaseUtil.GameUtil.Base
             return coroutine; // return a copy so that it can be stopped if needed
         }
 
+        public static void CancelTimeout(MonoBehaviour controller, IEnumerator coroutine)
+        {
+            Fn.SafeRun(() =>
+            {
+                if (controller.gameObject.activeSelf) controller.StopCoroutine(coroutine);
+            });
+        }
+
         /// <summary>
         /// Run fn repeatedly, with specified repeat times and repeat delay
         /// </summary>

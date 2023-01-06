@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private static readonly int isMovingKey = Animator.StringToHash("isMoving");
     private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
 
+    private MoveSpeedModifier moveSpeedModifier = MoveSpeedModifier.Create();
+
     void Start()
     {
         playerId = 1;
@@ -49,18 +51,19 @@ public class PlayerController : MonoBehaviour
     private void HandlePlayerControl(UserInput userInput)
     {
         // UnitDisplayHandler3D.HandleInvincibility(meshRenderer, takeDamageInterval);
-        PlayerActionHandler3D.MoveXZ(userInput, rb, playerAttribute.moveSpeed);
+        bool isOnGround = UnityFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
+
+        PlayerActionHandler3D.FighterMoveXZ(userInput, rb, playerAttribute.moveSpeed, moveSpeedModifier.speedModifier, isOnGround);
         animatorCtrl.SetBool(isMovingKey, userInput.IsMoving());
         UnitDisplayHandler3D.HandleXZFacing(transform, userInput);
 
-        bool isOnGround = UnityFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
         animatorCtrl.SetBool(isOnGroundKey, isOnGround);
         if (userInput.jump && isOnGround) animatorCtrl.SetTrigger(triggerJumpKey);
         if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
         PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
         // if (userInput.fire1) SpawnBullets(playerAttribute.weaponType, userInput);
-        if (userInput.fire1) animatorCtrl.SetTrigger(triggerSwingKey);
+        if (userInput.swing) animatorCtrl.SetTrigger(triggerSwingKey);
 
         playerAttribute.inGameTransform = transform;
     }
@@ -153,7 +156,11 @@ public class PlayerController : MonoBehaviour
         }
         if (action == GameInputAction.ATTACK)
         {
-            if (context.started) userInput.fire1 = true;
+            if (context.started)
+            {
+                userInput.swing = true;
+                moveSpeedModifier.TemporarilyApplyModifier(this);
+            }
         }
     }
 }

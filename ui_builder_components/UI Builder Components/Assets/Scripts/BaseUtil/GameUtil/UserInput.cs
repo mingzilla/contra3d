@@ -21,6 +21,7 @@ namespace BaseUtil.GameUtil
         public bool fire1;
         public bool fire2;
         public bool fire3;
+        public bool swing; // e.g. swing a sword. this reduces movement speed on ground, speed should not be affected in the air e.g. when jumping
 
         public static void ResetTriggers(UserInput userInput)
         {
@@ -30,6 +31,7 @@ namespace BaseUtil.GameUtil
             userInput.fire1 = false;
             userInput.fire2 = false;
             userInput.fire3 = false;
+            userInput.swing = false;
         }
 
         public static UserInput Create(int playerId)
