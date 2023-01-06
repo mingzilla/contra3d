@@ -41,16 +41,21 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ProjectContent\Scripts\Data\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuStoreData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\ElementalType.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\Skill.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleMenuItem.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuSkillsPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputContext.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAllocationPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelCompController.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleScreenMenuPanel.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Data\GameInputMapping.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputKey.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Types\GameLayer.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\Types\PlayerMenuPanel.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAccessoriesPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillStoreData.cs" />
@@ -64,13 +69,8 @@
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\PlayerMenuStoreData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\GameMenuItem.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputAction.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Data\GameInputMapping.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputContext.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Data\PlayerAttribute.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\GameLayer.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenStoreData.cs" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
      <Folder Include="Assets\ProjectContent\Prefabs\Players" />

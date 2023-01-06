@@ -769,6 +769,10 @@
       <Project>{16b6785e-cb89-c002-ecd2-a943843248b1}</Project>
       <Name>Unity.VisualScripting.Flow.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Base.Util.csproj">
+      <Project>{7f8bf540-471b-0718-3376-138d0fc06b5d}</Project>
+      <Name>Base.Util</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{2bd10b48-3dd5-7956-d23b-954e0b2c4d44}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -860,10 +864,6 @@
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{7809b26d-e57b-339c-0f1e-0062d7ba4631}</Project>
       <Name>Unity.VisualScripting.State</Name>
-    </ProjectReference>
-    <ProjectReference Include="Base.Util.csproj">
-      <Project>{7f8bf540-471b-0718-3376-138d0fc06b5d}</Project>
-      <Name>Base.Util</Name>
     </ProjectReference>
     <ProjectReference Include="Project.Content.csproj">
       <Project>{9af73644-d86d-91ea-a826-24f60d719d19}</Project>

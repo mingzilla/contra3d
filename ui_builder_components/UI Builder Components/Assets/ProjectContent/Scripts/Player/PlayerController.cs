@@ -30,11 +30,11 @@ public class PlayerController : MonoBehaviour
     {
         playerId = 1;
         gameObject.layer = GameLayer.PLAYER.GetLayer();
-        UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject.GetComponentInChildren<CapsuleCollider>().gameObject);
+        UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject.GetComponent<CapsuleCollider>().gameObject);
         rb = UnityFn.GetOrAddInterpolateRigidbody(gameObject, true, false);
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous; // for player only
         groundLayers = GameLayer.GetGroundLayerMask();
-        animatorCtrl = gameObject.GetComponent<Animator>();
+        animatorCtrl = gameObject.GetComponentInChildren<Animator>();
         transform.position = initialPosition;
         gameObject.SetActive(true);
     }
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
         }
         if (action == GameInputAction.ATTACK)
         {
-            userInput.fire1 = true;
+            if (context.started) userInput.fire1 = true;
         }
     }
 }
