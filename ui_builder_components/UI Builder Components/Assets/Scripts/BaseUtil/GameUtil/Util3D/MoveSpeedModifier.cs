@@ -36,5 +36,16 @@ namespace BaseUtil.GameUtil.Util3D
             speedModifier = modifiedValue;
             speedModifierCoroutine = UnityFn.SetTimeout(controller, delay, () => speedModifier = 1f);
         }
+
+        public void ToggleIdle(bool isIdle)
+        {
+            if (isIdle) speedModifier = 0;
+            if (!isIdle) speedModifier = 1;
+        }
+
+        public bool CanUseMoveAnimation()
+        {
+            return speedModifier != 0;
+        }
     }
 }

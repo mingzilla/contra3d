@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         bool isOnGround = UnityFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
 
         PlayerActionHandler3D.FighterMoveXZ(userInput, rb, playerAttribute.moveSpeed, moveSpeedModifier.speedModifier, isOnGround);
-        animatorCtrl.SetBool(isMovingKey, userInput.IsMoving());
+        animatorCtrl.SetBool(isMovingKey, moveSpeedModifier.CanUseMoveAnimation() && userInput.IsMoving());
         UnitDisplayHandler3D.HandleXZFacing(transform, userInput);
 
         animatorCtrl.SetBool(isOnGroundKey, isOnGround);
@@ -135,8 +135,18 @@ public class PlayerController : MonoBehaviour
 
     public void KeyRB(InputAction.CallbackContext context)
     {
-        if (context.started) userInput.isHoldingRb = true;
-        if (context.canceled) userInput.isHoldingRb = false;
+        if (context.started)
+        {
+            userInput.isHoldingRb = true;
+            moveSpeedModifier.ToggleIdle(true);
+            playerWeaponState = PlayerWeaponState.STAFF;
+        }
+        if (context.canceled)
+        {
+            userInput.isHoldingRb = false;
+            moveSpeedModifier.ToggleIdle(false);
+            playerWeaponState = PlayerWeaponState.NONE;
+        }
     }
 
     public void KeyLT(InputAction.CallbackContext context)
@@ -182,9 +192,7 @@ public class PlayerController : MonoBehaviour
         {
             if (context.started)
             {
-                playerWeaponState = PlayerWeaponState.STAFF;
                 userInput = GameInputAction.UpdateMagicCommand(userInput, action);
-                moveSpeedModifier.TemporarilyApplyModifier(this);
             }
         }
     }
