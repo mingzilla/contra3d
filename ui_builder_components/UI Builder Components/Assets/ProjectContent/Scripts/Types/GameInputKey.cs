@@ -11,6 +11,11 @@
         public static readonly GameInputKey A = Create("A");
         public static readonly GameInputKey B = Create("B");
 
+        public static readonly GameInputKey LB = Create("LB");
+        public static readonly GameInputKey RB = Create("RB");
+        public static readonly GameInputKey LT = Create("LT");
+        public static readonly GameInputKey RT = Create("RT");
+
         public string name;
 
         private static GameInputKey Create(string name)

@@ -175,39 +175,147 @@ MonoBehaviour:
     m_ActionId: abfeb987-81c0-4198-8736-9704fb2e495a
     m_ActionName: Player/X-West[/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8845544518980696167}
+        m_TargetAssemblyTypeName: PlayerController, Project.Content
+        m_MethodName: KeyY
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9f2e8b65-2765-4637-8d8e-35f6b64958dc
     m_ActionName: Player/Y-North[/XInputControllerWindows/buttonNorth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8845544518980696167}
+        m_TargetAssemblyTypeName: PlayerController, Project.Content
+        m_MethodName: KeyPadUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 80016709-d595-4d86-aac1-f94cb75d19b1
     m_ActionName: Player/D-pad-Up[/XInputControllerWindows/dpad/up]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8845544518980696167}
+        m_TargetAssemblyTypeName: PlayerController, Project.Content
+        m_MethodName: KeyPadDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4d56766c-50dc-49b0-8532-0436261dd7fe
     m_ActionName: Player/D-pad-Down[/XInputControllerWindows/dpad/down]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8845544518980696167}
+        m_TargetAssemblyTypeName: PlayerController, Project.Content
+        m_MethodName: KeyPadLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2ccdbb35-52bf-4872-a832-036728b7f3b6
     m_ActionName: Player/D-pad-Left[/XInputControllerWindows/dpad/left]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8845544518980696167}
+        m_TargetAssemblyTypeName: PlayerController, Project.Content
+        m_MethodName: KeyPadRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 7fe106a1-33fd-44a1-ab6f-dacf698ab1a3
     m_ActionName: Player/D-pad-Right[/XInputControllerWindows/dpad/right]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8845544518980696167}
+        m_TargetAssemblyTypeName: PlayerController, Project.Content
+        m_MethodName: KeyLB
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9201c9d3-6238-47ff-9629-002122ae8e92
     m_ActionName: Player/LB[/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8845544518980696167}
+        m_TargetAssemblyTypeName: PlayerController, Project.Content
+        m_MethodName: KeyRB
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3026fc5e-96e6-4931-9dad-74f088836452
     m_ActionName: Player/RB[/XInputControllerWindows/rightShoulder]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8845544518980696167}
+        m_TargetAssemblyTypeName: PlayerController, Project.Content
+        m_MethodName: KeyLT
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 13b88276-1e13-4ccb-aa74-ea4156a4e0d7
     m_ActionName: Player/LT[/XInputControllerWindows/leftTrigger]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8845544518980696167}
+        m_TargetAssemblyTypeName: PlayerController, Project.Content
+        m_MethodName: KeyRT
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4a7237d9-9406-4654-abcf-a02391f01ad7
     m_ActionName: Player/RT[/XInputControllerWindows/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
@@ -228,6 +336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPosition: {x: 1, y: 1, z: 1}
+  swordMesh: {fileID: 6802413576562548365}
+  staffMesh: {fileID: 1655293853003412176}
 --- !u!136 &5639405600825661515
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -572,6 +682,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8173f7ca815fd5b4c880c462a7471a1c, type: 3}
+--- !u!1 &1655293853003412176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -327482365236196867, guid: 8173f7ca815fd5b4c880c462a7471a1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7893759542595664685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6802413576562548365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5482214040580282976, guid: 8173f7ca815fd5b4c880c462a7471a1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7893759542595664685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7011310406321735292 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8173f7ca815fd5b4c880c462a7471a1c,

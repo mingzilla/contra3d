@@ -25,9 +25,14 @@ namespace ProjectContent.Scripts.Data
             };
         }
 
-        public GameInputAction GetGamePlayPadAction(GameInputKey key)
+        public GameInputAction GetGamePlayPadAction(GameInputKey key, bool isHoldingMagicTrigger)
         {
-            return mapping[GameInputContext.GAME_PLAY][key];
+            if (!isHoldingMagicTrigger) return mapping[GameInputContext.GAME_PLAY][key];
+            if (key == GameInputKey.A) return GameInputAction.MAGIC_BOTTOM;
+            if (key == GameInputKey.B) return GameInputAction.MAGIC_RIGHT;
+            if (key == GameInputKey.X) return GameInputAction.MAGIC_LEFT;
+            if (key == GameInputKey.Y) return GameInputAction.MAGIC_TOP;
+            return null;
         }
 
         public GameInputAction GetGamePlayKeyboardAction()

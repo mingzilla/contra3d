@@ -52,8 +52,8 @@
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core.Internal\Components\Networking\ReadOnlyHttpRequest.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core.Internal\Registry\PackageRegistry\PackageRegistry.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core.Internal\Registry\ComponentRegistry\LockedComponentRegistry.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core.Internal\Registry\ComponentRegistry\IComponentRegistry.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core.Internal\Components\Networking\HttpResponse.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core.Internal\Registry\ComponentRegistry\IComponentRegistry.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core.Internal\Registry\PackageRegistry\IPackageRegistry.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core.Internal\UnityServicesInitializer.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core.Internal\AsyncOperation\IAsyncOperation.cs" />

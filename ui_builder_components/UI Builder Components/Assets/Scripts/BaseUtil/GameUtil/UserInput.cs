@@ -18,10 +18,21 @@ namespace BaseUtil.GameUtil
 
         public bool jump;
         public bool jumpCancelled; // this is to support holding jump button to jump high - basically when cancelled, change to half y velocity 
+
         public bool fire1;
         public bool fire2;
         public bool fire3;
+
         public bool swing; // e.g. swing a sword. this reduces movement speed on ground, speed should not be affected in the air e.g. when jumping
+        public bool magicTop;
+        public bool magicBottom;
+        public bool magicLeft;
+        public bool magicRight;
+
+        public bool isHoldingLb;
+        public bool isHoldingLt;
+        public bool isHoldingRb;
+        public bool isHoldingRt;
 
         public static void ResetTriggers(UserInput userInput)
         {
@@ -32,6 +43,10 @@ namespace BaseUtil.GameUtil
             userInput.fire2 = false;
             userInput.fire3 = false;
             userInput.swing = false;
+            userInput.magicTop = false;
+            userInput.magicBottom = false;
+            userInput.magicLeft = false;
+            userInput.magicRight = false;
         }
 
         public static UserInput Create(int playerId)
@@ -182,6 +197,11 @@ namespace BaseUtil.GameUtil
         public static bool IsMenuGamepadCancel()
         {
             return Gamepad.current.buttonEast.wasPressedThisFrame;
+        }
+
+        public bool IsUsingMagic()
+        {
+            return magicTop || magicBottom || magicLeft || magicRight;
         }
     }
 }

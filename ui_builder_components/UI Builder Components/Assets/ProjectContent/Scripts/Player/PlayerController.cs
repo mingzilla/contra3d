@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private PlayerAttribute playerAttribute = PlayerAttribute.CreateEmpty(1);
 
     [SerializeField] private Vector3 initialPosition = Vector3.one;
+    [SerializeField] private GameObject swordMesh;
+    [SerializeField] private GameObject staffMesh;
+
     private int playerId;
 
     private Rigidbody rb;
@@ -23,11 +26,13 @@ public class PlayerController : MonoBehaviour
     private Animator animatorCtrl;
     private static readonly int triggerJumpKey = Animator.StringToHash("triggerJump");
     private static readonly int triggerSwingKey = Animator.StringToHash("triggerSwing");
+    private static readonly int triggerMagicKey = Animator.StringToHash("triggerMagic");
     private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
     private static readonly int isMovingKey = Animator.StringToHash("isMoving");
     private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
 
-    private MoveSpeedModifier moveSpeedModifier = MoveSpeedModifier.Create();
+    private readonly MoveSpeedModifier moveSpeedModifier = MoveSpeedModifier.Create();
+    private PlayerWeaponState playerWeaponState = PlayerWeaponState.NONE;
 
     void Start()
     {
@@ -62,8 +67,9 @@ public class PlayerController : MonoBehaviour
         if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
         PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
-        // if (userInput.fire1) SpawnBullets(playerAttribute.weaponType, userInput);
+        PlayerWeaponState.HandleWeaponVisibility(playerWeaponState, swordMesh, staffMesh);
         if (userInput.swing) animatorCtrl.SetTrigger(triggerSwingKey);
+        if (userInput.IsUsingMagic()) animatorCtrl.SetTrigger(triggerMagicKey);
 
         playerAttribute.inGameTransform = transform;
     }
@@ -102,6 +108,7 @@ public class PlayerController : MonoBehaviour
 
     public void KeyY(InputAction.CallbackContext context)
     {
+        UpdatePadInput(context, GameInputKey.Y);
     }
 
     public void KeyPadUp(InputAction.CallbackContext context)
@@ -122,18 +129,26 @@ public class PlayerController : MonoBehaviour
 
     public void KeyLB(InputAction.CallbackContext context)
     {
+        if (context.started) userInput.isHoldingLb = true;
+        if (context.canceled) userInput.isHoldingLb = false;
     }
 
     public void KeyRB(InputAction.CallbackContext context)
     {
+        if (context.started) userInput.isHoldingRb = true;
+        if (context.canceled) userInput.isHoldingRb = false;
     }
 
     public void KeyLT(InputAction.CallbackContext context)
     {
+        if (context.started) userInput.isHoldingLt = true;
+        if (context.canceled) userInput.isHoldingLt = false;
     }
 
     public void KeyRT(InputAction.CallbackContext context)
     {
+        if (context.started) userInput.isHoldingRt = true;
+        if (context.canceled) userInput.isHoldingRt = false;
     }
 
     public void KeyboardAnyKey(InputAction.CallbackContext context)
@@ -143,7 +158,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdatePadInput(InputAction.CallbackContext context, GameInputKey key)
     {
-        GameInputAction action = mapping.GetGamePlayPadAction(key);
+        GameInputAction action = mapping.GetGamePlayPadAction(key, userInput.isHoldingRb);
         UpdateInput(context, action);
     }
 
@@ -158,7 +173,17 @@ public class PlayerController : MonoBehaviour
         {
             if (context.started)
             {
+                playerWeaponState = PlayerWeaponState.SWORD;
                 userInput.swing = true;
+                moveSpeedModifier.TemporarilyApplyModifier(this);
+            }
+        }
+        if (action is {isMagic: true})
+        {
+            if (context.started)
+            {
+                playerWeaponState = PlayerWeaponState.STAFF;
+                userInput = GameInputAction.UpdateMagicCommand(userInput, action);
                 moveSpeedModifier.TemporarilyApplyModifier(this);
             }
         }

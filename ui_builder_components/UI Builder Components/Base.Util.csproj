@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\CameraUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputAndStatus.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\TagUtil.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\MoveSpeedModifier.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\Domain\IntervalState.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnRxDataStore.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnOldDict.cs" />
@@ -78,7 +79,6 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\UnityFn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\SelectedIds.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\PlayerActionHandler3D.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\MoveSpeedModifier.cs" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\Util2D" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\CameraDomain" />
