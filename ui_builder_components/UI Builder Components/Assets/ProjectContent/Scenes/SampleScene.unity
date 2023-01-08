@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 702437975}
   - component: {fileID: 702437976}
   m_Layer: 0
-  m_Name: SkillEquipPanelDoc
+  m_Name: UI_SkillEquipPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,6 +485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relatedPlayerId: 1
+  skillEquipPanelSkillCompPrefab: {fileID: 2308900395550152971, guid: 265a003d9adde914383635d6f46a76fa,
+    type: 3}
 --- !u!4 &832575519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2325677891983230548, guid: 317d8ba7c721f1949880d18c73d2aed1,

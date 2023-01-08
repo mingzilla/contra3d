@@ -2,6 +2,7 @@ using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using BaseUtil.GameUtil.Util3D;
+using ProjectContent.Scripts.AppLiveResource;
 using ProjectContent.Scripts.Data;
 using ProjectContent.Scripts.Types;
 using UnityEngine;
@@ -9,8 +10,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameInputMapping mapping = GameInputMapping.Create();
-    private PlayerAttribute playerAttribute = PlayerAttribute.CreateEmpty(1);
+    private GameInputMapping inputMapping = GameInputMapping.Create();
+    private AppResource appResource;
+    private GameStoreData gameStoreData;
 
     [SerializeField] private Vector3 initialPosition = Vector3.one;
     [SerializeField] private GameObject swordMesh;
@@ -36,7 +38,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        playerId = 1;
+        appResource = AppResource.instance;
+        gameStoreData = appResource.storeData;
         gameObject.layer = GameLayer.PLAYER.GetLayer();
         UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject.GetComponent<CapsuleCollider>().gameObject);
         rb = UnityFn.GetOrAddInterpolateRigidbody(gameObject, true, false);
@@ -45,6 +48,9 @@ public class PlayerController : MonoBehaviour
         animatorCtrl = gameObject.GetComponentInChildren<Animator>();
         transform.position = initialPosition;
         gameObject.SetActive(true);
+        PlayerInput playerInput = gameObject.GetComponent<PlayerInput>();
+        playerId = playerInput.playerIndex;
+        gameStoreData.AddPlayer(playerInput);
     }
 
     void FixedUpdate()
@@ -55,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandlePlayerControl(UserInput userInput)
     {
+        PlayerAttribute playerAttribute = gameStoreData.GetPlayer(playerId);
         // UnitDisplayHandler3D.HandleInvincibility(meshRenderer, takeDamageInterval);
         bool isOnGround = UnityFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
 
@@ -72,6 +79,7 @@ public class PlayerController : MonoBehaviour
         if (userInput.IsUsingMagic()) animatorCtrl.SetTrigger(triggerMagicKey);
 
         playerAttribute.inGameTransform = transform;
+        gameStoreData.SetPlayer(playerAttribute);
     }
 
     /*------------------------------------------*/
@@ -168,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdatePadInput(InputAction.CallbackContext context, GameInputKey key)
     {
-        GameInputAction action = mapping.GetGamePlayPadAction(key, userInput.isHoldingRb);
+        GameInputAction action = inputMapping.GetGamePlayPadAction(key, userInput.isHoldingRb);
         UpdateInput(context, action);
     }
 

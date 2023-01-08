@@ -14,6 +14,8 @@ namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
 
         private EquipSkillStoreData storeData = new();
 
+        [SerializeField] private GameObject skillEquipPanelSkillCompPrefab;
+
         private void OnEnable()
         {
             Skill selectedSkill = storeData.activeItems.selectedSkill;
@@ -37,12 +39,13 @@ namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
 
                 ElementalType type = elementalTypeMap[(skillRow.name)];
                 skillRowTypeImage.AddToClassList(type.imageCssClass);
-                
+
                 List<Skill> skills = skillGroup[(skillRow.name)];
                 skills.ForEach(skill =>
                 {
+                    VisualElement skillEquipPanelSkillComp = Instantiate(skillEquipPanelSkillCompPrefab, transform.position, Quaternion.identity).GetComponent<UIDocument>().rootVisualElement;
                     bool isSkillActive = storeData.activeItems.isSkillActive(skill);
-                    SkillEquipPanelSkillComp skillBox = SkillEquipPanelSkillComp.Create(skill, selectedSkill, isSkillActive);
+                    SkillEquipPanelSkillComp skillBox = SkillEquipPanelSkillComp.Create(skillEquipPanelSkillComp, skill, selectedSkill, isSkillActive);
                     skillRowContent.Add(skillBox.root);
                 });
             }

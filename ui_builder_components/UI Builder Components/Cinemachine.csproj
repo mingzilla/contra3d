@@ -12,11 +12,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9af73644-d86d-91ea-a826-24f60d719d19}</ProjectGuid>
+    <ProjectGuid>{afb57e23-07c9-db16-3681-1fe9af2c5243}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Project.Content</AssemblyName>
+    <AssemblyName>Cinemachine</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -25,8 +25,8 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Temp\Bin\Debug\Project.Content\</OutputPath>
-    <DefineConstants>UNITY_2021_3_16;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <OutputPath>Temp\Bin\Debug\Cinemachine\</OutputPath>
+    <DefineConstants>UNITY_2021_3_16;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CINEMACHINE_TIMELINE;CINEMACHINE_PHYSICS_2D;CINEMACHINE_PHYSICS;CINEMACHINE_UGUI;CINEMACHINE_LWRP_7_3_1;CINEMACHINE_UNITY_INPUTSYSTEM;CINEMACHINE_UNITY_ANIMATION;CINEMACHINE_UNITY_IMGUI;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169,0649</NoWarn>
@@ -41,103 +41,97 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\ProjectContent\Scripts\Data\PlayerAttribute.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\ElementalType.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\Skill.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleMenuItem.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuSkillsPanelActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputContext.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Player\PlayerController.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAllocationPanelActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelCompController.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleScreenMenuPanel.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Data\GameInputMapping.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputKey.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\GameLayer.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\Types\PlayerMenuPanel.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAccessoriesPanelActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelSkillComp.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuUpgradePanelActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\PlayerWeaponState.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Util\UiUtil.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\InGameMenuPanel.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\SettingsScreenMenuItem.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\PlayerMenuActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\PlayerMenuStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\GameMenuItem.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputAction.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Data\GameStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Camera\CameraTargetController.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\AppLiveResource\AppResource.cs" />
-     <Folder Include="Assets\ProjectContent\Prefabs" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
-     <Folder Include="Assets\ProjectContent\Prefabs\Players" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelSkillType.uxml" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor\BoxSelectionCursor.uxml" />
-     <Folder Include="Assets\ProjectContent\Materials\images\icons" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-theme.uss" />
-     <Folder Include="Assets\ProjectContent\Scripts\Camera" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\skill_equip_panel.uss" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-upgrade" />
-     <Folder Include="Assets\ProjectContent\Materials" />
-     <Folder Include="Assets\ProjectContent\Scripts\Player" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Base\uss\base\flex-layout-styles.uss" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill" />
-     <Folder Include="Assets\ProjectContent\Materials\images" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Base\Util" />
-     <Folder Include="Assets\ProjectContent\Scripts\Types" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelSkillComp.uxml" />
-     <None Include="Assets\ProjectContent\Project.Content.asmdef" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain" />
-     <Folder Include="Assets\ProjectContent\Scripts\Data" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Base\uss\base\generic-custom-styles.uss" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore" />
-     <Folder Include="Assets\ProjectContent" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-status" />
-     <Folder Include="Assets\ProjectContent\Inputs" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Data" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Base\uss" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components" />
-     <Folder Include="Assets\ProjectContent\Scenes" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Base" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-styles.uss" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-lobby" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Common" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types" />
-     <Folder Include="Assets\ProjectContent\Scripts" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain" />
-     <Folder Include="Assets\ProjectContent\Scripts\AppLiveResource" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-accessories" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\Types" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanel.uxml" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\start-menu" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Base\uss\base" />
-     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachineTransposer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Impulse\CinemachineCollisionImpulseSource.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Experimental\CinemachineNewFreeLook.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineBrain.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\RuntimeUtility.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\LensSettings.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\UpdateTracker.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineCollider.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachinePath.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Helpers\CinemachineTouchInputMapper.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\PostProcessing\CinemachineVolumeSettings.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachinePOV.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\Predictor.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineSmoothPath.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineStoryboard.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Timeline\CinemachineShot.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Helpers\CinemachineInputProvider.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineRecomposer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\ICinemachineCamera.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\TargetPositionCache.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineConfiner.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachineSameAsFollowTarget.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\Cinemachine3rdPersonAim.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CinemachinePathBase.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Timeline\CinemachineTrack.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineStateDrivenCamera.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineDollyCart.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CinemachineBlenderSettings.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineConfiner2D.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\Cinemachine3rdPersonFollow.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CinemachineDebug.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Experimental\CinemachineNewVirtualCamera.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachineBasicMultiChannelPerlin.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineVirtualCamera.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\UnityVectorExtensions.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachinePixelPerfect.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineExternalCamera.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Impulse\CinemachineIndependentImpulseListener.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineClearShot.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CinemachineInputAxisDriver.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachineHardLockToTarget.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\SignalSourceAsset.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Helpers\CinemachineTriggerAction.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineFreeLook.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Helpers\GroupWeightManipulator.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachineTrackedDolly.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\SplineHelpers.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Impulse\CinemachineImpulseManager.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CinemachinePropertyAttribute.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\AssemblyInfo.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Impulse\CinemachineImpulseSource.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Impulse\CinemachineFixedSignal.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachinePipeline.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineTargetGroup.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\GaussianFilter.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Timeline\CinemachineShotPlayable.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineMixingCamera.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Impulse\CinemachineImpulseListener.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachineHardLookAt.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachineFramingTransposer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachineComposer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineFollowZoom.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Impulse\CinemachineImpulseDefinition.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\NoiseSettings.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineCameraOffset.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours\CinemachineBlendListCamera.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachineGroupComposer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\PostProcessing\CinemachinePostProcessing.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Timeline\CinemachineMixer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CinemachineExtension.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components\CinemachineOrbitalTransposer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\ICinemachineComponent.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CameraState.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\AxisState.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CinemachineBlend.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CinemachineCore.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CinemachineVirtualCameraBase.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\CinemachineComponentBase.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core\ConfinerOven.cs" />
+     <Compile Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\ThirdParty\clipper.cs" />
+     <Folder Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Timeline" />
+     <Folder Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Helpers" />
+     <Folder Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Impulse" />
+     <None Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\com.unity.cinemachine.asmdef" />
+     <Folder Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\PostProcessing" />
+     <Folder Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\ThirdParty" />
+     <Folder Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Experimental" />
+     <Folder Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime" />
+     <Folder Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Core" />
+     <Folder Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Behaviours" />
+     <Folder Include="Library\PackageCache\com.unity.cinemachine@2.8.9\Runtime\Components" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -795,6 +789,12 @@
      <Reference Include="System.Xml.Serialization">
      <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Runtime">
+     <HintPath>E:\code\unity\temp_projects\ui_builder_components\UI Builder Components\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+     <HintPath>E:\code\unity\temp_projects\ui_builder_components\UI Builder Components\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>E:\code\unity\temp_projects\ui_builder_components\UI Builder Components\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
@@ -803,9 +803,9 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Base.Util.csproj">
-      <Project>{7f8bf540-471b-0718-3376-138d0fc06b5d}</Project>
-      <Name>Base.Util</Name>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{7e6071c0-c219-aa5c-7e06-e4d78cb98e64}</Project>
+      <Name>Unity.Timeline</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InputSystem.csproj">
       <Project>{ecfaf90d-4507-5285-75a7-65771a2a8a67}</Project>

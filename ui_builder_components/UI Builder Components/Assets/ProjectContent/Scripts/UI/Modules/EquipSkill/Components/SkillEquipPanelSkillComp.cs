@@ -9,9 +9,10 @@ namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
     {
         public VisualElement root;
 
-        public static SkillEquipPanelSkillComp Create(Skill skill, Skill selectedSkill, bool isSkillActive)
+        public static SkillEquipPanelSkillComp Create(VisualElement rootIn, Skill skill, Skill selectedSkill, bool isSkillActive)
         {
-            VisualElement root = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/ProjectContent/Scripts/UI/Modules/EquipSkill/Components/SkillEquipPanelSkillComp.uxml").CloneTree();
+            VisualElement root = rootIn;
+            // VisualElement root = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/ProjectContent/Scripts/UI/Modules/EquipSkill/Components/SkillEquipPanelSkillComp.uxml").CloneTree();
             VisualElement skillEl = root.Q<VisualElement>("SkillEquipPanelSkill");
             UiUtil.ToggleClass(skillEl, "is-active-box", isSkillActive);
 
