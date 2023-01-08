@@ -14,7 +14,7 @@ namespace ProjectContent.Scripts.Camera
             storeData = AppResource.instance.storeData;
         }
 
-        void FixedUpdate()
+        void LateUpdate()
         {
             CameraHandler3D.FollowPlayers(transform, storeData.AllPlayerPositions(), true);
         }
