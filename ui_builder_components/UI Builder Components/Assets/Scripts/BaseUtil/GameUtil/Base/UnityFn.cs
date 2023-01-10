@@ -234,6 +234,7 @@ namespace BaseUtil.GameUtil.Base
         }
 
         /// <summary>
+        /// Typically used to allow e.g. 1) dash once per second, within 1 second can dash once, 2) within 0.1 second can only press the conform button once.
         /// Won't work if time is stopped (e.g. game is paused)
         /// IMPORTANT:
         /// If controller is AppResource.instance, intervalState needs to be reset using intervalReset observable. Otherwise intervalState.canRun is false so it stops functional.
@@ -736,6 +737,15 @@ namespace BaseUtil.GameUtil.Base
         {
             Vector3 velocity = rb.velocity;
             rb.velocity = new Vector3(velocity.x, jumpForce, velocity.z);
+        }
+
+        public static void HandleDash(Rigidbody rb, float dashForce)
+        {
+            Vector3 velocity = rb.velocity;
+            float x = FnVal.RoundAxisValue(velocity.x, 0.3f);
+            float z = FnVal.RoundAxisValue(velocity.z, 0.3f);
+            float multiplier = (x != 0 && z != 0) ? 1.4f : 1f;
+            rb.velocity = new Vector3(velocity.x * dashForce / multiplier, velocity.y, velocity.z * dashForce / multiplier);
         }
 
         /// <summary>

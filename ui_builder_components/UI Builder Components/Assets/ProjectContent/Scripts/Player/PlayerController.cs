@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameInputMapping inputMapping = GameInputMapping.Create();
+    private readonly GameInputMapping inputMapping = GameInputMapping.Create();
     private AppResource appResource;
     private GameStoreData gameStoreData;
 
@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
     private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
     private static readonly int isMovingKey = Animator.StringToHash("isMoving");
     private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
+    private readonly IntervalState dashInterval = IntervalState.Create(0.2f);
+
+    public float dashForce = 15f;
 
     private readonly MoveSpeedModifier moveSpeedModifier = MoveSpeedModifier.Create();
     private PlayerWeaponState playerWeaponState = PlayerWeaponState.NONE;
@@ -73,6 +76,8 @@ public class PlayerController : MonoBehaviour
         if (userInput.jump && isOnGround) animatorCtrl.SetTrigger(triggerJumpKey);
         if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
         PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
+
+        if (userInput.dash) UnityFn.HandleDash(rb, dashForce);
 
         PlayerWeaponState.HandleWeaponVisibility(playerWeaponState, swordMesh, staffMesh);
         if (userInput.swing) animatorCtrl.SetTrigger(triggerSwingKey);
@@ -195,6 +200,17 @@ public class PlayerController : MonoBehaviour
                 userInput.swing = true;
                 moveSpeedModifier.TemporarilyApplyModifier(this);
             }
+        }
+        if (action == GameInputAction.DASH)
+        {
+            UnityFn.RunWithInterval(this, dashInterval, () =>
+            {
+                if (context.started)
+                {
+                    playerWeaponState = PlayerWeaponState.NONE;
+                    userInput.dash = true;
+                }
+            });
         }
         if (action is {isMagic: true})
         {

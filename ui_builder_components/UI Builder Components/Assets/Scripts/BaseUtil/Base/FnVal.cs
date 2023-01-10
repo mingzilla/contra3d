@@ -100,5 +100,18 @@ namespace BaseUtil.Base
             if (isInclusive) return low <= num && num <= high;
             return low < num && num < high;
         }
+
+        /// <summary>
+        /// Converts value to -1, 0, 1 because axis accepts these 3 as rounded values
+        /// </summary>
+        /// <param name="value">actual value</param>
+        /// <param name="dividingValue">e.g. 0.3f, at what point to round up or down</param>
+        /// <returns></returns>
+        public static float RoundAxisValue(float value, float dividingValue)
+        {
+            if (value > dividingValue) return 1f;
+            if (value < -(dividingValue)) return -1f;
+            return 0f;
+        }
     }
 }

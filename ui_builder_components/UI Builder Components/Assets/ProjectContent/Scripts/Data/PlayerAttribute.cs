@@ -7,9 +7,10 @@ namespace ProjectContent.Scripts.Data
     public class PlayerAttribute
     {
         public int playerId;
-        public float moveSpeed = 6f; // good value by experience
-        public float jumpForce = 15f; // good value by experience
-        public float gravityMultiplier = 3.5f; // combined with 20f jump force, to avoid character being floaty
+        public float moveSpeed = 6f;
+        public float jumpForce = 15f;
+        public float dashForce = 15f;
+        public float gravityMultiplier = 3.5f; // combined with jump force, to avoid character being floaty
         public float playerToGroundDistance = 0f; // Not visible, so need to create an empty object on the UI, and calculate the distance to adjust
         public int maxHp = 8;
 

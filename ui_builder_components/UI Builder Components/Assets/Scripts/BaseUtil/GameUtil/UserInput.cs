@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using BaseUtil.Base;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace BaseUtil.GameUtil
@@ -18,6 +19,8 @@ namespace BaseUtil.GameUtil
 
         public bool jump;
         public bool jumpCancelled; // this is to support holding jump button to jump high - basically when cancelled, change to half y velocity 
+
+        public bool dash;
 
         public bool fire1;
         public bool fire2;
@@ -39,6 +42,7 @@ namespace BaseUtil.GameUtil
             // don't reset up,down,left,right. let velocity stop itself
             userInput.jump = false;
             userInput.jumpCancelled = false;
+            userInput.dash = false;
             userInput.fire1 = false;
             userInput.fire2 = false;
             userInput.fire3 = false;
@@ -154,9 +158,7 @@ namespace BaseUtil.GameUtil
 
         private static float RoundAxisValue(float value)
         {
-            if (value > 0.3f) return 1f;
-            if (value < -0.3f) return -1f;
-            return 0f;
+            return FnVal.RoundAxisValue(value, 0.3f);
         }
 
         public static UserInput Move(UserInput userInput, InputAction.CallbackContext context)
