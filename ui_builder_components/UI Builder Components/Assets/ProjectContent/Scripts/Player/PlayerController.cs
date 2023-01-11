@@ -1,9 +1,9 @@
 using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
-using BaseUtil.GameUtil.Util3D;
 using ProjectContent.Scripts.AppLiveResource;
 using ProjectContent.Scripts.Data;
+using ProjectContent.Scripts.Player.Actions;
 using ProjectContent.Scripts.Types;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,22 +23,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private SkinnedMeshRenderer meshRenderer;
     private LayerMask groundLayers;
-    private UserInput userInput = UserInput.Create(1);
-
+    private UserInput userInput;
     private Animator animatorCtrl;
-    private static readonly int triggerJumpKey = Animator.StringToHash("triggerJump");
-    private static readonly int triggerSwingKey = Animator.StringToHash("triggerSwing");
-    private static readonly int triggerMagicKey = Animator.StringToHash("triggerMagic");
-    private static readonly int triggerRollKey = Animator.StringToHash("triggerRoll");
-    private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
-    private static readonly int isMovingKey = Animator.StringToHash("isMoving");
+
+    private PlayerMoveAction moveAction;
+    private PlayerJumpAction jumpAction;
+    private PlayerDashAction dashAction;
+    private PlayerAttackAction attackAction;
+
     private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
-    private readonly IntervalState dashInterval = IntervalState.Create(0.2f);
-
-    public float dashForce = 15f;
-
-    private readonly MoveSpeedModifier moveSpeedModifier = MoveSpeedModifier.Create();
-    private PlayerWeaponState playerWeaponState = PlayerWeaponState.NONE;
 
     void Start()
     {
@@ -54,7 +47,13 @@ public class PlayerController : MonoBehaviour
         gameObject.SetActive(true);
         PlayerInput playerInput = gameObject.GetComponent<PlayerInput>();
         playerId = playerInput.playerIndex;
+        userInput = UserInput.Create(playerId);
         gameStoreData.AddPlayer(playerInput);
+
+        moveAction = PlayerMoveAction.Create(animatorCtrl, rb);
+        jumpAction = PlayerJumpAction.Create(animatorCtrl, rb);
+        dashAction = PlayerDashAction.Create(animatorCtrl, rb);
+        attackAction = PlayerAttackAction.Create(animatorCtrl, rb, swordMesh, staffMesh);
     }
 
     void FixedUpdate()
@@ -69,21 +68,10 @@ public class PlayerController : MonoBehaviour
         // UnitDisplayHandler3D.HandleInvincibility(meshRenderer, takeDamageInterval);
         bool isOnGround = UnityFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
 
-        PlayerActionHandler3D.FighterMoveXZ(userInput, rb, playerAttribute.moveSpeed, moveSpeedModifier.speedModifier, isOnGround);
-        animatorCtrl.SetBool(isMovingKey, moveSpeedModifier.CanUseMoveAnimation() && userInput.IsMoving());
-        UnitDisplayHandler3D.HandleXZFacing(transform, userInput);
-
-        animatorCtrl.SetBool(isOnGroundKey, isOnGround);
-        if (userInput.jump && isOnGround) animatorCtrl.SetTrigger(triggerJumpKey);
-        if (userInput.jump) PlayerActionHandler3D.HandleJumpFromGround(isOnGround, rb, playerAttribute.jumpForce);
-        PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
-
-        if (userInput.dash) UnityFn.HandleDash(rb, dashForce);
-        if (userInput.dash) animatorCtrl.SetTrigger(triggerRollKey);
-
-        PlayerWeaponState.HandleWeaponVisibility(playerWeaponState, swordMesh, staffMesh);
-        if (userInput.swing) animatorCtrl.SetTrigger(triggerSwingKey);
-        if (userInput.IsUsingMagic()) animatorCtrl.SetTrigger(triggerMagicKey);
+        playerAttribute = moveAction.Perform(playerAttribute, userInput, transform, isOnGround);
+        playerAttribute = jumpAction.Perform(playerAttribute, userInput, isOnGround);
+        playerAttribute = dashAction.Perform(playerAttribute, userInput);
+        playerAttribute = attackAction.Perform(playerAttribute, userInput);
 
         playerAttribute.inGameTransform = transform;
         gameStoreData.SetPlayer(playerAttribute);
@@ -98,8 +86,6 @@ public class PlayerController : MonoBehaviour
 
     public void KeySelect(InputAction.CallbackContext context)
     {
-        // if (context.started)
-        // if (context.canceled)
     }
 
     public void KeyStart(InputAction.CallbackContext context)
@@ -165,14 +151,14 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             userInput.isHoldingRt = true;
-            moveSpeedModifier.ToggleIdle(true);
-            playerWeaponState = PlayerWeaponState.STAFF;
+            moveAction.moveSpeedModifier.ToggleIdle(true);
+            attackAction.playerWeaponState = PlayerWeaponState.STAFF;
         }
         if (context.canceled)
         {
             userInput.isHoldingRt = false;
-            moveSpeedModifier.ToggleIdle(false);
-            playerWeaponState = PlayerWeaponState.NONE;
+            moveAction.moveSpeedModifier.ToggleIdle(false);
+            attackAction.playerWeaponState = PlayerWeaponState.NONE;
         }
     }
 
@@ -198,22 +184,22 @@ public class PlayerController : MonoBehaviour
         {
             if (context.started)
             {
-                playerWeaponState = PlayerWeaponState.SWORD;
+                attackAction.playerWeaponState = PlayerWeaponState.SWORD;
                 userInput.swing = true;
-                moveSpeedModifier.TemporarilyApplyModifier(this);
+                moveAction.moveSpeedModifier.TemporarilyApplyModifier(this);
             }
         }
         if (action == GameInputAction.DASH)
         {
-            UnityFn.RunWithInterval(this, dashInterval, () =>
+            if (context.started)
             {
-                if (context.started)
+                UnityFn.RunWithInterval(this, dashAction.dashInterval, () =>
                 {
-                    playerWeaponState = PlayerWeaponState.NONE;
+                    attackAction.playerWeaponState = PlayerWeaponState.NONE;
                     userInput.dash = true;
-                    moveSpeedModifier.CancelModifier(this);
-                }
-            });
+                    moveAction.moveSpeedModifier.CancelModifier(this);
+                });
+            }
         }
         if (action is {isMagic: true})
         {

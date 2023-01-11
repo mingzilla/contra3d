@@ -75,6 +75,10 @@
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputAction.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenStoreData.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerMoveAction.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerJumpAction.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerDashAction.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerAttackAction.cs" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
      <Folder Include="Assets\ProjectContent\Prefabs\Players" />
@@ -114,6 +118,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components" />
      <Folder Include="Assets\ProjectContent\Scenes" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game" />
+     <Folder Include="Assets\ProjectContent\Scripts\Player\Actions" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-styles.uss" />
