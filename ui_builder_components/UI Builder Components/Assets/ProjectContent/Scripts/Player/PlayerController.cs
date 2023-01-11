@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private static readonly int triggerJumpKey = Animator.StringToHash("triggerJump");
     private static readonly int triggerSwingKey = Animator.StringToHash("triggerSwing");
     private static readonly int triggerMagicKey = Animator.StringToHash("triggerMagic");
+    private static readonly int triggerRollKey = Animator.StringToHash("triggerRoll");
     private static readonly int isOnGroundKey = Animator.StringToHash("isOnGround");
     private static readonly int isMovingKey = Animator.StringToHash("isMoving");
     private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
@@ -78,6 +79,7 @@ public class PlayerController : MonoBehaviour
         PlayerActionHandler3D.HandleGravityModification(rb, playerAttribute.gravityMultiplier);
 
         if (userInput.dash) UnityFn.HandleDash(rb, dashForce);
+        if (userInput.dash) animatorCtrl.SetTrigger(triggerRollKey);
 
         PlayerWeaponState.HandleWeaponVisibility(playerWeaponState, swordMesh, staffMesh);
         if (userInput.swing) animatorCtrl.SetTrigger(triggerSwingKey);
