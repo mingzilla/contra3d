@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BaseUtil.Base;
 using ProjectContent.Scripts.Types;
 
 namespace ProjectContent.Scripts.Data
@@ -27,7 +28,7 @@ namespace ProjectContent.Scripts.Data
 
         public GameInputAction GetGamePlayPadAction(GameInputKey key, bool isHoldingMagicTrigger)
         {
-            if (!isHoldingMagicTrigger) return mapping[GameInputContext.GAME_PLAY][key];
+            if (!isHoldingMagicTrigger) return FnVal.SafeGet(null, () => mapping[GameInputContext.GAME_PLAY][key]);
             if (key == GameInputKey.A) return GameInputAction.MAGIC_BOTTOM;
             if (key == GameInputKey.B) return GameInputAction.MAGIC_RIGHT;
             if (key == GameInputKey.X) return GameInputAction.MAGIC_LEFT;

@@ -150,18 +150,8 @@ public class PlayerController : MonoBehaviour
 
     public void KeyRB(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            userInput.isHoldingRb = true;
-            moveSpeedModifier.ToggleIdle(true);
-            playerWeaponState = PlayerWeaponState.STAFF;
-        }
-        if (context.canceled)
-        {
-            userInput.isHoldingRb = false;
-            moveSpeedModifier.ToggleIdle(false);
-            playerWeaponState = PlayerWeaponState.NONE;
-        }
+        if (context.started) userInput.isHoldingRb = true;
+        if (context.canceled) userInput.isHoldingRb = false;
     }
 
     public void KeyLT(InputAction.CallbackContext context)
@@ -172,8 +162,18 @@ public class PlayerController : MonoBehaviour
 
     public void KeyRT(InputAction.CallbackContext context)
     {
-        if (context.started) userInput.isHoldingRt = true;
-        if (context.canceled) userInput.isHoldingRt = false;
+        if (context.started)
+        {
+            userInput.isHoldingRt = true;
+            moveSpeedModifier.ToggleIdle(true);
+            playerWeaponState = PlayerWeaponState.STAFF;
+        }
+        if (context.canceled)
+        {
+            userInput.isHoldingRt = false;
+            moveSpeedModifier.ToggleIdle(false);
+            playerWeaponState = PlayerWeaponState.NONE;
+        }
     }
 
     public void KeyboardAnyKey(InputAction.CallbackContext context)
@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdatePadInput(InputAction.CallbackContext context, GameInputKey key)
     {
-        GameInputAction action = inputMapping.GetGamePlayPadAction(key, userInput.isHoldingRb);
+        GameInputAction action = inputMapping.GetGamePlayPadAction(key, userInput.isHoldingRt);
         UpdateInput(context, action);
     }
 
@@ -211,6 +211,7 @@ public class PlayerController : MonoBehaviour
                 {
                     playerWeaponState = PlayerWeaponState.NONE;
                     userInput.dash = true;
+                    moveSpeedModifier.CancelModifier(this);
                 }
             });
         }

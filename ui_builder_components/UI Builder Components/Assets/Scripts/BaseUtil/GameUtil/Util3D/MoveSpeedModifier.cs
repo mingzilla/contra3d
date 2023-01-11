@@ -10,7 +10,10 @@ namespace BaseUtil.GameUtil.Util3D
     /// </summary>
     public class MoveSpeedModifier
     {
-        public float speedModifier = 1f;
+        private static readonly int FULL_SPEED = 1;
+        private static readonly int IDLE = 0;
+        
+        public float speedModifier = FULL_SPEED;
 
         private IEnumerator speedModifierCoroutine;
         private float delay = 0.25f;
@@ -34,13 +37,19 @@ namespace BaseUtil.GameUtil.Util3D
         {
             UnityFn.CancelTimeout(controller, speedModifierCoroutine);
             speedModifier = modifiedValue;
-            speedModifierCoroutine = UnityFn.SetTimeout(controller, delay, () => speedModifier = 1f);
+            speedModifierCoroutine = UnityFn.SetTimeout(controller, delay, () => speedModifier = FULL_SPEED);
+        }
+
+        public void CancelModifier(MonoBehaviour controller)
+        {
+            UnityFn.CancelTimeout(controller, speedModifierCoroutine);
+            speedModifier = FULL_SPEED;
         }
 
         public void ToggleIdle(bool isIdle)
         {
-            if (isIdle) speedModifier = 0;
-            if (!isIdle) speedModifier = 1;
+            if (isIdle) speedModifier = IDLE;
+            if (!isIdle) speedModifier = FULL_SPEED;
         }
 
         public bool CanUseMoveAnimation()
