@@ -15,7 +15,6 @@ namespace ProjectContent.Scripts.Bullet
         public static BulletController SpawnXZ(GameObject prefab, Transform shotPoint, Vector3 positionDelta, Skill skill)
         {
             Vector3 direction = BulletCommonUtil3D.CreateBulletXZDirection(shotPoint.rotation.eulerAngles.y);
-            Debug.Log(direction);
             return SpawnInDirection(prefab, shotPoint, positionDelta, skill, direction);
         }
 
