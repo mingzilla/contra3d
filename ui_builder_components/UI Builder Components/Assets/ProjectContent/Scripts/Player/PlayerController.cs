@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         playerAttribute = moveAction.Perform(playerAttribute, userInput, transform, isOnGround);
         playerAttribute = jumpAction.Perform(playerAttribute, userInput, isOnGround);
         playerAttribute = dashAction.Perform(playerAttribute, userInput);
-        playerAttribute = attackAction.Perform(playerAttribute, transform, userInput);
+        playerAttribute = attackAction.Perform(playerAttribute, transform, new Vector3(0, 0.5f, 0), userInput);
 
         playerAttribute.inGameTransform = transform;
         gameStoreData.SetPlayer(playerAttribute);

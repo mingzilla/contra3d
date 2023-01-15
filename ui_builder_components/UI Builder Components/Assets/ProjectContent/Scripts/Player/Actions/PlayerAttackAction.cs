@@ -35,7 +35,7 @@ namespace ProjectContent.Scripts.Player.Actions
             };
         }
 
-        public PlayerAttribute Perform(PlayerAttribute playerAttribute, Transform playerTransform, UserInput userInput)
+        public PlayerAttribute Perform(PlayerAttribute playerAttribute, Transform playerTransform, Vector3 magicPositionDelta, UserInput userInput)
         {
             PlayerWeaponState.HandleWeaponVisibility(playerWeaponState, swordMesh, staffMesh);
             if (userInput.swing) animatorCtrl.SetTrigger(TRIGGER_SWING_KEY);
@@ -43,16 +43,16 @@ namespace ProjectContent.Scripts.Player.Actions
             {
                 animatorCtrl.SetTrigger(TRIGGER_MAGIC_KEY);
                 Skill skill = PlayerSkillAllocation.GetSkill(playerAttribute.skillAllocation, userInput, true);
-                CastMagic(skill, playerTransform);
+                CastMagic(skill, playerTransform, magicPositionDelta);
             }
             return playerAttribute;
         }
 
-        private void CastMagic(Skill skill, Transform playerTransform)
+        private void CastMagic(Skill skill, Transform playerTransform, Vector3 magicPositionDelta)
         {
             if (skill == Skill.FIRE_BALL)
             {
-                BulletController.SpawnXZ(fireballPrefab, playerTransform, Vector3.zero, skill);
+                BulletController.SpawnXZ(fireballPrefab, playerTransform, magicPositionDelta, skill);
             }
         }
     }
