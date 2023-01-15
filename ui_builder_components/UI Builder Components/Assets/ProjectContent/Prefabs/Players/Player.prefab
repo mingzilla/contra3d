@@ -340,6 +340,8 @@ MonoBehaviour:
   staffMesh: {fileID: 1655293853003412176}
   fireballPrefab: {fileID: 1706711820176976905, guid: 2dbeca6e1377a634a809bd9218782c8d,
     type: 3}
+  lighteningPrefab: {fileID: 6779723982510790951, guid: d205c86777da12440b637938a0d9e451,
+    type: 3}
 --- !u!136 &5639405600825661515
 CapsuleCollider:
   m_ObjectHideFlags: 0

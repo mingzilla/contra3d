@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject swordMesh;
     [SerializeField] private GameObject staffMesh;
     [SerializeField] private GameObject fireballPrefab;
+    [SerializeField] private GameObject lighteningPrefab;
 
     private int playerId;
 
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour
         dashAction = PlayerDashAction.Create(animatorCtrl, rb);
         attackAction = PlayerAttackAction.Create(animatorCtrl, rb,
             swordMesh, staffMesh,
-            fireballPrefab);
+            fireballPrefab, lighteningPrefab);
     }
 
     void FixedUpdate()

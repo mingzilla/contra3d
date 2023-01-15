@@ -8,7 +8,7 @@ namespace ProjectContent.Scripts.Data
         public Skill top1;
         public Skill bottom1;
         public Skill left1 = Skill.FIRE_BALL;
-        public Skill right1;
+        public Skill right1 = Skill.LIGHTENING;
 
         public Skill top2;
         public Skill bottom2;

@@ -20,10 +20,11 @@ namespace ProjectContent.Scripts.Player.Actions
         private GameObject staffMesh;
 
         private GameObject fireballPrefab;
+        private GameObject lighteningPrefab;
 
         public static PlayerAttackAction Create(Animator animatorCtrl, Rigidbody rb,
                                                 GameObject swordMesh, GameObject staffMesh,
-                                                GameObject fireballPrefab)
+                                                GameObject fireballPrefab, GameObject lighteningPrefab)
         {
             return new PlayerAttackAction()
             {
@@ -32,6 +33,7 @@ namespace ProjectContent.Scripts.Player.Actions
                 swordMesh = swordMesh,
                 staffMesh = staffMesh,
                 fireballPrefab = fireballPrefab,
+                lighteningPrefab = lighteningPrefab,
             };
         }
 
@@ -53,6 +55,10 @@ namespace ProjectContent.Scripts.Player.Actions
             if (skill == Skill.FIRE_BALL)
             {
                 BulletController.SpawnXZ(fireballPrefab, playerTransform, magicPositionDelta, skill);
+            }
+            if (skill == Skill.LIGHTENING)
+            {
+                BulletController.SpawnXZ(lighteningPrefab, playerTransform, magicPositionDelta, skill);
             }
         }
     }
