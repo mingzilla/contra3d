@@ -48,12 +48,15 @@
      <Compile Include="Assets\ProjectContent\Scripts\Types\ElementalType.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\Skill.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleMenuItem.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerMoveAction.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuSkillsPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputContext.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Data\GameStoreData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Player\PlayerController.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerAttackAction.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAllocationPanelActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerJumpAction.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelCompController.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleScreenMenuPanel.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Data\GameInputMapping.cs" />
@@ -74,11 +77,12 @@
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\GameMenuItem.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain\EquipSkillActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputAction.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerMoveAction.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerJumpAction.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerDashAction.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerAttackAction.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenStoreData.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Data\PlayerSkillAllocation.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Bullet\BulletController.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\AbstractController\AbstractDestructibleController.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\AbstractController\AbstractRangeDetectionController.cs" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
      <Folder Include="Assets\ProjectContent\Prefabs\Players" />
@@ -98,6 +102,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules" />
      <None Include="Assets\ProjectContent\Scripts\UI\Base\uss\base\flex-layout-styles.uss" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen" />
+     <Folder Include="Assets\ProjectContent\Prefabs\Magic" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill" />
      <Folder Include="Assets\ProjectContent\Materials\images" />
@@ -119,6 +124,7 @@
      <Folder Include="Assets\ProjectContent\Scenes" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game" />
      <Folder Include="Assets\ProjectContent\Scripts\Player\Actions" />
+     <Folder Include="Assets\ProjectContent\Scripts\Bullet" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-styles.uss" />
@@ -130,6 +136,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain" />
      <Folder Include="Assets\ProjectContent\Scripts\AppLiveResource" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore" />
+     <Folder Include="Assets\ProjectContent\Scripts\AbstractController" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore" />

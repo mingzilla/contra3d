@@ -19,6 +19,8 @@ namespace ProjectContent.Scripts.Data
         public bool isAlive; // not alive if killed
         public int currentHp;
 
+        public PlayerSkillAllocation skillAllocation = new PlayerSkillAllocation();
+        
         public Transform inGameTransform;
 
         public static PlayerAttribute CreateEmpty(int playerId)

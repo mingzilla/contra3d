@@ -6,31 +6,37 @@ namespace ProjectContent.Scripts.Types
 {
     public class Skill
     {
-        public static readonly Skill NEUTRAL = Create("NEUTRAL", "Neutral", ElementalType.NEUTRAL, 1, 2);
-        public static readonly Skill NEUTRAL_1 = Create("NEUTRAL_1", "Neutral", ElementalType.NEUTRAL, 1, 3);
-        public static readonly Skill NEUTRAL_2 = Create("NEUTRAL_2", "Neutral", ElementalType.NEUTRAL, 2, 5);
-        public static readonly Skill NEUTRAL_3 = Create("NEUTRAL_3", "Neutral", ElementalType.NEUTRAL, 3, 10);
+        public static readonly Skill NEUTRAL = Create("NEUTRAL", "Neutral", ElementalType.NEUTRAL, 1, 2, 1, 1f, 20f, true, 3f);
+        public static readonly Skill NEUTRAL_1 = Create("NEUTRAL_1", "Neutral", ElementalType.NEUTRAL, 1, 3, 1, 1f, 20f, true, 3f);
+        public static readonly Skill NEUTRAL_2 = Create("NEUTRAL_2", "Neutral", ElementalType.NEUTRAL, 2, 5, 1, 1f, 20f, true, 3f);
+        public static readonly Skill NEUTRAL_3 = Create("NEUTRAL_3", "Neutral", ElementalType.NEUTRAL, 3, 10, 1, 1f, 20f, true, 3f);
 
-        public static readonly Skill FIRE_BALL = Create("FIRE_BALL", "Fire Ball", ElementalType.FIRE, 1, 2);
-        public static readonly Skill FIRE_BALL_1 = Create("FIRE_BALL_1", "Fire Ball", ElementalType.FIRE, 1, 3);
-        public static readonly Skill FIRE_BALL_2 = Create("FIRE_BALL_2", "Fire Ball", ElementalType.FIRE, 2, 5);
-        public static readonly Skill FIRE_BALL_3 = Create("FIRE_BALL_3", "Fire Ball", ElementalType.FIRE, 3, 10);
+        public static readonly Skill FIRE_BALL = Create("FIRE_BALL", "Fire Ball", ElementalType.FIRE, 1, 2, 1, 1f, 2f, true, 3f);
+        public static readonly Skill FIRE_BALL_1 = Create("FIRE_BALL_1", "Fire Ball", ElementalType.FIRE, 1, 3, 1, 1f, 20f, true, 3f);
+        public static readonly Skill FIRE_BALL_2 = Create("FIRE_BALL_2", "Fire Ball", ElementalType.FIRE, 2, 5, 1, 1f, 20f, true, 3f);
+        public static readonly Skill FIRE_BALL_3 = Create("FIRE_BALL_3", "Fire Ball", ElementalType.FIRE, 3, 10, 1, 1f, 20f, true, 3f);
 
-        public static readonly Skill WATER_BALL = Create("WATER_BALL", "Water Ball", ElementalType.WATER, 1, 2);
-        public static readonly Skill WATER_BALL_1 = Create("WATER_BALL_1", "Water Ball", ElementalType.WATER, 1, 3);
-        public static readonly Skill WATER_BALL_2 = Create("WATER_BALL_2", "Water Ball", ElementalType.WATER, 2, 5);
-        public static readonly Skill WATER_BALL_3 = Create("WATER_BALL_3", "Water Ball", ElementalType.WATER, 3, 10);
+        public static readonly Skill WATER_BALL = Create("WATER_BALL", "Water Ball", ElementalType.WATER, 1, 2, 1, 1f, 20f, true, 3f);
+        public static readonly Skill WATER_BALL_1 = Create("WATER_BALL_1", "Water Ball", ElementalType.WATER, 1, 3, 1, 1f, 20f, true, 3f);
+        public static readonly Skill WATER_BALL_2 = Create("WATER_BALL_2", "Water Ball", ElementalType.WATER, 2, 5, 1, 1f, 20f, true, 3f);
+        public static readonly Skill WATER_BALL_3 = Create("WATER_BALL_3", "Water Ball", ElementalType.WATER, 3, 10, 1, 1f, 20f, true, 3f);
 
-        public static readonly Skill LIGHTENING = Create("LIGHTENING", "Lightening", ElementalType.LIGHT, 1, 2);
-        public static readonly Skill LIGHTENING_1 = Create("LIGHTENING_1", "Lightening", ElementalType.LIGHT, 1, 3);
-        public static readonly Skill LIGHTENING_2 = Create("LIGHTENING_2", "Lightening", ElementalType.LIGHT, 2, 5);
-        public static readonly Skill LIGHTENING_3 = Create("LIGHTENING_3", "Lightening", ElementalType.LIGHT, 3, 10);
+        public static readonly Skill LIGHTENING = Create("LIGHTENING", "Lightening", ElementalType.LIGHT, 1, 2, 1, 1f, 20f, true, 3f);
+        public static readonly Skill LIGHTENING_1 = Create("LIGHTENING_1", "Lightening", ElementalType.LIGHT, 1, 3, 1, 1f, 20f, true, 3f);
+        public static readonly Skill LIGHTENING_2 = Create("LIGHTENING_2", "Lightening", ElementalType.LIGHT, 2, 5, 1, 1f, 20f, true, 3f);
+        public static readonly Skill LIGHTENING_3 = Create("LIGHTENING_3", "Lightening", ElementalType.LIGHT, 3, 10, 1, 1f, 20f, true, 3f);
 
         public string name;
         public string text;
         public ElementalType type;
         public int slots;
         public int manaCost;
+
+        public int damage;
+        public float blastRange;
+        public float moveSpeed;
+        public bool destroyWhenHit;
+        public float autoDestroyTime;
 
         static List<Skill> All()
         {
@@ -70,7 +76,12 @@ namespace ProjectContent.Scripts.Types
             return All().GroupBy(x => x.type).ToDictionary(entry => entry.Key.name, entry => entry.ToList());
         }
 
-        private static Skill Create(string name, string text, ElementalType type, int slots, int manaCost)
+        private static Skill Create(string name, string text, ElementalType type, int slots, int manaCost,
+                                    int damage,
+                                    float blastRange,
+                                    float moveSpeed,
+                                    bool destroyWhenHit,
+                                    float autoDestroyTime)
         {
             Skill layer = new()
             {
@@ -79,6 +90,11 @@ namespace ProjectContent.Scripts.Types
                 type = type,
                 slots = slots,
                 manaCost = manaCost,
+                damage = damage,
+                blastRange = blastRange,
+                moveSpeed = moveSpeed,
+                destroyWhenHit = destroyWhenHit,
+                autoDestroyTime = autoDestroyTime,
             };
             return layer;
         }

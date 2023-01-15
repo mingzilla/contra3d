@@ -338,6 +338,8 @@ MonoBehaviour:
   initialPosition: {x: 1, y: 1, z: 1}
   swordMesh: {fileID: 6802413576562548365}
   staffMesh: {fileID: 1655293853003412176}
+  fireballPrefab: {fileID: 3645482982872372549, guid: 4277464210a3db04da4a6d0f0354f3ba,
+    type: 3}
 --- !u!136 &5639405600825661515
 CapsuleCollider:
   m_ObjectHideFlags: 0

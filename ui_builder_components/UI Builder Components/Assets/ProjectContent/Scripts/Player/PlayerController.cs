@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 initialPosition = Vector3.one;
     [SerializeField] private GameObject swordMesh;
     [SerializeField] private GameObject staffMesh;
+    [SerializeField] private GameObject fireballPrefab;
 
     private int playerId;
 
@@ -53,7 +54,9 @@ public class PlayerController : MonoBehaviour
         moveAction = PlayerMoveAction.Create(animatorCtrl, rb);
         jumpAction = PlayerJumpAction.Create(animatorCtrl, rb);
         dashAction = PlayerDashAction.Create(animatorCtrl, rb);
-        attackAction = PlayerAttackAction.Create(animatorCtrl, rb, swordMesh, staffMesh);
+        attackAction = PlayerAttackAction.Create(animatorCtrl, rb,
+            swordMesh, staffMesh,
+            fireballPrefab);
     }
 
     void FixedUpdate()
@@ -71,7 +74,7 @@ public class PlayerController : MonoBehaviour
         playerAttribute = moveAction.Perform(playerAttribute, userInput, transform, isOnGround);
         playerAttribute = jumpAction.Perform(playerAttribute, userInput, isOnGround);
         playerAttribute = dashAction.Perform(playerAttribute, userInput);
-        playerAttribute = attackAction.Perform(playerAttribute, userInput);
+        playerAttribute = attackAction.Perform(playerAttribute, transform, userInput);
 
         playerAttribute.inGameTransform = transform;
         gameStoreData.SetPlayer(playerAttribute);
