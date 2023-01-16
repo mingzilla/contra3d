@@ -1,0 +1,1395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+    <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
+    <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{a8bdc138-310a-ce32-f641-a06fd5f536b0}</ProjectGuid>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\Bin\Debug\Assembly-CSharp\</OutputPath>
+    <DefineConstants>UNITY_2022_2_2;UNITY_2022_2;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169,0649</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
+    <Analyzer Include="E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.EntityQuery.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemAPIQueryBuilder.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.LambdaJobs.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.Analyzer.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemContextSystemModule.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.JobEntity.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.Analyzer.CodeFixes.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.AspectGenerator.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.Common.dll" />
+    <Analyzer Include="E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.IdiomaticCSharpForEach.dll" />
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Folder Include="Assets" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ProfilerModules\memory-profiler-window.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\World" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-content_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Hierarchy\hierarchy-item.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\foldout-with-action-button.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\ActiveBuildConfiguration" />
+     <Folder Include="Library\PackageCache\com.unity.serialization@3.0.0-pre.1\Tests" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\SystemMixed" />
+     <Folder Include="Library\PackageCache\com.unity.test-framework@1.1.33" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\WindowInstance" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Inspector\component-header.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-window-item.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\EndCommandBuffer" />
+     <Folder Include="Assets\Settings" />
+     <Folder Include="Library\PackageCache\com.unity.searcher@4.9.2" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Search" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Spinner" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\EntityHierarchy\entity-hierarchy-enable-live-link-message.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Controls\TabView\tab-view_light.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\System" />
+     <None Include="Library\PackageCache\com.unity.test-framework.performance@2.8.0-preview\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ActiveBuildConfiguration" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\ConvertActive" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ProfilerModules" />
+     <Folder Include="Library\PackageCache\com.unity.serialization@3.0.0-pre.1" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\icons" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\search-and-goto-buttons_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\common_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities.graphics@1.0.0-pre.15\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Archetype" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-details-entity_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\PieChart.uss" />
+     <None Include="Library\PackageCache\com.unity.collections@2.1.0-pre.2\Unity.Collections.LowLevel.ILSupport\README.txt" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-component_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\autocomplete.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\common_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Go To Entities" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\key-value-pair.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Preferences\preferences-setting.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Content\entity-query-header.uxml" />
+     <None Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Query" />
+     <Folder Include="Library\PackageCache\com.unity.ide.rider@3.0.17\Rider" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\two-pane-split-view.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ProfilerModules\memory-profiler-left-pane.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\add-collection-item.uss" />
+     <Folder Include="Library\PackageCache\com.unity.serialization@3.0.0-pre.1\Runtime" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Hierarchy\hierarchy-loading.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Preferences\preferences-value.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\RuntimeComponent" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Components\component-type-view.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\system-dependency-view.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Preferences\preferences-value.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\RoundedCorners" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Controls" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Content" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Settings" />
+     <None Include="Library\PackageCache\com.unity.serialization@3.0.0-pre.1\package.json" />
+     <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\package.json" />
+     <None Include="Library\PackageCache\com.unity.entities.graphics@1.0.0-pre.15\ValidationExceptions.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\entity-inspector-components-tab.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\Go To Systems" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Component" />
+     <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Graphics" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Spinner\spinner_light.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Go To Systems" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling" />
+     <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\ValidationExceptions.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-dropdown_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\SystemSchedule\system-schedule-item.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Prefab" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\UnmanagedSystem" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\ActiveBuildConfiguration" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Content\entity-info.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\icons\light" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Journaling\entities-journaling-details-component.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ActiveBuildConfiguration\active-build-config-popup.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\Go To Entities" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\Search" />
+     <Folder Include="Library\PackageCache\com.unity.burst@1.8.2\Tests" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-details-component_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\search-and-goto-buttons.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-content_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Inspector\entity-inspector-relationships-tab.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Hierarchy\hierarchy-item.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Components\components-window_light.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Spinner" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\tag-component-element.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Preferences\preferences-setting.uxml" />
+     <None Include="Library\PackageCache\com.unity.timeline@1.7.2\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Spinner" />
+     <Folder Include="Library\PackageCache\com.unity.test-framework.performance@2.8.0-preview" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\icons\selected" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Inspector\entity-inspector-aspects-tab.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\StyleSheets\Extensions" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\lazy-load-reference.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-details_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.collections@2.1.0-pre.2\Unity.Collections.LowLevel.ILSupport" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\SystemEnabled" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-right-pane_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Controls\TabView" />
+     <Folder Include="Library\PackageCache\com.unity.collections@2.1.0-pre.2" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Hierarchy\hierarchy-loading.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\StyleSheets\Extensions\common.uss" />
+     <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17\ValidationConfig.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Content" />
+     <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\net35" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\SystemDisabled" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\SystemSchedule" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\list-element-default.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\query-view.uss" />
+     <None Include="Library\PackageCache\com.unity.mathematics@1.2.6\package.json" />
+     <None Include="Library\PackageCache\com.unity.scriptablebuildpipeline@1.21.0\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Journaling" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Settings" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\EntityGroup" />
+     <Folder Include="Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\AOT" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-window.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Components\component-type-view.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\EntityHierarchy\entity-hierarchy-toolbar.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Hierarchy\hierarchy-prefab-stage.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Content\component-attribute.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Components" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\foldout-without-action-button.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\StyleSheets" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\build-configuration.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\null-string-field.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\System" />
+     <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Group" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Components\components-window_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\entity-inspector-relationships-tab.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-details-entity_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\SystemSchedule" />
+     <None Include="Library\PackageCache\com.unity.timeline@1.7.2\ValidationExceptions.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\EntityHierarchy" />
+     <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Journaling" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ActiveBuildConfiguration\search-field.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.timeline@1.7.2" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\build-configuration-dependency_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Hierarchy" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Remove" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\component-view.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\Group" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\EndCommandBuffer" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Controls\foldout-field.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Preferences\preferences-window.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Convert" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\ConvertActive" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ProfilerModules\memory-profiler-right-pane.uxml" />
+     <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\PackageConversionData.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-left-pane_light.uss" />
+     <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6" />
+     <Folder Include="Library\PackageCache\com.unity.profiling.core@1.0.2" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\system-queries-view.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Journaling\entities-journaling-content.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Journaling\entities-journaling-window.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Preferences" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-right-pane.uss" />
+     <Folder Include="Library\PackageCache\com.unity.burst@1.8.2" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\BeginCommandBuffer" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Components" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\unsupported-inspector.uss" />
+     <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17\package.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Inspector\unsupported-inspector.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\SystemSchedule\system-schedule_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\classic-build-profile.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\DebugWindows" />
+     <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\ValidationExceptions.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\UnmanagedSystem" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\autocomplete_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Common\foldout-with-action-button.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\common.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\SystemSchedule\system-schedule-item.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Content\section.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Common\entity-view.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\add-collection-item.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\icons\dark" />
+     <Folder Include="Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Tests" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Inspector\entity-field.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Component" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\build-configuration-dependency.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\pagination-element.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-dropdown.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Common" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Aspect" />
+     <None Include="Library\PackageCache\com.unity.ide.rider@3.0.17\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Common\system-list-view.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration" />
+     <None Include="Library\PackageCache\com.unity.searcher@4.9.2\package.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-popup_light.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Go To Entities" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Controls" />
+     <None Include="Library\PackageCache\com.unity.test-framework@1.1.33\package.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Content\entity-query-header.uss" />
+     <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Controls\TabView\tab-view.uss" />
+     <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Inspector\tag-component-element.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-popup.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\list-element.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\entity-inspector.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Preferences\preferences-window.uss" />
+     <None Include="Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Aspect" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-details-component.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\build-component.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\search-field_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\classic-build-profile_light.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\RoundedCorners" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Controls\foldout-field_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\structural-changes-profiler-window_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Journaling" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Inspector\entity-header.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Archetype" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Segment" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\null-string-field.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-window_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Journaling\entities-journaling-details.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\circular-reference.uxml" />
+     <None Include="Library\PackageCache\com.unity.services.core@1.7.0\package.json" />
+     <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\ValidationExceptions.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Common\centered-message-element.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\entity-field.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Components\components-window.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\entity-inspector-aspects-tab_light.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Components" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-details_light.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\RuntimeComponent" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\type-inspector.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\Query" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Content\header.uss" />
+     <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17\ValidationExceptions.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ProfilerModules\memory-profiler-tree-view-item.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\complicated-type-test.uxml" />
+     <None Include="Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\link.xml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-window_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\structural-changes-profiler-window_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-details.uss" />
+     <None Include="Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Textures" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Search" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\EntityGroup" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules" />
+     <Folder Include="Library\PackageCache\com.unity.services.core@1.7.0\Runtime" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-tree-view-item.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Go To Systems" />
+     <Folder Include="Library\PackageCache\com.unity.mathematics@1.2.6" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-left-pane_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ActiveBuildConfiguration\active-build-config-window-item.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Search\search-element-filter-popup.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\variables_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Journaling\entities-journaling-details-entity.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Search\search-element.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Gizmos" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\classic-build-profile.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\build-component_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\query-with-entities.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Preferences" />
+     <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-left-pane.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Components" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\entity-field_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ActiveBuildConfiguration\active-build-config-dropdown.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\nullable-foldout.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Content\component.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\search-element-filter-popup.uss" />
+     <Folder Include="Assets\TutorialInfo\Scripts" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-popup_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\Settings" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\build-configuration_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Controls\foldout-field.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ProfilerModules\structural-changes-profiler-tree-view-item.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-window.uss" />
+     <Folder Include="Assets\TutorialInfo\Icons" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Content\system.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Content\display-list.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\SystemSchedule\system-schedule-header.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\build-configuration-dependency_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\entity-field_dark.uss" />
+     <Folder Include="Assets\TutorialInfo" />
+     <Folder Include="Library\PackageCache\com.unity.scriptablebuildpipeline@1.21.0" />
+     <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Hierarchy\hierarchy-toolbar.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\World" />
+     <Folder Include="Library\PackageCache\com.unity.ide.rider@3.0.17" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Content\component-attribute.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\search-element.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\set-element-default.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\entity-header.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\variables.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ActiveBuildConfiguration\active-build-config-popup-item.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-popup-item.uss" />
+     <Folder Include="Library\PackageCache\com.unity.searcher@4.9.2\Tests" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-details-component_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.test-framework.performance@2.8.0-preview\Tests" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Common\system-dependency-view.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\autocomplete_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Controls\foldout-field_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\circular-reference.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-window-item_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\dots-editor-common_light.uss" />
+     <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_SDF_SSD.cginc" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-component_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\WindowInstance" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Go To" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Scenes.Hybrid.Tests\TestSceneWithSubScene" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\DebugWindows\entity-debug-window.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\key-value-pair.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\component-header.uss" />
+     <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\ValidationConfig.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Controls\TabView\tab-view_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Query" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\entity-view.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\UnmanagedSystem" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Hierarchy\hierarchy.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected" />
+     <Folder Include="Library\PackageCache\com.unity.ide.vscode@1.2.5" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Remove" />
+     <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Tests" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Entity" />
+     <None Include="Library\PackageCache\com.unity.profiling.core@1.0.2\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.services.core@1.7.0" />
+     <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_Properties.cginc" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Entity" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\build-configuration.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\SystemSchedule\system-schedule_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\System" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Convert" />
+     <Folder Include="Assets\Scripts" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Inspector\entity-inspector-components-tab.uxml" />
+     <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_SDF Internal Editor.shader" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Search" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ProfilerModules\structural-changes-profiler-window.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ProfilerModules\memory-profiler-component.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Hierarchy" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml" />
+     <Folder Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\dots-editor-common_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\SystemEnabled" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Journaling\search-and-goto-buttons.uxml" />
+     <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.5\ValidationExceptions.json" />
+     <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\ValidationConfig.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-dropdown_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\ActiveBuildConfiguration\active-build-config-window.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\structural-changes-profiler-tree-view-item.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Search\search-element.uss" />
+     <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders" />
+     <Folder Include="Assets\SceneDependencyCache" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Segment" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Group" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Content\entity-query.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Hierarchy\hierarchy-toolbar.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-right-pane_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Search\search-element-filter-popup.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.serialization@3.0.0-pre.1\Tests\Runtime" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\BeginCommandBuffer" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\memory-profiler-component.uss" />
+     <Folder Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\variables_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-window.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\search-field_light.uss" />
+     <None Include="Library\PackageCache\com.unity.collections@2.1.0-pre.2\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\install-quick-search-popup.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Hierarchy\hierarchy-prefab-stage.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\entity-inspector-aspects-tab.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\EndCommandBuffer" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Spinner\spinner_dark.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Inspector" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\Entity" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Components\components-window.uss" />
+     <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\PackageConversionData_Assets.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\StyleSheets\Extensions\dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-details-entity.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\package.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ProfilerModules\structural-changes-profiler-window.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\selected\WindowInstance" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\SystemSchedule\system-schedule-toolbar.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\pagination-element.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\lazy-load-reference.uxml" />
+     <None Include="Library\PackageCache\com.unity.mathematics@1.2.6\ValidationExceptions.json" />
+     <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Package Resources" />
+     <None Include="Library\PackageCache\com.unity.scriptablebuildpipeline@1.21.0\ValidationExceptions.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\build-component_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\SystemSchedule\system-schedule.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\search-and-goto-buttons_light.uss" />
+     <Folder Include="Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Unity.Scenes.Hybrid.Tests" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\EntityHierarchy\entity-hierarchy-item.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\classic-build-profile_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\DebugWindows\system-debug-window.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\build-configuration-dependency.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Spinner\spinner.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\build-configuration_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\StyleSheets\Extensions\light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\SystemSchedule\system-schedule-toolbar.uss" />
+     <Folder Include="Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\SystemMixed" />
+     <None Include="Library\PackageCache\com.unity.collections@2.1.0-pre.2\ValidationExceptions.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\Prefab" />
+     <None Include="Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.Unsafe.xml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\BeginCommandBuffer" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Search" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\install-quick-search-popup.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\entity-inspector-aspects-tab_dark.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\SystemSchedule\system-schedule-header.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Journaling\entities-journaling-content.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\dots-editor-common.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\search-field.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Inspector\inspector.uss" />
+     <None Include="Library\PackageCache\com.unity.burst@1.8.2\package.json" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uxml\build-component.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities.graphics@1.0.0-pre.15" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Common\foldout-without-action-button.uxml" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\dark\Go To" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\ActiveBuildConfiguration\active-build-config-window-item_light.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\centered-message-element.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\Unity.Entities.UI\uss\set-element.uss" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\Common\component-view.uxml" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\DebugWindows\debug-window.uss" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\icons\light\SystemDisabled" />
+     <None Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uss\Common\system-list-view.uss" />
+     <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.5\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.entities@1.0.0-pre.15\Editor Default Resources\uxml\DebugWindows" />
+     <Reference Include="UnityEngine">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AIModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ARModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AccessibilityModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AndroidJNIModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AnimationModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AssetBundleModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AudioModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ClothModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ClusterInputModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ClusterRendererModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ContentLoadModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.ContentLoadModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.CoreModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.CrashReportingModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.DSPGraphModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.DirectorModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.GIModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.GameCenterModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.GridModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.HotReloadModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.IMGUIModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ImageConversionModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.InputModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.InputLegacyModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.JSONSerializeModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.LocalizationModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ParticleSystemModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.PerformanceReportingModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.PhysicsModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Physics2DModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ProfilerModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.PropertiesModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.PropertiesModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ScreenCaptureModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SharedInternalsModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SpriteMaskModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SpriteShapeModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.StreamingModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SubstanceModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SubsystemsModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubsystemsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TLSModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TerrainModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TerrainPhysicsModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TextCoreFontEngineModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TextCoreTextEngineModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TextRenderingModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TilemapModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UIModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UIElementsModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UmbraModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityAnalyticsModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityConnectModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityCurlModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityTestProtocolModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityWebRequestModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.VFXModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.VRModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.VRModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.VehiclesModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.VideoModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.VirtualTexturingModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.WindModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.XRModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.XRModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.CoreModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.DeviceSimulatorModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.DeviceSimulatorModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.DiagnosticsModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.DiagnosticsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.EditorToolbarModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.EditorToolbarModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.GraphViewModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.PresetsUIModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.PresetsUIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.QuickSearchModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.QuickSearchModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.SceneTemplateModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.SceneViewModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneViewModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.TextCoreFontEngineModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreFontEngineModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.TextCoreTextEngineModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreTextEngineModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UIBuilderModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIBuilderModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UIElementsModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UIElementsSamplesModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UnityConnectModule">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Cecil.Pdb">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.collections@2.1.0-pre.2\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Cecil.Mdb">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Cecil">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Mono.Cecil">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Cecil.Rocks">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     </Reference>
+     <Reference Include="netstandard">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
+     </Reference>
+     <Reference Include="Microsoft.Win32.Primitives">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\Microsoft.Win32.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.AppContext">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.AppContext.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Buffers">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Buffers.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Collections.Concurrent">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.Concurrent.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Collections">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Collections.NonGeneric">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.NonGeneric.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Collections.Specialized">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.Specialized.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ComponentModel">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ComponentModel.EventBasedAsync">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.EventBasedAsync.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ComponentModel.Primitives">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ComponentModel.TypeConverter">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.TypeConverter.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Console">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Console.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Data.Common">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Data.Common.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.Contracts">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Contracts.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.Debug">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Debug.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.FileVersionInfo">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.FileVersionInfo.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.Process">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Process.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.StackTrace">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.StackTrace.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.TextWriterTraceListener">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.Tools">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Tools.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.TraceSource">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.TraceSource.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.Tracing">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Tracing.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Drawing.Primitives">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Drawing.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Dynamic.Runtime">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Dynamic.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Globalization.Calendars">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.Calendars.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Globalization">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Globalization.Extensions">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.Compression">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Compression.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.Compression.ZipFile">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Compression.ZipFile.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.FileSystem">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.FileSystem.DriveInfo">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.DriveInfo.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.FileSystem.Primitives">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.FileSystem.Watcher">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.Watcher.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.IsolatedStorage">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.IsolatedStorage.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.MemoryMappedFiles">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.MemoryMappedFiles.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.Pipes">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Pipes.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.UnmanagedMemoryStream">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.UnmanagedMemoryStream.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Linq">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Linq.Expressions">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Expressions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Linq.Parallel">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Parallel.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Linq.Queryable">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Queryable.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Memory">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Memory.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Http">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Http.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.NameResolution">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.NameResolution.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.NetworkInformation">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.NetworkInformation.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Ping">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Ping.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Primitives">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Requests">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Requests.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Security">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Security.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Sockets">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Sockets.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.WebHeaderCollection">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebHeaderCollection.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.WebSockets.Client">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebSockets.Client.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.WebSockets">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebSockets.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Numerics.Vectors">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Numerics.Vectors.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ObjectModel">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ObjectModel.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.DispatchProxy">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.DispatchProxy.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.Emit">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.Emit.ILGeneration">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.ILGeneration.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.Emit.Lightweight">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.Lightweight.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.Extensions">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.Primitives">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Resources.Reader">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.Reader.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Resources.ResourceManager">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.ResourceManager.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Resources.Writer">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.Writer.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.CompilerServices.VisualC">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Extensions">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Handles">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Handles.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.InteropServices">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.InteropServices.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Numerics">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Numerics.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Serialization.Formatters">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Formatters.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Serialization.Json">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Serialization.Primitives">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Serialization.Xml">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Xml.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Claims">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Claims.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Cryptography.Algorithms">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Algorithms.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Cryptography.Csp">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Csp.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Cryptography.Encoding">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Encoding.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Cryptography.Primitives">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Cryptography.X509Certificates">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.X509Certificates.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Principal">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Principal.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.SecureString">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.SecureString.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Text.Encoding">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.Encoding.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Text.Encoding.Extensions">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.Encoding.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Text.RegularExpressions">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.RegularExpressions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Overlapped">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Overlapped.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Tasks">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Tasks.Extensions">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Tasks.Parallel">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.Parallel.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Thread">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Thread.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.ThreadPool">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.ThreadPool.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Timer">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Timer.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ValueTuple">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ValueTuple.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.ReaderWriter">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.ReaderWriter.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.XDocument">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XDocument.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.XmlDocument">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XmlDocument.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.XmlSerializer">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XmlSerializer.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.XPath">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XPath.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.XPath.XDocument">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XPath.XDocument.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+     </Reference>
+     <Reference Include="mscorlib">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\mscorlib.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ComponentModel.Composition">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Core">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Data">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Data.dll</HintPath>
+     </Reference>
+     <Reference Include="System">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Drawing">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Drawing.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.Compression.FileSystem">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.IO.Compression.FileSystem.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Net.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Numerics">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Numerics.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Serialization">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Runtime.Serialization.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ServiceModel.Web">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ServiceModel.Web.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Transactions">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Transactions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Web">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Web.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Windows">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Windows.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.Linq">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Linq.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.Serialization">
+     <HintPath>E:\dev\unity_hub_editor\2022.2.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Runtime">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Editor">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="PPv2URPConverters">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Editor">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ShaderGraph.Editor">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UI">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UI">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+     <HintPath>E:\code\unity\temp_projects\ecs_tutorial\ecs_tutorial\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.Entities.Hybrid.EndToEnd.Tests.csproj">
+      <Project>{eb0f113e-54de-2ad1-d485-17f98072c926}</Project>
+      <Name>Unity.Entities.Hybrid.EndToEnd.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.Editor.csproj">
+      <Project>{9da9b3d1-ecdb-0418-ed3c-8bf86b84018e}</Project>
+      <Name>Unity.Burst.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ScriptableBuildPipeline.csproj">
+      <Project>{adcca32d-d1af-f7a4-76e6-9bac17ced5e6}</Project>
+      <Name>Unity.ScriptableBuildPipeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.csproj">
+      <Project>{6bac4235-fe55-54a3-073b-8ec07b0fa07f}</Project>
+      <Name>Unity.Services.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.csproj">
+      <Project>{3583c6cf-dbb9-6d92-197a-190b911b693e}</Project>
+      <Name>Unity.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Rider.Editor.csproj">
+      <Project>{b6f8f6b3-d437-9a2a-4efa-e9524baf55ce}</Project>
+      <Name>Unity.Rider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Build.csproj">
+      <Project>{ce5f5f04-e7f6-61be-519c-e32fe13aa972}</Project>
+      <Name>Unity.Entities.Build</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Hybrid.csproj">
+      <Project>{ed6ff5b8-5201-be73-5683-ef0351e8af79}</Project>
+      <Name>Unity.Entities.Hybrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
+      <Project>{95b96ab3-5f47-d240-9dc6-a9e94ac446cf}</Project>
+      <Name>Unity.VisualScripting.Flow</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
+      <Project>{4cc9d041-3bc6-14f6-87a5-dc5348141016}</Project>
+      <Name>Unity.Mathematics.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Environments.csproj">
+      <Project>{f61b0014-da07-abe8-8d1c-ce0e3c5493ec}</Project>
+      <Name>Unity.Services.Core.Environments</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.UI.Editor.csproj">
+      <Project>{b67f3676-f200-e9aa-c310-ec5776209cbc}</Project>
+      <Name>Unity.Entities.UI.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Hybrid.HybridComponents.csproj">
+      <Project>{27e06872-f25e-bfc7-ab44-2e4ea73ab734}</Project>
+      <Name>Unity.Entities.Hybrid.HybridComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Collections.csproj">
+      <Project>{fe24bbc2-4f33-748d-7d67-8d1c7694d50d}</Project>
+      <Name>Unity.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Deformations.csproj">
+      <Project>{c729a4ae-9c80-6d01-bef8-33794736024b}</Project>
+      <Name>Unity.Deformations</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Collections.Editor.csproj">
+      <Project>{ff3eb264-d437-028d-d5fb-61ffa677cab5}</Project>
+      <Name>Unity.Collections.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{5485df54-2944-8f62-1e40-0cd7be1c27f5}</Project>
+      <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Analytics.csproj">
+      <Project>{a405b1d4-c6d0-3495-eef2-6223be23724f}</Project>
+      <Name>Unity.Services.Core.Analytics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{ff38c048-4950-b762-0511-e9c5e470a955}</Project>
+      <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Profiling.Core.csproj">
+      <Project>{2acc8d94-2d19-037c-71be-d40e6faac3e4}</Project>
+      <Name>Unity.Profiling.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Hybrid.Tests.SeparateAssembly.csproj">
+      <Project>{4eb8be08-50c0-c53f-fcbb-958e64dcc1ad}</Project>
+      <Name>Unity.Entities.Hybrid.Tests.SeparateAssembly</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Extensions.Hybrid.csproj">
+      <Project>{01d1b7ad-98c7-4f95-b497-cf091809a241}</Project>
+      <Name>Unity.Mathematics.Extensions.Hybrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
+      <Project>{0de3ec8c-3b08-8805-2bc6-aa68a728732f}</Project>
+      <Name>Unity.PlasticSCM.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.csproj">
+      <Project>{6becd747-bb46-d2a9-9d19-45e7b24dc27d}</Project>
+      <Name>Unity.Burst</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{f38ef295-2664-8e56-84c7-1d0a0997b3e1}</Project>
+      <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
+      <Project>{41a75e7b-6e4f-891d-0b5a-fa8ae59a8ce5}</Project>
+      <Name>Unity.VisualScripting.Shared.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
+      <Project>{1c74acdb-b363-9efc-d4c2-3297dd14fe77}</Project>
+      <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Core.csproj">
+      <Project>{e4d7d976-02c6-eaba-8d71-8d9c6172cd15}</Project>
+      <Name>Unity.VisualScripting.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj">
+      <Project>{ab372bfd-82ff-e60f-1240-8dc861339c72}</Project>
+      <Name>Unity.VisualScripting.Core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.CacheServer.csproj">
+      <Project>{36c0b054-aa6e-1ddc-e735-d1da44101a7d}</Project>
+      <Name>UnityEditor.CacheServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Graphics.csproj">
+      <Project>{5f7871db-1f92-6228-dd72-174f2ae513fe}</Project>
+      <Name>Unity.Entities.Graphics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
+      <Project>{b994a07e-f02d-44b4-b5f9-d4bd8183ecb9}</Project>
+      <Name>Unity.VisualScripting.Flow.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Transforms.Hybrid.csproj">
+      <Project>{0756f019-c695-e7a0-f9cb-158b135ace14}</Project>
+      <Name>Unity.Transforms.Hybrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Serialization.Editor.csproj">
+      <Project>{8af6aadd-ddc7-8de8-4bb2-d0752e7d6f8b}</Project>
+      <Name>Unity.Serialization.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{e35e7537-9874-dd97-206d-533850bbd71d}</Project>
+      <Name>Unity.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Transforms.csproj">
+      <Project>{431dd90a-0394-3b70-a9ee-ee94ce670e6f}</Project>
+      <Name>Unity.Transforms</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Serialization.csproj">
+      <Project>{aae8e36f-52f2-9107-aa6f-e701c11d0381}</Project>
+      <Name>Unity.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Scenes.Editor.csproj">
+      <Project>{eb80157c-e750-2b99-309d-123435275f99}</Project>
+      <Name>Unity.Scenes.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
+      <Project>{32ba3f62-7241-884d-357a-3725093476dd}</Project>
+      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Graphics.Editor.csproj">
+      <Project>{48793323-fab8-a6f9-a6c7-c25c0c7b00fb}</Project>
+      <Name>Unity.Entities.Graphics.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
+      <Project>{b72e4b38-24cc-29a7-9db1-749fbff7b788}</Project>
+      <Name>Unity.VisualScripting.State.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.UI.csproj">
+      <Project>{c2228cd9-564c-5fd7-5359-087d287e7da9}</Project>
+      <Name>Unity.Entities.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{5ac729fc-e97f-8f45-c953-db95c539d555}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Editor.Properties.csproj">
+      <Project>{e36f9269-aef0-97e6-8178-c189655e2145}</Project>
+      <Name>Unity.Entities.Editor.Properties</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{a1c8001a-e77b-f991-e07c-e5e3d5e96d9d}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Searcher.Editor.csproj">
+      <Project>{2b04c0f2-7d56-a36f-9cbb-5ea2c870ab08}</Project>
+      <Name>Unity.Searcher.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Extensions.csproj">
+      <Project>{5290d3d4-7fd7-4eab-c562-feb3bfb3d7af}</Project>
+      <Name>Unity.Mathematics.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.csproj">
+      <Project>{118229e7-da2f-2e36-5449-95a12ead5454}</Project>
+      <Name>Unity.VisualScripting.State</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Scenes.csproj">
+      <Project>{14ee80e9-7d3a-7ccf-1214-4fff08a6cf46}</Project>
+      <Name>Unity.Scenes</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ScriptableBuildPipeline.Editor.csproj">
+      <Project>{2473f67c-c8c8-40e3-2ca7-63ff4dba03ec}</Project>
+      <Name>Unity.ScriptableBuildPipeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Editor.csproj">
+      <Project>{5067d564-5626-256e-3a2e-39bdf9be8907}</Project>
+      <Name>Unity.Entities.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="ProjectContent.csproj">
+      <Project>{ba22b0a1-7da4-c9e1-f233-9bb2a1ce2f43}</Project>
+      <Name>ProjectContent</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
