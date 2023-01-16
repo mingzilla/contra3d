@@ -17,11 +17,11 @@ namespace ProjectContent.Scripts.Types
         public static readonly Skill FIRE_BALL_3 = Create("FIRE_BALL_3", "Fire Ball", ElementalType.FIRE, 3, 10, 1, 1f, 20f, true, 3f);
 
         public static readonly Skill WATER_BALL = Create("WATER_BALL", "Water Ball", ElementalType.WATER, 1, 2, 1, 1f, 20f, true, 3f);
-        public static readonly Skill WATER_BALL_1 = Create("WATER_BALL_1", "Water Ball", ElementalType.WATER, 1, 3, 1, 1f, 20f, true, 3f);
+        public static readonly Skill ICE_SPLASH = Create("ICE_SPLASH", "Water Ball", ElementalType.WATER, 1, 3, 1, 1f, 0f, false, 2f);
         public static readonly Skill WATER_BALL_2 = Create("WATER_BALL_2", "Water Ball", ElementalType.WATER, 2, 5, 1, 1f, 20f, true, 3f);
         public static readonly Skill WATER_BALL_3 = Create("WATER_BALL_3", "Water Ball", ElementalType.WATER, 3, 10, 1, 1f, 20f, true, 3f);
 
-        public static readonly Skill LIGHTENING = Create("LIGHTENING", "Lightening", ElementalType.LIGHT, 1, 2, 1, 1f, 2f, true, 0.7f);
+        public static readonly Skill LIGHTENING = Create("LIGHTENING", "Lightening", ElementalType.LIGHT, 1, 2, 1, 1f, 2f, false, 0.5f);
         public static readonly Skill LIGHTENING_1 = Create("LIGHTENING_1", "Lightening", ElementalType.LIGHT, 1, 3, 1, 1f, 20f, true, 3f);
         public static readonly Skill LIGHTENING_2 = Create("LIGHTENING_2", "Lightening", ElementalType.LIGHT, 2, 5, 1, 1f, 20f, true, 3f);
         public static readonly Skill LIGHTENING_3 = Create("LIGHTENING_3", "Lightening", ElementalType.LIGHT, 3, 10, 1, 1f, 20f, true, 3f);
@@ -51,7 +51,7 @@ namespace ProjectContent.Scripts.Types
                 FIRE_BALL_2,
                 FIRE_BALL_3,
                 WATER_BALL,
-                WATER_BALL_1,
+                ICE_SPLASH,
                 WATER_BALL_2,
                 WATER_BALL_3,
                 LIGHTENING,

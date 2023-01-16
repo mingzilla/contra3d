@@ -5,7 +5,7 @@ namespace ProjectContent.Scripts.Data
 {
     public class PlayerSkillAllocation
     {
-        public Skill top1;
+        public Skill top1 = Skill.ICE_SPLASH;
         public Skill bottom1;
         public Skill left1 = Skill.FIRE_BALL;
         public Skill right1 = Skill.LIGHTENING;
