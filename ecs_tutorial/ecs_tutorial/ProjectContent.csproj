@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ProjectContent\Scripts\Components\SpeedComp.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Components\SpeedMono.cs" />
      <Folder Include="Assets\ProjectContent\Scenes\SubScenes" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Materials" />
@@ -742,6 +743,10 @@
     <ProjectReference Include="Unity.Entities.csproj">
       <Project>{3583c6cf-dbb9-6d92-197a-190b911b693e}</Project>
       <Name>Unity.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Hybrid.csproj">
+      <Project>{ed6ff5b8-5201-be73-5683-ef0351e8af79}</Project>
+      <Name>Unity.Entities.Hybrid</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

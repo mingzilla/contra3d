@@ -1,6 +1,9 @@
 using Unity.Entities;
 
-public struct SpeedComp : IComponentData
+namespace ProjectContent.Scripts.Components
 {
-    public float value;
+    public struct SpeedComp : IComponentData
+    {
+        public float value;
+    }
 }
