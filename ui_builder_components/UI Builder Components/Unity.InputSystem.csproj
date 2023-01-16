@@ -84,9 +84,9 @@
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Plugins\OnScreen\OnScreenSupport.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Plugins\WebGL\WebGLGamepad.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\InputFeatureNames.cs" />
-     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Controls\InputControlPath.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Actions\Composites\OneModifierComposite.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Plugins\Linux\LinuxSupport.cs" />
+     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Controls\InputControlPath.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Controls\DeltaControl.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Plugins\iOS\IOSGameController.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Actions\Composites\TwoModifiersComposite.cs" />
