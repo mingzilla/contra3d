@@ -57,9 +57,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ProjectContent\Scripts\Components\SpeedComp.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Components\MovementAspect.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Systems\MovementSystem.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Components\TargetComp.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Components\TargetMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Components\SpeedMono.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Systems\MovementSystemBase.cs" />
      <Folder Include="Assets\ProjectContent\Scenes\SubScenes" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
+     <Folder Include="Assets\ProjectContent\Scripts\Systems" />
      <Folder Include="Assets\ProjectContent\Materials" />
      <Folder Include="Assets\ProjectContent\Scenes" />
      <Folder Include="Assets\ProjectContent\Scripts" />
@@ -747,6 +753,18 @@
     <ProjectReference Include="Unity.Entities.Hybrid.csproj">
       <Project>{ed6ff5b8-5201-be73-5683-ef0351e8af79}</Project>
       <Name>Unity.Entities.Hybrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Transforms.csproj">
+      <Project>{431dd90a-0394-3b70-a9ee-ee94ce670e6f}</Project>
+      <Name>Unity.Transforms</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{5ac729fc-e97f-8f45-c953-db95c539d555}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.csproj">
+      <Project>{6becd747-bb46-d2a9-9d19-45e7b24dc27d}</Project>
+      <Name>Unity.Burst</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
