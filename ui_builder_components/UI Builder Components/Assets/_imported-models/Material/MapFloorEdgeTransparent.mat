@@ -10,11 +10,10 @@ Material:
   m_Name: MapFloorEdgeTransparent
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
-  - _EMISSION
   - _SPECULAR_SETUP
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
-  m_LightmapFlags: 0
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -111,8 +110,8 @@ Material:
     - _WorkflowMode: 0
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0.9019608}
-    - _Color: {r: 0.15094337, g: 0.15094337, b: 0.15094337, a: 0.9019608}
+    - _BaseColor: {r: 0.8117648, g: 0.69411767, b: 0.5058824, a: 0.23921569}
+    - _Color: {r: 0.8117648, g: 0.69411767, b: 0.5058824, a: 0.23921569}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.122641504, g: 0.0734692, b: 0.0734692, a: 1}
   m_BuildTextureStacks: []
