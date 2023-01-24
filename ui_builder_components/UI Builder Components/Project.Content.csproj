@@ -108,7 +108,6 @@
      <Folder Include="Assets\ProjectContent\Prefabs\Magic" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill" />
-     <Folder Include="Assets\ProjectContent\Materials\images" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base\Util" />
      <Folder Include="Assets\ProjectContent\Scripts\Types" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelSkillComp.uxml" />
@@ -827,6 +826,9 @@
       <Project>{ecfaf90d-4507-5285-75a7-65771a2a8a67}</Project>
       <Name>Unity.InputSystem</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\ProjectContent\Materials\images\grassland.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
