@@ -781,10 +781,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0fe1a85f2cb3d3a40b40f40ec5e8d47d,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0fe1a85f2cb3d3a40b40f40ec5e8d47d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45f7bf25dac89d34abaafe1c33806fc5, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 0fe1a85f2cb3d3a40b40f40ec5e8d47d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18e34d0a31387f346a9a4fb8934106a2, type: 2}
     - target: {fileID: 919132149155446097, guid: 0fe1a85f2cb3d3a40b40f40ec5e8d47d,
         type: 3}
       propertyPath: m_Name
-      value: terrain__grass-land
+      value: terrain__land
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0fe1a85f2cb3d3a40b40f40ec5e8d47d,
         type: 3}
@@ -1613,7 +1628,7 @@ GameObject:
   - component: {fileID: 198320957}
   - component: {fileID: 198320960}
   m_Layer: 0
-  m_Name: MapFloorEdgeTransparent
+  m_Name: ExternalGround__Transparent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2126,7 +2141,7 @@ GameObject:
   - component: {fileID: 270922342}
   - component: {fileID: 270922341}
   m_Layer: 0
-  m_Name: MapFloorEdge
+  m_Name: ExternalGround__Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2830,7 +2845,7 @@ Transform:
   - {fileID: 1230194987}
   - {fileID: 1965953701}
   m_Father: {fileID: 1704895148}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &456001748
 PrefabInstance:
@@ -5174,7 +5189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 946929978}
   m_Layer: 0
-  m_Name: MapFloor
+  m_Name: ExternalGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5195,7 +5210,7 @@ Transform:
   - {fileID: 270922343}
   - {fileID: 198320959}
   m_Father: {fileID: 1704895148}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &972609244
 PrefabInstance:
@@ -5924,7 +5939,7 @@ Transform:
   - {fileID: 92592897}
   - {fileID: 245675236}
   m_Father: {fileID: 1704895148}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1032099371
 PrefabInstance:
@@ -9042,7 +9057,7 @@ Transform:
   m_Children:
   - {fileID: 102951802}
   m_Father: {fileID: 1704895148}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455061055
 GameObject:
@@ -10500,10 +10515,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 869968350}
-  - {fileID: 1423526356}
-  - {fileID: 1019175878}
   - {fileID: 438156510}
   - {fileID: 946929978}
+  - {fileID: 1019175878}
+  - {fileID: 1423526356}
   - {fileID: 864844303}
   m_Father: {fileID: 0}
   m_RootOrder: 1
