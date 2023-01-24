@@ -1611,7 +1611,6 @@ GameObject:
   - component: {fileID: 198320959}
   - component: {fileID: 198320958}
   - component: {fileID: 198320957}
-  - component: {fileID: 198320956}
   - component: {fileID: 198320960}
   m_Layer: 0
   m_Name: MapFloorEdgeTransparent
@@ -1620,20 +1619,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &198320956
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198320955}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &198320957
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2140,7 +2125,6 @@ GameObject:
   - component: {fileID: 270922343}
   - component: {fileID: 270922342}
   - component: {fileID: 270922341}
-  - component: {fileID: 270922340}
   m_Layer: 0
   m_Name: MapFloorEdge
   m_TagString: Untagged
@@ -2148,20 +2132,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &270922340
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270922339}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &270922341
 MeshRenderer:
   m_ObjectHideFlags: 0
