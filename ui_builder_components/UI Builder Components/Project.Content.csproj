@@ -83,7 +83,6 @@
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputAction.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerDashAction.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\TitleScreenStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Water\WaterMono.cs" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
      <Folder Include="Assets\ProjectContent\Prefabs\Players" />
@@ -91,7 +90,6 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor\BoxSelectionCursor.uxml" />
-     <Folder Include="Assets\ProjectContent\Scripts\Water" />
      <Folder Include="Assets\ProjectContent\Materials\images\icons" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu" />
      <Folder Include="Assets\ProjectContent\Prefabs\Magic\Skill_Lightening" />

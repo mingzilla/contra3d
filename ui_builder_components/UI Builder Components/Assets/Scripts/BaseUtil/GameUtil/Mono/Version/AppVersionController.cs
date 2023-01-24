@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace BaseUtil.GameUtil.Controllers
+namespace BaseUtil.GameUtil.Mono.Version
 {
     public abstract class AppVersionController : MonoBehaviour
     {

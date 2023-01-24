@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1955806951}
-  m_IndirectSpecularColor: {r: 0.112793185, g: 0.37792897, b: 0.2875985, a: 1}
+  m_IndirectSpecularColor: {r: 0.5634766, g: 0.86865246, b: 0.78320104, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1612,6 +1612,7 @@ GameObject:
   - component: {fileID: 198320958}
   - component: {fileID: 198320957}
   - component: {fileID: 198320956}
+  - component: {fileID: 198320960}
   m_Layer: 0
   m_Name: MapFloorEdgeTransparent
   m_TagString: Untagged
@@ -1698,6 +1699,22 @@ Transform:
   m_Father: {fileID: 270922343}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &198320960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198320955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98919111d3ea54e4f9c52b91d6b0965d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveFrequency: 0.53
+  waveHeight: 0.48
+  waveLength: 0.71
+  edgeBlend: 1
 --- !u!1 &202677914
 GameObject:
   m_ObjectHideFlags: 3

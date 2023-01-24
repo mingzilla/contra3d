@@ -1,29 +1,33 @@
 using UnityEngine;
 
-namespace ProjectContent.Scripts.Water
+namespace BaseUtil.GameUtil.Mono.Water
 {
+    /// <summary>
+    /// As long as this is added to a plain, which has a MeshFilter by default, then it just works.
+    /// Consider adding a transparent mesh to the plain, so that the water looks transparent.
+    /// Be aware it has performance impact.
+    /// Originally from https://github.com/codewithkyle/Unity-Tutorials/blob/master/low-poly-water/Assets/Scripts/Water.cs
+    /// </summary>
     [RequireComponent(typeof(MeshFilter))]
     public class WaterMono : MonoBehaviour
     {
-        private Vector3 waveSource1 = new Vector3(2.0f, 0.0f, 2.0f);
         [SerializeField] float waveFrequency = 0.53f;
         [SerializeField] float waveHeight = 0.48f;
         [SerializeField] float waveLength = 0.71f;
-        [SerializeField] bool edgeBlend = true;
-        Vector3[] verts;
 
+        private readonly Vector3 waveSource = new Vector3(2.0f, 0.0f, 2.0f);
+        private Vector3[] verts;
         private MeshFilter mf;
         private Mesh mesh;
 
         void Start()
         {
-            if (UnityEngine.Camera.main != null) UnityEngine.Camera.main.depthTextureMode |= DepthTextureMode.Depth;
             mf = MakeMeshLowPoly(GetComponent<MeshFilter>());
         }
 
         MeshFilter MakeMeshLowPoly(MeshFilter mf)
         {
-            mesh = mf.sharedMesh; //Change to sharedmesh? 
+            mesh = mf.sharedMesh; 
             Vector3[] oldVerts = mesh.vertices;
             int[] triangles = mesh.triangles;
             Vector3[] vertices = new Vector3[triangles.Length];
@@ -43,7 +47,6 @@ namespace ProjectContent.Scripts.Water
         void Update()
         {
             CalcWave();
-            SetEdgeBlend();
         }
 
         void CalcWave()
@@ -52,7 +55,7 @@ namespace ProjectContent.Scripts.Water
             {
                 Vector3 v = verts[i];
                 v.y = 0.0f;
-                float dist = Vector3.Distance(v, waveSource1);
+                float dist = Vector3.Distance(v, waveSource);
                 dist = (dist % waveLength) / waveLength;
                 v.y = waveHeight * Mathf.Sin(Time.time * Mathf.PI * 2.0f * waveFrequency
                                              + (Mathf.PI * 2.0f * dist));
@@ -63,26 +66,6 @@ namespace ProjectContent.Scripts.Water
             mesh.MarkDynamic();
 
             mf.mesh = mesh;
-        }
-
-        void SetEdgeBlend()
-        {
-            if (!SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.Depth))
-            {
-                edgeBlend = false;
-            }
-            if (edgeBlend)
-            {
-                Shader.EnableKeyword("WATER_EDGEBLEND_ON");
-                if (UnityEngine.Camera.main)
-                {
-                    UnityEngine.Camera.main.depthTextureMode |= DepthTextureMode.Depth;
-                }
-            }
-            else
-            {
-                Shader.DisableKeyword("WATER_EDGEBLEND_ON");
-            }
         }
     }
 }

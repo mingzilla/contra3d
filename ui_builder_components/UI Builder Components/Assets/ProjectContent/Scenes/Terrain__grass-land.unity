@@ -1612,6 +1612,7 @@ GameObject:
   - component: {fileID: 198320958}
   - component: {fileID: 198320957}
   - component: {fileID: 198320956}
+  - component: {fileID: 198320960}
   m_Layer: 0
   m_Name: MapFloorEdgeTransparent
   m_TagString: Untagged
@@ -1698,6 +1699,21 @@ Transform:
   m_Father: {fileID: 946929978}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &198320960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198320955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98919111d3ea54e4f9c52b91d6b0965d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveFrequency: 0.1
+  waveHeight: 0.02
+  waveLength: 0.71
 --- !u!1 &202677914
 GameObject:
   m_ObjectHideFlags: 3
