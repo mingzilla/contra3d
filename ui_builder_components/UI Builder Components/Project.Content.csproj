@@ -122,7 +122,6 @@
      <Folder Include="Assets\ProjectContent\Inputs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Data" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation" />
-     <Folder Include="Assets\ProjectContent\Skybox" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base\uss" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components" />
      <Folder Include="Assets\ProjectContent\Scenes" />

@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnRx.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\SortingLayer.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\GameLogic.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Mono\Water\WaterMono.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\UserInput.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\PlayerActionHandler2D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\CameraHandler3D.cs" />
@@ -79,7 +80,6 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\UnityFn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\SelectedIds.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\PlayerActionHandler3D.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Mono\Water\WaterMono.cs" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\Mono\Version" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\Util2D" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement" />
