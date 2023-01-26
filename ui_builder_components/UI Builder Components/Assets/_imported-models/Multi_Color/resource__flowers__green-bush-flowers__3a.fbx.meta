@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 40045f7b0e9d0864b801ad20b6ff29c8
+guid: edd7a233aed955e428fb62e327136f05
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material
     second: {fileID: 2100000, guid: 0f697edf95960bb43bfb4d5291e2a339, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_DynamicSetInGame
+    second: {fileID: 2100000, guid: b77277e44c6d0de44835f8dd0e6def98, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
