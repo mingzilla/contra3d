@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material_DynamicSetInGame
-    second: {fileID: 2100000, guid: 6d8492b3077aa0246b3d9905f9afddd2, type: 2}
+    second: {fileID: 2100000, guid: a3d2a7efd42f4fb4291c0831b73c8604, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
