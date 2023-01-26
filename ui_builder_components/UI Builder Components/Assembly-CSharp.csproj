@@ -175,6 +175,7 @@
      <Folder Include="Assets\TutorialInfo" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6" />
      <Folder Include="Library\PackageCache\com.unity.ide.rider@3.0.16" />
+     <Folder Include="Assets\_imported-models\New" />
      <Folder Include="Assets\UI Toolkit" />
      <Folder Include="Library\PackageCache\com.unity.searcher@4.9.1\Tests" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\binmergetool.es.txt" />
