@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 91495ff58f278714c8b36ba6dbd73318
+guid: d2ae62d9692efc04f9aaf211755bbcfe
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
+      name: Material_Gradiant
     second: {fileID: 2100000, guid: 0f697edf95960bb43bfb4d5291e2a339, type: 2}
   - first:
       type: UnityEngine:Material
