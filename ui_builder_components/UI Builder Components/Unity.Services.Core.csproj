@@ -41,18 +41,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\DynamicDependency\PreserveDependencyAttribute.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\Utils\UnityThreadUtils.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\IUnityServices.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\Initialization\InitializationOptions.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\Initialization\UnityProjectNotLinkedException.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\Initialization\ServicesInitializationException.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\ExternalUserIdProperty.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\UnityServices.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\CommonErrorCodes.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\AssemblyInfo.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\DynamicDependency\PreserveDependencyAttribute.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\RequestFailedException.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\Initialization\ServicesInitializationState.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\Utils\UnityThreadUtils.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\IUnityServices.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\Initialization\InitializationOptions.cs" />
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\Initialization" />
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core" />
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Core\DynamicDependency" />

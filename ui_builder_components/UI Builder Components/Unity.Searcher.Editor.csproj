@@ -41,10 +41,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherWindow.cs" />
-     <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherControl.cs" />
      <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\Searcher.cs" />
      <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherTreeUtility.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherWindow.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherControl.cs" />
      <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\AssemblyInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherHighlighter.cs" />
      <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherItem.cs" />

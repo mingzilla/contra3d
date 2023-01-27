@@ -43,8 +43,8 @@
   <ItemGroup>
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Scheduler\ActionScheduler.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Scheduler\AssemblyInfo.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Scheduler\ScheduledInvocation.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Scheduler\ScheduledInvocationComparer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Scheduler\ScheduledInvocation.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Scheduler\TimeProvider\ITimeProvider.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Scheduler\TimeProvider\UtcTimeProvider.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Scheduler\MinimumBinaryHeap.cs" />

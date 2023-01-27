@@ -41,8 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Threading\AssemblyInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Threading\UnityThreadUtilsInternal.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Threading\AssemblyInfo.cs" />
      <None Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Threading\Unity.Services.Core.Threading.asmdef" />
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Threading" />
      <Reference Include="UnityEngine">
