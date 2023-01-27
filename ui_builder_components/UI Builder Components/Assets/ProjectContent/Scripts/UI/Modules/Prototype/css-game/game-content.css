@@ -7,6 +7,10 @@ body {
     background-image: url("../../../../../Materials/images/grassland.jpg");
 }
 
+body.is-mush-land {
+    background-image: url("../../../../../Materials/images/mushroom-land.jpg");
+}
+
 /*---------------------------------------------*/
 
 .player-lobby__player-summary {
