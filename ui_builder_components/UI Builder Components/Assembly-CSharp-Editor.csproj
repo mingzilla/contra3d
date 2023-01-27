@@ -877,14 +877,6 @@
       <Project>{9af73644-d86d-91ea-a826-24f60d719d19}</Project>
       <Name>Project.Content</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TerrainTools.csproj">
-      <Project>{cb11ccda-df34-8cd3-f7b3-fec3fdf8e3cc}</Project>
-      <Name>Unity.TerrainTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TerrainTools.Editor.csproj">
-      <Project>{ee019242-3139-4d22-2428-1d933d23a771}</Project>
-      <Name>Unity.TerrainTools.Editor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

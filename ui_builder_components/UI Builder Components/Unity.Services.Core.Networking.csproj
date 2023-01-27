@@ -41,9 +41,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Networking\UnityWebRequestClient.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Networking\AssemblyInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Networking\HttpServiceConfig.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Networking\UnityWebRequestClient.cs" />
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Networking" />
      <None Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Networking\Unity.Services.Core.Networking.asmdef" />
      <Reference Include="UnityEngine">

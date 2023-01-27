@@ -43,8 +43,8 @@
   <ItemGroup>
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Device\UserIdProviders\AndroidUtils.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Device\UserIdProviders\NSUserDefaults.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Device\AssemblyInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Device\UserIdProviders\UnityAdsIdentifier.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Device\AssemblyInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Device\UserIdProviders\IUserIdentifierProvider.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Device\InstallationId.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Device\UserIdProviders\UnityAnalyticsIdentifier.cs" />

@@ -41,8 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Registration\CorePackageInitializer.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Registration\AssemblyInfo.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Registration\CorePackageInitializer.cs" />
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Registration" />
      <None Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Registration\Unity.Services.Core.Registration.asmdef" />
      <Reference Include="UnityEngine">
