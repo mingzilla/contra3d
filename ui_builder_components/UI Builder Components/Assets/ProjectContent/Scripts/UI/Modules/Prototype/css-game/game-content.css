@@ -11,6 +11,10 @@ body.is-mush-land {
     background-image: url("../../../../../Materials/images/mushroom-land.jpg");
 }
 
+body.is-under-water {
+    background-image: url("../../../../../Materials/images/under-water.jpg");
+}
+
 /*---------------------------------------------*/
 
 .player-lobby__player-summary {
