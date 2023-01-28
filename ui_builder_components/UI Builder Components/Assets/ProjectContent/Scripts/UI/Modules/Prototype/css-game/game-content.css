@@ -15,6 +15,10 @@ body.is-under-water {
     background-image: url("../../../../../Materials/images/under-water.jpg");
 }
 
+body.is-crystal-land {
+    background-image: url("../../../../../Materials/images/crystal-land.jpg");
+}
+
 /*---------------------------------------------*/
 
 .player-lobby__player-summary {
