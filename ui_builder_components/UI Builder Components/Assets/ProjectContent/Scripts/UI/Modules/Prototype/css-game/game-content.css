@@ -19,6 +19,10 @@ body.is-crystal-land {
     background-image: url("../../../../../Materials/images/crystal-land.jpg");
 }
 
+body.is-desert-land {
+    background-image: url("../../../../../Materials/images/desert-land.jpg");
+}
+
 /*---------------------------------------------*/
 
 .player-lobby__player-summary {
