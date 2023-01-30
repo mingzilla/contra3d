@@ -87,12 +87,14 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
      <Folder Include="Assets\ProjectContent\Prefabs\Players" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelSkillType.uxml" />
+     <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__under-water" />
      <Folder Include="Assets\ProjectContent\Scripts\UI" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor\BoxSelectionCursor.uxml" />
      <Folder Include="Assets\ProjectContent\Materials\images\icons" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu" />
      <Folder Include="Assets\ProjectContent\Prefabs\Magic\Skill_Lightening" />
+     <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__mush-land" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-theme.uss" />
      <Folder Include="Assets\ProjectContent\Scripts\Camera" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\skill_equip_panel.uss" />
@@ -110,6 +112,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill" />
      <Folder Include="Assets\ProjectContent\Materials\images" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base\Util" />
+     <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain___Common" />
      <Folder Include="Assets\ProjectContent\Scripts\Types" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanelSkillComp.uxml" />
      <Folder Include="Assets\ProjectContent\Prefabs\MushLand" />
@@ -123,6 +126,7 @@
      <Folder Include="Assets\ProjectContent\Inputs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Data" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation" />
+     <Folder Include="Assets\ProjectContent\ScenesConfig\Skybox___Common" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base\uss" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components" />
      <Folder Include="Assets\ProjectContent\Scenes" />
@@ -142,9 +146,12 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore" />
      <Folder Include="Assets\ProjectContent\Scripts\AbstractController" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills" />
+     <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__crystal-land" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-accessories" />
+     <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__desert" />
+     <Folder Include="Assets\ProjectContent\ScenesConfig" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\Types" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\Components\SkillEquipPanel.uxml" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype" />
@@ -154,6 +161,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base\uss\base" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems" />
+     <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__grass-land" />
      <Reference Include="UnityEngine">
      <HintPath>E:\dev\unity_hub_editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
