@@ -103,6 +103,7 @@
      <Folder Include="Assets\ProjectContent\Prefabs\Magic\Skill_FireBall" />
      <Folder Include="Assets\ProjectContent\Scripts\Player" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor" />
+     <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__snow-land" />
      <Folder Include="Assets\ProjectContent\Prefabs\Magic\Skill_IceSplash" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules" />
      <None Include="Assets\ProjectContent\Scripts\UI\Base\uss\base\flex-layout-styles.uss" />

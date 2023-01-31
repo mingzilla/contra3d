@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GradientTexture__SnowLand
+  m_Name: GradientTexture__Frozen
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
   - _EMISSION
@@ -109,7 +109,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.78061587, g: 0.9245283, b: 0.9187149, a: 1}
     - _Color: {r: 0.78061587, g: 0.9245283, b: 0.9187149, a: 1}
-    - _EmissionColor: {r: 0.33454967, g: 0.39224726, b: 0.3962264, a: 1}
+    - _EmissionColor: {r: 0.38688147, g: 0.5038634, b: 0.509434, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &963380969666582887

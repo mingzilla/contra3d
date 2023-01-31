@@ -152,6 +152,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hans.txt" />
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime" />
      <Folder Include="Assets\_imported-models\Material\Color_CrystalLand" />
+     <Folder Include="Assets\_imported-models\Material\Color_SnowLand" />
      <Folder Include="Assets\_imported-models\Material\Color_UnderWater" />
      <Folder Include="Library\PackageCache\com.unity.mathematics@1.2.6" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\FileSystemWatcherLicense.txt" />

@@ -23,6 +23,10 @@ body.is-desert-land {
     background-image: url("../../../../../Materials/images/desert-land.jpg");
 }
 
+body.is-snow-land {
+    background-image: url("../../../../../Materials/images/snow-land.jpg");
+}
+
 /*---------------------------------------------*/
 
 .player-lobby__player-summary {
