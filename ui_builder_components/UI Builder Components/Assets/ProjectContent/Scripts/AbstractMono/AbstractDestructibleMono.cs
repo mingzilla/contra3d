@@ -6,7 +6,7 @@ using ProjectContent.Scripts.Bullet;
 using ProjectContent.Scripts.Types;
 using UnityEngine;
 
-namespace ProjectContent.Scripts.AbstractController
+namespace ProjectContent.Scripts.AbstractMono
 {
     public abstract class AbstractDestructibleController : AbstractRangeDetectionController
     {
@@ -71,7 +71,7 @@ namespace ProjectContent.Scripts.AbstractController
 
         private void OnParticleCollision(GameObject other)
         {
-            Skill skill = other.GetComponent<BulletController>()?.skill;
+            Skill skill = other.GetComponent<BulletMono>()?.skill;
             if (skill != null && GameLayer.IsDestructibleByBullet(gameObject.layer))
             {
                 TakeDamage(transform.position, skill.damage);

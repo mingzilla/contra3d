@@ -3,7 +3,7 @@ using BaseUtil.GameUtil.Base;
 using ProjectContent.Scripts.Data;
 using UnityEngine;
 
-namespace ProjectContent.Scripts.AbstractController
+namespace ProjectContent.Scripts.AbstractMono
 {
     public abstract class AbstractRangeDetectionController : MonoBehaviour
     {

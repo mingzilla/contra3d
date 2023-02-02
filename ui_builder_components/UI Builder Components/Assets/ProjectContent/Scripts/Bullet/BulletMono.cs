@@ -5,24 +5,24 @@ using UnityEngine;
 
 namespace ProjectContent.Scripts.Bullet
 {
-    public class BulletController : MonoBehaviour
+    public class BulletMono : MonoBehaviour
     {
         private Rigidbody rb;
         private GameObject explosionEffect;
         private Vector3 moveDirection;
         public Skill skill;
 
-        public static BulletController SpawnXZ(GameObject prefab, Transform shotPoint, Vector3 positionDelta, Skill skill)
+        public static BulletMono SpawnXZ(GameObject prefab, Transform shotPoint, Vector3 positionDelta, Skill skill)
         {
             Vector3 direction = BulletCommonUtil3D.CreateBulletXZDirection(shotPoint.rotation.eulerAngles.y);
             return SpawnInDirection(prefab, shotPoint, positionDelta, skill, direction);
         }
 
-        public static BulletController SpawnInDirection(GameObject prefab, Transform shotPoint, Vector3 positionDelta, Skill skill, Vector3 direction)
+        public static BulletMono SpawnInDirection(GameObject prefab, Transform shotPoint, Vector3 positionDelta, Skill skill, Vector3 direction)
         {
             // AppSfx.PlayBulletSound(skill);
             Vector3 shotPointPosition = shotPoint.position + positionDelta;
-            BulletController copy = Instantiate(prefab, shotPointPosition, shotPoint.rotation).GetComponent<BulletController>();
+            BulletMono copy = Instantiate(prefab, shotPointPosition, shotPoint.rotation).GetComponent<BulletMono>();
             copy.moveDirection = direction;
             copy.rb = BulletCommonUtil3D.AddRigidbodyAndColliderToBullet(copy.gameObject, false, 1f);
             copy.skill = skill;

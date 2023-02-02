@@ -42,21 +42,21 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\ProjectContent\Scripts\AppLiveResource\AppResource.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Camera\CameraTargetController.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Camera\CameraTargetMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Data\PlayerAttribute.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\AbstractController\AbstractDestructibleController.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\AbstractMono\AbstractDestructibleMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\ElementalType.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\Skill.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleMenuItem.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\AbstractController\AbstractRangeDetectionController.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\AbstractMono\AbstractRangeDetectionMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerMoveAction.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuSkillsPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuActiveItems.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Bullet\BulletController.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Bullet\BulletMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputContext.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Data\GameStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\Player\PlayerController.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\PlayerMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerAttackAction.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAllocationPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerJumpAction.cs" />
@@ -162,7 +162,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\EquipSkill\BaseStore\Domain" />
      <Folder Include="Assets\ProjectContent\Scripts\AppLiveResource" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore" />
-     <Folder Include="Assets\ProjectContent\Scripts\AbstractController" />
+     <Folder Include="Assets\ProjectContent\Scripts\AbstractMono" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills" />
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__crystal-land" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain" />

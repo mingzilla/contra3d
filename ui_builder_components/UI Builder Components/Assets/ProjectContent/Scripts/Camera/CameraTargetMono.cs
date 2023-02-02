@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ProjectContent.Scripts.Camera
 {
-    public class CameraTargetController : MonoBehaviour
+    public class CameraTargetMono : MonoBehaviour
     {
         private GameStoreData storeData;
 

@@ -56,15 +56,15 @@ namespace ProjectContent.Scripts.Player.Actions
         {
             if (skill == Skill.FIRE_BALL)
             {
-                BulletController.SpawnXZ(fireballPrefab, playerTransform, magicPositionDelta, skill);
+                BulletMono.SpawnXZ(fireballPrefab, playerTransform, magicPositionDelta, skill);
             }
             if (skill == Skill.LIGHTENING)
             {
-                BulletController.SpawnXZ(lighteningPrefab, playerTransform, magicPositionDelta, skill);
+                BulletMono.SpawnXZ(lighteningPrefab, playerTransform, magicPositionDelta, skill);
             }
             if (skill == Skill.ICE_SPLASH)
             {
-                BulletController.SpawnXZ(iceSplashPrefab, playerTransform, magicPositionDelta, skill);
+                BulletMono.SpawnXZ(iceSplashPrefab, playerTransform, magicPositionDelta, skill);
             }
         }
     }

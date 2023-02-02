@@ -6,6 +6,7 @@ using BaseUtil.GameUtil.PlayerManagement;
 using ProjectContent.Scripts.Types;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using ProjectContent.Scripts.Player;
 
 namespace ProjectContent.Scripts.Data
 {
@@ -63,15 +64,15 @@ namespace ProjectContent.Scripts.Data
             return idAndPlayerState.Values.All(p => !p.isAlive);
         }
 
-        public PlayerController GetPlayerController(int id)
+        public PlayerMono GetPlayerMono(int id)
         {
             PlayerInput playerInput = inputManagerData.GetPlayer(id);
-            return playerInput.gameObject.GetComponent<PlayerController>();
+            return playerInput.gameObject.GetComponent<PlayerMono>();
         }
 
-        public List<PlayerController> GetAllPlayerControllers()
+        public List<PlayerMono> GetAllPlayerMonos()
         {
-            return Fn.Map(p => GetPlayerController(p.playerInput.playerIndex), inputManagerData.AllPlayers());
+            return Fn.Map(p => GetPlayerMono(p.playerInput.playerIndex), inputManagerData.AllPlayers());
         }
 
         public List<Vector3> AllPlayerPositions()
