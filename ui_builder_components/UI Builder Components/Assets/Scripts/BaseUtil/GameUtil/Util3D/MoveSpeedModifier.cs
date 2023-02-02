@@ -12,7 +12,7 @@ namespace BaseUtil.GameUtil.Util3D
     {
         private static readonly int FULL_SPEED = 1;
         private static readonly int IDLE = 0;
-        
+
         public float speedModifier = FULL_SPEED;
 
         private IEnumerator speedModifierCoroutine;
@@ -46,8 +46,9 @@ namespace BaseUtil.GameUtil.Util3D
             speedModifier = FULL_SPEED;
         }
 
-        public void ToggleIdle(bool isIdle)
+        public void ToggleIdle(MonoBehaviour controller, bool isIdle)
         {
+            UnityFn.CancelTimeout(controller, speedModifierCoroutine);
             if (isIdle) speedModifier = IDLE;
             if (!isIdle) speedModifier = FULL_SPEED;
         }

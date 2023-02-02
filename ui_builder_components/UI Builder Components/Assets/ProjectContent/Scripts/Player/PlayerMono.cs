@@ -158,13 +158,13 @@ namespace ProjectContent.Scripts.Player
             if (context.started)
             {
                 userInput.isHoldingRt = true;
-                moveAction.moveSpeedModifier.ToggleIdle(true);
+                moveAction.moveSpeedModifier.ToggleIdle(this, true);
                 attackAction.playerWeaponState = PlayerWeaponState.STAFF;
             }
             if (context.canceled)
             {
                 userInput.isHoldingRt = false;
-                moveAction.moveSpeedModifier.ToggleIdle(false);
+                moveAction.moveSpeedModifier.ToggleIdle(this, false);
                 attackAction.playerWeaponState = PlayerWeaponState.NONE;
             }
         }
