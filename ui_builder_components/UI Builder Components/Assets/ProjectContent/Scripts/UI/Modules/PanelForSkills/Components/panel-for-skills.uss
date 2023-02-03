@@ -2,7 +2,7 @@
 .panel-for-skill__table,
 .panel-for-skill__cell,
 .panel-for-skill__header-cell,
-.panel-for-skill__info-panel--content {
+.panel-for-skill__info-panel__content {
     border-color: var(--neutral-1-dark);
 }
 
@@ -47,7 +47,7 @@
     margin-bottom: 12px;
 }
 
-.panel-for-skill__info-panel--content {
+.panel-for-skill__info-panel__content {
     background-color: var(--neutral-variant-4);
     width: 244px;
     border-width: 2px;

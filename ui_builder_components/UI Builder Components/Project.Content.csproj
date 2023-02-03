@@ -107,7 +107,7 @@
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__under-water" />
      <Folder Include="Assets\ProjectContent\Scripts\UI" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor\BoxSelectionCursor.uxml" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor\BoxSelectionCursorComp.uxml" />
      <Folder Include="Assets\ProjectContent\Materials\images\icons" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu" />
      <Folder Include="Assets\ProjectContent\Prefabs\Magic\Skill_Lightening" />

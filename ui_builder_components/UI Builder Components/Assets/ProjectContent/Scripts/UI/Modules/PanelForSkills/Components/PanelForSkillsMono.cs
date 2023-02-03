@@ -20,7 +20,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components
         {
             Skill selectedSkill = storeData.activeItems.selectedSkill;
             root = GetComponent<UIDocument>().rootVisualElement;
-            skillsTable = root.Q<VisualElement>("SkillEquipPanelSkillsTable");
+            skillsTable = root.Q<VisualElement>("ve__panel-for-skill__skills-table");
             VisualElement[] skillRows =
             {
                 skillsTable.Q<VisualElement>("NEUTRAL"),
@@ -35,7 +35,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components
             foreach (VisualElement skillRow in skillRows)
             {
                 VisualElement skillRowTypeImage = skillRow.Q<VisualElement>("PanelForSkillsSkillTypeCompImage");
-                VisualElement skillRowContent = skillRow.Q<VisualElement>("SkillEquipPanelSkillRowContent");
+                VisualElement skillRowContent = skillRow.Q<VisualElement>("ve__panel-for-skill__skills-table__row-content");
 
                 ElementalType type = elementalTypeMap[(skillRow.name)];
                 skillRowTypeImage.AddToClassList(type.imageCssClass);

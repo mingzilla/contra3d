@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="SelectionCursor" class="box-selection-cursor absolute-full-size">
+    <ui:VisualElement name="ve__selection-cursor" class="box-selection-cursor absolute-full-size">
         <ui:VisualElement class="box-selection-cursor__corner-1" />
         <ui:VisualElement class="box-selection-cursor__corner-2" />
     </ui:VisualElement>
