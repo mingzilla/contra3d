@@ -300,6 +300,7 @@
     text-align: center;
     display: initial;
     font-weight: bold;
+    -unity-font-style: bold;
 }
 
 .menu-button.menu-button--is-active {
