@@ -1,0 +1,47 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="template__panel-for-skill__skill-type" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/PanelForSkillsSkillTypeComp.uxml"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/Styles/game-panel.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/Styles/game-content.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/panel-for-skills"/>
+
+    <ui:VisualElement name="ve__panel-for-skill" class="panel-for-skill layout-vertical">
+        <ui:VisualElement class="layout-vertical center">
+            <ui:VisualElement name="ve__panel-for-skill__skills" class="flex">
+                <ui:VisualElement name="ve__panel-for-skill__skills-table" class="panel-for-skill__table">
+                    <ui:VisualElement name="NEUTRAL" class="panel-for-skill__row layout-horizontal">
+                        <ui:Instance name="instance__panel-for-skill__skill-type" template="template__panel-for-skill__skill-type"/>
+                        <ui:VisualElement name="ve__panel-for-skill__skills-table__row-content" class="layout-horizontal"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="FIRE" class="panel-for-skill__row layout-horizontal">
+                        <ui:Instance name="instance__panel-for-skill__skill-type" template="template__panel-for-skill__skill-type"/>
+                        <ui:VisualElement name="ve__panel-for-skill__skills-table__row-content" class="layout-horizontal"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="WATER" class="panel-for-skill__row layout-horizontal">
+                        <ui:Instance name="instance__panel-for-skill__skill-type" template="template__panel-for-skill__skill-type"/>
+                        <ui:VisualElement name="ve__panel-for-skill__skills-table__row-content" class="layout-horizontal"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="LIGHT" class="panel-for-skill__row layout-horizontal">
+                        <ui:Instance name="instance__panel-for-skill__skill-type" template="template__panel-for-skill__skill-type"/>
+                        <ui:VisualElement name="ve__panel-for-skill__skills-table__row-content" class="layout-horizontal"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ve__panel-for-skill__info" class="panel-for-skill__info-panel layout-vertical center">
+            <ui:VisualElement name="ve__panel-for-skill__info__content" class="panel-for-skill__info-panel__content"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="ve__panel-for-skill__buttons" class="layout-horizontal">
+            <ui:VisualElement class="flex"/>
+            <ui:VisualElement name="ve__panel-for-skill__buttons" class="layout-horizontal game-pad-key-container gap-right-2">
+                <ui:Button text="A" display-tooltip-when-elided="true" class="button-a"/>
+                <ui:Label text="Toggle" class="game-pad-key-description-light"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="ve__panel-for-skill__buttons" class="layout-horizontal game-pad-key-container">
+                <ui:Button text="B" display-tooltip-when-elided="true" class="button-b"/>
+                <ui:Label text="Close" class="game-pad-key-description-light"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

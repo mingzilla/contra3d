@@ -1,0 +1,376 @@
+﻿body {
+    background-color: #242e30;
+    font-family: cursive;
+}
+
+.text-on-white {
+    color: #242e30;
+}
+
+.text-on-dark {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/*------------------- STATUS INDICATION COLORS -----------------------*/
+
+.text-on-white.is-disabled {
+    color: #353a3a;
+}
+
+.text-on-white.is-warning,
+.text-on-dark.is-warning {
+    color: #d17131;
+}
+
+.text-on-white.is-action-needed,
+.text-on-dark.is-action-needed {
+    color: #d4284a;
+}
+
+.panel-bg-0 {
+    background-color: #242e30;
+}
+
+.panel-bg-s1 {
+    background-color: #6da655;
+}
+
+.panel-bg-s2 {
+    background-color: #d4284a;
+}
+
+.panel-with-border.panel-border-is-off {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.panel-with-border.panel-border-is-on {
+    border-color: #55a676;
+}
+
+.panel-with-border.panel-border-is-selected {
+    border-color: #d4284a;
+}
+
+/*----------------------------------------------------*/
+
+.panel-with-bg.panel-bg--is-on__light,
+.panel-with-bg.panel-bg-s1-o02 {
+    background-color: rgba(85, 166, 118, 0.2);
+}
+
+.panel-with-bg.panel-bg--is-on,
+.panel-with-bg.panel-bg-s1-o05 {
+    background-color: rgba(85, 166, 118, 0.5);
+}
+
+.panel-with-bg.panel-bg-on-dark--is-on {
+    background-color: rgba(85, 166, 118, 0.8);
+}
+
+.panel-with-bg.panel-bg-s2-o02 {
+    background-color: rgba(212, 40, 74, 0.2);
+}
+
+.panel-with-bg.panel-bg-s2-o05 {
+    background-color: rgba(212, 40, 74, 0.5);
+}
+
+.panel-bg-1 {
+    background-color: #bfb450;
+}
+
+.panel-bg-2 {
+    background-color: #a65d55;
+}
+
+.panel-bg-3 {
+    background-color: #5586a6;
+}
+
+.panel-bg-4 {
+    background-color: #6755a6;
+}
+
+.panel-bg-1-o02 {
+    background-color: rgba(191, 180, 80, 0.2);
+}
+
+.panel-bg-2-o02 {
+    background-color: rgba(166, 93, 85, 0.2);
+}
+
+.panel-bg-3-o02 {
+    background-color: rgba(85, 134, 166, 0.2);
+}
+
+.panel-bg-4-o02 {
+    background-color: rgba(103, 85, 166, 0.2);
+}
+
+.panel-bg-1-o05 {
+    background-color: rgba(191, 180, 80, 0.5);
+}
+
+.panel-bg-2-o05 {
+    background-color: rgba(166, 93, 85, 0.5);
+}
+
+.panel-bg-3-o05 {
+    background-color: rgba(85, 134, 166, 0.5);
+}
+
+.panel-bg-4-o05 {
+    background-color: rgba(103, 85, 166, 0.5);
+}
+
+.panel-bg-1-o09 {
+    background-color: rgba(191, 180, 80, 0.9);
+}
+
+.panel-bg-2-o09 {
+    background-color: rgba(166, 93, 85, 0.9);
+}
+
+.panel-bg-3-o09 {
+    background-color: rgba(85, 134, 166, 0.9);
+}
+
+.panel-bg-4-o09 {
+    background-color: rgba(103, 85, 166, 0.9);
+}
+
+.panel-bg-black {
+    background-color: #000000;
+}
+
+.panel-bg-black-09 {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.panel-bg-black-03 {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*----------------------------------------------------*/
+
+.panel-border-black {
+    border-width: 4px;
+    border-color: #000000;
+}
+
+.panel-border-black-09 {
+    border-width: 4px;
+    border-color: rgba(0, 0, 0, 0.9);
+}
+
+.panel-border-black-03 {
+    border-width: 4px;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.panel-with-border.border-width-2 {
+    border-width: 2px;
+}
+
+.panel-with-border.border-width-4 {
+    border-width: 4px;
+}
+
+.panel-with-border.border-width-6 {
+    border-width: 6px;
+}
+
+.panel-with-border.border-width-8 {
+    border-width: 8px;
+}
+
+/*----------------------------------------------------*/
+
+/* 
+ <div class="game-panel-with-bg size-720">
+    <div class="full-size layout-horizontal">
+    </div>
+    <div class="panel-bg-3 panel-bg-deg-80 size-720"></div>
+</div>
+ */
+.game-panel-with-bg {
+    border-radius: 4px;
+    padding: 12px;
+    margin: 8px;
+    position: relative;
+}
+
+.panel-bg-deg-5,
+.panel-bg-deg-10,
+.panel-bg-deg-15,
+.panel-bg-deg-30,
+.panel-bg-deg-45,
+.panel-bg-deg-60,
+.panel-bg-deg-75,
+.panel-bg-deg-80,
+.panel-bg-deg-85 {
+    position: absolute;
+    border-radius: 24px;
+    left: 20px;
+    top: 0;
+}
+
+.panel-bg-deg-5 {
+    rotate: 5deg;
+}
+
+.panel-bg-deg-10 {
+    rotate: 10deg;
+}
+
+.panel-bg-deg-15 {
+    rotate: 15deg;
+}
+
+.panel-bg-deg-30 {
+    rotate: 30deg;
+}
+
+.panel-bg-deg-45 {
+    rotate: 45deg;
+}
+
+.panel-bg-deg-60 {
+    rotate: 60deg;
+}
+
+.panel-bg-deg-75 {
+    rotate: 75deg;
+}
+
+.panel-bg-deg-80 {
+    rotate: 80deg;
+}
+
+.panel-bg-deg-85 {
+    rotate: 85deg;
+}
+
+
+.size-320 {
+    width: 320px;
+    height: 320px;
+}
+
+.size-400 {
+    width: 400px;
+    height: 400px;
+}
+
+.size-600 {
+    width: 600px;
+    height: 600px;
+}
+
+.size-720 {
+    width: 720px;
+    height: 720px;
+}
+
+.width-320 {
+    width: 320px;
+}
+
+.width-600 {
+    width: 600px;
+}
+
+.width-720 {
+    width: 720px;
+}
+
+.width-1000 {
+    width: 1000px;
+}
+
+.menu-button {
+    color: #242e30;
+    font-size: 20px;
+    min-width: 120px;
+    min-height: 40px;
+    border-radius: 20px;
+    margin: 8px;
+    text-shadow: 1px 1px 1px #242e30;
+    line-height: 40px;
+    text-align: center;
+    display: initial;
+    font-weight: bold;
+}
+
+.menu-button.menu-button--is-active {
+    background-color: #FFFFFF;
+    color: #242e30;
+}
+
+.control-button {
+    border: 4px solid #FFFFFF;
+    border-radius: 20px;
+    background-color: rgba(36, 46, 48, 0.9);
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+}
+
+.control-button.is-small {
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.control-button.is-tiny {
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    font-size: 12px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+.control-button.is-rounded {
+    border-radius: 20px;
+}
+
+/*
+<div class="layout-vertical center panel-with-border panel-border-is-selected has-left-right-control can-edit">
+    <div class="bg-icon size-44 elemental-fire"></div>
+    <div class="control-button is-tiny is-left">LB</div>
+    <div class="control-button is-tiny is-right">RB</div>
+</div>
+------------------------------------------*/
+.panel-border-is-selected.has-left-right-control {
+    position: relative;
+}
+
+.has-left-right-control .control-button {
+    display: none;
+    position: absolute;
+    bottom: -10px;
+}
+
+.has-left-right-control .control-button.is-left {
+    display: none;
+    left: -10px;
+}
+
+.has-left-right-control .control-button.is-right {
+    display: none;
+    right: -10px;
+}
+
+.panel-border-is-selected.has-left-right-control.can-edit .control-button {
+    display: block;
+}
+
+/*------------------------------------------*/
