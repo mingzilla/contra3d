@@ -319,7 +319,11 @@
     line-height: 32px;
     text-align: center;
     color: rgba(255, 255, 255, 0.8);
-    display: inline-block;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .control-button.is-small {

@@ -169,6 +169,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore" />
      <Folder Include="Assets\ProjectContent\Scripts\AbstractMono" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Base\uss\base\reset.uss" />
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__crystal-land" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore" />

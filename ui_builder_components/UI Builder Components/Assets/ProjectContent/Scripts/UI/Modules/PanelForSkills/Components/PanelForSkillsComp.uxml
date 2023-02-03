@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:Template name="template__panel-for-skill__skill-type" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/PanelForSkillsSkillTypeComp.uxml"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/reset.uss"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/Styles/game-panel.uss"/>
@@ -192,7 +193,7 @@
                                 <ui:VisualElement class="bg-icon skill__light__light-strike"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="skills-panel__cell__active-button-set-1">
-                                <ui:VisualElement class="control-button is-tiny is-rounded set-1-bg">Y</ui:VisualElement>
+                                <ui:VisualElement class="control-button is-tiny is-rounded set-1-bg"><ui:Label text="Y"/></ui:VisualElement>
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
