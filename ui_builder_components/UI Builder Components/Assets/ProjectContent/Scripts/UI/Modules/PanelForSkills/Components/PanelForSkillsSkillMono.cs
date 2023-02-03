@@ -3,16 +3,16 @@ using ProjectContent.Scripts.UI.Base.Util;
 using UnityEditor;
 using UnityEngine.UIElements;
 
-namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
+namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components
 {
-    public class SkillEquipPanelSkillComp
+    public class PanelForSkillsSkillMono
     {
         public VisualElement root;
 
-        public static SkillEquipPanelSkillComp Create(VisualElement rootIn, Skill skill, Skill selectedSkill, bool isSkillActive)
+        public static PanelForSkillsSkillMono Create(VisualElement rootIn, Skill skill, Skill selectedSkill, bool isSkillActive)
         {
             VisualElement root = rootIn;
-            // VisualElement root = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/ProjectContent/Scripts/UI/Modules/EquipSkill/Components/SkillEquipPanelSkillComp.uxml").CloneTree();
+            // VisualElement root = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/SkillEquipPanelSkillComp.uxml").CloneTree();
             VisualElement skillEl = root.Q<VisualElement>("SkillEquipPanelSkill");
             UiUtil.ToggleClass(skillEl, "is-active-box", isSkillActive);
 
@@ -22,7 +22,7 @@ namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
             VisualElement skillSelectionCursorEl = root.Q<VisualElement>("SkillSelectionCursor");
             UiUtil.ToggleClass(skillSelectionCursorEl, "hidden", (skill != selectedSkill));
 
-            return new SkillEquipPanelSkillComp
+            return new PanelForSkillsSkillMono
             {
                 root = root
             };

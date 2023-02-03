@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2308900395550152970}
   - component: {fileID: 2308900395550152969}
   m_Layer: 0
-  m_Name: UI_SkillEquipPanelSkillComp
+  m_Name: PanelForSkillSkillObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

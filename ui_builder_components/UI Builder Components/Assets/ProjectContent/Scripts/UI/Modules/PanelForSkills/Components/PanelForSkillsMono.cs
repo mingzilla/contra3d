@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
 using ProjectContent.Scripts.Types;
-using ProjectContent.Scripts.UI.Modules.EquipSkill.BaseStore.Domain;
+using ProjectContent.Scripts.UI.Modules.PanelForSkills.BaseStore.Domain;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
+namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components
 {
-    public class SkillEquipPanelCompController : MonoBehaviour
+    public class PanelForSkillsMono : MonoBehaviour
     {
         private VisualElement root;
         private VisualElement skillsTable;
         public int relatedPlayerId = 1;
 
-        private EquipSkillStoreData storeData = new();
+        private PanelForSkillsStoreData storeData = new();
 
         [SerializeField] private GameObject skillEquipPanelSkillCompPrefab;
 
@@ -34,7 +34,7 @@ namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
 
             foreach (VisualElement skillRow in skillRows)
             {
-                VisualElement skillRowTypeImage = skillRow.Q<VisualElement>("SkillEquipPanelSkillTypeImage");
+                VisualElement skillRowTypeImage = skillRow.Q<VisualElement>("PanelForSkillsSkillTypeCompImage");
                 VisualElement skillRowContent = skillRow.Q<VisualElement>("SkillEquipPanelSkillRowContent");
 
                 ElementalType type = elementalTypeMap[(skillRow.name)];
@@ -45,8 +45,8 @@ namespace ProjectContent.Scripts.UI.Modules.EquipSkill.Components
                 {
                     VisualElement skillEquipPanelSkillComp = Instantiate(skillEquipPanelSkillCompPrefab, transform.position, Quaternion.identity).GetComponent<UIDocument>().rootVisualElement;
                     bool isSkillActive = storeData.activeItems.isSkillActive(skill);
-                    SkillEquipPanelSkillComp skillBox = SkillEquipPanelSkillComp.Create(skillEquipPanelSkillComp, skill, selectedSkill, isSkillActive);
-                    skillRowContent.Add(skillBox.root);
+                    PanelForSkillsSkillMono panelForSkillsSkillBox = PanelForSkillsSkillMono.Create(skillEquipPanelSkillComp, skill, selectedSkill, isSkillActive);
+                    skillRowContent.Add(panelForSkillsSkillBox.root);
                 });
             }
         }

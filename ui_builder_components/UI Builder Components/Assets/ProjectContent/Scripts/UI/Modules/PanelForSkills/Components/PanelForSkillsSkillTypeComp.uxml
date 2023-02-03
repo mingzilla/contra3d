@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement class="panel-for-skill__header-cell layout-vertical center">
+        <ui:VisualElement name="PanelForSkillsSkillTypeComp" class="panel-for-skill__skill-block layout-vertical center relative-position">
+            <ui:Image name="PanelForSkillsSkillTypeCompImage" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

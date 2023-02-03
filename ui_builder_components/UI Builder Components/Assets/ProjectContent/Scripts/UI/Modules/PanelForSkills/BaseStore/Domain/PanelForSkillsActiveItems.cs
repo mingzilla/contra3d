@@ -1,8 +1,8 @@
 ﻿using ProjectContent.Scripts.Types;
 
-namespace ProjectContent.Scripts.UI.Modules.EquipSkill.BaseStore.Domain
+namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.BaseStore.Domain
 {
-    public class EquipSkillActiveItems
+    public class PanelForSkillsActiveItems
     {
         public int cursorHorizontalIndex; // to show where the moving cursor is
         public int cursorVerticalIndex;
