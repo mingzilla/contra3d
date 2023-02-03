@@ -4,7 +4,7 @@
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/Styles/game-panel.uss"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/Styles/game-content.uss"/>
-    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/panel-for-skills"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/panel-for-skills.uss"/>
 
     <ui:VisualElement class="players-status-section layout-horizontal">
         <ui:VisualElement class="flex layout-vertical center">
