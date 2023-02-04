@@ -192,7 +192,6 @@
  */
 .game-panel-with-bg {
     border-radius: 4px;
-    padding: 12px;
     margin: 8px;
     position: relative;
 }
@@ -208,8 +207,8 @@
 .panel-bg-deg-85 {
     position: absolute;
     border-radius: 24px;
-    left: 20px;
-    top: 0;
+    left: 0;
+    top: -20px;
 }
 
 .panel-bg-deg-5 {

@@ -1,6 +1,5 @@
 ﻿.in-game-player-panel.player-status-panel {
     height: 120px;
-
 }
 
 .player-status__status-box {
@@ -67,9 +66,9 @@
 .player-status__mp-max {
     border: 2px solid #FFFFFF;
     border-radius: 2px;
-    max-width: 200px;
-    width: 100px;
-    height: 16px;
+    max-width: 204px;
+    width: 104px;
+    height: 20px;
 }
 
 .player-status__hp-current {
