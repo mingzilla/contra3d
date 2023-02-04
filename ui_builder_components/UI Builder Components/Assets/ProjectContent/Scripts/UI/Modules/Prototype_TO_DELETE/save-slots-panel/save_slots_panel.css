@@ -1,0 +1,61 @@
+﻿.save-slot-panel__slot-list {
+    height: 720px;
+    width: 1000px;
+}
+
+.save-slot-panel__save-slot {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 6px solid rgba(0, 0, 0, 0.2);
+}
+
+.save-slot-panel__save-slot.is-active {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 6px solid #d4284a;
+}
+
+.save-slot-panel__save-slot__side {
+    width: 120px;
+    color: #4f4f4f;
+}
+
+.save-slot-panel__save-slot__num {
+    font-size: 80px;
+}
+
+.save-slot-panel__save-slot.is-active .save-slot-panel__save-slot__num {
+    color: #FFFFFF;
+}
+
+.save-slot-panel__save-slot__player {
+    margin: 0 8px;
+    position: relative;
+    padding-right: 4px;
+}
+
+.save-slot-panel__save-slot.is-active .player-lobby__player-summary {
+    background-color: rgba(70, 70, 70, 0.25);
+}
+
+.save-slot-panel__save-slot__player-num {
+    position: absolute;
+    left: 52px;
+    right: 52px;
+    top: -6px;
+    height: 24px;
+    font-size: 20px;
+    line-height: 24px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #242e30;
+    text-align: center;
+    border-radius: 4px 4px 16px 16px;
+}
+
+.save-slot-panel__save-slot__empty-slot {
+    font-size: 28px;
+    color: #d3d3d3;
+    width: 640px;
+}

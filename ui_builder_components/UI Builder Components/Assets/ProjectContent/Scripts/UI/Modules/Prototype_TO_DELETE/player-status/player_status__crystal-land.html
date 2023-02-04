@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="full-height">
+<head>
+    <meta charset="UTF-8">
+    <title>Crystal Land</title>
+    <link rel="stylesheet" href="./../css/reset.css"/>
+    <link rel="stylesheet" href="./../css/flex-layout-styles.css"/>
+    <link rel="stylesheet" href="./../css/generic-custom-styles.css"/>
+    <link rel="stylesheet" href="./../css-game/game-panel.css"/>
+    <link rel="stylesheet" href="./../css-game/game-content.css"/>
+    <link rel="stylesheet" href="./player_status.css"/>
+</head>
+<body class="is-crystal-land">
+
+<div class="players-status-section layout-horizontal">
+    <div class="flex layout-vertical center">
+        <div class="in-game-player-panel player-status-panel layout-horizontal">
+            <div class="player-status__status-box flex layout-vertical">
+                <div class="player-status__status-box__player-box layout-horizontal flex">
+                    <div class="player-status__status-box__player-box__num">
+                        <div class="player-status__status-box__player-box__num__text layout-vertical center">P1</div>
+                    </div>
+                    <div class="flex layout-vertical">
+                        <div class="flex layout-horizontal">
+                            <div class="player-status__status-box__player-box__header">HP</div>
+                            <div class="flex layout-horizontal center">
+                                <div class="player-status__hp-max">
+                                    <div class="player-status__hp-current"></div>
+                                </div>
+                                <div class="flex"></div>
+                            </div>
+                        </div>
+                        <div class="flex layout-horizontal">
+                            <div class="player-status__status-box__player-box__header">MP</div>
+                            <div class="flex layout-horizontal center">
+                                <div class="player-status__mp-max">
+                                    <div class="player-status__mp-current"></div>
+                                </div>
+                                <div class="flex"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-status__status-box__control-box flex layout-horizontal">
+                    <div class="player-status__status-box__control-box__d-pad layout-horizontal">
+                        <div class="flex"></div>
+                        <div class="player-status__status-box__control-box__left layout-vertical">
+                            <div class="flex">UPGRADE</div>
+                            <div class="flex">ALLOCATION</div>
+                        </div>
+                        <div class="layout-vertical center">
+                            <div class="d-pad-with-line"></div>
+                        </div>
+                        <div class="player-status__status-box__control-box__right layout-vertical">
+                            <div class="flex">ACCESSORIES</div>
+                            <div class="flex">SKILLS</div>
+                        </div>
+                        <div class="flex"></div>
+                    </div>
+                    <div class="flex layout-horizontal">
+                        <div class="flex layout-vertical center">
+                            <div class="bg-icon size-36 shield-equipment-1"></div>
+                            <div class="layout-vertical center">
+                                <div class="equipment-elemental-allocation layout-horizontal">
+                                    <div class="flex panel-bg-1"></div>
+                                    <div class="flex panel-bg-2"></div>
+                                    <div class="flex panel-bg-3"></div>
+                                    <div class="flex"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex layout-vertical player-status__status-box__control-box__shield-control">
+                            <div class="flex layout-vertical center"><span class="player-status__status-box__control-box__shield-count">8</span></div>
+                            <div class="flex layout-vertical center">
+                                <div class="control-button is-small">LT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="player-status__magic-box">
+                <div class="player-status__magic-box__skill is-top bg-icon size-44 skill__fire__fire-strike__no-effect"></div>
+                <div class="player-status__magic-box__skill is-left bg-icon size-44 skill__fire__meteor-storm__no-effect"></div>
+                <div class="player-status__magic-box__skill is-bottom bg-icon size-44 skill__light__basic-light__no-effect"></div>
+                <div class="player-status__magic-box__skill is-right bg-icon size-44 skill__water__ice-bolt__no-effect"></div>
+
+                <div class="control-button is-tiny is-rounded player-status__magic-box__button  is-top">Y</div>
+                <div class="control-button is-tiny is-rounded player-status__magic-box__button is-disabled is-left">X</div>
+                <div class="control-button is-tiny is-rounded player-status__magic-box__button is-disabled is-bottom">A</div>
+                <div class="control-button is-tiny is-rounded player-status__magic-box__button is-disabled is-right">B</div>
+                <div class="control-button is-small player-status__magic-box__button is-control">RB</div>
+                <div class="player-status__magic-box__button__control-plus">+</div>
+                <div class="control-button is-small player-status__magic-box__button is-swap">RT</div>
+                <div class="player-status__magic-box__button__control-swap bg-icon size-20 toggle-top"></div>
+
+                <div class="player-status__magic-box__content45 layout-vertical center">
+                    <div class="player-status__magic-box__content45__box layout-horizontal">
+                        <div class="layout-vertical flex">
+                            <div class="flex box"></div>
+                            <div class="flex box"></div>
+                        </div>
+                        <div class="layout-vertical flex">
+                            <div class="flex box"></div>
+                            <div class="flex box"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="flex layout-vertical center"></div>
+    <div class="flex layout-vertical center"></div>
+    <div class="flex layout-vertical center"></div>
+</div>
+
+</body>
+</html>

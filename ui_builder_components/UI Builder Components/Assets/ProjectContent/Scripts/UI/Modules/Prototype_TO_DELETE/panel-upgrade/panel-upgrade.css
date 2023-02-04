@@ -1,0 +1,30 @@
+﻿.in-game-player-panel.upgrade-panel {
+}
+
+.upgrade-panel__table {
+    height: 276px;
+}
+
+.upgrade-panel__help-panel {
+    height: 100px;
+}
+
+.upgrade-panel__controls {
+    height: 40px;
+}
+
+/*-----------------------------*/
+
+.upgrade-panel__fill-bar {
+    width: 248px;
+    height: 20px;
+}
+
+.upgrade-panel__fill-bar__box {
+    width: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.upgrade-panel__fill-bar__box.is-filled {
+    background-color: rgba(85, 166, 118, 0.5);
+}

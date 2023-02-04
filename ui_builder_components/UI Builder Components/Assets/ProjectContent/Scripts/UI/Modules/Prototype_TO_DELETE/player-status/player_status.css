@@ -1,0 +1,206 @@
+﻿.in-game-player-panel.player-status-panel {
+    height: 120px;
+
+}
+
+.player-status__status-box {
+
+}
+
+.player-status__status-box__player-box {
+
+}
+
+.player-status__status-box__player-box__num {
+    width: 60px;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+}
+
+.player-status__status-box__player-box__num__text {
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.player-status__status-box__player-box__header {
+    width: 32px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    line-height: 32px;
+}
+
+.player-status__status-box__control-box {
+}
+
+.player-status__status-box__control-box__d-pad {
+    width: 240px;
+}
+
+.player-status__status-box__control-box__left,
+.player-status__status-box__control-box__right {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 1);
+    line-height: 24px;
+}
+
+.player-status__status-box__control-box__left {
+    text-align: right;
+}
+
+.player-status__status-box__control-box__right {
+    text-align: left;
+}
+
+.player-status__magic-box {
+    width: 120px;
+    position: relative;
+}
+
+.player-status__hp-max,
+.player-status__mp-max {
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    max-width: 200px;
+    width: 100px;
+    height: 16px;
+}
+
+.player-status__hp-current {
+    max-width: 200px;
+    width: 80px;
+    height: 100%;
+    background-color: #d4284a;
+}
+
+.player-status__mp-current {
+    max-width: 200px;
+    width: 60px;
+    height: 100%;
+    background-color: #5586a6;
+}
+
+/*------------------------*/
+.d-pad-with-line {
+    width: 52px;
+    height: 52px;
+    background-size: 52px 52px;
+    background-image: url("../../../../../Materials/images/icons/button_direction_pad_with_line.png");
+}
+
+/*------------------------*/
+.player-status__status-box__control-box__shield-control {
+    padding-right: 8px;
+}
+
+.player-status__status-box__control-box__shield-count {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/*------------------------*/
+.player-status__magic-box {
+    position: relative;
+}
+
+.player-status__magic-box__skill {
+    position: absolute;
+}
+
+.player-status__magic-box__skill.is-top {
+    top: 10px;
+    left: 38px;
+}
+
+.player-status__magic-box__skill.is-left {
+    top: 38px;
+    left: 10px;
+}
+
+.player-status__magic-box__skill.is-bottom {
+    bottom: 10px;
+    left: 38px;
+}
+
+.player-status__magic-box__skill.is-right {
+    top: 38px;
+    right: 10px;
+}
+
+/*------------------------*/
+.player-status__magic-box__button {
+    position: absolute;
+}
+
+.player-status__magic-box__button.is-disabled {
+    opacity: 0.4;
+}
+
+.player-status__magic-box__button.is-top {
+    top: -6px;
+    left: 51px;
+}
+
+.player-status__magic-box__button.is-left {
+    top: 51px;
+    left: -6px;
+}
+
+.player-status__magic-box__button.is-bottom {
+    bottom: -6px;
+    left: 51px;
+}
+
+.player-status__magic-box__button.is-right {
+    top: 51px;
+    right: -6px;
+}
+
+.player-status__magic-box__button.is-control {
+    top: 1px;
+    right: 0;
+}
+
+.player-status__magic-box__button__control-plus {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #FFFFFF;
+}
+
+.player-status__magic-box__button.is-swap {
+    bottom: 0;
+    right: 0;
+}
+
+.player-status__magic-box__button__control-swap {
+    position: absolute;
+    right: 24px;
+    bottom: 2px;
+}
+
+/*------------------------*/
+.player-status__magic-box__content45 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    transform: rotate(45deg);
+}
+
+.player-status__magic-box__content45__box {
+    width: 80px;
+    height: 80px;
+}
+
+.player-status__magic-box__content45__box .box {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(109, 166, 85, 0.05);
+}

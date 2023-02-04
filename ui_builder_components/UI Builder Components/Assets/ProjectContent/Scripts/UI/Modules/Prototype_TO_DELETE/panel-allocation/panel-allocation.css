@@ -1,0 +1,14 @@
+﻿.in-game-player-panel.allocation-panel {
+}
+
+.allocation-panel__table {
+    height: 480px;
+}
+
+.allocation-panel__help-panel {
+    height: 100px;
+}
+
+.allocation-panel__controls {
+    height: 40px;
+}

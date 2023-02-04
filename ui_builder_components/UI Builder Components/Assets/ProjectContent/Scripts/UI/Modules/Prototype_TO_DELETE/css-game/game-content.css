@@ -1,0 +1,517 @@
+﻿html {
+    height: 100%;
+}
+
+body {
+    background-size: 1920px 1080px;
+    background-image: url("../../../../../Materials/images/grassland.jpg");
+}
+
+body.is-mush-land {
+    background-image: url("../../../../../Materials/images/mushroom-land.jpg");
+}
+
+body.is-under-water {
+    background-image: url("../../../../../Materials/images/under-water.jpg");
+}
+
+body.is-crystal-land {
+    background-image: url("../../../../../Materials/images/crystal-land.jpg");
+}
+
+body.is-desert-land {
+    background-image: url("../../../../../Materials/images/desert-land.jpg");
+}
+
+body.is-snow-land {
+    background-image: url("../../../../../Materials/images/snow-land.jpg");
+}
+
+/*---------------------------------------------*/
+
+.player-lobby__player-summary {
+    width: 160px;
+    height: 160px;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 6px solid rgba(0, 0, 0, 0.3);
+}
+
+/*---------------------------------------------*/
+
+.bg-icon {
+    width: 52px;
+    height: 52px;
+    background-size: 52px 52px;
+}
+
+.bg-icon.size-20 {
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+}
+
+.bg-icon.size-24 {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+}
+
+.bg-icon.size-32 {
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+}
+
+.bg-icon.size-36 {
+    width: 36px;
+    height: 36px;
+    background-size: 36px 36px;
+}
+
+.bg-icon.size-44 {
+    width: 44px;
+    height: 44px;
+    background-size: 44px 44px;
+}
+
+/*---------------------------------------------*/
+
+.bg-icon.sword-slots {
+    background-image: url("../../../../../Materials/images/icons/flat_sword.png");
+}
+
+.bg-icon.shield-slots {
+    background-image: url("../../../../../Materials/images/icons/flat_shield.png");
+}
+
+.bg-icon.hpmp-slots {
+    background-image: url("../../../../../Materials/images/icons/flat_status_hp_mp.png");
+}
+
+.bg-icon.accessory-slots {
+    background-image: url("../../../../../Materials/images/icons/flat_accessory.png");
+}
+
+/*---------------------------------------------*/
+
+.bg-icon.elemental-fire {
+    background-image: url("../../../../../Materials/images/icons/flat_fire.png");
+}
+
+.bg-icon.elemental-water {
+    background-image: url("../../../../../Materials/images/icons/flat_water.png");
+}
+
+.bg-icon.elemental-light {
+    background-image: url("../../../../../Materials/images/icons/flat_light.png");
+}
+
+/*---------------------------------------------*/
+
+.bg-icon.sword-equipment {
+    background-image: url("../../../../../Materials/images/icons/flat_sword.png");
+}
+
+.bg-icon.staff-equipment {
+    background-image: url("../../../../../Materials/images/icons/staff.png");
+}
+
+.bg-icon.staff-equipment-1 {
+    background-image: url("../../../../../Materials/images/icons/flat_staff_1.png");
+}
+
+.bg-icon.staff-equipment-2 {
+    background-image: url("../../../../../Materials/images/icons/flat_staff_2.png");
+}
+
+.bg-icon.shield-equipment-1 {
+    background-image: url("../../../../../Materials/images/icons/flat_shield_1.png");
+}
+
+.bg-icon.shield-equipment-2 {
+    background-image: url("../../../../../Materials/images/icons/flat_shield_2.png");
+}
+
+/*---------------------------------------------*/
+
+.bg-icon.d-pad {
+    background-image: url("../../../../../Materials/images/icons/button_direction_pad.png");
+}
+
+.bg-icon.left-stick {
+    background-image: url("../../../../../Materials/images/icons/left_stick.png");
+}
+
+.bg-icon.select-key {
+    background-image: url("../../../../../Materials/images/icons/button_select.png");
+}
+
+/*------------------ SKILLS -------------------*/
+
+.bg-icon.skill__fire__fire-ball {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-ball.png");
+}
+
+.bg-icon.skill__fire__fire-ball__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-ball_no-effect.png");
+}
+
+.bg-icon.skill__fire__fire-bounce-ball {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-bounce-ball.png");
+}
+
+.bg-icon.skill__fire__fire-bounce-ball__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-bounce-ball_no-effect.png");
+}
+
+.bg-icon.skill__fire__fire-strike {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-strike.png");
+}
+
+.bg-icon.skill__fire__fire-strike__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_fire-strike_no-effect.png");
+}
+
+.bg-icon.skill__fire__meteor-storm {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_meteor-storm.png");
+}
+
+.bg-icon.skill__fire__meteor-storm__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_meteor-storm_no-effect.png");
+}
+
+.bg-icon.skill__fire__spread-fire-balls {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_spread-fire-balls.png");
+}
+
+.bg-icon.skill__fire__spread-fire-balls__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_fire_spread-fire-balls_no-effect.png");
+}
+
+.bg-icon.skill__water__water-ball {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_water-ball.png");
+}
+
+.bg-icon.skill__water__water-ball__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_water-ball_no-effect.png");
+}
+
+.bg-icon.skill__water__ice-bolt {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-bolt.png");
+}
+
+.bg-icon.skill__water__ice-bolt__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-bolt_no-effect.png");
+}
+
+.bg-icon.skill__water__ice-ring {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-ring.png");
+}
+
+.bg-icon.skill__water__ice-ring__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-ring_no-effect.png");
+}
+
+.bg-icon.skill__water__ice-wave {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-wave.png");
+}
+
+.bg-icon.skill__water__ice-wave__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_water_ice-wave_no-effect.png");
+}
+
+.bg-icon.skill__light__basic-light {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_basic-light.png");
+}
+
+.bg-icon.skill__light__basic-light__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_basic-light_no-effect.png");
+}
+
+.bg-icon.skill__light__chain-light {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_chain-light.png");
+}
+
+.bg-icon.skill__light__chain-light__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_chain-light_no-effect.png");
+}
+
+.bg-icon.skill__light__light-strike {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_light-strike.png");
+}
+
+.bg-icon.skill__light__light-strike__no-effect {
+    background-image: url("../../../../../Materials/images/icons/skill-icon_light_light-strike_no-effect.png");
+}
+
+/*---------------------------------------------*/
+
+.bg-icon.toggle-left {
+    background-image: url("../../../../../Materials/images/icons/toggle_left.png");
+}
+
+.bg-icon.toggle-right {
+    background-image: url("../../../../../Materials/images/icons/toggle_right.png");
+}
+
+.bg-icon.toggle-top {
+    background-image: url("../../../../../Materials/images/icons/toggle_top.png");
+}
+
+.bg-icon.toggle-bottom {
+    background-image: url("../../../../../Materials/images/icons/toggle_bottom.png");
+}
+
+/*------------------- Relics --------------------------*/
+.bg-icon.relic__sword_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_sword_1.png");
+}
+
+.bg-icon.relic__sword_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_sword_2.png");
+}
+
+.bg-icon.relic__sword_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_sword_3.png");
+}
+
+.bg-icon.relic__shield_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_shield_1.png");
+}
+
+.bg-icon.relic__shield_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_shield_2.png");
+}
+
+.bg-icon.relic__shield_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_shield_3.png");
+}
+
+.bg-icon.relic__elemental-dmg_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-dmg_1.png");
+}
+
+.bg-icon.relic__elemental-dmg_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-dmg_2.png");
+}
+
+.bg-icon.relic__elemental-dmg_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-dmg_3.png");
+}
+
+.bg-icon.relic__elemental-def_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-def_1.png");
+}
+
+.bg-icon.relic__elemental-def_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-def_2.png");
+}
+
+.bg-icon.relic__elemental-def_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-def_3.png");
+}
+
+.bg-icon.relic__elemental-chances_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-chances_1.png");
+}
+
+.bg-icon.relic__elemental-chances_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-chances_2.png");
+}
+
+.bg-icon.relic__elemental-chances_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-chances_3.png");
+}
+
+.bg-icon.relic__elemental-chances_def_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-chances_def_1.png");
+}
+
+.bg-icon.relic__elemental-chances_def_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-chances_def_2.png");
+}
+
+.bg-icon.relic__elemental-chances_def_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-chances_def_3.png");
+}
+
+.bg-icon.relic__elemental-time-up_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time-up_1.png");
+}
+
+.bg-icon.relic__elemental-time-up_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time-up_2.png");
+}
+
+.bg-icon.relic__elemental-time-up_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time-up_3.png");
+}
+
+.bg-icon.relic__elemental-time_def_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time_def_1.png");
+}
+
+.bg-icon.relic__elemental-time_def_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time_def_2.png");
+}
+
+.bg-icon.relic__elemental-time_def_3 {
+    background-image: url("../../../../../Materials/images/icons/relic_elemental-time_def_3.png");
+}
+
+.bg-icon.relic__potion-count_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_potion-count_1.png");
+}
+
+.bg-icon.relic__potion-count_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_potion-count_2.png");
+}
+
+.bg-icon.relic__potion-amount_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_potion-amount_1.png");
+}
+
+.bg-icon.relic__potion-amount_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_potion-amount_2.png");
+}
+
+.bg-icon.relic__mp-cost-lower_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_mp_cost_lower_1.png");
+}
+
+.bg-icon.relic__mp-cost-lower_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_mp_cost_lower_2.png");
+}
+
+.bg-icon.relic__mp-recovery_1 {
+    background-image: url("../../../../../Materials/images/icons/relic_mp_recovery_1.png");
+}
+
+.bg-icon.relic__mp-recovery_2 {
+    background-image: url("../../../../../Materials/images/icons/relic_mp_recovery_2.png");
+}
+
+/*
+todo
+speed up 2, 3 
+jump higher 2, 3 
+vampire 2, 3
+rose 1, 2
+poo 1, 2
+*/
+
+
+/*---------------------------------------------*/
+.player-summary__item_num {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/*---------------------------------------------*/
+.equipment-elemental-allocation {
+    width: 36px;
+    height: 8px;
+    margin: 2px 0;
+}
+
+.equipment-elemental-allocation div {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/*----------------COMMON PANELS-----------------*/
+.players-status-section {
+    min-height: 120px;
+    margin-top: 12px;
+}
+
+.players-panels-section {
+    min-height: 240px;
+    margin-top: 12px;
+}
+
+/*----------------IN GAME PLAYER PANELS-----------------*/
+.in-game-player-panel {
+    width: 440px;
+    min-height: 120px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.in-game-player-panel__header {
+    height: 32px;
+    font-size: 18px;
+    line-height: 32px;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*------------------------*/
+.in-game-player-panel__row {
+    color: rgba(255, 255, 255, 0.8);
+    min-height: 68px;
+}
+
+.in-game-player-panel__row__header {
+    width: 60px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.in-game-player-panel__row__header-bg {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*------------------------*/
+.in-game-player-panel__row__cell-box {
+    width: 80px;
+}
+
+.in-game-player-panel__row__cell-item {
+    background-color: rgba(255, 255, 255, 0.01);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    width: 56px;
+    height: 56px;
+}
+
+.in-game-player-panel__row__cell-item.is-placeholder {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.in-game-player-panel__row__cell-item.is-number {
+    font-size: 20px;
+    line-height: 56px;
+    text-align: center;
+}
+
+.in-game-player-panel__row__cell-item .bg-icon {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/*----------help panel--------------*/
+.in-game-player-panel__help-panel__note-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    width: 408px;
+    height: 80px;
+    border-radius: 2px;
+    padding: 8px;
+    font-size: 11px;
+}
+
+/*----------control panel--------------*/
+.in-game-player-panel__controls__box {
+    min-width: 100px;
+}
+
+.in-game-player-panel__controls__text {
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 4px;
+}
