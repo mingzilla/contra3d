@@ -497,7 +497,7 @@ poo 1, 2
 
 /*----------help panel--------------*/
 .in-game-player-panel__help-panel__note-box {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.02);
     color: rgba(255, 255, 255, 0.7);
     width: 408px;
     height: 80px;
