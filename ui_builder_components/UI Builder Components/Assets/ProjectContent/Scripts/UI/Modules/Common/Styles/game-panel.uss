@@ -298,9 +298,14 @@
     text-shadow: 1px 1px 1px #242e30;
     line-height: 40px;
     text-align: center;
-    display: initial;
+    display: inline-block;
     font-weight: bold;
     -unity-font-style: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-button.menu-button--is-active {

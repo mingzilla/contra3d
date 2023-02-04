@@ -34,7 +34,8 @@ body.is-snow-land {
     height: 160px;
     border-radius: 16px;
     background-color: rgba(0, 0, 0, 0.3);
-    border: 6px solid rgba(0, 0, 0, 0.3);
+    border-width: 6px;
+    border-color: rgba(0, 0, 0, 0.3);
 }
 
 /*---------------------------------------------*/
@@ -419,8 +420,9 @@ poo 1, 2
     margin: 2px 0;
 }
 
-.equipment-elemental-allocation div {
-    border: 1px solid rgba(255, 255, 255, 0.4);
+.equipment-elemental-allocation .flex {
+    border-width: 1px;
+    border-color:  rgba(255, 255, 255, 0.4);
 }
 
 /*----------------COMMON PANELS-----------------*/
@@ -439,7 +441,7 @@ poo 1, 2
     width: 440px;
     min-height: 120px;
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.99);
 }
 
 .in-game-player-panel__header {
@@ -472,14 +474,15 @@ poo 1, 2
 
 .in-game-player-panel__row__cell-item {
     background-color: rgba(255, 255, 255, 0.01);
-    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.2);
     width: 56px;
     height: 56px;
 }
 
 .in-game-player-panel__row__cell-item.is-placeholder {
-    background-color: transparent;
-    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
 }
 
 .in-game-player-panel__row__cell-item.is-number {
