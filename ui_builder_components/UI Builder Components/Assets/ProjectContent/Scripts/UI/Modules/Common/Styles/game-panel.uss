@@ -319,8 +319,8 @@
     border-radius: 20px;
     background-color: rgba(36, 46, 48, 0.9);
     font-size: 20px;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     line-height: 32px;
     text-align: center;
     color: rgba(255, 255, 255, 0.8);
@@ -336,9 +336,9 @@
     border-color: #FFFFFF;
     border-radius: 2px;
     font-size: 12px;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
 }
 
 .control-button.is-tiny {
@@ -346,8 +346,8 @@
     border-color: #FFFFFF;
     border-radius: 2px;
     font-size: 12px;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     line-height: 16px;
 }
 

@@ -30,8 +30,8 @@ body.is-snow-land {
 /*---------------------------------------------*/
 
 .player-lobby__player-summary {
-    width: 160px;
-    height: 160px;
+    width: 172px;
+    height: 172px;
     border-radius: 16px;
     background-color: rgba(0, 0, 0, 0.3);
     border: 6px solid rgba(0, 0, 0, 0.3);
@@ -420,7 +420,7 @@ poo 1, 2
     margin: 2px 0;
 }
 
-.equipment-elemental-allocation div {
+.equipment-elemental-allocation .flex {
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -474,8 +474,8 @@ poo 1, 2
 .in-game-player-panel__row__cell-item {
     background-color: rgba(255, 255, 255, 0.01);
     border: 2px solid rgba(0, 0, 0, 0.2);
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
 }
 
 .in-game-player-panel__row__cell-item.is-placeholder {
@@ -497,8 +497,8 @@ poo 1, 2
 .in-game-player-panel__help-panel__note-box {
     background-color: rgba(255, 255, 255, 0.05);
     color: rgba(255, 255, 255, 0.7);
-    width: 408px;
-    height: 80px;
+    width: 424px;
+    height: 96px;
     border-radius: 2px;
     padding: 8px;
     font-size: 11px;
