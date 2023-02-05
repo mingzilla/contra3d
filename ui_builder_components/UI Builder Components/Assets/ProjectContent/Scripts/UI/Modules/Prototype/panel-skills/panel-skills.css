@@ -2,7 +2,11 @@
 }
 
 .skills-panel__table {
-    height: 476px;
+    height: 488px;
+}
+
+.skills-panel__table__header-row {
+    padding-bottom: 12px;
 }
 
 .skills-panel__header-cell {
@@ -15,14 +19,14 @@
 
 .skills-panel__cell__active-button-set-1 {
     position: absolute;
-    top: 1px;
-    left: 6px;
+    top: 0;
+    left: 0;
 }
 
 .skills-panel__cell__active-button-set-2 {
     position: absolute;
-    top: 1px;
-    right: 6px;
+    top: 0;
+    right: 0;
 }
 
 .skills-panel__help-panel {
