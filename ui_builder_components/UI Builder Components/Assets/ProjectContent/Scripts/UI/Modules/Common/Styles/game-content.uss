@@ -408,8 +408,6 @@ poo 1, 2
     right: 8px;
     bottom: 8px;
     font-size: 20px;
-    line-height: 24px;
-    text-align: center;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -447,7 +445,6 @@ poo 1, 2
 .in-game-player-panel__header {
     height: 32px;
     font-size: 18px;
-    line-height: 32px;
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -478,6 +475,11 @@ poo 1, 2
     border-color: rgba(0, 0, 0, 0.2);
     width: 60px;
     height: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .in-game-player-panel__row__cell-item.is-placeholder {
@@ -487,8 +489,6 @@ poo 1, 2
 
 .in-game-player-panel__row__cell-item.is-number {
     font-size: 20px;
-    line-height: 56px;
-    text-align: center;
 }
 
 .in-game-player-panel__row__cell-item .bg-icon {
@@ -513,7 +513,11 @@ poo 1, 2
 
 .in-game-player-panel__controls__text {
     font-size: 12px;
-    line-height: 16px;
     color: rgba(255, 255, 255, 0.8);
     margin-left: 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
