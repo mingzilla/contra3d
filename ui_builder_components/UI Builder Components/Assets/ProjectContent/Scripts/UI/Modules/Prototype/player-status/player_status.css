@@ -45,19 +45,23 @@
     width: 240px;
 }
 
-.player-status__status-box__control-box__left,
-.player-status__status-box__control-box__right {
+.player-status__status-box__control-box__left .flex,
+.player-status__status-box__control-box__right .flex {
     font-size: 11px;
     color: rgba(255, 255, 255, 1);
-    line-height: 24px;
+
+    display: flex;
+    flex-direction: column;
 }
 
-.player-status__status-box__control-box__left {
-    text-align: right;
+.player-status__status-box__control-box__left .flex {
+    align-items: end;
+    justify-content: center;
 }
 
-.player-status__status-box__control-box__right {
-    text-align: left;
+.player-status__status-box__control-box__right .flex {
+    align-items: start;
+    justify-content: center;
 }
 
 .player-status__magic-box {
