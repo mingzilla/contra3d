@@ -18,6 +18,8 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components
 
         private void OnEnable()
         {
+            return;
+            
             Skill selectedSkill = storeData.activeItems.selectedSkill;
             root = GetComponent<UIDocument>().rootVisualElement;
             skillsTable = root.Q<VisualElement>("ve__panel-for-skill__skills-table");
