@@ -195,7 +195,6 @@
  */
 .game-panel-with-bg {
     border-radius: 4px;
-    padding: 12px;
     margin: 8px;
     position: relative;
 }
@@ -211,8 +210,8 @@
 .panel-bg-deg-85 {
     position: absolute;
     border-radius: 24px;
-    left: 20px;
-    top: 0;
+    left: 0;
+    top: -20px;
 }
 
 .panel-bg-deg-5 {
@@ -296,9 +295,6 @@
     border-radius: 20px;
     margin: 8px;
     text-shadow: 1px 1px 1px #242e30;
-    line-height: 40px;
-    text-align: center;
-    display: inline-block;
     font-weight: bold;
     -unity-font-style: bold;
 
@@ -321,8 +317,6 @@
     font-size: 20px;
     width: 40px;
     height: 40px;
-    line-height: 32px;
-    text-align: center;
     color: rgba(255, 255, 255, 0.8);
 
     display: flex;
@@ -338,7 +332,6 @@
     font-size: 12px;
     width: 24px;
     height: 24px;
-    line-height: 24px;
 }
 
 .control-button.is-tiny {
@@ -348,7 +341,6 @@
     font-size: 12px;
     width: 18px;
     height: 18px;
-    line-height: 16px;
 }
 
 .control-button.is-rounded {
@@ -383,7 +375,7 @@
 }
 
 .panel-border-is-selected.has-left-right-control.can-edit .control-button {
-    display: block;
+    display: flex;
 }
 
 /*------------------------------------------*/

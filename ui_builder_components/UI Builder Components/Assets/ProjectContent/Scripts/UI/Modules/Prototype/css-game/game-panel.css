@@ -154,15 +154,18 @@
 /*----------------------------------------------------*/
 
 .panel-border-black {
-    border: 4px solid #000000;
+    border-width: 4px;
+    border-color: #000000;
 }
 
 .panel-border-black-09 {
-    border: 4px solid rgba(0, 0, 0, 0.9);
+    border-width: 4px;
+    border-color: rgba(0, 0, 0, 0.9);
 }
 
 .panel-border-black-03 {
-    border: 4px solid rgba(0, 0, 0, 0.3);
+    border-width: 4px;
+    border-color: rgba(0, 0, 0, 0.3);
 }
 
 .panel-with-border.border-width-2 {
@@ -286,16 +289,19 @@
 
 .menu-button {
     color: #242e30;
-    text-shadow: 1px 1px 1px #242e30;
     font-size: 20px;
     min-width: 120px;
     min-height: 40px;
-    line-height: 40px;
     border-radius: 20px;
-    text-align: center;
-    display: inline-block;
-    font-weight: bold;
     margin: 8px;
+    text-shadow: 1px 1px 1px #242e30;
+    font-weight: bold;
+    -unity-font-style: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-button.menu-button--is-active {
@@ -304,34 +310,37 @@
 }
 
 .control-button {
-    border: 4px solid #FFFFFF;
+    border-width: 4px;
+    border-color: #FFFFFF;
     border-radius: 20px;
     background-color: rgba(36, 46, 48, 0.9);
     font-size: 20px;
     width: 40px;
     height: 40px;
-    line-height: 32px;
-    text-align: center;
     color: rgba(255, 255, 255, 0.8);
-    display: inline-block;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .control-button.is-small {
-    border: 2px solid #FFFFFF;
+    border-width: 2px;
+    border-color: #FFFFFF;    
     border-radius: 2px;
     font-size: 12px;
     width: 24px;
     height: 24px;
-    line-height: 20px;
 }
 
 .control-button.is-tiny {
-    border: 1px solid #FFFFFF;
+    border-width: 1px;
+    border-color: #FFFFFF;
     border-radius: 2px;
     font-size: 12px;
     width: 18px;
     height: 18px;
-    line-height: 16px;
 }
 
 .control-button.is-rounded {
@@ -366,7 +375,7 @@
 }
 
 .panel-border-is-selected.has-left-right-control.can-edit .control-button {
-    display: block;
+    display: flex;
 }
 
 /*------------------------------------------*/

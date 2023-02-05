@@ -1,4 +1,11 @@
 ﻿/*
+For CSS and USS consistency
+-------------------------------*/
+div {
+    border-style: solid;
+}
+
+/*
 To support flex layout for the content of a page
 -------------------------------*/
 .hidden {
@@ -841,6 +848,13 @@ misc
 
 .inline-block {
     display: initial;
+}
+
+.v-align-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .display-block {
