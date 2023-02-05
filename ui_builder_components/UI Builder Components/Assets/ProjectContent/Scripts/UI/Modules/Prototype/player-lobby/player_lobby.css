@@ -20,12 +20,16 @@
     border-radius: 60px 4px 24px 4px;
     width: 120px;
     height: 120px;
-    line-height: 120px;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     font-size: 60px;
     font-weight: bold;
     color: #242e30;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /*----------*/

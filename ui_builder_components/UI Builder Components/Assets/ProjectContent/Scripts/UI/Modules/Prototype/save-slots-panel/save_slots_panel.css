@@ -47,11 +47,14 @@
     top: -6px;
     height: 24px;
     font-size: 20px;
-    line-height: 24px;
     background-color: rgba(255, 255, 255, 0.8);
     color: #242e30;
-    text-align: center;
     border-radius: 4px 4px 16px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .save-slot-panel__save-slot__empty-slot {
