@@ -101,6 +101,7 @@
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyDamageFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusFrozenFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills\PanelForSkillsComp.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__SkillSet\PanelForSkillsSkillSetComp.cs" />
      <Folder Include="Assets\ProjectContent\Scripts\CalculationFactors" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />

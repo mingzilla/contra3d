@@ -401,6 +401,29 @@ rose 1, 2
 poo 1, 2
 */
 
+/*---------------------------------------------*/
+.elemental-type__image__not-set {
+    width: 40px;
+    height: 40px;
+}
+
+.elemental-type__image__fire {
+    width: 40px;
+    height: 40px;
+    background-image: url("../../../../../Materials/images/icons/fire.png");
+}
+
+.elemental-type__image__water {
+    width: 40px;
+    height: 40px;
+    background-image: url("../../../../../Materials/images/icons/water.png");
+}
+
+.elemental-type__image__light {
+    width: 40px;
+    height: 40px;
+    background-image: url("../../../../../Materials/images/icons/light.png");
+}
 
 /*---------------------------------------------*/
 .player-summary__item_num {

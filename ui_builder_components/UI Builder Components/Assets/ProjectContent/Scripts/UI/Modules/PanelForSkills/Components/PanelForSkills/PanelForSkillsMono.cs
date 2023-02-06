@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using ProjectContent.Scripts.Types;
-using ProjectContent.Scripts.UI.Modules.PanelForSkills.BaseStore.Domain;
-using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__Skill;
+﻿using ProjectContent.Scripts.UI.Modules.PanelForSkills.BaseStore.Domain;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -17,48 +14,11 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
         [SerializeField] private GameObject skillEquipPanelSkillCompPrefab;
 
-
         private PanelForSkillsComp comp;
-
-        private void OnEnable()
-        {
-            root = GetComponent<UIDocument>().rootVisualElement;
-            return;
-
-            Skill selectedSkill = storeData.activeItems.selectedSkill;
-            skillsTable = root.Q<VisualElement>("ve__panel-for-skill__skills-table");
-            VisualElement[] skillRows =
-            {
-                skillsTable.Q<VisualElement>("NEUTRAL"),
-                skillsTable.Q<VisualElement>("FIRE"),
-                skillsTable.Q<VisualElement>("WATER"),
-                skillsTable.Q<VisualElement>("LIGHT"),
-            };
-
-            Dictionary<string, ElementalType> elementalTypeMap = ElementalType.ItemsMap();
-            Dictionary<string, List<Skill>> skillGroup = Skill.AllGroupByStringType();
-
-            foreach (VisualElement skillRow in skillRows)
-            {
-                VisualElement skillRowTypeImage = skillRow.Q<VisualElement>("PanelForSkillsSkillTypeCompImage");
-                VisualElement skillRowContent = skillRow.Q<VisualElement>("ve__panel-for-skill__skills-table__row-content");
-
-                ElementalType type = elementalTypeMap[(skillRow.name)];
-                skillRowTypeImage.AddToClassList(type.imageCssClass);
-
-                List<Skill> skills = skillGroup[(skillRow.name)];
-                skills.ForEach(skill =>
-                {
-                    VisualElement skillEquipPanelSkillComp = Instantiate(skillEquipPanelSkillCompPrefab, transform.position, Quaternion.identity).GetComponent<UIDocument>().rootVisualElement;
-                    bool isSkillActive = storeData.activeItems.isSkillActive(skill);
-                    PanelForSkillsSkillMono panelForSkillsSkillBox = PanelForSkillsSkillMono.Create(skillEquipPanelSkillComp, skill, selectedSkill, isSkillActive);
-                    skillRowContent.Add(panelForSkillsSkillBox.root);
-                });
-            }
-        }
 
         private void Start()
         {
+            root = GetComponent<UIDocument>().rootVisualElement;
             comp = PanelForSkillsComp.Create(root);
             comp.BuildOnStart();
         }

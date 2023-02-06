@@ -6,11 +6,6 @@ namespace ProjectContent.Scripts.Types
 {
     public class Skill
     {
-        public static readonly Skill NEUTRAL = Create("NEUTRAL", "Neutral", ElementalType.NEUTRAL, 1, 2, 1, 1f, 20f, true, 3f);
-        public static readonly Skill NEUTRAL_1 = Create("NEUTRAL_1", "Neutral", ElementalType.NEUTRAL, 1, 3, 1, 1f, 20f, true, 3f);
-        public static readonly Skill NEUTRAL_2 = Create("NEUTRAL_2", "Neutral", ElementalType.NEUTRAL, 2, 5, 1, 1f, 20f, true, 3f);
-        public static readonly Skill NEUTRAL_3 = Create("NEUTRAL_3", "Neutral", ElementalType.NEUTRAL, 3, 10, 1, 1f, 20f, true, 3f);
-
         public static readonly Skill FIRE_BALL = Create("FIRE_BALL", "Fire Ball", ElementalType.FIRE, 1, 2, 1, 1f, 5f, true, 3f);
         public static readonly Skill FIRE_BALL_1 = Create("FIRE_BALL_1", "Fire Ball", ElementalType.FIRE, 1, 3, 1, 1f, 20f, true, 3f);
         public static readonly Skill FIRE_BALL_2 = Create("FIRE_BALL_2", "Fire Ball", ElementalType.FIRE, 2, 5, 1, 1f, 20f, true, 3f);
@@ -42,10 +37,6 @@ namespace ProjectContent.Scripts.Types
         {
             return new List<Skill>()
             {
-                NEUTRAL,
-                NEUTRAL_1,
-                NEUTRAL_2,
-                NEUTRAL_3,
                 FIRE_BALL,
                 FIRE_BALL_1,
                 FIRE_BALL_2,
