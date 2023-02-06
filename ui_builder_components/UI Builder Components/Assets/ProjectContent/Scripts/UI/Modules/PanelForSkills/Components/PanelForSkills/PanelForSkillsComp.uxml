@@ -1,5 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Template name="template__panel-for-skill__skill-type" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/PanelForSkillsSkillTypeComp.uxml"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/reset.uss"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss"/>
@@ -19,7 +18,7 @@
     <ui:VisualElement class="players-panels-section layout-horizontal">
         <ui:VisualElement class="flex layout-vertical center">
             <ui:VisualElement class="in-game-player-panel skills-panel layout-vertical">
-                <ui:VisualElement class="in-game-player-panel__header layout-vertical center"><ui:Label text="SKILLS"/></ui:VisualElement>
+                <ui:VisualElement class="in-game-player-panel__header layout-vertical center"><ui:Label name="label__component-title" text="SKILLS"/></ui:VisualElement>
 
                 <ui:VisualElement class="skills-panel__table layout-vertical">
                     <ui:VisualElement class="skills-panel__table__header-row flex in-game-player-panel__row in-game-player-panel__row__header-bg layout-horizontal">

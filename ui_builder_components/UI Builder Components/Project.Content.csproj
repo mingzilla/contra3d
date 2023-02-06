@@ -66,7 +66,7 @@
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAllocationPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\PlayerSpeedFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Player\Actions\PlayerJumpAction.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkillsMono.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills\PanelForSkillsMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain\Types\TitleScreenMenuPanel.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Data\GameInputMapping.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\GameInputKey.cs" />
@@ -76,7 +76,7 @@
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\Types\PlayerMenuPanel.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAccessoriesPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\BaseStore\Domain\PanelForSkillsStoreData.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkillsSkillMono.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill\PanelForSkillsSkillMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusBurnFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemySpeedFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuUpgradePanelActiveItems.cs" />
@@ -100,11 +100,13 @@
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\PlayerStatusFrozenFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyDamageFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusFrozenFactor.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills\PanelForSkillsComp.cs" />
      <Folder Include="Assets\ProjectContent\Scripts\CalculationFactors" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills" />
      <Folder Include="Assets\ProjectContent\Prefabs\Players" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkillsSkillTypeComp.uxml" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components_Bk\PanelForSkillsSkillTypeComp.uxml" />
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__under-water" />
      <Folder Include="Assets\ProjectContent\Scripts\UI" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\save-slots-panel" />
@@ -134,9 +136,10 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills" />
      <Folder Include="Assets\ProjectContent\Materials\images" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base\Util" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__SkillSet" />
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain___Common" />
      <Folder Include="Assets\ProjectContent\Scripts\Types" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkillsSkillComp.uxml" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill\PanelForSkillsSkillComp.uxml" />
      <Folder Include="Assets\ProjectContent\Prefabs\MushLand" />
      <None Include="Assets\ProjectContent\Project.Content.asmdef" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\TitleScreen\BaseStore\Domain" />
@@ -151,6 +154,7 @@
      <Folder Include="Assets\ProjectContent\ScenesConfig\Skybox___Common" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Base\uss" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__SkillSet\PanelForSkillsSkillSetComp.uxml" />
      <Folder Include="Assets\ProjectContent\Scenes" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css-game" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-panel.uss" />
@@ -170,6 +174,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore" />
      <Folder Include="Assets\ProjectContent\Scripts\AbstractMono" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-skills" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill" />
      <None Include="Assets\ProjectContent\Scripts\UI\Base\uss\base\reset.uss" />
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__crystal-land" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain" />
@@ -179,7 +184,7 @@
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__desert" />
      <Folder Include="Assets\ProjectContent\ScenesConfig" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\Types" />
-     <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkillsComp.uxml" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills\PanelForSkillsComp.uxml" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForUpgrades" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\BaseStore" />

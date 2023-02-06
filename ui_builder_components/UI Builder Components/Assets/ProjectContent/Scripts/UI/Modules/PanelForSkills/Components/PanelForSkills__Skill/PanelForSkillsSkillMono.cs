@@ -3,7 +3,7 @@ using ProjectContent.Scripts.UI.Base.Util;
 using UnityEditor;
 using UnityEngine.UIElements;
 
-namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components
+namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__Skill
 {
     public class PanelForSkillsSkillMono
     {
@@ -12,7 +12,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components
         public static PanelForSkillsSkillMono Create(VisualElement rootIn, Skill skill, Skill selectedSkill, bool isSkillActive)
         {
             VisualElement root = rootIn;
-            // VisualElement root = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/SkillEquipPanelSkillComp.uxml").CloneTree();
+            // VisualElement root = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/SkillEquipPanelSkillComp.uxml").CloneTree();
             VisualElement skillEl = root.Q<VisualElement>("ve__panel-for-skill__skill");
             UiUtil.ToggleClass(skillEl, "is-active-box", isSkillActive);
 

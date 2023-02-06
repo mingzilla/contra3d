@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/reset.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/Styles/game-panel.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/Styles/game-content.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/panel-for-skills.uss"/>
+
+    <ui:VisualElement class="layout-vertical center skills-panel__header-cell">
+        <ui:VisualElement class="in-game-player-panel__row__cell-item layout-vertical center panel-with-border panel-border-is-on">
+            <ui:VisualElement class="bg-icon size-36 staff-equipment-1"/>
+            <ui:VisualElement class="equipment-elemental-allocation layout-horizontal">
+                <ui:VisualElement class="flex panel-bg-1"/>
+                <ui:VisualElement class="flex panel-bg-2"/>
+                <ui:VisualElement class="flex panel-bg-3"/>
+                <ui:VisualElement class="flex"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement class="skills-panel__cell layout-vertical center">
+        <ui:VisualElement class="in-game-player-panel__row__cell-item is-placeholder">
+            <ui:VisualElement class="control-button is-medium set-1-bg"><ui:Label text="LB"/></ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

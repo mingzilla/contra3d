@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using ProjectContent.Scripts.Types;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.BaseStore.Domain;
+using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__Skill;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components
+namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills
 {
     public class PanelForSkillsMono : MonoBehaviour
     {
@@ -16,12 +17,15 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components
 
         [SerializeField] private GameObject skillEquipPanelSkillCompPrefab;
 
+
+        private PanelForSkillsComp comp;
+
         private void OnEnable()
         {
-            return;
-            
-            Skill selectedSkill = storeData.activeItems.selectedSkill;
             root = GetComponent<UIDocument>().rootVisualElement;
+            return;
+
+            Skill selectedSkill = storeData.activeItems.selectedSkill;
             skillsTable = root.Q<VisualElement>("ve__panel-for-skill__skills-table");
             VisualElement[] skillRows =
             {
@@ -51,6 +55,12 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components
                     skillRowContent.Add(panelForSkillsSkillBox.root);
                 });
             }
+        }
+
+        private void Start()
+        {
+            comp = PanelForSkillsComp.Create(root);
+            comp.BuildOnStart();
         }
 
         private void AddEvent()
