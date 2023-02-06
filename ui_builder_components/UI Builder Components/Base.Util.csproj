@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\PlayerInputScheme.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Domain\UnitInvincibility.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\BulletCommonUtil2D.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\UiItemSelectionState.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\UnitDisplayHandler3D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\CameraUtil.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputAndStatus.cs" />
@@ -80,7 +81,6 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\UnityFn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\SelectedIds.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\PlayerActionHandler3D.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\UiItemSelectionState.cs" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\Mono\Version" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\Util2D" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement" />
