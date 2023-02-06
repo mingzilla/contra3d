@@ -99,6 +99,7 @@
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\PlayerStatusFrozenFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyDamageFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusFrozenFactor.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Types\SelectionStateForSkillPanel.cs" />
      <Folder Include="Assets\ProjectContent\Scripts\CalculationFactors" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />

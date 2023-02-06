@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 702437975}
   - component: {fileID: 702437976}
   m_Layer: 0
-  m_Name: PanelForSkillObj
+  m_Name: PanelForSkillsDoc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
