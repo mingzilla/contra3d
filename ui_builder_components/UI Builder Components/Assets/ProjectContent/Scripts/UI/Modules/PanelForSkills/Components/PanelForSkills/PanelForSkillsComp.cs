@@ -33,9 +33,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         public void BuildOnStart()
         {
             titleElement.text = title;
-
-            skillSetComp.InitData(new PanelForSkillsSkillSetCompData() {isOn = true, slot1 = ElementalType.FIRE, slot2 = ElementalType.LIGHT});
-            skillSetComp.BuildOnStart();
+            skillSetComp.Init(new PanelForSkillsSkillSetCompData() {isOn = true, slot1 = ElementalType.FIRE, slot2 = ElementalType.LIGHT});
         }
     }
 }

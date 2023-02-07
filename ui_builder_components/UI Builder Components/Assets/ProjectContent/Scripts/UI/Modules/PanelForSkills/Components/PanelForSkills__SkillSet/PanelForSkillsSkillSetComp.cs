@@ -1,5 +1,5 @@
-﻿using System;
-using ProjectContent.Scripts.Types;
+﻿using ProjectContent.Scripts.Types;
+using ProjectContent.Scripts.UI.Base.Comp;
 using UnityEngine.UIElements;
 
 namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__SkillSet
@@ -7,26 +7,14 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
     /// <summary>
     /// CS representation of the component, turns all changeable content to variables 
     /// </summary>
-    public class PanelForSkillsSkillSetComp
+    public class PanelForSkillsSkillSetComp: IComp<PanelForSkillsSkillSetCompData>
     {
         private VisualElement root; // root of top level
-
         private VisualElement compRoot; // root of current component
         private string compRootName; // panel-for-skills__skill-set__set-1
-
-        private VisualElement skillSetElement;
         private int setId;
 
-        private VisualElement skillSetStaffElement;
-
-        private VisualElement skillSetSlot1Element;
-        private VisualElement skillSetSlot2Element;
-        private VisualElement skillSetSlot3Element;
-        private VisualElement skillSetSlot4Element;
-
-        private VisualElement skillSetBtnIndicatorElement;
-        private Label skillSetBtnTextElement;
-
+        private PanelForSkillsSkillSetCompEls els;
         private PanelForSkillsSkillSetCompData data;
 
         public static PanelForSkillsSkillSetComp Create(VisualElement root, int setId)
@@ -34,55 +22,21 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             string compRootName = setId == 1 ? "panel-for-skills__skill-set__set-1" : "panel-for-skills__skill-set__set-2";
             VisualElement compRoot = root.Q<VisualElement>(compRootName);
 
-            VisualElement skillSetElement = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set");
-            VisualElement skillSetStaffElement = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__staff");
-
-            VisualElement skillSetSlot1Element = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__slot-1");
-            VisualElement skillSetSlot2Element = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__slot-2");
-            VisualElement skillSetSlot3Element = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__slot-3");
-            VisualElement skillSetSlot4Element = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__slot-4");
-
-            VisualElement skillSetBtnIndicatorElement = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__btn-indicator");
-            Label skillSetBtnTextElement = compRoot.Q<Label>("ve__panel-for-skills__skill-set__set__btn-text");
-
             return new()
             {
                 root = root,
-
                 compRoot = compRoot,
                 compRootName = compRootName,
-
-                skillSetElement = skillSetElement,
                 setId = setId,
-
-                skillSetStaffElement = skillSetStaffElement,
-
-                skillSetSlot1Element = skillSetSlot1Element,
-                skillSetSlot2Element = skillSetSlot2Element,
-                skillSetSlot3Element = skillSetSlot3Element,
-                skillSetSlot4Element = skillSetSlot4Element,
-                
-                skillSetBtnIndicatorElement = skillSetBtnIndicatorElement,
-                skillSetBtnTextElement = skillSetBtnTextElement,
+                els = PanelForSkillsSkillSetCompEls.Create(compRoot, setId),
             };
         }
 
-        public void InitData(PanelForSkillsSkillSetCompData dataIn)
+        public void Init(PanelForSkillsSkillSetCompData dataIn)
         {
             data = dataIn;
-        }
-
-        public void BuildOnStart()
-        {
-            skillSetStaffElement.RemoveFromClassList("staff-equipment-1");
-            skillSetStaffElement.AddToClassList(setId == 1 ? "staff-equipment-1" : "staff-equipment-2");
-
-            skillSetBtnIndicatorElement.RemoveFromClassList("set-1-bg");
-            skillSetBtnIndicatorElement.AddToClassList(setId == 1 ? "set-1-bg" : "set-2-bg");
-
-            skillSetBtnTextElement.text = setId == 1 ? "LB" : "RB";
-
-            UpdateDataDrivenContent();
+            els.InitStaticEls();
+            els.UpdateDynamicEls(data);
         }
 
         public void OnUpdate(PanelForSkillsSkillSetCompData dataIn)
@@ -90,18 +44,73 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             if (!data.IsTheSameAs(dataIn))
             {
                 data = dataIn;
-                UpdateDataDrivenContent();
+                els.UpdateDynamicEls(data);
             }
         }
+    }
 
-        private void UpdateDataDrivenContent()
+    public class PanelForSkillsSkillSetCompEls : ICompEls<PanelForSkillsSkillSetCompData>
+    {
+        private int setId;
+
+        private VisualElement skillSetStaff;
+        private VisualElement skillSetBtnIndicator;
+        private Label skillSetBtnText;
+
+        private VisualElement skillSet;
+        private VisualElement skillSetSlot1;
+        private VisualElement skillSetSlot2;
+        private VisualElement skillSetSlot3;
+        private VisualElement skillSetSlot4;
+
+        public static PanelForSkillsSkillSetCompEls Create(VisualElement compRoot, int setId)
         {
-            if (data.isOn) skillSetElement.AddToClassList("panel-border-is-on");
+            VisualElement skillSetStaff = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__staff");
+            VisualElement skillSetBtnIndicator = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__btn-indicator");
+            Label skillSetBtnText = compRoot.Q<Label>("ve__panel-for-skills__skill-set__set__btn-text");
 
-            UpdateSlot(skillSetSlot1Element, data.slot1);
-            UpdateSlot(skillSetSlot2Element, data.slot2);
-            UpdateSlot(skillSetSlot3Element, data.slot3);
-            UpdateSlot(skillSetSlot4Element, data.slot4);
+            VisualElement skillSet = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set");
+            VisualElement skillSetSlot1 = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__slot-1");
+            VisualElement skillSetSlot2 = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__slot-2");
+            VisualElement skillSetSlot3 = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__slot-3");
+            VisualElement skillSetSlot4 = compRoot.Q<VisualElement>("ve__panel-for-skills__skill-set__set__slot-4");
+
+            return new()
+            {
+                setId = setId,
+
+                // static
+                skillSetStaff = skillSetStaff,
+                skillSetBtnIndicator = skillSetBtnIndicator,
+                skillSetBtnText = skillSetBtnText,
+
+                // dynamic
+                skillSet = skillSet,
+                skillSetSlot1 = skillSetSlot1,
+                skillSetSlot2 = skillSetSlot2,
+                skillSetSlot3 = skillSetSlot3,
+                skillSetSlot4 = skillSetSlot4,
+            };
+        }
+
+        public void InitStaticEls()
+        {
+            skillSetStaff.RemoveFromClassList("staff-equipment-1");
+            skillSetStaff.AddToClassList(setId == 1 ? "staff-equipment-1" : "staff-equipment-2");
+
+            skillSetBtnIndicator.RemoveFromClassList("set-1-bg");
+            skillSetBtnIndicator.AddToClassList(setId == 1 ? "set-1-bg" : "set-2-bg");
+
+            skillSetBtnText.text = setId == 1 ? "LB" : "RB";
+        }
+
+        public void UpdateDynamicEls(PanelForSkillsSkillSetCompData data)
+        {
+            if (data.isOn) skillSet.AddToClassList("panel-border-is-on");
+            UpdateSlot(skillSetSlot1, data.slot1);
+            UpdateSlot(skillSetSlot2, data.slot2);
+            UpdateSlot(skillSetSlot3, data.slot3);
+            UpdateSlot(skillSetSlot4, data.slot4);
         }
 
         private static void UpdateSlot(VisualElement slotElement, ElementalType slot)
@@ -111,7 +120,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         }
     }
 
-    public class PanelForSkillsSkillSetCompData
+    public class PanelForSkillsSkillSetCompData : ICompData<PanelForSkillsSkillSetCompData>
     {
         public bool isOn = false;
 

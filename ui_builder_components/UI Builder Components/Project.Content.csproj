@@ -76,6 +76,7 @@
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\Types\PlayerMenuPanel.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAccessoriesPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\BaseStore\Domain\PanelForSkillsStoreData.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__SkillSet\PanelForSkillsSkillSetComp.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill\PanelForSkillsSkillMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusBurnFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemySpeedFactor.cs" />
@@ -89,6 +90,7 @@
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\PlayerJumpFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Types\SettingsScreenMenuItem.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\PlayerMenuActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills\PanelForSkillsComp.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\PlayerMenuStoreData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyDashFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\Types\GameMenuItem.cs" />
@@ -100,8 +102,9 @@
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\PlayerStatusFrozenFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyDamageFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusFrozenFactor.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills\PanelForSkillsComp.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__SkillSet\PanelForSkillsSkillSetComp.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Comp\ICompData.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Comp\ICompEls.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Comp\IComp.cs" />
      <Folder Include="Assets\ProjectContent\Scripts\CalculationFactors" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
@@ -184,6 +187,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForAccessories" />
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__desert" />
      <Folder Include="Assets\ProjectContent\ScenesConfig" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Base\Comp" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\Types" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills\PanelForSkillsComp.uxml" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForUpgrades" />
