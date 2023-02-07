@@ -20,7 +20,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         {
             Label titleElement = root.Q<Label>("label__component-title");
 
-            PanelForSkillsSkillSetComp skillSetComp = PanelForSkillsSkillSetComp.Create(root, 1);
+            PanelForSkillsSkillSetComp skillSetComp = PanelForSkillsSkillSetComp.Create(root, "panel-for-skills__skill-set__set-1", 1);
 
             return new()
             {

@@ -7,26 +7,25 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
     /// <summary>
     /// CS representation of the component, turns all changeable content to variables 
     /// </summary>
-    public class PanelForSkillsSkillSetComp: IComp<PanelForSkillsSkillSetCompData>
+    public class PanelForSkillsSkillSetComp : IComp<PanelForSkillsSkillSetCompData>
     {
         private VisualElement root; // root of top level
         private VisualElement compRoot; // root of current component
-        private string compRootName; // panel-for-skills__skill-set__set-1
+        private string instanceName; // panel-for-skills__skill-set__set-1
         private int setId;
 
         private PanelForSkillsSkillSetCompEls els;
         private PanelForSkillsSkillSetCompData data;
 
-        public static PanelForSkillsSkillSetComp Create(VisualElement root, int setId)
+        public static PanelForSkillsSkillSetComp Create(VisualElement root, string instanceName, int setId)
         {
-            string compRootName = setId == 1 ? "panel-for-skills__skill-set__set-1" : "panel-for-skills__skill-set__set-2";
-            VisualElement compRoot = root.Q<VisualElement>(compRootName);
+            VisualElement compRoot = root.Q<VisualElement>(instanceName);
 
             return new()
             {
                 root = root,
                 compRoot = compRoot,
-                compRootName = compRootName,
+                instanceName = instanceName,
                 setId = setId,
                 els = PanelForSkillsSkillSetCompEls.Create(compRoot, setId),
             };
