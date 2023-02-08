@@ -4,6 +4,6 @@
     {
         public void InitStaticEls(TData data);
 
-        public void UpdateDynamicEls(TData data);
+        public void UpdateDataDrivenEls(TData data);
     }
 }

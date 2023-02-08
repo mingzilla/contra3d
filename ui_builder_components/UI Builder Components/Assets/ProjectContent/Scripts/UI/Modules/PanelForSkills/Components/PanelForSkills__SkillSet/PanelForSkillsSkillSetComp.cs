@@ -26,7 +26,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         {
             data = dataIn;
             els.InitStaticEls(data);
-            els.UpdateDynamicEls(data);
+            els.UpdateDataDrivenEls(data);
         }
 
         public void OnUpdate(PanelForSkillsSkillSetCompData dataIn)
@@ -34,7 +34,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             if (!data.IsTheSameAs(dataIn))
             {
                 data = dataIn;
-                els.UpdateDynamicEls(data);
+                els.UpdateDataDrivenEls(data);
             }
         }
     }
@@ -74,7 +74,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
                 skillSetBtnIndicator = skillSetBtnIndicator,
                 skillSetBtnText = skillSetBtnText,
 
-                // dynamic
+                // data driven
                 skillSet = skillSet,
                 skillSetSlot1 = skillSetSlot1,
                 skillSetSlot2 = skillSetSlot2,
@@ -94,7 +94,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             skillSetBtnText.text = setId == 1 ? "LB" : "RB";
         }
 
-        public void UpdateDynamicEls(PanelForSkillsSkillSetCompData data)
+        public void UpdateDataDrivenEls(PanelForSkillsSkillSetCompData data)
         {
             if (data.isOn) skillSet.AddToClassList("panel-border-is-on");
             UpdateSlot(skillSetSlot1, data.slot1);

@@ -8,11 +8,11 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
     /// <summary>
     /// CS representation of the component, turns all changeable content to variables 
     /// </summary>
-    public class PanelForSkillsComp : IComp<PanelForSkillsCompData>
+    public class PanelForSkillsComp : IComp<PanelForSkillsCompDataBundle>
     {
         private VisualElement root;
         private PanelForSkillsCompEls els; // only include content controlled directly by this root panel level, child components are handled by individual comps
-        private PanelForSkillsCompData data;
+        private PanelForSkillsCompDataBundle data; // root level data, contains data of all the child comps
 
         private PanelForSkillsSkillSetComp skillSet1Comp;
 
@@ -29,28 +29,28 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             };
         }
 
-        public void Init(PanelForSkillsCompData dataIn)
+        public void Init(PanelForSkillsCompDataBundle dataIn)
         {
             data = dataIn;
-            els.InitStaticEls(dataIn);
-            els.UpdateDynamicEls(data);
+            els.InitStaticEls(data);
+            els.UpdateDataDrivenEls(data);
 
-            skillSet1Comp.Init(dataIn.skillSet1CompData);
+            skillSet1Comp.Init(data.skillSet1CompData);
         }
 
-        public void OnUpdate(PanelForSkillsCompData dataIn)
+        public void OnUpdate(PanelForSkillsCompDataBundle dataIn)
         {
             if (!data.IsTheSameAs(dataIn))
             {
                 data = dataIn;
-                els.UpdateDynamicEls(data);
+                els.UpdateDataDrivenEls(data);
 
-                skillSet1Comp.OnUpdate(dataIn.skillSet1CompData);
+                skillSet1Comp.OnUpdate(data.skillSet1CompData);
             }
         }
     }
 
-    public class PanelForSkillsCompEls : ICompEls<PanelForSkillsCompData>
+    public class PanelForSkillsCompEls : ICompEls<PanelForSkillsCompDataBundle>
     {
         public VisualElement skillSet1CompRoot;
         private Label title;
@@ -65,26 +65,26 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
                 // static
                 title = title,
 
-                // comps
+                // comps - create them, but only holds a ref, comps handle themselves
                 skillSet1CompRoot = skillSet1CompRoot,
             };
         }
 
-        public void InitStaticEls(PanelForSkillsCompData dataIn)
+        public void InitStaticEls(PanelForSkillsCompDataBundle dataIn)
         {
             title.text = "SKILL2";
         }
 
-        public void UpdateDynamicEls(PanelForSkillsCompData dataIn)
+        public void UpdateDataDrivenEls(PanelForSkillsCompDataBundle dataIn)
         {
         }
     }
 
-    public class PanelForSkillsCompData : ICompData<PanelForSkillsCompData>
+    public class PanelForSkillsCompDataBundle : ICompData<PanelForSkillsCompDataBundle>
     {
         public PanelForSkillsSkillSetCompData skillSet1CompData;
 
-        public bool IsTheSameAs(PanelForSkillsCompData dataIn)
+        public bool IsTheSameAs(PanelForSkillsCompDataBundle dataIn)
         {
             return skillSet1CompData.IsTheSameAs(dataIn.skillSet1CompData);
         }

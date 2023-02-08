@@ -27,7 +27,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
         private void Init()
         {
-            PanelForSkillsCompData data = new()
+            PanelForSkillsCompDataBundle data = new()
             {
                 skillSet1CompData = new PanelForSkillsSkillSetCompData() {isOn = true, slot1 = ElementalType.FIRE, slot2 = ElementalType.LIGHT}
             };
