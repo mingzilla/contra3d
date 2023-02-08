@@ -2,7 +2,7 @@
 {
     public interface ICompEls<in TData>
     {
-        public void InitStaticEls();
+        public void InitStaticEls(TData data);
 
         public void UpdateDynamicEls(TData data);
     }

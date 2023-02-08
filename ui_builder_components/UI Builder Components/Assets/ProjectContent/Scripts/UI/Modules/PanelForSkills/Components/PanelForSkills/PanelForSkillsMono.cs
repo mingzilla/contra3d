@@ -1,4 +1,6 @@
-﻿using ProjectContent.Scripts.UI.Modules.PanelForSkills.BaseStore.Domain;
+﻿using ProjectContent.Scripts.Types;
+using ProjectContent.Scripts.UI.Modules.PanelForSkills.BaseStore.Domain;
+using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__SkillSet;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -20,7 +22,17 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         {
             root = GetComponent<UIDocument>().rootVisualElement;
             comp = PanelForSkillsComp.Create(root);
-            comp.BuildOnStart();
+            Init();
+        }
+
+        private void Init()
+        {
+            PanelForSkillsCompData data = new()
+            {
+                skillSet1CompData = new PanelForSkillsSkillSetCompData() {isOn = true, slot1 = ElementalType.FIRE, slot2 = ElementalType.LIGHT}
+            };
+
+            comp.Init(data);
         }
 
         private void AddEvent()

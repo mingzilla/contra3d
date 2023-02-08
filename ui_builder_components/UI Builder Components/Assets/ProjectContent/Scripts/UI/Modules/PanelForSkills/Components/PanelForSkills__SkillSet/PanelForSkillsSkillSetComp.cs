@@ -4,28 +4,19 @@ using UnityEngine.UIElements;
 
 namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__SkillSet
 {
-    /// <summary>
-    /// CS representation of the component, turns all changeable content to variables 
-    /// </summary>
     public class PanelForSkillsSkillSetComp : IComp<PanelForSkillsSkillSetCompData>
     {
-        private VisualElement root; // root of top level
         private VisualElement compRoot; // root of current component
-        private string instanceName; // panel-for-skills__skill-set__set-1
         private int setId;
 
         private PanelForSkillsSkillSetCompEls els;
         private PanelForSkillsSkillSetCompData data;
 
-        public static PanelForSkillsSkillSetComp Create(VisualElement root, string instanceName, int setId)
+        public static PanelForSkillsSkillSetComp Create(VisualElement compRoot, int setId)
         {
-            VisualElement compRoot = root.Q<VisualElement>(instanceName);
-
             return new()
             {
-                root = root,
                 compRoot = compRoot,
-                instanceName = instanceName,
                 setId = setId,
                 els = PanelForSkillsSkillSetCompEls.Create(compRoot, setId),
             };
@@ -34,7 +25,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         public void Init(PanelForSkillsSkillSetCompData dataIn)
         {
             data = dataIn;
-            els.InitStaticEls();
+            els.InitStaticEls(data);
             els.UpdateDynamicEls(data);
         }
 
@@ -92,7 +83,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             };
         }
 
-        public void InitStaticEls()
+        public void InitStaticEls(PanelForSkillsSkillSetCompData data)
         {
             skillSetStaff.RemoveFromClassList("staff-equipment-1");
             skillSetStaff.AddToClassList(setId == 1 ? "staff-equipment-1" : "staff-equipment-2");
