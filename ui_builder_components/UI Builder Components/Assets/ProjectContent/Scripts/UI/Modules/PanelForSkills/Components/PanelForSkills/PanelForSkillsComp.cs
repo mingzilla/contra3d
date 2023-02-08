@@ -1,5 +1,4 @@
-﻿using ProjectContent.Scripts.Types;
-using ProjectContent.Scripts.UI.Base.Comp;
+﻿using ProjectContent.Scripts.UI.Base.Comp;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__SkillSet;
 using UnityEngine.UIElements;
 
