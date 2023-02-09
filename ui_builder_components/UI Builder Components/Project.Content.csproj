@@ -105,6 +105,11 @@
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\PlayerStatusFrozenFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyDamageFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusFrozenFactor.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Controls\PlayerSkillPanelControl.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Controls\ControlContext.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Controls\PlayerInGameControl.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\IControllable.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\Controls\AbstractControllable.cs" />
      <Folder Include="Assets\ProjectContent\Scripts\CalculationFactors" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
@@ -120,6 +125,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\settings-menu" />
      <Folder Include="Assets\ProjectContent\Prefabs\Magic\Skill_Lightening" />
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__mush-land" />
+     <Folder Include="Assets\ProjectContent\Scripts\Player\Controls" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\Common\Styles\game-theme.uss" />
      <Folder Include="Assets\ProjectContent\Scripts\Camera" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\panel-for-skills.uss" />

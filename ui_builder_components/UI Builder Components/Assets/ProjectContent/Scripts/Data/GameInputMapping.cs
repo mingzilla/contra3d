@@ -26,7 +26,7 @@ namespace ProjectContent.Scripts.Data
             };
         }
 
-        public GameInputAction GetGamePlayPadAction(GameInputKey key, bool isHoldingMagicTrigger)
+        public GameInputAction GetInGameGamePadAction(GameInputKey key, bool isHoldingMagicTrigger)
         {
             if (!isHoldingMagicTrigger) return FnVal.SafeGet(null, () => mapping[GameInputContext.GAME_PLAY][key]);
             if (key == GameInputKey.A) return GameInputAction.MAGIC_BOTTOM;
@@ -36,7 +36,7 @@ namespace ProjectContent.Scripts.Data
             return null;
         }
 
-        public GameInputAction GetGamePlayKeyboardAction()
+        public GameInputAction GetInGameKeyboardAction()
         {
             return GameInputAction.JUMP;
         }

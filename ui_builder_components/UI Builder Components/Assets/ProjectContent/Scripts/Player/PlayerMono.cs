@@ -1,220 +1,135 @@
-using BaseUtil.GameUtil;
-using BaseUtil.GameUtil.Base;
-using BaseUtil.GameUtil.Base.Domain;
 using ProjectContent.Scripts.AppLiveResource;
 using ProjectContent.Scripts.Data;
-using ProjectContent.Scripts.Player.Actions;
-using ProjectContent.Scripts.Types;
+using ProjectContent.Scripts.Player.Controls;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace ProjectContent.Scripts.Player
 {
-    public class PlayerMono : MonoBehaviour
+    public class PlayerMono : MonoBehaviour, IControllable
     {
         private readonly GameInputMapping inputMapping = GameInputMapping.Create();
         private AppResource appResource;
         private GameStoreData gameStoreData;
 
-        [SerializeField] private Vector3 initialPosition = Vector3.one;
-        [SerializeField] private GameObject swordMesh;
-        [SerializeField] private GameObject staffMesh;
-        [SerializeField] private GameObject fireballPrefab;
-        [SerializeField] private GameObject lighteningPrefab;
-        [SerializeField] private GameObject iceSplashPrefab;
+        [SerializeField] public Vector3 initialPosition = Vector3.one;
+        [SerializeField] public GameObject swordMesh;
+        [SerializeField] public GameObject staffMesh;
+        [SerializeField] public GameObject fireballPrefab;
+        [SerializeField] public GameObject lighteningPrefab;
+        [SerializeField] public GameObject iceSplashPrefab;
 
         private int playerId;
 
-        private Rigidbody rb;
-        private SkinnedMeshRenderer meshRenderer;
-        private LayerMask groundLayers;
-        private UserInput userInput;
-        private Animator animatorCtrl;
-
-        private PlayerMoveAction moveAction;
-        private PlayerJumpAction jumpAction;
-        private PlayerDashAction dashAction;
-        private PlayerAttackAction attackAction;
-
-        private readonly IntervalState takeDamageInterval = IntervalState.Create(1f);
+        private ControlContext controlContext = ControlContext.IN_GAME;
+        private PlayerInGameControl playerInGameControl;
+        private PlayerSkillPanelControl playerSkillPanelControl;
+        private AbstractControllable activeControl;
 
         void Start()
         {
             appResource = AppResource.instance;
             gameStoreData = appResource.storeData;
-            gameObject.layer = GameLayer.PLAYER.GetLayer();
-            UnityFn.AddNoFrictionMaterialToCollider<CapsuleCollider>(gameObject.GetComponent<CapsuleCollider>().gameObject);
-            rb = UnityFn.GetOrAddInterpolateRigidbody(gameObject, true, false);
-            rb.collisionDetectionMode = CollisionDetectionMode.Continuous; // for player only
-            groundLayers = GameLayer.GetGroundLayerMask();
-            animatorCtrl = gameObject.GetComponentInChildren<Animator>();
-            transform.position = initialPosition;
-            gameObject.SetActive(true);
             PlayerInput playerInput = gameObject.GetComponent<PlayerInput>();
             playerId = playerInput.playerIndex;
-            userInput = UserInput.Create(playerId);
             gameStoreData.AddPlayer(playerInput);
 
-            moveAction = PlayerMoveAction.Create(animatorCtrl, rb);
-            jumpAction = PlayerJumpAction.Create(animatorCtrl, rb);
-            dashAction = PlayerDashAction.Create(animatorCtrl, rb);
-            attackAction = PlayerAttackAction.Create(animatorCtrl, rb,
-                swordMesh, staffMesh,
-                fireballPrefab, lighteningPrefab, iceSplashPrefab);
+            playerInGameControl = PlayerInGameControl.Create(this, playerId);
+            playerSkillPanelControl = PlayerSkillPanelControl.Create(this, playerId);
+            SetActiveControl();
+        }
+
+        void SetActiveControl()
+        {
+            if (controlContext == ControlContext.IN_GAME) activeControl = playerInGameControl;
+            if (controlContext == ControlContext.SKILL_PANEL) activeControl = playerSkillPanelControl;
         }
 
         void FixedUpdate()
         {
-            if (rb != null) HandlePlayerControl(userInput);
-            UserInput.ResetTriggers(userInput);
-        }
-
-        private void HandlePlayerControl(UserInput userInput)
-        {
-            PlayerAttribute playerAttribute = gameStoreData.GetPlayer(playerId);
-            // UnitDisplayHandler3D.HandleInvincibility(meshRenderer, takeDamageInterval);
-            bool isOnGround = UnityFn.IsOnGround(transform.position, playerAttribute.playerToGroundDistance, groundLayers);
-
-            playerAttribute = moveAction.Perform(playerAttribute, userInput, transform, isOnGround);
-            playerAttribute = jumpAction.Perform(playerAttribute, userInput, isOnGround);
-            playerAttribute = dashAction.Perform(playerAttribute, userInput);
-            playerAttribute = attackAction.Perform(playerAttribute, transform, new Vector3(0, 0.5f, 0), userInput);
-
-            playerAttribute.inGameTransform = transform;
-            gameStoreData.SetPlayer(playerAttribute);
+            activeControl.FixedUpdate();
         }
 
         /*------------------------------------------*/
 
         public void InputMove(InputAction.CallbackContext context)
         {
-            userInput = UserInput.Move(userInput, context);
+            activeControl.InputMove(context);
         }
 
         public void KeySelect(InputAction.CallbackContext context)
         {
+            activeControl.KeySelect(context);
         }
 
         public void KeyStart(InputAction.CallbackContext context)
         {
+            activeControl.KeyStart(context);
         }
 
         public void KeyA(InputAction.CallbackContext context)
         {
-            UpdatePadInput(context, GameInputKey.A);
+            activeControl.KeyA(context);
         }
 
         public void KeyB(InputAction.CallbackContext context)
         {
-            UpdatePadInput(context, GameInputKey.B);
+            activeControl.KeyB(context);
         }
 
         public void KeyX(InputAction.CallbackContext context)
         {
-            UpdatePadInput(context, GameInputKey.X);
+            activeControl.KeyX(context);
         }
 
         public void KeyY(InputAction.CallbackContext context)
         {
-            UpdatePadInput(context, GameInputKey.Y);
+            activeControl.KeyY(context);
         }
 
         public void KeyPadUp(InputAction.CallbackContext context)
         {
+            activeControl.KeyPadUp(context);
         }
 
         public void KeyPadDown(InputAction.CallbackContext context)
         {
+            activeControl.KeyPadDown(context);
         }
 
         public void KeyPadLeft(InputAction.CallbackContext context)
         {
+            activeControl.KeyPadLeft(context);
         }
 
         public void KeyPadRight(InputAction.CallbackContext context)
         {
+            activeControl.KeyPadRight(context);
         }
 
         public void KeyLB(InputAction.CallbackContext context)
         {
-            if (context.started) userInput.isHoldingLb = true;
-            if (context.canceled) userInput.isHoldingLb = false;
+            activeControl.KeyLB(context);
         }
 
         public void KeyRB(InputAction.CallbackContext context)
         {
-            if (context.started) userInput.isHoldingRb = true;
-            if (context.canceled) userInput.isHoldingRb = false;
+            activeControl.KeyRB(context);
         }
 
         public void KeyLT(InputAction.CallbackContext context)
         {
-            if (context.started) userInput.isHoldingLt = true;
-            if (context.canceled) userInput.isHoldingLt = false;
+            activeControl.KeyLT(context);
         }
 
         public void KeyRT(InputAction.CallbackContext context)
         {
-            if (context.started)
-            {
-                userInput.isHoldingRt = true;
-                moveAction.moveSpeedModifier.ToggleIdle(this, true);
-                attackAction.playerWeaponState = PlayerWeaponState.STAFF;
-            }
-            if (context.canceled)
-            {
-                userInput.isHoldingRt = false;
-                moveAction.moveSpeedModifier.ToggleIdle(this, false);
-                attackAction.playerWeaponState = PlayerWeaponState.NONE;
-            }
+            activeControl.KeyRT(context);
         }
 
         public void KeyboardAnyKey(InputAction.CallbackContext context)
         {
-        }
-
-
-        private void UpdatePadInput(InputAction.CallbackContext context, GameInputKey key)
-        {
-            GameInputAction action = inputMapping.GetGamePlayPadAction(key, userInput.isHoldingRt);
-            UpdateInput(context, action);
-        }
-
-        private void UpdateInput(InputAction.CallbackContext context, GameInputAction action)
-        {
-            if (action == GameInputAction.JUMP)
-            {
-                if (context.started) userInput.jump = true;
-                if (context.canceled) userInput.jumpCancelled = true;
-            }
-            if (action == GameInputAction.ATTACK)
-            {
-                if (context.started)
-                {
-                    attackAction.playerWeaponState = PlayerWeaponState.SWORD;
-                    userInput.swing = true;
-                    moveAction.moveSpeedModifier.TemporarilyApplyModifier(this);
-                }
-            }
-            if (action == GameInputAction.DASH)
-            {
-                if (context.started)
-                {
-                    UnityFn.RunWithInterval(this, dashAction.dashInterval, () =>
-                    {
-                        attackAction.playerWeaponState = PlayerWeaponState.NONE;
-                        userInput.dash = true;
-                        moveAction.moveSpeedModifier.CancelModifier(this);
-                    });
-                }
-            }
-            if (action is {isMagic: true})
-            {
-                if (context.started)
-                {
-                    userInput = GameInputAction.UpdateMagicCommand(userInput, action);
-                }
-            }
+            activeControl.KeyboardAnyKey(context);
         }
     }
 }
