@@ -19,31 +19,17 @@
     <ui:VisualElement class="players-panels-section layout-horizontal">
         <ui:VisualElement class="flex layout-vertical center">
             <ui:VisualElement class="in-game-player-panel skills-panel layout-vertical">
-                <ui:VisualElement class="in-game-player-panel__header layout-vertical center"><ui:Label name="label__component-title" text="SKILLS"/></ui:VisualElement>
+                <ui:VisualElement class="in-game-player-panel__header layout-vertical center">
+                    <ui:Label name="label__component-title" text="SKILLS"/>
+                </ui:VisualElement>
 
                 <ui:VisualElement class="skills-panel__table layout-vertical">
                     <ui:VisualElement class="skills-panel__table__header-row flex in-game-player-panel__row in-game-player-panel__row__header-bg layout-horizontal">
                         <ui:VisualElement class="layout-vertical skills-panel__header-cell"/>
                         <ui:VisualElement class="flex"/>
-                        <ui:Instance name="panel-for-skills__skill-set__set-1" template="template__panel-for-skills__skill-set" />
-
+                        <ui:Instance name="panel-for-skills__skill-set__set-1" template="template__panel-for-skills__skill-set"/>
                         <ui:VisualElement class="flex"/>
-                        <ui:VisualElement class="layout-vertical center skills-panel__header-cell">
-                            <ui:VisualElement class="in-game-player-panel__row__cell-item layout-vertical center panel-with-border">
-                                <ui:VisualElement class="bg-icon size-36 staff-equipment-2"/>
-                                <ui:VisualElement class="equipment-elemental-allocation layout-horizontal">
-                                    <ui:VisualElement class="flex panel-bg-3"/>
-                                    <ui:VisualElement class="flex panel-bg-3"/>
-                                    <ui:VisualElement class="flex panel-bg-3"/>
-                                    <ui:VisualElement class="flex"/>
-                                </ui:VisualElement>
-                            </ui:VisualElement>
-                        </ui:VisualElement>
-                        <ui:VisualElement class="skills-panel__cell layout-vertical center">
-                            <ui:VisualElement class="in-game-player-panel__row__cell-item is-placeholder">
-                                <ui:VisualElement class="control-button is-medium set-2-bg"><ui:Label text="RB"/></ui:VisualElement>
-                            </ui:VisualElement>
-                        </ui:VisualElement>
+                        <ui:Instance name="panel-for-skills__skill-set__set-2" template="template__panel-for-skills__skill-set"/>
                         <ui:VisualElement class="flex"/>
                     </ui:VisualElement>
 
@@ -56,7 +42,9 @@
                                 <ui:VisualElement class="bg-icon skill__fire__fire-ball"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="skills-panel__cell__active-button-set-1">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg"><ui:Label text="A"/></ui:VisualElement>
+                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg">
+                                    <ui:Label text="A"/>
+                                </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
@@ -64,7 +52,9 @@
                                 <ui:VisualElement class="bg-icon skill__fire__fire-bounce-ball"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="skills-panel__cell__active-button-set-1">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg"><ui:Label text="B"/></ui:VisualElement>
+                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg">
+                                    <ui:Label text="B"/>
+                                </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
@@ -77,7 +67,9 @@
                                 <ui:VisualElement class="bg-icon skill__fire__meteor-storm"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="skills-panel__cell__active-button-set-1">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg"><ui:Label text="X"/></ui:VisualElement>
+                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg">
+                                    <ui:Label text="X"/>
+                                </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
@@ -85,7 +77,9 @@
                                 <ui:VisualElement class="bg-icon skill__fire__spread-fire-balls"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="skills-panel__cell__active-button-set-2">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-2-bg"><ui:Label text="A"/></ui:VisualElement>
+                                <ui:VisualElement class="control-button is-medium is-rounded set-2-bg">
+                                    <ui:Label text="A"/>
+                                </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -117,7 +111,9 @@
                                 <ui:VisualElement class="bg-icon skill__water__water-ball"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="skills-panel__cell__active-button-set-2">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-2-bg"><ui:Label text="B"/></ui:VisualElement>
+                                <ui:VisualElement class="control-button is-medium is-rounded set-2-bg">
+                                    <ui:Label text="B"/>
+                                </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
@@ -130,7 +126,9 @@
                                 <ui:VisualElement class="bg-icon skill__water__ice-ring"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="skills-panel__cell__active-button-set-2">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-2-bg"><ui:Label text="X"/></ui:VisualElement>
+                                <ui:VisualElement class="control-button is-medium is-rounded set-2-bg">
+                                    <ui:Label text="X"/>
+                                </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
@@ -138,7 +136,9 @@
                                 <ui:VisualElement class="bg-icon skill__water__ice-wave"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="skills-panel__cell__active-button-set-2">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-2-bg"><ui:Label text="Y"/></ui:VisualElement>
+                                <ui:VisualElement class="control-button is-medium is-rounded set-2-bg">
+                                    <ui:Label text="Y"/>
+                                </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
@@ -183,7 +183,9 @@
                                 <ui:VisualElement class="bg-icon skill__light__light-strike"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="skills-panel__cell__active-button-set-1">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg"><ui:Label text="Y"/></ui:VisualElement>
+                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg">
+                                    <ui:Label text="Y"/>
+                                </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
@@ -214,28 +216,50 @@
 
                 </ui:VisualElement>
                 <ui:VisualElement class="skills-panel__help-panel layout-vertical center">
-                    <ui:VisualElement class="in-game-player-panel__help-panel__note-box"><ui:Label text="Meteor Strike: Burn (10% Chance)"/></ui:VisualElement>
+                    <ui:VisualElement class="in-game-player-panel__help-panel__note-box">
+                        <ui:Label text="Meteor Strike: Burn (10% Chance)"/>
+                    </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement class="skills-panel__controls layout-horizontal">
                     <ui:VisualElement class="layout-horizontal center in-game-player-panel__controls__box">
                         <ui:VisualElement class="bg-icon size-32 left-stick"/>
-                        <ui:VisualElement class="in-game-player-panel__controls__text"><ui:Label text="Move"/></ui:VisualElement>
+                        <ui:VisualElement class="in-game-player-panel__controls__text">
+                            <ui:Label text="Move"/>
+                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement class="flex layout-horizontal center in-game-player-panel__controls__box">
-                        <ui:VisualElement class="control-button is-tiny gap-right-2"><ui:Label text="LB"/></ui:VisualElement>
-                        <ui:VisualElement class="control-button is-tiny"><ui:Label text="RB"/></ui:VisualElement>
-                        <ui:VisualElement class="in-game-player-panel__controls__text"><ui:Label text="Staff"/></ui:VisualElement>
+                        <ui:VisualElement class="control-button is-tiny gap-right-2">
+                            <ui:Label text="LB"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="control-button is-tiny">
+                            <ui:Label text="RB"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="in-game-player-panel__controls__text">
+                            <ui:Label text="Staff"/>
+                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement class="flex layout-horizontal center in-game-player-panel__controls__box">
-                        <ui:VisualElement class="control-button is-tiny is-rounded gap-right-1"><ui:Label text="A"/></ui:VisualElement>
-                        <ui:VisualElement class="control-button is-tiny is-rounded gap-right-1"><ui:Label text="B"/></ui:VisualElement>
-                        <ui:VisualElement class="control-button is-tiny is-rounded gap-right-1"><ui:Label text="X"/></ui:VisualElement>
-                        <ui:VisualElement class="control-button is-tiny is-rounded"><ui:Label text="Y"/></ui:VisualElement>
-                        <ui:VisualElement class="in-game-player-panel__controls__text"><ui:Label text="Assign"/></ui:VisualElement>
+                        <ui:VisualElement class="control-button is-tiny is-rounded gap-right-1">
+                            <ui:Label text="A"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="control-button is-tiny is-rounded gap-right-1">
+                            <ui:Label text="B"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="control-button is-tiny is-rounded gap-right-1">
+                            <ui:Label text="X"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="control-button is-tiny is-rounded">
+                            <ui:Label text="Y"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="in-game-player-panel__controls__text">
+                            <ui:Label text="Assign"/>
+                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement class="layout-horizontal center in-game-player-panel__controls__box">
                         <ui:VisualElement class="bg-icon size-32 select-key"/>
-                        <ui:VisualElement class="in-game-player-panel__controls__text"><ui:Label text="Apply"/></ui:VisualElement>
+                        <ui:VisualElement class="in-game-player-panel__controls__text">
+                            <ui:Label text="Apply"/>
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>

@@ -14,17 +14,20 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         private PanelForSkillsCompDataBundle data; // root level data, contains data of all the child comps
 
         private PanelForSkillsSkillSetComp skillSet1Comp;
+        private PanelForSkillsSkillSetComp skillSet2Comp;
 
         public static PanelForSkillsComp Create(VisualElement root)
         {
             PanelForSkillsCompEls els = PanelForSkillsCompEls.Create(root);
             PanelForSkillsSkillSetComp skillSet1Comp = PanelForSkillsSkillSetComp.Create(els.skillSet1CompRoot, 1);
+            PanelForSkillsSkillSetComp skillSet2Comp = PanelForSkillsSkillSetComp.Create(els.skillSet2CompRoot, 2);
 
             return new()
             {
                 root = root,
                 els = els,
                 skillSet1Comp = skillSet1Comp,
+                skillSet2Comp = skillSet2Comp,
             };
         }
 
@@ -35,6 +38,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             els.UpdateDataDrivenEls(data);
 
             skillSet1Comp.Init(data.skillSet1CompData);
+            skillSet2Comp.Init(data.skillSet2CompData);
         }
 
         public void OnUpdate(PanelForSkillsCompDataBundle dataIn)
@@ -45,6 +49,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
                 els.UpdateDataDrivenEls(data);
 
                 skillSet1Comp.OnUpdate(data.skillSet1CompData);
+                skillSet2Comp.OnUpdate(data.skillSet2CompData);
             }
         }
     }
@@ -52,12 +57,14 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
     public class PanelForSkillsCompEls : ICompEls<PanelForSkillsCompDataBundle>
     {
         public VisualElement skillSet1CompRoot;
+        public VisualElement skillSet2CompRoot;
         private Label title;
 
         public static PanelForSkillsCompEls Create(VisualElement compRoot)
         {
             Label title = compRoot.Q<Label>("label__component-title");
             VisualElement skillSet1CompRoot = compRoot.Q<VisualElement>("panel-for-skills__skill-set__set-1");
+            VisualElement skillSet2CompRoot = compRoot.Q<VisualElement>("panel-for-skills__skill-set__set-2");
 
             return new()
             {
@@ -66,6 +73,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
                 // comps - create them, but only holds a ref, comps handle themselves
                 skillSet1CompRoot = skillSet1CompRoot,
+                skillSet2CompRoot = skillSet2CompRoot,
             };
         }
 
@@ -82,10 +90,12 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
     public class PanelForSkillsCompDataBundle : ICompData<PanelForSkillsCompDataBundle>
     {
         public PanelForSkillsSkillSetCompData skillSet1CompData;
+        public PanelForSkillsSkillSetCompData skillSet2CompData;
 
         public bool IsTheSameAs(PanelForSkillsCompDataBundle dataIn)
         {
-            return skillSet1CompData.IsTheSameAs(dataIn.skillSet1CompData);
+            return skillSet1CompData.IsTheSameAs(dataIn.skillSet1CompData) &&
+                   skillSet2CompData.IsTheSameAs(dataIn.skillSet2CompData);
         }
     }
 }
