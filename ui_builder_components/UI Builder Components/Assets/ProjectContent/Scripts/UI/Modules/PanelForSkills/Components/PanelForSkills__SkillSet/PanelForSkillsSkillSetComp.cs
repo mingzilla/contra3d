@@ -97,6 +97,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         public void UpdateDataDrivenEls(PanelForSkillsSkillSetCompData data)
         {
             if (data.isOn) skillSet.AddToClassList("panel-border-is-on");
+            if (!data.isOn) skillSet.RemoveFromClassList("panel-border-is-on");
             UpdateSlot(skillSetSlot1, data.slot1);
             UpdateSlot(skillSetSlot2, data.slot2);
             UpdateSlot(skillSetSlot3, data.slot3);

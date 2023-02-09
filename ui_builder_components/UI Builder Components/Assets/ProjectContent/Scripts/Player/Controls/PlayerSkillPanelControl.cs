@@ -1,14 +1,20 @@
 using BaseUtil.GameUtil;
+using ProjectContent.Scripts.Types;
+using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills;
+using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__SkillSet;
 using UnityEngine.InputSystem;
 
 namespace ProjectContent.Scripts.Player.Controls
 {
     public class PlayerSkillPanelControl : AbstractControllable
     {
+        private PanelForSkillsMono panelForSkillsMono;
+        
         public static PlayerSkillPanelControl Create(PlayerMono mono, int playerId)
         {
             PlayerSkillPanelControl item = BaseCreate<PlayerSkillPanelControl>(mono, playerId);
             item.Start();
+            item.panelForSkillsMono = PanelForSkillsMono.instance;
             return item;
         }
 
@@ -70,14 +76,26 @@ namespace ProjectContent.Scripts.Player.Controls
 
         public override void KeyLB(InputAction.CallbackContext context)
         {
-            if (context.started) userInput.isHoldingLb = true;
-            if (context.canceled) userInput.isHoldingLb = false;
+            if (context.started)
+            {
+                panelForSkillsMono.data = new()
+                {
+                    skillSet1CompData = new PanelForSkillsSkillSetCompData() {isOn = true, slot1 = ElementalType.FIRE, slot2 = ElementalType.LIGHT},
+                    skillSet2CompData = new PanelForSkillsSkillSetCompData() {isOn = false, slot1 = ElementalType.WATER, slot2 = ElementalType.LIGHT, slot3 = ElementalType.WATER},
+                };
+            }
         }
 
         public override void KeyRB(InputAction.CallbackContext context)
         {
-            if (context.started) userInput.isHoldingRb = true;
-            if (context.canceled) userInput.isHoldingRb = false;
+            if (context.started)
+            {
+                panelForSkillsMono.data = new()
+                {
+                    skillSet1CompData = new PanelForSkillsSkillSetCompData() {isOn = false, slot1 = ElementalType.FIRE, slot2 = ElementalType.LIGHT},
+                    skillSet2CompData = new PanelForSkillsSkillSetCompData() {isOn = true, slot1 = ElementalType.WATER, slot2 = ElementalType.LIGHT, slot3 = ElementalType.WATER},
+                };
+            }
         }
 
         public override void KeyLT(InputAction.CallbackContext context)
