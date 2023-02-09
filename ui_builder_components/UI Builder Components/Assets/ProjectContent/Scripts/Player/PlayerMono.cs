@@ -18,10 +18,11 @@ namespace ProjectContent.Scripts.Player
         [SerializeField] public GameObject fireballPrefab;
         [SerializeField] public GameObject lighteningPrefab;
         [SerializeField] public GameObject iceSplashPrefab;
+        [SerializeField] public string control;
 
         private int playerId;
 
-        private ControlContext controlContext = ControlContext.IN_GAME;
+        private ControlContext controlContext; 
         private PlayerInGameControl playerInGameControl;
         private PlayerSkillPanelControl playerSkillPanelControl;
         private AbstractControllable activeControl;
@@ -34,13 +35,18 @@ namespace ProjectContent.Scripts.Player
             playerId = playerInput.playerIndex;
             gameStoreData.AddPlayer(playerInput);
 
+            controlContext = ControlContext.GetByName(control);
             playerInGameControl = PlayerInGameControl.Create(this, playerId);
             playerSkillPanelControl = PlayerSkillPanelControl.Create(this, playerId);
-            SetActiveControl();
+            SetActiveControl(controlContext);
         }
 
-        void SetActiveControl()
+        /// <summary>
+        /// Can be changed by activeControl instances
+        /// </summary>
+        public void SetActiveControl(ControlContext contextIn)
         {
+            controlContext = contextIn;
             if (controlContext == ControlContext.IN_GAME) activeControl = playerInGameControl;
             if (controlContext == ControlContext.SKILL_PANEL) activeControl = playerSkillPanelControl;
         }

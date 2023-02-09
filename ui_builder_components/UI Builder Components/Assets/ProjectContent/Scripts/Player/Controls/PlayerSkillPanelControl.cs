@@ -29,6 +29,7 @@ namespace ProjectContent.Scripts.Player.Controls
 
         public override void KeySelect(InputAction.CallbackContext context)
         {
+            mono.SetActiveControl(ControlContext.IN_GAME);
         }
 
         public override void KeyStart(InputAction.CallbackContext context)

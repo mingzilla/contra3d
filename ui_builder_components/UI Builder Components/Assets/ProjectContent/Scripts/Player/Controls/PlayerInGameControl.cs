@@ -99,6 +99,7 @@ namespace ProjectContent.Scripts.Player.Controls
 
         public override void KeySelect(InputAction.CallbackContext context)
         {
+            mono.SetActiveControl(ControlContext.SKILL_PANEL);
         }
 
         public override void KeyStart(InputAction.CallbackContext context)

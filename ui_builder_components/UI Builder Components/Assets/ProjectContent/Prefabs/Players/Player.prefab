@@ -344,6 +344,7 @@ MonoBehaviour:
     type: 3}
   iceSplashPrefab: {fileID: 7783274262269748845, guid: e41048ef4398c1f4ab474d0b5f8d5d4f,
     type: 3}
+  control: IN_GAME
 --- !u!136 &5639405600825661515
 CapsuleCollider:
   m_ObjectHideFlags: 0
