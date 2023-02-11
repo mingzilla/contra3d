@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="template__box-selection-cursor" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/SelectionCursor/BoxSelectionCursorComp.uxml" />
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/panel-for-skills" />
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss" />
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss" />
+    
+    <ui:VisualElement class="panel-for-skill__cell layout-vertical center">
+        <ui:VisualElement name="ve__panel-for-skill__skill" class="panel-for-skill__skill-block layout-vertical center relative-position">
+            <ui:VisualElement name="ve__panel-for-skill__skill__fire-ball" class="panel-for-skill__skill__fire-ball" />
+            <ui:VisualElement name="ve__panel-for-skill__skill-slot-cost" class="panel-for-skill__skill-slot-cost">
+                <ui:Label name="label__panel-for-skill__skill-slot-cost-label" text="0" class="panel-for-skill__skill-slot-cost-label" />
+            </ui:VisualElement>
+
+            <ui:Instance name="instance__box-selection-cursor" template="template__box-selection-cursor" class="absolute-full-size hidden" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

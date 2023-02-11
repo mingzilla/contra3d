@@ -84,7 +84,6 @@
      <Compile Include="Assets\ProjectContent\Scripts\Player\Controls\ControlContext.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\BaseStore\Domain\PanelForSkillsStoreData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__SkillSet\PanelForSkillsSkillSetComp.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill\PanelForSkillsSkillMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusBurnFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemySpeedFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuUpgradePanelActiveItems.cs" />
@@ -110,6 +109,8 @@
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\PlayerStatusFrozenFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyDamageFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusFrozenFactor.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill_BK\PanelForSkillsSkillMonoBK.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill\PanelForSkillsSkillComp.cs" />
      <Folder Include="Assets\ProjectContent\Scripts\CalculationFactors" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
@@ -135,6 +136,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\Player" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor" />
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__snow-land" />
+     <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill_BK" />
      <Folder Include="Assets\ProjectContent\Prefabs\Magic\Skill_IceSplash" />
      <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components_Bk\PanelForSkillsComp_Bk.uxml" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules" />
@@ -158,6 +160,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore" />
      <Folder Include="Assets\ProjectContent" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\player-status" />
+     <None Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill_BK\PanelForSkillsSkillComp.uxml" />
      <Folder Include="Assets\ProjectContent\Inputs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Data" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-allocation" />

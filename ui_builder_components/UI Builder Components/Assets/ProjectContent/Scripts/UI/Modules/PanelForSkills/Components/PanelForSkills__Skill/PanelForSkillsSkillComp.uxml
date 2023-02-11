@@ -1,17 +1,26 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Template name="template__box-selection-cursor" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/SelectionCursor/BoxSelectionCursorComp.uxml" />
-    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/panel-for-skills" />
-    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss" />
-    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss" />
-    
-    <ui:VisualElement class="panel-for-skill__cell layout-vertical center">
-        <ui:VisualElement name="ve__panel-for-skill__skill" class="panel-for-skill__skill-block layout-vertical center relative-position">
-            <ui:VisualElement name="ve__panel-for-skill__skill__fire-ball" class="panel-for-skill__skill__fire-ball" />
-            <ui:VisualElement name="ve__panel-for-skill__skill-slot-cost" class="panel-for-skill__skill-slot-cost">
-                <ui:Label name="label__panel-for-skill__skill-slot-cost-label" text="0" class="panel-for-skill__skill-slot-cost-label" />
-            </ui:VisualElement>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/reset.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/Styles/game-panel.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/Common/Styles/game-content.uss"/>
+    <Style src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/panel-for-skills.uss"/>
 
-            <ui:Instance name="instance__box-selection-cursor" template="template__box-selection-cursor" class="absolute-full-size hidden" />
+    <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
+        <ui:VisualElement name="ve__panel-for-skills__skill__border" class="in-game-player-panel__row__cell-item layout-vertical center"> <!--panel-with-border panel-border-is-selected-->
+            <ui:VisualElement name="ve__panel-for-skills__skill__icon" class="bg-icon"/> <!--skill__fire__fire-ball-->
+        </ui:VisualElement>
+
+        <ui:VisualElement name="ve__panel-for-skills__skill__active-set-1" class="skills-panel__cell__active-button-set-1 hidden"> <!--skills-panel__cell__active-button-set-1--> <!--hidden-->
+            <ui:VisualElement class="control-button is-medium is-rounded set-1-bg">
+                <ui:Label name="ve__panel-for-skills__skill__active-set-1__button-text" text="A"/> <!--A-->
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="ve__panel-for-skills__skill__active-set-2" class="skills-panel__cell__active-button-set-2 hidden"> <!--skills-panel__cell__active-button-set-2--> <!--hidden-->
+            <ui:VisualElement class="control-button is-medium is-rounded set-2-bg">
+                <ui:Label name="ve__panel-for-skills__skill__active-set-2__button-text" text="A"/> <!--A-->
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

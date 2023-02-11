@@ -1,5 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:Template name="template__panel-for-skills__skill-set" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/PanelForSkills__SkillSet/PanelForSkillsSkillSetComp.uxml"/>
+    <ui:Template name="template__panel-for-skills__skill" src="project://database/Assets/ProjectContent/Scripts/UI/Modules/PanelForSkills/Components/PanelForSkills__Skill/PanelForSkillsSkillComp.uxml"/>
+
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/reset.uss"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/flex-layout-styles.uss"/>
     <Style src="project://database/Assets/ProjectContent/Scripts/UI/Base/uss/base/generic-custom-styles.uss"/>
