@@ -101,9 +101,9 @@
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Editor\PropertyDrawers\InputActionPropertyDrawer.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Utilities\CallbackArray.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Utilities\FourCC.cs" />
-     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Plugins\OSX\OSXSupport.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Devices\Commands\IInputDeviceCommandInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Devices\InputDeviceDescription.cs" />
+     <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Plugins\OSX\OSXSupport.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Controls\InputControlList.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Actions\Interactions\MultiTapInteraction.cs" />
      <Compile Include="Library\PackageCache\com.unity.inputsystem@1.4.4\InputSystem\Editor\AssetImporter\InputActionCodeGenerator.cs" />
