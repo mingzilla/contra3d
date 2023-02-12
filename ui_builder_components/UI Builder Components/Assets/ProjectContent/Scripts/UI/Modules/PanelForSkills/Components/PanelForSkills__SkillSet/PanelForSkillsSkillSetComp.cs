@@ -111,7 +111,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         }
     }
 
-    public class PanelForSkillsSkillSetCompData : ICompData<PanelForSkillsSkillSetCompData>
+    public class PanelForSkillsSkillSetCompData : AbstractCompData<PanelForSkillsSkillSetCompData>
     {
         public bool isOn = false;
 
@@ -119,14 +119,5 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         public ElementalType slot2 = ElementalType.NOT_SET;
         public ElementalType slot3 = ElementalType.NOT_SET;
         public ElementalType slot4 = ElementalType.NOT_SET;
-
-        public bool IsTheSameAs(PanelForSkillsSkillSetCompData dataIn)
-        {
-            return isOn == dataIn.isOn &&
-                   slot1 == dataIn.slot1 &&
-                   slot2 == dataIn.slot2 &&
-                   slot3 == dataIn.slot3 &&
-                   slot4 == dataIn.slot4;
-        }
     }
 }

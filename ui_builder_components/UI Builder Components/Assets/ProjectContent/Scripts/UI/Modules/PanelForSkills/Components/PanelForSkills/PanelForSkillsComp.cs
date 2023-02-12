@@ -2,6 +2,7 @@
 using ProjectContent.Scripts.UI.Base.Comp;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__Skill;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__SkillSet;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills
@@ -17,7 +18,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
         private PanelForSkillsSkillSetComp skillSet1Comp;
         private PanelForSkillsSkillSetComp skillSet2Comp;
-        
+
         private PanelForSkillsSkillComp skill1Comp;
 
         public static PanelForSkillsComp Create(VisualElement root)
@@ -107,17 +108,10 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         }
     }
 
-    public class PanelForSkillsCompDataBundle : ICompData<PanelForSkillsCompDataBundle>
+    public class PanelForSkillsCompDataBundle : AbstractCompData<PanelForSkillsCompDataBundle>
     {
         public PanelForSkillsSkillSetCompData skillSet1CompData;
         public PanelForSkillsSkillSetCompData skillSet2CompData;
         public PanelForSkillsSkillCompData skill1CompData;
-
-        public bool IsTheSameAs(PanelForSkillsCompDataBundle dataIn)
-        {
-            return skillSet1CompData.IsTheSameAs(dataIn.skillSet1CompData) &&
-                   skillSet2CompData.IsTheSameAs(dataIn.skillSet2CompData) &&
-                   skill1CompData.IsTheSameAs(dataIn.skill1CompData);
-        }
     }
 }
