@@ -1,4 +1,6 @@
-﻿using ProjectContent.Scripts.UI.Base.Comp;
+﻿using ProjectContent.Scripts.Types;
+using ProjectContent.Scripts.UI.Base.Comp;
+using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__Skill;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__SkillSet;
 using UnityEngine.UIElements;
 
@@ -15,6 +17,8 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
         private PanelForSkillsSkillSetComp skillSet1Comp;
         private PanelForSkillsSkillSetComp skillSet2Comp;
+        
+        private PanelForSkillsSkillComp skill1Comp;
 
         public static PanelForSkillsComp Create(VisualElement root)
         {
@@ -22,12 +26,17 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             PanelForSkillsSkillSetComp skillSet1Comp = PanelForSkillsSkillSetComp.Create(els.skillSet1CompRoot, 1);
             PanelForSkillsSkillSetComp skillSet2Comp = PanelForSkillsSkillSetComp.Create(els.skillSet2CompRoot, 2);
 
+            PanelForSkillsSkillComp skill1Comp = PanelForSkillsSkillComp.Create(els.skill1CompRoot, Skill.FIRE_BALL);
+
             return new()
             {
                 root = root,
                 els = els,
+
                 skillSet1Comp = skillSet1Comp,
                 skillSet2Comp = skillSet2Comp,
+
+                skill1Comp = skill1Comp,
             };
         }
 
@@ -39,6 +48,8 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
             skillSet1Comp.Init(data.skillSet1CompData);
             skillSet2Comp.Init(data.skillSet2CompData);
+
+            skill1Comp.Init(data.skill1CompData);
         }
 
         public void OnUpdate(PanelForSkillsCompDataBundle dataIn)
@@ -50,6 +61,8 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
                 skillSet1Comp.OnUpdate(data.skillSet1CompData);
                 skillSet2Comp.OnUpdate(data.skillSet2CompData);
+
+                skill1Comp.OnUpdate(data.skill1CompData);
             }
         }
     }
@@ -58,13 +71,18 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
     {
         public VisualElement skillSet1CompRoot;
         public VisualElement skillSet2CompRoot;
+
+        public VisualElement skill1CompRoot;
+
         private Label title;
 
         public static PanelForSkillsCompEls Create(VisualElement compRoot)
         {
             Label title = compRoot.Q<Label>("label__component-title");
-            VisualElement skillSet1CompRoot = compRoot.Q<VisualElement>("panel-for-skills__skill-set__set-1");
-            VisualElement skillSet2CompRoot = compRoot.Q<VisualElement>("panel-for-skills__skill-set__set-2");
+            VisualElement skillSet1CompRoot = compRoot.Q<VisualElement>("i__panel-for-skills__skill-set__set-1");
+            VisualElement skillSet2CompRoot = compRoot.Q<VisualElement>("i__panel-for-skills__skill-set__set-2");
+
+            VisualElement skill1CompRoot = compRoot.Q<VisualElement>("i__panel-for-skills__skill-1");
 
             return new()
             {
@@ -74,6 +92,8 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
                 // comps - create them, but only holds a ref, comps handle themselves
                 skillSet1CompRoot = skillSet1CompRoot,
                 skillSet2CompRoot = skillSet2CompRoot,
+
+                skill1CompRoot = skill1CompRoot,
             };
         }
 
@@ -91,11 +111,13 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
     {
         public PanelForSkillsSkillSetCompData skillSet1CompData;
         public PanelForSkillsSkillSetCompData skillSet2CompData;
+        public PanelForSkillsSkillCompData skill1CompData;
 
         public bool IsTheSameAs(PanelForSkillsCompDataBundle dataIn)
         {
             return skillSet1CompData.IsTheSameAs(dataIn.skillSet1CompData) &&
-                   skillSet2CompData.IsTheSameAs(dataIn.skillSet2CompData);
+                   skillSet2CompData.IsTheSameAs(dataIn.skillSet2CompData) &&
+                   skill1CompData.IsTheSameAs(dataIn.skill1CompData);
         }
     }
 }

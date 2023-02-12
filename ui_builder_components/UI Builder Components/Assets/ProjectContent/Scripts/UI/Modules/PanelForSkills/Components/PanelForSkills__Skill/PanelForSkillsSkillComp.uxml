@@ -11,13 +11,13 @@
             <ui:VisualElement name="ve__panel-for-skills__skill__icon" class="bg-icon"/> <!--skill__fire__fire-ball-->
         </ui:VisualElement>
 
-        <ui:VisualElement name="ve__panel-for-skills__skill__active-set-1" class="skills-panel__cell__active-button-set-1 hidden"> <!--skills-panel__cell__active-button-set-1--> <!--hidden-->
+        <ui:VisualElement name="ve__panel-for-skills__skill__active-set-1" class="skills-panel__cell__active-button-set-1 is-hidden"> <!--skills-panel__cell__active-button-set-1--> <!--is-hidden-->
             <ui:VisualElement class="control-button is-medium is-rounded set-1-bg">
                 <ui:Label name="ve__panel-for-skills__skill__active-set-1__button-text" text="A"/> <!--A-->
             </ui:VisualElement>
         </ui:VisualElement>
 
-        <ui:VisualElement name="ve__panel-for-skills__skill__active-set-2" class="skills-panel__cell__active-button-set-2 hidden"> <!--skills-panel__cell__active-button-set-2--> <!--hidden-->
+        <ui:VisualElement name="ve__panel-for-skills__skill__active-set-2" class="skills-panel__cell__active-button-set-2 is-hidden"> <!--skills-panel__cell__active-button-set-2--> <!--is-hidden-->
             <ui:VisualElement class="control-button is-medium is-rounded set-2-bg">
                 <ui:Label name="ve__panel-for-skills__skill__active-set-2__button-text" text="A"/> <!--A-->
             </ui:VisualElement>

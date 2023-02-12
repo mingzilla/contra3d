@@ -11,7 +11,7 @@
                 <ui:Label name="label__panel-for-skill__skill-slot-cost-label" text="0" class="panel-for-skill__skill-slot-cost-label" />
             </ui:VisualElement>
 
-            <ui:Instance name="instance__box-selection-cursor" template="template__box-selection-cursor" class="absolute-full-size hidden" />
+            <ui:Instance name="instance__box-selection-cursor" template="template__box-selection-cursor" class="absolute-full-size is-hidden" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

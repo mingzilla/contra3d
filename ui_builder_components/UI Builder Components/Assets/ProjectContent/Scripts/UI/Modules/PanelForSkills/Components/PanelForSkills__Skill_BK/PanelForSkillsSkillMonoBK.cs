@@ -17,7 +17,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             UiUtil.ToggleClass(skillEl, "is-active-box", isSkillActive);
 
             VisualElement skillSelectionCursorEl = root.Q<VisualElement>("instance__box-selection-cursor");
-            UiUtil.ToggleClass(skillSelectionCursorEl, "hidden", (skill != selectedSkill));
+            UiUtil.ToggleClass(skillSelectionCursorEl, "is-hidden", (skill != selectedSkill));
 
             return new PanelForSkillsSkillMonoBK
             {

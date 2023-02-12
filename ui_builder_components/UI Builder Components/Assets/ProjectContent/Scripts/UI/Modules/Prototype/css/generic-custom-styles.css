@@ -8,10 +8,6 @@ div {
 /*
 To support flex layout for the content of a page
 -------------------------------*/
-.hidden {
-    display: none;
-}
-
 .fit-cell-size {
     max-width: 100%;
     max-height: 100%;
