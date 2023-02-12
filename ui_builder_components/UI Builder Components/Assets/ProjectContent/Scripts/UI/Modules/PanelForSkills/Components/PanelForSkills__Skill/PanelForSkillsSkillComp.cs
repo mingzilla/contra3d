@@ -91,9 +91,9 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
         public void UpdateDataDrivenEls(PanelForSkillsSkillCompData data)
         {
-            if (data.isActive) border.AddToClassList("panel-with-border panel-border-is-selected");
-            if (!data.isActive) border.RemoveFromClassList("panel-with-border");
-            if (!data.isActive) border.RemoveFromClassList("panel-border-is-selected");
+            if (data.isSelected) border.AddToClassList("panel-with-border panel-border-is-selected");
+            if (!data.isSelected) border.RemoveFromClassList("panel-with-border");
+            if (!data.isSelected) border.RemoveFromClassList("panel-border-is-selected");
 
             UiUtil.ToggleClass(skillSet1, "is-hidden", data.set1Input == null);
             if (data.set1Input != null) skillSet1BtnText.text = data.set1Input.name;
@@ -106,7 +106,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
     public class PanelForSkillsSkillCompData : AbstractCompData<PanelForSkillsSkillCompData>
     {
         public bool isAvailable = false; // true if player has this skill
-        public bool isActive = false; // currently the cursor is on it
+        public bool isSelected = false; // currently the cursor is on it
         public GameInputKey set1Input = null; // null, A, B, X, Y
         public GameInputKey set2Input = null; // null, A, B, X, Y
     }

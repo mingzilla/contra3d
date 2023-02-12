@@ -81,6 +81,7 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\UnityFn.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\SelectedIds.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\PlayerActionHandler3D.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\PauseHandler.cs" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\Mono\Version" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\Util2D" />
      <Folder Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement" />
