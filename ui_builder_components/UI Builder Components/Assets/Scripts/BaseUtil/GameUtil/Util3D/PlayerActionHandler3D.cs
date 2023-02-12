@@ -34,7 +34,7 @@ namespace BaseUtil.GameUtil.Util3D
         public static void IcyMoveX(float inputHorizontal, Rigidbody rb, float moveSpeed)
         {
             Vector3 currentV = rb.velocity;
-            Vector3 desiredV = new(inputHorizontal * moveSpeed, currentV.y, currentV.z);
+            Vector3 desiredV = new Vector3(inputHorizontal * moveSpeed, currentV.y, currentV.z);
             Vector3 smoothVelocity = Vector3.zero;
             rb.velocity = Vector3.SmoothDamp(currentV, desiredV, ref smoothVelocity, 0.04f);
         }

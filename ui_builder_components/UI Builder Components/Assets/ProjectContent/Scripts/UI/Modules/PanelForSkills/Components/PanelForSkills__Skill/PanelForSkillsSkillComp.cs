@@ -104,13 +104,15 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
     public class PanelForSkillsSkillCompData : ICompData<PanelForSkillsSkillCompData>
     {
+        public bool isAvailable = false; // true if player has this skill
         public bool isActive = false; // currently the cursor is on it
         public GameInputKey set1Input = null; // null, A, B, X, Y
         public GameInputKey set2Input = null; // null, A, B, X, Y
 
         public bool IsTheSameAs(PanelForSkillsSkillCompData dataIn)
         {
-            return isActive == dataIn.isActive &&
+            return isAvailable == dataIn.isAvailable &&
+                   isActive == dataIn.isActive &&
                    set1Input == dataIn.set1Input &&
                    set2Input == dataIn.set2Input;
         }

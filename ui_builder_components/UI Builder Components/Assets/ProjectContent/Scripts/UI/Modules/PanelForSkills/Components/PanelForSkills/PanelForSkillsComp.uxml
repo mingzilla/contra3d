@@ -42,16 +42,6 @@
 
                         <ui:Instance name="i__panel-for-skills__skill-1" class="flex" template="template__panel-for-skills__skill"/>
 
-<!--                        <ui:VisualElement class="flex skills-panel__cell layout-vertical center">-->
-<!--                            <ui:VisualElement class="in-game-player-panel__row__cell-item layout-vertical center">-->
-<!--                                <ui:VisualElement class="bg-icon skill__fire__fire-ball"/>-->
-<!--                            </ui:VisualElement>-->
-<!--                            <ui:VisualElement class="skills-panel__cell__active-button-set-1">-->
-<!--                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg">-->
-<!--                                    <ui:Label text="A"/>-->
-<!--                                </ui:VisualElement>-->
-<!--                            </ui:VisualElement>-->
-<!--                        </ui:VisualElement>-->
                         <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
                             <ui:VisualElement class="in-game-player-panel__row__cell-item layout-vertical center">
                                 <ui:VisualElement class="bg-icon skill__fire__fire-bounce-ball"/>

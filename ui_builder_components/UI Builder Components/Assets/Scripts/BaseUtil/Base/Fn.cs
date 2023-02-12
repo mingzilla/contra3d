@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace BaseUtil.Base
 {
@@ -175,6 +176,74 @@ namespace BaseUtil.Base
         public static void Times(int times, Action<int> fn)
         {
             for (int i = 0; i < times; i++) fn(i);
+        }
+
+        public static FieldInfo[] Props(object obj)
+        {
+            if (obj == null) return new FieldInfo[] { };
+            return obj.GetType().GetFields();
+        }
+
+        public static string[] PropNames(object obj)
+        {
+            return Props(obj).Select(field => field.Name).ToArray();
+        }
+
+        public static bool AreEqualObjs(object obj1, object obj2)
+        {
+            if (AllNulls(new[] {obj1, obj2})) return true;
+            if (SomeNulls(new[] {obj1, obj2})) return false;
+
+            Type type1 = obj1.GetType();
+            Type type2 = obj2.GetType();
+            if (type1 != type2) return false;
+
+            FieldInfo[] props1 = type1.GetFields();
+            FieldInfo[] props2 = type1.GetFields();
+
+            for (int i = 0; i < props1.Length; i++)
+            {
+                object v1 = props1[i].GetValue(obj1);
+                object v2 = props2[i].GetValue(obj2);
+
+                if (!v1.Equals(v2)) return false;
+            }
+            return true;
+        }
+
+        public static bool AreEqualDictionaries(Dictionary<string, object> obj1, Dictionary<string, object> obj2)
+        {
+            if (AllNulls(new[] {obj1, obj2})) return true;
+            if (SomeNulls(new[] {obj1, obj2})) return false;
+
+            Dictionary<string, object>.KeyCollection keys1 = obj1.Keys;
+            Dictionary<string, object>.KeyCollection keys2 = obj2.Keys;
+
+            if (keys1.Count != keys2.Count) return false;
+
+            foreach (string key in keys1)
+            {
+                object v1 = obj1[key];
+                object v2 = obj2[key];
+
+                if (AllNulls(new[] {v1, v2})) return true;
+                if (SomeNulls(new[] {v1, v2})) return true;
+                if (!v1.Equals(v2)) return false;
+            }
+
+            return true;
+        }
+
+        public static bool AllNulls(object[] items)
+        {
+            int count = items.Count(x => x is null);
+            return count.Equals(items.Length);
+        }
+
+        public static bool SomeNulls(object[] items)
+        {
+            int count = items.Count(x => x is null);
+            return !count.Equals(items.Length) && !count.Equals(0);
         }
     }
 }

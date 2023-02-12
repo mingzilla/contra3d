@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace BaseUtil.GameUtil
 {
-    public abstract class AbstractObserverController : MonoBehaviour
+    public abstract class AbstractObserverMono : MonoBehaviour
     {
         protected List<Observable<ObservableData>> subscriptions = new List<Observable<ObservableData>>();
         protected List<string> storeNames = new List<string>();
@@ -24,7 +24,7 @@ namespace BaseUtil.GameUtil
             {
                 subscriptions.Add(fieldAndStore[(key)].GetObservable().Subscribe((storeData) =>
                 {
-                    Type type = typeof(AbstractObserverController);
+                    Type type = typeof(AbstractObserverMono);
                     FieldInfo fieldInfo = type.GetField(key);
                     fieldInfo.SetValue(this, key);
 

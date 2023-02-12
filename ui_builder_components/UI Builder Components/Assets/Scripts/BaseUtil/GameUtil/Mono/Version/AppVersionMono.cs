@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace BaseUtil.GameUtil.Mono.Version
 {
-    public abstract class AppVersionController : MonoBehaviour
+    public abstract class AppVersionMono : MonoBehaviour
     {
         [SerializeField] private Text text;
 

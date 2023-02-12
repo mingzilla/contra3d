@@ -31,6 +31,13 @@ namespace BaseUtil.Base
             };
         };
 
+        public static int GetNextCircularIndex(int currentIndex, int size)
+        {
+            if (size == 0) throw new Exception("GetNextCircularIndex doesn't allow empty array");
+            if (currentIndex + 1 == size) return 0;
+            return currentIndex + 1;
+        }
+
         public static int AtLeast(int minValue, int value)
         {
             if (value < minValue) return minValue;

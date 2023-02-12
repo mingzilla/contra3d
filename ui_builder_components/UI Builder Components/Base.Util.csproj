@@ -57,9 +57,9 @@
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Base\Domain\IntervalState.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnRxDataStore.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\Base\FnOldDict.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\AbstractObserverController.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\AbstractObserverMono.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Types\GameLayer.cs" />
-     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Mono\Version\AppVersionController.cs" />
+     <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Mono\Version\AppVersionMono.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util3D\BulletCommonUtil3D.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\PlayerManagement\PlayerInputManagerData.cs" />
      <Compile Include="Assets\Scripts\BaseUtil\GameUtil\Util2D\CameraHandler2D.cs" />
