@@ -206,6 +206,8 @@ namespace BaseUtil.Base
                 object v1 = props1[i].GetValue(obj1);
                 object v2 = props2[i].GetValue(obj2);
 
+                if (AllNulls(new[] {v1, v2})) return true;
+                if (SomeNulls(new[] {v1, v2})) return false;
                 if (!v1.Equals(v2)) return false;
             }
             return true;

@@ -1,3 +1,4 @@
+using BaseUtil.Base;
 using BaseUtil.GameUtil;
 using ProjectContent.Scripts.Types;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills;
@@ -9,7 +10,7 @@ namespace ProjectContent.Scripts.Player.Controls
     public class PlayerSkillPanelControl : AbstractControllable
     {
         private PanelForSkillsMono panelForSkillsMono;
-        
+
         public static PlayerSkillPanelControl Create(PlayerMono mono, int playerId)
         {
             PlayerSkillPanelControl item = BaseCreate<PlayerSkillPanelControl>(mono, playerId);
@@ -78,11 +79,7 @@ namespace ProjectContent.Scripts.Player.Controls
         {
             if (context.started)
             {
-                panelForSkillsMono.data = new()
-                {
-                    skillSet1CompData = new PanelForSkillsSkillSetCompData() {isOn = true, slot1 = ElementalType.FIRE, slot2 = ElementalType.LIGHT},
-                    skillSet2CompData = new PanelForSkillsSkillSetCompData() {isOn = false, slot1 = ElementalType.WATER, slot2 = ElementalType.LIGHT, slot3 = ElementalType.WATER},
-                };
+                panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillSet(true, false);
             }
         }
 
@@ -90,11 +87,7 @@ namespace ProjectContent.Scripts.Player.Controls
         {
             if (context.started)
             {
-                panelForSkillsMono.data = new()
-                {
-                    skillSet1CompData = new PanelForSkillsSkillSetCompData() {isOn = false, slot1 = ElementalType.FIRE, slot2 = ElementalType.LIGHT},
-                    skillSet2CompData = new PanelForSkillsSkillSetCompData() {isOn = true, slot1 = ElementalType.WATER, slot2 = ElementalType.LIGHT, slot3 = ElementalType.WATER},
-                };
+                panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillSet(false, true);
             }
         }
 

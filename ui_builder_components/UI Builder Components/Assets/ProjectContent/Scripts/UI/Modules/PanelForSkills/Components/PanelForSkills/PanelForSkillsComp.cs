@@ -1,4 +1,5 @@
-﻿using ProjectContent.Scripts.Types;
+﻿using BaseUtil.Base;
+using ProjectContent.Scripts.Types;
 using ProjectContent.Scripts.UI.Base.Comp;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__Skill;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__SkillSet;
@@ -108,10 +109,22 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         }
     }
 
+    /// <summary>
+    /// Comp Data Bundle is used at top level, which directly includes all the lowest level Comp Data objects. There will be no nested Comp Data definition.
+    /// Comp Data are supposed to be flat data structures, which don't include other Comp Data 
+    /// </summary>
     public class PanelForSkillsCompDataBundle : AbstractCompData<PanelForSkillsCompDataBundle>
     {
         public PanelForSkillsSkillSetCompData skillSet1CompData;
         public PanelForSkillsSkillSetCompData skillSet2CompData;
         public PanelForSkillsSkillCompData skill1CompData;
+
+        public PanelForSkillsCompDataBundle UpdateSkillSet(bool left, bool right)
+        {
+            PanelForSkillsCompDataBundle bundle = this;
+            bundle = Fn.SetIn(bundle, new[] {"skillSet1CompData", "isOn"}, left);
+            bundle = Fn.SetIn(bundle, new[] {"skillSet2CompData", "isOn"}, right);
+            return bundle;
+        }
     }
 }

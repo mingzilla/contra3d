@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill_BK\PanelForSkillsSkillMonoBK.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\AppLiveResource\AppResource.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Camera\CameraTargetMono.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Data\PlayerAttribute.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusElectrifiedFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuSkillsPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\GameMenu\BaseStore\Domain\GameMenuActiveItems.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Comp\AbstractCompData.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\PlayerDashFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Comp\IComp.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Bullet\BulletMono.cs" />
@@ -83,6 +85,7 @@
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PlayerMenu\BaseStore\Domain\ActiveItems\PlayerMenuAccessoriesPanelActiveItems.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\Player\Controls\ControlContext.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\BaseStore\Domain\PanelForSkillsStoreData.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill\PanelForSkillsSkillComp.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__SkillSet\PanelForSkillsSkillSetComp.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusBurnFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemySpeedFactor.cs" />
@@ -109,9 +112,6 @@
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\PlayerStatusFrozenFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyDamageFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusFrozenFactor.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill_BK\PanelForSkillsSkillMonoBK.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Modules\PanelForSkills\Components\PanelForSkills__Skill\PanelForSkillsSkillComp.cs" />
-     <Compile Include="Assets\ProjectContent\Scripts\UI\Base\Comp\AbstractCompData.cs" />
      <Folder Include="Assets\ProjectContent\Scripts\CalculationFactors" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
