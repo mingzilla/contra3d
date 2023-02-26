@@ -245,5 +245,35 @@ namespace BaseUtil.Base
             int count = items.Count(x => x is null);
             return !count.Equals(items.Length) && !count.Equals(0);
         }
+
+        /// <summary>
+        /// Flat level merging with new instance created
+        /// </summary>
+        public static T FlatMerge<T>(T obj, Dictionary<string, object> keyValues)
+        {
+            if (obj == null) return obj;
+            if (keyValues == null) return obj;
+            if (keyValues.Count == 0) return obj;
+
+            T result = (T) Activator.CreateInstance(obj.GetType());
+
+            foreach (FieldInfo fieldInfo in obj.GetType().GetFields())
+            {
+                try
+                {
+                    string name = fieldInfo.Name;
+                    if (!keyValues.ContainsKey(name)) throw new Exception();
+                    object newValue = keyValues[(name)];
+                    fieldInfo.SetValue(result, newValue);
+                }
+                catch (Exception)
+                {
+                    object oldValue = fieldInfo.GetValue(obj);
+                    fieldInfo.SetValue(result, oldValue);
+                }
+            }
+
+            return result;
+        }
     }
 }
