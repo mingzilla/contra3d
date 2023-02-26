@@ -1,8 +1,8 @@
-using BaseUtil.Base;
 using BaseUtil.GameUtil;
-using ProjectContent.Scripts.Types;
+using BaseUtil.GameUtil.Base;
+using BaseUtil.GameUtil.Base.Domain;
+using ProjectContent.Scripts.Player.PanelSelection;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills;
-using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__SkillSet;
 using UnityEngine.InputSystem;
 
 namespace ProjectContent.Scripts.Player.Controls
@@ -10,6 +10,8 @@ namespace ProjectContent.Scripts.Player.Controls
     public class PlayerSkillPanelControl : AbstractControllable
     {
         private PanelForSkillsMono panelForSkillsMono;
+        private SkillPanelSelectionState selectionState = new SkillPanelSelectionState();
+        private readonly IntervalState menuMovementInterval = IntervalState.Create(0.15f);
 
         public static PlayerSkillPanelControl Create(PlayerMono mono, int playerId)
         {
@@ -32,10 +34,19 @@ namespace ProjectContent.Scripts.Player.Controls
         public override void InputMove(InputAction.CallbackContext context)
         {
             userInput = UserInput.Move(userInput, context);
+            if (userInput.IsMoving())
+            {
+                UnityFn.RunWithInterval(mono, menuMovementInterval, () =>
+                {
+                    selectionState = selectionState.Move(userInput);
+                    panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillCursor(selectionState);
+                });
+            }
         }
 
         public override void KeySelect(InputAction.CallbackContext context)
         {
+            if (!context.started) return;
             mono.SetActiveControl(ControlContext.IN_GAME);
         }
 
@@ -77,18 +88,14 @@ namespace ProjectContent.Scripts.Player.Controls
 
         public override void KeyLB(InputAction.CallbackContext context)
         {
-            if (context.started)
-            {
-                panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillSet(true, false);
-            }
+            if (!context.started) return;
+            panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillSet(true, false);
         }
 
         public override void KeyRB(InputAction.CallbackContext context)
         {
-            if (context.started)
-            {
-                panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillSet(false, true);
-            }
+            if (!context.started) return;
+            panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillSet(false, true);
         }
 
         public override void KeyLT(InputAction.CallbackContext context)

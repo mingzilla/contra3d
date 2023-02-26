@@ -91,7 +91,8 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
         public void UpdateDataDrivenEls(PanelForSkillsSkillCompData data)
         {
-            if (data.isSelected) border.AddToClassList("panel-with-border panel-border-is-selected");
+            if (data.isSelected) border.AddToClassList("panel-with-border");
+            if (data.isSelected) border.AddToClassList("panel-border-is-selected");
             if (!data.isSelected) border.RemoveFromClassList("panel-with-border");
             if (!data.isSelected) border.RemoveFromClassList("panel-border-is-selected");
 

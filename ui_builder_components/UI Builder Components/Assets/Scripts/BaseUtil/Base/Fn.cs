@@ -178,6 +178,20 @@ namespace BaseUtil.Base
             for (int i = 0; i < times; i++) fn(i);
         }
 
+        /// <summary>
+        /// Organic 2D array [,] can't get a row of data, so Jagged array [][] can be used instead.
+        /// However, there isn't a way to create an empty jagged array in one line. 
+        /// </summary>
+        public static T[][] Create2DArray<T>(int rows, int cols)
+        {
+            T[][] matrix = new T[rows][];
+            for (int i = 0; i < rows; i++)
+            {
+                matrix[i] = new T[cols];
+            }
+            return matrix;
+        }
+
         public static FieldInfo[] Props(object obj)
         {
             if (obj == null) return new FieldInfo[] { };

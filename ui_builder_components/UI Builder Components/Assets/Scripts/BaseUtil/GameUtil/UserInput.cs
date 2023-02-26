@@ -32,7 +32,7 @@ namespace BaseUtil.GameUtil
         public bool magicLeft;
         public bool magicRight;
 
-        public bool isHoldingLb;
+        public bool isHoldingLb; // don't include these in ResetTriggers, to avoid Update() from clearing these key inputs
         public bool isHoldingLt;
         public bool isHoldingRb;
         public bool isHoldingRt;

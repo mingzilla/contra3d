@@ -40,11 +40,11 @@
                             <ui:VisualElement class="bg-icon size-44 elemental-fire"/>
                         </ui:VisualElement>
 
+                        <ui:Instance name="i__panel-for-skills__skill__row-1-col-0" class="flex" template="template__panel-for-skills__skill"/>
                         <ui:Instance name="i__panel-for-skills__skill__row-1-col-1" class="flex" template="template__panel-for-skills__skill"/>
                         <ui:Instance name="i__panel-for-skills__skill__row-1-col-2" class="flex" template="template__panel-for-skills__skill"/>
                         <ui:Instance name="i__panel-for-skills__skill__row-1-col-3" class="flex" template="template__panel-for-skills__skill"/>
                         <ui:Instance name="i__panel-for-skills__skill__row-1-col-4" class="flex" template="template__panel-for-skills__skill"/>
-                        <ui:Instance name="i__panel-for-skills__skill__row-1-col-5" class="flex" template="template__panel-for-skills__skill"/>
 
                     </ui:VisualElement>
                     <ui:VisualElement class="flex in-game-player-panel__row layout-horizontal">

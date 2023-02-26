@@ -112,6 +112,7 @@
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\PlayerStatusFrozenFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyDamageFactor.cs" />
      <Compile Include="Assets\ProjectContent\Scripts\CalculationFactors\EnemyStatusFrozenFactor.cs" />
+     <Compile Include="Assets\ProjectContent\Scripts\Player\PanelSelection\SkillPanelSelectionState.cs" />
      <Folder Include="Assets\ProjectContent\Scripts\CalculationFactors" />
      <Folder Include="Assets\ProjectContent\Prefabs" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\css" />
@@ -134,6 +135,7 @@
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Prototype\panel-upgrade" />
      <Folder Include="Assets\ProjectContent\Materials" />
      <Folder Include="Assets\ProjectContent\Prefabs\Magic\Skill_FireBall" />
+     <Folder Include="Assets\ProjectContent\Scripts\Player\PanelSelection" />
      <Folder Include="Assets\ProjectContent\Scripts\Player" />
      <Folder Include="Assets\ProjectContent\Scripts\UI\Modules\Common\SelectionCursor" />
      <Folder Include="Assets\ProjectContent\ScenesConfig\Terrain__snow-land" />
