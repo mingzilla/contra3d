@@ -48,6 +48,10 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
                 skillSet1CompData = new PanelForSkillsSkillSetCompData() {isOn = true, slot1 = ElementalType.FIRE, slot2 = ElementalType.LIGHT},
                 skillSet2CompData = new PanelForSkillsSkillSetCompData() {isOn = false, slot1 = ElementalType.WATER, slot2 = ElementalType.LIGHT, slot3 = ElementalType.WATER},
                 skillCompDataRow1Col1 = new PanelForSkillsSkillCompData() {set1Input = GameInputKey.A},
+                skillCompDataRow1Col2 = new PanelForSkillsSkillCompData() {set1Input = GameInputKey.B},
+                skillCompDataRow1Col3 = new PanelForSkillsSkillCompData() {},
+                skillCompDataRow1Col4 = new PanelForSkillsSkillCompData() {set1Input = GameInputKey.X},
+                skillCompDataRow1Col5 = new PanelForSkillsSkillCompData() {set2Input = GameInputKey.A},
             };
 
             comp.Init(data);

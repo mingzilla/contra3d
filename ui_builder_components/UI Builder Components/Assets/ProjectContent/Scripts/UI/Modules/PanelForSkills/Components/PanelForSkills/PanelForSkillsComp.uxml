@@ -41,42 +41,11 @@
                         </ui:VisualElement>
 
                         <ui:Instance name="i__panel-for-skills__skill__row-1-col-1" class="flex" template="template__panel-for-skills__skill"/>
+                        <ui:Instance name="i__panel-for-skills__skill__row-1-col-2" class="flex" template="template__panel-for-skills__skill"/>
+                        <ui:Instance name="i__panel-for-skills__skill__row-1-col-3" class="flex" template="template__panel-for-skills__skill"/>
+                        <ui:Instance name="i__panel-for-skills__skill__row-1-col-4" class="flex" template="template__panel-for-skills__skill"/>
+                        <ui:Instance name="i__panel-for-skills__skill__row-1-col-5" class="flex" template="template__panel-for-skills__skill"/>
 
-                        <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
-                            <ui:VisualElement class="in-game-player-panel__row__cell-item layout-vertical center">
-                                <ui:VisualElement class="bg-icon skill__fire__fire-bounce-ball"/>
-                            </ui:VisualElement>
-                            <ui:VisualElement class="skills-panel__cell__active-button-set-1">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg">
-                                    <ui:Label text="B"/>
-                                </ui:VisualElement>
-                            </ui:VisualElement>
-                        </ui:VisualElement>
-                        <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
-                            <ui:VisualElement class="in-game-player-panel__row__cell-item layout-vertical center">
-                                <ui:VisualElement class="bg-icon skill__fire__fire-strike"/>
-                            </ui:VisualElement>
-                        </ui:VisualElement>
-                        <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
-                            <ui:VisualElement class="in-game-player-panel__row__cell-item layout-vertical center panel-with-border panel-border-is-selected">
-                                <ui:VisualElement class="bg-icon skill__fire__meteor-storm"/>
-                            </ui:VisualElement>
-                            <ui:VisualElement class="skills-panel__cell__active-button-set-1">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-1-bg">
-                                    <ui:Label text="X"/>
-                                </ui:VisualElement>
-                            </ui:VisualElement>
-                        </ui:VisualElement>
-                        <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
-                            <ui:VisualElement class="in-game-player-panel__row__cell-item layout-vertical center">
-                                <ui:VisualElement class="bg-icon skill__fire__spread-fire-balls"/>
-                            </ui:VisualElement>
-                            <ui:VisualElement class="skills-panel__cell__active-button-set-2">
-                                <ui:VisualElement class="control-button is-medium is-rounded set-2-bg">
-                                    <ui:Label text="A"/>
-                                </ui:VisualElement>
-                            </ui:VisualElement>
-                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement class="flex in-game-player-panel__row layout-horizontal">
                         <ui:VisualElement class="in-game-player-panel__row__header"/>
