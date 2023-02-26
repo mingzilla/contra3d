@@ -275,5 +275,71 @@ namespace BaseUtil.Base
 
             return result;
         }
+
+        /// <summary>
+        /// This checks type definition, it returns true even if a child object is null, as long as the child has such a field, it returns true
+        /// To check person.address.line1, this returns true when address is null.
+        /// </summary>
+        public static bool HasField<T>(T obj, string[] path)
+        {
+            if (obj == null) return false;
+            if (path == null) return false;
+            if (path.Length == 0) return false;
+
+            string name = path[0];
+            string[] subPath = path.Skip(1).ToArray();
+
+            FieldInfo fieldInfo = obj.GetType().GetField(name);
+            if (fieldInfo == null) return false;
+            if (subPath.Length == 0) return true;
+
+            object child = fieldInfo.GetValue(obj) ?? Activator.CreateInstance(fieldInfo.FieldType);
+            return HasField(child, subPath);
+        }
+
+        /// <summary>
+        /// To check person.address.line1, this returns false when address is null.
+        /// </summary>
+        public static bool HasFieldInData<T>(T obj, string[] path)
+        {
+            if (obj == null) return false;
+            if (path == null) return false;
+            if (path.Length == 0) return false;
+
+            string name = path[0];
+            string[] subPath = path.Skip(1).ToArray();
+
+            FieldInfo fieldInfo = obj.GetType().GetField(name);
+            if (fieldInfo == null) return false;
+            if (subPath.Length == 0) return true;
+
+            object child = fieldInfo.GetValue(obj);
+            return HasFieldInData(child, subPath);
+        }
+
+        /// <summary>
+        /// SetIn, and it patches child objects to avoid null pointer error
+        /// </summary>
+        public static T SetIn<T>(T obj, string[] path, object value)
+        {
+            if (!HasField(obj, path)) return obj;
+
+            string name = path[0];
+            string[] subPath = path.Skip(1).ToArray();
+
+            object newChild;
+            if (subPath.Length == 0)
+            {
+                newChild = value;
+            }
+            else
+            {
+                FieldInfo fieldInfo = obj.GetType().GetField(name);
+                object child = fieldInfo.GetValue(obj) ?? Activator.CreateInstance(fieldInfo.FieldType);
+                newChild = SetIn(child, subPath, value);
+            }
+
+            return FlatMerge(obj, new Dictionary<string, object> {{name, newChild}});
+        }
     }
 }
