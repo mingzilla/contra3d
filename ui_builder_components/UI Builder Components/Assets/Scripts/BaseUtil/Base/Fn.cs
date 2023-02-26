@@ -206,9 +206,8 @@ namespace BaseUtil.Base
                 object v1 = props1[i].GetValue(obj1);
                 object v2 = props2[i].GetValue(obj2);
 
-                if (AllNulls(new[] {v1, v2})) return true;
-                if (SomeNulls(new[] {v1, v2})) return false;
-                if (!v1.Equals(v2)) return false;
+                if (v1 == null && v2 != null) return false;
+                if (v1 != null && !v1.Equals(v2)) return false;
             }
             return true;
         }
@@ -228,9 +227,8 @@ namespace BaseUtil.Base
                 object v1 = obj1[key];
                 object v2 = obj2[key];
 
-                if (AllNulls(new[] {v1, v2})) return true;
-                if (SomeNulls(new[] {v1, v2})) return true;
-                if (!v1.Equals(v2)) return false;
+                if (v1 == null && v2 != null) return false;
+                if (v1 != null && !v1.Equals(v2)) return false;
             }
 
             return true;
@@ -250,6 +248,7 @@ namespace BaseUtil.Base
 
         /// <summary>
         /// Flat level merging with new instance created
+        /// It returns the original if nothing is changed, which avoids it to be treated as a UI detectable change.
         /// </summary>
         public static T FlatMerge<T>(T obj, Dictionary<string, object> keyValues)
         {
@@ -275,6 +274,7 @@ namespace BaseUtil.Base
                 }
             }
 
+            if (AreEqualObjs(obj, result)) return obj;
             return result;
         }
 
@@ -321,6 +321,7 @@ namespace BaseUtil.Base
 
         /// <summary>
         /// SetIn, and it patches child objects to avoid null pointer error
+        /// It returns the original if nothing is changed, which avoids it to be treated as a UI detectable change.
         /// </summary>
         public static T SetIn<T>(T obj, string[] path, object value)
         {
@@ -341,7 +342,8 @@ namespace BaseUtil.Base
                 newChild = SetIn(child, subPath, value);
             }
 
-            return FlatMerge(obj, new Dictionary<string, object> {{name, newChild}});
+            T result = FlatMerge(obj, new Dictionary<string, object> {{name, newChild}});
+            return AreEqualObjs(obj, result) ? obj : result;
         }
     }
 }
