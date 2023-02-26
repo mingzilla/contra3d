@@ -40,7 +40,7 @@
                             <ui:VisualElement class="bg-icon size-44 elemental-fire"/>
                         </ui:VisualElement>
 
-                        <ui:Instance name="i__panel-for-skills__skill-1" class="flex" template="template__panel-for-skills__skill"/>
+                        <ui:Instance name="i__panel-for-skills__skill__row-1-col-1" class="flex" template="template__panel-for-skills__skill"/>
 
                         <ui:VisualElement class="flex skills-panel__cell layout-vertical center">
                             <ui:VisualElement class="in-game-player-panel__row__cell-item layout-vertical center">

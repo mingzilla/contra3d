@@ -20,7 +20,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         private PanelForSkillsSkillSetComp skillSet1Comp;
         private PanelForSkillsSkillSetComp skillSet2Comp;
 
-        private PanelForSkillsSkillComp skill1Comp;
+        private PanelForSkillsSkillComp skillCompRow1Col1;
 
         public static PanelForSkillsComp Create(VisualElement root)
         {
@@ -28,7 +28,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             PanelForSkillsSkillSetComp skillSet1Comp = PanelForSkillsSkillSetComp.Create(els.skillSet1CompRoot, 1);
             PanelForSkillsSkillSetComp skillSet2Comp = PanelForSkillsSkillSetComp.Create(els.skillSet2CompRoot, 2);
 
-            PanelForSkillsSkillComp skill1Comp = PanelForSkillsSkillComp.Create(els.skill1CompRoot, Skill.FIRE_BALL);
+            PanelForSkillsSkillComp skillCompRow1Col1 = PanelForSkillsSkillComp.Create(els.skillCompRootRow1Col1, Skill.FIRE_BALL);
 
             return new()
             {
@@ -38,7 +38,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
                 skillSet1Comp = skillSet1Comp,
                 skillSet2Comp = skillSet2Comp,
 
-                skill1Comp = skill1Comp,
+                skillCompRow1Col1 = skillCompRow1Col1,
             };
         }
 
@@ -51,7 +51,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             skillSet1Comp.Init(data.skillSet1CompData);
             skillSet2Comp.Init(data.skillSet2CompData);
 
-            skill1Comp.Init(data.skill1CompData);
+            skillCompRow1Col1.Init(data.skillCompDataRow1Col1);
         }
 
         public void OnUpdate(PanelForSkillsCompDataBundle dataIn)
@@ -64,7 +64,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
                 skillSet1Comp.OnUpdate(data.skillSet1CompData);
                 skillSet2Comp.OnUpdate(data.skillSet2CompData);
 
-                skill1Comp.OnUpdate(data.skill1CompData);
+                skillCompRow1Col1.OnUpdate(data.skillCompDataRow1Col1);
             }
         }
     }
@@ -74,7 +74,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         public VisualElement skillSet1CompRoot;
         public VisualElement skillSet2CompRoot;
 
-        public VisualElement skill1CompRoot;
+        public VisualElement skillCompRootRow1Col1;
 
         private Label title;
 
@@ -84,7 +84,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             VisualElement skillSet1CompRoot = compRoot.Q<VisualElement>("i__panel-for-skills__skill-set__set-1");
             VisualElement skillSet2CompRoot = compRoot.Q<VisualElement>("i__panel-for-skills__skill-set__set-2");
 
-            VisualElement skill1CompRoot = compRoot.Q<VisualElement>("i__panel-for-skills__skill-1");
+            VisualElement skillCompRootRow1Col1 = compRoot.Q<VisualElement>("i__panel-for-skills__skill__row-1-col-1");
 
             return new()
             {
@@ -95,7 +95,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
                 skillSet1CompRoot = skillSet1CompRoot,
                 skillSet2CompRoot = skillSet2CompRoot,
 
-                skill1CompRoot = skill1CompRoot,
+                skillCompRootRow1Col1 = skillCompRootRow1Col1,
             };
         }
 
@@ -117,7 +117,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
     {
         public PanelForSkillsSkillSetCompData skillSet1CompData;
         public PanelForSkillsSkillSetCompData skillSet2CompData;
-        public PanelForSkillsSkillCompData skill1CompData;
+        public PanelForSkillsSkillCompData skillCompDataRow1Col1;
 
         public PanelForSkillsCompDataBundle UpdateSkillSet(bool left, bool right)
         {
