@@ -42,15 +42,15 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\ExternalUserId.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\AssemblyInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\StreamingAssetsConfigurationLoader.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\Utils\StreamingAssetsUtils.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\SerializableProjectConfiguration.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\ConfigurationCollectionHelper.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\IConfigurationLoader.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\MemoryConfigurationLoader.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\ProjectConfiguration.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\CloudProjectId.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\AssemblyInfo.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\Utils\StreamingAssetsUtils.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\ConfigurationCollectionHelper.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\ProjectConfiguration.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\ConfigurationEntry.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\ConfigurationUtils.cs" />
      <None Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Configuration\Unity.Services.Core.Configuration.asmdef" />

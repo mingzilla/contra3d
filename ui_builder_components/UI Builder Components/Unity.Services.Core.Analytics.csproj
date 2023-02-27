@@ -41,8 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Analytics\AssemblyInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Analytics\AnalyticsOptionsExtensions.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Analytics\AssemblyInfo.cs" />
      <None Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Analytics\Unity.Services.Core.Analytics.asmdef" />
      <Folder Include="Library\PackageCache\com.unity.services.core@1.6.0\Runtime\Analytics" />
      <Reference Include="UnityEngine">
