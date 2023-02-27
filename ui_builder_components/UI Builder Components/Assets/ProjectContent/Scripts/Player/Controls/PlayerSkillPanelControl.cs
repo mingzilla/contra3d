@@ -2,6 +2,7 @@ using BaseUtil.GameUtil;
 using BaseUtil.GameUtil.Base;
 using BaseUtil.GameUtil.Base.Domain;
 using ProjectContent.Scripts.Player.PanelSelection;
+using ProjectContent.Scripts.Types;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills;
 using UnityEngine.InputSystem;
 
@@ -56,18 +57,22 @@ namespace ProjectContent.Scripts.Player.Controls
 
         public override void KeyA(InputAction.CallbackContext context)
         {
+            panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillButtonState(selectionState, GameInputKey.A);
         }
 
         public override void KeyB(InputAction.CallbackContext context)
         {
+            panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillButtonState(selectionState, GameInputKey.B);
         }
 
         public override void KeyX(InputAction.CallbackContext context)
         {
+            panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillButtonState(selectionState, GameInputKey.X);
         }
 
         public override void KeyY(InputAction.CallbackContext context)
         {
+            panelForSkillsMono.data = panelForSkillsMono.data.UpdateSkillButtonState(selectionState, GameInputKey.Y);
         }
 
         public override void KeyPadUp(InputAction.CallbackContext context)

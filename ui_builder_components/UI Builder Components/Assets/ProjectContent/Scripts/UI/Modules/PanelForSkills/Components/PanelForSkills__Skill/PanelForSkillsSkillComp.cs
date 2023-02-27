@@ -1,4 +1,5 @@
-﻿using ProjectContent.Scripts.Types;
+﻿using BaseUtil.Base;
+using ProjectContent.Scripts.Types;
 using ProjectContent.Scripts.UI.Base.Comp;
 using ProjectContent.Scripts.UI.Base.Util;
 using UnityEngine;
@@ -110,5 +111,23 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
         public bool isSelected = false; // currently the cursor is on it
         public GameInputKey set1Input = null; // null, A, B, X, Y
         public GameInputKey set2Input = null; // null, A, B, X, Y
+
+        public bool IsAssignedWithKey(bool isSet1, GameInputKey inputKey)
+        {
+            GameInputKey inputToCompare = isSet1 ? set1Input : set2Input;
+            return inputToCompare == inputKey;
+        }
+
+        public PanelForSkillsSkillCompData AssignKey(bool isSet1, GameInputKey inputKey)
+        {
+            string key = isSet1 ? "set1Input" : "set2Input";
+            return Fn.SetIn(this, new[] {key}, inputKey);
+        }
+
+        public PanelForSkillsSkillCompData ClearKey(bool isSet1)
+        {
+            string key = isSet1 ? "set1Input" : "set2Input";
+            return Fn.SetIn(this, new[] {key}, null);
+        }
     }
 }

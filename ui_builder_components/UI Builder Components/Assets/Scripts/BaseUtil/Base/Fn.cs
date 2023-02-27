@@ -170,6 +170,19 @@ namespace BaseUtil.Base
             }
         }
 
+        public static bool HasErrors(Action fn)
+        {
+            try
+            {
+                fn();
+                return false;
+            }
+            catch (Exception)
+            {
+                return true;
+            }
+        }
+
         /// <summary>
         /// Runs e.g. 3 times
         /// </summary>
@@ -190,6 +203,49 @@ namespace BaseUtil.Base
                 matrix[i] = new T[cols];
             }
             return matrix;
+        }
+
+        public static T[][] SetAllWithValueFnIn2DArray<T>(T[][] original2DArray, Func<T, int, int, T> valueFn)
+        {
+            if (original2DArray.Length == 0) return original2DArray;
+            int colCount = original2DArray[0].Length;
+            T[][] newMatrix = Create2DArray<T>(original2DArray.Length, colCount);
+            for (int rowIndex = 0; rowIndex < original2DArray.Length; rowIndex++)
+            {
+                for (int colIndex = 0; colIndex < colCount; colIndex++)
+                {
+                    newMatrix[rowIndex][colIndex] = valueFn(original2DArray[rowIndex][colIndex], rowIndex, colIndex);
+                }
+            }
+            return newMatrix;
+        }
+
+        public static T[][] Copy2DArray<T>(T[][] original2DArray)
+        {
+            return SetAllWithValueFnIn2DArray(original2DArray, (original, rowIndex, colIndex) => original);
+        }
+
+        public static T[][] SetAllIn2DArray<T>(T[][] original2DArray, T v)
+        {
+            return SetAllWithValueFnIn2DArray(original2DArray, (original, rowIndex, colIndex) => v);
+        }
+
+        public static T[][] Update2DArray<T>(T[][] original2DArray, int rowIndexIn, int colIndexIn, T v)
+        {
+            if (original2DArray.Length == 0) return original2DArray;
+            bool hasErrors = HasErrors(() =>
+            {
+                T it = original2DArray[rowIndexIn][colIndexIn];
+            });
+            if (hasErrors) return original2DArray;
+
+            T originalV = original2DArray[rowIndexIn][colIndexIn];
+            if (originalV == null && v == null) return original2DArray;
+            if (originalV != null && originalV.Equals(v)) return original2DArray;
+
+            T[][] newMatrix = Copy2DArray(original2DArray);
+            newMatrix[rowIndexIn][colIndexIn] = v;
+            return newMatrix;
         }
 
         public static FieldInfo[] Props(object obj)

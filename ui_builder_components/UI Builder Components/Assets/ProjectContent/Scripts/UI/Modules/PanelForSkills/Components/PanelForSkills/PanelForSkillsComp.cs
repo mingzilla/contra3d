@@ -4,7 +4,6 @@ using ProjectContent.Scripts.Types;
 using ProjectContent.Scripts.UI.Base.Comp;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__Skill;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__SkillSet;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills
@@ -163,17 +162,28 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
         public PanelForSkillsCompDataBundle UpdateSkillCursor(SkillPanelSelectionState selectionState)
         {
-            PanelForSkillsSkillCompData[][] newMatrix = Fn.Create2DArray<PanelForSkillsSkillCompData>(skillRowColMatrix.Length, skillRowColMatrix[0].Length);
-            for (int rowIndex = 0; rowIndex < skillRowColMatrix.Length; rowIndex++)
+            PanelForSkillsSkillCompData[][] newMatrix = Fn.SetAllWithValueFnIn2DArray(skillRowColMatrix, (original, rowIndex, colIndex) => Fn.SetIn(original, new[] {"isSelected"}, false));
+            newMatrix[selectionState.currentSelectedRowIndex][selectionState.currentSelectedColIndex] = Fn.SetIn(newMatrix[selectionState.currentSelectedRowIndex][selectionState.currentSelectedColIndex], new[] {"isSelected"}, true);
+            PanelForSkillsCompDataBundle bundle = Fn.SetIn(this, new[] {"skillRowColMatrix"}, newMatrix);
+            return bundle;
+        }
+
+        public PanelForSkillsCompDataBundle UpdateSkillButtonState(SkillPanelSelectionState selectionState, GameInputKey inputKey)
+        {
+            PanelForSkillsSkillCompData data = skillRowColMatrix[selectionState.currentSelectedRowIndex][selectionState.currentSelectedColIndex];
+            string key = skillSet1CompData.isOn ? "set1Input" : "set2Input";
+
+            PanelForSkillsSkillCompData[][] newMatrix = Fn.SetAllWithValueFnIn2DArray(skillRowColMatrix, (original, rowIndex, colIndex) =>
             {
-                PanelForSkillsSkillCompData[] row = skillRowColMatrix[rowIndex];
-                for (int colIndex = 0; colIndex < row.Length; colIndex++)
-                {
-                    PanelForSkillsSkillCompData item = skillRowColMatrix[rowIndex][colIndex];
-                    bool isSelectedItem = selectionState.currentSelectedRowIndex == rowIndex && selectionState.currentSelectedColIndex == colIndex;
-                    newMatrix[rowIndex][colIndex] = Fn.SetIn(item, new[] {"isSelected"}, isSelectedItem);
-                }
-            }
+                bool isItemUnderCursor = selectionState.currentSelectedRowIndex == rowIndex && selectionState.currentSelectedColIndex == colIndex;
+                bool isAssignedWithKey = original.IsAssignedWithKey(skillSet1CompData.isOn, inputKey);
+
+                if (isItemUnderCursor && !isAssignedWithKey) return Fn.SetIn(original, new[] {key}, inputKey);
+                if (!isItemUnderCursor && !isAssignedWithKey) return original;
+                if (!isItemUnderCursor && isAssignedWithKey) return Fn.SetIn(original, new[] {key}, null);
+                return Fn.SetIn(original, new[] {key}, null);
+            });
+
             PanelForSkillsCompDataBundle bundle = Fn.SetIn(this, new[] {"skillRowColMatrix"}, newMatrix);
             return bundle;
         }
