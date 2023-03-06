@@ -480,11 +480,11 @@ namespace BaseUtil.GameUtil.Base
         {
             SetActive(gameObjectToSetActive, () =>
             {
-                SetAllInactivate(gameObjectsToSetInactive);
+                SetAllInactive(gameObjectsToSetInactive);
             });
         }
 
-        public static void SetAllInactivate(List<GameObject> gameObjectsToSetInactive)
+        public static void SetAllInactive(List<GameObject> gameObjectsToSetInactive)
         {
             foreach (GameObject item in gameObjectsToSetInactive)
             {

@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using BaseUtil.GameUtil.Base;
 using ProjectContent.Scripts.AppLiveResource;
 using ProjectContent.Scripts.Data;
 using ProjectContent.Scripts.Player.Controls;
+using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,10 +25,12 @@ namespace ProjectContent.Scripts.Player
 
         private int playerId;
 
-        private ControlContext controlContext; 
+        private ControlContext controlContext;
         private PlayerInGameControl playerInGameControl;
         private PlayerSkillPanelControl playerSkillPanelControl;
         private AbstractControllable activeControl;
+
+        private PanelForSkillsMono panelForSkillsMono;
 
         void Start()
         {
@@ -38,6 +43,8 @@ namespace ProjectContent.Scripts.Player
             controlContext = ControlContext.GetByName(control);
             playerInGameControl = PlayerInGameControl.Create(this, playerId);
             playerSkillPanelControl = PlayerSkillPanelControl.Create(this, playerId);
+
+            panelForSkillsMono = PanelForSkillsMono.instance;
             SetActiveControl(controlContext);
         }
 
@@ -47,8 +54,17 @@ namespace ProjectContent.Scripts.Player
         public void SetActiveControl(ControlContext contextIn)
         {
             controlContext = contextIn;
-            if (controlContext == ControlContext.IN_GAME) activeControl = playerInGameControl;
-            if (controlContext == ControlContext.SKILL_PANEL) activeControl = playerSkillPanelControl;
+            if (controlContext == ControlContext.IN_GAME)
+            {
+                UnityFn.SetAllInactive(new List<GameObject> {panelForSkillsMono.gameObject});
+                activeControl = playerInGameControl;
+            }
+            if (controlContext == ControlContext.SKILL_PANEL)
+            {
+                UnityFn.SetActiveAndDeActivateOthers(panelForSkillsMono.gameObject, new List<GameObject> { });
+                panelForSkillsMono.OpenMenu();
+                activeControl = playerSkillPanelControl;
+            }
         }
 
         void FixedUpdate()

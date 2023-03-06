@@ -1,5 +1,4 @@
-﻿using System;
-using BaseUtil.GameUtil.Base;
+﻿using BaseUtil.GameUtil.Base;
 using ProjectContent.Scripts.Types;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.BaseStore.Domain;
 using ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSkills__Skill;
@@ -17,8 +16,6 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
         private PanelForSkillsStoreData storeData = new();
 
-        [SerializeField] private GameObject skillEquipPanelSkillCompPrefab;
-
         private PanelForSkillsComp comp;
         public PanelForSkillsCompDataBundle data;
 
@@ -29,7 +26,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             UnityFn.MarkSingletonAndKeepAlive(instance, gameObject, () => instance = this);
         }
 
-        private void Start()
+        public void OpenMenu()
         {
             root = GetComponent<UIDocument>().rootVisualElement;
             comp = PanelForSkillsComp.Create(root);
@@ -38,6 +35,7 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
 
         private void Update()
         {
+            if (comp == null) return;
             comp.OnUpdate(data);
         }
 
@@ -61,19 +59,6 @@ namespace ProjectContent.Scripts.UI.Modules.PanelForSkills.Components.PanelForSk
             };
 
             comp.Init(data);
-        }
-
-        private void AddEvent()
-        {
-            Button button = new()
-            {
-                name = "Hi",
-                text = "Hi",
-            };
-            button.clicked += () =>
-            {
-                Debug.Log(button.name);
-            };
         }
     }
 }
