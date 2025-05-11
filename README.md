@@ -27,3 +27,23 @@ This project is a labor of love by [Mingzilla](https://mingzilla.itch.io/), insp
 
 ## License
 This project is for non-commercial use only. All rights to the original *Contra* series belong to their respective owners.
+
+----
+
+## Future Game
+This section is here because the current [ui_builder_components](ui_builder_components) directory contains my next game.
+This will be moved out later.
+
+### Screenshots
+
+![grassland](next_game_screenshots/grassland.jpg) 
+
+![iceland](next_game_screenshots/iceland.jpg) 
+
+![desert](next_game_screenshots/desert.jpg) 
+
+![underwater](next_game_screenshots/underwater.jpg)
+
+![mushland](next_game_screenshots/mushland.jpg) 
+
+![crystal](next_game_screenshots/crystal.jpg) 
